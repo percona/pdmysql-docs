@@ -1,0 +1,10 @@
+.. |pdmysql| replace:: Percona Distribution for MySQL
+.. |mysql-ce| replace:: MySQL Community Edition
+.. |rpm| replace:: :program:`RPM`
+.. |deb| replace:: :program:`DEB`
+.. |RHEL| replace:: Red Hat Enterprise Linux
+.. |centos| replace:: CentOS
+.. |percona-release| replace:: :program:`percona-release`
+.. |percona| replace:: Percona
+.. |mysql| replace:: MySQL
+.. |sudo| replace:: :program:`sudo`
