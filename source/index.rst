@@ -22,15 +22,15 @@ Percona Distribution for MySQL |version| Documentation
   
 |pdmysql| provides two deployment variants: one is |PS|-based and another one is |PXC|-based. Each deployment is available via its own repository and includes the base server (|PS| or |PXC|) and components.  The table below lists what components are available  with each server:
 
+
+
+
 .. list-table:: 
    :widths: 30 20 20
    :header-rows: 2
    :stub-columns: 1
  
    * - Components
-     - Servers
-     - 
-   * - 
      - |PS|
      - |PXC|
    * - Orchestrator

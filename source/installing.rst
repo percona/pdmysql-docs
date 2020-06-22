@@ -130,7 +130,7 @@ Install |PS|-based deployment on |RHEL| / |centos|
 
 .. admonition:: Platform Specific Notes
 
-  On |centos| 7, install the epel-release package. It includes the dependencies required to install Orchestrator. Use the following command:
+   On |centos| 7, install the epel-release package. It includes the dependencies required to install Orchestrator. Use the following command:
 
    .. code-block:: bash
 
