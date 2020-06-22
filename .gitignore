@@ -1,0 +1,6 @@
+build
+source/percona-theme/
+source/ext/psdom.pyc
+*~
+.DS_Store
+source/ext/__pycache__
