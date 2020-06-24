@@ -89,7 +89,7 @@ Install the selected deployment of |pdmysql| using the commands of the package m
 
 .. important::
 
-   Make sure to run all commands as root or via |sudo|.
+   Run all commands as root or via |sudo|.
 
 Install |PS|-based deployment on Debian / Ubuntu
 --------------------------------------------------------------------------------

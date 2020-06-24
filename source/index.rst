@@ -27,8 +27,7 @@ Percona Distribution for MySQL |version| Documentation
 
 .. list-table:: 
    :widths: 30 20 20
-   :header-rows: 2
-   :stub-columns: 1
+   :header-rows: 1
  
    * - Components
      - |PS|
@@ -54,7 +53,8 @@ Percona Distribution for MySQL |version| Documentation
    * - MySQL Router
      - YES
      - NO
-      
+ 
+
 What deployment variant to choose?
 ================================================================================
 
@@ -75,6 +75,7 @@ The **Percona XtraDB Cluster-based deployment** guarantees data consistency on a
 
    installing
    release-notes
+   unistalling
 
 .. include:: .res/replace.txt
 
