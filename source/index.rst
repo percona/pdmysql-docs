@@ -58,11 +58,11 @@ Percona Distribution for MySQL |version| Documentation
 What deployment variant to choose?
 ================================================================================
 
-The **Percona Server-based deployment** with `asynchronous replication <https://dev.mysql.com/doc/refman/8.0/en/replication.html>`_ utilizes the primary / secondary replication model. It enables you to create geographically distributed infrastructures with the support for disaster recovery. However, this deployment variant does not guarantee data consistency on all nodes at the given moment and provides high availability  of up to 4 nines. 
+The **Percona Server-based deployment variant** with `asynchronous replication <https://dev.mysql.com/doc/refman/8.0/en/replication.html>`_ utilizes the primary / secondary replication model. It enables you to create geographically distributed infrastructures with the support for disaster recovery. However, this deployment variant does not guarantee data consistency on all nodes at the given moment and provides high availability  of up to 4 nines. 
 
-The **Percona Server-based deployment** with `Group Replication <https://dev.mysql.com/doc/refman/8.0/en/group-replication.html>`_ enables you to create fault-tolerant systems with redundancy by replicating the system state to a set of servers. |PS|-based deployment with Group Replication  offers a high grade of high availability (4-5 nines) and almost instant fail over when associated with a proxy.  
+The **Percona Server-based deployment variant** with `Group Replication <https://dev.mysql.com/doc/refman/8.0/en/group-replication.html>`_ enables you to create fault-tolerant systems with redundancy by replicating the system state to a set of servers. |PS|-based deployment with Group Replication  offers a high grade of high availability (4-5 nines) and almost instant fail over when associated with a proxy.  
 
-The **Percona XtraDB Cluster-based deployment** guarantees data consistency on all nodes and zero data loss. The Percona XtraDB Cluster-based deployment provides a high grade of high availability  (4-5 nines) and almost instant fail over.
+The **Percona XtraDB Cluster-based deployment variant** guarantees data consistency on all nodes and zero data loss. The Percona XtraDB Cluster-based deployment provides a high grade of high availability  (4-5 nines) and almost instant fail over.
 
 .. seealso::
 
@@ -74,8 +74,8 @@ The **Percona XtraDB Cluster-based deployment** guarantees data consistency on a
    :maxdepth: 1
 
    installing
-   release-notes
    unistalling
+   release-notes
 
 .. include:: .res/replace.txt
 
