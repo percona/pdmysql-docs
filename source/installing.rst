@@ -30,6 +30,7 @@ Installing |pdmysql|
 |pdmysql| is only available for the x86_64 platform (also
 known as amd64).
 
+.. _repo-overview:
 
 Overview
 ================================================================================
