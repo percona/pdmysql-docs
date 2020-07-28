@@ -70,11 +70,32 @@ The **Percona XtraDB Cluster-based deployment variant** guarantees data consiste
        - `MySQL High Availability On-Premises: A Geographically Distributed Scenario <https://www.percona.com/blog/2018/11/15/mysql-high-availability-on-premises-a-geographically-distributed-scenario/>`_
        - `Choosing MySQL High Availability Solutions <https://www.percona.com/blog/2016/06/07/choosing-mysql-high-availability-solutions/>`_
 
+Installation and Upgrade
+========================
+
 .. toctree::
    :maxdepth: 1
+   :glob:
 
    installing
-   unistalling
+   minor-upgrade
+
+Uninstall |pdmysql|
+====================
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   uninstalling
+
+Release Notes
+======================
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
    release-notes
 
 .. include:: .res/replace.txt
