@@ -75,9 +75,9 @@ We recommend to use the ``setup`` subcommand of |percona-release| to enable the 
    .. code-block:: bash
    
       $ #For PS-based deployment
-      $ sudo percona-release setup pdps-8.0.19
+      $ sudo percona-release setup pdps-8.0.20
       $ #For PXC-based deployment
-      $ sudo percona-relase setup pdpxc-8.0.19
+      $ sudo percona-relase setup pdpxc-8.0.20
 
 Make sure to run |percona-release| as root or via |sudo|. For the
 sake of convenience, all commands that require elevated privileges start with
