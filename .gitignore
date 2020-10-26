@@ -4,3 +4,4 @@ source/ext/psdom.pyc
 *~
 .DS_Store
 source/ext/__pycache__
+percona-doc-utils-master/*
