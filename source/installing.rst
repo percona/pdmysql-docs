@@ -8,27 +8,7 @@ Installing |pdmysql|
    :local:
    :depth: 2
 
-|pdmysql| packages are available in |deb| and |rpm| formats for these supported platforms: 
-
-.. list-table:: Supported Linux platforms
-   :widths: 30 30
-   :header-rows: 1
- 
-   * - DEB-based platforms
-     - RPM-based platforms
-   * - Ubuntu 16.04
-     - |centos| and |RHEL| 7
-   * - Ubuntu 18.04
-     - |RHEL| 8
-   * - Ubuntu 20.04
-     - 
-   * - Debian 9 (stretch)
-     - 
-   * - Debian 10 (buster)
-     -
-
-|pdmysql| is only available for the x86_64 platform (also
-known as amd64).
+|pdmysql| packages are available in |deb| and |rpm| formats for the most 64-bit Linux distributions. Find the full list of supported platforms on the `Percona Software and Platform Lifecycle <https://www.percona.com/services/policies/percona-software-support-lifecycle#mysql>`_ page.
 
 .. _repo-overview:
 
