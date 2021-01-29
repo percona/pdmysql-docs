@@ -162,6 +162,13 @@ html_theme_path = ['.', './percona-theme']
 # "<project> v<release> documentation" by default.
 #
 
+# Redirect info for Edit on Github link
+html_context = {
+    'repo_name': '/percona/pdmysql-docs',
+    'repo_url': 'https://github.com/percona/pdmysql-docs',
+    'edit_uri': 'edit/8.0/source'
+}
+
 html_title = ' '.join([project, version, 'Documentation'])
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
