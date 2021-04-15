@@ -1,0 +1,31 @@
+{% extends "!layout.html" %}
+
+{ # Adds the "Last updated label" at the bottom of the page # }
+	{%- block relbar2 %}
+		{%- if gitstamp %} 
+		<div class="small">
+			<p><i class="fas fa-sync-alt"></i>
+			Last updated on {{ gitstamp }}. </p>
+		</div>
+		{%- endif %}
+		{{ super() }}
+	{%- endblock%}
+
+{#### 'Edit this page' links #}
+{% macro edit_report() %}
+{%- block rootrellink %}
+{{ super() }}
+{% if repo_url|e %}
+<div class="small">
+    <ul class="list-inline">
+        <li class="pull-right">
+            <a href="{{ repo_url }}/{{ edit_uri }}/{{ pagename }}.rst" target="_blank">
+                <i class="fa fa-github"></i>
+                    Edit this page
+            </a>
+        </li>
+    </ul>
+</div>
+{% endif %}
+{%- endblock %}
+{% endmacro %}
