@@ -37,6 +37,10 @@ help:
 clean:
 	-rm -rf $(BUILDDIR)/*
 
+ghpages: html
+	@cp -a build/html/. ./docs
+	@touch docs/.nojekyll
+
 html:
 	@echo "Downloading percona-theme ..."
 	@wget -O percona-theme.tar.gz https://www.percona.com/docs/theme-1-4/percona-server/5.6

@@ -1,0 +1,292 @@
+
+
+
+    <title>Uninstalling Percona Distribution for MySQL &mdash; Percona Distribution for MySQL 8.0 Documentation</title>
+    
+  <head>
+    
+    
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '8.0.22',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Percona Distribution for MySQL 8.0 Documentation" href="index.html" />
+    <link rel="next" title="Release Notes" href="release-notes.html" />
+    <link rel="prev" title="Upgrading Percona Distribution for MySQL" href="minor-upgrade.html" /> 
+  </head>
+  <body>
+    <div class="container">  
+
+    <div class="document row">
+      <div class="documentwrapper col-md-9 col-md-push-3">
+    <div class="related row">
+      
+      <ul class="nav nav-pills">
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="release-notes.html" title="Release Notes"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="minor-upgrade.html" title="Upgrading Percona Distribution for MySQL"
+             accesskey="P">previous</a></li>
+        <li><a href="index.html">Percona Distribution for MySQL 8.0</a></li> 
+      </ul>
+    </div>
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="uninstalling-pdmysql">
+<span id="pdmysql-uninstall"></span><h1>Uninstalling Percona Distribution for MySQL<a class="headerlink" href="#uninstalling-pdmysql" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#uninstalling-ps-based-deployment-of-pdmysql" id="id5">Uninstalling <em>Percona Server for MySQL</em>-based deployment of Percona Distribution for MySQL</a></p>
+<ul>
+<li><p><a class="reference internal" href="#on-debian-ubuntu" id="id6">On Debian / Ubuntu</a></p></li>
+<li><p><a class="reference internal" href="#on-rhel-centos" id="id7">On Red Hat Enterprise Linux / CentOS</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#uninstalling-pxc-based-deployment-of-pdmysql" id="id8">Uninstalling <em>Percona XtraDB Cluster</em>-based deployment of Percona Distribution for MySQL</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id9">On Debian / Ubuntu</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id10">On Red Hat Enterprise Linux / CentOS</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>To uninstall Percona Distribution for MySQL, stop the <code class="docutils literal notranslate"><span class="pre">mysql</span></code> service and remove all the installed packages using the package manager of your operating system. Optionally, disable Percona repository.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Should you need the data files later, back up your data before uninstalling Percona Distribution for MySQL.</p>
+</div>
+<div class="section" id="uninstalling-ps-based-deployment-of-pdmysql">
+<h2><a class="toc-backref" href="#id5">Uninstalling <em>Percona Server for MySQL</em>-based deployment of Percona Distribution for MySQL</a><a class="headerlink" href="#uninstalling-ps-based-deployment-of-pdmysql" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Run all commands as root or via <strong class="program">sudo</strong>.</p>
+</div>
+<div class="section" id="on-debian-ubuntu">
+<h3><a class="toc-backref" href="#id6">On Debian / Ubuntu</a><a class="headerlink" href="#on-debian-ubuntu" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Stop the <code class="docutils literal notranslate"><span class="pre">mysql</span></code> service.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo systemctl stop mysql
+</pre></div>
+</div>
+</li>
+<li><p>Remove <em>Percona Server for MySQL</em>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get remove percona-server*
+</pre></div>
+</div>
+</li>
+<li><p>Remove the components. Use the commands below to remove the required
+components.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="c1">#Remove Percona XtraBackup</span>
+$ sudo apt-get remove percona-xtrabackup-80
+$ <span class="c1">#Remove Percona Toolkit</span>
+$ sudo apt-get remove percona-toolkit
+$ <span class="c1">#Remove Orchestrator</span>
+$ sudo apt-get remove percona-orchestrator*
+$ <span class="c1">#Remove MySQL Shell</span>
+$ sudo apt-get remove percona-mysql-shell
+$ <span class="c1">#Remove ProxySQL</span>
+$ sudo apt-get remove proxysql2
+$ <span class="c1">#Remove MySQL Router</span>
+$ sudo apt-get remove percona-mysql-router
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="on-rhel-centos">
+<h3><a class="toc-backref" href="#id7">On Red Hat Enterprise Linux / CentOS</a><a class="headerlink" href="#on-rhel-centos" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Stop the <code class="docutils literal notranslate"><span class="pre">mysql</span></code> service.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo systemctl stop mysql
+</pre></div>
+</div>
+</li>
+<li><p>Remove <em>Percona Server for MySQL</em>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo yum remove percona-server*
+</pre></div>
+</div>
+</li>
+<li><p>Remove the components. Use the commands below to remove the required
+components.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="c1">#Remove Percona XtraBackup</span>
+$ sudo yum remove percona-xtrabackup-80
+$ <span class="c1">#Remove Percona Toolkit</span>
+$ sudo yum remove percona-toolkit
+$ <span class="c1">#Remove Orchestrator</span>
+$ sudo yum remove percona-orchestrator*
+$ <span class="c1">#Remove MySQL Shell</span>
+$ sudo yum remove percona-mysql-shell
+$ <span class="c1">#Remove ProxySQL</span>
+$ sudo yum remove proxysql2
+$ <span class="c1">#Remove MySQL Router</span>
+$ sudo yum remove percona-mysql-router
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p>Uninstall <em>Percona Server for MySQL</em>:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.percona.com/doc/percona-server/8.0/installation/apt_repo.html#unRemoveing-percona-server">On Debian and Ubuntu</a></p></li>
+<li><p><a class="reference external" href="https://www.percona.com/doc/percona-server/8.0/installation/yum_repo.html#unRemoveing-percona-server">On Red Hat Enterprise Linux and CentOS</a></p></li>
+</ul>
+</li>
+<li><p>Uninstall <em>Percona XtraBackup</em>:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.percona.com/doc/percona-xtrabackup/8.0/installation/apt_repo.html#uninstalling-percona-xtrabackup">On Debian and Ubuntu</a></p></li>
+<li><p><a class="reference external" href="https://www.percona.com/doc/percona-xtrabackup/8.0/installation/yum_repo.html#uninstalling-percona-xtrabackup">On Red Hat Enterprise Linux and CentOS</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="uninstalling-pxc-based-deployment-of-pdmysql">
+<h2><a class="toc-backref" href="#id8">Uninstalling <em>Percona XtraDB Cluster</em>-based deployment of Percona Distribution for MySQL</a><a class="headerlink" href="#uninstalling-pxc-based-deployment-of-pdmysql" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Run all commands as root or via <strong class="program">sudo</strong>.</p>
+</div>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id9">On Debian / Ubuntu</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Stop the <code class="docutils literal notranslate"><span class="pre">mysql</span></code> service.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo systemctl stop mysql
+</pre></div>
+</div>
+</li>
+<li><p>Remove <em>Percona XtraDB Cluster</em>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get remove percona-xtradb-cluster
+</pre></div>
+</div>
+</li>
+<li><p>Remove the components. Use the commands below to remove the required
+components.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="c1">#Remove Percona XtraBackup</span>
+$ sudo apt-get remove percona-xtrabackup-80
+$ <span class="c1">#Remove Percona Toolkit</span>
+$ sudo apt-get remove percona-toolkit
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id10">On Red Hat Enterprise Linux / CentOS</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Stop the <code class="docutils literal notranslate"><span class="pre">mysql</span></code> service.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo systemctl stop mysql
+</pre></div>
+</div>
+</li>
+<li><p>Remove <em>Percona Server for MySQL</em>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo yum remove percona-xtradb-cluster
+</pre></div>
+</div>
+</li>
+<li><p>Remove the components. Use the commands below to remove the required
+components.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="c1">#Remove Percona XtraBackup</span>
+$ sudo yum remove percona-xtrabackup-80
+$ <span class="c1">#Remove Percona Toolkit</span>
+$ sudo yum remove percona-toolkit
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+    <div class="related row">
+      
+      <ul class="nav nav-pills">
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="release-notes.html" title="Release Notes"
+             >next</a></li>
+        <li class="right" >
+          <a href="minor-upgrade.html" title="Upgrading Percona Distribution for MySQL"
+             >previous</a></li>
+        <li><a href="index.html">Percona Distribution for MySQL 8.0</a></li> 
+      </ul>
+    </div>
+      </div>
+      <div class="sphinxsidebar  col-md-3 col-md-pull-9">
+        <div class="sphinxsidebarwrapper">
+  
+          {@ product_logo @}          
+
+          {@ product_pdf_download @}
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Uninstalling Percona Distribution for MySQL</a><ul>
+<li><a class="reference internal" href="#uninstalling-ps-based-deployment-of-pdmysql">Uninstalling <em>Percona Server for MySQL</em>-based deployment of Percona Distribution for MySQL</a><ul>
+<li><a class="reference internal" href="#on-debian-ubuntu">On Debian / Ubuntu</a></li>
+<li><a class="reference internal" href="#on-rhel-centos">On Red Hat Enterprise Linux / CentOS</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#uninstalling-pxc-based-deployment-of-pdmysql">Uninstalling <em>Percona XtraDB Cluster</em>-based deployment of Percona Distribution for MySQL</a><ul>
+<li><a class="reference internal" href="#id3">On Debian / Ubuntu</a></li>
+<li><a class="reference internal" href="#id4">On Red Hat Enterprise Linux / CentOS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h3>This Page</h3>
+<ul class="this-page-menu">
+<li><a href="_sources/uninstalling.rst.txt" rel="nofollow">Show Source</a></li>
+{@ product_this_page @}
+</ul>
+<a href="https://github.com/percona/pdmysql-docs/edit/8.0/source/uninstalling.rst" target="_blank">
+    <i class="fa fa-github"></i>
+    Edit this page
+</a>
+
+
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="minor-upgrade.html"
+                        title="previous chapter">Upgrading Percona Distribution for MySQL</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="release-notes.html"
+                        title="next chapter">Release Notes</a></p>
+          {@ product_series @}
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <!-- div class="footer">
+        &copy; Copyright Percona LLC and/or its affiliates 2009-2021.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.5.4.
+    </div -->
+  </div>
+  </body>

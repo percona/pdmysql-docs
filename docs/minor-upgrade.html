@@ -1,0 +1,162 @@
+
+
+
+    <title>Upgrading Percona Distribution for MySQL &mdash; Percona Distribution for MySQL 8.0 Documentation</title>
+    
+  <head>
+    
+    
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '8.0.22',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Percona Distribution for MySQL 8.0 Documentation" href="index.html" />
+    <link rel="next" title="Uninstalling Percona Distribution for MySQL" href="uninstalling.html" />
+    <link rel="prev" title="Installing Percona Distribution for MySQL" href="installing.html" /> 
+  </head>
+  <body>
+    <div class="container">  
+
+    <div class="document row">
+      <div class="documentwrapper col-md-9 col-md-push-3">
+    <div class="related row">
+      
+      <ul class="nav nav-pills">
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="uninstalling.html" title="Uninstalling Percona Distribution for MySQL"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="installing.html" title="Installing Percona Distribution for MySQL"
+             accesskey="P">previous</a></li>
+        <li><a href="index.html">Percona Distribution for MySQL 8.0</a></li> 
+      </ul>
+    </div>
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="upgrading-pdmysql">
+<span id="upgrade-minor-pdmysql"></span><h1>Upgrading Percona Distribution for MySQL<a class="headerlink" href="#upgrading-pdmysql" title="Permalink to this headline">¶</a></h1>
+<p>Minor releases include bug fixes and feature enhancements. We recommend to have Percona Distribution for MySQL updated to the latest version.</p>
+<p>Though minor releases don’t change the behavior, even a minor upgrade is a risky process. We recommend to back up your data before upgrading.</p>
+<p>As with installing Percona Distribution for MySQL, the recommended way to upgrade it is from Percona repositories.</p>
+<div class="section" id="enable-percona-repository">
+<h2>Enable Percona repository<a class="headerlink" href="#enable-percona-repository" title="Permalink to this headline">¶</a></h2>
+<p>Percona repositories are enabled using the <strong class="program">percona-release</strong> utility. Install <strong class="program">percona-release</strong> if you haven’t done it already. Otherwise, update it to the latest version. Please refer to <a class="reference external" href="https://www.percona.com/doc/percona-repo-config/percona-release.html">Percona repositories documentation</a> for installation and update instructions.</p>
+<p>The Major Release repository automatically includes new version packages of Percona Distribution for MySQL. If you installed Percona Distribution for MySQL from a Minor Release repository, enable the new version repository. For more information about Percona Distribution for MySQL repositories, refer to <a class="reference internal" href="installing.html#repo-overview"><span class="std std-ref">Repository overview</span></a>.</p>
+</div>
+<div class="section" id="upgrading-ps-based-deployment-of-pdmysql">
+<h2>Upgrading <em>Percona Server for MySQL</em>-based deployment of Percona Distribution for MySQL<a class="headerlink" href="#upgrading-ps-based-deployment-of-pdmysql" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Run all commands as root or via <strong class="program">sudo</strong>.</p>
+</div>
+<p>The upgrade steps are:</p>
+<ol class="arabic simple">
+<li><p>Stop <code class="docutils literal notranslate"><span class="pre">mysql</span></code> service: <code class="code bash docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">mysql</span> <span class="pre">stop</span></code></p></li>
+<li><p>Install new version packages. Please refer to <a class="reference internal" href="installing.html#installation"><span class="std std-ref">Installing Percona Distribution for MySQL</span></a> for installation instructions relevant to your operating system.</p></li>
+<li><p>Restart <code class="docutils literal notranslate"><span class="pre">mysql</span></code> service: <code class="code bash docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">mysql</span> <span class="pre">start</span></code></p></li>
+</ol>
+</div>
+<div class="section" id="upgrading-pxc-based-deployment-of-pdmysql">
+<h2>Upgrading <em>Percona XtraDB Cluster</em>-based deployment of Percona Distribution for MySQL<a class="headerlink" href="#upgrading-pxc-based-deployment-of-pdmysql" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Run all commands as root or via <strong class="program">sudo</strong>.</p>
+</div>
+<p>To upgrade <em>Percona XtraDB Cluster</em>, complete these steps sequentially on all nodes:</p>
+<ol class="arabic simple">
+<li><p>Make sure that all <em>Percona XtraDB Cluster</em> nodes are in sync.</p></li>
+<li><p>Stop <code class="docutils literal notranslate"><span class="pre">mysql</span></code> service: <code class="code bash docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">mysql</span> <span class="pre">stop</span></code></p></li>
+<li><p>Install new version packages. Please refer to <a class="reference internal" href="installing.html#installation"><span class="std std-ref">Installing Percona Distribution for MySQL</span></a> for installation instructions relevant to your operating system.</p></li>
+<li><p>Back up the <code class="file docutils literal notranslate"><span class="pre">grastate.dat</span></code> file</p></li>
+<li><p>Start <code class="docutils literal notranslate"><span class="pre">mysql</span></code> service: <code class="code bash docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">mysql</span> <span class="pre">start</span></code></p></li>
+</ol>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://www.percona.com/doc/percona-xtradb-cluster/LATEST/howtos/upgrade_guide.html#minor-upgrade">Upgrading Percona XtraDB Cluster</a></p>
+</div>
+<p>To upgrade the components, refer to <a class="reference internal" href="installing.html#installation"><span class="std std-ref">Installing Percona Distribution for MySQL</span></a> for installation instructions relevant to your operating system.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+    <div class="related row">
+      
+      <ul class="nav nav-pills">
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="uninstalling.html" title="Uninstalling Percona Distribution for MySQL"
+             >next</a></li>
+        <li class="right" >
+          <a href="installing.html" title="Installing Percona Distribution for MySQL"
+             >previous</a></li>
+        <li><a href="index.html">Percona Distribution for MySQL 8.0</a></li> 
+      </ul>
+    </div>
+      </div>
+      <div class="sphinxsidebar  col-md-3 col-md-pull-9">
+        <div class="sphinxsidebarwrapper">
+  
+          {@ product_logo @}          
+
+          {@ product_pdf_download @}
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Upgrading Percona Distribution for MySQL</a><ul>
+<li><a class="reference internal" href="#enable-percona-repository">Enable Percona repository</a></li>
+<li><a class="reference internal" href="#upgrading-ps-based-deployment-of-pdmysql">Upgrading <em>Percona Server for MySQL</em>-based deployment of Percona Distribution for MySQL</a></li>
+<li><a class="reference internal" href="#upgrading-pxc-based-deployment-of-pdmysql">Upgrading <em>Percona XtraDB Cluster</em>-based deployment of Percona Distribution for MySQL</a></li>
+</ul>
+</li>
+</ul>
+
+<h3>This Page</h3>
+<ul class="this-page-menu">
+<li><a href="_sources/minor-upgrade.rst.txt" rel="nofollow">Show Source</a></li>
+{@ product_this_page @}
+</ul>
+<a href="https://github.com/percona/pdmysql-docs/edit/8.0/source/minor-upgrade.rst" target="_blank">
+    <i class="fa fa-github"></i>
+    Edit this page
+</a>
+
+
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="installing.html"
+                        title="previous chapter">Installing Percona Distribution for MySQL</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="uninstalling.html"
+                        title="next chapter">Uninstalling Percona Distribution for MySQL</a></p>
+          {@ product_series @}
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <!-- div class="footer">
+        &copy; Copyright Percona LLC and/or its affiliates 2009-2021.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.5.4.
+    </div -->
+  </div>
+  </body>
