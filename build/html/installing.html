@@ -1,0 +1,369 @@
+
+
+
+    <title>Installing Percona Distribution for MySQL &mdash; Percona Distribution for MySQL 8.0 Documentation</title>
+    
+  <head>
+    
+    
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '8.0.22',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Percona Distribution for MySQL 8.0 Documentation" href="index.html" />
+    <link rel="next" title="Upgrading Percona Distribution for MySQL" href="minor-upgrade.html" />
+    <link rel="prev" title="Percona Distribution for MySQL 8.0 Documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="container">  
+
+    <div class="document row">
+      <div class="documentwrapper col-md-9 col-md-push-3">
+    <div class="related row">
+      
+      <ul class="nav nav-pills">
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="minor-upgrade.html" title="Upgrading Percona Distribution for MySQL"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="index.html" title="Percona Distribution for MySQL 8.0 Documentation"
+             accesskey="P">previous</a></li>
+        <li><a href="index.html">Percona Distribution for MySQL 8.0</a></li> 
+      </ul>
+    </div>
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="installing-pdmysql">
+<span id="installation"></span><h1>Installing Percona Distribution for MySQL<a class="headerlink" href="#installing-pdmysql" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id6">Overview</a></p></li>
+<li><p><a class="reference internal" href="#prerequisites" id="id7">Prerequisites</a></p></li>
+<li><p><a class="reference internal" href="#enable-percona-repository" id="id8">Enable Percona repository</a></p></li>
+<li><p><a class="reference internal" href="#install-pdmysql" id="id9">Install Percona Distribution for MySQL</a></p>
+<ul>
+<li><p><a class="reference internal" href="#install-ps-based-deployment-on-debian-ubuntu" id="id10">Install <em>Percona Server for MySQL</em>-based deployment on Debian / Ubuntu</a></p></li>
+<li><p><a class="reference internal" href="#install-ps-based-deployment-on-rhel-centos" id="id11">Install <em>Percona Server for MySQL</em>-based deployment on Red Hat Enterprise Linux / CentOS</a></p></li>
+<li><p><a class="reference internal" href="#install-pxc-based-deployment-on-debian-ubuntu" id="id12">Install <em>Percona XtraDB Cluster</em>-based deployment on Debian / Ubuntu</a></p></li>
+<li><p><a class="reference internal" href="#install-pxc-based-deployment-on-rhel-centos" id="id13">Install <em>Percona XtraDB Cluster</em>-based deployment on Red Hat Enterprise Linux / CentOS</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Percona Distribution for MySQL packages are available in <strong class="program">DEB</strong> and <strong class="program">RPM</strong> formats for the most 64-bit Linux distributions. Find the full list of supported platforms on the <a class="reference external" href="https://www.percona.com/services/policies/percona-software-support-lifecycle#mysql">Percona Software and Platform Lifecycle</a> page.</p>
+<div class="section" id="overview">
+<span id="repo-overview"></span><h2><a class="toc-backref" href="#id6">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Like other Percona products, we recommend to install Percona Distribution for MySQL from Percona
+repositories using the <strong class="program">percona-release</strong> utility.</p>
+<p><em>Percona</em> provides two repositories for every deployment variant of Percona Distribution for MySQL.</p>
+<p>The <em>Major Release repository</em> includes the latest version packages (e.g. <code class="docutils literal notranslate"><span class="pre">pdps-8.0</span></code> and <code class="docutils literal notranslate"><span class="pre">pdpxc-8.0</span></code>). Whenever a package is updated, the package manager of your operating system detects that and prompts you to update. As long as you update all Distribution packages at the same time, you can ensure that the packages you’re using have been tested and verified by <em>Percona</em>. Installing Percona Distribution for MySQL from the Major Release Repository is the recommended method.</p>
+<p>The <em>Minor Release repository</em> includes a particular minor release of the database and all of the packages that were tested and verified to work with that minor release (e.g. <code class="docutils literal notranslate"><span class="pre">pdps-8.0.19</span></code> and <code class="docutils literal notranslate"><span class="pre">pdpxc-8.0.19</span></code>). You may choose to install Percona Distribution for MySQL from the Minor Release repository if you have decided to standardize on a particular release which has passed rigorous testing procedures and which has been verified to work with your applications. This allows you to deploy to a new host and ensure that you’ll be using the same version of all the Distribution packages, even if newer releases exist in other repositories.</p>
+<p>The disadvantage of using a Minor Release repository is that you are locked in this particular release. When potentially critical fixes are released in a later minor version of the database, you will not be prompted for an upgrade by the package manager of your operating system. You would need to change the configured repository in order to install the upgrade.</p>
+</div>
+<div class="section" id="prerequisites">
+<h2><a class="toc-backref" href="#id7">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>Install <strong class="program">percona-release</strong> if you haven’t done it already. Otherwise, update it to the latest version. Please refer to <a class="reference external" href="https://www.percona.com/doc/percona-repo-config/percona-release.html">Percona repositories documentation</a> for installation or update instructions.</p>
+</div>
+<div class="section" id="enable-percona-repository">
+<h2><a class="toc-backref" href="#id8">Enable Percona repository</a><a class="headerlink" href="#enable-percona-repository" title="Permalink to this headline">¶</a></h2>
+<p>We recommend to use the <code class="docutils literal notranslate"><span class="pre">setup</span></code> subcommand of <strong class="program">percona-release</strong> to enable the desired repository.</p>
+<ul>
+<li><p>For <em>Percona Server for MySQL</em>-based deployment, use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo percona-release setup pdps-8.0
+</pre></div>
+</div>
+</li>
+<li><p>For <em>Percona XtraDB Cluster</em>-based deployment, use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo percona-release setup pdpxc-8.0
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>To enable the minor version repository, use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="c1">#For PS-based deployment</span>
+$ sudo percona-release setup pdps-8.0.20
+$ <span class="c1">#For PXC-based deployment</span>
+$ sudo percona-relase setup pdpxc-8.0.20
+</pre></div>
+</div>
+</div>
+<p>Make sure to run <strong class="program">percona-release</strong> as root or via <strong class="program">sudo</strong>. For the
+sake of convenience, all commands that require elevated privileges start with
+<strong class="program">sudo</strong> in the following procedures.</p>
+</div>
+<div class="section" id="install-pdmysql">
+<h2><a class="toc-backref" href="#id9">Install Percona Distribution for MySQL</a><a class="headerlink" href="#install-pdmysql" title="Permalink to this headline">¶</a></h2>
+<p>Install the selected deployment of Percona Distribution for MySQL using the commands of the package manager of your operating system.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Run all commands as root or via <strong class="program">sudo</strong>.</p>
+</div>
+<div class="section" id="install-ps-based-deployment-on-debian-ubuntu">
+<h3><a class="toc-backref" href="#id10">Install <em>Percona Server for MySQL</em>-based deployment on Debian / Ubuntu</a><a class="headerlink" href="#install-ps-based-deployment-on-debian-ubuntu" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Install <em>Percona Server for MySQL</em>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install percona-server-server
+</pre></div>
+</div>
+</li>
+<li><p>Install the components. Use the commands below to install the required components:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="c1">#Install Percona XtraBackup</span>
+$ sudo apt-get install percona-xtrabackup-80
+$ <span class="c1">#Install Percona Toolkit</span>
+$ sudo apt-get install percona-toolkit
+$ <span class="c1">#Install Orchestrator</span>
+$ sudo apt-get install percona-orchestrator percona-orchestrator-cli percona-orchestrator-client
+$ <span class="c1">#Install MySQL Shell</span>
+$ sudo apt-get install percona-mysql-shell
+$ <span class="c1">#Install ProxySQL</span>
+$ sudo apt-get install proxysql2
+$ <span class="c1">#Install MySQL Router</span>
+$ sudo apt-get install percona-mysql-router
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt>Percona Documentation:</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://www.percona.com/doc/percona-server/8.0/installation/apt_repo.html">Installing Percona Server for MySQL on Debian and Ubuntu</a></p></li>
+<li><p><a class="reference external" href="https://www.percona.com/doc/percona-xtrabackup/8.0/installation/apt_repo.html">Installing Percona XtraBackup on Debian and Ubuntu</a></p></li>
+<li><p><a class="reference external" href="https://www.percona.com/doc/percona-toolkit/2.2/installation.html">Installing Percona Toolkit</a></p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="install-ps-based-deployment-on-rhel-centos">
+<h3><a class="toc-backref" href="#id11">Install <em>Percona Server for MySQL</em>-based deployment on Red Hat Enterprise Linux / CentOS</a><a class="headerlink" href="#install-ps-based-deployment-on-rhel-centos" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-platform-specific-notes admonition">
+<p class="admonition-title">Platform Specific Notes</p>
+<p>On CentOS 7, install the epel-release package. It includes the dependencies required to install Orchestrator. Use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo yum -y install epel-release
+</pre></div>
+</div>
+</div>
+<ol class="arabic">
+<li><p>Install <em>Percona Server for MySQL</em>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo yum install percona-server-server
+</pre></div>
+</div>
+</li>
+<li><p>Install the components. Use the commands below to install the required components:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="c1">#Install Orchestrator</span>
+$ sudo yum install percona-orchestrator percona-orchestrator-cli percona-orchestrator-client
+$ <span class="c1">#Install Percona XtraBackup</span>
+$ sudo yum install percona-xtrabackup-80
+$ <span class="c1">#Install Percona Toolkit</span>
+$ sudo yum install percona-toolkit
+$ <span class="c1">#Install MySQL Shell</span>
+$ sudo yum install percona-mysql-shell
+$ <span class="c1">#Install ProxySQL</span>
+$ sudo yum install proxysql2
+$ <span class="c1">#Install MySQL Router</span>
+$ sudo yum install percona-mysql-router
+</pre></div>
+</div>
+</li>
+</ol>
+<p class="rubric">Running Percona Distribution for MySQL</p>
+<p>Percona Distribution for MySQL is not started automatically on Red Hat Enterprise Linux and CentOS after the installation is complete. Start it manually using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo systemctl start mysql
+</pre></div>
+</div>
+<p>Confirm that the service is running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo systemctl status mysql
+</pre></div>
+</div>
+<p>Stop the service:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo systemctl stop mysql
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt>Percona Documentation:</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://www.percona.com/doc/percona-server/8.0/installation/yum_repo.html">Installing Percona Server for MySQL on Red Hat Enterprise Linux and CentOS</a></p></li>
+<li><p><a class="reference external" href="https://www.percona.com/doc/percona-xtrabackup/8.0/installation/yum_repo.html">Installing Percona XtraBackup on Red Hat Enterprise Linux and CentOS</a></p></li>
+<li><p><a class="reference external" href="https://www.percona.com/doc/percona-toolkit/2.2/installation.html">Installing Percona Toolkit</a></p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="install-pxc-based-deployment-on-debian-ubuntu">
+<h3><a class="toc-backref" href="#id12">Install <em>Percona XtraDB Cluster</em>-based deployment on Debian / Ubuntu</a><a class="headerlink" href="#install-pxc-based-deployment-on-debian-ubuntu" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Install <em>Percona XtraDB Cluster</em>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install percona-xtradb-cluster
+</pre></div>
+</div>
+</li>
+<li><p>Install HAProxy:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install percona-haproxy
+</pre></div>
+</div>
+</li>
+<li><p>Install the components. Use the commands below to install the required components:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="c1">#Install Percona XtraBackup</span>
+$ sudo apt-get install percona-xtrabackup-80
+$ <span class="c1">#Install Percona Toolkit</span>
+$ sudo apt-get install percona-toolkit
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt>Percona Documentation:</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://www.percona.com/doc/percona-xtradb-cluster/8.0/install/apt.html">Installing Percona XtraDB Cluster on Debian and Ubuntu</a></p></li>
+<li><p><a class="reference external" href="https://www.percona.com/doc/percona-xtrabackup/8.0/installation/apt_repo.html">Installing Percona XtraBackup on Debian and Ubuntu</a></p></li>
+<li><p><a class="reference external" href="https://www.percona.com/doc/percona-toolkit/2.2/installation.html">Installing Percona Toolkit</a></p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="install-pxc-based-deployment-on-rhel-centos">
+<h3><a class="toc-backref" href="#id13">Install <em>Percona XtraDB Cluster</em>-based deployment on Red Hat Enterprise Linux / CentOS</a><a class="headerlink" href="#install-pxc-based-deployment-on-rhel-centos" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Install <em>Percona XtraDB Cluster</em>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo yum install percona-xtradb-cluster
+</pre></div>
+</div>
+</li>
+<li><p>Install HAProxy:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo yum install percona-haproxy
+</pre></div>
+</div>
+</li>
+<li><p>Install the components. Use the commands below to install the required components:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="c1">#Install Percona XtraBackup</span>
+$ sudo yum install percona-xtrabackup-80
+$ <span class="c1">#Install Percona Toolkit</span>
+$ sudo yum install percona-toolkit
+</pre></div>
+</div>
+</li>
+</ol>
+<p class="rubric">Running Percona Distribution for MySQL</p>
+<p>Percona Distribution for MySQL is not started automatically on Red Hat Enterprise Linux and CentOS after the installation is complete. Start it manually using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo systemctl start mysql
+</pre></div>
+</div>
+<p>Confirm that the service is running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo systemctl status mysql
+</pre></div>
+</div>
+<p>Stop the service:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo systemctl stop mysql
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt>Percona Documentation:</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://www.percona.com/doc/percona-xtradb-cluster/8.0/install/yum.html">Installing Percona XtraDB Cluster on Red Hat Enterprise Linux and CentOS</a></p></li>
+<li><p><a class="reference external" href="https://www.percona.com/doc/percona-xtrabackup/8.0/installation/yum_repo.html">Installing Percona XtraBackup on Red Hat Enterprise Linux and CentOS</a></p></li>
+<li><p><a class="reference external" href="https://www.percona.com/doc/percona-toolkit/2.2/installation.html">Installing Percona Toolkit</a></p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+    <div class="related row">
+      
+      <ul class="nav nav-pills">
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="minor-upgrade.html" title="Upgrading Percona Distribution for MySQL"
+             >next</a></li>
+        <li class="right" >
+          <a href="index.html" title="Percona Distribution for MySQL 8.0 Documentation"
+             >previous</a></li>
+        <li><a href="index.html">Percona Distribution for MySQL 8.0</a></li> 
+      </ul>
+    </div>
+      </div>
+      <div class="sphinxsidebar  col-md-3 col-md-pull-9">
+        <div class="sphinxsidebarwrapper">
+  
+          {@ product_logo @}          
+
+          {@ product_pdf_download @}
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installing Percona Distribution for MySQL</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#enable-percona-repository">Enable Percona repository</a></li>
+<li><a class="reference internal" href="#install-pdmysql">Install Percona Distribution for MySQL</a><ul>
+<li><a class="reference internal" href="#install-ps-based-deployment-on-debian-ubuntu">Install <em>Percona Server for MySQL</em>-based deployment on Debian / Ubuntu</a></li>
+<li><a class="reference internal" href="#install-ps-based-deployment-on-rhel-centos">Install <em>Percona Server for MySQL</em>-based deployment on Red Hat Enterprise Linux / CentOS</a></li>
+<li><a class="reference internal" href="#install-pxc-based-deployment-on-debian-ubuntu">Install <em>Percona XtraDB Cluster</em>-based deployment on Debian / Ubuntu</a></li>
+<li><a class="reference internal" href="#install-pxc-based-deployment-on-rhel-centos">Install <em>Percona XtraDB Cluster</em>-based deployment on Red Hat Enterprise Linux / CentOS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h3>This Page</h3>
+<ul class="this-page-menu">
+<li><a href="_sources/installing.rst.txt" rel="nofollow">Show Source</a></li>
+{@ product_this_page @}
+</ul>
+<a href="https://github.com/percona/pdmysql-docs/edit/8.0/source/installing.rst" target="_blank">
+    <i class="fa fa-github"></i>
+    Edit this page
+</a>
+
+
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Percona Distribution for MySQL 8.0 Documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="minor-upgrade.html"
+                        title="next chapter">Upgrading Percona Distribution for MySQL</a></p>
+          {@ product_series @}
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <!-- div class="footer">
+        &copy; Copyright Percona LLC and/or its affiliates 2009-2021.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.5.4.
+    </div -->
+  </div>
+  </body>
