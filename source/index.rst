@@ -18,7 +18,7 @@ Percona Distribution for MySQL |version| Documentation
 * `ProxySQL <https://proxysql.com/>`_ is a high performance, high-availability, protocol-aware proxy for |mysql|.
 * `Percona Toolkit <https://www.percona.com/doc/percona-toolkit/3.0/index.html>`_ is the set of scripts to simplify and optimize database operation.
 * `MySQL Shell <https://dev.mysql.com/doc/mysql-shell/8.0/en/>`_ is an advanced client and code editor for MySQL Server.
-* `MySQL Router <https://dev.mysql.com/doc/mysql-router/8.0/en/>`_ is lightweight middleware that provides transparent routing between your application and back-end MySQL Servers.
+* `MySQL Router <https://dev.mysql.com/doc/mysql-router/8.0/en/>`_ is lightweight middleware that provides transparent routing between your application and back-end MySQL servers.
   
 |pdmysql| provides two deployment variants: one is |PS|-based and another one is |PXC|-based. Each deployment is available via its own repository and includes the base server (|PS| or |PXC|) and components.  The table below lists what components are available  with each server:
 
