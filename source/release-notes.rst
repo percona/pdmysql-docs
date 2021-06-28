@@ -5,6 +5,7 @@ Release Notes
 .. toctree::
    :maxdepth: 1
 
+   release-notes-ps-v8.0.25
    release-notes-pxc-v8.0.23
    release-notes-ps-v8.0.23
    release-notes-pxc-v8.0.22
