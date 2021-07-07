@@ -101,5 +101,15 @@ Release Notes
 
    release-notes
 
+========================
+Reference
+========================
+
+.. toctree::
+   :maxdepth: 2
+   
+
+   glossary
+
 .. include:: .res/replace.txt
 
