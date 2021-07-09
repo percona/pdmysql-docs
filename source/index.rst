@@ -8,6 +8,9 @@ Percona Distribution for MySQL |version| Documentation
 
 .. _pdmysql.components:
 
+Components
+===========
+
 |pdmysql| consists of the following **components**:
 
 * `Percona Server for MySQL <https://www.percona.com/doc/percona-server/8.0/index.html>`_ is a drop-in replacement for |mysql-ce| with the enterprise-grade features embedded by Percona.
@@ -62,7 +65,7 @@ The **Percona Server-based deployment variant** with `asynchronous replication <
 
 The **Percona Server-based deployment variant** with `Group Replication <https://dev.mysql.com/doc/refman/8.0/en/group-replication.html>`_ enables you to create fault-tolerant systems with redundancy by replicating the system state to a set of servers. |PS|-based deployment with Group Replication  offers a high grade of high availability (4-5 nines) and almost instant fail over when associated with a proxy.  
 
-The **Percona XtraDB Cluster-based deployment variant** guarantees data consistency on all nodes and zero data loss. The Percona XtraDB Cluster-based deployment provides a high grade of high availability  (4-5 nines) and almost instant fail over.
+The **Percona XtraDB Cluster-based deployment variant** guarantees data consistency on all nodes and zero data loss. The Percona XtraDB Cluster-based deployment provides a high grade of high availability  (4-5 nines) and almost instant failover.
 
 .. seealso::
 
@@ -82,13 +85,23 @@ Installation and Upgrade
    minor-upgrade
 
 ========================
-Uninstall |pdmysql|
+Architecture solutions
+========================
+
+.. toctree::
+   :maxdepth: 1
+
+   pdps-group-replication
+
+========================
+How to
 ========================
 
 .. toctree::
    :maxdepth: 1
    :glob:
 
+   deploy-pdps-group-replication
    uninstalling
 
 ========================
