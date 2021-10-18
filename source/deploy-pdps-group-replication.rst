@@ -65,7 +65,7 @@ Preparation
 
 #. After instances are up and running, check |PS| version on each node:
    
-   .. code-block:: 
+   .. code-block:: mysql
 
       mysql>\s
       --------------
@@ -111,7 +111,7 @@ Step 2. Add Group Replication settings
 
 #. In the ``my.cnf`` configuration file, add the following: 
    
-   .. code-block::
+   .. code-block:: text
 
       #####################
       #Replication + binlog settings

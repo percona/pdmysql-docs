@@ -1,4 +1,4 @@
-.. _pdpxc.release_notes_8.0.23:
+.. _pdpxc.release_notes_8.0.23.upd:
 
 ********************************************************************************
 |pdmysql| 8.0.23 using |PXC| Update
