@@ -11,7 +11,7 @@
 
 |pdmysql| provides two deployment variants: one is based on |PS| and another one is based on |PXC|. 
 
-This release of |pdmysql| is focused on the |PS|-based deployment variant. It  is based on `Percona Server for MySQL 8.0.26-16 <https://www.percona.com/doc/percona-server/8.0/release-notes/Percona-Server-8.0.26-16.html>`_.
+This release of |pdmysql| is focused on the |PS|-based deployment variant. It is based on `Percona Server for MySQL 8.0.26-16 <https://www.percona.com/doc/percona-server/8.0/release-notes/Percona-Server-8.0.26-16.html>`_.
 
 Release Highlights
 ==================
