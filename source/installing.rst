@@ -79,24 +79,45 @@ Install |PS|-based deployment on Debian / Ubuntu
    
    .. code-block:: bash
   
-      $ sudo apt-get install percona-server-server
+      $ sudo apt install percona-server-server
 
 #. Install the components. Use the commands below to install the required components: 
    
+   Install Percona XtraBackup:
+
    .. code-block:: bash
    
-      $ #Install Percona XtraBackup
-      $ sudo apt-get install percona-xtrabackup-80
-      $ #Install Percona Toolkit
-      $ sudo apt-get install percona-toolkit
-      $ #Install Orchestrator
-      $ sudo apt-get install percona-orchestrator percona-orchestrator-cli percona-orchestrator-client
-      $ #Install MySQL Shell
-      $ sudo apt-get install percona-mysql-shell
-      $ #Install ProxySQL
-      $ sudo apt-get install proxysql2
-      $ #Install MySQL Router
-      $ sudo apt-get install percona-mysql-router  
+      $ sudo apt install percona-xtrabackup-80
+   
+   Install Percona Toolkit:
+
+   .. code-block:: bash
+       
+      $ sudo apt install percona-toolkit
+   
+   Install Orchestrator:
+
+   .. code-block:: bash
+
+      $ sudo apt install percona-orchestrator percona-orchestrator-cli percona-orchestrator-client
+   
+   Install MySQL Shell:
+
+   .. code-block:: bash
+
+      $ sudo apt install percona-mysql-shell
+   
+   Install ProxySQL:
+
+   .. code-block:: bash
+
+      $ sudo apt install proxysql2
+   
+   Install MySQL Router:
+
+   .. code-block:: bash
+
+      $ sudo apt install percona-mysql-router  
       
 .. seealso::
 
@@ -125,19 +146,40 @@ Install |PS|-based deployment on |RHEL| / |centos|
 
 #. Install the components. Use the commands below to install the required components: 
    
+   Install Percona XtraBackup
+
    .. code-block:: bash
-   
-      $ #Install Orchestrator
-      $ sudo yum install percona-orchestrator percona-orchestrator-cli percona-orchestrator-client
-      $ #Install Percona XtraBackup
+
       $ sudo yum install percona-xtrabackup-80
-      $ #Install Percona Toolkit
+
+   Install Orchestrator   
+
+   .. code-block:: bash
+      
+      $ sudo yum install percona-orchestrator percona-orchestrator-cli percona-orchestrator-client
+       
+   Install Percona Toolkit
+
+   .. code-block:: bash
+
       $ sudo yum install percona-toolkit
-      $ #Install MySQL Shell
+   
+   Install MySQL Shell:
+
+   .. code-block:: bash
+
       $ sudo yum install percona-mysql-shell
-      $ #Install ProxySQL
+   
+   Install ProxySQL:
+
+   .. code-block:: bash
+
       $ sudo yum install proxysql2
-      $ #Install MySQL Router
+   
+   Install MySQL Router:
+
+   .. code-block:: bash
+
       $ sudo yum install percona-mysql-router  
 
 .. rubric:: Running Percona Distribution for MySQL
@@ -174,24 +216,29 @@ Install |PXC|-based deployment on Debian / Ubuntu
    
    .. code-block:: bash
    
-      $ sudo apt-get install percona-xtradb-cluster
+      $ sudo apt install percona-xtradb-cluster
 
 
 #. Install HAProxy:  
 
    .. code-block:: bash
    
-      $ sudo apt-get install percona-haproxy
+      $ sudo apt install percona-haproxy
 
 #. Install the components. Use the commands below to install the required components:
    
+   Install Percona XtraBackup:
+
    .. code-block:: bash
    
-      $ #Install Percona XtraBackup 
-      $ sudo apt-get install percona-xtrabackup-80
-      $ #Install Percona Toolkit
-      $ sudo apt-get install percona-toolkit
-    
+      $ sudo apt install percona-xtrabackup-80
+   
+   Install Percona Toolkit:
+
+   .. code-block:: bash
+       
+      $ sudo apt install percona-toolkit
+
 .. seealso::
 
    Percona Documentation:
@@ -217,13 +264,19 @@ Install |PXC|-based deployment on |RHEL| / |centos|
       
 #. Install the components. Use the commands below to install the required components:
    
+   Install Percona XtraBackup:
+
    .. code-block:: bash
    
-      $ #Install Percona XtraBackup 
       $ sudo yum install percona-xtrabackup-80
-      $ #Install Percona Toolkit
+   
+   Install Percona Toolkit:
+
+   .. code-block:: bash
+       
       $ sudo yum install percona-toolkit
- 
+
+   
 .. rubric:: Running Percona Distribution for MySQL
 
 |pdmysql| is not started automatically on |RHEL| and |centos| after the installation is complete. Start it manually using the following command:

@@ -34,7 +34,7 @@ On Debian / Ubuntu
    
    .. code-block:: bash
     
-      $ sudo apt-get remove percona-server*
+      $ sudo apt remove percona-server*
 
 #. Remove the components. Use the commands below to remove the required 
    components.
@@ -42,17 +42,17 @@ On Debian / Ubuntu
    .. code-block:: bash
           
       $ #Remove Percona XtraBackup
-      $ sudo apt-get remove percona-xtrabackup-80
+      $ sudo apt remove percona-xtrabackup-80
       $ #Remove Percona Toolkit
-      $ sudo apt-get remove percona-toolkit
+      $ sudo apt remove percona-toolkit
       $ #Remove Orchestrator
-      $ sudo apt-get remove percona-orchestrator* 
+      $ sudo apt remove percona-orchestrator* 
       $ #Remove MySQL Shell
-      $ sudo apt-get remove percona-mysql-shell
+      $ sudo apt remove percona-mysql-shell
       $ #Remove ProxySQL
-      $ sudo apt-get remove proxysql2
+      $ sudo apt remove proxysql2
       $ #Remove MySQL Router
-      $ sudo apt-get remove percona-mysql-router        
+      $ sudo apt remove percona-mysql-router        
    
 On |RHEL| / |centos|
 --------------------------------------------------------------------------------
@@ -118,7 +118,7 @@ On Debian / Ubuntu
    
    .. code-block:: bash
     
-      $ sudo apt-get remove percona-xtradb-cluster
+      $ sudo apt remove percona-xtradb-cluster
 
 #. Remove the components. Use the commands below to remove the required 
    components.
@@ -126,9 +126,9 @@ On Debian / Ubuntu
    .. code-block:: bash
           
       $ #Remove Percona XtraBackup
-      $ sudo apt-get remove percona-xtrabackup-80
+      $ sudo apt remove percona-xtrabackup-80
       $ #Remove Percona Toolkit
-      $ sudo apt-get remove percona-toolkit
+      $ sudo apt remove percona-toolkit
       
 On |RHEL| / |centos|
 --------------------------------------------------------------------------------
