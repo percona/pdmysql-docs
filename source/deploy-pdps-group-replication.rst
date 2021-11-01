@@ -437,12 +437,17 @@ Step 5. Enable high availability for ProxySQL
 
 1. Install ``keepalived`` on each ProxySQL node using the package manager of your operating system:
    
-   .. code-block:: bash
+   * on Debian/Ubuntu:
+   
+     .. code-block:: bash
 
-      #on Debian/Ubuntu
-      $sudo apt-get install -y keepalived
-      #On RHEL/CentOS
-      $ sudo yum install -y keepalived
+        $ sudo apt install -y keepalived
+
+   * On RHEL/CentOS:
+     
+     .. code-block:: bash
+
+        $ sudo yum install -y keepalived
 
 #. Modify the :file:`/etc/keepalived/keepalived.conf` file accordingly to your setup. In our case:
 
