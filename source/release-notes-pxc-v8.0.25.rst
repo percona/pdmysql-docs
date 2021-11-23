@@ -26,11 +26,6 @@ The following is the list of the notable fixes for MySQL 8.0.25, provided by Ora
 * :mysqlbug:`103980`: Fixes the allocation of too much memory when dropping a database with many partitioned tables.
 * :mysqlbug:`103743`: Fixes a slow startup when the tables are encrypted.
 
-The following list are some of the notable fixes for Galera, provided by Codership, and included in |PXC| and |pdmysql|:
-
-* Accepts ``ssl-ca``, ``ssl-cert``, and ``ssl-key`` configuration variables in the SST scripts for ``rsync`` and ``xtrabackup-v2`` SST methods.
-* :wsrepbug:`381`: Disables binary log purging when the ``mysqld`` starts with ``--wsrep-recover`` option.
-
 The following is the list of components supplied with the |PXC|-based deployment variant of |pdmysql|:
 
 .. list-table::
