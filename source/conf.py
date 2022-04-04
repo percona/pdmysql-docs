@@ -35,10 +35,14 @@ sys.path.append(os.path.abspath('ext'))
 author = "Percona LLC and/or its affiliates 2015-2022"
 extensions = ['sphinx.ext.intersphinx', 'sphinx.ext.todo', 
               'sphinx.ext.coverage', 'sphinx.ext.ifconfig', 
-              'sphinx.ext.extlinks']
+              'sphinx.ext.extlinks', 'sphinx_gitstamp', 'sphinx_copybutton']
+
+#Extensions settings
+gitstamp_fmt = '%b %d, %Y'
+copybutton_prompt_text = '$'
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ['_templates/material']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
@@ -109,7 +113,7 @@ exclude_patterns = []
 show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = 'emacs'
 
 rst_prolog = '''
 .. role:: mysql(code)
@@ -149,16 +153,25 @@ extlinks = {'jirabug': ('https://jira.percona.com/browse/%s', ''),
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'percona-theme'
+#html_theme = 'percona-theme'
+html_theme = 'sphinx_material'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    'base_url': 'http://bashtage.github.io/sphinx-material/',
+    'repo_url': 'https://github.com/percona/pdmysql-docs',
+    'repo_name': 'percona/pdmysql-docs',
+    'color_accent': 'grey',
+    'color_primary': 'orange',
+    'google_analytics_account': 'UA-343802-3',
+    'globaltoc_collapse': True
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = ['.', './percona-theme']
+#html_theme_path = ['.', './percona-theme']
 
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
@@ -180,13 +193,13 @@ html_short_title = ' '.join([project, version])
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
 #
-html_logo = 'percona-server-logo.jpg'
+html_logo = '_static/images/percona-logo.svg'
 
 # The name of an image file (relative to this directory) to use as a favicon of
 # the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
 #
-# html_favicon = None
+html_favicon = '_static/images/percona_favicon.ico'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the built-in static files,
@@ -213,7 +226,7 @@ html_static_path = ['_static']
 # Custom sidebar templates, maps document names to template names.
 #
 html_sidebars = {
-        '**': ['localtoc.html', 'sourcelink.html', 'edit.html', 'relations.html', 'searchbox.html'],
+        '**': ['localtoc.html', 'sourcelink.html', 'globaltoc.html', 'searchbox.html'],
         'using/windows': ['windowssidebar.html'],
 }
 
