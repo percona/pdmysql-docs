@@ -1,7 +1,7 @@
 .. _pdpxc.release_notes_8.0.20_update:
 
 ********************************************************************************
-|pdmysql| |version| using |PXC| Update
+|pdmysql| |version| using |PXC| Update |date|
 ********************************************************************************
 
 :Date: |date|

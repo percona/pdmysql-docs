@@ -1,10 +1,10 @@
 .. _pdps.release_notes_8.0.28:
 
 ********************************************************************************
-|pdmysql| 8.0.28 using Percona Server for MySQL
+|pdmysql| 8.0.28 using Percona Server for MySQL (2022-05-12)
 ********************************************************************************
 
-:Date: April 13, 2022
+:Date: May 12, 2022
 :Installation: :ref:`installation`
 
 |pdmysql| is a single solution with the best and most critical enterprise components from the |mysql| open-source community, designed and tested to work together. 
