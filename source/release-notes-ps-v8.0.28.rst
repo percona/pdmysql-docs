@@ -25,6 +25,11 @@ The following lists a number of the bug fixes for *MySQL* 8.0.28, provided by Or
 
 Find the full list of bug fixes and changes in the `MySQL 8.0.28 Release Notes <https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-28.html>`__.
 
+Orchestrator
+=================================================
+
+:jirabug:`DISTMYSQL-141`: In complicated environments, such as 3 or more datacenters, or when each server has more than 2 intermediary masters, Orchestrator could miss replication delays in one or more datacenters. This was happening due to a hard-coded limitation of two intermediary masters to check for the replication delay. This is now fixed.
+
 ---------------------------------------------
 
 The following is the list of components supplied with |PS|-based deployment variant of |pdmysql|:  
