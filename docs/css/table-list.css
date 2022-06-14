@@ -1,0 +1,28 @@
+div[class~="t"] > ul {
+  display: table;
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+div[class~="t"] > ul > li {
+    display: table-row-group;
+}
+
+div[class~="t"]  > ul > li:nth-child(even) {
+    background-color: #eee;
+}
+
+div[class~="t"]  > ul > li:nth-child(odd) {
+    background-color: #fff;
+}
+
+div[class~="t"] > ul > li > ul {
+    display: table-row;
+}
+
+div[class~="t"] > ul > li > ul > li {
+  display: table-cell;
+  padding: 0 .25em;
+}
