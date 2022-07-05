@@ -1,3 +1,0 @@
-.. important::
-
-   Run all commands as root or via |sudo|.
