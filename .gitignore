@@ -5,3 +5,4 @@ source/ext/psdom.pyc
 .DS_Store
 source/ext/__pycache__
 source/__pycache__/
+site/
