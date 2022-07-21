@@ -14,6 +14,13 @@ Like other Percona products, we recommend to install Percona Distribution for My
 
     The disadvantage of using a Minor Release repository is that you are locked in this particular release. When potentially critical fixes are released in a later minor version of the database, you will not be prompted for an upgrade by the package manager of your operating system. You would need to change the configured repository in order to install the upgrade.
 
+## Install GnuPG and curl
+Install `gnupg2` and `curl`, if not already installed. Those packages are required for installing Percona Distribution for MySQL.
+
+```sh
+$ sudo apt install gnupg2 curl
+```
+
 ## Install `percona-release` utility
 
 [Install percona-release](https://www.percona.com/doc/percona-repo-config/installing.html). If you have it installed, [update percona-release](https://www.percona.com/doc/percona-repo-config/updating.html) to the latest version.
