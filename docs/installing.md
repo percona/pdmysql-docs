@@ -71,14 +71,21 @@ Install the selected deployment of Percona Distribution for MySQL using the comm
 === "On Debian / Ubuntu"
 
 
-     1. Install *Percona Server for MySQL*:
+     1. Install required base packages gnupg2 and curl
+
+         ```
+         $ sudo apt install gnupg2 curl
+         ```
+
+
+     2. Install *Percona Server for MySQL*:
 
          ```
          $ sudo apt install percona-server-server
          ```
 
 
-     2. Install the components. Use the commands below to install the required components:
+     3. Install the components. Use the commands below to install the required components:
 
         Install Percona XtraBackup:
 
