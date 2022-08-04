@@ -14,27 +14,23 @@ You can contribute to documentation in the following ways:
 
 2. **[Contribute to documentation yourself](#contribute-to-documentation-yourself)**. There is the **Edit this page** link that leads you to the source file of the page on GitHub. There you make changes, create a pull request that we review and add to the doc project. For details how to do it, read on.
 
-![MYSQL doc links](source/_static/images/PDMYSQL_links.png)
-
 ## Contribute to documentation yourself
 
 To contribute to the documentation, you should be familiar with the following technologies:
-- [reStructured text](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html) markup language. It is used to write the documentation.
-- [Sphinx](https://www.sphinx-doc.org/en/master/usage/quickstart.html) documentation generator. We use it to convert source ``.rst`` files to html and PDF documents.
+- [Markdown] markup language. We write the documentation in it.
+- [MkDocs] generator. We use it to convert source ``.md`` files to html and PDF documents.
 - [git](https://git-scm.com/) and [GitHub](https://guides.github.com/activities/hello-world/)
-- [Docker](https://docs.docker.com/get-docker/). It allows you to run Sphinx in a virtual environment instead of installing it and its dependencies on your machine.
+- [Docker]. It allows you to run MkDocs in a virtual environment instead of installing it and its dependencies on your machine.
 
 Percona Distribution for MySQL is based on the latest major version of MySQL 8.0. The documentation contributions are committed to 8.0 branch in this repository.
 
-The .rst files are in the ``source`` directory. 
+The `.md` files are in the ``docs/`` directory. 
 
 ### Edit documentation online via GitHub
 
-1. Click the **Edit this page** link on the sidebar. The source ``.rst`` file of the page opens in GitHub editor in your browser. If you haven’t worked with the repository before, GitHub creates a [fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) of it for you.
+1. Click the **Edit this page** link next to the page title. The source ``.md`` file of the page opens in GitHub editor in your browser. If you haven’t worked with the repository before, GitHub creates a [fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) of it for you.
 
 2. Edit the page. You can check your changes on the **Preview** tab.
-
-   **NOTE**: GitHub’s native markup language is [Markdown](https://daringfireball.net/projects/markdown/) which differs from the reStructured text. Therefore, though GitHub renders titles, headings and lists properly, some rst-specific elements like variables, directives, internal links will not be rendered.
 
 3. Commit your changes.
 
@@ -78,60 +74,86 @@ git checkout -b <my_changes>
 
 To verify how your changes look, generate the static site with the documentation. This process is called *building*. You can do it in these ways:
 - [use Docker](#use-docker)
-- [install Sphinx and build locally](#install-sphinx-and-build-locally)
+- [build locally](#build-locally)
 
 #### Use Docker
 
 1. [Get Docker](https://docs.docker.com/get-docker/)
-2. We use [this Docker image](https://hub.docker.com/r/ddidier/sphinx-doc) to build documentation. Run the following command:
+2. We use [our Docker image](https://hub.docker.com/repository/docker/perconalab/pmm-doc-md) to build documentation. Run the following command:
 
 ```sh
-docker run --rm -i -v `pwd`:/doc -e USER_ID=$UID ddidier/sphinx-doc:0.9.0 make clean html
+docker run --rm -v $(pwd):/docs perconalab/pmm-doc-md mkdocs build
 ```
    If Docker can't find the image locally, it first downloads the image, and then runs it to build the documentation.
 
-3. Go to the ``build/html`` directory and open the ``index.html`` file to see the documentation.
-4. Your static site will look different from the one on the web site. This is because we use a Percona theme that is rendered when the documentation is published on the web. To view the documentation with Alabaster theme, run the following command:
+3. Go to the ``site/`` directory and open the ``index.html`` file to see the documentation.
 
-```sh
-docker run --rm -i -v `pwd`:/doc -e USER_ID=$UID ddidier/sphinx-doc:0.9.0 make clean thtml
-```
+   If you want to see the changes as you edit the docs, use this command instead:
 
-5. To create a PDF version of the documentation, run the following command:
+   ```sh
+   docker run --rm -v $(pwd):/docs -p 8000:8000 perconalab/pmm-doc-md mkdocs serve --dev-addr=0.0.0.0:8000
+   ```
 
-```sh
-docker run -i -v `pwd`:/doc -e USER_ID=$UID ddidier/sphinx-doc:0.9.0 make clean latex && docker run -i -v `pwd`:/doc -e USER_ID=$UID ddidier/sphinx-doc:0.9.0 make clean latexpdf
-```
+   Wait until you see the message `INFO    -  Start detecting changes`, then enter `0.0.0.0:8000` in the browser's address bar. The documentation automatically reloads after you save the changes in source files.
 
-The PDF document is in the ``build/latex`` folder.
 
-#### Install Sphinx and build locally
+#### Build locally
 
 1. Install [pip](https://pip.pypa.io/en/stable/installing/)
-2. Install [Sphinx](https://www.sphinx-doc.org/en/master/usage/installation.html).
+2. Install [MkDocs].
 3. While in the root directory of the doc project, run the following command to build the documentation:
 
 ```sh
-make clean html
+mkdocs build
 ```
-4. Go to the ``build/html`` directory and open the ``index.html`` file in your web browser to see the documentation.
-5. Your static site will look different from the one on the web site. This is because we use a Percona theme that is rendered when the documentation is published on the web. To view the documentation with Alabaster theme, run the following command:
-
-```sh
-make clean thtml
-```
-6. To automatically rebuild the documentation and reload the browser as you make changes, do the following:
-   - Install [sphinx-autobuild extension](https://pypi.org/project/sphinx-autobuild/)
-   - Run the following command
-
+4. Go to the ``site`` directory and open the ``index.html`` file in your web browser to see the documentation.
+5. To automatically rebuild the documentation and reload the browser as you make changes, run the following:
+   
    ```sh
-   make livehtml
+   mkdocs serve
    ```
+   Wait until you see the message `INFO    -  Start detecting changes`, then enter `0.0.0.0:8000` in the browser's address bar. 
 
-7. To create a PDF version of the documentation, run the following command:
+## PDF
 
-```sh
-make clean latexpdf
-```
+To create the PDF version of the documentation, use the following command:
 
-The PDF document is in the ``build/latex`` folder.
+* With Docker:
+
+    ```sh
+    docker run --rm -v $(pwd):/docs -e ENABLE_PDF_EXPORT=1 perconalab/pmm-doc-md mkdocs build -f mkdocs-pdf.yml
+    ```
+
+* Without:
+
+    ```sh
+    ENABLE_PDF_EXPORT=1 mkdocs build -f mkdocs-pdf.yml
+    ```
+
+The PDF is in `site/_pdf`.
+
+## Repository structure
+
+The repository includes the following directories and files:
+
+- `mkdocs-base.yml` - the base configuration file. It includes general settings and documentation structure.
+- `mkdocs.yml` - configuration file. Contains the settings for building the docs with Material theme.
+- `mkdocs-pdf.yml` - configuration file. Contains the settings for building the PDF docs.
+- `docs`:
+  - `*.md` - Source markdown files.
+  - `_images` - Images, logos and favicons
+  - `css` - Styles
+  - `js` - Javascript files
+- `_resource`:
+   - `templates`:
+     - ``styles.scss`` - Styling for PDF documents
+   - `theme`:
+      - `main.html` - The layout template for hosting the documentation on Percona website
+   - overrides - The folder with the customized templates
+- `site` - This is where the output HTML files are put after the build
+    
+[MkDocs]: https://www.mkdocs.org/
+[Markdown]: https://daringfireball.net/projects/markdown/
+[Git]: https://git-scm.com
+[Python]: https://www.python.org/downloads/
+[Docker]: https://docs.docker.com/get-docker/
