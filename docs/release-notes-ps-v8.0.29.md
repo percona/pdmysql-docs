@@ -42,7 +42,7 @@ The following is the list of components supplied with *Percona Server for MySQL*
 
 | Component           | Version   | Description                                |
 | ------------------- | --------- | -------------------------------------------|
-| Orchestrator        | [3.2.6-3]( https://github.com/openark/orchestrator/releases/tag/v3.2.6)     | The replication topology manager for Percona Server for MySQL|
+| Orchestrator        | [3.2.6-3](https://github.com/percona/orchestrator/releases/tag/v3.2.6-3)     | The replication topology manager for Percona Server for MySQL|
 | ProxySQL            | [2.3.2](https://docs.percona.com/proxysql/release-notes-2.3.2-1.html)     | A high performance, high-availability, protocol-aware proxy for MySQL|
 | Percona XtraBackup  | [8.0.29-22](https://docs.percona.com/percona-xtrabackup/latest/release-notes/8.0/8.0.29-22.0.html)| An open-source hot backup utility for MySQL-based servers|
 | Percona Toolkit     | 3.4.0     | The set of scripts to simplify and optimize database operation|
