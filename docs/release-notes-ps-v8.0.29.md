@@ -31,6 +31,11 @@ Find the full list of bug fixes and changes in the [MySQL 8.0.29 Release Notes](
 
     For more information, see [Percona Blog: Percona XtraBackup 8.0.29 and INSTANT ADD/DROP Columns](https://www.percona.com/blog/percona-xtrabackup-8-0-29-and-instant-add-drop-columns/). 
 
+## Orchestrator
+
+* [DISTMYSQL-198](https://jira.percona.com/browse/DISTMYSQL-198): orchestrator client packages were missing for RPM based distributions. Starting from v8.0.29 they are now built and available for download.
+* [DISTMYSQL-197](https://jira.percona.com/browse/DISTMYSQL-197): Option `--version` now returns a more understandable version number (in addition to the commit hash).
+
 ## Packaging Notes
 
 Debian 9 (“Stretch”) is no longer supported.  To learn more, see [Percona Blog: OS Platform End of Life (EOL) Announcement for Debian Linux 9](https://www.percona.com/blog/os-platform-end-of-life-eol-announcement-for-debian-linux-9/)  
