@@ -93,7 +93,7 @@ plugins:
   with-pdf: # https://github.com/orzih/mkdocs-with-pdf
           output_path: '_pdf/PerconaDistributionforMySQL.pdf'
           cover_title: 'Percona Distribution for MySQL Documentation'
-          cover_subtitle: 8.0.28 (June 20, 2022)
+          cover_subtitle: 8.0.29 (August 8, 2022)
           author: 'Percona Technical Documentation Team'
           cover_logo: docs/_images/Percona_Logo_Color.png
           debug_html: false
@@ -134,6 +134,8 @@ nav:
     - uninstalling.md
   - Release notes:
     - release-notes.md
+    - release-notes-ps-v8.0.29.md
+    - release-notes-pxc-v8.0.28.md
     - release-notes-ps-v8.0.28.upd.md
     - release-notes-ps-v8.0.28.md
     - release-notes-pxc-v8.0.27.md

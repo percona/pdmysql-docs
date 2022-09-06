@@ -21,7 +21,13 @@ Find the full list of supported platforms on the [Percona Software and Platform 
 
 To install Percona software, you need to configure the required repository. To simplify this process, use the `percona-release` repository management tool. 
 
-[Install percona-release](https://www.percona.com/doc/percona-repo-config/installing.html). If you have it installed, [update percona-release](https://www.percona.com/doc/percona-repo-config/updating.html) to the latest version.
+1. Install GnuPG and curl
+
+    ```sh
+    $ sudo apt install gnupg2 curl
+    ```
+
+2. [Install percona-release](https://www.percona.com/doc/percona-repo-config/installing.html). If you have it installed, [update percona-release](https://www.percona.com/doc/percona-repo-config/updating.html) to the latest version.
 
 ## Procedure
 
