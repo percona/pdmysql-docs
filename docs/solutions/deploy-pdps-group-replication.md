@@ -1,8 +1,6 @@
 # Deploying high availability solution with Group Replication
 
-This document provides step-by-step instructions on how to deploy high availability solution with Group Replication. For technical overview and architecture description of this solution, see [High availability solution with Group Replication - technical overview](pdps-group-replication.md).
-
-This solution is based on *Percona Server for MySQL*-based variant of the Percona Distribution for MySQL.
+This document provides step-by-step instructions on how to deploy high availability solution with Group Replication. 
 
 ## Preconditions
 
@@ -544,19 +542,19 @@ The dashboard sections are the following:
 
 1. Overview:
 
-    ![image](_images/pmm_for_gr_overiew.png)
+    ![image](../_images/pmm_for_gr_overiew.png)
 
 2. Replication delay details
 
-    ![image](_images/pmm_for_gr.png)
+    ![image](../_images/pmm_for_gr.png)
 
 3. Transactions
 
-    ![image](_images/pmm_for_gr_trx.png)
+    ![image](../_images/pmm_for_gr_trx.png)
 
 4. Conflicts
 
-    ![image](_images/pmm_for_gr_conflicts.png)
+    ![image](../_images/pmm_for_gr_conflicts.png)
 
 ### Using command line
 

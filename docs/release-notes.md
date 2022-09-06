@@ -60,4 +60,4 @@
 * [Percona Distribution for MySQL 8.0.20 using Percona Server for MySQL](release-notes-ps-v8.0.20.md)
 
 
-* [Percona Distribution for MySQL 8.0.19 (2020-06-22)](release-notes-v8.0.19.md)
+* [Percona Distribution for MySQL 8.0.19](release-notes-v8.0.19.md)
