@@ -9,7 +9,7 @@ Percona Distribution for MySQL is a single solution with the best and most criti
 
 Percona Distribution for MySQL provides two deployment variants: one is based on *Percona Server for MySQL* and another one is based on *Percona XtraDB Cluster*.
 
-This release is focused on the *Percona Server for MySQL*-based deployment variant. It is based on [Percona Server for MySQL 8.0.29-21](https://www.percona.com/doc/percona-server/8.0/release-notes/Percona-Server-8.0.29-21.html).
+This release is focused on the *Percona Server for MySQL*-based deployment variant. It is based on [Percona Server for MySQL 8.0.29-21](https://www.percona.com/doc/percona-server/8.0/release-notes/8.0.29-21.html).
 
 ## Release Highlights
 
@@ -31,6 +31,11 @@ Find the full list of bug fixes and changes in the [MySQL 8.0.29 Release Notes](
 
     For more information, see [Percona Blog: Percona XtraBackup 8.0.29 and INSTANT ADD/DROP Columns](https://www.percona.com/blog/percona-xtrabackup-8-0-29-and-instant-add-drop-columns/). 
 
+## Orchestrator
+
+* [DISTMYSQL-198](https://jira.percona.com/browse/DISTMYSQL-198): orchestrator client packages were missing for RPM based distributions. Starting from v8.0.29 they are now built and available for download.
+* [DISTMYSQL-197](https://jira.percona.com/browse/DISTMYSQL-197): Option `--version` now returns a more understandable version number (in addition to the commit hash).
+
 ## Packaging Notes
 
 Debian 9 (“Stretch”) is no longer supported.  To learn more, see [Percona Blog: OS Platform End of Life (EOL) Announcement for Debian Linux 9](https://www.percona.com/blog/os-platform-end-of-life-eol-announcement-for-debian-linux-9/)  
@@ -42,9 +47,9 @@ The following is the list of components supplied with *Percona Server for MySQL*
 
 | Component           | Version   | Description                                |
 | ------------------- | --------- | -------------------------------------------|
-| Orchestrator        | [3.2.6-3]( https://github.com/openark/orchestrator/releases/tag/v3.2.6)     | The replication topology manager for Percona Server for MySQL|
+| Orchestrator        | [3.2.6-3](https://github.com/percona/orchestrator/releases/tag/v3.2.6-3)     | The replication topology manager for Percona Server for MySQL|
 | ProxySQL            | [2.3.2](https://docs.percona.com/proxysql/release-notes-2.3.2-1.html)     | A high performance, high-availability, protocol-aware proxy for MySQL|
 | Percona XtraBackup  | [8.0.29-22](https://docs.percona.com/percona-xtrabackup/latest/release-notes/8.0/8.0.29-22.0.html)| An open-source hot backup utility for MySQL-based servers|
-| Percona Toolkit     | 3.4.0     | The set of scripts to simplify and optimize database operation|
+| Percona Toolkit     | [3.4.0](https://www.percona.com/doc/percona-toolkit/LATEST/release_notes.html#v3-4-0-released-2022-07-11)     | The set of scripts to simplify and optimize database operation|
 | MySQL Shell         | [8.0.29](https://dev.mysql.com/doc/relnotes/mysql-shell/8.0/en/news-8-0-29.html)    | An advanced client and code editor for MySQL Server|
 | MySQL Router        | [8.0.29](https://dev.mysql.com/doc/relnotes/mysql-router/en/news-8-0-29.html)    | Lightweight middleware that provides transparent routing between your application and back-end MySQL servers|

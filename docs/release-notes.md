@@ -1,5 +1,7 @@
 # Release Notes
 
+* [Percona Distribution for MySQL 8.0.29 using Percona XtraDB Cluster](release-notes-pxc-v8.0.29.md)
+
 * [Percona Distribution for MySQL 8.0.29 using Percona Server for MySQL](release-notes-ps-v8.0.29.md)
 
 * [Percona Distribution for MySQL 8.0.28 using Percona XtraDB Cluster](release-notes-pxc-v8.0.28.md)
@@ -60,4 +62,4 @@
 * [Percona Distribution for MySQL 8.0.20 using Percona Server for MySQL](release-notes-ps-v8.0.20.md)
 
 
-* [Percona Distribution for MySQL 8.0.19 (2020-06-22)](release-notes-v8.0.19.md)
+* [Percona Distribution for MySQL 8.0.19](release-notes-v8.0.19.md)

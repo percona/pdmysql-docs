@@ -3,7 +3,7 @@
 site_name: Percona Distribution for MySQL 
 site_description: Documentation
 site_author: Percona LLC
-copyright: Percona LLC, &#169; 2022
+copyright: Percona LLC and/or its affiliates, &#169; 2022
 
 site_url: ''
 repo_name: /percona/pdmysql-docs
@@ -17,6 +17,8 @@ theme:
   name: material
   logo: _images/percona-logo.png
   favicon: _images/percona-favicon.ico
+  font:
+    text: Chivo, Colfax, Franziska
   palette:
 
     # Light mode
@@ -38,7 +40,7 @@ theme:
   features:
     - search.highlight
     - navigation.top
-    - content.tabs.link
+    #- content.tabs.link
 
 
 #Styling
@@ -73,6 +75,10 @@ markdown_extensions:
   pymdownx.highlight:
       linenums: false
   pymdownx.inlinehilite: {}
+  pymdownx.emoji: 
+    emoji_index: !!python/name:materialx.emoji.twemoji
+    emoji_generator: !!python/name:materialx.emoji.to_svg
+  
 
 plugins:
   search: {}
@@ -87,7 +93,7 @@ plugins:
   with-pdf: # https://github.com/orzih/mkdocs-with-pdf
           output_path: '_pdf/PerconaDistributionforMySQL.pdf'
           cover_title: 'Percona Distribution for MySQL Documentation'
-          cover_subtitle: 8.0.29 (August 8, 2022)
+          cover_subtitle: 8.0.29 (September, 2022)
           author: 'Percona Technical Documentation Team'
           cover_logo: docs/_images/Percona_Logo_Color.png
           debug_html: false
@@ -107,20 +113,28 @@ extra:
 
 
 nav:
-  - index.md
-  - Installation and update:
-    - installation-and-update.md
-    - installing.md
+
+  - Home:
+    - index.md
+  - About:
+    - "Components": "components.md"
+    - deployment-variants.md
+  - Install and update:
+    - Install Percona Distribution for MySQL:
+      - installing.md
     - minor-upgrade.md
-  - Solutions:
-    - solutions.md
-    - High availability:
-      - pdps-group-replication.md
-      - deploy-pdps-group-replication.md
+  - Solutions - high availability:
+    - Technical overview:
+      - solutions/pdps-group-replication.md
+    - solutions/archtecture-components.md
+    - solutions/monitoring.md
+    - Deployment:
+      - solutions/deploy-pdps-group-replication.md
   - Uninstall:
     - uninstalling.md
   - Release notes:
     - release-notes.md
+    - release-notes-pxc-v8.0.29.md
     - release-notes-ps-v8.0.29.md
     - release-notes-pxc-v8.0.28.md
     - release-notes-ps-v8.0.28.upd.md
@@ -143,7 +157,7 @@ nav:
     - release-notes-pxc-v8.0.20.md
     - release-notes-ps-v8.0.20.md
     - release-notes-v8.0.19.md
-  - Copyright and Licensing:
+  - Copyright and licensing:
     - copyright.md
   - Trademark policy:
     - trademark-policy.md  

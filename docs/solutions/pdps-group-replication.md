@@ -1,59 +1,13 @@
-# High availability solution with Group Replication - technical overview
-
-## Introduction
+# High availability solution with Group Replication
 
 Every architecture and deployment depends on customer requirements and application demands for high availability and the estimated level of usage.  For example, using a high read or a high write application, or both with  99.999% availability.
 
-This document gives architecture and deployment recommendations along with a technical overview for a solution that provides a high level of high availability and assumes the usage of high read / write applications (20K or more queries per second). For step-by-step deployment guidelines, refer to [Deploying high availability solution with Group Replication](deploy-pdps-group-replication.md).
+This guide gives [architecture](architecture-components.md) and deployment recommendations along with a technical overview for a solution that provides a high level of high availability and assumes the usage of high read / write applications (20K or more queries per second). It also provides [step-by-step deployment guidelines](deploy-pdps-group-replication.md).
 
 This solution assumes the use of *Percona Server for MySQL* based deployment variant of Percona Distribution for MySQL with [Group Replication](https://dev.mysql.com/doc/refman/8.0/en/group-replication.html).
 
-## Architecture layout
 
-![image](_images/group_replication_ha.png)
-
-### Components
-
-The architecture is composed of two main layers:
-
-
-* [Connection and distribution layer](#connection-and-distribution-layer)
-
-
-* [Relational Database Management System (RDBMS) layer](#rdbms-layer)
-
-#### Connection and distribution layer
-
-The connection and distribution layer consists of the following:
-
-
-* **Application to proxy redirection mechanism.** This mechanism can be anything from a Virtual IP managed by Keepalived local service to a DNS resolution service like Amazon Route 53. The mechanism’s function is to redirect the traffic to the active Proxy node.
-
-
-* **Proxy connection distribution.** The distribution consists of two or more nodes and its role is to redirect the traffic to the active nodes of the Group Replication cluster. In cases like ProxySQL where the proxy is a level 7 proxy and can perform a read / write split, this layer is also in charge of redirecting writes to the Primary node and reads to the replicas, and of high availability to prevent a single point of failure.
-
-#### RDBMS layer
-
-The data layer consists of the following:
-
-
-* **Primary (or source) node** serving write requests. This is the node that accepts writes and DDL modifications. Data will be processed following the ACID  (atomicity, consistency, isolation, durability) model and replicated to all other nodes.
-
-
-* **Replica nodes** serving read requests. Some replica nodes can be elected Primary in case of the Primary node’s failure. A replica node should be able to leave and join back to a healthy cluster without impacting the service.
-
-
-* **Replication mechanism** distributing changes across nodes. In this solution, it is done with Group Replication. Group Replication is a tightly coupled solution, which means that the database cluster is based on a Datacentric approach (single state of the data, distributed commit). In this case, the data is consistent in time across nodes though this type of replication requires a high performant link. Given that, the main Group Replication mechanism does not implicitly support Disaster Recovery (DR) and geographic distribution is not permitted.
-
-The node characteristics such as CPU/RAM/Storage are not relevant to the solution design.  They must reflect the estimated workload that the solution will have to cover, and this is a case by case identification.
-
-However, it is important that all nodes that are part of the cluster must have the same characteristics. Otherwise, the cluster is imbalanced and services will be affected.
-
-As a generic indication we recommend using nodes with at least 8 cores and 16GB RAM when in production.
-
-## Technical overview
-
-### High availability
+## High availability overview
 
 How to measure availability and at what point does it become “high” availability?
 
@@ -72,10 +26,9 @@ The following table provides downtime calculations per high availability level:
 | 99.999% (“five nines”)| 5.26 minutes   | 26.30 seconds      | 6.05 seconds   | 864.00 milliseconds |
 
 
-#### How is high availability achieved?
+### How is high availability achieved?
 
 There are three key components to achieve high availability:
-
 
 * **Infrastructure** - This is the physical or virtual hardware that database systems rely on to run. Without enough infrastructure (VM’s, networking, etc.), there cannot be high availability. The easiest example is: `there is no way to make a single server highly available`.
 
@@ -88,10 +41,9 @@ There are three key components to achieve high availability:
 This solution is based on a tightly coupled database cluster. It offers a high availability level of 99.995% when coupled with the Group Replication setting `group_replication_consistency=AFTER`.
 
 
+![image](../_images/group-replication-1.png)
 
-![image](_images/group-replication-1.png)
-
-### Failovers
+## Failovers
 
 A database failure or configuration change that requires a restart should not affect the stability of the database infrastructure, if it is properly planned and architected. Failovers are an integral part of a stability strategy and aligning the business requirements for availability and uptime with failover methodologies is critical.
 
@@ -106,32 +58,29 @@ The following are the three main types of failovers that can occur in database e
 
 * **Regional or disaster recovery (DR) failover**. Unplanned failovers still work with the assumption that additional database infrastructure is immediately available and in a usable state. However, in a regional or DR failover, it is assumed that there is a large scale infrastructure outage which requires the business to move its operations away from its current availability zone.
 
-### Maintenance windows
+## Maintenance windows
 
-#### Major vs Minor maintenance
+### Major vs Minor maintenance
 
 Although it may not be obvious at first, not all maintenance activities are created equal and do not have the same dependencies. It is good to separate maintenance that demands downtime or failover from maintenance that can be done without impacting those important stability metrics. When defining these maintenance dependencies, there can be a change in the actual maintenance process that allows for a different cadence.
 
-#### Maintenance without service interruption
+### Maintenance without service interruption
 
 It is possible to cover both major and minor maintenance without service interruption with rolling restart and using proper version upgrade.
 
-### Uptime
+## Uptime
 
 When referring to database stability, uptime is likely the largest indicator of stability and often is the most obvious symptom of an unstable database environment. Uptime is composed of three key components and, contrary to common perception, is based on what happens when the database software cannot take incoming requests rather than maintain the ability to take requests with errors.
 
 The uptime components are:
 
-
 * **Recovery Time Objective (RTO)**
 
 RTO can be characterized by a simple question “How long can the business sustain a database outage?” Once the business is aligned with a minimum viable recovery time objective, it is much more straightforward to plan and invest in the infrastructure required to meet that requirement. It is important to acknowledge that while everyone desires 100% uptime, there need to be realistic expectations that align with the business needs and not a technical desire.
 
-
 * **Recovery Point Objective (RPO)**
 
 There is a big distinction between the Recovery Point and the Recovery Time for a database infrastructure. The database can be available, but not to the exact state that it was when it became unavailable. That is where Recovery Point comes in. The question to ask here is “How much data can the business lose during a database outage?” All businesses have their own requirements here yet it is always the goal to never sustain any data loss. But this is framed in the worst case scenario, how much data could be lost and the business maintains the ability to continue.
-
 
 * **Disaster recovery**
 
@@ -153,36 +102,16 @@ where:
 
 * `N` is the number of nodes in the cluster.
 
-!!! example
+### Example
 
-    * In a cluster of 5 nodes, F = (5 - 1)/2 = 2. The cluster can support up to 2 failures.
+* In a cluster of 5 nodes, F = (5 - 1)/2 = 2. The cluster can support up to 2 failures.
 
-    * In a cluster of 4 nodes, F = (4 - 1)/2 = 1. The cluster can support up to 1 failure.
+* In a cluster of 4 nodes, F = (4 - 1)/2 = 1. The cluster can support up to 1 failure.
 
 This solution also allows for a more restrictive backup policy, dedicating a node to the backup cycle, which will help in keeping RPO low.
 
 As previously mentioned, disaster recovery is not covered by default by this solution. It will require an additional replication setup and controller.
 
-### Measurement and monitoring
-
-To ensure that database infrastructure is performing as intended or at its best, specific metrics need to be measured and alerts are to be raised when some of these metrics are not in line with expectations. A periodic review of these measurements is also encouraged to promote stability and understand potential risks associated with the database infrastructure.
-
-The following are the 3 aspects of database performance measurement and monitoring:
-
-
-* **Measurement** - To understand how a database infrastructure is performing,  multiple aspects of the infrastructure need to be measured. With measurement it’s important to understand the impact of the sample sizes, sample timing, and sample types.
-
-
-* **Metrics** - Metrics refer to the actual parts of the database infrastructure being measured. When we discuss metrics, more isn’t always better as it could introduce unintentional noise or make troubleshooting overly burdensome.
-
-
-* **Alerting** - When one or many metrics of the database infrastructure is not within a normal or acceptable range, an alert should be generated so that the team responsible for the appropriate portion of the database infrastructure can investigate and remedy it.
-
-Monitoring and measurement for this solution are covered by [Percona Monitoring and Management](https://www.percona.com/software/database-tools/percona-monitoring-and-management). It has a specific dashboard to monitor the Group Replication state and cluster status as a whole. For more information, read [Percona Monitoring and Management Documentation](https://www.percona.com/blog/2021/04/14/percona-distribution-for-mysql-high-availability-with-group-replication-solution/).
-
-## Deployment
-
-[Deploying high availability solution with Group Replication](deploy-pdps-group-replication.md)
 
 !!! admonition "Based on the material from Percona Database Performance Blog"
 
