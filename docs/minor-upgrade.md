@@ -12,7 +12,7 @@ To upgrade Percona Distribution for MySQL, [install the `percona-release` reposi
 
 !!! important
 
-            Run the following commands as the root user or via `sudo`.
+    Run the following commands as the root user or via `sudo`.
 
 === "Upgrade Percona Server-based variant" 
 
