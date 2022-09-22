@@ -123,6 +123,7 @@ nav:
     - Install Percona Distribution for MySQL:
       - installing.md
     - minor-upgrade.md
+    - downgrade.md
   - Solutions - high availability:
     - Technical overview:
       - solutions/pdps-group-replication.md
