@@ -1,5 +1,7 @@
 # Release Notes
 
+* [Percona Distribution for MySQL 8.0.30 using Percona Server for MySQL](release-notes-ps-v8.0.30.md)
+
 * [Percona Distribution for MySQL 8.0.29 using Percona XtraDB Cluster](release-notes-pxc-v8.0.29.md)
 
 * [Percona Distribution for MySQL 8.0.29 using Percona Server for MySQL](release-notes-ps-v8.0.29.md)
