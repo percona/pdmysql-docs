@@ -51,10 +51,10 @@ The following is the list of components supplied with *Percona Server for MySQL*
 
 | Component           | Version   | Description                                |
 | ------------------- | --------- | -------------------------------------------|
-| Orchestrator        | [3.2.6-5](https://github.com/percona/orchestrator/releases/tag/v3.2.6-5)     | The replication topology manager for Percona Server for MySQL|
+| Orchestrator        | [3.2.6-6](https://github.com/percona/orchestrator/releases/tag/v3.2.6-6)     | The replication topology manager for Percona Server for MySQL|
 | ProxySQL            | [2.4.4-1.2](https://docs.percona.com/proxysql/2.4.4-1.2.html)     | A high performance, high-availability, protocol-aware proxy for MySQL|
 | Percona XtraBackup  | [8.0.30-23](https://docs.percona.com/percona-xtrabackup/8.0/release-notes/8.0/8.0.30-23.0.html)| An open-source hot backup utility for MySQL-based servers|
-| Percona Toolkit     | [3.5.0](https://www.percona.com/doc/percona-toolkit/LATEST/release_notes.html#v3-5-0-released-2022-11-21)     | The set of scripts to simplify and optimize database operation|
+| Percona Toolkit     | [3.5.0](https://www.percona.com/doc/percona-toolkit/LATEST/release_notes.html#v3-5-0-released-2022-11-28)     | The set of scripts to simplify and optimize database operation|
 | MySQL Shell         | [8.0.30](https://dev.mysql.com/doc/relnotes/mysql-shell/8.0/en/news-8-0-30.html)    | An advanced client and code editor for MySQL Server|
 | MySQL Router        | [8.0.30](https://dev.mysql.com/doc/relnotes/mysql-router/en/news-8-0-30.html)    | Lightweight middleware that provides transparent routing between your application and back-end MySQL servers|
 
