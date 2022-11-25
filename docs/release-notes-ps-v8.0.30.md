@@ -1,6 +1,6 @@
-# Percona Distribution for MySQL 8.0.30 using Percona Server for MySQL (2022-11-28)
+# Percona Distribution for MySQL 8.0.30 using Percona Server for MySQL (2022-11-29)
 
-| Release date    | November 28, 2022 |
+| Release date    | November 29, 2022 |
 | :-------------- | :--------------- |
 |**Installation** | [Installing Percona Distribution for MySQL](installing.md)|
 
