@@ -42,7 +42,7 @@ The Isolation requirement means that no transaction can interfere with another.
 
 ## Loosely-coupled cluster
 
-A loosely-coupled cluster is the deployment where cluster nodes are independent in processing / applying transactions. Data state may not always be consistent in time on all nodes; however, a single node state does not affect the cluster. Loosely-coupled clusters use :term:`asynchronous replication` and can be geographically distributed and/or serve as the :term:`disaster recovery` site.
+A loosely-coupled cluster is the deployment where cluster nodes are independent in processing / applying transactions. Data state may not always be consistent in time on all nodes; however, a single node state does not affect the cluster. Loosely-coupled clusters use [asynchronous replication](#asyncronous-replication.md) and can be geographically distributed and/or serve as the [disaster recovery](#disaster-recovery) site.
 
 ## Nines of availability
     
