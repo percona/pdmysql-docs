@@ -1,5 +1,6 @@
 # Release notes index
 
+* [Percona Distribution for MySQL 8.0.30 using Percona XtraDB Cluster (2022-12-28)](release-notes-pxc-v8.0.30.md)
 
 * [Percona Distribution for MySQL 8.0.29 using Percona XtraDB Cluster Update (2022-12-01)](release-notes-pxc-v8.0.29.upd.md)
 
