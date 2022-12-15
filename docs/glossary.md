@@ -32,6 +32,14 @@ Once a transaction is committed, it will remain so.
 
 Failover is switching automatically and seamlessly to a reliable backup system.
 
+## General availability (GA)
+
+A finalized version of the product which is made available to the general public. It is the final stage in the software release cycle.
+
+## GTID
+
+A global transaction identifier (GTID) is a unique identifier created and associated with each transaction committed on the server of the source. This identifier is unique across all servers in a given replication topology.
+
 ## High availability
     
 A high availability is the ability of a system to operate continuously without failure for a long time.
@@ -44,6 +52,12 @@ The Isolation requirement means that no transaction can interfere with another.
 
 A loosely-coupled cluster is the deployment where cluster nodes are independent in processing / applying transactions. Data state may not always be consistent in time on all nodes; however, a single node state does not affect the cluster. Loosely-coupled clusters use [asynchronous replication](#asyncronous-replication.md) and can be geographically distributed and/or serve as the [disaster recovery](#disaster-recovery) site.
 
+## Multi-source replication 
+
+A multi-source replication topology requires at least one replica synchronized with at least two sources. The transactions can be received in parallel because the replica creates a separate replication channel for each source.
+
+Multi-source replication allows a single server to back up or consolidate data from multiple servers. This type of replication also lets you merge table shards.
+
 ## Nines of availability
     
 Nines of availability refer to system availability as a percentage of total system time.
@@ -55,6 +69,10 @@ A semi-synchronous replication is a technique where the primary node wait for at
 ## Synchronous replication
 
 A synchronous replication is a technique when data is written to the primary and secondary nodes simultaneously. Thus, both primary and secondaries are in sync and failover from the primary to one of the secondaries is possible any time.
+
+## Tech preview 
+
+A tech preview item can be a feature, a variable, or a value within a variable. The term designates that the item is not yet ready for production use and is not included in support by SLA. A tech preview item is included in a release so that users can provide feedback. The item is either updated and released as [general availability(GA)](#general-availability-ga) or removed if not useful. The item’s functionality can change from tech preview to GA.
 
 ## Tightly-coupled cluster
 
