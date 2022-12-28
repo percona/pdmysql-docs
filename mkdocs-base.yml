@@ -75,6 +75,7 @@ markdown_extensions:
   pymdownx.highlight:
       linenums: false
   pymdownx.inlinehilite: {}
+  pymdownx.snippets: {}
   pymdownx.emoji: 
     emoji_index: !!python/name:materialx.emoji.twemoji
     emoji_generator: !!python/name:materialx.emoji.to_svg
@@ -131,6 +132,11 @@ nav:
     - solutions/monitoring.md
     - Deployment:
       - solutions/deploy-pdps-group-replication.md
+  - Replication manager for Percona XtraDB Cluster:
+    - Replication manager for Percona XtraDB Cluster:
+      - replication-manager/replication-manager-for-pxc.md
+    - replication-manager/replication-manager-troubleshooting.md
+    - replication-manager/single-replica-manager.md
   - Uninstall:
     - uninstalling.md
   - Release notes:
