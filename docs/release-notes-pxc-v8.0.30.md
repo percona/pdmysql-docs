@@ -38,7 +38,7 @@ Find the full list of bug fixes and changes in the [MySQL 8.0.30 Release Notes](
 
 ### Replication manager for Percona XtraDB Cluster
 
-[PXC-4062](https://jira.percona.com/browse/PXC-4062): The [Replication manager for Percona XtraDB Cluster](replication-manager/replication-manager-for-pxc.md) is a [tech preview](../glossary.md#tech-preview) feature. The replication manager helps manage [multi-source replication](glossary.md#multi-source-replication) between multiple Percona XtraDB Cluster clusters. To manage a single replica, use [Single replica manager for Percona XtraDB Cluster](replication-manager/single-replica-manager.md).
+[PXC-4062](https://jira.percona.com/browse/PXC-4062): The [Replication manager for Percona XtraDB Cluster](replication-manager/replication-manager-for-pxc.md) is a [tech preview](glossary.md#tech-preview) feature. The replication manager helps manage [multi-source replication](glossary.md#multi-source-replication) between multiple Percona XtraDB Cluster clusters. To manage a single replica, use [Single replica manager for Percona XtraDB Cluster](replication-manager/single-replica-manager.md).
 
 The following is the list of components supplied with the *Percona XtraDB Cluster*-based deployment variant of Percona Distribution for MySQL:
 
