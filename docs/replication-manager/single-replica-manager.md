@@ -1,6 +1,6 @@
 # Single replica manager for Percona XtraDB Cluster
 
---8<-- "./docs/snippets/tech-preview/_tech-preview-feature.md"
+{% include './snippets/tech-preview/_tech-preview-feature.md'%}
 
 The single replica manager is a simplified version of the [Replication manager for Percona XtraDB Cluster](replication-manager-for-pxc.md) and is intended to manage a single replica. 
 
