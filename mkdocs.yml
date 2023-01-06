@@ -3,6 +3,10 @@ INHERIT: mkdocs-base.yml
 
 site_url: 'https://docs.percona.com/percona-distribution-for-mysql/'
 
+theme:
+  name: material
+  custom_dir: _resource/overrides/
+
 plugins:
   section-index: {}
   
