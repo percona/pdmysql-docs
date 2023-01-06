@@ -129,7 +129,7 @@ nav:
   - Solutions - high availability:
     - Technical overview:
       - solutions/pdps-group-replication.md
-    - solutions/archtecture-components.md
+    - solutions/architecture-components.md
     - solutions/monitoring.md
     - Deployment:
       - solutions/deploy-pdps-group-replication.md
@@ -175,5 +175,3 @@ nav:
     - trademark-policy.md  
   - Glossary:
     - glossary.md  
-    
-

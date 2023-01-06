@@ -1,31 +1,11 @@
 # MkDocs configuration for builds with material theme
-
 INHERIT: mkdocs-base.yml
 
 site_url: 'https://docs.percona.com/percona-distribution-for-mysql/'
-plugins:
-  section-index: {}  # Adds links to nodes - comment out when creating PDF
-
-theme:
-  name: material
-  custom_dir: _resource/overrides/
-
-# Theme features
-
-  features:
-    - search.highlight
-    - navigation.top
-    - navigation.tracking
-    - content.tabs.link  
- 
 
 plugins:
-  - section-index # Adds links to nodes - comment out when creating PDF
-  - search
-  - git-revision-date
-
-
-
+  section-index: {}
+  
 #Google Analytics configuration 
 extra:
   analytics:
