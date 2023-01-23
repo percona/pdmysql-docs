@@ -1,5 +1,7 @@
 # Release notes index
 
+* [Percona Distribution for MySQL 8.0.30 using Percona XtraDB Cluster Update (2023-01-23)](release-notes-pxc-v8.0.30.upd.md)
+
 * [Percona Distribution for MySQL 8.0.30 using Percona Server for MySQL Second Update (2023-01-23)](release-notes-ps-v8.0.30.upd2.md)
 
 * [Percona Distribution for MySQL 8.0.30 using Percona Server for MySQL Update (2023-01-06)](release-notes-ps-v8.0.30.upd.md)
