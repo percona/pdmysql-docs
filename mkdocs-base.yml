@@ -40,7 +40,11 @@ theme:
   features:
     - search.highlight
     - navigation.top
-    #- content.tabs.link
+    - content.tabs.link
+    - content.code.copy 
+    - navigation.tracking 
+    - content.action.edit
+    - content.action.view 
 
 
 #Styling
@@ -48,9 +52,11 @@ extra_css:
   - https://unicons.iconscout.com/release/v3.0.3/css/line.css
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css
   - css/percona.css
+  - css/nocopy.css
 
 extra_javascript:
   - js/version-select.js
+  - js/promptremover.js
 
 markdown_extensions:
   attr_list: {}
@@ -64,8 +70,7 @@ markdown_extensions:
   meta: {}
   md_in_html: {}
   smarty:
-      {smart_angled_quotes: true, 
-       smart_dashes: false}
+      {smart_angled_quotes: true}
   pymdownx.details: {}
   pymdownx.mark: {}
   pymdownx.smartsymbols: {}
@@ -83,12 +88,12 @@ markdown_extensions:
   
 
 plugins:
-  search: {}
+  search: 
+    separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   git-revision-date: {}
-#  - htmlproofer # Uncomment to check links - but extends build time significantly
   macros:
       include_yaml:
-#        - 'variables.yml' # Use in markdown as '{{ VAR }}'
+        - 'variables.yml' # Use in markdown as '{{ VAR }}'
 # exclude: # Don't process these files
 #      glob:
 #         - file.md
@@ -115,33 +120,27 @@ extra:
 
 
 nav:
-
-  - Home:
-    - index.md
+  - Home: index.md
   - About:
-    - "Components": "components.md"
+    - components.md
     - deployment-variants.md
   - Install and update:
-    - Install Percona Distribution for MySQL:
-      - installing.md
+    - installing.md
     - minor-upgrade.md
     - downgrade.md
   - Solutions - high availability:
-    - Technical overview:
-      - solutions/pdps-group-replication.md
+    - Technical overview: solutions/pdps-group-replication.md
     - solutions/architecture-components.md
     - solutions/monitoring.md
-    - Deployment:
-      - solutions/deploy-pdps-group-replication.md
+    - Deployment: solutions/deploy-pdps-group-replication.md
   - Replication manager for Percona XtraDB Cluster:
-    - Replication manager for Percona XtraDB Cluster:
-      - replication-manager/replication-manager-for-pxc.md
+    - replication-manager/replication-manager-for-pxc.md
     - replication-manager/replication-manager-troubleshooting.md
     - replication-manager/single-replica-manager.md
   - Uninstall:
     - uninstalling.md
   - Release notes:
-    - "Release notes index": "release-notes.md"
+    - Release notes index: release-notes.md
     - release-notes-pxc-v8.0.30.upd.md
     - release-notes-ps-v8.0.30.upd2.md
     - release-notes-ps-v8.0.30.upd.md
