@@ -1,4 +1,4 @@
-# Percona Distribution for MySQL 8.0.32 using Percona Server for MySQL (2023-03-28)
+# Percona Distribution for MySQL 8.0.32 using Percona Server for MySQL Update (2023-03-28)
 
 | Release date         | March 28, 2023   |
 | :--------------      | :--------------- |
