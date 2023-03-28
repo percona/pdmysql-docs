@@ -145,6 +145,8 @@ nav:
     - uninstalling.md
   - Release notes:
     - Release notes index: release-notes.md
+    - release-notes-ps-v8.0.32.upd.md
+    - release-notes-pxc-v8.0.31.upd.md
     - release-notes-ps-v8.0.32.md
     - release-notes-pxc-v8.0.31.md
     - release-notes-ps-v8.0.31.upd.md
