@@ -97,7 +97,7 @@ plugins:
   with-pdf: # https://github.com/orzih/mkdocs-with-pdf
           output_path: '_pdf/PerconaDistributionforMySQL.pdf'
           cover_title: 'Percona Distribution for MySQL Documentation'
-          cover_subtitle: 8.0.32 (April 04, 2023)
+          cover_subtitle: 8.0.32 (April 18, 2023)
           author: 'Percona Technical Documentation Team'
           cover_logo: docs/_images/Percona_Logo_Color.png
           debug_html: false
@@ -145,43 +145,47 @@ nav:
     - uninstalling.md
   - Release notes:
     - Release notes index: release-notes.md
-    - release-notes-ps-v8.0.32.upd2.md
-    - release-notes-pxc-v8.0.31.upd2.md
-    - release-notes-ps-v8.0.32.upd.md
-    - release-notes-pxc-v8.0.31.upd.md
-    - release-notes-ps-v8.0.32.md
-    - release-notes-pxc-v8.0.31.md
-    - release-notes-ps-v8.0.31.upd.md
-    - release-notes-ps-v8.0.31.md
-    - release-notes-pxc-v8.0.30.upd.md
-    - release-notes-ps-v8.0.30.upd2.md
-    - release-notes-ps-v8.0.30.upd.md
-    - release-notes-pxc-v8.0.30.md
-    - release-notes-pxc-v8.0.29.upd.md
-    - release-notes-ps-v8.0.30.md
-    - release-notes-pxc-v8.0.29.md
-    - release-notes-ps-v8.0.29.md
-    - release-notes-pxc-v8.0.28.md
-    - release-notes-ps-v8.0.28.upd.md
-    - release-notes-ps-v8.0.28.md
-    - release-notes-pxc-v8.0.27.md
-    - release-notes-ps-v8.0.27.md
-    - release-notes-pxc-v8.0.26.md
-    - release-notes-ps-v8.0.26.md
-    - release-notes-pxc-v8.0.25.md
-    - release-notes-ps-v8.0.25.md
-    - release-notes-pxc-v8.0.23.upd.md
-    - release-notes-pxc-v8.0.23.md
-    - release-notes-ps-v8.0.23.md
-    - release-notes-pxc-v8.0.22.md
-    - release-notes-ps-v8.0.22.md
-    - release-notes-pxc-v8.0.21.md
-    - release-notes-ps-v8.0.21.md
-    - release-notes-pxc-v8.0.20.upd2.md
-    - release-notes-pxc-v8.0.20.upd.md
-    - release-notes-pxc-v8.0.20.md
-    - release-notes-ps-v8.0.20.md
-    - release-notes-v8.0.19.md
+    - Percona Distribution for MySQL using Percona Server for MySQL:
+      - release-notes-ps-v8.0.32.upd2.md
+      - release-notes-ps-v8.0.32.upd.md
+      - release-notes-ps-v8.0.32.md
+      - release-notes-ps-v8.0.31.upd.md
+      - release-notes-ps-v8.0.31.md
+      - release-notes-ps-v8.0.30.upd2.md
+      - release-notes-ps-v8.0.30.upd.md
+      - release-notes-ps-v8.0.30.md
+      - release-notes-ps-v8.0.29.md
+      - release-notes-ps-v8.0.28.upd.md
+      - release-notes-ps-v8.0.28.md
+      - release-notes-ps-v8.0.27.md
+      - release-notes-ps-v8.0.26.md
+      - release-notes-ps-v8.0.25.md
+      - release-notes-ps-v8.0.23.md
+      - release-notes-ps-v8.0.22.md
+      - release-notes-ps-v8.0.21.md
+      - release-notes-ps-v8.0.20.md
+      - release-notes-v8.0.19.md
+    - Percona Distribution for MySQL using Percona XtraDB Cluster:
+      - release-notes-pxc-v8.0.32.md
+      - release-notes-pxc-v8.0.31.upd2.md
+      - release-notes-pxc-v8.0.31.upd.md
+      - release-notes-pxc-v8.0.31.md
+      - release-notes-pxc-v8.0.30.upd.md
+      - release-notes-pxc-v8.0.30.md
+      - release-notes-pxc-v8.0.29.upd.md
+      - release-notes-pxc-v8.0.29.md
+      - release-notes-pxc-v8.0.28.md
+      - release-notes-pxc-v8.0.27.md  
+      - release-notes-pxc-v8.0.26.md   
+      - release-notes-pxc-v8.0.25.md 
+      - release-notes-pxc-v8.0.23.upd.md
+      - release-notes-pxc-v8.0.23.md
+      - release-notes-pxc-v8.0.22.md
+      - release-notes-pxc-v8.0.21.md
+      - release-notes-pxc-v8.0.20.upd2.md
+      - release-notes-pxc-v8.0.20.upd.md
+      - release-notes-pxc-v8.0.20.md
+      - release-notes-v8.0.19.md
   - Copyright and licensing:
     - copyright.md
   - Trademark policy:
