@@ -93,7 +93,7 @@ plugins:
     quiet: false
     enable_checks: true
     min_length: 50
-    max_length: 360
+    max_length: 160
   macros:
       include_yaml:
         - 'variables.yml' # Use in markdown as '{{ VAR }}'
