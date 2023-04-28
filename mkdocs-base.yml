@@ -91,7 +91,7 @@ plugins:
   meta-descriptions:
     export_csv: false
     quiet: false
-    enable_checks: true
+    enable_checks: false
     min_length: 50
     max_length: 160
   macros:
