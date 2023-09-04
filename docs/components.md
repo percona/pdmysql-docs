@@ -3,7 +3,7 @@
 Percona Distribution for MySQL consists of the following **components**:
 
 
-* [Percona Server for MySQL](https://www.percona.com/doc/percona-server/8.0/index.html) is a drop-in replacement for MySQL Community Edition with the enterprise-grade features embedded by Percona.
+* [Percona Server for MySQL](https://www.percona.com/doc/percona-server/8.1/index.html) is a drop-in replacement for MySQL Community Edition with the enterprise-grade features embedded by Percona.
 
 
 * [Percona XtraDB Cluster](https://www.percona.com/doc/percona-xtradb-cluster/8.0/index.html) is the high-available clustering solution for MySQL. It is based on [Percona Server for MySQL](https://www.percona.com/doc/percona-server/8.0/index.html) and uses [Percona XtraBackup](https://www.percona.com/doc/percona-xtrabackup/8.0/index.html) for node provisioning.

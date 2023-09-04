@@ -1,6 +1,6 @@
-# Percona Distribution for MySQL 8.0 Documentation
+# Percona Distribution for MySQL 8.1 Documentation
 
-Percona Distribution for MySQL is a single solution with the best and most critical enterprise components from the MySQL open source community, designed and tested to work together. With [Percona Server for MySQL](https://www.percona.com/software/mysql-database/percona-server) or [Percona XtraDB Cluster](https://www.percona.com/software/mysql-database/percona-xtradb-cluster) as the base server, the distribution brings you the enterprise-grade [features](#features) for free. The set of carefully selected [components](components.md) helps you operate your MySQL database to meet your application and business needs.
+Percona Distribution for MySQL is a single solution with the best and most critical enterprise components from the MySQL open source community, designed and tested to work together. With [Percona Server for MySQL](https://www.percona.com/software/mysql-database/percona-server) as the base server, the distribution brings you the enterprise-grade [features](#features) for free. The set of carefully selected [components](components.md) helps you operate your MySQL database to meet your application and business needs.
 
 ## Features
 
