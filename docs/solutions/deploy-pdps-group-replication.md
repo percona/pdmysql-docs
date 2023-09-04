@@ -46,7 +46,7 @@ We will use the following elements:
 
 2. Make sure that all the nodes use the same time-zone and time
 
-    ```
+    ```{.bash data-prompt="$"}
     $ date
     Tue Aug 18 08:22:12 EDT 2020
     ```
@@ -65,7 +65,7 @@ We will use the following elements:
 
 5. After instances are up and running, check *Percona Server for MySQL* version on each node:
 
-    ```sql
+    ```{.bash data-prompt="mysql>"}
     mysql>\s
     --------------
     /opt/mysql_templates/PS-8P/bin/mysql  Ver 8.0.20-11 for Linux on x86_64 (Percona Server (GPL), Release 11, Revision 159f0eb)
@@ -89,7 +89,7 @@ We will use the following elements:
 
 2. Make sure to have a good and unique SERVER_ID value:
 
-    ```sql
+    ```{.bash data-prompt="mysql>"}
     mysql> show global variables like 'server_id';
     +---------------+-------+
     | Variable_name | Value |
@@ -106,7 +106,7 @@ We will use the following elements:
 
 1. Stop all the nodes
 
-    ```
+    ```{.bash data-prompt="$"}
     $ service mysql stop
     ```
 
@@ -455,14 +455,14 @@ If instead, you have no issue or strict requirements about some stale read, you 
 
     === "on Debian/Ubuntu"
 
-         ```
+         ```{.bash data-prompt="$"}
          $ sudo apt install -y keepalived
          ```
 
 
     === "On RHEL/derivatives"
 
-         ```
+         ```{.bash data-prompt="$"}
          $ sudo yum install -y keepalived
          ```
 

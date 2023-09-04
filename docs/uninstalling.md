@@ -17,13 +17,13 @@ To uninstall Percona Distribution for MySQL, stop the `mysql` service and remove
 
          1. Stop the `mysql` service.
 
-             ```
+             ```{.bash data-prompt="$"}
              $ sudo systemctl stop mysql
              ```
 
          2. Remove *Percona Server for MySQL*.
 
-             ```
+             ```{.bash data-prompt="$"}
              $ sudo apt remove percona-server*
              ```
 
@@ -33,36 +33,37 @@ To uninstall Percona Distribution for MySQL, stop the `mysql` service and remove
 
              * Remove Percona XtraBackup
                 
-                ```
+                ```{.bash data-prompt="$"}
                 $ sudo apt remove percona-xtrabackup-80
                 ```
 
              * Remove Percona Toolkit
 
-                ```
+                ```{.bash data-prompt="$"}
                 $ sudo apt remove percona-toolkit
                 ```
 
              * Remove Orchestrator
-                ```
+                
+                ```{.bash data-prompt="$"}
                 $ sudo apt remove percona-orchestrator*
                 ```
 
              * Remove MySQL Shell
 
-                ```
+                ```{.bash data-prompt="$"}
                 $ sudo apt remove percona-mysql-shell
                 ```
 
              * Remove ProxySQL
 
-                ```
+                ```{.bash data-prompt="$"}
                 $ sudo apt remove proxysql2
                 ```
 
              * Remove MySQL Router
 
-                ```
+                ```{.bash data-prompt="$"}
                 $ sudo apt remove percona-mysql-router
                 ```
 
@@ -70,13 +71,13 @@ To uninstall Percona Distribution for MySQL, stop the `mysql` service and remove
 
          1. Stop the `mysql` service.
 
-             ```
+             ```{.bash data-prompt="$"}
              $ sudo systemctl stop mysql
              ```
 
          2. Remove *Percona Server for MySQL*.
 
-             ```
+             ```{.bash data-prompt="$"}
              $ sudo yum remove percona-server*
              ```
 
@@ -85,37 +86,37 @@ To uninstall Percona Distribution for MySQL, stop the `mysql` service and remove
 
              * Remove Percona XtraBackup
                
-                ```
+                ```{.bash data-prompt="$"}
                 $ sudo yum remove percona-xtrabackup-80
                 ```
 
              * Remove Percona Toolkit
 
-                ```
+                ```{.bash data-prompt="$"}
                 $ sudo yum remove percona-toolkit
                 ```
 
              * Remove Orchestrator
 
-                ```
+                ```{.bash data-prompt="$"}
                 $ sudo yum remove percona-orchestrator*
                 ```
 
              * Remove MySQL Shell
 
-                ```
+                ```{.bash data-prompt="$"}
                 $ sudo yum remove percona-mysql-shell
                 ```
 
              * Remove ProxySQL
 
-                ```
+                ```{.bash data-prompt="$"}
                 $ sudo yum remove proxysql2
                 ```
 
              * Remove MySQL Router
 
-                ```
+                ```{.bash data-prompt="$"}
                 $ sudo yum remove percona-mysql-router
                 ```
 
@@ -130,13 +131,13 @@ To uninstall Percona Distribution for MySQL, stop the `mysql` service and remove
 
          1. Stop the `mysql` service.
 
-             ```
+             ```{.bash data-prompt="$"}
              $ sudo systemctl stop mysql
              ```
 
          2. Remove *Percona XtraDB Cluster*.
 
-             ```
+             ```{.bash data-prompt="$"}
              $ sudo apt remove percona-xtradb-cluster
              ```
 
@@ -145,13 +146,13 @@ To uninstall Percona Distribution for MySQL, stop the `mysql` service and remove
 
              * Remove Percona XtraBackup
 
-                ```
+                ```{.bash data-prompt="$"}
                 $ sudo apt remove percona-xtrabackup-80
                 ```
 
              * Remove Percona Toolkit
 
-                ```
+                ```{.bash data-prompt="$"}
                 $ sudo apt remove percona-toolkit
                 ```
 
@@ -160,14 +161,14 @@ To uninstall Percona Distribution for MySQL, stop the `mysql` service and remove
 
          1. Stop the `mysql` service.
 
-             ```
+             ```{.bash data-prompt="$"}
              $ sudo systemctl stop mysql
              ```
 
 
          2. Remove *Percona Server for MySQL*.
 
-             ```
+             ```{.bash data-prompt="$"}
              $ sudo yum remove percona-xtradb-cluster
              ```
 
@@ -177,13 +178,13 @@ To uninstall Percona Distribution for MySQL, stop the `mysql` service and remove
 
             * Remove Percona XtraBackup
 
-               ```
+               ```{.bash data-prompt="$"}
                $ sudo yum remove percona-xtrabackup-80
                ```
 
             * Remove Percona Toolkit
 
-              ```
+              ```{.bash data-prompt="$"}
               $ sudo yum remove percona-toolkit
               ```
 
