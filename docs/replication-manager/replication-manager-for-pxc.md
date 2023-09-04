@@ -93,14 +93,14 @@ All nodes have the same `server-id` value.
 
 4. The DC1 cluster uses a single [GTID](../glossary.md#gtid) sequence. To make sure `GTID_PURGED` is the same, run the following commands on DC1-1, DC1-2, and DC1-3 nodes:
 
-    ```bash
+    ```{.bash data-prompt="mysql>"}
     mysql> flush logs;
     mysql> purge binary logs to 'mysql-bin.000003';
     ```
 
     `mysql-bin.000003` is the last file returned when you run the following command:
     
-    ```bash
+    ```{.bash data-prompt="mysql>"}
     mysql>`SHOW BINARY LOGS`
     ```
 
@@ -204,21 +204,21 @@ All nodes have the same `server-id` value.
 
     For example, on DC2-1 run:
 
-    ```bash
+    ```{.bash data-prompt="mysql>"}
     mysql> change replication source to source_host='WAN IP of DC1-1', source_user='repl', source_password='replpass', SOURCE_AUTO_POSITION = 1 FOR CHANNEL 'DC2-DC1';
     mysql> start replica FOR CHANNEL 'DC2-DC1';
     ```
     
     on DC3-1 run: 
 
-    ```bash
+    ```{.bash data-prompt="mysql>"}
     mysql> change replication source to source_host='WAN IP of DC1-1', source_user='repl', source_password='replpass', SOURCE_AUTO_POSITION = 1 FOR CHANNEL 'DC3-DC1';
     mysql> start replica FOR CHANNEL 'DC3-DC1';
     ```
 
     For the other direction, use DC1-1 for both:
 
-    ```bash
+    ```{.bash data-prompt="mysql>"}
     mysql> change replication source to source_host='WAN IP of DC2-1', source_user='repl', source_password='replpass', SOURCE_AUTO_POSITION = 1 FOR CHANNEL 'DC1-DC2';
     mysql> start replica FOR CHANNEL 'DC1-DC2';
     mysql> change replication source to source_host='WAN IP of DC3-1', source_user='repl', source_password='replpass', SOURCE_AUTO_POSITION = 1 FOR CHANNEL 'DC1-DC3';
@@ -233,25 +233,25 @@ All nodes have the same `server-id` value.
 
     === "On Debian and Ubuntu Linux"
 
-        ```bash
+        ```{.bash data-prompt="$"}
         $ sudo apt install percona-replication-manager
         ```
     
     === "On Red Hat Enterprise Linux and derivatives"
 
-        ```bash
+        ```{.bash data-prompt="$"}
         $ sudo yum install percona-replication-manager    
         ```
 
     When executed for the first time, the replication manager detects the current replication links and inserts rows in to the `percona.replication table`. In order to avoid issues, start with the replica nodes. The mysql credentials should be specified in the `/root/.my.cnf` file. On these nodes (DC1-1, DC2-1 and DC3-1), execute the script manually:
     
-    ```bash  
+    ```{.bash data-prompt="$"}
     $ /usr/bin/replication_manager.sh
     ```
 
     The replication state should be unchanged and the `percona.replication` table should contain the following rows:
 
-    ```bash  
+    ```{.bash data-prompt="mysql>"}
     mysql> SELECT * FROM percona.replication;
     ```
 
@@ -279,7 +279,7 @@ All nodes have the same `server-id` value.
 
     Wait at least one minute and proceed with the other nodes. Try a manual run first to see if the script adds a line to the replication table for the host, for example, isSlave = No. Then add the cron jobs. 
     
-    ```bash
+    ```{.bash data-prompt="mysql>"}
     mysql> SELECT * FROM percona.replication;
     ```
 

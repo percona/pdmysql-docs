@@ -20,7 +20,7 @@ To upgrade Percona Distribution for MySQL, [install the `percona-release` reposi
 
         The Major Release repository automatically includes new version packages of Percona Distribution for MySQL. If you installed Percona Distribution for MySQL from a Minor Release repository, enable the new version repository:
 
-        ```sh
+        ```{.bash data-prompt="$"}
         $ sudo percona-release setup pdps-XXX 
         ```
 
@@ -30,7 +30,7 @@ To upgrade Percona Distribution for MySQL, [install the `percona-release` reposi
 
     2. Stop `mysql` service 
 
-        ```sh
+        ```{.bash data-prompt="$"}
         $ sudo systemctl mysql stop
         ```
 
@@ -38,7 +38,7 @@ To upgrade Percona Distribution for MySQL, [install the `percona-release` reposi
 
     4. Restart `mysql` service: 
 
-        ```sh
+        ```{.bash data-prompt="$"}
         $ sudo systemctl mysql start
         ```
 
@@ -50,7 +50,7 @@ To upgrade Percona Distribution for MySQL, [install the `percona-release` reposi
 
         The Major Release repository automatically includes new version packages of Percona Distribution for MySQL. If you installed Percona Distribution for MySQL from a Minor Release repository, enable the new version repository:
 
-         ```sh
+         ```{.bash data-prompt="$"}
          $ sudo percona-release setup pdpxc-XXX 
          ```
 
@@ -60,7 +60,7 @@ To upgrade Percona Distribution for MySQL, [install the `percona-release` reposi
 
     2. Stop `mysql` service
 
-        ```sh
+        ```{.bash data-prompt="$"}
         $ sudo systemctl mysql stop
         ```
 
@@ -70,7 +70,7 @@ To upgrade Percona Distribution for MySQL, [install the `percona-release` reposi
 
     5. Restart `mysql` service 
 
-        ```sh
+        ```{.bash data-prompt="$"}
         $ sudo systemctl mysql start
         ```
     
