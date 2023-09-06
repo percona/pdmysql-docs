@@ -1,5 +1,9 @@
 # Components
 
+<!--
+Check the actual list of components for PDPS 8.1
+-->
+
 Percona Distribution for MySQL consists of the following **components**:
 
 

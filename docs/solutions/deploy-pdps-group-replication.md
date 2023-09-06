@@ -63,6 +63,10 @@ We will use the following elements:
     If nodes aren’t able to resolve, add the entries in the `/etc/hosts` file.
 
 
+<!--
+Update the following example
+-->
+
 5. After instances are up and running, check *Percona Server for MySQL* version on each node:
 
     ```sql
@@ -234,6 +238,9 @@ We will use the following elements:
     (dba@node1)[none]> SET GLOBAL group_replication_bootstrap_group=OFF;
     ```
 
+<!--
+Update the following example
+-->
 
 5. Check if the node registered correctly:
 
@@ -256,6 +263,9 @@ We will use the following elements:
     Query OK, 0 rows affected (4.60 sec)
     ```
 
+<!--
+Update the following example
+-->
 
 7. Check if the secondary node registered correctly:
 
@@ -335,6 +345,10 @@ We will use the following elements:
     grant usage on *.* to 'monitor'@'192.168.4.%';
     grant select on sys.* to 'monitor'@'192.168.4.%';
     ```
+
+<!--
+Update the following example
+-->
 
 3. Define basic variables:
 
@@ -520,7 +534,7 @@ The implementation of a DR (Disaster Recovery) site will follow the same directi
 
 * A DR site should be located in a different geographic location than the main site (several hundred kilometers/miles away).
 
-* The connection link between the main site and the DR site can only be established using *asynchronous replication* (standard MySQL [replication setup](https://dev.mysql.com/doc/refman/8.0/en/replication-gtids.html) ).
+* The connection link between the main site and the DR site can only be established using *asynchronous replication* (standard MySQL [replication setup](https://dev.mysql.com/doc/refman/8.1/en/replication-gtids.html) ).
 
 ## Monitoring
 

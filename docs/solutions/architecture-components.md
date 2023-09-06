@@ -1,7 +1,7 @@
 # Architecture and components
 
 The following is the architecture layout for 
-*Percona Server for MySQL* based deployment variant of Percona Distribution for MySQL with [Group Replication](https://dev.mysql.com/doc/refman/8.0/en/group-replication.html).
+*Percona Server for MySQL* based deployment variant of Percona Distribution for MySQL with [Group Replication](https://dev.mysql.com/doc/refman/8.1/en/group-replication.html).
 
 ## Architecture layout
 
