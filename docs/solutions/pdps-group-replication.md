@@ -4,7 +4,7 @@ Every architecture and deployment depends on customer requirements and applicati
 
 This guide gives [architecture](architecture-components.md) and deployment recommendations along with a technical overview for a solution that provides a high level of high availability and assumes the usage of high read / write applications (20K or more queries per second). It also provides [step-by-step deployment guidelines](deploy-pdps-group-replication.md).
 
-This solution assumes the use of *Percona Server for MySQL* based deployment variant of Percona Distribution for MySQL with [Group Replication](https://dev.mysql.com/doc/refman/8.0/en/group-replication.html).
+This solution assumes the use of *Percona Server for MySQL* based deployment variant of Percona Distribution for MySQL with [Group Replication](https://dev.mysql.com/doc/refman/8.1/en/group-replication.html).
 
 
 ## High availability overview
@@ -30,13 +30,13 @@ The following table provides downtime calculations per high availability level:
 
 There are three key components to achieve high availability:
 
-* **Infrastructure** - This is the physical or virtual hardware that database systems rely on to run. Without enough infrastructure (VM’s, networking, etc.), there cannot be high availability. The easiest example is: `there is no way to make a single server highly available`.
+* **Infrastructure** - this is the physical or virtual hardware that database systems rely on to run. Without enough infrastructure (VM’s, networking, etc.), there cannot be high availability. The easiest example is: `there is no way to make a single server highly available`.
 
 
-* **Topology management** - This is the software management related specifically to the database and managing its ability to stay consistent in the event of a failure. Many clustering or synchronous replication solutions offer this capability out of the box. However, asynchronous replication is handled by additional software.
+* **Topology management** - this is the software management related specifically to the database and managing its ability to stay consistent in the event of a failure. Many clustering or synchronous replication solutions offer this capability out of the box. However, asynchronous replication is handled by additional software.
 
 
-* **Connection management** - This is the software management related specifically to the networking and connectivity aspect of the database. Clustering solutions typically bundle with a connection manager. However, in asynchronous clusters, deploying a connection manager is mandatory for high availability.
+* **Connection management** - this is the software management related specifically to the networking and connectivity aspect of the database. Clustering solutions typically bundle with a connection manager. However, in asynchronous clusters, deploying a connection manager is mandatory for high availability.
 
 This solution is based on a tightly coupled database cluster. It offers a high availability level of 99.995% when coupled with the Group Replication setting `group_replication_consistency=AFTER`.
 

@@ -4,13 +4,17 @@ Percona Distribution for MySQL is a single solution with the best and most criti
 
 ## Features
 
-- **Increased stability and availability** - The set of high-availability and backup options help you ensure your data is saved and available for your business applications. 
+<!--
+Check what features to include for PDPS 8.1
+-->
 
-- **Improved performance and efficiency** - Integrated tools help DBAs maintain, manage and monitor the database performance and timely respond to changing demands. 
+- **Increased stability and availability** - a set of high-availability and backup options help you ensure your data is saved and available for your business applications. 
 
-- **Reduced costs** - Save on purchasing software licensing by using the distribution - the open-source enterprise-grade solution.
+- **Improved performance and efficiency** - integrated tools help DBAs maintain, manage and monitor the database performance and timely respond to changing demands. 
 
-- **Easy-to-integrate with PMM** - Benefit from all the features of [PMM](https://docs.percona.com/percona-monitoring-and-management/index.html) for monitoring and managing the health of your database. 
+- **Reduced costs** - save on purchasing software licensing by using the distribution - the open-source enterprise-grade solution.
+
+- **Easy-to-integrate with PMM** - benefit from all the features of [PMM](https://docs.percona.com/percona-monitoring-and-management/index.html) for monitoring and managing the health of your database. 
 
 Percona Distribution for MySQL comes in two [deployment variants](deployment-variants.md): one is based on *Percona Server for MySQL* and another one - on *Percona XtraDB Cluster*. They differ in the set of components and how you can use them. 
 
