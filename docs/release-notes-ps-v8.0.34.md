@@ -17,7 +17,7 @@ This release is focused on the Percona Server for MySQL-based deployment variati
     * Compress audit log files to reduce the storage space used by log files.
     * Configure an automatic rotation and removal of log files. You can remove outdated log files based either on storage space used by log files or the age of log files.
 
-* Percona Server for MySQL 8.0.34-26 implements the [data masking component](https://docs.percona.com/percona-server/8.0/install-data-masking-component.html), an improved and enchanced version of [data masking plugin](../install-data-masking-plugin.md](https://docs.percona.com/percona-server/8.0/install-data-masking-plugin.html). The data masking component adds the following features:
+* Percona Server for MySQL 8.0.34-26 implements the [data masking component](https://docs.percona.com/percona-server/8.0/install-data-masking-component.html), an improved and enchanced version of [data masking plugin](https://docs.percona.com/percona-server/8.0/install-data-masking-plugin.html). The data masking component adds the following features:
 
     * Support for multibyte character sets for random generation/masking functions
     * New masking functions for IBAN, UUID, Canada SIN, and UK NIN
