@@ -6,7 +6,7 @@ This release is focused on the Percona Server for MySQL-based deployment variati
 
 ## Release highlights
 
-* Percona Server for MySQL 8.0.34-26 implements the [Audit Log Filter plugin](../audit-log-filter-overview.md). The plugin provides a set of features that you can use to monitor user activity on the selected server:
+* Percona Server for MySQL 8.0.34-26 implements the [Audit Log Filter plugin](../audit-log-filter-overview.md](https://docs.percona.com/percona-server/8.0/audit-log-filter-overview.html). The plugin provides a set of features that you can use to monitor user activity on the selected server:
 
     * Filter audit events based on user/connection, accessed database/table name, query content, etc. Filtering rules are in JSON format.
     * Dynamically enable/disable the auditing. A server restart is not required to add or adjust existing filtering rules.
@@ -17,7 +17,7 @@ This release is focused on the Percona Server for MySQL-based deployment variati
     * Compress audit log files to reduce the storage space used by log files.
     * Configure an automatic rotation and removal of log files. You can remove outdated log files based either on storage space used by log files or the age of log files.
 
-* Percona Server for MySQL 8.0.34-26 implements the [data masking component](../install-data-masking-component.md), an improved and enchanced version of [data masking plugin](../install-data-masking-plugin.md). The data masking component adds the following features:
+* Percona Server for MySQL 8.0.34-26 implements the [data masking component](../install-data-masking-component.md](https://docs.percona.com/percona-server/8.0/install-data-masking-component.html), an improved and enchanced version of [data masking plugin](../install-data-masking-plugin.md](https://docs.percona.com/percona-server/8.0/install-data-masking-plugin.html). The data masking component adds the following features:
 
     * Support for multibyte character sets for random generation/masking functions
     * New masking functions for IBAN, UUID, Canada SIN, and UK NIN
