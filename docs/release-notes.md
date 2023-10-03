@@ -1,1 +1,1 @@
-# Release notes index
+# Percona Distribution for MySQL {{release}} release notes index

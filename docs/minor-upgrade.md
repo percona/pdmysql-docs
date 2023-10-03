@@ -14,32 +14,31 @@ To upgrade Percona Distribution for MySQL, [install the `percona-release` reposi
 
     Run the following commands as the root user or via `sudo`.
 
-=== "Upgrade Percona Server-based variant" 
 
-    1. Enable Percona repository
+1. Enable Percona repository
 
-        The Major Release repository automatically includes new version packages of Percona Distribution for MySQL. If you installed Percona Distribution for MySQL from a Minor Release repository, enable the new version repository:
+    The Major Release repository automatically includes new version packages of Percona Distribution for MySQL. If you installed Percona Distribution for MySQL from a Minor Release repository, enable the new version repository:
 
-        ```sh
-        $ sudo percona-release setup pdps-XXX 
-        ```
+    ```{.bash data-prompt="$"}
+    $ sudo percona-release setup pdps-XXX 
+    ```
 
-        where `XXX` is the required version.
+    where `XXX` is the required version.
 
-        Read more about major and Minor release repositories in [Repository overview](installing.md).
+    Read more about major and Minor release repositories in [Repository overview](installing.md).
 
-    2. Stop `mysql` service 
+2. Stop `mysql` service 
 
-        ```sh
-        $ sudo systemctl mysql stop
-        ```
+    ```{.bash data-prompt="$"}
+    $ sudo systemctl mysql stop
+    ```
 
-    3. [Install new version packages](installing.md#procedure) using the package manager of your operating system.
+3. [Install new version packages](installing.md#procedure) using the package manager of your operating system.
 
-    4. Restart `mysql` service: 
+4. Restart `mysql` service: 
 
-        ```sh
-        $ sudo systemctl mysql start
-        ```
+    ```{.bash data-prompt="$"}
+    $ sudo systemctl mysql start
+    ```
 
 To upgrade the components, refer to [Installing Percona Distribution for MySQL](installing.md) for installation instructions relevant to your operating system.
