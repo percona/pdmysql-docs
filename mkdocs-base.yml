@@ -1,29 +1,36 @@
 # MkDocs configuration for builds with material theme
 
-site_name: Percona Distribution for MySQL 8.1
-site_description: Documentation
+site_name: Percona Distribution for MySQL
+site_description: Percona Distribution for MySQL 8.1 Documentation
 site_author: Percona LLC
 copyright: Percona LLC and/or its affiliates, &#169; 2023
 
-site_url: ''
 repo_name: /percona/pdmysql-docs
 repo_url: https://github.com/percona/pdmysql-docs
 edit_uri: edit/8.1/docs/
 
 use_directory_urls: false
 
-#Theme for builds with Material theme
+# Theme setup
 theme:
   name: material
   logo: _images/percona-logo.svg
   favicon: _images/percona-favicon.ico
+  custom_dir: _resource/overrides/
   font:
-    text: Poppins
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    edit: material/file-edit-outline
+    view: material/file-eye-outline
+  
   palette:
 
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: percona-light
+      primary: custom
+      accent: custom
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
@@ -31,6 +38,8 @@ theme:
     # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: custom
+      accent: custom
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
@@ -50,8 +59,12 @@ extra_css:
   - https://unicons.iconscout.com/release/v3.0.3/css/line.css
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css
   - css/percona.css
-  - css/nocopy.css\
-  - css/extra.css
+  - css/nocopy.css
+  - css/design.css
+
+#Copyright
+copyright: >
+  <a href="https://www.percona.com/about">Percona LLC</a> and/or its affiliates © 2023 — <a href="#__consent">Cookie Consent</a>
 
 extra_javascript:
   - js/version-select.js
@@ -60,9 +73,10 @@ extra_javascript:
 markdown_extensions:
   attr_list: {}
   toc:
-    permalink: True
+    permalink: true
     title: On this page
     toc_depth: 3
+  md_in_html: {}
   admonition: {}
   footnotes: {}
   def_list: {} # https://michelf.ca/projects/php-markdown/extra/#def-list
@@ -74,16 +88,25 @@ markdown_extensions:
   pymdownx.mark: {}
   pymdownx.smartsymbols: {}
   pymdownx.tabbed: 
-      alternate_style: true 
+      {alternate_style: true}
   pymdownx.tilde: {}
   pymdownx.superfences: {}
+  pymdownx.tabbed:
+    alternate_style: true
+  pymdownx.tasklist:
+    custom_checkbox: true
+  pymdownx.snippets:
+      base_path: ["snippets"]
+      auto_append:
+        - services-banner.md
   pymdownx.highlight:
-      linenums: false
-  pymdownx.inlinehilite: {}
-  pymdownx.snippets: {}
-  pymdownx.emoji: 
+    use_pygments: true
+  pymdownx.emoji:
     emoji_index: !!python/name:materialx.emoji.twemoji
     emoji_generator: !!python/name:materialx.emoji.to_svg
+    options:
+      custom_icons:
+        - _resource/.icons
   
 plugins:
   search: 
@@ -129,11 +152,13 @@ extra:
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
       make our documentation better. Read more about <a class="reference external" href="https://www.percona.com/20180524-cookie-policy" target="_blank">Percona Cookie Policy</a>.
+  edit_page_text: '<i class="uil uil-pen"></i> <b>Edit this page</b>'
+  updated_text: '<i class="uil uil-refresh"></i> Page updated'
 
 nav:
   - Home: index.md
   - Release notes:
-    - 
+    - Release notes index: release-notes.md
   - Discover Percona Distribution for MySQL:
     - components.md
     - deployment-variants.md
@@ -142,10 +167,10 @@ nav:
     - minor-upgrade.md
     - downgrade.md
   - Solutions - high availability:
-    - Technical overview: solutions/pdps-group-replication.md
-    - solutions/architecture-components.md
-    - solutions/monitoring.md
-    - Deployment: solutions/deploy-pdps-group-replication.md
+    - Technical overview: pdps-group-replication.md
+    - architecture-components.md
+    - monitoring.md
+    - Deployment: deploy-pdps-group-replication.md
   - Uninstall:
     - uninstalling.md
   - Copyright and licensing: copyright.md

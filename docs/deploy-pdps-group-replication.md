@@ -46,7 +46,7 @@ We will use the following elements:
 
 2. Make sure that all the nodes use the same time-zone and time
 
-    ```
+    ```{.bash data-prompt="$"}
     $ date
     Tue Aug 18 08:22:12 EDT 2020
     ```
@@ -62,14 +62,13 @@ We will use the following elements:
 
     If nodes aren’t able to resolve, add the entries in the `/etc/hosts` file.
 
-
-<!--
-Update the following example
--->
-
 5. After instances are up and running, check *Percona Server for MySQL* version on each node:
 
-    ```sql
+    <!--
+    Update the following example
+    -->
+
+    ```{.bash data-prompt="mysql>"}
     mysql>\s
     --------------
     /opt/mysql_templates/PS-8P/bin/mysql  Ver 8.0.20-11 for Linux on x86_64 (Percona Server (GPL), Release 11, Revision 159f0eb)
@@ -93,7 +92,7 @@ Update the following example
 
 2. Make sure to have a good and unique SERVER_ID value:
 
-    ```sql
+    ```{.bash data-prompt="mysql>"}
     mysql> show global variables like 'server_id';
     +---------------+-------+
     | Variable_name | Value |
@@ -110,7 +109,7 @@ Update the following example
 
 1. Stop all the nodes
 
-    ```
+    ```{.bash data-prompt="$"}
     $ service mysql stop
     ```
 
@@ -166,7 +165,7 @@ Update the following example
 
 3. Restart all nodes: 
 
-    ```
+    ```{.bash data-prompt="$"}
     $ service mysql start
     ```
 
@@ -232,19 +231,19 @@ Update the following example
 
 4. Start the Primary node (Gr1) and enable Group Replication:
 
-    ```sql
+    ```{.bash data-prompt="(dba@node1)[none]>"}
     (dba@node1)[none]> SET GLOBAL group_replication_bootstrap_group=ON;
     (dba@node1)[none]> START GROUP_REPLICATION;
     (dba@node1)[none]> SET GLOBAL group_replication_bootstrap_group=OFF;
     ```
 
-<!--
-Update the following example
--->
-
 5. Check if the node registered correctly:
 
-    ```sql
+    <!--
+    Update the following example
+    -->
+
+    ```{.bash data-prompt="(dba@node1)[none]>"}
     (dba@node1) [none]>select * from performance_schema.replication_group_members\G
          CHANNEL_NAME: group_replication_applier
          MEMBER_ID: 90a353b8-e6dc-11ea-98fa-08002734ed50
@@ -258,18 +257,18 @@ Update the following example
 
 6. Once the Primary node is running, connect to the secondary node (Gr2 node) and enable Group Replication:
 
-    ```sh
+    ```{.bash data-prompt="(dba@node2) [none]>"}
     (dba@node2) [none]>START GROUP_REPLICATION;
     Query OK, 0 rows affected (4.60 sec)
     ```
 
-<!--
-Update the following example
--->
-
 7. Check if the secondary node registered correctly:
 
-    ```sql
+    <!--
+    Update the following example
+    -->
+
+    ```{.bash data-prompt="(dba@node2) [performance_schema]>"}
     (dba@node2) [performance_schema]>select * from replication_group_members\G
     *************************** 1. row ***************************
       CHANNEL_NAME: group_replication_applier
@@ -310,7 +309,7 @@ Update the following example
 
     * On the secondary node:
 
-       ```sql
+       ```{.bash data-prompt="(dba@node2) [performance_schema]>"}
        (dba@node2) [performance_schema]>use \test
         Database changed
         (dba@node2) [test]>select * from test1;
@@ -346,11 +345,12 @@ Update the following example
     grant select on sys.* to 'monitor'@'192.168.4.%';
     ```
 
-<!--
-Update the following example
--->
 
 3. Define basic variables:
+
+    <!--
+    Update the following example
+    -->
 
     ```sql
     update global_variables set Variable_Value='admin:admin;cluster1:clusterpass'  where Variable_name='admin-admin_credentials';
@@ -469,14 +469,14 @@ If instead, you have no issue or strict requirements about some stale read, you 
 
     === "on Debian/Ubuntu"
 
-         ```
+         ```{.bash data-prompt="$"}
          $ sudo apt install -y keepalived
          ```
 
 
     === "On RHEL/derivatives"
 
-         ```
+         ```{.bash data-prompt="$"}
          $ sudo yum install -y keepalived
          ```
 
@@ -640,21 +640,21 @@ JOIN performance_schema.replication_applier_status_by_worker AS applier_status
 ORDER BY lag_in_sec, lag_in_sec desc\G
 ```
 
-Output:
+??? example "Expected output"
 
-```sql
-*************************** 1. row ***************************
-channel_name: group_replication_applier
-IO_thread: ON
-SQL_thread: ON
-last_queued_transaction: aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa:125624
-last_applied_transaction: aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa:125621
-rep delay (sec): 3.153038
-transport time: 0.061327
-time RL: 0.001005
-apply time: 0.388680
-lag_in_sec: 0
-```
+    ```sql
+    *************************** 1. row ***************************
+    channel_name: group_replication_applier
+    IO_thread: ON
+    SQL_thread: ON
+    last_queued_transaction: aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa:125624
+    last_applied_transaction: aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa:125621
+    rep delay (sec): 3.153038
+    transport time: 0.061327
+    time RL: 0.001005
+    apply time: 0.388680
+    lag_in_sec: 0
+    ```
 
 !!! admonition "Based on the material from Percona Database Performance Blog"
 
