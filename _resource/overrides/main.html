@@ -1,27 +1,9 @@
-{#
-MkDocs template for Netlify builds to customize docs layout 
-by adding marketing-requested elements
-#}
+{# MkDocs template for builds with Material Theme to customize docs layout by adding marketing-requested elements #}
 
-{# Import the theme's layout. #}
 {% extends "base.html" %}
 
-{%- macro relbar2 () %}
-<div class="md-relbar2__inner md-grid">
-<div class="md-content">
-  <article class="md-content__inner md-typeset" role="main">    
-    <h3>Contact us </h3>
-       <p>For free technical help, visit the Percona <a class="reference external" href="https://forums.percona.com/c/postgresql/25?utm_campaign=Doc%20pages" target="_blank">Community Forum</a>.<br>
-        <p>To report bugs or submit feature requests, open a <a class="reference external" href="https://jira.percona.com/projects/DISTMYSQL/issues/" target="_blank">JIRA</a> ticket.<br>
-         <p>For paid <a class="reference external" href="https://www.percona.com/services/support"> support </a> and <a class="reference external" href="https://www.percona.com/services/managed-services"> managed </a> or <a class="reference external" href="https://www.percona.com/services/consulting">consulting services </a>, contact <a class="reference external" href="https://www.percona.com/about-percona/contact" target="_blank">Percona Sales</a>.</p>
-        </article>
-</div>
-</div>
-
-{%- endmacro %}
-              
-               {% block extrahead %}
-               {{ super() }}
+{% block extrahead %}
+{{ super() }}
                  {% set title = config.site_name %}
                  {% if page and page.meta and page.meta.title %}
                  {% set title = title ~ " - " ~ page.meta.title %}
@@ -45,6 +27,9 @@ by adding marketing-requested elements
                        {% include "partials/nav.html" %}
                        <br>
                        <label class="md-nav__title" for="__drawer">
+       <a href="https://learn.percona.com/download-manual-percona-distribution-for-mysql-8" onclick="_gaq.push(['b._trackEvent', 'Percona Distribution for MySQL', 'Download', 'Download Manual Distribution for MySQL']);" class="md-nav__link md-nav__link--active" style="font-size: .7rem;">
+         Download PDF
+       </a>
      </label> 
                      </div>
                    </div>
@@ -63,3 +48,5 @@ by adding marketing-requested elements
                  </div>
                {% endif %}
              {% endblock %}
+   
+ 
