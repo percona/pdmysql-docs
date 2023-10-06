@@ -1,1 +1,1 @@
-# Percona Distribution for MySQL 8.1 release notes index
+# Percona Distribution for MySQL {{release}} release notes index
