@@ -14,7 +14,7 @@ Percona Distribution for MySQL provides two deployment variants: one is *Percona
 
 ## What deployment variant to choose?
 
-The **Percona Server-based deployment variant** with [asynchronous replication](https://dev.mysql.com/doc/refman/8.1/en/replication.html) utilizes the primary / secondary replication model. It enables you to create geographically distributed infrastructures with the support for disaster recovery. However, this deployment variant does not guarantee data consistency on all nodes at the given moment and provides high availability  of up to 4 nines.
+The **Percona Server-based deployment variant** with [asynchronous replication](https://dev.mysql.com/doc/refman/{{vers}}/en/replication.html) utilizes the primary / secondary replication model. It enables you to create geographically distributed infrastructures with the support for disaster recovery. However, this deployment variant does not guarantee data consistency on all nodes at the given moment and provides high availability  of up to 4 nines.
 
-The **Percona Server-based deployment variant** with [Group Replication](https://dev.mysql.com/doc/refman/8.1/en/group-replication.html) enables you to create fault-tolerant systems with redundancy by replicating the system state to a set of servers. *Percona Server for MySQL*-based deployment with Group Replication  offers a high grade of high availability (4-5 nines) and almost instant fail over when associated with a proxy.
+The **Percona Server-based deployment variant** with [Group Replication](https://dev.mysql.com/doc/refman/{{vers}}/en/group-replication.html) enables you to create fault-tolerant systems with redundancy by replicating the system state to a set of servers. *Percona Server for MySQL*-based deployment with Group Replication  offers a high grade of high availability (4-5 nines) and almost instant fail over when associated with a proxy.
 

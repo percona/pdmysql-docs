@@ -4,7 +4,7 @@ Every architecture and deployment depends on customer requirements and applicati
 
 This guide gives [architecture](architecture-components.md) and deployment recommendations along with a technical overview for a solution that provides a high level of high availability and assumes the usage of high read / write applications (20K or more queries per second). It also provides [step-by-step deployment guidelines](deploy-pdps-group-replication.md).
 
-This solution assumes the use of *Percona Server for MySQL* based deployment variant of Percona Distribution for MySQL with [Group Replication](https://dev.mysql.com/doc/refman/8.1/en/group-replication.html).
+This solution assumes the use of *Percona Server for MySQL* based deployment variant of Percona Distribution for MySQL with [Group Replication](https://dev.mysql.com/doc/refman/{{vers}}/en/group-replication.html).
 
 
 ## High availability overview
