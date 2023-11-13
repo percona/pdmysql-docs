@@ -42,7 +42,7 @@ To install Percona software, you need to configure the required repository. To s
     To enable the desired repository, we recommend to use the `setup` subcommand of `percona-release`.
 
     ```{.bash data-prompt="$"}
-    $ sudo percona-release setup pdps-8.0
+    $ sudo percona-release setup pdps-{{vers}}
     ```
 
     !!! tip
@@ -50,7 +50,7 @@ To install Percona software, you need to configure the required repository. To s
         To enable the minor version repository, use the following command:
 
         ```
-        $ sudo percona-release setup pdps-8.0.20
+        $ sudo percona-release setup pdps-{{release}}
         ```
 
     ### Install Percona Distribution for MySQL packages
@@ -116,7 +116,7 @@ To install Percona software, you need to configure the required repository. To s
     To enable the desired repository, we recommend to use the `setup` subcommand of `percona-release`.
 
     ```{.bash data-prompt="$"}
-    $ sudo percona-release setup pdps-8.0
+    $ sudo percona-release setup pdps-{{vers}}
     ```
 
     !!! tip
@@ -124,7 +124,7 @@ To install Percona software, you need to configure the required repository. To s
         To enable the minor version repository, use the following command:
 
         ```{.bash data-prompt="$"}
-        $ sudo percona-release setup pdps-8.0.20
+        $ sudo percona-release setup pdps-{{release}}
         ```
 
     ### Install Percona Distribution for MySQL packages

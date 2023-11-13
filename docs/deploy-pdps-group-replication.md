@@ -64,14 +64,10 @@ We will use the following elements:
 
 5. After instances are up and running, check *Percona Server for MySQL* version on each node:
 
-    <!--
-    Update the following example
-    -->
-
     ```{.bash data-prompt="mysql>"}
     mysql>\s
     --------------
-    /opt/mysql_templates/PS-8P/bin/mysql  Ver 8.0.20-11 for Linux on x86_64 (Percona Server (GPL), Release 11, Revision 159f0eb)
+    /opt/mysql_templates/PS-8P/bin/mysql  Ver {{release}} for Linux on x86_64 (Percona Server (GPL), Release 11, Revision 159f0eb)
     ```
 
 ### Step 1 Create an administration user
@@ -239,9 +235,6 @@ We will use the following elements:
 
 5. Check if the node registered correctly:
 
-    <!--
-    Update the following example
-    -->
 
     ```{.bash data-prompt="(dba@node1)[none]>"}
     (dba@node1) [none]>select * from performance_schema.replication_group_members\G
@@ -251,7 +244,7 @@ We will use the following elements:
        MEMBER_PORT: 3306
       MEMBER_STATE: ONLINE
        MEMBER_ROLE: PRIMARY
-    MEMBER_VERSION: 8.0.20
+    MEMBER_VERSION: {{release}}
     ```
 
 
@@ -264,9 +257,6 @@ We will use the following elements:
 
 7. Check if the secondary node registered correctly:
 
-    <!--
-    Update the following example
-    -->
 
     ```{.bash data-prompt="(dba@node2) [performance_schema]>"}
     (dba@node2) [performance_schema]>select * from replication_group_members\G
@@ -277,7 +267,7 @@ We will use the following elements:
        MEMBER_PORT: 3306
       MEMBER_STATE: ONLINE
        MEMBER_ROLE: SECONDARY
-    MEMBER_VERSION: 8.0.20
+    MEMBER_VERSION: {{release}}
     *************************** 2. row ***************************
       CHANNEL_NAME: group_replication_applier
          MEMBER_ID: 90a353b8-e6dc-11ea-98fa-08002734ed50
@@ -285,7 +275,7 @@ We will use the following elements:
        MEMBER_PORT: 3306
       MEMBER_STATE: ONLINE
        MEMBER_ROLE: PRIMARY
-    MEMBER_VERSION: 8.0.20
+    MEMBER_VERSION: {{release}}
     ```
 
 
@@ -348,17 +338,13 @@ We will use the following elements:
 
 3. Define basic variables:
 
-    <!--
-    Update the following example
-    -->
-
     ```sql
     update global_variables set Variable_Value='admin:admin;cluster1:clusterpass'  where Variable_name='admin-admin_credentials';
     update global_variables set variable_value='cluster1' where variable_name='admin-cluster_username';
     update global_variables set variable_value='clusterpass' where variable_name='admin-cluster_password';
     update global_variables set Variable_Value=0  where Variable_name='mysql-hostgroup_manager_verbose';
     update global_variables set Variable_Value='true'  where Variable_name='mysql-query_digests_normalize_digest_text';
-    update global_variables set Variable_Value='8.0.20'  where Variable_name='mysql-server_version';
+    update global_variables set Variable_Value='{{release}}'  where Variable_name='mysql-server_version';
     update global_variables set Variable_Value='utf8'  where Variable_name='mysql-default_charset';
     update global_variables set Variable_Value=300  where Variable_name='mysql-tcp_keepalive_time';
     update global_variables set Variable_Value='true'  where Variable_name='mysql-use_tcp_keepalive';
@@ -534,7 +520,7 @@ The implementation of a DR (Disaster Recovery) site will follow the same directi
 
 * A DR site should be located in a different geographic location than the main site (several hundred kilometers/miles away).
 
-* The connection link between the main site and the DR site can only be established using *asynchronous replication* (standard MySQL [replication setup](https://dev.mysql.com/doc/refman/8.1/en/replication-gtids.html) ).
+* The connection link between the main site and the DR site can only be established using *asynchronous replication* (standard MySQL [replication setup](https://dev.mysql.com/doc/refman/{{vers}}/en/replication-gtids.html) ).
 
 ## Monitoring
 
