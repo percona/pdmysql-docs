@@ -1,9 +1,11 @@
 # variables for HTML output
 
-release: '8.1'
+release: '8.1.0'
 version: '8.1'
+psvers: '8.1.0-1'
 vers: '8.1'
-pkg: '81'
-release_date: ', 2023'
-title_date: '2023-0-'
+majorpkg: 'pdps-8x-innovation'
+minorpkg: 'pdps-8.1.0'
+release_date: '2023-11-27'
+title_date: '2023-11-27'
 
