@@ -1,0 +1,1943 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This document provides step-by-step instructions on how to deploy high availability solution with Group Replication.">
+      
+      
+        <meta name="author" content="Percona LLC">
+      
+      
+        <link rel="canonical" href="https://docs.percona.com/percona-distribution-for-mysql/8.1/innovation-release/deploy-pdps-group-replication.html">
+      
+      
+        <link rel="prev" href="monitoring.html">
+      
+      
+        <link rel="next" href="uninstalling.html">
+      
+      
+      <link rel="icon" href="_images/percona-favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>Deployment - Percona Distribution for MySQL</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.3/css/line.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="css/percona.css">
+    
+      <link rel="stylesheet" href="css/nocopy.css">
+    
+      <link rel="stylesheet" href="css/design.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-J4J70BNH0G"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-J4J70BNH0G",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-J4J70BNH0G",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>var consent;"undefined"==typeof __md_analytics||(consent=__md_get("__consent"))&&consent.analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+
+                 
+                 
+                 
+                 
+                 <meta property="og:type" content="website" />
+                 <meta property="og:title" content="Percona Distribution for MySQL - Deployment" />
+                 <meta property="og:url" content="https://docs.percona.com/percona-distribution-for-mysql/8.1/" />
+                 <meta property="og:image" content="https://docs.percona.com/percona-distribution-for-mysql/8.1/_images/percona-mysql-logo.png" />
+               
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="percona-light" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#deploying-high-availability-solution-with-group-replication" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://percona.com/software/documentation" class="md-header__button md-logo" aria-label="Percona Product Documentation" data-md-component="logo">
+      
+  <img src="_images/percona-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Percona Distribution for MySQL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Deployment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+        
+        <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="percona-light" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+        
+        <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/percona/pdmysql-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    /percona/pdmysql-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+               
+                 
+                 <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                   <div class="md-sidebar__scrollwrap">
+                     <div class="md-sidebar__inner">
+                       
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://docs.percona.com" title="Percona Distribution for MySQL" class="md-nav__button md-logo" aria-label="Percona Distribution for MySQL" data-md-component="logo">
+      
+  <img src="_images/percona-logo.svg" alt="logo">
+
+    </a>
+    Percona Distribution for MySQL
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/percona/pdmysql-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    /percona/pdmysql-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Release notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Release notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="release-notes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release notes index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Discover Percona Distribution for MySQL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Discover Percona Distribution for MySQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Components
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deployment-variants.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deployment variants
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Install and update
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Install and update
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install Percona Distribution for MySQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="minor-upgrade.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrade Percona Distribution for MySQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="downgrade.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Downgrade Percona Distribution for MySQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Solutions - high availability
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Solutions - high availability
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pdps-group-replication.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Technical overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="architecture-components.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture and components
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="monitoring.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Measurement and monitoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Deployment
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="deploy-pdps-group-replication.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Deployment
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preconditions" class="md-nav__link">
+    Preconditions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodes-configuration" class="md-nav__link">
+    Nodes configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Nodes configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    Preparation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-an-administration-user" class="md-nav__link">
+    Step 1 Create an administration user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-add-group-replication-settings" class="md-nav__link">
+    Step 2. Add Group Replication settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-a-replication-user" class="md-nav__link">
+    Step 3. Create a replication user
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxy-setup" class="md-nav__link">
+    Proxy setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Proxy setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-installation" class="md-nav__link">
+    Step 1. Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-define-users-servers-and-query-rules-for-read-write-split" class="md-nav__link">
+    Step 2. Define users, servers and query rules for read / write split
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-a-view-in-sys-schema" class="md-nav__link">
+    Step 3. Create a view in SYS schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-activate-support-for-group-replication-in-proxysql" class="md-nav__link">
+    Step 4. Activate support for Group Replication in ProxySQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-enable-high-availability-for-proxysql" class="md-nav__link">
+    Step 5. Enable high availability for ProxySQL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disaster-recovery-implementation" class="md-nav__link">
+    Disaster recovery implementation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    Monitoring
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-percona-management-and-monitoring-pmm" class="md-nav__link">
+    Using Percona Management and Monitoring (PMM)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-command-line" class="md-nav__link">
+    Using command line
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-expert-help" class="md-nav__link">
+    Get expert help
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Uninstall
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Uninstall
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="uninstalling.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Uninstalling Percona Distribution for MySQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="copyright.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Copyright and licensing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="trademark-policy.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trademark policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="glossary.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                       <br>
+                       <label class="md-nav__title" for="__drawer">
+       <a href="https://learn.percona.com/download-manual-percona-distribution-for-mysql-8" onclick="_gaq.push(['b._trackEvent', 'Percona Distribution for MySQL', 'Download', 'Download Manual Distribution for MySQL']);" class="md-nav__link md-nav__link--active" style="font-size: .7rem;">
+         Download PDF
+       </a>
+     </label> 
+                     </div>
+                   </div>
+                 </div>
+               
+               
+                 
+                 <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                   <div class="md-sidebar__scrollwrap">
+                     <div class="md-sidebar__inner">
+                       
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preconditions" class="md-nav__link">
+    Preconditions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodes-configuration" class="md-nav__link">
+    Nodes configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Nodes configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    Preparation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-an-administration-user" class="md-nav__link">
+    Step 1 Create an administration user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-add-group-replication-settings" class="md-nav__link">
+    Step 2. Add Group Replication settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-a-replication-user" class="md-nav__link">
+    Step 3. Create a replication user
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxy-setup" class="md-nav__link">
+    Proxy setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Proxy setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-installation" class="md-nav__link">
+    Step 1. Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-define-users-servers-and-query-rules-for-read-write-split" class="md-nav__link">
+    Step 2. Define users, servers and query rules for read / write split
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-a-view-in-sys-schema" class="md-nav__link">
+    Step 3. Create a view in SYS schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-activate-support-for-group-replication-in-proxysql" class="md-nav__link">
+    Step 4. Activate support for Group Replication in ProxySQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-enable-high-availability-for-proxysql" class="md-nav__link">
+    Step 5. Enable high availability for ProxySQL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disaster-recovery-implementation" class="md-nav__link">
+    Disaster recovery implementation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    Monitoring
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-percona-management-and-monitoring-pmm" class="md-nav__link">
+    Using Percona Management and Monitoring (PMM)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-command-line" class="md-nav__link">
+    Using command line
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-expert-help" class="md-nav__link">
+    Get expert help
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                     </div>
+                   </div>
+                 </div>
+               
+             
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/percona/pdmysql-docs/edit/8.1/docs/deploy-pdps-group-replication.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/percona/pdmysql-docs/raw/8.1/docs/deploy-pdps-group-replication.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+<h1 id="deploying-high-availability-solution-with-group-replication">Deploying high availability solution with Group Replication<a class="headerlink" href="#deploying-high-availability-solution-with-group-replication" title="Permanent link">&para;</a></h1>
+<p>This document provides step-by-step instructions on how to deploy high availability solution with Group Replication. </p>
+<h2 id="preconditions">Preconditions<a class="headerlink" href="#preconditions" title="Permanent link">&para;</a></h2>
+<p>We will use the following elements:</p>
+<ul>
+<li>
+<p>1 Virtual IP for ProxySQL failover - 192.168.4.194</p>
+</li>
+<li>
+<p>2 ProxySQL nodes</p>
+<ul>
+<li>Proxy1 192.168.4.191</li>
+<li>Proxy2 192.168.4.192</li>
+</ul>
+</li>
+<li>
+<p>4 MySQL nodes in Single Primary mode</p>
+<ul>
+<li>Gr1 192.168.4.81 - Initial Primary</li>
+<li>Gr2 192.168.4.82 - Replica / failover</li>
+<li>Gr3 192.168.4.83 - Replica / failover</li>
+<li>Gr4 192.168.4.84 - Replica / Backup</li>
+</ul>
+</li>
+<li>
+<p>All of the following ports must be open if a firewall is in place or any other restriction like AppArmor or SELinux.</p>
+<ul>
+<li>
+<p>ProxySQL:</p>
+<ul>
+<li>6033</li>
+<li>6032</li>
+<li>3306</li>
+</ul>
+</li>
+<li>
+<p>MySQL - Group Replication:</p>
+<ul>
+<li>3306</li>
+<li>33060</li>
+<li>33061</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="nodes-configuration">Nodes configuration<a class="headerlink" href="#nodes-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Install Percona Server-based variant of Percona Distribution for MySQL on each MySQL node (Gr1-Gr4).</p>
+</li>
+<li>
+<p>Make sure that all the nodes use the same time-zone and time</p>
+<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>date
+Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">08</span>:22:12<span class="w"> </span>EDT<span class="w"> </span><span class="m">2020</span>
+</code></pre></div>
+</li>
+<li>
+<p>Also check that <code>ntpd</code> service is present and enabled</p>
+</li>
+<li>
+<p>Make sure that each node resolves the other nodes by name</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>gr<span class="nv">$i</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="p">;</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</code></pre></div>
+<p>If nodes aren’t able to resolve, add the entries in the <code>/etc/hosts</code> file.</p>
+</li>
+<li>
+<p>After instances are up and running, check <em>Percona Server for MySQL</em> version on each node:</p>
+<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="se">\s</span>
+--------------
+/opt/mysql_templates/PS-8P/bin/mysql<span class="w">  </span>Ver<span class="w"> </span><span class="m">8</span>.1<span class="w"> </span><span class="k">for</span><span class="w"> </span>Linux<span class="w"> </span>on<span class="w"> </span>x86_64<span class="w"> </span><span class="o">(</span>Percona<span class="w"> </span>Server<span class="w"> </span><span class="o">(</span>GPL<span class="o">)</span>,<span class="w"> </span>Release<span class="w"> </span><span class="m">11</span>,<span class="w"> </span>Revision<span class="w"> </span>159f0eb<span class="o">)</span>
+</code></pre></div>
+</li>
+</ol>
+<h3 id="step-1-create-an-administration-user">Step 1 Create an administration user<a class="headerlink" href="#step-1-create-an-administration-user" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Create a user for administration. We will use the user <code>dba</code> in our setup:</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">dba</span><span class="o">@</span><span class="n">localhost</span><span class="w"> </span><span class="n">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">&#39;dbapw&#39;</span><span class="p">;</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">dba</span><span class="o">@</span><span class="s1">&#39;192.168.%&#39;</span><span class="w"> </span><span class="n">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">&#39;dbapw&#39;</span><span class="p">;</span>
+
+<span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">dba</span><span class="o">@</span><span class="n">localhost</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">grant</span><span class="w"> </span><span class="k">option</span><span class="p">;</span>
+<span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">dba</span><span class="o">@</span><span class="s1">&#39;192.168.%&#39;</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">grant</span><span class="w"> </span><span class="k">option</span><span class="p">;</span>
+</code></pre></div>
+<p>Log out from the client as the root user and log in as the <code>dba</code> user.</p>
+</li>
+<li>
+<p>Make sure to have a good and unique SERVER_ID value:</p>
+<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>show<span class="w"> </span>global<span class="w"> </span>variables<span class="w"> </span>like<span class="w"> </span><span class="s1">&#39;server_id&#39;</span><span class="p">;</span>
++---------------+-------+
+<span class="p">|</span><span class="w"> </span>Variable_name<span class="w"> </span><span class="p">|</span><span class="w"> </span>Value<span class="w"> </span><span class="p">|</span>
++---------------+-------+
+<span class="p">|</span><span class="w"> </span>server_id<span class="w">     </span><span class="p">|</span><span class="w">     </span><span class="m">1</span><span class="w"> </span><span class="p">|</span>
++---------------+-------+
+<span class="m">1</span><span class="w"> </span>row<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.01<span class="w"> </span>sec<span class="o">)</span>
+</code></pre></div>
+<p>The <code>server_id</code> value must be unique on each node</p>
+</li>
+</ol>
+<h3 id="step-2-add-group-replication-settings">Step 2. Add Group Replication settings<a class="headerlink" href="#step-2-add-group-replication-settings" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Stop all the nodes</p>
+<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>service<span class="w"> </span>mysql<span class="w"> </span>stop
+</code></pre></div>
+</li>
+<li>
+<p>In the <code>my.cnf</code> configuration file, add the following:</p>
+<div class="highlight"><pre><span></span><code>#####################
+#Replication + binlog settings
+#####################
+auto-increment-increment                                    =1
+auto-increment-offset                                       =1
+
+log-bin                                             =&lt;path_to_logs&gt;/binlog
+log-bin-index                                       =binlog.index
+binlog-checksum                                             =NONE
+binlog-format                                               =ROW
+binlog-row-image                                            =FULL
+log-slave-updates                                                             =1
+binlog-transaction-dependency-tracking                   =WRITESET_SESSION
+
+enforce-gtid-consistency                                    =TRUE
+gtid-mode                                                   =ON
+
+master-info-file                                            =master.info
+master-info-repository                                      =TABLE
+relay_log_info_repository                                   =TABLE
+relay-log                                            =&lt;path_to_logs&gt;/relay
+
+sync-binlog                                                 =1
+
+### SLAVE SECTION
+skip-slave-start
+slave-parallel-type                                        = LOGICAL_CLOCK
+slave-parallel-workers                                      = 4
+slave-preserve-commit-order                                 = 1
+
+
+######################################
+#Group Replication
+######################################
+plugin_load_add                                    =&#39;group_replication.so&#39;
+plugin-load-add                                    =&#39;mysql_clone.so&#39;
+group_replication_group_name       =&quot;aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa&quot;  #&lt;-- Not good. Use something
+                                         that will help you to identify the GR transactions and from where they come from IE &quot;dc1euz1-aaaa-aaaa-aaaa-aaaaaaaaaaaa&quot;
+group_replication_start_on_boot                     =off
+group_replication_local_address                     = &quot;192.168.4.81/2/3/4:33061&quot;  &lt;---- CHANGE THIS TO MATCH EACH NODE LOCAL IP
+group_replication_group_seeds                       = &quot;192.168.4.81:33061,192.168.4.82:33061,192.168.4.83:33061,192.168.4.84:33061&quot;
+group_replication_bootstrap_group                   = off
+transaction-write-set-extraction                           = XXHASH64
+</code></pre></div>
+</li>
+<li>
+<p>Restart all nodes: </p>
+<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>service<span class="w"> </span>mysql<span class="w"> </span>start
+</code></pre></div>
+</li>
+<li>
+<p>Connect to the nodes</p>
+</li>
+</ol>
+<h3 id="step-3-create-a-replication-user">Step 3. Create a replication user<a class="headerlink" href="#step-3-create-a-replication-user" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>On every node, create a user for replication</p>
+<div class="highlight"><pre><span></span><code><span class="k">SET</span><span class="w"> </span><span class="n">SQL_LOG_BIN</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="n">replica</span><span class="o">@</span><span class="s1">&#39;192.168.4.%&#39;</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;replicapw&#39;</span><span class="p">;</span><span class="w">   </span><span class="o">#&lt;</span><span class="c1">--- Please note the filter by IP is more restrictive</span>
+<span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="n">REPLICATION</span><span class="w"> </span><span class="n">SLAVE</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">replica</span><span class="o">@</span><span class="s1">&#39;192.168.4.%&#39;</span><span class="p">;</span>
+<span class="w"> </span><span class="n">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span>
+<span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">SQL_LOG_BIN</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Link the nodes with the replication channel.</p>
+<div class="highlight"><pre><span></span><code><span class="n">CHANGE</span><span class="w"> </span><span class="n">MASTER</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">MASTER_USER</span><span class="o">=</span><span class="s1">&#39;replica&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">MASTER_PASSWORD</span><span class="o">=</span><span class="s1">&#39;replicapw&#39;</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="n">CHANNEL</span><span class="w"> </span><span class="s1">&#39;group_replication_recovery&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>Run this command on all nodes.</p>
+</li>
+<li>
+<p>Check the current status:</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node1</span><span class="p">)</span><span class="w"> </span><span class="p">[(</span><span class="k">none</span><span class="p">)]</span><span class="o">&gt;</span><span class="err">\</span><span class="n">u</span><span class="w"> </span><span class="n">performance_schema</span>
+<span class="w">    </span><span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node1</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="n">performance_schema</span><span class="p">]</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">tables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;%repl%&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="o">+</span><span class="c1">-------------------------------------------+</span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">Tables_in_performance_schema</span><span class="w"> </span><span class="p">(</span><span class="o">%</span><span class="n">repl</span><span class="o">%</span><span class="p">)</span><span class="w">     </span><span class="o">|</span>
+<span class="w">    </span><span class="o">+</span><span class="c1">-------------------------------------------+</span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">replication_applier_configuration</span><span class="w">         </span><span class="o">|</span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">replication_applier_filters</span><span class="w">               </span><span class="o">|</span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">replication_applier_global_filters</span><span class="w">        </span><span class="o">|</span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">replication_applier_status</span><span class="w">                </span><span class="o">|</span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">replication_applier_status_by_coordinator</span><span class="w"> </span><span class="o">|</span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">replication_applier_status_by_worker</span><span class="w">      </span><span class="o">|</span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">replication_connection_configuration</span><span class="w">      </span><span class="o">|</span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">replication_connection_status</span><span class="w">             </span><span class="o">|</span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">replication_group_member_stats</span><span class="w">            </span><span class="o">|</span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">replication_group_members</span><span class="w">                 </span><span class="o">|</span><span class="w"> </span><span class="o">&lt;</span><span class="c1">------------------------</span>
+<span class="w">    </span><span class="o">+</span><span class="c1">-------------------------------------------+</span>
+
+<span class="w">   </span><span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node1</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="n">performance_schema</span><span class="p">]</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">replication_group_members</span><span class="err">\</span><span class="k">G</span>
+<span class="n">CHANNEL_NAME</span><span class="p">:</span><span class="w"> </span><span class="n">group_replication_applier</span>
+<span class="w">     </span><span class="n">MEMBER_ID</span><span class="p">:</span>
+<span class="w">   </span><span class="n">MEMBER_HOST</span><span class="p">:</span>
+<span class="w">   </span><span class="n">MEMBER_PORT</span><span class="p">:</span>
+<span class="w">  </span><span class="n">MEMBER_STATE</span><span class="p">:</span>
+<span class="w">   </span><span class="n">MEMBER_ROLE</span><span class="p">:</span><span class="w"> </span><span class="n">OFFLINE</span>
+<span class="n">MEMBER_VERSION</span><span class="p">:</span>
+<span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+</code></pre></div>
+<p>At this stage, you should be able to start the first (Primary) cluster node.</p>
+</li>
+<li>
+<p>Start the Primary node (Gr1) and enable Group Replication:</p>
+<div class="highlight" data-prompt="(dba@node1)[none]>"><pre><span></span><code><span class="o">(</span>dba@node1<span class="o">)[</span>none<span class="o">]</span>&gt;<span class="w"> </span>SET<span class="w"> </span>GLOBAL<span class="w"> </span><span class="nv">group_replication_bootstrap_group</span><span class="o">=</span>ON<span class="p">;</span>
+<span class="o">(</span>dba@node1<span class="o">)[</span>none<span class="o">]</span>&gt;<span class="w"> </span>START<span class="w"> </span>GROUP_REPLICATION<span class="p">;</span>
+<span class="o">(</span>dba@node1<span class="o">)[</span>none<span class="o">]</span>&gt;<span class="w"> </span>SET<span class="w"> </span>GLOBAL<span class="w"> </span><span class="nv">group_replication_bootstrap_group</span><span class="o">=</span>OFF<span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Check if the node registered correctly:</p>
+<div class="highlight" data-prompt="(dba@node1)[none]>"><pre><span></span><code><span class="o">(</span>dba@node1<span class="o">)</span><span class="w"> </span><span class="o">[</span>none<span class="o">]</span>&gt;select<span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>performance_schema.replication_group_members<span class="se">\G</span>
+<span class="w">     </span>CHANNEL_NAME:<span class="w"> </span>group_replication_applier
+<span class="w">     </span>MEMBER_ID:<span class="w"> </span>90a353b8-e6dc-11ea-98fa-08002734ed50
+<span class="w">   </span>MEMBER_HOST:<span class="w"> </span>gr1
+<span class="w">   </span>MEMBER_PORT:<span class="w"> </span><span class="m">3306</span>
+<span class="w">  </span>MEMBER_STATE:<span class="w"> </span>ONLINE
+<span class="w">   </span>MEMBER_ROLE:<span class="w"> </span>PRIMARY
+MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.1
+</code></pre></div>
+</li>
+<li>
+<p>Once the Primary node is running, connect to the secondary node (Gr2 node) and enable Group Replication:</p>
+<div class="highlight" data-prompt="(dba@node2) [none]>"><pre><span></span><code><span class="o">(</span>dba@node2<span class="o">)</span><span class="w"> </span><span class="o">[</span>none<span class="o">]</span>&gt;START<span class="w"> </span>GROUP_REPLICATION<span class="p">;</span>
+Query<span class="w"> </span>OK,<span class="w"> </span><span class="m">0</span><span class="w"> </span>rows<span class="w"> </span>affected<span class="w"> </span><span class="o">(</span><span class="m">4</span>.60<span class="w"> </span>sec<span class="o">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Check if the secondary node registered correctly:</p>
+<div class="highlight" data-prompt="(dba@node2) [performance_schema]>"><pre><span></span><code><span class="o">(</span>dba@node2<span class="o">)</span><span class="w"> </span><span class="o">[</span>performance_schema<span class="o">]</span>&gt;select<span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>replication_group_members<span class="se">\G</span>
+***************************<span class="w"> </span><span class="m">1</span>.<span class="w"> </span>row<span class="w"> </span>***************************
+<span class="w">  </span>CHANNEL_NAME:<span class="w"> </span>group_replication_applier
+<span class="w">     </span>MEMBER_ID:<span class="w"> </span>58ffd118-e6dc-11ea-8af8-08002734ed50
+<span class="w">   </span>MEMBER_HOST:<span class="w"> </span>gr2
+<span class="w">   </span>MEMBER_PORT:<span class="w"> </span><span class="m">3306</span>
+<span class="w">  </span>MEMBER_STATE:<span class="w"> </span>ONLINE
+<span class="w">   </span>MEMBER_ROLE:<span class="w"> </span>SECONDARY
+MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.1
+***************************<span class="w"> </span><span class="m">2</span>.<span class="w"> </span>row<span class="w"> </span>***************************
+<span class="w">  </span>CHANNEL_NAME:<span class="w"> </span>group_replication_applier
+<span class="w">     </span>MEMBER_ID:<span class="w"> </span>90a353b8-e6dc-11ea-98fa-08002734ed50
+<span class="w">   </span>MEMBER_HOST:<span class="w"> </span>gr1
+<span class="w">   </span>MEMBER_PORT:<span class="w"> </span><span class="m">3306</span>
+<span class="w">  </span>MEMBER_STATE:<span class="w"> </span>ONLINE
+<span class="w">   </span>MEMBER_ROLE:<span class="w"> </span>PRIMARY
+MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.1
+</code></pre></div>
+</li>
+<li>
+<p>Test the replication:</p>
+<ul>
+<li>On the Primary node, run the following command:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node1</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="n">performance_schema</span><span class="p">]</span><span class="o">&gt;</span><span class="k">create</span><span class="w"> </span><span class="k">schema</span><span class="w"> </span><span class="n">test</span><span class="p">;</span>
+<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">76</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+
+<span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node1</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="n">performance_schema</span><span class="p">]</span><span class="o">&gt;</span><span class="err">\</span><span class="n">u</span><span class="w"> </span><span class="n">test</span>
+<span class="k">Database</span><span class="w"> </span><span class="n">changed</span>
+
+<span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node1</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="n">test</span><span class="p">]</span><span class="o">&gt;</span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">test1</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="w"> </span><span class="nb">int</span><span class="w"> </span><span class="n">auto_increment</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">);</span>
+<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">32</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+
+<span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node1</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="n">test</span><span class="p">]</span><span class="o">&gt;</span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">test1</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="k">null</span><span class="p">);</span>
+<span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">34</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>On the secondary node:</li>
+</ul>
+<div class="highlight" data-prompt="(dba@node2) [performance_schema]>"><pre><span></span><code><span class="o">(</span>dba@node2<span class="o">)</span><span class="w"> </span><span class="o">[</span>performance_schema<span class="o">]</span>&gt;use<span class="w"> </span><span class="se">\t</span>est
+<span class="w"> </span>Database<span class="w"> </span>changed
+<span class="w"> </span><span class="o">(</span>dba@node2<span class="o">)</span><span class="w"> </span><span class="o">[</span>test<span class="o">]</span>&gt;select<span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>test1<span class="p">;</span>
+<span class="w"> </span>+----+
+<span class="w"> </span><span class="p">|</span><span class="w"> </span>id<span class="w"> </span><span class="p">|</span>
+<span class="w"> </span>+----+
+<span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="p">|</span>
+<span class="w"> </span>+----+
+<span class="w"> </span><span class="m">1</span><span class="w"> </span>row<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.00<span class="w"> </span>sec<span class="o">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Start Group Replication on the remaining nodes</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node3</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="n">performance_schema</span><span class="p">]</span><span class="o">&gt;</span><span class="k">START</span><span class="w"> </span><span class="n">GROUP_REPLICATION</span><span class="p">;</span>
+<span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node4</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="n">performance_schema</span><span class="p">]</span><span class="o">&gt;</span><span class="k">START</span><span class="w"> </span><span class="n">GROUP_REPLICATION</span><span class="p">;</span>
+</code></pre></div>
+</li>
+</ol>
+<h2 id="proxy-setup">Proxy setup<a class="headerlink" href="#proxy-setup" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-installation">Step 1. Installation<a class="headerlink" href="#step-1-installation" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><a href="https://www.percona.com/doc/proxysql/proxysql-v2.html#installing-proxysql-v2">Install ProxySQL</a>. <a href="#predconditions">In our example</a>, we install ProxySQL on Proxy1 192.168.4.191 and Proxy2 192.168.4.192 nodes. </p>
+</li>
+<li>
+<p>Create the monitoring user on MySQL Group Replication nodes:</p>
+<div class="highlight"><pre><span></span><code><span class="k">create</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">monitor</span><span class="o">@</span><span class="s1">&#39;192.168.4.%&#39;</span><span class="w"> </span><span class="n">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">&#39;monitor&#39;</span><span class="p">;</span>
+<span class="k">grant</span><span class="w"> </span><span class="k">usage</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">&#39;monitor&#39;</span><span class="o">@</span><span class="s1">&#39;192.168.4.%&#39;</span><span class="p">;</span>
+<span class="k">grant</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">&#39;monitor&#39;</span><span class="o">@</span><span class="s1">&#39;192.168.4.%&#39;</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Define basic variables:</p>
+<div class="highlight"><pre><span></span><code><span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;admin:admin;cluster1:clusterpass&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;admin-admin_credentials&#39;</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">variable_value</span><span class="o">=</span><span class="s1">&#39;cluster1&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">variable_name</span><span class="o">=</span><span class="s1">&#39;admin-cluster_username&#39;</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">variable_value</span><span class="o">=</span><span class="s1">&#39;clusterpass&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">variable_name</span><span class="o">=</span><span class="s1">&#39;admin-cluster_password&#39;</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="mi">0</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-hostgroup_manager_verbose&#39;</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;true&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-query_digests_normalize_digest_text&#39;</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;8.1&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-server_version&#39;</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-default_charset&#39;</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="mi">300</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-tcp_keepalive_time&#39;</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;true&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-use_tcp_keepalive&#39;</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;true&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-verbose_query_error&#39;</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;true&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-show_processlist_extended&#39;</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="mi">50000</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-max_stmts_cache&#39;</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;false&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;admin-web_enabled&#39;</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-set_query_lock_on_hostgroup&#39;</span><span class="p">;</span>
+
+<span class="k">load</span><span class="w"> </span><span class="k">admin</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">run</span><span class="p">;</span><span class="n">save</span><span class="w"> </span><span class="k">admin</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">disk</span><span class="p">;</span>
+<span class="k">load</span><span class="w"> </span><span class="n">mysql</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">run</span><span class="p">;</span><span class="n">save</span><span class="w"> </span><span class="n">mysql</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">disk</span><span class="p">;</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The user name and password need to reflect your standards. The ones used above are just an example.</p>
+</div>
+</li>
+<li>
+<p>Set up the nodes as a cluster:</p>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">proxysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="s1">&#39;192.168.4.191&#39;</span><span class="p">,</span><span class="mi">6032</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="s1">&#39;PRIMARY&#39;</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">proxysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="s1">&#39;192.168.4.192&#39;</span><span class="p">,</span><span class="mi">6032</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="s1">&#39;SECONDARY&#39;</span><span class="p">);</span>
+<span class="k">load</span><span class="w"> </span><span class="n">proxysql</span><span class="w"> </span><span class="n">servers</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">run</span><span class="p">;</span><span class="n">save</span><span class="w"> </span><span class="n">proxysql</span><span class="w"> </span><span class="n">servers</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">disk</span><span class="p">;</span>
+</code></pre></div>
+</li>
+</ol>
+<h3 id="step-2-define-users-servers-and-query-rules-for-read-write-split">Step 2. Define users, servers and query rules for read / write split<a class="headerlink" href="#step-2-define-users-servers-and-query-rules-for-read-write-split" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Create one or more valid users. Define these user(s). For example, if you have a user named <code>app_gr</code> with the password <code>test</code>, and that has access to your Group Replication cluster, the command to define the user is the following:</p>
+<div class="highlight"><pre><span></span><code><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">mysql_users</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">password</span><span class="p">,</span><span class="n">active</span><span class="p">,</span><span class="n">default_hostgroup</span><span class="p">,</span><span class="n">default_schema</span><span class="p">,</span><span class="n">transaction_persistent</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;app_gr&#39;</span><span class="p">,</span><span class="s1">&#39;test&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="s1">&#39;mysql&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;application test user GR&#39;</span><span class="p">);</span>
+<span class="k">LOAD</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">USERS</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">RUNTIME</span><span class="p">;</span><span class="n">SAVE</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">USERS</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">DISK</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Define servers:</p>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;192.168.4.81&#39;</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">&#39;GR1&#39;</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;192.168.4.81&#39;</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">&#39;GR1&#39;</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;192.168.4.82&#39;</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">&#39;GR2&#39;</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;192.168.4.83&#39;</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">&#39;GR2&#39;</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;192.168.4.84&#39;</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">&#39;GR2&#39;</span><span class="p">);</span>
+<span class="k">LOAD</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">SERVERS</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">RUNTIME</span><span class="p">;</span><span class="w"> </span><span class="n">SAVE</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">SERVERS</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">DISK</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Define query rules to get read / write split:</p>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_query_rules</span><span class="w"> </span><span class="p">(</span><span class="n">rule_id</span><span class="p">,</span><span class="n">proxy_port</span><span class="p">,</span><span class="n">username</span><span class="p">,</span><span class="n">destination_hostgroup</span><span class="p">,</span><span class="n">active</span><span class="p">,</span><span class="n">retries</span><span class="p">,</span><span class="n">match_digest</span><span class="p">,</span><span class="n">apply</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="mi">4040</span><span class="p">,</span><span class="mi">6033</span><span class="p">,</span><span class="s1">&#39;app_gr&#39;</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;^SELECT.*FOR UPDATE&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_query_rules</span><span class="w"> </span><span class="p">(</span><span class="n">rule_id</span><span class="p">,</span><span class="n">proxy_port</span><span class="p">,</span><span class="n">username</span><span class="p">,</span><span class="n">destination_hostgroup</span><span class="p">,</span><span class="n">active</span><span class="p">,</span><span class="n">retries</span><span class="p">,</span><span class="n">match_digest</span><span class="p">,</span><span class="n">multiplex</span><span class="p">,</span><span class="n">apply</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="mi">4042</span><span class="p">,</span><span class="mi">6033</span><span class="p">,</span><span class="s1">&#39;app_gr&#39;</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;^SELECT.*$&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">LOAD</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">QUERY</span><span class="w"> </span><span class="n">RULES</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">RUN</span><span class="p">;</span><span class="n">SAVE</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">QUERY</span><span class="w"> </span><span class="n">RULES</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">DISK</span><span class="p">;</span>
+</code></pre></div>
+</li>
+</ol>
+<h3 id="step-3-create-a-view-in-sys-schema">Step 3. Create a view in SYS schema<a class="headerlink" href="#step-3-create-a-view-in-sys-schema" title="Permanent link">&para;</a></h3>
+<p>Once all the configuration is ready, we need to have a special view in the SYS schema in Percona server nodes. Find the view working for the server version 8 and above <a href="https://github.com/Percona-Lab/group_replication_tools/blob/master/GR_sys_view_forProxysql_v1.sql">here</a>.</p>
+<p>Run that sql on the <strong>Primary</strong> node of the Group Replication cluster.</p>
+<h3 id="step-4-activate-support-for-group-replication-in-proxysql">Step 4. Activate support for Group Replication in ProxySQL<a class="headerlink" href="#step-4-activate-support-for-group-replication-in-proxysql" title="Permanent link">&para;</a></h3>
+<p>To activate the  native support for Group Replication in ProxySQL, we will use the following group definition:</p>
+<div class="highlight"><pre><span></span><code>Writer HG-&gt; 400
+Reader HG-&gt; 401
+BackupW HG-&gt; 402
+Offline HG-&gt; 9401
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_group_replication_hostgroups</span><span class="w"> </span><span class="p">(</span><span class="n">writer_hostgroup</span><span class="p">,</span><span class="n">backup_writer_hostgroup</span><span class="p">,</span><span class="n">reader_hostgroup</span><span class="p">,</span><span class="w"> </span><span class="n">offline_hostgroup</span><span class="p">,</span><span class="n">active</span><span class="p">,</span><span class="n">max_writers</span><span class="p">,</span><span class="n">writer_is_also_reader</span><span class="p">,</span><span class="n">max_transactions_behind</span><span class="p">)</span>
+<span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="mi">402</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">9401</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">);</span>
+<span class="k">LOAD</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">SERVERS</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">RUNTIME</span><span class="p">;</span><span class="w"> </span><span class="n">SAVE</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">SERVERS</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">DISK</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="comments-about-parameters">Comments about parameters<a class="headerlink" href="#comments-about-parameters" title="Permanent link">&para;</a></h4>
+<p>To obtain the most reliable results, we recommend setting the number of writers always to 1, and <code>writer_is_also_reader</code> to 1 as well.</p>
+<div class="highlight"><pre><span></span><code>max_writers: 1
+writer_is_also_reader: 1
+</code></pre></div>
+<p>The <code>max_transactions_behind</code> is a subjective parameter that you should calculate on the basis of your needs. If, for instance, you cannot have a stale read, it will be safe to set this value to a low number (i.e. 50) and to set in all Group Replication nodes:</p>
+<div class="highlight"><pre><span></span><code><span class="k">set</span><span class="w"> </span><span class="k">global</span><span class="w"> </span><span class="n">group_replication_consistency</span><span class="o">=</span><span class="k">AFTER</span><span class="p">;</span>
+</code></pre></div>
+<p>If instead, you have no issue or strict requirements about some stale read, you can relax the parameter and ignore the <code>group_replication_consistency</code> setting. Our recommended setting is <code>group_replication_consistency=AFTER</code> and <code>max_transactions_behind: 100</code>.</p>
+<div class="admonition admonition">
+<p class="admonition-title">See also</p>
+<p>ProxySQL Documentation: <a href="https://proxysql.com/documentation/main-runtime/#mysql_group_replication_hostgroups">mysql_group_replication_hostgroups</a></p>
+</div>
+<h3 id="step-5-enable-high-availability-for-proxysql">Step 5. Enable high availability for ProxySQL<a class="headerlink" href="#step-5-enable-high-availability-for-proxysql" title="Permanent link">&para;</a></h3>
+<p><code>keepalived</code> will be used to enable High Availability for ProxySQL.</p>
+<ol>
+<li>
+<p>Install <code>keepalived</code> on each ProxySQL node using the package manager of your operating system:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">on Debian/Ubuntu</label><label for="__tabbed_1_2">On RHEL/derivatives</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>keepalived
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>keepalived
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Modify the <code>/etc/keepalived/keepalived.conf</code> file accordingly to your setup. In our case:</p>
+<ul>
+<li>
+<p>Proxy1 192.168.4.0/24 dev enp0s9 proto kernel scope link src 192.168.4.191</p>
+</li>
+<li>
+<p>Proxy2 192.168.4.0/24 dev enp0s9 proto kernel scope link src 192.168.4.192</p>
+</li>
+<li>
+<p>VIP       192.168.4.194</p>
+</li>
+</ul>
+<p>Let’s say Proxy1 is the primary node while Proxy2 is the secondary node.</p>
+<p>Given that, the config file looks as follows:</p>
+<div class="highlight"><pre><span></span><code>global_defs {
+  # Keepalived process identifier
+  router_id  proxy_HA
+}
+# Script used to check if Proxy is running
+vrrp_script check_proxy {
+  script &quot;killall -0 proxysql&quot;
+  interval 2
+  weight 2
+}
+# Virtual interface
+# The priority specifies the order in which the assigned interface to take over in a failover
+vrrp_instance VI_01 {
+  state MASTER
+  interface enp0s9
+  virtual_router_id 51
+  priority 100  &lt;----- This needs to be different for each ProxySQL node, like 100/99
+
+  # The virtual ip address shared between the two load balancers
+  virtual_ipaddress {
+   192.168.4.194  dev enp0s9
+  }
+  track_script {
+    check_proxy
+  }
+}
+</code></pre></div>
+</li>
+<li>
+<p>Start the <code>keepalived</code> service. From now on, the VIP will be associated with the Proxy1 unless the service is down.</p>
+</li>
+</ol>
+<h2 id="disaster-recovery-implementation">Disaster recovery implementation<a class="headerlink" href="#disaster-recovery-implementation" title="Permanent link">&para;</a></h2>
+<p>The implementation of a DR (Disaster Recovery) site will follow the same direction provided for the main site. There are only some generic rules to follow:</p>
+<ul>
+<li>
+<p>A DR site should be located in a different geographic location than the main site (several hundred kilometers/miles away).</p>
+</li>
+<li>
+<p>The connection link between the main site and the DR site can only be established using <em>asynchronous replication</em> (standard MySQL <a href="https://dev.mysql.com/doc/refman/8.1/en/replication-gtids.html">replication setup</a> ).</p>
+</li>
+</ul>
+<h2 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h2>
+<h3 id="using-percona-management-and-monitoring-pmm">Using Percona Management and Monitoring (PMM)<a class="headerlink" href="#using-percona-management-and-monitoring-pmm" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Use <a href="https://www.percona.com/software/pmm/quickstart">this quickstart</a> to install Percona Monitoring and Management (PMM).</p>
+</li>
+<li>
+<p>Specify the <code>replication_set</code> flag  when registering the <em>Percona Server for MySQL</em> node or the MySQL node in PMM:</p>
+<div class="highlight"><pre><span></span><code>pmm-admin<span class="w"> </span>add<span class="w"> </span>mysql<span class="w"> </span>--username<span class="o">=</span>pmm<span class="w"> </span>--password<span class="o">=</span>pmm<span class="w"> </span>--query-source<span class="o">=</span>perfschema<span class="w"> </span>--replication-set<span class="o">=</span>gr_test_lab<span class="w">  </span>group_rep4<span class="w"> </span><span class="m">127</span>.0.0.1:3306
+</code></pre></div>
+</li>
+</ol>
+<p>Then you can use the Group Replication Dashboard and monitor your cluster with a lot of details.</p>
+<p>The dashboard sections are the following:</p>
+<ol>
+<li>
+<p>Overview:</p>
+<p><img alt="image" src="../_images/pmm_for_gr_overiew.png" /></p>
+</li>
+<li>
+<p>Replication delay details</p>
+<p><img alt="image" src="../_images/pmm_for_gr.png" /></p>
+</li>
+<li>
+<p>Transactions</p>
+<p><img alt="image" src="../_images/pmm_for_gr_trx.png" /></p>
+</li>
+<li>
+<p>Conflicts</p>
+<p><img alt="image" src="../_images/pmm_for_gr_conflicts.png" /></p>
+</li>
+</ol>
+<h3 id="using-command-line">Using command line<a class="headerlink" href="#using-command-line" title="Permanent link">&para;</a></h3>
+<p>From the command line, you need to manually query the tables in Performance schema:</p>
+<div class="highlight"><pre><span></span><code>+----------------------------------------------+
+| replication_applier_configuration            |
+| replication_applier_filters                  |
+| replication_applier_global_filters           |
+| replication_applier_status                   |
+| replication_applier_status_by_coordinator    |
+| replication_applier_status_by_worker         |
+| replication_connection_configuration         |
+| replication_connection_status                |
+| replication_group_member_stats               |
+| replication_group_members                    |
++----------------------------------------------+
+</code></pre></div>
+<p>For example, use this command  to get the lag in number of transactions on a node:</p>
+<div class="highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span><span class="o">@</span><span class="n">last_exec</span><span class="p">:</span><span class="o">=</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="w"> </span><span class="o">@@</span><span class="k">global</span><span class="p">.</span><span class="n">GTID_EXECUTED</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">last_executed</span><span class="p">;</span><span class="k">select</span><span class="w">  </span><span class="o">@</span><span class="n">last_rec</span><span class="p">:</span><span class="o">=</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="n">Received_transaction_set</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">last_received</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">performance_schema</span><span class="p">.</span><span class="n">replication_connection_status</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Channel_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;group_replication_applier&#39;</span><span class="p">;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="p">(</span><span class="o">@</span><span class="n">last_rec</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">@</span><span class="n">last_exec</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">real_lag</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">---------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">last_executed</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">---------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="mi">125624</span><span class="w">        </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">---------------+</span>
+<span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">warning</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">03</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+
+<span class="o">+</span><span class="c1">---------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">last_received</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">---------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="mi">125624</span><span class="w">        </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">---------------+</span>
+<span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">warning</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+
+<span class="o">+</span><span class="c1">----------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">real_lag</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">----------+</span>
+<span class="o">|</span><span class="w">        </span><span class="mi">0</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">----------+</span>
+<span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+</code></pre></div>
+<p>You can use a more composite query to get information about each applier:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
+<span class="w">  </span><span class="n">conn_status</span><span class="p">.</span><span class="n">channel_name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">channel_name</span><span class="p">,</span>
+<span class="w">  </span><span class="n">conn_status</span><span class="p">.</span><span class="n">service_state</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">IO_thread</span><span class="p">,</span>
+<span class="w">  </span><span class="n">applier_status</span><span class="p">.</span><span class="n">service_state</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">SQL_thread</span><span class="p">,</span>
+<span class="w">  </span><span class="n">conn_status</span><span class="p">.</span><span class="n">LAST_QUEUED_TRANSACTION</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">last_queued_transaction</span><span class="p">,</span>
+<span class="w">  </span><span class="n">applier_status</span><span class="p">.</span><span class="n">LAST_APPLIED_TRANSACTION</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">last_applied_transaction</span><span class="p">,</span>
+<span class="w">  </span><span class="n">LAST_APPLIED_TRANSACTION_END_APPLY_TIMESTAMP</span><span class="w"> </span><span class="o">-</span>
+<span class="w">                            </span><span class="n">LAST_APPLIED_TRANSACTION_ORIGINAL_COMMIT_TIMESTAMP</span><span class="w"> </span><span class="s1">&#39;rep delay (sec)&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">LAST_QUEUED_TRANSACTION_START_QUEUE_TIMESTAMP</span><span class="w"> </span><span class="o">-</span>
+<span class="w">                           </span><span class="n">LAST_QUEUED_TRANSACTION_ORIGINAL_COMMIT_TIMESTAMP</span><span class="w"> </span><span class="s1">&#39;transport time&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">LAST_QUEUED_TRANSACTION_END_QUEUE_TIMESTAMP</span><span class="w"> </span><span class="o">-</span>
+<span class="w">                           </span><span class="n">LAST_QUEUED_TRANSACTION_START_QUEUE_TIMESTAMP</span><span class="w"> </span><span class="s1">&#39;time RL&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">LAST_APPLIED_TRANSACTION_END_APPLY_TIMESTAMP</span><span class="w"> </span><span class="o">-</span>
+<span class="w">                           </span><span class="n">LAST_APPLIED_TRANSACTION_START_APPLY_TIMESTAMP</span><span class="w"> </span><span class="s1">&#39;apply time&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">GTID_SUBTRACT</span><span class="p">(</span><span class="n">LAST_QUEUED_TRANSACTION</span><span class="p">,</span><span class="w"> </span><span class="n">LAST_APPLIED_TRANSACTION</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;&quot;</span><span class="p">,</span><span class="ss">&quot;0&quot;</span><span class="w"> </span><span class="p">,</span><span class="w">        </span><span class="k">abs</span><span class="p">(</span><span class="n">time_to_sec</span><span class="p">(</span><span class="k">if</span><span class="p">(</span><span class="n">time_to_sec</span><span class="p">(</span><span class="n">APPLYING_TRANSACTION_ORIGINAL_COMMIT_TIMESTAMP</span><span class="p">)</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">timediff</span><span class="p">(</span><span class="n">APPLYING_TRANSACTION_ORIGINAL_COMMIT_TIMESTAMP</span><span class="p">,</span><span class="n">now</span><span class="p">())))))</span><span class="w"> </span><span class="o">`</span><span class="n">lag_in_sec</span><span class="o">`</span>
+<span class="k">FROM</span>
+<span class="w">  </span><span class="n">performance_schema</span><span class="p">.</span><span class="n">replication_connection_status</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">conn_status</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">performance_schema</span><span class="p">.</span><span class="n">replication_applier_status_by_worker</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">applier_status</span>
+<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">applier_status</span><span class="p">.</span><span class="n">channel_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn_status</span><span class="p">.</span><span class="n">channel_name</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">lag_in_sec</span><span class="p">,</span><span class="w"> </span><span class="n">lag_in_sec</span><span class="w"> </span><span class="k">desc</span><span class="err">\</span><span class="k">G</span>
+</code></pre></div>
+<details class="example">
+<summary>Expected output</summary>
+<div class="highlight"><pre><span></span><code><span class="o">***************************</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="o">***************************</span>
+<span class="n">channel_name</span><span class="p">:</span><span class="w"> </span><span class="n">group_replication_applier</span>
+<span class="n">IO_thread</span><span class="p">:</span><span class="w"> </span><span class="k">ON</span>
+<span class="n">SQL_thread</span><span class="p">:</span><span class="w"> </span><span class="k">ON</span>
+<span class="n">last_queued_transaction</span><span class="p">:</span><span class="w"> </span><span class="n">aaaaaaaa</span><span class="o">-</span><span class="n">aaaa</span><span class="o">-</span><span class="n">aaaa</span><span class="o">-</span><span class="n">aaaa</span><span class="o">-</span><span class="n">aaaaaaaaaaaa</span><span class="p">:</span><span class="mi">125624</span>
+<span class="n">last_applied_transaction</span><span class="p">:</span><span class="w"> </span><span class="n">aaaaaaaa</span><span class="o">-</span><span class="n">aaaa</span><span class="o">-</span><span class="n">aaaa</span><span class="o">-</span><span class="n">aaaa</span><span class="o">-</span><span class="n">aaaaaaaaaaaa</span><span class="p">:</span><span class="mi">125621</span>
+<span class="n">rep</span><span class="w"> </span><span class="n">delay</span><span class="w"> </span><span class="p">(</span><span class="n">sec</span><span class="p">):</span><span class="w"> </span><span class="mi">3</span><span class="p">.</span><span class="mi">153038</span>
+<span class="n">transport</span><span class="w"> </span><span class="k">time</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">061327</span>
+<span class="k">time</span><span class="w"> </span><span class="n">RL</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">001005</span>
+<span class="n">apply</span><span class="w"> </span><span class="k">time</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">388680</span>
+<span class="n">lag_in_sec</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div>
+</details>
+<div class="admonition admonition">
+<p class="admonition-title">Based on the material from Percona Database Performance Blog</p>
+<p>This document is based on the blog post <a href="https://www.percona.com/blog/2021/04/14/percona-distribution-for-mysql-high-availability-with-group-replication-solution/">Percona Distribution for MySQL: High Availability with Group Replication Solution</a> by <em>Marco Tusa</em></p>
+</div>
+<div data-banner="data-banner">
+<h2 class="title" id="get-expert-help">Get expert help<a class="headerlink" href="#get-expert-help" title="Permanent link">&para;</a></h2>
+<p>If you need assistance, visit the community forum for comprehensive and free database knowledge, or contact our Percona Database Experts for professional support and services.
+<img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=751d512d-299c-4f7a-ad7e-166037a667e5" /></p>
+<div class="actions">
+<p><a href="https://forums.percona.com/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 4v7H5.17L4 12.17V4h11m1-2H3a1 1 0 0 0-1 1v14l4-4h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1m5 4h-2v9H6v2a1 1 0 0 0 1 1h11l4 4V7a1 1 0 0 0-1-1Z"/></svg></span> Community Forum</a> <a href="https://www.percona.com/about/contact"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19.3996 14.148C21.9082 12.5083 22.7289 9.16368 21.2109 6.53493C20.4502 5.21636 19.2207 4.27206 17.7497 3.87776C16.3868 3.51187 14.9634 3.6615 13.7106 4.29444L12 1.33337L8.44934 7.48295L0.242432 21.6959H23.7576L19.3996 14.148ZM17.3474 5.38416C18.4167 5.66894 19.3064 6.35548 19.8606 7.31143C20.9499 9.19582 20.384 11.5859 18.6176 12.7931L14.4917 5.64797C15.3806 5.22055 16.3831 5.12734 17.3474 5.38416ZM12 4.45432L21.0533 20.135H15.7562L9.35029 9.04341L11.9995 4.45478L12 4.45432ZM2.94667 20.135L8.44888 10.6071L13.9511 20.135H2.94667Z"/>
+</svg></span> Get a Percona Expert</a></p>
+</div>
+</div>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      2023-11-13
+    
+  </small>
+</div>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              Thank you for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              Thank you for your feedback! Help us improve by following this <a href="https://docs.google.com/forms/d/1bkWACehjqlwA0AKf-qTJcXvYbOSYgze8iTPXjntqmNo/edit" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+    <div class="md-copyright__highlight">
+ <a href='https://percona.com' target='_blank'>Percona LLC and/or its affiliates, </a> &copy; 2023
+    </div>
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+  
+    
+  
+
+
+  
+    
+  
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better. Read more about <a class="reference external" href="https://www.percona.com/20180524-cookie-policy" target="_blank">Percona Cookie Policy</a>.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+      </li>
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["search.highlight", "navigation.top", "content.tabs.link", "content.code.copy", "navigation.tracking", "content.action.edit", "content.action.view"], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="js/version-select.js"></script>
+      
+        <script src="js/promptremover.js"></script>
+      
+    
+  </body>
+</html>
