@@ -196,4 +196,3 @@ Stop the service:
 $ sudo systemctl stop mysql
 ```
 
-
