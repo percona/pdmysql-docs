@@ -2,82 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.1/innovation-release/index.html</loc>
-         <lastmod>2023-11-15</lastmod>
+         <lastmod>2023-11-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.1/innovation-release/404.html</loc>
-         <lastmod>2023-11-15</lastmod>
+         <lastmod>2023-11-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.1/innovation-release/architecture-components.html</loc>
-         <lastmod>2023-11-15</lastmod>
+         <lastmod>2023-11-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.1/innovation-release/components.html</loc>
-         <lastmod>2023-11-15</lastmod>
+         <lastmod>2023-11-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.1/innovation-release/copyright.html</loc>
-         <lastmod>2023-11-15</lastmod>
+         <lastmod>2023-11-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.1/innovation-release/deploy-pdps-group-replication.html</loc>
-         <lastmod>2023-11-15</lastmod>
+         <lastmod>2023-11-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.1/innovation-release/deployment-variants.html</loc>
-         <lastmod>2023-11-15</lastmod>
+         <lastmod>2023-11-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.1/innovation-release/downgrade.html</loc>
-         <lastmod>2023-11-15</lastmod>
+         <lastmod>2023-11-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.1/innovation-release/glossary.html</loc>
-         <lastmod>2023-11-15</lastmod>
+         <lastmod>2023-11-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.1/innovation-release/installing.html</loc>
-         <lastmod>2023-11-15</lastmod>
+         <lastmod>2023-11-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.1/innovation-release/minor-upgrade.html</loc>
-         <lastmod>2023-11-15</lastmod>
+         <lastmod>2023-11-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.1/innovation-release/monitoring.html</loc>
-         <lastmod>2023-11-15</lastmod>
+         <lastmod>2023-11-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.1/innovation-release/pdps-group-replication.html</loc>
-         <lastmod>2023-11-15</lastmod>
+         <lastmod>2023-11-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.1/innovation-release/release-notes.html</loc>
-         <lastmod>2023-11-15</lastmod>
+         <lastmod>2023-11-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.1/innovation-release/trademark-policy.html</loc>
-         <lastmod>2023-11-15</lastmod>
+         <lastmod>2023-11-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.1/innovation-release/uninstalling.html</loc>
-         <lastmod>2023-11-15</lastmod>
+         <lastmod>2023-11-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
