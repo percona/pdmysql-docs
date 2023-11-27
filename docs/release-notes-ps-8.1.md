@@ -6,7 +6,7 @@ This release is based on [Percona Server for MySQL 8.1.0-1].
 
 ## Release highlights
 
-Percona Server for MySQL implements telemetry that fills in the gaps in our understanding of how you use Percona Server for MySQL to improve our products. Participation in the anonymous program is optional. You can opt-out if you prefer not to share this information. Find more information in the [Telemetry on Percona Server fo MySQL](telemetry.md) document.
+Percona Server for MySQL implements telemetry that fills in the gaps in our understanding of how you use Percona Server for MySQL to improve our products. Participation in the anonymous program is optional. You can opt-out if you prefer not to share this information. Find more information in the [Telemetry on Percona Server fo MySQL](https://docs.percona.com/percona-server/innovation-release/telemetry.html) document.
 
 The following user-defined function (UDF) shared objects (so) are converted to components:
 
