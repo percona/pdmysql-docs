@@ -67,7 +67,7 @@ We will use the following elements:
     ```{.bash data-prompt="mysql>"}
     mysql>\s
     --------------
-    /opt/mysql_templates/PS-8P/bin/mysql  Ver {{release}} for Linux on x86_64 (Percona Server (GPL), Release 11, Revision 159f0eb)
+    /opt/mysql_templates/PS-8P/bin/mysql  Ver {{psvers}} for Linux on x86_64 (Percona Server (GPL), Release 11, Revision 159f0eb)
     ```
 
 ### Step 1 Create an administration user
