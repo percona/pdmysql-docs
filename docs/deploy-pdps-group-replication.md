@@ -542,19 +542,19 @@ The dashboard sections are the following:
 
 1. Overview:
 
-    ![image](../_images/pmm_for_gr_overiew.png)
+    ![image](./_images/pmm_for_gr_overiew.png)
 
 2. Replication delay details
 
-    ![image](../_images/pmm_for_gr.png)
+    ![image](./_images/pmm_for_gr.png)
 
 3. Transactions
 
-    ![image](../_images/pmm_for_gr_trx.png)
+    ![image](./_images/pmm_for_gr_trx.png)
 
 4. Conflicts
 
-    ![image](../_images/pmm_for_gr_conflicts.png)
+    ![image](./_images/pmm_for_gr_conflicts.png)
 
 ### Using command line
 
