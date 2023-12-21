@@ -171,6 +171,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.34.upd2.html</loc>
+         <lastmod>2023-12-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.20.html</loc>
          <lastmod>2023-12-21</lastmod>
          <changefreq>daily</changefreq>
