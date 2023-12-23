@@ -15,13 +15,13 @@
         <meta name="author" content="Percona LLC">
       
       
-        <link rel="canonical" href="https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.31.html">
+        <link rel="canonical" href="https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.34.upd2.html">
       
       
-        <link rel="prev" href="release-notes-ps-v8.0.31.upd.html">
+        <link rel="prev" href="release-notes-v8.0.19.html">
       
       
-        <link rel="next" href="release-notes-ps-v8.0.30.upd2.html">
+        <link rel="next" href="release-notes-pxc-v8.0.34.upd.html">
       
       
       <link rel="icon" href="_images/percona-favicon.ico">
@@ -29,7 +29,7 @@
     
     
       
-        <title>Percona Distribution for MySQL 8.0.31 using Percona Server for MySQL (2023-02-09) - Percona Distribution for MySQL</title>
+        <title>Percona Distribution for MySQL 8.0.34 using Percona XtraDB Cluster Second Update (2023-12-23) - Percona Distribution for MySQL</title>
       
     
     
@@ -88,7 +88,7 @@
                  
                  
                  <meta property="og:type" content="website" />
-                 <meta property="og:title" content="Percona Distribution for MySQL - Percona Distribution for MySQL 8.0.31 using Percona Server for MySQL (2023-02-09)" />
+                 <meta property="og:title" content="Percona Distribution for MySQL - Percona Distribution for MySQL 8.0.34 using Percona XtraDB Cluster Second Update (2023-12-23)" />
                  <meta property="og:url" content="https://docs.percona.com/percona-distribution-for-mysql/8.0/" />
                  <meta property="og:image" content="https://docs.percona.com/percona-distribution-for-mysql/8.0/_images/percona-mysql-logo.png" />
                
@@ -111,7 +111,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#percona-distribution-for-mysql-8031-using-percona-server-for-mysql-2023-02-09" class="md-skip">
+        <a href="#percona-distribution-for-mysql-8034-using-percona-xtradb-cluster-second-update-2023-12-23" class="md-skip">
           Skip to content
         </a>
       
@@ -145,7 +145,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Percona Distribution for MySQL 8.0.31 using Percona Server for MySQL (2023-02-09)
+              Percona Distribution for MySQL 8.0.34 using Percona XtraDB Cluster Second Update (2023-12-23)
             
           </span>
         </div>
@@ -363,21 +363,19 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -391,7 +389,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Percona Distribution for MySQL using Percona Server for MySQL
@@ -654,30 +652,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Percona Distribution for MySQL 8.0.31 using Percona Server for MySQL (2023-02-09)
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="release-notes-ps-v8.0.31.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="release-notes-ps-v8.0.31.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -686,46 +664,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#release-highlights" class="md-nav__link">
-    <span class="md-ellipsis">
-      Release highlights
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#supplied-components" class="md-nav__link">
-    <span class="md-ellipsis">
-      Supplied components
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1037,19 +975,21 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -1063,7 +1003,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Percona Distribution for MySQL using Percona XtraDB Cluster
@@ -1074,10 +1014,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="release-notes-pxc-v8.0.34.upd2.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="release-notes-pxc-v8.0.34.upd2.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1086,6 +1035,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -2294,32 +2244,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#release-highlights" class="md-nav__link">
-    <span class="md-ellipsis">
-      Release highlights
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#supplied-components" class="md-nav__link">
-    <span class="md-ellipsis">
-      Supplied components
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2336,14 +2260,14 @@
                    
                    
                    <a
-                     href="https://github.com/percona/pdmysql-docs/edit/8.0/docs/release-notes-ps-v8.0.31.md"
+                     href="https://github.com/percona/pdmysql-docs/edit/8.0/docs/release-notes-pxc-v8.0.34.upd2.md"
                      title="edit.link.title"
                      class="md-content__button md-icon"
                    >
                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
                    </a>
                    <a
-                     href="https://raw.githubusercontent.com/percona/pdmysql-docs/8.0/docs/release-notes-ps-v8.0.31.md"
+                     href="https://raw.githubusercontent.com/percona/pdmysql-docs/8.0/docs/release-notes-pxc-v8.0.34.upd2.md"
                      title="View source of this page"
                      class="md-content__button md-icon"
                    >
@@ -2359,137 +2283,9 @@
                  
  
                  <!-- Markdown content -->
-                 <h1 id="percona-distribution-for-mysql-8031-using-percona-server-for-mysql-2023-02-09">Percona Distribution for MySQL 8.0.31 using Percona Server for MySQL (2023-02-09)<a class="headerlink" href="#percona-distribution-for-mysql-8031-using-percona-server-for-mysql-2023-02-09" title="Permanent link">&para;</a></h1>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Release date</th>
-<th style="text-align: left;">February 9, 2023</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Install instructions</td>
-<td style="text-align: left;"><a href="installing.html">Installing Percona Distribution for MySQL</a></td>
-</tr>
-</tbody>
-</table>
+                 <h1 id="percona-distribution-for-mysql-8034-using-percona-xtradb-cluster-second-update-2023-12-23">Percona Distribution for MySQL 8.0.34 using Percona XtraDB Cluster Second Update (2023-12-23)<a class="headerlink" href="#percona-distribution-for-mysql-8034-using-percona-xtradb-cluster-second-update-2023-12-23" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is the most stable, scalable and secure open-source MySQL distribution, with two download options: one based on Percona Server for MySQL and one based on Percona XtraDB Cluster.</p>
-<p>This release is focused on the Percona Server for MySQL-based deployment variation. It is based on <a href="https://www.percona.com/doc/percona-server/8.0/release-notes/8.0.31-23.html">Percona Server for MySQL 8.0.31-23</a>.</p>
-<h2 id="release-highlights">Release highlights<a class="headerlink" href="#release-highlights" title="Permanent link">&para;</a></h2>
-<p>Improvements and bug fixes introduced by Oracle for MySQL 8.0.31 and included in Percona Server for MySQL are the following:</p>
-<ul>
-<li>
-<p>A replica can add a Generated Invisible Primary Keys(GIPK) to any InnoDB table. To achieve this behavior, the <code>GENERATE</code> value is added as a possible value for the <code>CHANGE REPLICATION SOURCE TO</code> statement&rsquo;s <code>REQUIRE_TABLE_PRIMARY_KEY_CHECK</code> option.</p>
-<p><code>REQUIRE_TABLE_PRIMARY_KEY_CHECK = GENERATE</code> option can be used on a per-channel basis.</p>
-<p>Setting <code>sql_generate_invisible_primary_key</code> on the source is ignored by a replica because this variable is not replicated. This behavior is inherited from the previous releases.</p>
-</li>
-<li>
-<p>MySQL adds support for the SQL standard <a href="https://dev.mysql.com/doc/refman/8.0/en/intersect.html"><code>INTERSECT</code></a> and <a href="https://dev.mysql.com/doc/refman/8.0/en/except.html"><code>EXCEPT</code></a> table operators.</p>
-</li>
-<li>
-<p>InnoDB supports parallel index builds. This improves index build performance. The sorted index entries are loaded into a B-tree in a multithread. In previous releases, this action was performed by a single thread.</p>
-</li>
-<li>
-<p>The Performance and sys schemas show metrics for the global and session memory limits introduced in MySQL 8.0.28.</p>
-<p>The following columns have been added to the Performance Schema tables:</p>
-<table>
-<thead>
-<tr>
-<th>Performance Schema tables</th>
-<th>Columns</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SETUP_INSTRUMENTS</td>
-<td>FLAGS</td>
-</tr>
-<tr>
-<td>THREADS</td>
-<td>CONTROLLED_MEMORY, MAX_CONTROLLED_MEMORY, TOTAL_MEMORY, MAX_TOTAL_MEMORY</td>
-</tr>
-<tr>
-<td>EVENTS_STATEMENTS_CURRENT, EVENTS_STATEMENTS_HISTORY, EVENTS_STATEMENTS_HISTORY_LONG</td>
-<td>MAX_CONTROLLED_MEMORY, MAX_TOTAL_MEMORY</td>
-</tr>
-<tr>
-<td>Statement Summary Tables</td>
-<td>MAX_CONTROLLED_MEMORY, MAX_TOTAL_MEMORY</td>
-</tr>
-<tr>
-<td>Performance Schema Connection Tables</td>
-<td>MAX_SESSION_CONTROLLED_MEMORY, MAX_SESSION_TOTAL_MEMORY</td>
-</tr>
-<tr>
-<td>PREPARED_STATEMENTS_INSTANCES</td>
-<td>MAX_CONTROLLED_MEMORY, MAX_TOTAL_MEMORY</td>
-</tr>
-</tbody>
-</table>
-<p>The following columns have been added to the sys schema <code>STATEMENT_ANALYSIS</code> and <code>X$STATEMENT_ANALYSIS</code> views:</p>
-<ul>
-<li>
-<p>MAX_CONTROLLED_MEMORY</p>
-</li>
-<li>
-<p>MAX_TOTAL_MEMORY</p>
-</li>
-</ul>
-<p>The <code>controlled_by_default</code> flag has been added to the <code>PROPERTIES</code> column of the <code>SETUP_INSTRUMENTS</code> table.</p>
-<p>Now, you can add and remove non-global memory instruments to the set of controlled-memory instruments. To do this, set the value of the <code>FLAGS</code> column of <code>SETUP_INSTRUMENTS</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="k">UPDATE</span><span class="w"> </span><span class="n">PERFORMANCE_SCHEMA</span><span class="p">.</span><span class="n">SETUP_INTRUMENTS</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">FLAGS</span><span class="o">=</span><span class="ss">&quot;controlled&quot;</span><span class="w"> </span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">NAME</span><span class="o">=</span><span class="s1">&#39;memory/sql/NET::buff&#39;</span><span class="p">;</span>
-</code></pre></div>
-</li>
-<li>
-<p>The <code>audit_log_flush</code> variable has been deprecated and will be removed in future releases.</p>
-</li>
-</ul>
-<p>Find the full list of bug fixes and changes in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-31.html">MySQL 8.0.31 Release Notes</a>.</p>
-<h2 id="supplied-components">Supplied components<a class="headerlink" href="#supplied-components" title="Permanent link">&para;</a></h2>
-<p>Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona Server for MySQL-based variation of the Percona Distribution for MySQL:</p>
-<table>
-<thead>
-<tr>
-<th>Component</th>
-<th>Version</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Orchestrator</td>
-<td><a href="https://github.com/percona/orchestrator/releases/tag/v3.2.6-7">3.2.6-7</a></td>
-<td>The replication topology manager for Percona Server for MySQL</td>
-</tr>
-<tr>
-<td>ProxySQL</td>
-<td><a href="https://docs.percona.com/proxysql/2.4.4-1.2.html">2.4.4-1.2</a></td>
-<td>A high performance, high-availability, protocol-aware proxy for MySQL</td>
-</tr>
-<tr>
-<td>Percona XtraBackup</td>
-<td><a href="https://docs.percona.com/percona-xtrabackup/8.0/release-notes/8.0/8.0.31-24.0.html">8.0.31-24</a></td>
-<td>An open-source hot backup utility for MySQL-based servers</td>
-</tr>
-<tr>
-<td>Percona Toolkit</td>
-<td><a href="https://www.percona.com/doc/percona-toolkit/LATEST/release_notes.html#v3-5-1-released-2022-11-28">3.5.1</a></td>
-<td>The set of scripts to simplify and optimize database operation</td>
-</tr>
-<tr>
-<td>MySQL Shell</td>
-<td><a href="https://dev.mysql.com/doc/relnotes/mysql-shell/8.0/en/news-8-0-31.html">8.0.31</a></td>
-<td>An advanced client and code editor for MySQL Server</td>
-</tr>
-<tr>
-<td>MySQL Router</td>
-<td><a href="https://dev.mysql.com/doc/relnotes/mysql-router/en/news-8-0-31.html">8.0.31</a></td>
-<td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
-</tr>
-</tbody>
-</table>
+<p>This update to the release of Percona Distribution for MySQL using the Percona XtraDB Cluster includes the new version of <a href="https://docs.percona.com/percona-toolkit/release_notes.html#v3-5-7-released-2023-12-23">Percona Toolkit 3.5.7</a>.</p>
  
                  
 <div class="md-relbar2__inner md-grid">
@@ -2527,7 +2323,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    2023-02-09
+    2023-12-23
   </span>
 
     
