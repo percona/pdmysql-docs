@@ -8,20 +8,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The following is the architecture layout for 
-Percona Server for MySQL based deployment variant of Percona Distribution for MySQL with Group Replication.">
+        <meta name="description" content="Percona Distribution for MySQL is the most stable, scalable, and secure open source MySQL distribution based on Percona Server for MySQL. Install Percona Distribution for MySQL.">
       
       
         <meta name="author" content="Percona LLC">
       
       
-        <link rel="canonical" href="https://docs.percona.com/percona-distribution-for-mysql/innovation-release/innovation-release/architecture-components.html">
+        <link rel="canonical" href="https://docs.percona.com/percona-distribution-for-mysql/innovation-release/innovation-release/release-notes-ps-8.1.upd2.html">
       
       
-        <link rel="prev" href="pdps-group-replication.html">
+        <link rel="prev" href="release-notes.html">
       
       
-        <link rel="next" href="monitoring.html">
+        <link rel="next" href="release-notes-ps-8.1.upd.html">
       
       
       <link rel="icon" href="_images/percona-favicon.ico">
@@ -29,7 +28,7 @@ Percona Server for MySQL based deployment variant of Percona Distribution for My
     
     
       
-        <title>Architecture and components - Percona Distribution for MySQL</title>
+        <title>Percona Distribution for MySQL 8.1.0 using Percona Server for MySQL Second Update (2023-12-23) - Percona Distribution for MySQL</title>
       
     
     
@@ -88,7 +87,7 @@ Percona Server for MySQL based deployment variant of Percona Distribution for My
                  
                  
                  <meta property="og:type" content="website" />
-                 <meta property="og:title" content="Percona Distribution for MySQL - Architecture and components" />
+                 <meta property="og:title" content="Percona Distribution for MySQL - Percona Distribution for MySQL 8.1.0 using Percona Server for MySQL Second Update (2023-12-23)" />
                  <meta property="og:url" content="https://docs.percona.com/percona-distribution-for-mysql/innovation-release/" />
                  <meta property="og:image" content="https://docs.percona.com/percona-distribution-for-mysql/innovation-release/_images/percona-mysql-logo.png" />
                
@@ -111,7 +110,7 @@ Percona Server for MySQL based deployment variant of Percona Distribution for My
     <div data-md-component="skip">
       
         
-        <a href="#architecture-and-components" class="md-skip">
+        <a href="#percona-distribution-for-mysql-810-using-percona-server-for-mysql-second-update-2023-12-23" class="md-skip">
           Skip to content
         </a>
       
@@ -145,7 +144,7 @@ Percona Server for MySQL based deployment variant of Percona Distribution for My
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Architecture and components
+              Percona Distribution for MySQL 8.1.0 using Percona Server for MySQL Second Update (2023-12-23)
             
           </span>
         </div>
@@ -293,19 +292,21 @@ Percona Server for MySQL based deployment variant of Percona Distribution for My
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -319,7 +320,7 @@ Percona Server for MySQL based deployment variant of Percona Distribution for My
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Release notes
@@ -351,10 +352,30 @@ Percona Server for MySQL based deployment variant of Percona Distribution for My
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="release-notes-ps-8.1.upd2.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Percona Distribution for MySQL 8.1.0 using Percona Server for MySQL Second Update (2023-12-23)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="release-notes-ps-8.1.upd2.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -363,6 +384,37 @@ Percona Server for MySQL based deployment variant of Percona Distribution for My
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get-expert-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get expert help
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -614,21 +666,19 @@ Percona Server for MySQL based deployment variant of Percona Distribution for My
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -642,7 +692,7 @@ Percona Server for MySQL based deployment variant of Percona Distribution for My
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Solutions - high availability
@@ -674,30 +724,10 @@ Percona Server for MySQL based deployment variant of Percona Distribution for My
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Architecture and components
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="architecture-components.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="architecture-components.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -706,61 +736,6 @@ Percona Server for MySQL based deployment variant of Percona Distribution for My
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#architecture-layout" class="md-nav__link">
-    <span class="md-ellipsis">
-      Architecture layout
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Architecture layout">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#components" class="md-nav__link">
-    <span class="md-ellipsis">
-      Components
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#get-expert-help" class="md-nav__link">
-    <span class="md-ellipsis">
-      Get expert help
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -975,30 +950,6 @@ Percona Server for MySQL based deployment variant of Percona Distribution for My
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#architecture-layout" class="md-nav__link">
-    <span class="md-ellipsis">
-      Architecture layout
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Architecture layout">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#components" class="md-nav__link">
-    <span class="md-ellipsis">
-      Components
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#get-expert-help" class="md-nav__link">
     <span class="md-ellipsis">
       Get expert help
@@ -1022,7 +973,7 @@ Percona Server for MySQL based deployment variant of Percona Distribution for My
                   
 
   
-    <a href="https://github.com/percona/pdmysql-docs/edit/innovation-release/docs/architecture-components.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/percona/pdmysql-docs/edit/innovation-release/docs/release-notes-ps-8.1.upd2.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1031,54 +982,16 @@ Percona Server for MySQL based deployment variant of Percona Distribution for My
     
       
     
-    <a href="https://github.com/percona/pdmysql-docs/raw/innovation-release/docs/architecture-components.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/percona/pdmysql-docs/raw/innovation-release/docs/release-notes-ps-8.1.upd2.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="architecture-and-components">Architecture and components<a class="headerlink" href="#architecture-and-components" title="Permanent link">&para;</a></h1>
-<p>The following is the architecture layout for 
-<em>Percona Server for MySQL</em> based deployment variant of Percona Distribution for MySQL with <a href="https://dev.mysql.com/doc/refman/8.1/en/group-replication.html">Group Replication</a>.</p>
-<h2 id="architecture-layout">Architecture layout<a class="headerlink" href="#architecture-layout" title="Permanent link">&para;</a></h2>
-<p><img alt="image" src="../_images/group_replication_ha.png" /></p>
-<h3 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h3>
-<p>The architecture is composed of two main layers:</p>
-<ul>
-<li>
-<p><a href="#connection-and-distribution-layer">Connection and distribution layer</a></p>
-</li>
-<li>
-<p><a href="#rdbms-layer">Relational Database Management System (RDBMS) layer</a></p>
-</li>
-</ul>
-<h4 id="connection-and-distribution-layer">Connection and distribution layer<a class="headerlink" href="#connection-and-distribution-layer" title="Permanent link">&para;</a></h4>
-<p>The connection and distribution layer consists of the following:</p>
-<ul>
-<li>
-<p><strong>Application to proxy redirection mechanism.</strong> This mechanism can be anything from a Virtual IP managed by Keepalived local service to a DNS resolution service like Amazon Route 53. The mechanism’s function is to redirect the traffic to the active Proxy node.</p>
-</li>
-<li>
-<p><strong>Proxy connection distribution.</strong> The distribution consists of two or more nodes and its role is to redirect the traffic to the active nodes of the Group Replication cluster. In cases like ProxySQL where the proxy is a level 7 proxy and can perform a read / write split, this layer is also in charge of redirecting writes to the Primary node and reads to the replicas, and of high availability to prevent a single point of failure.</p>
-</li>
-</ul>
-<h4 id="rdbms-layer">RDBMS layer<a class="headerlink" href="#rdbms-layer" title="Permanent link">&para;</a></h4>
-<p>The data layer consists of the following:</p>
-<ul>
-<li>
-<p><strong>Primary (or source) node</strong> serving write requests. This is the node that accepts writes and DDL modifications. Data will be processed following the ACID  (atomicity, consistency, isolation, durability) model and replicated to all other nodes.</p>
-</li>
-<li>
-<p><strong>Replica nodes</strong> serving read requests. Some replica nodes can be elected Primary in case of the Primary node’s failure. A replica node should be able to leave and join back to a healthy cluster without impacting the service.</p>
-</li>
-<li>
-<p><strong>Replication mechanism</strong> distributing changes across nodes. In this solution, it is done with Group Replication. Group Replication is a tightly coupled solution, which means that the database cluster is based on a Datacentric approach (single state of the data, distributed commit). In this case, the data is consistent in time across nodes though this type of replication requires a high performant link. Given that, the main Group Replication mechanism does not implicitly support Disaster Recovery (DR) and geographic distribution is not permitted.</p>
-</li>
-</ul>
-<p>The node characteristics such as CPU/RAM/Storage are not relevant to the solution design.  They must reflect the estimated workload that the solution will have to cover, and this is a case by case identification.</p>
-<p>However, it is important that all nodes that are part of the cluster must have the same characteristics. Otherwise, the cluster is imbalanced and services will be affected.</p>
-<p>As a generic indication we recommend using nodes with at least 8 cores and 16GB RAM when in production.</p>
+<h1 id="percona-distribution-for-mysql-810-using-percona-server-for-mysql-second-update-2023-12-23">Percona Distribution for MySQL 8.1.0 using Percona Server for MySQL Second Update (2023-12-23)<a class="headerlink" href="#percona-distribution-for-mysql-810-using-percona-server-for-mysql-second-update-2023-12-23" title="Permanent link">&para;</a></h1>
+<p>Percona Distribution for MySQL is the most stable, scalable, and secure open source MySQL distribution based on Percona Server for MySQL. <a href="installing.html">Install Percona Distribution for MySQL</a>.</p>
+<p>This update to the release of Percona Distribution for MySQL using the Percona Server for MySQL includes the new version of <a href="https://docs.percona.com/percona-toolkit/release_notes.html#v3-5-7-released-2023-12-23">Percona Toolkit 3.5.7</a>.</p>
 <div data-banner="data-banner">
 <h2 class="title" id="get-expert-help">Get expert help<a class="headerlink" href="#get-expert-help" title="Permanent link">&para;</a></h2>
 <p>If you need assistance, visit the community forum for comprehensive and free database knowledge, or contact our Percona Database Experts for professional support and services.
@@ -1109,7 +1022,7 @@ Percona Server for MySQL based deployment variant of Percona Distribution for My
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    2023-11-13
+    2023-12-23
   </span>
 
     
