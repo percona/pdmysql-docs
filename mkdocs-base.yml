@@ -104,7 +104,7 @@ plugins:
   with-pdf: # https://github.com/orzih/mkdocs-with-pdf
           output_path: '_pdf/PerconaDistributionforMySQL.pdf'
           cover_title: 'Percona Distribution for MySQL Documentation'
-          cover_subtitle: 8.0.34 (2023-12-27)
+          cover_subtitle: 8.0.35 (2023-12-27)
           author: 'Percona Technical Documentation Team'
           cover_logo: docs/_images/Percona_Logo_Color.png
           debug_html: false
@@ -135,6 +135,7 @@ nav:
   - Release notes:
     - Release notes index: release-notes.md
     - Percona Distribution for MySQL using Percona Server for MySQL:
+      - release-notes-ps-v8.0.34.upd3.md
       - release-notes-ps-v8.0.34.upd2.md
       - release-notes-ps-v8.0.34.upd.md
       - release-notes-ps-v8.0.34.md
@@ -163,6 +164,7 @@ nav:
       - release-notes-ps-v8.0.20.md
       - release-notes-v8.0.19.md
     - Percona Distribution for MySQL using Percona XtraDB Cluster:
+      - release-notes-pxc-v8.0.34.upd2.md
       - release-notes-pxc-v8.0.34.upd.md
       - release-notes-pxc-v8.0.34.md
       - release-notes-pxc-v8.0.33.upd.md
