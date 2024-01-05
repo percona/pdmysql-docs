@@ -3,7 +3,6 @@
 site_name: Percona Distribution for MySQL 
 site_description: Documentation
 site_author: Percona LLC
-copyright: Percona LLC and/or its affiliates, &#169; 2023
 
 site_url: ''
 repo_name: /percona/pdmysql-docs
@@ -52,6 +51,10 @@ extra_css:
   - css/percona.css
   - css/nocopy.css\
   - css/extra.css
+
+#Copyright
+copyright: >
+  <a href='https://www.percona.com/about'>Percona LLC</a> and/or its affiliates &copy; <script>document.write(new Date().getFullYear())</script>
 
 extra_javascript:
   - js/version-select.js
