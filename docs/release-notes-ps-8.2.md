@@ -14,7 +14,17 @@ Improvements and bug fixes introduced by Oracle for MySQL 8.2 and included in Pe
 
 * A FTS parser plugin now handles single character tokens correctly.
 
-### Deprecation or removal
+## Known issues
+
+* [PS-9078](https://perconadev.atlassian.net/browse/PS-9078): An upgrade on Ubuntu 20.04 from the following releases does not restart the MySQL service automatically. You must start the service manually.
+
+    * Percona Server for MySQL 8.0.x to Percona Server for MySQL 8.1
+
+    * Percona Server for MySQL 8.0.x to Percona Server for MySQL 8.2
+
+    * Percona Server for MySQL 8.1 to Percona Server for MySQL 8.2
+
+## Deprecation or removal
 
 A future release may remove deprecated variables and options. The usage of these deprecated items may cause a warning. We recommend migrating from deprecated variables and options as soon as possible.
 
