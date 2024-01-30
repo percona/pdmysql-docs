@@ -6,6 +6,12 @@ This release is based on [Percona Server for MySQL 8.2.0-1].
 
 ## Release highlights
 
+This release merges the MySQL 8.2 code base. Withing this merge Percona introduces several sagnificant changes:
+
+* Removes remainders of Percona-specific encryption features (support for custom Percona 5.7 encrypted bilnog format.)
+
+* Removes the deprecated `rocksdb_strict_collation_check` and `rocksdb_strict_collation_exceptions` RocksDB system variables.
+
 Improvements and bug fixes introduced by Oracle for MySQL 8.2 and included in Percona Server for MySQL are the following:
 
 * The insert operations caused `records_in_range` to read too many disk blocks.
