@@ -1,7 +1,7 @@
 # MkDocs configuration for builds with material theme
 
 site_name: Percona Distribution for MySQL
-site_description: Percona Distribution for MySQL 8.1 Documentation
+site_description: Percona Distribution for MySQL 8.2 Documentation
 site_author: Percona LLC
 
 repo_name: /percona/pdmysql-docs
@@ -126,7 +126,7 @@ plugins:
   with-pdf: # https://github.com/orzih/mkdocs-with-pdf
           output_path: '_pdf/PerconaDistributionforMySQL.pdf'
           cover_title: 'Percona Distribution for MySQL Documentation'
-          cover_subtitle: 8.1.0 (2023-12-23)
+          cover_subtitle: 8.2.0 (2024-02-06)
           author: 'Percona Technical Documentation Team'
           cover_logo: docs/_images/Percona_Logo_Color.png
           debug_html: false
@@ -158,6 +158,7 @@ nav:
   - Home: index.md
   - Release notes:
     - Release notes index: release-notes.md
+    - release-notes-ps-8.2.md
     - release-notes-ps-8.1.upd2.md
     - release-notes-ps-8.1.upd.md
     - release-notes-ps-8.1.md
