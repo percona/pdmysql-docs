@@ -5,7 +5,7 @@ The following is the architecture layout for
 
 ## Architecture layout
 
-![image](../_images/group_replication_ha.png)
+![image](_images/group_replication_ha.png)
 
 ### Components
 
