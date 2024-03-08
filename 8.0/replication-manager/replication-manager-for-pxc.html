@@ -9,7 +9,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The feature is a tech preview. Before using this feature in production, we recommend that you test restoring production from physical backups in your environment, and also use the alternative backup method for redundancy.">
+        <meta name="description" content="File: replication-manager/replication-manager-for-pxc.md">
       
       
         <meta name="author" content="Percona LLC">
@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../_images/percona-favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
@@ -50,8 +50,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Poppins";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -61,28 +61,33 @@
     
       <link rel="stylesheet" href="../css/percona.css">
     
-      <link rel="stylesheet" href="../css/nocopy.css/">
+      <link rel="stylesheet" href="../css/nocopy.css">
+    
+      <link rel="stylesheet" href="../css/design.css">
     
       <link rel="stylesheet" href="../css/extra.css">
     
+      <link rel="stylesheet" href="../css/osano.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
-               <!-- Google Tag Manager -->
-               <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-               })(window,document,'script','dataLayer','GTM-WBVF48V');</script>
-               <!-- End Google Tag Manager -->
- 
-               <!-- Google Tag Manager (noscript) -->
-               <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBVF48V"
-               height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-               <!-- End Google Tag Manager (noscript) -->
-               
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-J4J70BNH0G"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-J4J70BNH0G",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-J4J70BNH0G",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
     
     
+    
                
+
                  
                  
                  
@@ -111,7 +116,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#replication-manager-for-percona-xtradb-cluster" class="md-skip">
+        <a href="#macro-rendering-error" class="md-skip">
           Skip to content
         </a>
       
@@ -236,12 +241,12 @@
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
+               
+                 
+                 <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                   <div class="md-sidebar__scrollwrap">
+                     <div class="md-sidebar__inner">
+                       
 
 
 
@@ -271,11 +276,6 @@
     
       
       
-      
-
-
-
-      
   
   
   
@@ -295,11 +295,6 @@
 
     
       
-      
-      
-
-
-
       
   
   
@@ -1689,11 +1684,6 @@
     
       
       
-      
-
-
-
-      
   
   
   
@@ -1777,11 +1767,6 @@
 
     
       
-      
-      
-
-
-
       
   
   
@@ -1887,11 +1872,6 @@
 
     
       
-      
-      
-
-
-
       
   
   
@@ -2019,11 +1999,6 @@
     
       
       
-      
-
-
-
-      
   
   
     
@@ -2114,26 +2089,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#get-expert-help" class="md-nav__link">
     <span class="md-ellipsis">
-      Example
+      Get expert help
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Example">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configuration-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration steps
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2196,11 +2156,6 @@
 
     
       
-      
-      
-
-
-
       
   
   
@@ -2265,11 +2220,6 @@
     
       
       
-      
-
-
-
-      
   
   
   
@@ -2289,11 +2239,6 @@
 
     
       
-      
-      
-
-
-
       
   
   
@@ -2315,11 +2260,6 @@
     
       
       
-      
-
-
-
-      
   
   
   
@@ -2338,24 +2278,24 @@
   
 
     
-    <br/>
-   <label class="md-nav__title" for="__drawer">
-    <a href="https://learn.percona.com/download-manual-percona-distribution-for-mysql-8" onclick="_gaq.push(['b._trackEvent', 'Percona Distribution for MySQL', 'Download', 'Download Manual Distribution for MySQL']);" class="md-nav__link md-nav__link--active">
-      Download PDF
-    </a>
-  </label> 
   </ul>
 </nav>
+                       <br>
+                       <label class="md-nav__title" for="__drawer">
+                        <a href="https://learn.percona.com/download-manual-percona-distribution-for-mysql-8" onclick="_gaq.push(['b._trackEvent', 'Percona Distribution for MySQL', 'Download', 'Download Manual Distribution for MySQL']);" class="md-nav__link md-nav__link--active" style="font-size: .7rem;">
+                          Download PDF
+                        </a>
+                      </label>
+                    </div>
                   </div>
                 </div>
-              </div>
-            
-            
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
+              
+                
+                <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
 
   
 
@@ -2373,361 +2313,71 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#get-expert-help" class="md-nav__link">
     <span class="md-ellipsis">
-      Example
+      Get expert help
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Example">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configuration-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration steps
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
     </ul>
   
 </nav>
+                    </div>
                   </div>
                 </div>
-              </div>
+              
             
-          
           
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
- 
-                 <!-- Edit and view button -->
-                 
-                   
-                   
-                   <a
-                     href="https://github.com/percona/pdmysql-docs/edit/8.0/docs/replication-manager/replication-manager-for-pxc.md"
-                     title="edit.link.title"
-                     class="md-content__button md-icon"
-                   >
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
-                   </a>
-                   <a
-                     href="https://raw.githubusercontent.com/percona/pdmysql-docs/8.0/docs/replication-manager/replication-manager-for-pxc.md"
-                     title="View source of this page"
-                     class="md-content__button md-icon"
-                   >
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
-                   </a>
-                 
- 
-                 <!--
-                   Hack: check whether the content contains a h1 headline. If it
-                   doesn't, the page title (or respectively site name) is used
-                   as the main headline.
-                 -->
-                 
- 
-                 <!-- Markdown content -->
-                 <h1 id="replication-manager-for-percona-xtradb-cluster">Replication manager for Percona XtraDB Cluster<a class="headerlink" href="#replication-manager-for-percona-xtradb-cluster" title="Permanent link">&para;</a></h1>
-<p>The feature is a <a href="../glossary.html#tech-preview">tech preview</a>. Before using this feature in production, we recommend that you test restoring production from physical backups in your environment, and also use the alternative backup method for redundancy.</p>
-<p>The replication manager script helps manage <a href="../glossary.html#multi-source-replication">multi-source replication</a> between multiple Percona XtraDB Cluster clusters. This tool has a failover mechanism and can automatically perform a failover due to source or replica node failures, service degradation, or maintenance requirements.</p>
-<p>The replication manager script monitors the active source-replica replication channel. If the source or replica node fails, the script re-establishes the replication channel using alternative source or replica cluster nodes.</p>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<p>For example, we deploy multi-source replication links between three data centers: DC1, DC2, and DC3. In each data center, there are three Percona XtraDB Cluster nodes form distinct Percona XtraDB Cluster clusters. The data centers contain the following nodes:</p>
-<table>
-<thead>
-<tr>
-<th>DC1</th>
-<th>DC2</th>
-<th>DC3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>DC1-1</td>
-<td>DC2-1</td>
-<td>DC3-1</td>
-</tr>
-<tr>
-<td>DC1-2</td>
-<td>DC2-2</td>
-<td>DC3-2</td>
-</tr>
-<tr>
-<td>DC1-3</td>
-<td>DC2-3</td>
-<td>DC3-3</td>
-</tr>
-</tbody>
-</table>
-<p>The topology is the following:</p>
-<div class="highlight"><pre><span></span><code>DC2 &lt;=&gt; DC1 &lt;=&gt; DC3
-</code></pre></div>
-<p>All of the nodes are sources and replicas. DC1 is a replica of DC2 and DC3. DC2 and DC3 are replicas of DC1.</p>
-<div class="highlight"><pre><span></span><code>+----------------+---------------+
-| clusterSlave   | clusterMaster |
-+----------------+---------------+
-| DC1            | DC2           |
-| DC1            | DC3           |
-| DC2            | DC1           |
-| DC3            | DC1           |
-+----------------+---------------+
-</code></pre></div>
-<p>The example of the minimal MySQL configuration file for DC1 that is common for all three DC1 nodes:</p>
-<div class="highlight"><pre><span></span><code>[mysqld]
-# General galera reqs
-default_storage_engine=InnoDB
-innodb_autoinc_lock_mode=2
+                  
 
-# Replication settings
-binlog_format=ROW
-server-id=1
-log-bin=mysql-bin
-log_replica_updates
-expire_logs_days=7
-gtid_mode = ON
-enforce_gtid_consistency=ON
-skip-replica-start
+  
+    <a href="https://github.com/percona/pdmysql-docs/edit/8.0/docs/replication-manager/replication-manager-for-pxc.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/percona/pdmysql-docs/raw/8.0/docs/replication-manager/replication-manager-for-pxc.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
 
-# Galera configuration
-wsrep_provider=/usr/lib/galera3/libgalera_smm.so
-wsrep_cluster_address=gcomm://10.0.4.160,10.0.4.162,10.0.4.163
-wsrep_replica_threads= 2
-wsrep_log_conflicts
-wsrep_cluster_name=DC1
-pxc_strict_mode=ENFORCING
-wsrep_sst_method=xtrabackup-v2
-wsrep_sst_auth=&quot;root:root&quot;
+
+<h1 id="macro-rendering-error"><em>Macro Rendering Error</em><a class="headerlink" href="#macro-rendering-error" title="Permanent link">&para;</a></h1>
+<p><em>File</em>: <code>replication-manager/replication-manager-for-pxc.md</code></p>
+<p><em>TemplateNotFound</em>: ./snippets/tech-preview/_tech-preview-feature.md</p>
+<div class="highlight"><pre><span></span><code>Traceback (most recent call last):
+  File &quot;/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/mkdocs_macros/plugin.py&quot;, line 527, in render
+    return md_template.render(**page_variables)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/jinja2/environment.py&quot;, line 1301, in render
+    self.environment.handle_exception()
+  File &quot;/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/jinja2/environment.py&quot;, line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File &quot;&lt;template&gt;&quot;, line 4, in top-level template code
+  File &quot;/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/jinja2/loaders.py&quot;, line 204, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: ./snippets/tech-preview/_tech-preview-feature.md
 </code></pre></div>
-<p>All nodes have the same <code>server-id</code> value.</p>
-<h3 id="configuration-steps">Configuration steps<a class="headerlink" href="#configuration-steps" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>Bootstrap the cluster on DC1-1 node by running the following commands as root or using sudo:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>root@DC1-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql stop </span>
-<span class="o">[</span>root@DC1-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql bootstrap-pxc</span>
-</code></pre></div>
-</li>
-<li>
-<p>On DC1-2 node, stop MySQL, delete the content of the datadir to force the SST, and start MySQL. Run the following commands as root or using sudo:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>root@DC1-2<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql stop</span>
-<span class="o">[</span>root@DC1-2<span class="w"> </span>~<span class="o">]</span><span class="c1"># rm -rf /var/lib/mysql/*</span>
-<span class="o">[</span>root@DC1-2<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql start</span>
-</code></pre></div>
-</li>
-<li>
-<p>Once the SST of DC1-2 node is completed, proceed on DC1-3. Run the following commands as root or using sudo:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>root@DC1-3<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql stop</span>
-<span class="o">[</span>root@DC1-3<span class="w"> </span>~<span class="o">]</span><span class="c1"># rm -rf /var/lib/mysql/*</span>
-<span class="o">[</span>root@DC1-3<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql start</span>
-</code></pre></div>
-</li>
-<li>
-<p>The DC1 cluster uses a single <a href="../glossary.html#gtid">GTID</a> sequence. To make sure <code>GTID_PURGED</code> is the same, run the following commands on DC1-1, DC1-2, and DC1-3 nodes:</p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>flush<span class="w"> </span>logs<span class="p">;</span>
-mysql&gt;<span class="w"> </span>purge<span class="w"> </span>binary<span class="w"> </span>logs<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;mysql-bin.000003&#39;</span><span class="p">;</span>
-</code></pre></div>
-<p><code>mysql-bin.000003</code> is the last file returned when you run the following command:</p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="sb">`</span>SHOW<span class="w"> </span>BINARY<span class="w"> </span>LOGS<span class="sb">`</span>
-</code></pre></div>
-</li>
-<li>
-<p>Adjust the aformentioned steps to set up the DC2 and DC3 clusters accordingly.</p>
-</li>
-<li>
-<p>Add privileges for replication between all nodes only for DC1: </p>
-<div class="highlight"><pre><span></span><code>GRANT<span class="w"> </span>REPLICATION<span class="w"> </span>CLIENT,<span class="w"> </span>REPLICATION<span class="w"> </span>SLAVE<span class="w"> </span>ON<span class="w"> </span>*.*<span class="w"> </span>TO<span class="w"> </span><span class="s1">&#39;repl&#39;</span>@<span class="s1">&#39;%&#39;</span><span class="w"> </span>identified<span class="w"> </span>by<span class="w"> </span><span class="s1">&#39;replpass&#39;</span><span class="p">;</span>
-</code></pre></div>
-</li>
-<li>
-<p>Add the replication tables. For example, we add the tables to DC1: </p>
-<div class="highlight"><pre><span></span><code>create database if not exists percona;
-use percona;
-CREATE TABLE `replication` (
-  `host` varchar(40) NOT NULL,
-  `weight` int(11) NOT NULL DEFAULT 0,
-  `localIndex` int(11) DEFAULT NULL,
-  `isSlave` enum(&#39;No&#39;,&#39;Yes&#39;,&#39;Proposed&#39;,&#39;Failed&#39;) DEFAULT &#39;No&#39;,
-  `lastUpdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `lastHeartbeat` timestamp NOT NULL DEFAULT &#39;1971-01-01 00:00:00&#39;,
-  `connectionName` varchar(64) NOT NULL,
-  PRIMARY KEY (`connectionName`,`host`),
-  KEY `idx_host` (`host`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-CREATE TABLE `cluster` (
-  `cluster` varchar(31) NOT NULL,
-  `masterCandidates` varchar(255) NOT NULL,
-  `replCreds` varchar(255) NOT NULL,
-  PRIMARY KEY (`cluster`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-CREATE TABLE `link` (
-  `clusterSlave` varchar(31) NOT NULL,
-  `clusterMaster` varchar(31) NOT NULL,
-  PRIMARY KEY (`clusterSlave`,`clusterMaster`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-CREATE TABLE `weight` (
- `cluster` varchar(31) NOT NULL,
- `nodename` varchar(255) NOT NULL,
- `weight` int NOT NULL DEFAULT 0, 
- PRIMARY KEY (`cluster`,`nodename`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-</code></pre></div>
-<p>The replication manager writes to the tables. You do not need to adjust the tables.</p>
-</li>
-<li>
-<p>The cluster table contains the details of each cluster. The cluster name is defined in the <code>wsrep_cluster_name</code> variable value:</p>
-<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>cluster<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;10.0.4.160 10.0.4.162 10.0.4.163&#39;</span>,<span class="s1">&#39;source_user=\&#39;</span>repl<span class="se">\&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\&#39;</span>replpass<span class="se">\&#39;</span><span class="s1">&#39;);</span>
-<span class="s1">INSERT INTO `cluster` VALUES (&#39;</span>DC2<span class="s1">&#39;,&#39;</span><span class="m">10</span>.0.4.164<span class="w"> </span><span class="m">10</span>.0.4.165<span class="w"> </span><span class="m">10</span>.0.4.166<span class="s1">&#39;,&#39;</span><span class="nv">source_user</span><span class="o">=</span><span class="se">\&#39;</span>repl<span class="se">\&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\&#39;</span>replpass<span class="se">\&#39;</span><span class="s1">&#39;);</span>
-<span class="s1">INSERT INTO `cluster` VALUES (&#39;</span>DC3<span class="s1">&#39;,&#39;</span><span class="m">10</span>.0.4.167<span class="w"> </span><span class="m">10</span>.0.4.168<span class="w"> </span><span class="m">10</span>.0.4.169<span class="s1">&#39;,&#39;</span><span class="nv">source_user</span><span class="o">=</span><span class="se">\&#39;</span>repl<span class="se">\&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\&#39;</span>replpass<span class="se">\&#39;</span><span class="err">&#39;</span><span class="o">)</span><span class="p">;</span>
-</code></pre></div>
-</li>
-<li>
-<p>Add the required links:</p>
-<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;DC2&#39;</span><span class="o">)</span><span class="p">;</span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;DC3&#39;</span><span class="o">)</span><span class="p">;</span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC2&#39;</span>,<span class="s1">&#39;DC1&#39;</span><span class="o">)</span><span class="p">;</span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC3&#39;</span>,<span class="s1">&#39;DC1&#39;</span><span class="o">)</span><span class="p">;</span>
-</code></pre></div>
-</li>
-<li>
-<p>Add the weight:</p>
-<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;DC1-1&#39;</span>,10<span class="o">)</span><span class="p">;</span><span class="w"> </span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;DC1-2&#39;</span>,11<span class="o">)</span><span class="p">;</span><span class="w"> </span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC2&#39;</span>,<span class="s1">&#39;DC2-1&#39;</span>,9<span class="o">)</span><span class="p">;</span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC2&#39;</span>,<span class="s1">&#39;DC2-2&#39;</span>,12<span class="o">)</span><span class="p">;</span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC3&#39;</span>,<span class="s1">&#39;DC3-1&#39;</span>,11<span class="o">)</span><span class="p">;</span>
-</code></pre></div>
-<p>The node in the cluster with the highest value is the first to be selected.</p>
-</li>
-<li>
-<p>Provision the remote clusters and start replication. </p>
-<p>On one of the DC1 nodes, for example DC1-1, perform a <code>mysqldump</code> as root or using sudo:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>root@DC1-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># mysqldump -u root -p --source-data=2 --single-transaction -R -A -E &gt; dump.sql</span>
-</code></pre></div>
-</li>
-<li>
-<p>Compress the file if it&rsquo;s too large. You can use <a href="https://docs.percona.com/percona-xtrabackup/8.0/backup_scenarios/compressed_backup.html">Percona XtraBackup to compress the data</a>. Copy the backup file to one node in each remote cluster, for example to DC2-1 and DC3-1. </p>
-<p>To restore the dump, run the following commands as root or using sudo:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>root@DC2-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># mysql -u root -p &lt; dump.sql</span>
-</code></pre></div>
-<p>and</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>root@DC3-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># mysql -u root -p &lt; dump.sql</span>
-</code></pre></div>
-</li>
-<li>
-<p>Configure the replication. Set up the first replication links manually. </p>
-<p>For example, on DC2-1 run:</p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">&#39;WAN IP of DC1-1&#39;</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">&#39;repl&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">&#39;replpass&#39;</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC2-DC1&#39;</span><span class="p">;</span>
-mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC2-DC1&#39;</span><span class="p">;</span>
-</code></pre></div>
-<p>on DC3-1 run: </p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">&#39;WAN IP of DC1-1&#39;</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">&#39;repl&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">&#39;replpass&#39;</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC3-DC1&#39;</span><span class="p">;</span>
-mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC3-DC1&#39;</span><span class="p">;</span>
-</code></pre></div>
-<p>For the other direction, use DC1-1 for both:</p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">&#39;WAN IP of DC2-1&#39;</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">&#39;repl&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">&#39;replpass&#39;</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC1-DC2&#39;</span><span class="p">;</span>
-mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC1-DC2&#39;</span><span class="p">;</span>
-mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">&#39;WAN IP of DC3-1&#39;</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">&#39;repl&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">&#39;replpass&#39;</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC1-DC3&#39;</span><span class="p">;</span>
-mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC1-DC3&#39;</span><span class="p">;</span>
-</code></pre></div>
-<p>Now, all the clusters are linked in a source to source way. </p>
-</li>
-<li>
-<p>Install and enable Percona XtraDB Cluster-based variant of Percona Distribution for MySQL as described in <a href="https://docs.percona.com/percona-distribution-for-mysql/8.0/installing.html#procedure">Install Percona Distribution for MySQL</a>.</p>
-</li>
-<li>
-<p>Install the packages for <code>replication_manager.sh</code> script depending on your operating system. On each node, perform the following steps as root or using sudo:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">On Debian and Ubuntu Linux</label><label for="__tabbed_1_2">On Red Hat Enterprise Linux and derivatives</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>percona-replication-manager
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>percona-replication-manager<span class="w">    </span>
-</code></pre></div>
+<div data-banner="data-banner">
+<h2 class="title" id="get-expert-help">Get expert help<a class="headerlink" href="#get-expert-help" title="Permanent link">&para;</a></h2>
+<p>If you need assistance, visit the community forum for comprehensive and free database knowledge, or contact our Percona Database Experts for professional support and services.</p>
+<div class="actions">
+<p><a href="https://forums.percona.com/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 4v7H5.17L4 12.17V4h11m1-2H3a1 1 0 0 0-1 1v14l4-4h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1m5 4h-2v9H6v2a1 1 0 0 0 1 1h11l4 4V7a1 1 0 0 0-1-1Z"/></svg></span> Community Forum</a> <a href="https://www.percona.com/about/contact" target="_blank"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19.3996 14.148C21.9082 12.5083 22.7289 9.16368 21.2109 6.53493C20.4502 5.21636 19.2207 4.27206 17.7497 3.87776C16.3868 3.51187 14.9634 3.6615 13.7106 4.29444L12 1.33337L8.44934 7.48295L0.242432 21.6959H23.7576L19.3996 14.148ZM17.3474 5.38416C18.4167 5.66894 19.3064 6.35548 19.8606 7.31143C20.9499 9.19582 20.384 11.5859 18.6176 12.7931L14.4917 5.64797C15.3806 5.22055 16.3831 5.12734 17.3474 5.38416ZM12 4.45432L21.0533 20.135H15.7562L9.35029 9.04341L11.9995 4.45478L12 4.45432ZM2.94667 20.135L8.44888 10.6071L13.9511 20.135H2.94667Z"/>
+</svg></span> Get a Percona Expert</a></p>
 </div>
 </div>
-</div>
-<p>When executed for the first time, the replication manager detects the current replication links and inserts rows in to the <code>percona.replication table</code>. In order to avoid issues, start with the replica nodes. The mysql credentials should be specified in the <code>/root/.my.cnf</code> file. On these nodes (DC1-1, DC2-1 and DC3-1), execute the script manually:</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>/usr/bin/replication_manager.sh
-</code></pre></div>
-<p>The replication state should be unchanged and the <code>percona.replication</code> table should contain the following rows:</p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>SELECT<span class="w"> </span>*<span class="w"> </span>FROM<span class="w"> </span>percona.replication<span class="p">;</span>
-</code></pre></div>
-<details class="example">
-<summary>Expected output</summary>
-<div class="highlight"><pre><span></span><code>+-------+--------+------------+-----------+---------------------+---------------------+----------------+
-| host  | weight | localIndex | isSlave   | lastUpdate          | lastHeartbeat       | connectionName |
-+-------+------- +------------+-----------+---------------------+---------------------+----------------+
-| DC1-1 |      10|          1 | Yes       | 2017-06-30 13:03:01 | 2017-06-30 13:03:01 | DC1-DC2        |
-| DC1-1 |      11|          1 | Yes       | 2017-06-30 13:03:01 | 2017-06-30 13:03:01 | DC1-DC3        |
-| DC2-1 |       9|          1 | Yes       | 2017-06-30 13:03:01 | 2017-06-30 13:03:01 | DC2-DC1        |
-| DC3-1 |      11|          1 | Yes       | 2017-06-30 13:03:01 | 2017-06-30 13:03:01 | DC3-DC1        |
-+-------+--------+------------+-----------+---------------------+---------------------+----------------+
-12 rows in set (0.00 sec)
-</code></pre></div>
-</details>
-<p>If you have issues on these step, see the <a href="replication-manager-troubleshooting.html">Replication manager troubleshooting</a> document.</p>
-<p>On these same nodes, enable the cron job:</p>
-<div class="highlight"><pre><span></span><code>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>/usr/bin/replication_manager.sh<span class="w"> </span>
-</code></pre></div>
-<p>Wait at least one minute and proceed with the other nodes. Try a manual run first to see if the script adds a line to the replication table for the host, for example, isSlave = No. Then add the cron jobs. </p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>SELECT<span class="w"> </span>*<span class="w"> </span>FROM<span class="w"> </span>percona.replication<span class="p">;</span>
-</code></pre></div>
-<details class="example">
-<summary>Expected output</summary>
-<div class="highlight"><pre><span></span><code>+-------+--------+------------+-----------+---------------------+---------------------+----------------+
-| host  | weight | localIndex | isSlave   | lastUpdate          | lastHeartbeat       | connectionName |
-+-------+------- +------------+-----------+---------------------+---------------------+----------------+
-| DC1-1 |      10|          1 | Yes       | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC2        |
-| DC1-2 |      11|          2 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC2        |
-| DC1-3 |       9|          0 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC2        |
-| DC1-1 |      11|          1 | Yes       | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC3        |
-| DC1-2 |      12|          2 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC3        |
-| DC1-3 |       0|          0 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC3        |
-| DC2-1 |       0|          1 | Yes       | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC2-DC1        |
-| DC2-2 |       0|          0 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC2-DC1        |
-| DC2-3 |       0|          2 | No        | 2017-06-19 15:58:01 | 2017-06-19 15:58:01 | DC2-DC1        |
-| DC3-1 |       0|          1 | Yes       | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC3-DC1        |
-| DC3-2 |       0|          2 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC3-DC1        |
-| DC3-3 |       0|          0 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC3-DC1        |
-+-------+--------+------------+-----------+---------------------+---------------------+----------------+
-</code></pre></div>
-</details>
-</li>
-</ol>
-<div class="admonition admonition">
-<p class="admonition-title">See also</p>
-<p>To manage a single replica, see <a href="single-replica-manager.html">Single replica manager for Percona XtraDB Cluster</a>.</p>
-</div>
- 
-                 
-<div class="md-relbar2__inner md-grid">
-<div class="md-content">
-  <article class="md-content__inner md-typeset" role="main">    
-    <h3>Contact us </h3>
-       <p>For free technical help, visit the Percona <a class="reference external" href="https://forums.percona.com/c/postgresql/25?utm_campaign=Doc%20pages" target="_blank">Community Forum</a>.<br>
-        <p>To report bugs or submit feature requests, open a <a class="reference external" href="https://jira.percona.com/projects/DISTMYSQL/issues/" target="_blank">JIRA</a> ticket.<br>
-         <p>For paid <a class="reference external" href="https://www.percona.com/services/support"> support </a> and <a class="reference external" href="https://www.percona.com/services/managed-services"> managed </a> or <a class="reference external" href="https://www.percona.com/services/consulting">consulting services </a>, contact <a class="reference external" href="https://www.percona.com/about-percona/contact" target="_blank">Percona Sales</a>.</p>
-         <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=751d512d-299c-4f7a-ad7e-166037a667e5" />
-        </article>
-</div>
-</div>
- 
-                 <!-- Last update of source file -->
-                 
-                   
-                     
+
 
 
 
@@ -2756,9 +2406,53 @@ mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class
     
   </aside>
 
-                   
-                 
-               
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              Thank you for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              Thank you for your feedback! Help us improve by following this <a href="https://docs.google.com/forms/d/1bkWACehjqlwA0AKf-qTJcXvYbOSYgze8iTPXjntqmNo/edit" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
               </article>
             </div>
           
@@ -2783,7 +2477,8 @@ mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class
       <div class="md-copyright">
     <div class="md-copyright__highlight">
  <a href='https://percona.com' target='_blank'>Percona LLC and/or its affiliates, </a> &copy; 2024
-    </div>
+ <a href="#" onclick="Osano.cm.showDrawer('osano-cm-dom-info-dialog-open')">Cookie Preferences</a>    
+</div>
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -2802,89 +2497,20 @@ mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class
     </div>
     
     
-      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
-        <div class="md-consent__overlay"></div>
-        <aside class="md-consent__inner">
-          <form class="md-consent__form md-grid md-typeset" name="consent">
-            
-
-  
-    
-  
-
-
-  
-    
-  
-
-
-
-  
-
-
-<h4>Cookie consent</h4>
-<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better. Read more about <a class="reference external" href="https://www.percona.com/20180524-cookie-policy" target="_blank">Percona Cookie Policy</a>.</p>
-<input class="md-toggle" type="checkbox" id="__settings" >
-<div class="md-consent__settings">
-  <ul class="task-list">
-    
-      
-      
-        
-        
-      
-      <li class="task-list-item">
-        <label class="task-list-control">
-          <input type="checkbox" name="analytics" checked>
-          <span class="task-list-indicator"></span>
-          Google Analytics
-        </label>
-      </li>
-    
-      
-      
-        
-        
-      
-      <li class="task-list-item">
-        <label class="task-list-control">
-          <input type="checkbox" name="github" checked>
-          <span class="task-list-indicator"></span>
-          GitHub
-        </label>
-      </li>
-    
-  </ul>
-</div>
-<div class="md-consent__controls">
-  
-    
-      <button class="md-button md-button--primary">Accept</button>
-    
-    
-    
-  
-    
-    
-    
-      <label class="md-button" for="__settings">Manage settings</label>
-    
-  
-</div>
-          </form>
-        </aside>
-      </div>
-      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
-    
     <script id="__config" type="application/json">{"base": "..", "features": ["search.highlight", "navigation.top", "content.tabs.link", "content.code.copy", "navigation.tracking", "content.action.edit", "content.action.view"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
+<script src="https://cmp.osano.com/Azqe5vTyLOSbN3OuT/49ad85b5-0418-4794-ab81-7599dddd534c/osano.js"></script>
+
       <script src="../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
         <script src="../js/version-select.js"></script>
       
         <script src="../js/promptremover.js"></script>
       
+        <script src="../js/consent.js"></script>
+      
     
+
   </body>
 </html>
