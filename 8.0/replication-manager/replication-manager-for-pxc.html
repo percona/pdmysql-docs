@@ -9,7 +9,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="File: replication-manager/replication-manager-for-pxc.md">
+        <meta name="description" content="The feature is a tech preview. Before using this feature in production, we recommend that you test restoring production from physical backups in your environment, and also use the alternative backup method for redundancy.">
       
       
         <meta name="author" content="Percona LLC">
@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../_images/percona-favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.10ba22f1.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -116,7 +116,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro-rendering-error" class="md-skip">
+        <a href="#replication-manager-for-percona-xtradb-cluster" class="md-skip">
           Skip to content
         </a>
       
@@ -2089,6 +2089,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#get-expert-help" class="md-nav__link">
     <span class="md-ellipsis">
       Get expert help
@@ -2313,6 +2337,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#get-expert-help" class="md-nav__link">
     <span class="md-ellipsis">
       Get expert help
@@ -2352,22 +2400,279 @@
   
 
 
-<h1 id="macro-rendering-error"><em>Macro Rendering Error</em><a class="headerlink" href="#macro-rendering-error" title="Permanent link">&para;</a></h1>
-<p><em>File</em>: <code>replication-manager/replication-manager-for-pxc.md</code></p>
-<p><em>TemplateNotFound</em>: ./snippets/tech-preview/_tech-preview-feature.md</p>
-<div class="highlight"><pre><span></span><code>Traceback (most recent call last):
-  File &quot;/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/mkdocs_macros/plugin.py&quot;, line 527, in render
-    return md_template.render(**page_variables)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/jinja2/environment.py&quot;, line 1301, in render
-    self.environment.handle_exception()
-  File &quot;/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/jinja2/environment.py&quot;, line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File &quot;&lt;template&gt;&quot;, line 4, in top-level template code
-  File &quot;/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/jinja2/loaders.py&quot;, line 204, in get_source
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: ./snippets/tech-preview/_tech-preview-feature.md
+<h1 id="replication-manager-for-percona-xtradb-cluster">Replication manager for Percona XtraDB Cluster<a class="headerlink" href="#replication-manager-for-percona-xtradb-cluster" title="Permanent link">&para;</a></h1>
+<p>The feature is a <a href="../glossary.html#tech-preview">tech preview</a>. Before using this feature in production, we recommend that you test restoring production from physical backups in your environment, and also use the alternative backup method for redundancy.</p>
+<p>The replication manager script helps manage <a href="../glossary.html#multi-source-replication">multi-source replication</a> between multiple Percona XtraDB Cluster clusters. This tool has a failover mechanism and can automatically perform a failover due to source or replica node failures, service degradation, or maintenance requirements.</p>
+<p>The replication manager script monitors the active source-replica replication channel. If the source or replica node fails, the script re-establishes the replication channel using alternative source or replica cluster nodes.</p>
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<p>For example, we deploy multi-source replication links between three data centers: DC1, DC2, and DC3. In each data center, there are three Percona XtraDB Cluster nodes form distinct Percona XtraDB Cluster clusters. The data centers contain the following nodes:</p>
+<table>
+<thead>
+<tr>
+<th>DC1</th>
+<th>DC2</th>
+<th>DC3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DC1-1</td>
+<td>DC2-1</td>
+<td>DC3-1</td>
+</tr>
+<tr>
+<td>DC1-2</td>
+<td>DC2-2</td>
+<td>DC3-2</td>
+</tr>
+<tr>
+<td>DC1-3</td>
+<td>DC2-3</td>
+<td>DC3-3</td>
+</tr>
+</tbody>
+</table>
+<p>The topology is the following:</p>
+<div class="highlight"><pre><span></span><code>DC2 &lt;=&gt; DC1 &lt;=&gt; DC3
 </code></pre></div>
+<p>All of the nodes are sources and replicas. DC1 is a replica of DC2 and DC3. DC2 and DC3 are replicas of DC1.</p>
+<div class="highlight"><pre><span></span><code>+----------------+---------------+
+| clusterSlave   | clusterMaster |
++----------------+---------------+
+| DC1            | DC2           |
+| DC1            | DC3           |
+| DC2            | DC1           |
+| DC3            | DC1           |
++----------------+---------------+
+</code></pre></div>
+<p>The example of the minimal MySQL configuration file for DC1 that is common for all three DC1 nodes:</p>
+<div class="highlight"><pre><span></span><code>[mysqld]
+# General galera reqs
+default_storage_engine=InnoDB
+innodb_autoinc_lock_mode=2
+
+# Replication settings
+binlog_format=ROW
+server-id=1
+log-bin=mysql-bin
+log_replica_updates
+expire_logs_days=7
+gtid_mode = ON
+enforce_gtid_consistency=ON
+skip-replica-start
+
+# Galera configuration
+wsrep_provider=/usr/lib/galera3/libgalera_smm.so
+wsrep_cluster_address=gcomm://10.0.4.160,10.0.4.162,10.0.4.163
+wsrep_replica_threads= 2
+wsrep_log_conflicts
+wsrep_cluster_name=DC1
+pxc_strict_mode=ENFORCING
+wsrep_sst_method=xtrabackup-v2
+wsrep_sst_auth=&quot;root:root&quot;
+</code></pre></div>
+<p>All nodes have the same <code>server-id</code> value.</p>
+<h3 id="configuration-steps">Configuration steps<a class="headerlink" href="#configuration-steps" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Bootstrap the cluster on DC1-1 node by running the following commands as root or using sudo:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root@DC1-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql stop </span>
+<span class="o">[</span>root@DC1-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql bootstrap-pxc</span>
+</code></pre></div>
+</li>
+<li>
+<p>On DC1-2 node, stop MySQL, delete the content of the datadir to force the SST, and start MySQL. Run the following commands as root or using sudo:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root@DC1-2<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql stop</span>
+<span class="o">[</span>root@DC1-2<span class="w"> </span>~<span class="o">]</span><span class="c1"># rm -rf /var/lib/mysql/*</span>
+<span class="o">[</span>root@DC1-2<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql start</span>
+</code></pre></div>
+</li>
+<li>
+<p>Once the SST of DC1-2 node is completed, proceed on DC1-3. Run the following commands as root or using sudo:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root@DC1-3<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql stop</span>
+<span class="o">[</span>root@DC1-3<span class="w"> </span>~<span class="o">]</span><span class="c1"># rm -rf /var/lib/mysql/*</span>
+<span class="o">[</span>root@DC1-3<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql start</span>
+</code></pre></div>
+</li>
+<li>
+<p>The DC1 cluster uses a single <a href="../glossary.html#gtid">GTID</a> sequence. To make sure <code>GTID_PURGED</code> is the same, run the following commands on DC1-1, DC1-2, and DC1-3 nodes:</p>
+<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>flush<span class="w"> </span>logs<span class="p">;</span>
+mysql&gt;<span class="w"> </span>purge<span class="w"> </span>binary<span class="w"> </span>logs<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;mysql-bin.000003&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p><code>mysql-bin.000003</code> is the last file returned when you run the following command:</p>
+<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="sb">`</span>SHOW<span class="w"> </span>BINARY<span class="w"> </span>LOGS<span class="sb">`</span>
+</code></pre></div>
+</li>
+<li>
+<p>Adjust the aformentioned steps to set up the DC2 and DC3 clusters accordingly.</p>
+</li>
+<li>
+<p>Add privileges for replication between all nodes only for DC1: </p>
+<div class="highlight"><pre><span></span><code>GRANT<span class="w"> </span>REPLICATION<span class="w"> </span>CLIENT,<span class="w"> </span>REPLICATION<span class="w"> </span>SLAVE<span class="w"> </span>ON<span class="w"> </span>*.*<span class="w"> </span>TO<span class="w"> </span><span class="s1">&#39;repl&#39;</span>@<span class="s1">&#39;%&#39;</span><span class="w"> </span>identified<span class="w"> </span>by<span class="w"> </span><span class="s1">&#39;replpass&#39;</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Add the replication tables. For example, we add the tables to DC1: </p>
+<div class="highlight"><pre><span></span><code>create database if not exists percona;
+use percona;
+CREATE TABLE `replication` (
+  `host` varchar(40) NOT NULL,
+  `weight` int(11) NOT NULL DEFAULT 0,
+  `localIndex` int(11) DEFAULT NULL,
+  `isSlave` enum(&#39;No&#39;,&#39;Yes&#39;,&#39;Proposed&#39;,&#39;Failed&#39;) DEFAULT &#39;No&#39;,
+  `lastUpdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `lastHeartbeat` timestamp NOT NULL DEFAULT &#39;1971-01-01 00:00:00&#39;,
+  `connectionName` varchar(64) NOT NULL,
+  PRIMARY KEY (`connectionName`,`host`),
+  KEY `idx_host` (`host`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `cluster` (
+  `cluster` varchar(31) NOT NULL,
+  `masterCandidates` varchar(255) NOT NULL,
+  `replCreds` varchar(255) NOT NULL,
+  PRIMARY KEY (`cluster`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `link` (
+  `clusterSlave` varchar(31) NOT NULL,
+  `clusterMaster` varchar(31) NOT NULL,
+  PRIMARY KEY (`clusterSlave`,`clusterMaster`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `weight` (
+ `cluster` varchar(31) NOT NULL,
+ `nodename` varchar(255) NOT NULL,
+ `weight` int NOT NULL DEFAULT 0, 
+ PRIMARY KEY (`cluster`,`nodename`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+</code></pre></div>
+<p>The replication manager writes to the tables. You do not need to adjust the tables.</p>
+</li>
+<li>
+<p>The cluster table contains the details of each cluster. The cluster name is defined in the <code>wsrep_cluster_name</code> variable value:</p>
+<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>cluster<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;10.0.4.160 10.0.4.162 10.0.4.163&#39;</span>,<span class="s1">&#39;source_user=\&#39;</span>repl<span class="se">\&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\&#39;</span>replpass<span class="se">\&#39;</span><span class="s1">&#39;);</span>
+<span class="s1">INSERT INTO `cluster` VALUES (&#39;</span>DC2<span class="s1">&#39;,&#39;</span><span class="m">10</span>.0.4.164<span class="w"> </span><span class="m">10</span>.0.4.165<span class="w"> </span><span class="m">10</span>.0.4.166<span class="s1">&#39;,&#39;</span><span class="nv">source_user</span><span class="o">=</span><span class="se">\&#39;</span>repl<span class="se">\&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\&#39;</span>replpass<span class="se">\&#39;</span><span class="s1">&#39;);</span>
+<span class="s1">INSERT INTO `cluster` VALUES (&#39;</span>DC3<span class="s1">&#39;,&#39;</span><span class="m">10</span>.0.4.167<span class="w"> </span><span class="m">10</span>.0.4.168<span class="w"> </span><span class="m">10</span>.0.4.169<span class="s1">&#39;,&#39;</span><span class="nv">source_user</span><span class="o">=</span><span class="se">\&#39;</span>repl<span class="se">\&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\&#39;</span>replpass<span class="se">\&#39;</span><span class="err">&#39;</span><span class="o">)</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Add the required links:</p>
+<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;DC2&#39;</span><span class="o">)</span><span class="p">;</span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;DC3&#39;</span><span class="o">)</span><span class="p">;</span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC2&#39;</span>,<span class="s1">&#39;DC1&#39;</span><span class="o">)</span><span class="p">;</span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC3&#39;</span>,<span class="s1">&#39;DC1&#39;</span><span class="o">)</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Add the weight:</p>
+<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;DC1-1&#39;</span>,10<span class="o">)</span><span class="p">;</span><span class="w"> </span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;DC1-2&#39;</span>,11<span class="o">)</span><span class="p">;</span><span class="w"> </span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC2&#39;</span>,<span class="s1">&#39;DC2-1&#39;</span>,9<span class="o">)</span><span class="p">;</span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC2&#39;</span>,<span class="s1">&#39;DC2-2&#39;</span>,12<span class="o">)</span><span class="p">;</span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC3&#39;</span>,<span class="s1">&#39;DC3-1&#39;</span>,11<span class="o">)</span><span class="p">;</span>
+</code></pre></div>
+<p>The node in the cluster with the highest value is the first to be selected.</p>
+</li>
+<li>
+<p>Provision the remote clusters and start replication. </p>
+<p>On one of the DC1 nodes, for example DC1-1, perform a <code>mysqldump</code> as root or using sudo:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root@DC1-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># mysqldump -u root -p --source-data=2 --single-transaction -R -A -E &gt; dump.sql</span>
+</code></pre></div>
+</li>
+<li>
+<p>Compress the file if it&rsquo;s too large. You can use <a href="https://docs.percona.com/percona-xtrabackup/8.0/backup_scenarios/compressed_backup.html">Percona XtraBackup to compress the data</a>. Copy the backup file to one node in each remote cluster, for example to DC2-1 and DC3-1. </p>
+<p>To restore the dump, run the following commands as root or using sudo:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root@DC2-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># mysql -u root -p &lt; dump.sql</span>
+</code></pre></div>
+<p>and</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root@DC3-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># mysql -u root -p &lt; dump.sql</span>
+</code></pre></div>
+</li>
+<li>
+<p>Configure the replication. Set up the first replication links manually. </p>
+<p>For example, on DC2-1 run:</p>
+<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">&#39;WAN IP of DC1-1&#39;</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">&#39;repl&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">&#39;replpass&#39;</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC2-DC1&#39;</span><span class="p">;</span>
+mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC2-DC1&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>on DC3-1 run: </p>
+<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">&#39;WAN IP of DC1-1&#39;</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">&#39;repl&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">&#39;replpass&#39;</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC3-DC1&#39;</span><span class="p">;</span>
+mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC3-DC1&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>For the other direction, use DC1-1 for both:</p>
+<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">&#39;WAN IP of DC2-1&#39;</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">&#39;repl&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">&#39;replpass&#39;</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC1-DC2&#39;</span><span class="p">;</span>
+mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC1-DC2&#39;</span><span class="p">;</span>
+mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">&#39;WAN IP of DC3-1&#39;</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">&#39;repl&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">&#39;replpass&#39;</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC1-DC3&#39;</span><span class="p">;</span>
+mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC1-DC3&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>Now, all the clusters are linked in a source to source way. </p>
+</li>
+<li>
+<p>Install and enable Percona XtraDB Cluster-based variant of Percona Distribution for MySQL as described in <a href="https://docs.percona.com/percona-distribution-for-mysql/8.0/installing.html#procedure">Install Percona Distribution for MySQL</a>.</p>
+</li>
+<li>
+<p>Install the packages for <code>replication_manager.sh</code> script depending on your operating system. On each node, perform the following steps as root or using sudo:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">On Debian and Ubuntu Linux</label><label for="__tabbed_1_2">On Red Hat Enterprise Linux and derivatives</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>percona-replication-manager
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>percona-replication-manager<span class="w">    </span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>When executed for the first time, the replication manager detects the current replication links and inserts rows in to the <code>percona.replication table</code>. In order to avoid issues, start with the replica nodes. The mysql credentials should be specified in the <code>/root/.my.cnf</code> file. On these nodes (DC1-1, DC2-1 and DC3-1), execute the script manually:</p>
+<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>/usr/bin/replication_manager.sh
+</code></pre></div>
+<p>The replication state should be unchanged and the <code>percona.replication</code> table should contain the following rows:</p>
+<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>SELECT<span class="w"> </span>*<span class="w"> </span>FROM<span class="w"> </span>percona.replication<span class="p">;</span>
+</code></pre></div>
+<details class="example">
+<summary>Expected output</summary>
+<div class="highlight"><pre><span></span><code>+-------+--------+------------+-----------+---------------------+---------------------+----------------+
+| host  | weight | localIndex | isSlave   | lastUpdate          | lastHeartbeat       | connectionName |
++-------+------- +------------+-----------+---------------------+---------------------+----------------+
+| DC1-1 |      10|          1 | Yes       | 2017-06-30 13:03:01 | 2017-06-30 13:03:01 | DC1-DC2        |
+| DC1-1 |      11|          1 | Yes       | 2017-06-30 13:03:01 | 2017-06-30 13:03:01 | DC1-DC3        |
+| DC2-1 |       9|          1 | Yes       | 2017-06-30 13:03:01 | 2017-06-30 13:03:01 | DC2-DC1        |
+| DC3-1 |      11|          1 | Yes       | 2017-06-30 13:03:01 | 2017-06-30 13:03:01 | DC3-DC1        |
++-------+--------+------------+-----------+---------------------+---------------------+----------------+
+12 rows in set (0.00 sec)
+</code></pre></div>
+</details>
+<p>If you have issues on these step, see the <a href="replication-manager-troubleshooting.html">Replication manager troubleshooting</a> document.</p>
+<p>On these same nodes, enable the cron job:</p>
+<div class="highlight"><pre><span></span><code>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>/usr/bin/replication_manager.sh<span class="w"> </span>
+</code></pre></div>
+<p>Wait at least one minute and proceed with the other nodes. Try a manual run first to see if the script adds a line to the replication table for the host, for example, isSlave = No. Then add the cron jobs. </p>
+<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>SELECT<span class="w"> </span>*<span class="w"> </span>FROM<span class="w"> </span>percona.replication<span class="p">;</span>
+</code></pre></div>
+<details class="example">
+<summary>Expected output</summary>
+<div class="highlight"><pre><span></span><code>+-------+--------+------------+-----------+---------------------+---------------------+----------------+
+| host  | weight | localIndex | isSlave   | lastUpdate          | lastHeartbeat       | connectionName |
++-------+------- +------------+-----------+---------------------+---------------------+----------------+
+| DC1-1 |      10|          1 | Yes       | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC2        |
+| DC1-2 |      11|          2 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC2        |
+| DC1-3 |       9|          0 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC2        |
+| DC1-1 |      11|          1 | Yes       | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC3        |
+| DC1-2 |      12|          2 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC3        |
+| DC1-3 |       0|          0 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC3        |
+| DC2-1 |       0|          1 | Yes       | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC2-DC1        |
+| DC2-2 |       0|          0 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC2-DC1        |
+| DC2-3 |       0|          2 | No        | 2017-06-19 15:58:01 | 2017-06-19 15:58:01 | DC2-DC1        |
+| DC3-1 |       0|          1 | Yes       | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC3-DC1        |
+| DC3-2 |       0|          2 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC3-DC1        |
+| DC3-3 |       0|          0 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC3-DC1        |
++-------+--------+------------+-----------+---------------------+---------------------+----------------+
+</code></pre></div>
+</details>
+</li>
+</ol>
+<div class="admonition admonition">
+<p class="admonition-title">See also</p>
+<p>To manage a single replica, see <a href="single-replica-manager.html">Single replica manager for Percona XtraDB Cluster</a>.</p>
+</div>
 <div data-banner="data-banner">
 <h2 class="title" id="get-expert-help">Get expert help<a class="headerlink" href="#get-expert-help" title="Permanent link">&para;</a></h2>
 <p>If you need assistance, visit the community forum for comprehensive and free database knowledge, or contact our Percona Database Experts for professional support and services.</p>
@@ -2397,7 +2702,7 @@ jinja2.exceptions.TemplateNotFound: ./snippets/tech-preview/_tech-preview-featur
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    2023-09-04
+    2024-03-21
   </span>
 
     
@@ -2502,7 +2807,7 @@ jinja2.exceptions.TemplateNotFound: ./snippets/tech-preview/_tech-preview-featur
     
 <script src="https://cmp.osano.com/Azqe5vTyLOSbN3OuT/49ad85b5-0418-4794-ab81-7599dddd534c/osano.js"></script>
 
-      <script src="../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
       
         <script src="../js/version-select.js"></script>
       
