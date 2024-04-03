@@ -22,6 +22,6 @@ Review each component’s release notes for What’s new, improvements, or bug f
 | ----------------------- | --------- | -------------------------------------------|
 | Percona XtraBackup      | [8.0.35-30](https://docs.percona.com/percona-xtrabackup/8.0/release-notes/8.0/8.0.35-30.0.html)| An open-source hot backup utility for MySQL-based servers that doesn’t lock your database during the backup.|
 | HAProxy                 | [2.8.5](https://git.haproxy.org/?p=haproxy-2.8.git;a=commit;h=aaba8d090ec663906af1fecbad83c26bbccf0761) | A high-availability and load-balancing solution for Percona XtraDB Cluster. This is a default proxy.|
-| ProxySQL                | [2.5.5](https://docs.percona.com/proxysql/2.5.5.html)| A high performance, high-availability, protocol-aware proxy for MySQL.          |
+| ProxySQL                | [2.5.5-1.2](https://docs.percona.com/proxysql/2.5.5-1.2.html)| A high performance, high-availability, protocol-aware proxy for MySQL.          |
 | Percona Toolkit         | [3.5.7](https://docs.percona.com/percona-toolkit/release_notes.html#v3-5-7-released-2023-12-23)     | The set of scripts to simplify and optimize database operation. |
 | relication_manager.sh   | [1.0](./replication-manager/replication-manager-for-pxc.md)  | A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters. |
