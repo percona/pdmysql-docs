@@ -1,44 +1,62 @@
-const selectBox = document.getElementById('versionSelect');
+/*
+ * Custom version of same taken from mike code for injecting version switcher into percona.com
+*/
 
-if (selectBox) {
-    // Populate the select box with options based on the versionMap
-    const versionMap = { 
-        '8.3 (LATEST)': '/innovation-release/',
-        '8.0': '/8.0/',
-        // Add new versions here as needed
-    };
+window.addEventListener("DOMContentLoaded", function() {
+  // This is a bit hacky. Figure out the base URL from a known CSS file the
+  // template refers to...
+  var ex = new RegExp("/?css/version-select.css$");
+  var sheet = document.querySelector('link[href$="version-select.css"]');
 
-    function getCurrentVersionFromUrl() {
-        for (const path of Object.values(versionMap)) {
-            if (window.location.pathname.includes(path)) {
-                return path;  // Return the matching path as soon as one is found
-            }
-        }
-        return null;  // Return null if no match is found
-    }
+  var ABS_BASE_URL = sheet.href.replace(ex, "");
+  var CURRENT_VERSION = ABS_BASE_URL.split("/").pop();
 
-    Object.keys(versionMap).forEach(version => {
-        const option = document.createElement('option');
-        option.value = versionMap[version];
-        option.textContent = version;
-        selectBox.appendChild(option);
+  function makeSelect(options, selected) {
+    var select = document.createElement("select");
+//    select.classList.add("form-control");
+    select.classList.add("btn");
+    select.classList.add("btn-primary");
+
+    options.forEach(function(i) {
+      var option = new Option(i.text, i.value, undefined,
+                              i.value === selected);
+      select.add(option);
     });
 
-    // Set initial selection based on URL
-    const currentSegment = getCurrentVersionFromUrl();
-    if (currentSegment) {
-        selectBox.value = currentSegment;
-    }
+    return select;
+  }
 
-    // Add event listener for changing URL based on selection
-    selectBox.addEventListener('change', function() {
-        const selectedVersion = this.value;
-        const currentSegment = getCurrentVersionFromUrl();
-        if (selectedVersion !== currentSegment) { // Only redirect if the selected version is different
-            const newUrl = window.location.href.replace(currentSegment, selectedVersion);
-            window.location.href = newUrl;
-        }
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", ABS_BASE_URL + "/../versions.json");
+  xhr.onload = function() {
+    var versions = JSON.parse(this.responseText);
+
+    var realVersion = versions.find(function(i) {
+      return i.version === CURRENT_VERSION ||
+             i.aliases.includes(CURRENT_VERSION);
+    }).version;
+
+    var select = makeSelect(versions.map(function(i) {
+      return {text: i.title, value: i.version};
+    }), realVersion);
+    select.addEventListener("change", function(event) {
+      window.location.href = ABS_BASE_URL + "/../" + this.value;
     });
-} else {
-    console.log("No version selector available on this website.");
-}
+
+    var container = document.createElement("div");
+    container.id = "custom_select";
+    container.classList.add("side-column-block");
+
+    // Label
+//    var label = document.createElement("span");
+//    label.textContent = "PMM version: ";
+//    container.appendChild(label);
+
+    // Add menu
+    container.appendChild(select);
+
+    var sidebar = document.querySelector("#version-select-wrapper"); // Inject menu into element with this ID
+    sidebar.appendChild(container);
+  };
+  xhr.send();
+});
