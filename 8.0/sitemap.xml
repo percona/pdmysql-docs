@@ -2,392 +2,392 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/index.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/404.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/components.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/copyright.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/deployment-variants.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/downgrade.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/glossary.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/installing.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/minor-upgrade.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.20.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.21.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.22.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.23.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.25.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.26.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.27.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.28.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.28.upd.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.29.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.30.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.30.upd.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.30.upd2.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.31.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.31.upd.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.32.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.32.upd.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.32.upd2.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.32.upd3.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.33.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.33.upd.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.33.upd2.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.33.upd3.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.34.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.34.upd.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.34.upd2.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.34.upd3.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.35.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-ps-v8.0.36.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.20.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.20.upd.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.20.upd2.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.21.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.22.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.23.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.23.upd.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.25.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.26.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.27.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.28.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.29.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.29.upd.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.30.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.30.upd.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.31.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.31.upd.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.31.upd2.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.32.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.32.upd.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.32.upd2.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.32.upd3.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.33.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.33.upd.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.34.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.34.upd.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.34.upd2.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.35.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-pxc-v8.0.36.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes-v8.0.19.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/release-notes.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/trademark-policy.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/uninstalling.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/replication-manager/replication-manager-for-pxc.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/replication-manager/replication-manager-troubleshooting.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/replication-manager/single-replica-manager.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/solutions/architecture-components.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/solutions/deploy-pdps-group-replication.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/solutions/monitoring.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/8.0/8.0/solutions/pdps-group-replication.html</loc>
-         <lastmod>2024-05-29</lastmod>
+         <lastmod>2024-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
