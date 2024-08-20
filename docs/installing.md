@@ -11,9 +11,9 @@ Find the full list of supported platforms on the [Percona Software and Platform 
 
     *Percona* provides two repositories for every deployment variant of Percona Distribution for MySQL.
 
-    The *Major Release repository* includes the latest version packages (for example, `pdps-8x-innovation`). Whenever a package is updated, the package manager of your operating system detects that and prompts you to update. As long as you update all Distribution packages at the same time, you can ensure that the packages you’re using have been tested and verified by *Percona*. Installing Percona Distribution for MySQL from the Major Release Repository is the recommended method.
+    The *Major Release repository* includes the latest version packages (for example, `pdps-84`). Whenever a package is updated, the package manager of your operating system detects that and prompts you to update. As long as you update all Distribution packages at the same time, you can ensure that the packages you’re using have been tested and verified by *Percona*. Installing Percona Distribution for MySQL from the Major Release Repository is the recommended method.
 
-    The *Minor Release repository* includes a particular minor release of the database and all of the packages that were tested and verified to work with that minor release (for example, `pdps-8.1.0`). You may choose to install Percona Distribution for MySQL from the Minor Release repository if you have decided to standardize on a particular release which has passed rigorous testing procedures and which has been verified to work with your applications. This allows you to deploy to a new host and ensure that you’ll be using the same version of all the Distribution packages, even if newer releases exist in other repositories.
+    The *Minor Release repository* includes a particular minor release of the database and all of the packages that were tested and verified to work with that minor release (for example, `pdps-8.4.0`). You may choose to install Percona Distribution for MySQL from the Minor Release repository if you have decided to standardize on a particular release which has passed rigorous testing procedures and which has been verified to work with your applications. This allows you to deploy to a new host and ensure that you’ll be using the same version of all the Distribution packages, even if newer releases exist in other repositories.
 
     The disadvantage of using a Minor Release repository is that you are locked in this particular release. When potentially critical fixes are released in a later minor version of the database, you will not be prompted for an upgrade by the package manager of your operating system. You would need to change the configured repository in order to install the upgrade.
 
@@ -66,7 +66,7 @@ To install Percona software, you need to configure the required repository. To s
         Install Percona XtraBackup:
 
         ```{.bash data-prompt="$"}
-        $ sudo apt install percona-xtrabackup-81
+        $ sudo apt install percona-xtrabackup-84
         ```
 
         Install Percona Toolkit:
@@ -141,7 +141,7 @@ To install Percona software, you need to configure the required repository. To s
         Install Percona XtraBackup
 
         ```{.bash data-prompt="$"}
-        $ sudo yum install percona-xtrabackup-81
+        $ sudo yum install percona-xtrabackup-84
         ```
 
         Install Orchestrator
