@@ -148,7 +148,6 @@ nav:
   - Home: index.md
   - Release notes:
     - Release notes index: release-notes.md
-    -
   - Discover Percona Distribution for MySQL:
     - components.md
     - deployment-variants.md
