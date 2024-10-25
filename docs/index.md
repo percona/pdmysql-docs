@@ -12,6 +12,12 @@ Percona Distribution for MySQL is a single solution with the best and most criti
 
 - **Easy-to-integrate with PMM** - benefit from all the features of [PMM](https://docs.percona.com/percona-monitoring-and-management/index.html) for monitoring and managing the health of your database. 
 
+!!! important
+
+    This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 8.4 becomes available.
+    
+    ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur. In an 8.4.x environment, the binlog reader errors out during initialization due to the use of old terminology, such as the SHOW MASTER STATUS command.
+
 ## Get started
 
 Follow the [installation instructions](installing.md) to get started with Percona Distribution for MySQL.

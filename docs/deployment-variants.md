@@ -12,6 +12,12 @@ Percona Distribution for MySQL provides two deployment variants: one is *Percona
 | MySQL Shell  | YES                        |
 | MySQL Router | YES                        |
 
+!!! important
+
+    This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 8.4 becomes available.
+    
+    ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur. In an 8.4.x environment, the binlog reader errors out during initialization due to the use of old terminology, such as the SHOW MASTER STATUS command.
+
 ## What deployment variant to choose?
 
 The **Percona Server-based deployment variant** with [asynchronous replication](https://dev.mysql.com/doc/refman/{{vers}}/en/replication.html) utilizes the primary / secondary replication model. It enables you to create geographically distributed infrastructures with the support for disaster recovery. However, this deployment variant does not guarantee data consistency on all nodes at the given moment and provides high availability  of up to 4 nines.
