@@ -13,10 +13,13 @@ Percona Distribution for MySQL consists of the following **components**:
 * [ProxySQL](https://proxysql.com/) is a high performance, high-availability, protocol-aware proxy for MySQL.
 
 
-* [Percona Toolkit](https://docs.percona.com/percona-toolkit/) is the set of scripts to simplify and optimize database operation.
-
-
 * [MySQL Shell](https://dev.mysql.com/doc/mysql-shell/{{vers}}/en/) is an advanced client and code editor for MySQL Server.
 
 
 * [MySQL Router](https://dev.mysql.com/doc/mysql-router/{{vers}}/en/) is lightweight middleware that provides transparent routing between your application and back-end MySQL servers.
+
+!!! important
+
+    This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 8.4 becomes available.
+    
+    ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur. In an 8.4.x environment, the binlog reader errors out during initialization due to the use of old terminology, such as the SHOW MASTER STATUS command.
