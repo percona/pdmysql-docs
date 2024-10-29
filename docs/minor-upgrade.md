@@ -1,5 +1,11 @@
 # Upgrade Percona Distribution for MySQL
 
+!!! important
+
+    This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 8.4 becomes available.
+    
+    ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur. In an 8.4.x environment, the binlog reader errors out during initialization due to the use of old terminology, such as the SHOW MASTER STATUS command.
+
 Minor releases include bug fixes and feature enhancements. We recommend to have Percona Distribution for MySQL updated to the latest version.
 
 Though minor releases don’t change the behavior, even a minor upgrade is a risky process. We recommend to back up your data before upgrading.

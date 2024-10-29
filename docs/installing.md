@@ -1,5 +1,11 @@
 # Install Percona Distribution for MySQL
 
+!!! important
+
+    This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 8.4 becomes available.
+    
+    ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur. In an 8.4.x environment, the binlog reader errors out during initialization due to the use of old terminology, such as the SHOW MASTER STATUS command.
+
 We recommend to install Percona Distribution for MySQL from Percona repositories using the package manager of your operating system:
 
 * `apt` - for Debian and Ubuntu Linux
