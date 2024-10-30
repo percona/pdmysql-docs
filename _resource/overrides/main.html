@@ -7,6 +7,10 @@
 {{ super() }}
 {% endblock %}
 
+{% block announce %}
+<div><strong>Percona Distribution for MySQL 8.3 Documentation is EOL and is no longer supported.</div></strong>
+{% endblock %}
+
 {% block extrahead %}
 {{ super() }}
                  {% set title = config.site_name %}
