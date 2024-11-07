@@ -2,70 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/index.html</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-07</lastmod>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/404.html</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-07</lastmod>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/architecture-components.html</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-07</lastmod>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/components.html</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-07</lastmod>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/copyright.html</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-07</lastmod>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/deploy-pdps-group-replication.html</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-07</lastmod>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/deployment-variants.html</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-07</lastmod>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/downgrade.html</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-07</lastmod>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/glossary.html</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-07</lastmod>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/installing.html</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-07</lastmod>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/minor-upgrade.html</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-07</lastmod>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/monitoring.html</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-07</lastmod>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/pdps-group-replication.html</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-07</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/release-notes-ps-8.4.1.html</loc>
+         <lastmod>2024-11-07</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/release-notes-ps-8.4.2.html</loc>
+         <lastmod>2024-11-07</lastmod>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/release-notes-ps-8.4.html</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-07</lastmod>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/release-notes.html</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-07</lastmod>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/trademark-policy.html</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-07</lastmod>
     </url>
     <url>
          <loc>https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/uninstalling.html</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-07</lastmod>
     </url>
 </urlset>
