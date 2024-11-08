@@ -7,115 +7,187 @@ To uninstall Percona Distribution for MySQL, stop the `mysql` service and remove
     Should you need the data files later, back up your data before uninstalling Percona Distribution for MySQL.
 
 
-!!! important
+=== "Uninstall Percona Server-based variant" 
 
-    Run all commands as the root user or via `sudo`
+    !!! important
 
-=== "On Debian / Ubuntu"
+        Run all commands as the root user or via `sudo`
 
-
-    1. Stop the `mysql` service.
-
-        ```{.bash data-prompt="$"}
-        $ sudo systemctl stop mysql
-        ```
-
-    2. Remove *Percona Server for MySQL*.
-
-        ```{.bash data-prompt="$"}
-        $ sudo apt remove percona-server*
-        ```
+    === "On Debian / Ubuntu"
 
 
-    3. Remove the components. Use the following commands to remove the required components.
+         1. Stop the `mysql` service.
 
-        * Remove Percona XtraBackup
+             ```{.bash data-prompt="$"}
+             $ sudo systemctl stop mysql
+             ```
+
+         2. Remove *Percona Server for MySQL*.
+
+             ```{.bash data-prompt="$"}
+             $ sudo apt remove percona-server*
+             ```
+
+
+         3. Remove the components. Use the following commands to remove the required
+         components.
+
+             * Remove Percona XtraBackup
                 
-          ```{.bash data-prompt="$"}
-          $ sudo apt remove percona-xtrabackup-84
-          ```
+                ```{.bash data-prompt="$"}
+                $ sudo apt remove percona-xtrabackup-84
+                ```
 
-        * Remove Percona Toolkit
+             * Remove Percona Toolkit
 
-          ```{.bash data-prompt="$"}
-          $ sudo apt remove percona-toolkit
-          ```
+                ```{.bash data-prompt="$"}
+                $ sudo apt remove percona-toolkit
+                ```
 
-        * Remove Orchestrator
+             * Remove Orchestrator
                 
-           ```{.bash data-prompt="$"}
-           $ sudo apt remove percona-orchestrator*
-           ```
+                ```{.bash data-prompt="$"}
+                $ sudo apt remove percona-orchestrator*
+                ```
 
-        * Remove MySQL Shell
+             * Remove MySQL Shell
 
-           ```{.bash data-prompt="$"}
-           $ sudo apt remove percona-mysql-shell
-           ```
+                ```{.bash data-prompt="$"}
+                $ sudo apt remove percona-mysql-shell
+                ```
 
-        * Remove ProxySQL
+             * Remove ProxySQL
 
-           ```{.bash data-prompt="$"}
-           $ sudo apt remove proxysql2
-           ```
+                ```{.bash data-prompt="$"}
+                $ sudo apt remove proxysql2
+                ```
 
-        * Remove MySQL Router
+             * Remove MySQL Router
 
-           ```{.bash data-prompt="$"}
-           $ sudo apt remove percona-mysql-router
-           ```
+                ```{.bash data-prompt="$"}
+                $ sudo apt remove percona-mysql-router
+                ```
 
-=== "On Red Hat Enterprise Linux / derivatives"
+    === "On Red Hat Enterprise Linux / derivatives"
 
-    1. Stop the `mysql` service.
+         1. Stop the `mysql` service.
 
-        ```{.bash data-prompt="$"}
-        $ sudo systemctl stop mysql
-        ```
+             ```{.bash data-prompt="$"}
+             $ sudo systemctl stop mysql
+             ```
 
-    2. Remove *Percona Server for MySQL*.
+         2. Remove *Percona Server for MySQL*.
 
-        ```{.bash data-prompt="$"}
-        $ sudo yum remove percona-server*
-        ```
+             ```{.bash data-prompt="$"}
+             $ sudo yum remove percona-server*
+             ```
 
-    3. Remove the components. Use the commands below to remove the required components.
+         3. Remove the components. Use the commands below to remove the required
+         components.
 
-        * Remove Percona XtraBackup
+             * Remove Percona XtraBackup
                
-           ```{.bash data-prompt="$"}
-           $ sudo yum remove percona-xtrabackup-84
-           ```
+                ```{.bash data-prompt="$"}
+                $ sudo yum remove percona-xtrabackup-84
+                ```
 
-        * Remove Percona Toolkit
+             * Remove Percona Toolkit
 
-           ```{.bash data-prompt="$"}
-           $ sudo yum remove percona-toolkit
-           ```
+                ```{.bash data-prompt="$"}
+                $ sudo yum remove percona-toolkit
+                ```
 
-        * Remove Orchestrator
+             * Remove Orchestrator
 
-           ```{.bash data-prompt="$"}
-           $ sudo yum remove percona-orchestrator*
-           ```
+                ```{.bash data-prompt="$"}
+                $ sudo yum remove percona-orchestrator*
+                ```
 
-        * Remove MySQL Shell
+             * Remove MySQL Shell
 
-           ```{.bash data-prompt="$"}
-           $ sudo yum remove percona-mysql-shell
-           ```
+                ```{.bash data-prompt="$"}
+                $ sudo yum remove percona-mysql-shell
+                ```
 
-        * Remove ProxySQL
+             * Remove ProxySQL
 
-           ```{.bash data-prompt="$"}
-           $ sudo yum remove proxysql2
-           ```
+                ```{.bash data-prompt="$"}
+                $ sudo yum remove proxysql2
+                ```
 
-        * Remove MySQL Router
+             * Remove MySQL Router
 
-           ```{.bash data-prompt="$"}
-           $ sudo yum remove percona-mysql-router
-           ```
+                ```{.bash data-prompt="$"}
+                $ sudo yum remove percona-mysql-router
+                ```
+
+=== "Uninstall Percona XtraDB Cluster-based variant"
+
+    !!! important
+
+        Run all commands as the root user or via `sudo`
+
+
+    === "On Debian / Ubuntu"
+
+         1. Stop the `mysql` service.
+
+             ```{.bash data-prompt="$"}
+             $ sudo systemctl stop mysql
+             ```
+
+         2. Remove *Percona XtraDB Cluster*.
+
+             ```{.bash data-prompt="$"}
+             $ sudo apt remove percona-xtradb-cluster
+             ```
+
+         3. Remove the components. Use the commands below to remove the required
+         components.
+
+             * Remove Percona XtraBackup
+
+                ```{.bash data-prompt="$"}
+                $ sudo apt remove percona-xtrabackup-84
+                ```
+
+             * Remove Percona Toolkit
+
+                ```{.bash data-prompt="$"}
+                $ sudo apt remove percona-toolkit
+                ```
+
+    === "On Red Hat Enterprise Linux / derivatives"
+
+
+         1. Stop the `mysql` service.
+
+             ```{.bash data-prompt="$"}
+             $ sudo systemctl stop mysql
+             ```
+
+
+         2. Remove *Percona Server for MySQL*.
+
+             ```{.bash data-prompt="$"}
+             $ sudo yum remove percona-xtradb-cluster
+             ```
+
+
+         3. Remove the components. Use the commands below to remove the required
+         components.
+
+            * Remove Percona XtraBackup
+
+               ```{.bash data-prompt="$"}
+               $ sudo yum remove percona-xtrabackup-84
+               ```
+
+            * Remove Percona Toolkit
+
+              ```{.bash data-prompt="$"}
+              $ sudo yum remove percona-toolkit
+              ```
 
 
 

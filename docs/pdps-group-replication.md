@@ -6,7 +6,6 @@ This guide gives [architecture](architecture-components.md) and deployment recom
 
 This solution assumes the use of *Percona Server for MySQL* based deployment variant of Percona Distribution for MySQL with [Group Replication](https://dev.mysql.com/doc/refman/{{vers}}/en/group-replication.html).
 
-
 ## High availability overview
 
 How to measure availability and at what point does it become “high” availability?
@@ -49,12 +48,9 @@ A database failure or configuration change that requires a restart should not af
 
 The following are the three main types of failovers that can occur in database environments:
 
-
 * **Planned failover**. This is a failover that has been scheduled in advance or occurs at a regular interval. There can be many reasons for planned failovers including patching, large data operations, retiring existing infrastructure, or simply to test the failover strategy.
 
-
 * **Unplanned failover**. This is what occurs when a database has unexpectedly become unresponsive or experiences instability. An unplanned failover could also include emergency changes that do not fall under the planned failover cadence or scheduling parameters. Unplanned failovers are generally considered higher risk operations due to the high stress and high potential for data corruption or data fragmentation.
-
 
 * **Regional or disaster recovery (DR) failover**. Unplanned failovers still work with the assumption that additional database infrastructure is immediately available and in a usable state. However, in a regional or DR failover, it is assumed that there is a large scale infrastructure outage which requires the business to move its operations away from its current availability zone.
 
