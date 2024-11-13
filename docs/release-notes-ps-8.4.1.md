@@ -1,0 +1,4 @@
+# Percona Distribution for MySQL 8.4.1 using Percona Server for MySQL
+
+Due to a critical fix, MySQL Community Server 8.4.2 was released shortly (22 days later) after MySQL Community Server 8.4.1. Percona has skipped the release of Percona Server for MySQL 8.4.1. Percona Server for MySQL 8.4.2-2 contains all bug fixes and contents from MySQL Community Server 8.4.1 and MySQL Community Server 8.4.2.
+
