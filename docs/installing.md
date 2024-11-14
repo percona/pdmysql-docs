@@ -37,148 +37,256 @@ To install Percona software, you need to configure the required repository. To s
 
 ## Procedure
 
-=== "On Debian and Ubuntu Linux"
+=== "Install Percona Server-based variant"
 
-    !!! important
+    === "On Debian and Ubuntu Linux"
+
+        !!! important
+
+            Run the following commands as the root user or via `sudo`.
+
+        ### Enable Percona repository
+
+        To enable the desired repository, we recommend to use the `enable` subcommand of `percona-release`.
+
+        ```{.bash data-prompt="$"}
+        $ sudo percona-release enable {{majorpkg}}
+        ```
+
+        !!! tip
+
+            To enable the minor version repository, use the following command:
+
+            ```
+            $ sudo percona-release enable {{minorpkg}}
+            ```
+
+        ### Install Percona Distribution for MySQL packages
+
+        1. Install *Percona Server for MySQL*:
+
+            ```{.bash data-prompt="$"}
+            $ sudo apt install percona-server-server
+            ```
+
+        2. Install the components. Use the commands below to install the required components:
+
+            Install Percona XtraBackup:
+
+            ```{.bash data-prompt="$"}
+            $ sudo apt install percona-xtrabackup-84
+            ```
+
+            Install Percona Toolkit:
+
+            ```{.bash data-prompt="$"}
+            $ sudo apt install percona-toolkit
+            ```
+
+            Install Orchestrator:
+
+            ```{.bash data-prompt="$"}
+            $ sudo apt install percona-orchestrator percona-orchestrator-cli percona-orchestrator-client
+            ```
+
+            Install MySQL Shell:
+
+            ```{.bash data-prompt="$"}
+            $ sudo apt install percona-mysql-shell
+            ```
+
+            Install ProxySQL:
+
+            ```{.bash data-prompt="$"}
+            $ sudo apt install proxysql2
+            ```
+
+            Install MySQL Router:
+
+            ```{.bash data-prompt="$"}
+            $ sudo apt install percona-mysql-router
+            ```
+
+    === "On Red Hat Enterprise Linux and derivatives"
+ 
+        !!! admonition "Platform specific notes"
+
+            On CentOS 7, install the `epel-release` package. It includes the dependencies required to install Orchestrator. Use the following command:
+
+            ```{.bash data-prompt="$"}
+            $ sudo yum -y install epel-release
+            ```
 
         Run the following commands as the root user or via `sudo`.
 
-    ### Enable Percona repository
+        ### Enable Percona repository
 
-    To enable the desired repository, we recommend to use the `enable` subcommand of `percona-release`.
-
-    ```{.bash data-prompt="$"}
-    $ sudo percona-release enable {{majorpkg}}
-    ```
-
-    !!! tip
-
-        To enable the minor version repository, use the following command:
-
-        ```
-        $ sudo percona-release enable {{minorpkg}}
-        ```
-
-    ### Install Percona Distribution for MySQL packages
-
-    1. Install *Percona Server for MySQL*:
+        To enable the desired repository, we recommend to use the `enable` subcommand of `percona-release`.
 
         ```{.bash data-prompt="$"}
-        $ sudo apt install percona-server-server
+        $ sudo percona-release enable {{majorpkg}}
         ```
 
-    2. Install the components. Use the commands below to install the required components:
+        !!! tip
 
-        Install Percona XtraBackup:
+            To enable the minor version repository, use the following command:
 
-        ```{.bash data-prompt="$"}
-        $ sudo apt install percona-xtrabackup-84
-        ```
+            ```{.bash data-prompt="$"}
+            $ sudo percona-release enable {{minorpkg}}
+            ```
 
-        Install Percona Toolkit:
+        ### Install Percona Distribution for MySQL packages
 
-        ```{.bash data-prompt="$"}
-        $ sudo apt install percona-toolkit
-        ```
+        1. Install *Percona Server for MySQL*:
+            
+            ```{.bash data-prompt="$"}
+            $ sudo yum install percona-server-server
+            ```
 
-        Install Orchestrator:
+        2. Install the components. Use the commands below to install the required components:
 
-        ```{.bash data-prompt="$"}
-        $ sudo apt install percona-orchestrator percona-orchestrator-cli percona-orchestrator-client
-        ```
+            Install Percona XtraBackup
 
-        Install MySQL Shell:
+            ```{.bash data-prompt="$"}
+            $ sudo yum install percona-xtrabackup-84
+            ```
 
-        ```{.bash data-prompt="$"}
-        $ sudo apt install percona-mysql-shell
-        ```
+            Install Orchestrator
 
-        Install ProxySQL:
+            ```{.bash data-prompt="$"}
+            $ sudo yum install percona-orchestrator percona-orchestrator-cli percona-orchestrator-client
+            ```
 
-        ```{.bash data-prompt="$"}
-        $ sudo apt install proxysql2
-        ```
+            Install Percona Toolkit
 
-        Install MySQL Router:
+            ```{.bash data-prompt="$"}
+            $ sudo yum install percona-toolkit
+            ```
 
-        ```{.bash data-prompt="$"}
-        $ sudo apt install percona-mysql-router
-        ```
+            Install MySQL Shell:
 
-=== "On Red Hat Enterprise Linux and derivatives"
- 
-    !!! admonition "Platform specific notes"
+            ```{.bash data-prompt="$"}
+            $ sudo yum install percona-mysql-shell
+            ```
 
-        On CentOS 7, install the `epel-release` package. It includes the dependencies required to install Orchestrator. Use the following command:
+            Install ProxySQL:
 
-        ```{.bash data-prompt="$"}
-        $ sudo yum -y install epel-release
-        ```
+            ```{.bash data-prompt="$"}
+            $ sudo yum install proxysql2
+            ```
 
-    Run the following commands as the root user or via `sudo`.
+            Install MySQL Router:
 
-    ### Enable Percona repository
+            ```{.bash data-prompt="$"}
+            $ sudo yum install percona-mysql-router
+            ```
 
-    To enable the desired repository, we recommend to use the `enable` subcommand of `percona-release`.
+=== "Install Percona XtraDB Cluster-based variant"
 
-    ```{.bash data-prompt="$"}
-    $ sudo percona-release enable {{majorpkg}}
-    ```
+    === "On Debian and Ubuntu Linux"
 
-    !!! tip
+        !!! important
 
-        To enable the minor version repository, use the following command:
+            Run the following commands as the root user or via `sudo`.
 
-        ```{.bash data-prompt="$"}
-        $ sudo percona-release enable {{minorpkg}}
-        ```
+        ### Enable Percona repository
 
-    ### Install Percona Distribution for MySQL packages
+        To enable the desired repository, we recommend to use the `setup` subcommand of `percona-release`.
 
-    1. Install *Percona Server for MySQL*:
+          ```{.bash data-prompt="$"}
+          $ sudo percona-release setup {{majorpkgpxc}}
+          ```
 
-        ```{.bash data-prompt="$"}
-        $ sudo yum install percona-server-server
-        ```
+        !!! tip
+
+            To enable the minor version repository, use the following command:
+
+            ```{.bash data-prompt="$"}
+            $ sudo percona-release setup {{minorpkgpxc}}
+            ```
+
+        ### Install Percona Distribution for MySQL packages
+
+         1. Install *Percona XtraDB Cluster*:
+
+             ```{.bash data-prompt="$"}
+             $ sudo apt install percona-xtradb-cluster
+             ```
 
 
-    2. Install the components. Use the commands below to install the required components:
+         2. Install HAProxy:
 
-        Install Percona XtraBackup
+             ```{.bash data-prompt="$"}
+             $ sudo apt install percona-haproxy
+             ```
 
-        ```{.bash data-prompt="$"}
-        $ sudo yum install percona-xtrabackup-84
-        ```
 
-        Install Orchestrator
+         3. Install the components. Use the commands below to install the required components:
 
-        ```{.bash data-prompt="$"}
-        $ sudo yum install percona-orchestrator percona-orchestrator-cli percona-orchestrator-client
-        ```
+            Install Percona XtraBackup:
 
-        Install Percona Toolkit
+             ```{.bash data-prompt="$"}
+             $ sudo apt install percona-xtrabackup-84
+             ```
 
-        ```{.bash data-prompt="$"}
-        $ sudo yum install percona-toolkit
-        ```
+            Install Percona Toolkit:
 
-        Install MySQL Shell:
+             ```{.bash data-prompt="$"}
+             $ sudo apt install percona-toolkit
+             ```
 
-        ```{.bash data-prompt="$"}
-        $ sudo yum install percona-mysql-shell
-        ```
+    === "On Red Hat Enterprise Linux and derivatives"
 
-        Install ProxySQL:
+        !!! important
 
-        ```{.bash data-prompt="$"}
-        $ sudo yum install proxysql2
-        ```
+            Run the following commands as the root user or via `sudo`.
 
-        Install MySQL Router:
+        ### Enable Percona repository
 
-        ```{.bash data-prompt="$"}
-        $ sudo yum install percona-mysql-router
-        ```
+        To enable the desired repository, we recommend to use the `setup` subcommand of `percona-release`.
+
+          ```{.bash data-prompt="$"}
+          $ sudo percona-release setup {{majorpkgpxc}}
+          ```
+
+        !!! tip
+
+            To enable the minor version repository, use the following command:
+
+            ```{.bash data-prompt="$"}
+            $ sudo percona-release setup {{minorpkgpxc}}
+            ```
+
+        ### Install Percona Distribution for MySQL packages
+
+
+         1. Install *Percona XtraDB Cluster*:
+
+             ```{.bash data-prompt="$"}
+             $ sudo yum install percona-xtradb-cluster
+             ```
+
+
+         2. Install HAProxy:
+
+             ```{.bash data-prompt="$"}
+             $ sudo yum install percona-haproxy
+             ```
+
+
+         3. Install the components. Use the commands below to install the required components:
+
+            Install Percona XtraBackup:
+
+             ```{.bash data-prompt="$"}
+             $ sudo yum install percona-xtrabackup-84
+             ```
+
+            Install Percona Toolkit:
+
+             ```{.bash data-prompt="$"}
+             $ sudo yum install percona-toolkit
+             ```
 
 ### Run Percona Distribution for MySQL
 
