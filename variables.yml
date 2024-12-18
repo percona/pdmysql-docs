@@ -2,14 +2,15 @@
 
 release: '8.4.2'
 version: '8.4'
-psvers: '8.4.2-2'
+psvers: '8.4.3-3'
 vers: '8.4'
 majorpkg: 'pdps-8.4'
-minorpkg: 'pdps-8.4.2'
+minorpkg: 'pdps-8.4.3'
 majorpkgpxc: 'pdpxc-8.4'
 minorpkgpxc: 'pdpxc-8.4.2'
-release_date: '2024-12-11'
-title_date: '2024-12-11'
+release_date: '2024-12-18'
+title_date: '2024-12-18'
+
 
 
 
