@@ -4,7 +4,7 @@ site_name: Percona Distribution for MySQL
 site_description: Documentation
 site_author: Percona LLC
 copyright: >-
-  <a href="https://www.percona.com/about">Percona LLC</a> and its affiliates #&copy; 2024 — <a href="#" onclick="Osano.cm.showDrawer('osano-cm-dom-info-#dialog-open')">Cookie Preferences</a>
+  <a href="https://www.percona.com/about">Percona LLC</a> and its affiliates #&copy; 2025 — <a href="#" onclick="Osano.cm.showDrawer('osano-cm-dom-info-#dialog-open')">Cookie Preferences</a>
 repo_name: /percona/pdmysql-docs
 repo_url: https://github.com/percona/pdmysql-docs
 edit_uri: edit/8.0/docs/
@@ -125,7 +125,7 @@ plugins:
   with-pdf: # https://github.com/orzih/mkdocs-with-pdf
           output_path: '_pdf/PerconaDistributionforMySQL.pdf'
           cover_title: 'Percona Distribution for MySQL Documentation'
-          cover_subtitle: 8.0.41 (2025-02-26)
+          cover_subtitle: 8.0.41 (2025-03-)
           author: 'Percona Technical Documentation Team'
           cover_logo: docs/_images/pdf-logo.png
           debug_html: false
@@ -190,6 +190,7 @@ nav:
         - release-notes-ps-v8.0.20.md
         - release-notes-v8.0.19.md
     - Percona Distribution for MySQL using Percona XtraDB Cluster:
+      - release-notes-pxc-v8.0.41.md
       - release-notes-pxc-v8.0.40.md
       - release-notes-pxc-v8.0.39.md
       - release-notes-pxc-v8.0.38.md
