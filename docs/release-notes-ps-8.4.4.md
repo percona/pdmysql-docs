@@ -1,4 +1,4 @@
-# Percona Distribution for MySQL 8.4.4 using Percona Server for MySQL (2025-03-)
+# Percona Distribution for MySQL 8.4.4 using Percona Server for MySQL (2025-03-18)
 
 Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](installing.md).
 
@@ -8,11 +8,13 @@ This release is based on [Percona Server for MySQL 8.4.4-4](https://www.percona.
 
 ### Percona Server for MySQL 8.4.4-4
 
-Improves the [Data masking](https://docs.percona.com/percona-server/8.4/data-masking-overview.md) performance by introducing an internal term cache. The new cache speeds up lookups for `gen_blocklist()` and `gen_dictionary()` functions by storing dictionary data in memory. However, if the dictionary table is modified directly (outside of the proper functions), the cache may become out of sync. To fix this, use the `new masking_dictionaries_flush()` function.
+* Improves the [Data masking](https://docs.percona.com/percona-server/8.4/data-masking-overview.md) performance by introducing an internal term cache. The new cache speeds up lookups for `gen_blocklist()` and `gen_dictionary()` functions by storing dictionary data in memory. However, if the dictionary table is modified directly (outside of the proper functions), the cache may become out of sync. To fix this, use the `new masking_dictionaries_flush()` function.
 
-Changes also affect row-based replication: dictionary changes on the source server are replicated, but the term cache on the replica doesn’t update immediately. To address this, a new system setting, `component_masking_functions.dictionaries_flush_interval_seconds()`, can be set to automatically refresh the cache at specified intervals, helping replicas stay in sync.
+    Changes also affect row-based replication: dictionary changes on the source server are replicated, but the term cache on the replica doesn’t update immediately. To address this, a new system variable, `component_masking_functions.dictionaries_flush_interval_seconds`, can be set to automatically refresh the cache at specified intervals, helping replicas stay in sync.
 
-Find more detailed information in the [Data masking overview](https://docs.percona.com/percona-server/8.4/data-masking-overview.md) and in the [Data masking component functions](https://docs.percona.com/percona-server/8.4/data-masking-function-list.md).
+    Find more detailed information in the [Data masking overview](https://docs.percona.com/percona-server/8.4/data-masking-overview.md) and in the [Data masking component functions](https://docs.percona.com/percona-server/8.4/data-masking-function-list.md).
+
+* Improves the behavior of `audit_log_filter_set_user` to support wildcards in the hostname.
 
 ### MySQL 8.4.4
 
