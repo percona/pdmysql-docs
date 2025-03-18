@@ -24,7 +24,7 @@
       
       
       <link rel="icon" href="assets/mysql-fav.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
@@ -32,7 +32,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.4af4bdda.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
@@ -483,6 +483,28 @@
             Percona Distribution for MySQL using Percona Server for MySQL
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="release-notes-ps-8.4.4.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Percona Distribution for MySQL 8.4.4 using Percona Server for MySQL (2025-03-18)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1782,7 +1804,7 @@ Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">18</span><
 <p>After instances are up and running, check <em>Percona Server for MySQL</em> version on each node:</p>
 <div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="se">\s</span>
 --------------
-/opt/mysql_templates/PS-8P/bin/mysql<span class="w">  </span>Ver<span class="w"> </span><span class="m">8</span>.4.3-3<span class="w"> </span><span class="k">for</span><span class="w"> </span>Linux<span class="w"> </span>on<span class="w"> </span>x86_64<span class="w"> </span><span class="o">(</span>Percona<span class="w"> </span>Server<span class="w"> </span><span class="o">(</span>GPL<span class="o">)</span>,<span class="w"> </span>Release<span class="w"> </span><span class="m">11</span>,<span class="w"> </span>Revision<span class="w"> </span>159f0eb<span class="o">)</span>
+/opt/mysql_templates/PS-8P/bin/mysql<span class="w">  </span>Ver<span class="w"> </span><span class="m">8</span>.4.4-4<span class="w"> </span><span class="k">for</span><span class="w"> </span>Linux<span class="w"> </span>on<span class="w"> </span>x86_64<span class="w"> </span><span class="o">(</span>Percona<span class="w"> </span>Server<span class="w"> </span><span class="o">(</span>GPL<span class="o">)</span>,<span class="w"> </span>Release<span class="w"> </span><span class="m">11</span>,<span class="w"> </span>Revision<span class="w"> </span>159f0eb<span class="o">)</span>
 </code></pre></div>
 </li>
 </ol>
@@ -1938,7 +1960,7 @@ transaction-write-set-extraction                           = XXHASH64
 <span class="w">   </span>MEMBER_PORT:<span class="w"> </span><span class="m">3306</span>
 <span class="w">  </span>MEMBER_STATE:<span class="w"> </span>ONLINE
 <span class="w">   </span>MEMBER_ROLE:<span class="w"> </span>PRIMARY
-MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.3
+MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.4
 </code></pre></div>
 </li>
 <li>
@@ -1957,7 +1979,7 @@ Query<span class="w"> </span>OK,<span class="w"> </span><span class="m">0</span>
 <span class="w">   </span>MEMBER_PORT:<span class="w"> </span><span class="m">3306</span>
 <span class="w">  </span>MEMBER_STATE:<span class="w"> </span>ONLINE
 <span class="w">   </span>MEMBER_ROLE:<span class="w"> </span>SECONDARY
-MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.3
+MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.4
 ***************************<span class="w"> </span><span class="m">2</span>.<span class="w"> </span>row<span class="w"> </span>***************************
 <span class="w">  </span>CHANNEL_NAME:<span class="w"> </span>group_replication_applier
 <span class="w">     </span>MEMBER_ID:<span class="w"> </span>90a353b8-e6dc-11ea-98fa-08002734ed50
@@ -1965,7 +1987,7 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.3
 <span class="w">   </span>MEMBER_PORT:<span class="w"> </span><span class="m">3306</span>
 <span class="w">  </span>MEMBER_STATE:<span class="w"> </span>ONLINE
 <span class="w">   </span>MEMBER_ROLE:<span class="w"> </span>PRIMARY
-MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.3
+MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.4
 </code></pre></div>
 </li>
 <li>
@@ -2026,7 +2048,7 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.3
 <span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">variable_value</span><span class="o">=</span><span class="s1">&#39;clusterpass&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">variable_name</span><span class="o">=</span><span class="s1">&#39;admin-cluster_password&#39;</span><span class="p">;</span>
 <span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="mi">0</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-hostgroup_manager_verbose&#39;</span><span class="p">;</span>
 <span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;true&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-query_digests_normalize_digest_text&#39;</span><span class="p">;</span>
-<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;8.4.3&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-server_version&#39;</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;8.4.4&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-server_version&#39;</span><span class="p">;</span>
 <span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-default_charset&#39;</span><span class="p">;</span>
 <span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="mi">300</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-tcp_keepalive_time&#39;</span><span class="p">;</span>
 <span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;true&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-use_tcp_keepalive&#39;</span><span class="p">;</span>
@@ -2417,7 +2439,7 @@ vrrp_instance VI_01 {
     
 <script src="https://cmp.osano.com/Azqe5vTyLOSbN3OuT/49ad85b5-0418-4794-ab81-7599dddd534c/osano.js"></script>
 
-      <script src="assets/javascripts/bundle.f1b6f286.min.js"></script>
+      <script src="assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="js/version-select.js"></script>
       
