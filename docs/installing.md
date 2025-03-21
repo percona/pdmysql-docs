@@ -309,3 +309,7 @@ $ sudo systemctl stop mysql
 ```
 
 [Telemetry data on Percona XtraDB Cluster]: https://docs.percona.com/percona-xtradb-cluster/8.0/telemetry.html
+
+## Useful links
+
+[Percona Software Download Instructions](download-instructions.md)
