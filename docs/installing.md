@@ -310,3 +310,6 @@ Stop the service:
 $ sudo systemctl stop mysql
 ```
 
+## Useful links
+
+[Percona Software Download Instructions](download-instructions.md)
