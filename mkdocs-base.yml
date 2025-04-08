@@ -164,6 +164,8 @@ nav:
     - deployment-variants.md
   - Install and update:
     - installing.md
+    - install-pdps.md
+    - install-pdpxc.md
     - minor-upgrade.md
     - downgrade.md
   - Solutions - high availability:
