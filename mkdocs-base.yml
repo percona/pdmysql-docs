@@ -150,6 +150,7 @@ nav:
   - Release notes:
     - Release notes index: release-notes.md
     - Percona Distribution for MySQL using Percona Server for MySQL:
+      - release-notes-ps-8.4.4.md
       - release-notes-ps-8.4.3.md
       - release-notes-ps-8.4.2.md
       - release-notes-ps-8.4.1.md
@@ -164,6 +165,8 @@ nav:
     - deployment-variants.md
   - Install and update:
     - installing.md
+    - install-pdps.md
+    - install-pdpxc.md
     - minor-upgrade.md
     - downgrade.md
   - Solutions - high availability:
@@ -177,6 +180,7 @@ nav:
     - single-replica-manager.md
   - Uninstall:
     - uninstalling.md
+    - download-instructions.md
   - Copyright and licensing: copyright.md
   - Trademark policy: trademark-policy.md  
   - Glossary: glossary.md  
