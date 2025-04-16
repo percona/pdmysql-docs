@@ -2,13 +2,13 @@
 
 Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](installing.md).
 
-This release is based on [Percona XtraDB Cluster 8.4.3-3](https://docs.percona.com/percona-xtradb-cluster/8.4/release-notes/8.4.3-3.html).
+This release is based on [Percona XtraDB Cluster 8.4.4-4](https://docs.percona.com/percona-xtradb-cluster/8.4/release-notes/8.4.4-4.html).
 
 ## Release highlights
 
 ### Percona XtraDB Cluster 8.4.4-4
 
-Implements the [Clone plugin for State Snapshot Transfer (SST) Method](https://docs.percona.com/percona-xtradb-cluster/8.4/clone-sst.html). The Clone SST is a modern and efficient method that leverages MySQL's native cloning capabilities to transfer data from a donor node to a Joiner node. It is faster and more resource-efficient compared to traditional methods like xtrabackup or rsync.
+Implements the Clone plugin for State Snapshot Transfer (SST) Method. The Clone SST is a modern and efficient method that leverages MySQL's native cloning capabilities to transfer data from a donor node to a Joiner node. It is faster and more resource-efficient compared to traditional methods like xtrabackup or rsync.
 
 ### Percona Server for MySQL 8.4.4-4
 
