@@ -12,11 +12,11 @@ Implements the [Clone plugin for State Snapshot Transfer (SST) Method](https://d
 
 ### Percona Server for MySQL 8.4.4-4
 
-Improves the [Data masking](https://docs.percona.com/percona-server/8.4/data-masking-overview.md) performance by introducing an internal term cache. The new cache speeds up lookups for `gen_blocklist()` and `gen_dictionary()` functions by storing dictionary data in memory. However, if the dictionary table is modified directly (outside of the proper functions), the cache may become out of sync. To fix this, use the `new masking_dictionaries_flush()` function.
+Improves the [Data masking](https://docs.percona.com/percona-server/8.4/data-masking-overview.html) performance by introducing an internal term cache. The new cache speeds up lookups for `gen_blocklist()` and `gen_dictionary()` functions by storing dictionary data in memory. However, if the dictionary table is modified directly (outside of the proper functions), the cache may become out of sync. To fix this, use the `new masking_dictionaries_flush()` function.
 
 Changes also affect row-based replication: dictionary changes on the source server are replicated, but the term cache on the replica doesn’t update immediately. To address this, a new system setting, `component_masking_functions.dictionaries_flush_interval_seconds()`, can be set to automatically refresh the cache at specified intervals, helping replicas stay in sync.
 
-Find more detailed information in the [Data masking overview](https://docs.percona.com/percona-server/8.4/data-masking-overview.md) and in the [Data masking component functions](https://docs.percona.com/percona-server/8.4/data-masking-function-list.md).
+Find more detailed information in the [Data masking overview](https://docs.percona.com/percona-server/8.4/data-masking-overview.html) and in the [Data masking component functions](https://docs.percona.com/percona-server/8.4/data-masking-function-list.html).
 
 ### MySQL 8.4.4
 
