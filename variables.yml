@@ -8,8 +8,9 @@ majorpkg: 'pdps-8.4-lts'
 minorpkg: 'pdps-8.4.4'
 majorpkgpxc: 'pdpxc-8.4-lts'
 minorpkgpxc: 'pdpxc-8.4.4'
-release_date: '2025-03-18'
-title_date: '2025-03-18'
+release_date: '2025-04-16'
+title_date: '2025-04-16'
+
 
 
 
