@@ -42,5 +42,5 @@ Review each component’s release notes for What’s new, improvements, or bug f
 | HAProxy                 | [2.8.14](https://git.haproxy.org/?p=haproxy-2.8.git;a=commit;h=c23fe91db3ae6b3b80b5f08774e41730cbba13fb) | A high-availability and load-balancing solution for Percona XtraDB Cluster. This is a default proxy.|
 | ProxySQL                | [2.7.1-1](https://docs.percona.com/proxysql/2.7.1-1.html)| A high performance, high-availability, protocol-aware proxy for MySQL.          |
 | Percona Toolkit         | [3.7.0](https://docs.percona.com/percona-toolkit/release_notes.html#v3-7-0-released-2024-12-23)     | The set of scripts to simplify and optimize database operation. |
-| replication_manager.sh   | [1.0](./replication-manager/replication-manager-for-pxc.md)  | A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters. |
+| replication_manager.sh   | [1.0](replication-manager-for-pxc.md)  | A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters. |
 
