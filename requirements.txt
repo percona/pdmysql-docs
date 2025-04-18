@@ -12,3 +12,5 @@ mkdocs-bootstrap-tables-plugin
 mkdocs-htmlproofer-plugin
 mkdocs-meta-descriptions-plugin
 mike
+mkdocs-open-in-new-tab
+mkdocs-print-site-plugin
