@@ -5,7 +5,7 @@ site_url: 'https://docs.percona.com/percona-distribution-for-mysql/8.0'
 
 theme:
   name: material
-  custom_dir: _resource/overrides/
+  custom_dir: _resourcepdf/overrides/
   
 #Google Analytics configuration 
 extra:
