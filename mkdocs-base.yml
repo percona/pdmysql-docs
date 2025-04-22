@@ -1,6 +1,6 @@
 # MkDocs configuration for builds with material theme
 
-site_name: Percona Distribution for MySQL 
+site_name: Percona Distribution for MySQL
 site_description: Documentation
 site_author: Percona LLC
 copyright: >-
@@ -44,14 +44,23 @@ theme:
         name: Color theme set to Dark Mode. Click to change
 
 # Theme features
+
   features:
     - search.highlight
+    - search.share
+    - search.suggest
     - navigation.top
-    - content.tabs.link
-    - content.code.copy 
     - navigation.tracking 
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.indexes
+    - content.tooltips
+    - content.tabs.link
     - content.action.edit
-    - content.action.view 
+    - content.action.view
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
 
 #Styling
 extra_css:
@@ -119,24 +128,30 @@ plugins:
   macros:
       include_yaml:
         - 'variables.yml' # Use in markdown as '{{ VAR }}'
-# exclude: # Don't process these files
-#      glob:
-#         - file.md
-  with-pdf: # https://github.com/orzih/mkdocs-with-pdf
-          output_path: '_pdf/PerconaDistributionforMySQL.pdf'
-          cover_title: 'Percona Distribution for MySQL Documentation'
-          cover_subtitle: 8.0.41 (2025-03-13)
-          author: 'Percona Technical Documentation Team'
-          cover_logo: docs/_images/pdf-logo.png
-          debug_html: false
-          custom_template_path: _resource/templates
-          enabled_if_env: ENABLE_PDF_EXPORT
          
   mike:
       version_selector: true
       css_dir: css
       javascript_dir: js
       canonical_version: null
+  print-site:
+    add_to_navigation: false
+    print_page_title: 'Percona Distribution for MySQL documentation'
+    add_print_site_banner: false
+    # Table of contents
+    add_table_of_contents: true
+    toc_title: 'Table of Contents'
+    toc_depth: 2
+    # Content-related
+    add_full_urls: false
+    enumerate_headings: false
+    enumerate_headings_depth: 1
+    enumerate_figures: true
+    add_cover_page: true
+    cover_page_template: "docs/templates/pdf_cover_page.tpl"
+    path_to_pdf: ""
+    include_css: true
+    enabled: true
 
 extra:
   version:
