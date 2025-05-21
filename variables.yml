@@ -1,15 +1,15 @@
 # variables for HTML output
 
-release: '8.4.4'
+release: '8.4.5'
 version: '8.4'
-psvers: '8.4.4-4'
+psvers: '8.4.5-5'
 vers: '8.4'
 majorpkg: 'pdps-8.4-lts'
-minorpkg: 'pdps-8.4.4'
+minorpkg: 'pdps-8.4.5'
 majorpkgpxc: 'pdpxc-8.4-lts'
 minorpkgpxc: 'pdpxc-8.4.4'
-release_date: '2025-04-16'
-title_date: '2025-04-16'
+release_date: '2025-05-29'
+title_date: '2025-05-29'
 
 
 
