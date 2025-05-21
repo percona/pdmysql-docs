@@ -21,40 +21,40 @@ This release adds the following changes to the list of [MyRocks variables](https
 **Adds new MyRocks variables**
 
 * [`--rocksdb_bulk_load_compression_parallel_threads`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_bulk_load_compression_parallel_threads)
-* [`--rocksdb_bulk_load_enable_unique_key_check`](https://docs.percona.com/percona-server/variables.html#rocksdb_bulk_load_enable_unique_key_check)
-* [`--rocksdb_debug_skip_bloom_filter_check_on_iterator_bounds`](https://docs.percona.com/percona-server/variables.html#rocksdb_debug_skip_bloom_filter_check_on_iterator_bounds)
-* [`--rocksdb_enable_udt_in_mem`](https://docs.percona.com/percona-server/variables.html#rocksdb_enable_udt_in_mem)
-* [`--rocksdb_invalid_create_option_action`](https://docs.percona.com/percona-server/variables.html#rocksdb_invalid_create_option_action)
-* [`--rocksdb_io_error_action`](https://docs.percona.com/percona-server/variables.html#rocksdb_io_error_action)
-* [`--rocksdb_table_stats_skip_system_cf`](https://docs.percona.com/percona-server/variables.html#rocksdb_table_stats_skip_system_cf)
-* [`--rocksdb_use_io_uring`](https://docs.percona.com/percona-server/variables.html#rocksdb_use_io_uring)
-* [`--rocksdb_enable_instant_ddl`](https://docs.percona.com/percona-server/variables.html#rocksdb_enable_instant_ddl)
-* [`--rocksdb_enable_instant_ddl_for_append_column`](https://docs.percona.com/percona-server/variables.html#rocksdb_enable_instant_ddl_for_append_column)
-* [`--rocksdb_enable_instant_ddl_for_column_default_changes`](https://docs.percona.com/percona-server/variables.html#rocksdb_enable_instant_ddl_for_column_default_changes)
-* [`--rocksdb_enable_instant_ddl_for_drop_index_changes`](https://docs.percona.com/percona-server/variables.html#rocksdb_enable_instant_ddl_for_drop_index_changes)
-* [`--rocksdb_enable_instant_ddl_for_table_comment_changes`](https://docs.percona.com/percona-server/variables.html#rocksdb_enable_instant_ddl_for_table_comment_changes)
-* [`--rocksdb-bulk-load-compression-parallel-threads`](https://docs.percona.com/variables.html#rocksdb_bulk_load_compression_parallel_threads)
-* [`--rocksdb-bulk-load-enable-unique-key-check`](https://docs.percona.com/variables.html#rocksdb_bulk_load_enable_unique_key_check)
-* [`--rocksdb-debug-skip-bloom-filter-check-on-iterator-bounds`](https://docs.percona.com/variables.html#rocksdb_debug_skip_bloom_filter_check_on_iterator_bounds)
+* [`--rocksdb_bulk_load_enable_unique_key_check`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_bulk_load_enable_unique_key_check)
+* [`--rocksdb_debug_skip_bloom_filter_check_on_iterator_bounds`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_debug_skip_bloom_filter_check_on_iterator_bounds)
+* [`--rocksdb_enable_udt_in_mem`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_enable_udt_in_mem)
+* [`--rocksdb_invalid_create_option_action`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_invalid_create_option_action)
+* [`--rocksdb_io_error_action`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_io_error_action)
+* [`--rocksdb_table_stats_skip_system_cf`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_table_stats_skip_system_cf)
+* [`--rocksdb_use_io_uring`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_use_io_uring)
+* [`--rocksdb_enable_instant_ddl`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_enable_instant_ddl)
+* [`--rocksdb_enable_instant_ddl_for_append_column`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_enable_instant_ddl_for_append_column)
+* [`--rocksdb_enable_instant_ddl_for_column_default_changes`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_enable_instant_ddl_for_column_default_changes)
+* [`--rocksdb_enable_instant_ddl_for_drop_index_changes`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_enable_instant_ddl_for_drop_index_changes)
+* [`--rocksdb_enable_instant_ddl_for_table_comment_changes`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_enable_instant_ddl_for_table_comment_changes)
+* [`--rocksdb-bulk-load-compression-parallel-threads`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_bulk_load_compression_parallel_threads)
+* [`--rocksdb-bulk-load-enable-unique-key-check`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_bulk_load_enable_unique_key_check)
+* [`--rocksdb-debug-skip-bloom-filter-check-on-iterator-bounds`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_debug_skip_bloom_filter_check_on_iterator_bounds)
 
 **Changes default values of MyRocks variables**
 
-* [`--rocksdb_disable_instant_ddl`](https://docs.percona.com/percona-server/variables.html#rocksdb_disable_instant_ddl) - the default value is changed from `ON` to `OFF`.
+* [`--rocksdb_disable_instant_ddl`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_disable_instant_ddl) - the default value is changed from `ON` to `OFF`.
 
-* [`--rocksdb_file_checksums`](https://docs.percona.com/percona-server/variables.html#rocksdb_file_checksums) - the data type is changed from `Boolean` to `ENUM`. Also, the default value is changed from `OFF` to `CHECKSUMS_OFF`.
+* [`--rocksdb_file_checksums`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_file_checksums) - the data type is changed from `Boolean` to `ENUM`. Also, the default value is changed from `OFF` to `CHECKSUMS_OFF`.
 
-* [`--rocksdb_compaction_readahead_size`](https://docs.percona.com/percona-server/variables.html#rocksdb_compaction_readahead_size) - the default value is changed from `0` (zero) to `2097152`.
+* [`--rocksdb_compaction_readahead_size`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_compaction_readahead_size) - the default value is changed from `0` (zero) to `2097152`.
 
 **Deprecates MyRocks variable**
 
-* [`--rocksdb_disable_instant_ddl`](https://docs.percona.com/percona-server/variables.html#rocksdb_disable_instant_ddl) - this variable is being deprecated and is expected to be removed in a future release.
+* [`--rocksdb_disable_instant_ddl`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_disable_instant_ddl) - this variable is being deprecated and is expected to be removed in a future release.
 
 **Removes MyRocks variables**
 
-* [`--rocksdb-access-hint-on-compaction-start`](https://docs.percona.com/percona-server/variables.html#rocksdb_access_hint_on_compaction_start)
-* [`--rocksdb_large_prefix`](https://docs.percona.com/percona-server/variables.html#rocksdb_large_prefix)
-* [`--rocksdb_strict_collation_check`](https://docs.percona.com/percona-server/variables.html#rocksdb_strict_collation_check)
-* [`--rocksdb_strict_collation_exceptions`](https://docs.percona.com/percona-server/variables.html#rocksdb_strict_collation_exceptions)
+* [`--rocksdb-access-hint-on-compaction-start`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_access_hint_on_compaction_start)
+* [`--rocksdb_large_prefix`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_large_prefix)
+* [`--rocksdb_strict_collation_check`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_strict_collation_check)
+* [`--rocksdb_strict_collation_exceptions`](https://docs.percona.com/percona-server/8.0/variables.html#rocksdb_strict_collation_exceptions)
 
 ### MySQL 8.0.42
 
