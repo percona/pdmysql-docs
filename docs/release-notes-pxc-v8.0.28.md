@@ -8,7 +8,7 @@ Percona Distribution for MySQL is a single solution with the most critical enter
 
 Percona Distribution for MySQL provides two deployment variants: one is based on *Percona Server for MySQL* and another one is based on *Percona XtraDB Cluster*. 
 
-This release of Percona Distribution for MySQL is focused on the *Percona XtraDB Cluster*-based deployment variant. It is based on [Percona XtraDB Cluster 8.0.28-19.1](https://www.percona.com/doc/percona-xtradb-cluster/8.0/release-notes/Percona-XtraDB-Cluster-8.0.28-19.1.html)
+This release of Percona Distribution for MySQL is focused on the *Percona XtraDB Cluster*-based deployment variant. It is based on [Percona XtraDB Cluster 8.0.28-19.1](https://docs.percona.com/percona-xtradb-cluster/8.0/release-notes/Percona-XtraDB-Cluster-8.0.28-19.1.html)
 
 ## Release Highlights
 
@@ -29,4 +29,4 @@ The following is the list of components supplied with the *Percona XtraDB Cluste
 | Percona XtraBackup  | [8.0.28](https://docs.percona.com/percona-xtrabackup/8.0/release-notes/8.0/8.0.28-21.0.html)    | An open-source hot backup utility for MySQL-based servers that doesn’t lock your database during the backup.|
 | HAProxy             | [2.5.6](http://git.haproxy.org/?p=haproxy-2.5.git;a=commit;h=ba44b431294b6ddb65d5841632789dabf253439d) | A high-availability and load-balancing solution for Percona XtraDB Cluster. This is a default proxy.|
 | ProxySQL            | [2.3.2](https://docs.percona.com/proxysql/release-notes-2.3.2-1.html)     | A high performance, high-availability, protocol-aware proxy for MySQL.          |
-| Percona Toolkit     | [3.4.0](https://www.percona.com/doc/percona-toolkit/LATEST/release_notes.html#v3-4-0-released-)     | The set of scripts to simplify and optimize database operation. |
+| Percona Toolkit     | [3.4.0](https://docs.percona.com/percona-toolkit/release_notes.html#v3-4-0-released-2022-07-11)     | The set of scripts to simplify and optimize database operation. |

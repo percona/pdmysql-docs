@@ -9,11 +9,11 @@ Percona Distribution for MySQL is a single solution with the best and most criti
 
 Percona Distribution for MySQL provides two deployment variants: one is based on *Percona Server for MySQL* and another one is based on *Percona XtraDB Cluster*.
 
-This release of Percona Distribution for MySQL is focused on the *Percona Server for MySQL*-based deployment variant. It is based on [Percona Server for MySQL 8.0.26-16](https://www.percona.com/doc/percona-server/8.0/release-notes/Percona-Server-8.0.26-16.html).
+This release of Percona Distribution for MySQL is focused on the *Percona Server for MySQL*-based deployment variant. It is based on [Percona Server for MySQL 8.0.26-16](https://docs.percona.com/percona-server/8.0/release-notes/Percona-Server-8.0.26-16.html).
 
 ## Release Highlights
 
-The TokuDB Storage Engine has been declared deprecated starting with *Percona Server for MySQL* 8.0.26-16. The plugins are available in the binary builds and packages but are disabled. New options have been added to enable the plugins if they are needed to migrate the data to another storage engine. Read more in the [TokuDB documentation](https://www.percona.com/doc/percona-server/8.0/tokudb/tokudb_intro.html).
+The TokuDB Storage Engine has been declared deprecated starting with *Percona Server for MySQL* 8.0.26-16. The plugins are available in the binary builds and packages but are disabled. New options have been added to enable the plugins if they are needed to migrate the data to another storage engine. Read more in the [TokuDB documentation](https://docs.percona.com/percona-server/8.0/tokudb-intro.html).
 
 The following is the list of bug fixes for MySQL 8.0.26, provided by Oracle, and included in Percona Server for MySQL and Percona Distribution for MySQL:
 
