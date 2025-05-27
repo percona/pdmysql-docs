@@ -9,11 +9,11 @@ Percona Distribution for MySQL is a single solution with the best and most criti
 
 Percona Distribution for MySQL provides two deployment variants: one is based on *Percona Server for MySQL* and another one is based on *Percona XtraDB Cluster*.
 
-This release of Percona Distribution for MySQL is focused on the *Percona XtraDB Cluster*-based deployment variant. It is based on [Percona XtraDB Cluster 8.0.25-15.1](https://www.percona.com/doc/percona-xtradb-cluster/8.0/release-notes/Percona-XtraDB-Cluster-8.0.25-15.1.html)
+This release of Percona Distribution for MySQL is focused on the *Percona XtraDB Cluster*-based deployment variant. It is based on [Percona XtraDB Cluster 8.0.25-15.1](https://docs.percona.com/percona-xtradb-cluster/8.0/release-notes/Percona-XtraDB-Cluster-8.0.25-15.1.html)
 
 ## Release Highlights
 
-A [Non-Blocking Operation mode](https://www.percona.com/doc/percona-xtradb-cluster/8.0/features/nbo.html) for the Online Schema Upgrades in Percona XtraDB Cluster. This mode is similar to the Total Order Isolation (TOI) mode, whereas the data definition language (DDL) statement (e.g., ALTER) is executed on all nodes in sync. The difference is that in the NBO mode, the DDL statement acquires a metadata lock that locks the table or schema at a late stage of the operation, which is a more efficient locking strategy.
+A [Non-Blocking Operation mode](https://docs.percona.com/percona-xtradb-cluster/8.0/nbo.html) for the Online Schema Upgrades in Percona XtraDB Cluster. This mode is similar to the Total Order Isolation (TOI) mode, whereas the data definition language (DDL) statement (e.g., ALTER) is executed on all nodes in sync. The difference is that in the NBO mode, the DDL statement acquires a metadata lock that locks the table or schema at a late stage of the operation, which is a more efficient locking strategy.
 
 Note that the NBO mode is a tech preview feature. Therefore, we recommend using it in testing environments only.
 

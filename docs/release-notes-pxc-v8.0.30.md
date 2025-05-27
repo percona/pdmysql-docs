@@ -8,7 +8,7 @@ Percona Distribution for MySQL is a single solution with the most critical enter
 
 Percona Distribution for MySQL provides two deployment variants: one is based on *Percona Server for MySQL* and another one is based on *Percona XtraDB Cluster*. 
 
-This release of Percona Distribution for MySQL is focused on the *Percona XtraDB Cluster*-based deployment variant. It is based on [Percona XtraDB Cluster 8.0.30-22](https://www.percona.com/doc/percona-xtradb-cluster/8.0/release-notes/8.0.30-22.html)
+This release of Percona Distribution for MySQL is focused on the *Percona XtraDB Cluster*-based deployment variant. It is based on [Percona XtraDB Cluster 8.0.30-22]https://docs.percona.com/percona-xtradb-cluster/8.0/release-notes/8.0.30-22.html)
 
 ## Release highlights
 
@@ -30,9 +30,9 @@ Find the full list of bug fixes and changes in the [MySQL 8.0.30 Release Notes](
 
     The following Percona Server for MySQL 8.0.30 features are not supported in Percona XtraDB Cluster 8.0.30-22: 
 
-    * [Amazon Key Management Service](https://docs.percona.com/percona-server/8.0/security/using-amz-kms.html)
+    * [Amazon Key Management Service](https://docs.percona.com/percona-server/8.0/using-amz-kms.html)
   
-    * [Key Management Interoperability Protocol](https://docs.percona.com/percona-server/8.0/security/using-kmip.html)
+    * [Key Management Interoperability Protocol](https://docs.percona.com/percona-server/8.0/using-kmip.html)
 
     The features will be supported in the next version of Percona XtraDB Cluster.
 

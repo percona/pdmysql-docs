@@ -9,7 +9,7 @@ Percona Distribution for MySQL is a single solution with the best and most criti
 
 Percona Distribution for MySQL provides two deployment variants: one is based on *Percona Server for MySQL* and another one is based on *Percona XtraDB Cluster*.
 
-This release is focused on the *Percona Server for MySQL*-based deployment variant. It is based on [Percona Server for MySQL 8.0.30-22](https://www.percona.com/doc/percona-server/8.0/release-notes/8.0.30-22.html).
+This release is focused on the *Percona Server for MySQL*-based deployment variant. It is based on [Percona Server for MySQL 8.0.30-22](https://docs.percona.com/percona-server/8.0/release-notes/8.0.30-22.html).
 
 ## Release Highlights
 
