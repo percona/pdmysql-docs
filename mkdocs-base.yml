@@ -136,7 +136,7 @@ plugins:
       canonical_version: null
   print-site:
     add_to_navigation: false
-    print_page_title: 'Percona XtraDB Cluster documentation'
+    print_page_title: 'Percona Distribution for MySQ documentation'
     add_print_site_banner: false
     # Table of contents
     add_table_of_contents: true
@@ -165,6 +165,7 @@ nav:
   - Release notes:
     - Release notes index: release-notes.md
     - Percona Distribution for MySQL using Percona Server for MySQL:
+      - release-notes-ps-8.4.5.md
       - release-notes-ps-8.4.4.md
       - release-notes-ps-8.4.3.md
       - release-notes-ps-8.4.2.md
