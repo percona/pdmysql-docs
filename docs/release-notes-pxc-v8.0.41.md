@@ -6,7 +6,7 @@ This release is focused on the Percona XtraDB Cluster-based deployment variation
 
 ## Release highlights
 
-Percona XtraDB Cluster is based on Percona Server for MySQL. Find a complete list of improvements and bug fixes in the [Percona Server for MySQL 8.0.41-32 (2025-03-) release notes](https://docs.percona.com/percona-server/8.0/release-notes/8.0.41-32.html).
+Percona XtraDB Cluster is based on Percona Server for MySQL. Find a complete list of improvements and bug fixes in the [Percona Server for MySQL 8.0.41-32 (2025-02-26) release notes](https://docs.percona.com/percona-server/8.0/release-notes/8.0.41-32.html).
 
 ### Percona XtraDB Cluster 8.0.41-32
 
