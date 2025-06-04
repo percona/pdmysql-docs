@@ -7,9 +7,9 @@ vers: '8.4'
 majorpkg: 'pdps-8.4-lts'
 minorpkg: 'pdps-8.4.5'
 majorpkgpxc: 'pdpxc-8.4-lts'
-minorpkgpxc: 'pdpxc-8.4.4'
-release_date: '2025-05-29'
-title_date: '2025-05-29'
+minorpkgpxc: 'pdpxc-8.4.5'
+release_date: '2025-06-'
+title_date: '2025-06-'
 
 
 
