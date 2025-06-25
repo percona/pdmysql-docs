@@ -6,10 +6,11 @@ psvers: '8.4.5-5'
 vers: '8.4'
 majorpkg: 'pdps-8.4-lts'
 minorpkg: 'pdps-8.4.5'
-majorpkgpxc: 'pdpxc-8.4-lts'
-minorpkgpxc: 'pdpxc-8.4.4'
+majorpkgpxc: 'pdpxc-84-lts'
+minorpkgpxc: 'pdpxc-8.4.2'
 release_date: '2025-05-29'
 title_date: '2025-05-29'
+
 
 
 
