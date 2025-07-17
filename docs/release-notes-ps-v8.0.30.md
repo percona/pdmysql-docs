@@ -13,21 +13,21 @@ This release is focused on the *Percona Server for MySQL*-based deployment varia
 
 ## Release Highlights
 
-The following features are [Generally Available (GA)](https://docs.percona.com/percona-server/8.0/glossary.md#generally-available):
+The following features are [Generally Available (GA)](https://docs.percona.com/percona-server/8.0/glossary.html#general-availability-ga):
 
-* [Amazon Key Management Service](https://docs.percona.com/percona-server/8.0/security/using-amz-kms.md)
+* [Amazon Key Management Service](https://docs.percona.com/percona-server/8.0/using-amz-kms.html)
 
-* [Key Management Interoperability Protocol](https://docs.percona.com/percona-server/8.0/security/using-kmip.md)
+* [Key Management Interoperability Protocol](https://docs.percona.com/percona-server/8.0/using-kmip.html)
 
-The following features, variables, or options are available only in [tech preview](https://docs.percona.com/percona-server/8.0/glossary.md#tech-preview):
+The following features, variables, or options are available only in [tech preview](https://docs.percona.com/percona-server/8.0/glossary.html#tech-preview):
 
-* [SASL-based LDAP plugin](https://docs.percona.com/percona-server/8.0/security/ldap-authentication.md)
+* [SASL-based LDAP plugin](https://docs.percona.com/percona-server/8.0/ldap-authentication.html)
 
-* [SASL-based LDAP variables](https://docs.percona.com/percona-server/8.0/security/ldap-system-variables.md)
+* [SASL-based LDAP variables](https://docs.percona.com/percona-server/8.0/ldap-system-variables.html)
 
-* [Fallback server variables for simple LDAP and SASL-based LDAP](https://docs.percona.com/percona-server/8.0/security/ldap-system-variables.md)
+* [Fallback server variables for simple LDAP and SASL-based LDAP](https://docs.percona.com/percona-server/8.0/ldap-system-variables.html)
 
-* [FIDO authentication plugin](https://docs.percona.com/percona-server/8.0/security/fido-authentication-plugin.md)
+* [FIDO authentication plugin](https://docs.percona.com/percona-server/8.0/fido-authentication-plugin.html)
 
 * Group Replication options
 
@@ -43,7 +43,7 @@ Improvements and bug fixes introduced by Oracle for *MySQL* 8.0.30 and included 
 
 * The `-skip_host_cache` server option is deprecated and will be removed in a future release. Use `SET GLOBAL host_cache_size`= 0 or set `host_cache_size` = 0.
 
-Find the full list of bug fixes and changes in the [MySQL 8.0.30 Release Notes](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-30.html/).
+Find the full list of bug fixes and changes in the [MySQL 8.0.30 Release Notes](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-30.html).
 
 ---
 

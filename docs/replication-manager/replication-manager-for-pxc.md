@@ -186,7 +186,7 @@ All nodes have the same `server-id` value.
     [root@DC1-1 ~]# mysqldump -u root -p --source-data=2 --single-transaction -R -A -E > dump.sql
     ```  
 
-12. Compress the file if it's too large. You can use [Percona XtraBackup to compress the data](https://docs.percona.com/percona-xtrabackup/8.0/backup_scenarios/compressed_backup.html). Copy the backup file to one node in each remote cluster, for example to DC2-1 and DC3-1. 
+12. Compress the file if it's too large. You can use [Percona XtraBackup to compress the data](https://docs.percona.com/percona-xtrabackup/8.0/create-compressed-backup.html). Copy the backup file to one node in each remote cluster, for example to DC2-1 and DC3-1. 
 
     To restore the dump, run the following commands as root or using sudo:
 
