@@ -325,7 +325,7 @@ We will use the following elements:
 ### Step 1. Installation
 
 
-1. [Install ProxySQL](https://www.percona.com/doc/proxysql/proxysql-v2.html#installing-proxysql-v2). [In our example](#predconditions), we install ProxySQL on Proxy1 192.168.4.191 and Proxy2 192.168.4.192 nodes. 
+1. [Install ProxySQL](https://www.percona.com/doc/proxysql/proxysql-v2.html#installing-proxysql-v2). [In our example](#preconditions), we install ProxySQL on Proxy1 192.168.4.191 and Proxy2 192.168.4.192 nodes. 
 
 
 2. Create the monitoring user on MySQL Group Replication nodes:

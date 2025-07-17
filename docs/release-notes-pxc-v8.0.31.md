@@ -10,7 +10,7 @@ This release is focused on the Percona XtraDB Cluster-based deployment variation
 
 ## Release highlights
 
-This release adds the [GCache encryption and Write-Set cache encryption](https://docs.percona.com/percona-xtradb-cluster/8.0/management/gcache-write-set-cache-encryption.html) feature in [tech preview](./glossary.md#tech-preview).
+This release adds the [GCache encryption and Write-Set cache encryption](https://docs.percona.com/percona-xtradb-cluster/8.0/gcache-write-set-cache-encryption.html) feature in [tech preview](./glossary.md#tech-preview).
 
 Improvements and bug fixes introduced by Oracle for MySQL 8.0.31 and included in Percona XtraDB Cluster and Percona Distribution for MySQL are the following:
 
