@@ -40,7 +40,7 @@ To upgrade Percona Distribution for MySQL, [install the `percona-release` reposi
         $ sudo systemctl mysql stop
         ```
 
-    3. [Install new version packages](installing.md#procedure) using the package manager of your operating system.
+    3. [Install new version packages](installing.md#install-percona-distribution-for-mysql) using the package manager of your operating system.
 
     4. Restart `mysql` service: 
 
@@ -70,7 +70,7 @@ To upgrade Percona Distribution for MySQL, [install the `percona-release` reposi
         $ sudo systemctl mysql stop
         ```
 
-    3. [Install new version packages](installing.md#procedure) using the package manager of your operating system.
+    3. [Install new version packages](installing.md#install-percona-distribution-for-mysql) using the package manager of your operating system.
 
     4. Back up the `grastate.dat` file
 

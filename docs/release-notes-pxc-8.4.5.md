@@ -33,7 +33,7 @@ Improvements and bug fixes introduced by Oracle for MySQL 8.4.5 and included in 
 
 * The `fprintf_string()` function in `mysqldump` did not use the correct quote character for escaping strings. (Bug #37607195)
 
-Find the complete list of bug fixes and changes in the [MySQL 8.4.5 release notes](https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-5-5.html).
+Find the complete list of bug fixes and changes in the [MySQL 8.4.5 release notes](https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-5.html).
 
 ## Supplied components
 

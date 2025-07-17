@@ -40,7 +40,7 @@ There are three key components to achieve high availability:
 This solution is based on a tightly coupled database cluster. It offers a high availability level of 99.995% when coupled with the Group Replication setting `group_replication_consistency=AFTER`.
 
 
-![image](../_images/group-replication-1.png)
+![image](_images/group-replication-1.png)
 
 ## Failovers
 
