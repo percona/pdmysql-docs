@@ -43,7 +43,7 @@ Improvements and bug fixes introduced by Oracle for *MySQL* 8.0.30 and included 
 
 * The `-skip_host_cache` server option is deprecated and will be removed in a future release. Use `SET GLOBAL host_cache_size`= 0 or set `host_cache_size` = 0.
 
-Find the full list of bug fixes and changes in the [MySQL 8.0.30 Release Notes](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-30.html/).
+Find the full list of bug fixes and changes in the [MySQL 8.0.30 Release Notes](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-30.html).
 
 ---
 
