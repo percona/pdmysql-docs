@@ -1,8 +1,8 @@
 # Replication manager for Percona XtraDB Cluster
 
-The feature is a [tech preview](../glossary.md#tech-preview). Before using this feature in production, we recommend that you test restoring production from physical backups in your environment, and also use the alternative backup method for redundancy.
+The feature is a [tech preview](glossary.md#tech-preview). Before using this feature in production, we recommend that you test restoring production from physical backups in your environment, and also use the alternative backup method for redundancy.
 
-The replication manager script helps manage [multi-source replication](../glossary.md#multi-source-replication) between multiple Percona XtraDB Cluster clusters. This tool has a failover mechanism and can automatically perform a failover due to source or replica node failures, service degradation, or maintenance requirements.
+The replication manager script helps manage [multi-source replication](glossary.md#multi-source-replication) between multiple Percona XtraDB Cluster clusters. This tool has a failover mechanism and can automatically perform a failover due to source or replica node failures, service degradation, or maintenance requirements.
 
 The replication manager script monitors the active source-replica replication channel. If the source or replica node fails, the script re-establishes the replication channel using alternative source or replica cluster nodes.
 
@@ -91,7 +91,7 @@ All nodes have the same `server-id` value.
     [root@DC1-3 ~]# /etc/init.d/mysql start
     ```
 
-4. The DC1 cluster uses a single [GTID](../glossary.md#gtid) sequence. To make sure `GTID_PURGED` is the same, run the following commands on DC1-1, DC1-2, and DC1-3 nodes:
+4. The DC1 cluster uses a single [GTID](glossary.md#gtid) sequence. To make sure `GTID_PURGED` is the same, run the following commands on DC1-1, DC1-2, and DC1-3 nodes:
 
     ```{.bash data-prompt="mysql>"}
     mysql> flush logs;

@@ -15,11 +15,11 @@ Innovation releases offer access to the latest features, making them ideal for d
 
 Changes were made to each Innovation release that are now included in the 8.4 (LTS) release. You should review the Innovation release notes for details.
 
-* [Percona Server for MySQL 8.1.0-1 (2023-11-27)](https://docs.percona.com/percona-server/innovation-release/release-notes/8.1.0-1.html)
+* [Percona Server for MySQL 8.1.0-1 (2023-11-27)](https://github.com/percona/psmysql-docs/blob/innovation-release/docs/release-notes/8.1.0-1.md)
 
-* [Percona Server for MySQL 8.2.0-1 (2024-02-05)](https://docs.percona.com/percona-server/innovation-release/release-notes/8.2.0-1.html)
+* [Percona Server for MySQL 8.2.0-1 (2024-02-05)](https://github.com/percona/psmysql-docs/blob/innovation-release/docs/release-notes/8.2.0-1.md)
 
-* [Percona Server for MySQL 8.3.0-1 (2024-04-16)](https://docs.percona.com/percona-server/innovation-release/release-notes/8.3.0-1.html)
+* [Percona Server for MySQL 8.3.0-1 (2024-04-16)](https://github.com/percona/psmysql-docs/blob/innovation-release/docs/release-notes/8.3.0-1.md)
 
 LTS releases are more suitable for stable, established environments where minimal changes are needed. These releases include only essential fixes, reducing the risk of changes in the database software’s behavior.
 
