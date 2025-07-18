@@ -2324,9 +2324,9 @@
 <h3 id="release-notes-ps-8.4.4-percona-server-for-mysql-844-4">Percona Server for MySQL 8.4.4-4<a class="headerlink" href="#release-notes-ps-8.4.4-percona-server-for-mysql-844-4" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Improves the <a href="https://docs.percona.com/percona-server/8.4/data-masking-overview.md">Data masking</a> performance by introducing an internal term cache. The new cache speeds up lookups for <code>gen_blocklist()</code> and <code>gen_dictionary()</code> functions by storing dictionary data in memory. However, if the dictionary table is modified directly (outside of the proper functions), the cache may become out of sync. To fix this, use the <code>new masking_dictionaries_flush()</code> function.</p>
+<p>Improves the <a href="https://docs.percona.com/percona-server/8.4/data-masking-overview.html">Data masking</a> performance by introducing an internal term cache. The new cache speeds up lookups for <code>gen_blocklist()</code> and <code>gen_dictionary()</code> functions by storing dictionary data in memory. However, if the dictionary table is modified directly (outside of the proper functions), the cache may become out of sync. To fix this, use the <code>new masking_dictionaries_flush()</code> function.</p>
 <p>Changes also affect row-based replication: dictionary changes on the source server are replicated, but the term cache on the replica doesn’t update immediately. To address this, a new system variable, <code>component_masking_functions.dictionaries_flush_interval_seconds</code>, can be set to automatically refresh the cache at specified intervals, helping replicas stay in sync.</p>
-<p>Find more detailed information in the <a href="https://docs.percona.com/percona-server/8.4/data-masking-overview.md">Data masking overview</a> and in the <a href="https://docs.percona.com/percona-server/8.4/data-masking-function-list.md">Data masking component functions</a>.</p>
+<p>Find more detailed information in the <a href="https://docs.percona.com/percona-server/8.4/data-masking-overview.html">Data masking overview</a> and in the <a href="https://docs.percona.com/percona-server/8.4/data-masking-function-list.html">Data masking component functions</a>.</p>
 </li>
 <li>
 <p>Improves the behavior of <code>audit_log_filter_set_user</code> to support wildcards in the hostname.</p>
@@ -2546,13 +2546,13 @@
 <p>Changes were made to each Innovation release that are now included in the 8.4 (LTS) release. You should review the Innovation release notes for details.</p>
 <ul>
 <li>
-<p><a href="https://docs.percona.com/percona-server/innovation-release/release-notes/8.1.0-1.html">Percona Server for MySQL 8.1.0-1 (2023-11-27)</a></p>
+<p><a href="https://github.com/percona/psmysql-docs/blob/innovation-release/docs/release-notes/8.1.0-1.md">Percona Server for MySQL 8.1.0-1 (2023-11-27)</a></p>
 </li>
 <li>
-<p><a href="https://docs.percona.com/percona-server/innovation-release/release-notes/8.2.0-1.html">Percona Server for MySQL 8.2.0-1 (2024-02-05)</a></p>
+<p><a href="https://github.com/percona/psmysql-docs/blob/innovation-release/docs/release-notes/8.2.0-1.md">Percona Server for MySQL 8.2.0-1 (2024-02-05)</a></p>
 </li>
 <li>
-<p><a href="https://docs.percona.com/percona-server/innovation-release/release-notes/8.3.0-1.html">Percona Server for MySQL 8.3.0-1 (2024-04-16)</a></p>
+<p><a href="https://github.com/percona/psmysql-docs/blob/innovation-release/docs/release-notes/8.3.0-1.md">Percona Server for MySQL 8.3.0-1 (2024-04-16)</a></p>
 </li>
 </ul>
 <p>LTS releases are more suitable for stable, established environments where minimal changes are needed. These releases include only essential fixes, reducing the risk of changes in the database software’s behavior.</p>
@@ -2679,7 +2679,7 @@
 <p>The <code>fprintf_string()</code> function in <code>mysqldump</code> did not use the correct quote character for escaping strings. (Bug #37607195)</p>
 </li>
 </ul>
-<p>Find the complete list of bug fixes and changes in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-5-5.html">MySQL 8.4.5 release notes</a>.</p>
+<p>Find the complete list of bug fixes and changes in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-5.html">MySQL 8.4.5 release notes</a>.</p>
 <h2 id="release-notes-pxc-8.4.5-supplied-components">Supplied components<a class="headerlink" href="#release-notes-pxc-8.4.5-supplied-components" title="Permanent link">&para;</a></h2>
 <p>Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona XtraDB Cluster-based variation of the Percona Distribution for MySQL:</p>
 <table>
@@ -3281,7 +3281,7 @@
 </code></pre></div>
 </li>
 <li>
-<p><a href="#installing-procedure">Install new version packages</a> using the package manager of your operating system.</p>
+<p><a href="#installing-install-percona-distribution-for-mysql">Install new version packages</a> using the package manager of your operating system.</p>
 </li>
 <li>
 <p>Restart <code>mysql</code> service: </p>
@@ -3307,7 +3307,7 @@
 </code></pre></div>
 </li>
 <li>
-<p><a href="#installing-procedure">Install new version packages</a> using the package manager of your operating system.</p>
+<p><a href="#installing-install-percona-distribution-for-mysql">Install new version packages</a> using the package manager of your operating system.</p>
 </li>
 <li>
 <p>Back up the <code>grastate.dat</code> file</p>
@@ -3490,7 +3490,7 @@
 </li>
 </ul>
 <p>This solution is based on a tightly coupled database cluster. It offers a high availability level of 99.995% when coupled with the Group Replication setting <code>group_replication_consistency=AFTER</code>.</p>
-<p><img alt="image" src="../_images/group-replication-1.png" /></p>
+<p><img alt="image" src="_images/group-replication-1.png" /></p>
 <h2 id="pdps-group-replication-failovers">Failovers<a class="headerlink" href="#pdps-group-replication-failovers" title="Permanent link">&para;</a></h2>
 <p>A database failure or configuration change that requires a restart should not affect the stability of the database infrastructure, if it is properly planned and architected. Failovers are an integral part of a stability strategy and aligning the business requirements for availability and uptime with failover methodologies is critical.</p>
 <p>The following are the three main types of failovers that can occur in database environments:</p>
@@ -3606,7 +3606,7 @@
 <p><strong>Alerting</strong> - when one or many metrics of the database infrastructure is not within a normal or acceptable range, an alert should be generated so that the team responsible for the appropriate portion of the database infrastructure can investigate and remedy it.</p>
 </li>
 </ul>
-<p>Monitoring and measurement for this solution are covered by <a href="https://www.percona.com/software/database-tools/percona-monitoring-and-management">Percona Monitoring and Management</a>. It has a specific dashboard to monitor the Group Replication state and cluster status as a whole. For more information, read <a href="#hhttps:-docs.percona.com-percona-monitoring-and-management-index">Percona Monitoring and Management Documentation</a>.</p></section><section class="print-page" id="deploy-pdps-group-replication" heading-number="6.4"><h1 id="deploy-pdps-group-replication-deploying-high-availability-solution-with-group-replication">Deploying high availability solution with Group Replication<a class="headerlink" href="#deploy-pdps-group-replication-deploying-high-availability-solution-with-group-replication" title="Permanent link">&para;</a></h1>
+<p>Monitoring and measurement for this solution are covered by <a href="https://www.percona.com/software/database-tools/percona-monitoring-and-management">Percona Monitoring and Management</a>. It has a specific dashboard to monitor the Group Replication state and cluster status as a whole. For more information, read <a href="https://docs.percona.com/percona-monitoring-and-management/3/">Percona Monitoring and Management Documentation</a>.</p></section><section class="print-page" id="deploy-pdps-group-replication" heading-number="6.4"><h1 id="deploy-pdps-group-replication-deploying-high-availability-solution-with-group-replication">Deploying high availability solution with Group Replication<a class="headerlink" href="#deploy-pdps-group-replication-deploying-high-availability-solution-with-group-replication" title="Permanent link">&para;</a></h1>
 <p>This document provides step-by-step instructions on how to deploy high availability solution with Group Replication. </p>
 <h2 id="deploy-pdps-group-replication-preconditions">Preconditions<a class="headerlink" href="#deploy-pdps-group-replication-preconditions" title="Permanent link">&para;</a></h2>
 <p>We will use the following elements:</p>
@@ -3905,7 +3905,7 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.5
 <h3 id="deploy-pdps-group-replication-step-1-installation">Step 1. Installation<a class="headerlink" href="#deploy-pdps-group-replication-step-1-installation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p><a href="https://www.percona.com/doc/proxysql/proxysql-v2.html#installing-proxysql-v2">Install ProxySQL</a>. <a href="#deploy-pdps-group-replication-predconditions">In our example</a>, we install ProxySQL on Proxy1 192.168.4.191 and Proxy2 192.168.4.192 nodes. </p>
+<p><a href="https://www.percona.com/doc/proxysql/proxysql-v2.html#installing-proxysql-v2">Install ProxySQL</a>. <a href="#deploy-pdps-group-replication-preconditions">In our example</a>, we install ProxySQL on Proxy1 192.168.4.191 and Proxy2 192.168.4.192 nodes. </p>
 </li>
 <li>
 <p>Create the monitoring user on MySQL Group Replication nodes:</p>
@@ -4190,8 +4190,8 @@ vrrp_instance VI_01 {
                         <h1>Replication manager for Percona XtraDB Cluster<a class='headerlink' href='#section-7' title='Permanent link'></a>
                         </h1>
                     <section class="print-page" id="replication-manager-for-pxc" heading-number="7.1"><h1 id="replication-manager-for-pxc-replication-manager-for-percona-xtradb-cluster">Replication manager for Percona XtraDB Cluster<a class="headerlink" href="#replication-manager-for-pxc-replication-manager-for-percona-xtradb-cluster" title="Permanent link">&para;</a></h1>
-<p>The feature is a <a href="#..-glossary.md-tech-preview">tech preview</a>. Before using this feature in production, we recommend that you test restoring production from physical backups in your environment, and also use the alternative backup method for redundancy.</p>
-<p>The replication manager script helps manage <a href="#..-glossary.md-multi-source-replication">multi-source replication</a> between multiple Percona XtraDB Cluster clusters. This tool has a failover mechanism and can automatically perform a failover due to source or replica node failures, service degradation, or maintenance requirements.</p>
+<p>The feature is a <a href="#glossary-tech-preview">tech preview</a>. Before using this feature in production, we recommend that you test restoring production from physical backups in your environment, and also use the alternative backup method for redundancy.</p>
+<p>The replication manager script helps manage <a href="#glossary-multi-source-replication">multi-source replication</a> between multiple Percona XtraDB Cluster clusters. This tool has a failover mechanism and can automatically perform a failover due to source or replica node failures, service degradation, or maintenance requirements.</p>
 <p>The replication manager script monitors the active source-replica replication channel. If the source or replica node fails, the script re-establishes the replication channel using alternative source or replica cluster nodes.</p>
 <h2 id="replication-manager-for-pxc-example">Example<a class="headerlink" href="#replication-manager-for-pxc-example" title="Permanent link">&para;</a></h2>
 <p>For example, we deploy multi-source replication links between three data centers: DC1, DC2, and DC3. In each data center, there are three Percona XtraDB Cluster nodes form distinct Percona XtraDB Cluster clusters. The data centers contain the following nodes:</p>
@@ -4284,7 +4284,7 @@ wsrep_sst_auth=&quot;root:root&quot;
 </code></pre></div>
 </li>
 <li>
-<p>The DC1 cluster uses a single <a href="#..-glossary.md-gtid">GTID</a> sequence. To make sure <code>GTID_PURGED</code> is the same, run the following commands on DC1-1, DC1-2, and DC1-3 nodes:</p>
+<p>The DC1 cluster uses a single <a href="#glossary-gtid">GTID</a> sequence. To make sure <code>GTID_PURGED</code> is the same, run the following commands on DC1-1, DC1-2, and DC1-3 nodes:</p>
 <div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>flush<span class="w"> </span>logs<span class="p">;</span>
 mysql&gt;<span class="w"> </span>purge<span class="w"> </span>binary<span class="w"> </span>logs<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;mysql-bin.000003&#39;</span><span class="p">;</span>
 </code></pre></div>
@@ -4765,7 +4765,7 @@ we will do our very best to be helpful.</p></section><section class="print-page"
 <h2 id="glossary-isolation">Isolation<a class="headerlink" href="#glossary-isolation" title="Permanent link">&para;</a></h2>
 <p>The Isolation requirement means that no transaction can interfere with another.</p>
 <h2 id="glossary-loosely-coupled-cluster">Loosely-coupled cluster<a class="headerlink" href="#glossary-loosely-coupled-cluster" title="Permanent link">&para;</a></h2>
-<p>A loosely-coupled cluster is the deployment where cluster nodes are independent in processing / applying transactions. Data state may not always be consistent in time on all nodes; however, a single node state does not affect the cluster. Loosely-coupled clusters use <a href="#glossary-asyncronous-replication.md">asynchronous replication</a> and can be geographically distributed and/or serve as the <a href="#glossary-disaster-recovery">disaster recovery</a> site.</p>
+<p>A loosely-coupled cluster is the deployment where cluster nodes are independent in processing / applying transactions. Data state may not always be consistent in time on all nodes; however, a single node state does not affect the cluster. Loosely-coupled clusters use <a href="#glossary-asynchronous-replication">asynchronous replication</a> and can be geographically distributed and/or serve as the <a href="#glossary-disaster-recovery">disaster recovery</a> site.</p>
 <h2 id="glossary-multi-source-replication">Multi-source replication<a class="headerlink" href="#glossary-multi-source-replication" title="Permanent link">&para;</a></h2>
 <p>A multi-source replication topology requires at least one replica synchronized with at least two sources. The transactions can be received in parallel because the replica creates a separate replication channel for each source.</p>
 <p>Multi-source replication allows a single server to back up or consolidate data from multiple servers. This type of replication also lets you merge table shards.</p>
