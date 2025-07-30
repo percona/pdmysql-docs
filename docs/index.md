@@ -10,19 +10,41 @@ Percona Distribution for MySQL is a single solution with the best and most criti
 
 - **Reduced costs** - Save on purchasing software licensing by using the distribution - the open-source enterprise-grade solution.
 
-- **Easy-to-integrate with PMM** - Benefit from all the features of [PMM](https://docs.percona.com/percona-monitoring-and-management/index.html) for monitoring and managing the health of your database. 
+- **Easy-to-integrate with PMM** - Benefit from all the features of [PMM](https://docs.percona.com/percona-monitoring-and-management/3/) for monitoring and managing the health of your database. 
 
 Percona Distribution for MySQL comes in two [deployment variants](deployment-variants.md): one is based on *Percona Server for MySQL* and another one - on *Percona XtraDB Cluster*. They differ in the set of components and how you can use them. 
 
-## Get started
+<div data-grid markdown><div data-banner markdown>
 
-Follow the [installation instructions](installing.md) to get started with Percona Distribution for MySQL.
+### :material-progress-download: Installation guides { .title }
 
-Read more about solutions you can deploy with Percona Distribution for MySQL in [solutions](solutions/pdps-group-replication.md).
+Find the best installation solution with our step-by-step installation instructions.
 
-Learn more about what's new in Percona Distribution for MySQL in the [release notes](release-notes-ps-v8.0.28.upd.md).
+[Installation instructions](installing.md){ .md-button }
 
-## Read more
+</div><div data-banner markdown>
 
-* [Deployment variants](deployment-variants.md)
-* [Percona Distribution for MySQL components](components.md)
+## :material-progress-download: Solutions { .title }
+
+Learn about solutions you can deploy with Percona Distribution for MySQL.
+
+[Solutions](solutions/pdps-group-replication.md){ .md-button }
+
+</div><div data-banner markdown>
+
+### :material-backup-restore: Deployment variants { .title }
+
+Learn about the deployment variants.
+
+[Deployment variants](deployment-variants.md){ .md-button }
+
+</div><div data-banner markdown>
+
+## :fontawesome-solid-gears: Percona Distribution for MySQL components { .title }
+
+Learn about the Percona Distribution for MySQL components.
+
+[Components](components.md){ .md-button}
+
+</div>
+</div>
