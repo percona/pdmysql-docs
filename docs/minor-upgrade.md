@@ -6,7 +6,7 @@ Though minor releases don’t change the behavior, even a minor upgrade is a ris
 
 ## Preconditions
 
-To upgrade Percona Distribution for MySQL, [install the `percona-release` repository management tool](https://www.percona.com/doc/percona-repo-config/installing.html) or [update it](https://www.percona.com/doc/percona-repo-config/updating.html) to the latest version.
+To upgrade Percona Distribution for MySQL, [install the `percona-release` repository management tool](https://docs.percona.com/percona-software-repositories/installing.html) or [update the `percona-release` tool](https://docs.percona.com/percona-software-repositories/updating.html) to the latest version.
 
 ## Procedure
 
