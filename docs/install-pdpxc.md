@@ -12,7 +12,7 @@ To install Percona software, you need to configure the required repository. To s
     $ sudo apt install gnupg2 curl
     ```
 
-2. [Install percona-release](https://www.percona.com/doc/percona-repo-config/installing.html). If you have it installed, [update percona-release](https://www.percona.com/doc/percona-repo-config/updating.html) to the latest version.
+2. [Install percona-release](https://docs.percona.com/percona-software-repositories/installing.html). If you have `percona-release` installed, [update percona-release](https://docs.percona.com/percona-software-repositories/updating.html) to the latest version.
 
 ## Procedure
 
