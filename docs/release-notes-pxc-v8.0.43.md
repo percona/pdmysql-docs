@@ -10,7 +10,7 @@ Percona XtraDB Cluster is based on Percona Server for MySQL. Find a complete lis
 
 ### Percona XtraDB Cluster 8.0.43-34
 
-Improves State Snapshot Transfer (SST) failure diagnostics. `garbd` now uses distinct exit codes to differentiate between donor exit, SST script failure, and garbd-initiated termination, making SST issues easier to identify and debug.
+Improves State Snapshot Transfer (SST) by retrying Incremental State Transfer (IST) when initial SST attempts fail before any data changes, preventing unnecessary full data transfers.
 
 ### Percona Server for MySQL 8.0.43-34
 
