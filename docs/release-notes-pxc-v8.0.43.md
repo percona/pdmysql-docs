@@ -34,6 +34,10 @@ Improvements and bug fixes provided by Oracle for MySQL 8.0.43 and included in P
 
 Find the complete list of bug fixes and changes in the [MySQL 8.0.43 Release Notes](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-43.html).
 
+## Build & packaging notes
+
+* The official packages were built with the `WITH_LTO=ON` flag to enable the Link-Time Optimization (LTO) feature.
+
 ## Supplied components
 
 Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona XtraDB Cluster-based variation of the Percona Distribution for MySQL:
