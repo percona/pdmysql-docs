@@ -10,15 +10,11 @@ Percona XtraDB Cluster is based on Percona Server for MySQL. Find a complete lis
 
 ### Percona XtraDB Cluster 8.0.43-34
 
-Improves State Snapshot Transfer (SST) failure diagnostics. `garbd` now uses distinct exit codes to differentiate between donor exit, SST script failure, and garbd-initiated termination, making SST issues easier to identify and debug.
+Improves State Snapshot Transfer (SST) by retrying Incremental State Transfer (IST) when initial SST attempts fail before any data changes, preventing unnecessary full data transfers.
 
 ### Percona Server for MySQL 8.0.43-34
 
-* Improves the `audit_log_filter_set_user()` UDF to accept account names with wildcard characters (`'%'` and `'_'`) in the host part. For example, you can use `‘usr1@%'`, `‘usr2%192.168.0.%’`, or `'usr3@%.mycorp.com'`.
-
-* Updates the C++ level of the KMPI library to enhance error handling capabilities.
-
-* Improves optimizer behavior by restoring correct handling of const tables in `test_quick_select()`. A MySQL Upstream refactor (commit [9a13c1c](https://github.com/percona/percona-server/commit/9a13c1c6971f4bd56d143179ecfb34cca8ecc018)) removed the `QEP_TAB` dependency, causing `get_quick_record_count()` to no longer pass const table information. This could lead to suboptimal range scan boundaries. The applied patch resolves the issue by explicitly passing `const_tables` to `test_quick_select()`, ensuring consistent behavior with the pre-refactor logic.
+Implements Link-Time Optimization (LTO) to generate more optimized release binaries, resulting in improved performance for specific workloads.
 
 ### MySQL 8.0.43
 
@@ -37,6 +33,10 @@ Improvements and bug fixes provided by Oracle for MySQL 8.0.43 and included in P
 * The `fprintf_string()` function in `mysqldump` did not use the correct quote character for escaping strings. (Bug #37607195)
 
 Find the complete list of bug fixes and changes in the [MySQL 8.0.43 Release Notes](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-43.html).
+
+## Build & packaging notes
+
+* The official packages were built with the `WITH_LTO=ON` flag to enable the Link-Time Optimization (LTO) feature.
 
 ## Supplied components
 
