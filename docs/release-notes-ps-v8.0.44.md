@@ -30,12 +30,7 @@ Improvements and bug fixes provided by Oracle for MySQL 8.0.44 and included in P
 
 * Fixed an issue where confusing warning messages could appear when row sizes exceeded maximum allowed limits with `innodb_strict_mode=OFF`, such as during table selection or column dropping operations. Error messages have been improved for clarity. (Bug #37003342, Bug #36768046, Bug #36867372)
 
-
 Find the complete list of bug fixes and changes in the [MySQL 8.0.44 Release Notes](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-44.html).
-
-## Build & packaging notes
-
-
 
 ## Supplied components
 
