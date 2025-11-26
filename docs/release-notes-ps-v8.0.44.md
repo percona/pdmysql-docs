@@ -32,6 +32,10 @@ Improvements and bug fixes provided by Oracle for MySQL 8.0.44 and included in P
 
 Find the complete list of bug fixes and changes in the [MySQL 8.0.44 Release Notes](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-44.html).
 
+## Build & packaging notes
+
+Amazon Linux 2023 is not supported in Percona Distribution for MySQL. We do support Amazon Linux 2023 in Percona Server for MySQL and Percona XtraBackup.
+
 ## Supplied components
 
 Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona Server for MySQL-based variation of the Percona Distribution for MySQL:
