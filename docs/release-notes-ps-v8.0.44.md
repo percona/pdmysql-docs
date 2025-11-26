@@ -34,7 +34,7 @@ Find the complete list of bug fixes and changes in the [MySQL 8.0.44 Release Not
 
 ## Build & packaging notes
 
-Amazon Linux 2023 is not supported in Percona Distribution for MySQL. We do support Amazon Linux 2023 in Percona Server for MySQL and Percona XtraBackup.
+Amazon Linux 2023 is not supported in Percona Distribution for MySQL. We do support Amazon Linux 2023 in Percona Server for MySQL and Percona XtraBackup. Find more information in [Percona Release Lifecycle Overview](https://www.percona.com/services/policies/percona-software-support-lifecycle).
 
 ## Supplied components
 
@@ -43,7 +43,7 @@ Review each component’s release notes for What’s new, improvements, or bug f
 | Component           | Version   | Description                                |
 | ------------------- | --------- | -------------------------------------------|
 | Orchestrator        | [3.2.6-19](https://github.com/percona/orchestrator/releases/tag/v3.2.6-19)     | The replication topology manager for Percona Server for MySQL|
-| ProxySQL            | [3.0.1](https://docs.percona.com/proxysql/3.0.1.html)     | A high performance, high-availability, protocol-aware proxy for MySQL|
+| ProxySQL            | [2.7.3](https://docs.percona.com/proxysql/2.7.3.html)     | A high performance, high-availability, protocol-aware proxy for MySQL|
 | Percona XtraBackup  | [8.0.35-34](https://docs.percona.com/percona-xtrabackup/8.0/release-notes/8.0/8.0.35-34.0.html)| An open-source hot backup utility for MySQL-based servers|
 | Percona Toolkit     | [3.7.0-2](https://docs.percona.com/percona-toolkit/release_notes.html#v3-7-0-2-released-2025-05-14)     | The set of scripts to simplify and optimize database operation|
 | MySQL Shell         | [8.0.44](https://dev.mysql.com/doc/relnotes/mysql-shell/8.0/en/news-8-0-44.html)    | An advanced client and code editor for MySQL Server|
