@@ -14,7 +14,7 @@ Percona has consolidated its build offerings. The Pro builds are no longer requi
 
 Improvements and bug fixes provided by Oracle for MySQL 8.0.44 and included in Percona Server for MySQL are the following:
 
-* Fixed an issue where virtual index rollback could fail on 32-bit builds of MySQL Server under certain circumstances. (Bug #38167527)
+* Fixed an issue where very large buffer pools could require excessive memory chunks per instance, potentially causing allocation failures. The allocation is now validated to ensure proper memory allocation. (Bug #37994397)
 
 * Fixed an issue where assertion failures could occur due to data size and bounds mismatches during DDL file operations. (Bug #37882398)
 
