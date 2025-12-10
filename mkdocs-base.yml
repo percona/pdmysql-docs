@@ -178,10 +178,11 @@ nav:
       - release-notes-ps-v8.0.42.md
       - release-notes-ps-v8.0.41.md
       - release-notes-ps-v8.0.40.md
-      - release-notes-ps-v8.0.39.md
-      - release-notes-ps-v8.0.38.md
-      - release-notes-ps-v8.0.37.md
-      - release-notes-ps-v8.0.36.md
+      - 2024 (versions 8.0.39 to 8.0.36):
+        - release-notes-ps-v8.0.39.md
+        - release-notes-ps-v8.0.38.md
+        - release-notes-ps-v8.0.37.md
+        - release-notes-ps-v8.0.36.md
       - 2023 (versions 8.0.35 to 8.0.30):
         - release-notes-ps-v8.0.35.md
         - release-notes-ps-v8.0.34.upd3.md
@@ -216,16 +217,18 @@ nav:
         - release-notes-ps-v8.0.20.md
         - release-notes-v8.0.19.md
     - Percona Distribution for MySQL using Percona XtraDB Cluster:
+      - release-notes-pxc-v8.0.44.md
       - release-notes-pxc-v8.0.43.md
       - release-notes-pxc-v8.0.42.md
       - release-notes-pxc-v8.0.41.md
       - release-notes-pxc-v8.0.40.md
-      - release-notes-pxc-v8.0.39.md
-      - release-notes-pxc-v8.0.38.md
-      - release-notes-pxc-v8.0.37.md
-      - release-notes-pxc-v8.0.36.md
-      - release-notes-pxc-v8.0.35.md
-      - 2023 (versions 8.0.35 to 8.0.30):
+      - 2024 (versions 8.0.39 to 8.0.35):
+        - release-notes-pxc-v8.0.39.md
+        - release-notes-pxc-v8.0.38.md
+        - release-notes-pxc-v8.0.37.md
+        - release-notes-pxc-v8.0.36.md
+        - release-notes-pxc-v8.0.35.md
+      - 2023 (versions 8.0.34 to 8.0.30):
         - release-notes-pxc-v8.0.34.upd2.md
         - release-notes-pxc-v8.0.34.upd.md
         - release-notes-pxc-v8.0.34.md
