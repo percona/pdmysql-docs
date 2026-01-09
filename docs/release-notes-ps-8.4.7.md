@@ -36,6 +36,8 @@ Find the complete list of bug fixes and changes in the [MySQL 8.4.7 release note
 
 * Percona Server for MySQL 8.4 has ended support for Ubuntu 20.04.
 
+* Amazon Linux 2023 is not supported in Percona Distribution for MySQL. We do support Amazon Linux 2023 in Percona Server for MySQL and Percona XtraBackup. Find more information in [Percona Release Lifecycle Overview](https://www.percona.com/services/policies/percona-software-support-lifecycle).
+
 ## Known issues and limitations
 
 * MySQL Shell is not available as a prebuilt package for Debian 11 (Bullseye) in the Percona APT repository. Recent MySQL Shell releases are built with GNU Compiler Collection (GCC) 11 or later, while Debian 11 ships with GCC 10, making these binaries incompatible.
