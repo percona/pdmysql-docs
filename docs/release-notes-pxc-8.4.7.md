@@ -26,6 +26,8 @@ Find the complete list of bug fixes and changes in the [MySQL 8.4.7 release note
 
 * Percona XtraDB Cluster 8.4 has ended support for Ubuntu 20.04.
 
+* Percona Distribution for MySQL 8.4 is not supported on Amazon Linux 2023.
+
 ## Supplied components
 
 Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona XtraDB Cluster-based variation of the Percona Distribution for MySQL:
