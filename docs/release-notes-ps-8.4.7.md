@@ -36,7 +36,7 @@ Find the complete list of bug fixes and changes in the [MySQL 8.4.7 release note
 
 * Percona Server for MySQL 8.4 has ended support for Ubuntu 20.04.
 
-* Amazon Linux 2023 is not supported in Percona Distribution for MySQL. We do support Amazon Linux 2023 in Percona Server for MySQL and Percona XtraBackup. Find more information in [Percona Release Lifecycle Overview](https://www.percona.com/services/policies/percona-software-support-lifecycle).
+* Amazon Linux 2023 is not supported in Percona Distribution for MySQL. We do support Amazon Linux 2023 in Percona Server for MySQL and Percona XtraBackup.
 
 ## Known issues and limitations
 
