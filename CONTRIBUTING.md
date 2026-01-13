@@ -1,159 +1,229 @@
-# Contributing Guide
+# Documentation Contributing Guide
 
-Thank you for deciding to contribute and help us improve Percona Distribution for MySQL documentation!
+We welcome contributions from all users and the community. By contributing, you agree to the [Percona Community code of conduct](https://percona.community/contribute/coc/). Thank you for deciding to contribute and help us improve the [Percona Distribution for MySQL documentation](https://docs.percona.com/percona-distribution-for-mysql/8.4/).
 
-We welcome contributors from all users and community. By contributing, you agree to the [Percona Community code of conduct](https://percona.community/contribute/coc/).
+You can contribute to the documentation in the following ways:
 
-You can contribute to documentation in the following ways:
+## Rate and comment on documentation pages
 
-1. **Request a doc change through a Jira issue**. If you’ve spotted a doc issue (a typo, broken links, inaccurate instructions, etc.) but don’t have time nor desire to fix it yourself - let us know about it.
+Each documentation page includes a **Rate this page** feature at the bottom that allows you to assign stars (1-5) and leave comments. This is a quick and easy way to provide feedback about the documentation.
 
-	- Click the **Submit DOC bug** link on the sidebar. This opens the [Jira issue tracker](https://jira.percona.com/projects/DISTMYSQL/issues/) for the doc project.
-	- Sign in (create a Jira account if you don’t have one) and click **Create** to create an issue.
-	- Describe the issue you have detected in the Summary, Description, Steps To Reproduce, Affects Version fields.
+To rate a page:
 
-2. **[Contribute to documentation yourself](#contribute-to-documentation-yourself)**. There is the **Edit this page** link that leads you to the source file of the page on GitHub. There you make changes, create a pull request that we review and add to the doc project. For details how to do it, read on.
+1. Scroll to the bottom of any documentation page.
 
-## Contribute to documentation yourself
+2. Use the star rating system to rate the page (1-5 stars).
 
-To contribute to the documentation, you should be familiar with the following technologies:
-- [Markdown] markup language. We write the documentation in it.
-- [MkDocs] generator. We use it to convert source ``.md`` files to html and PDF documents.
-- [git](https://git-scm.com/) and [GitHub](https://guides.github.com/activities/hello-world/)
-- [Docker]. It allows you to run MkDocs in a virtual environment instead of installing it and its dependencies on your machine.
+3. Leave a comment describing your feedback.
 
-Percona Distribution for MySQL is based on the latest major version of MySQL 8.0. The documentation contributions are committed to 8.0 branch in this repository.
+!!! important "Please leave detailed comments"
 
-The `.md` files are in the ``docs/`` directory. 
+    If you want the documentation team to fix or improve something, **please leave detailed comments** explaining:
+    
+    * What issue you encountered or what improvement you'd like to see
+    * Which section or topic needs clarification or correction
+    * Any specific examples or use cases that would help
+    * The version or environment you're using (if relevant)
+    * Steps to reproduce any issues you found
+    
+    **Detailed comments are essential** - they help us understand your needs and make the documentation better for everyone. Brief comments like "this is confusing" or "needs improvement" are helpful, but specific details about what's confusing or what needs improvement allow us to take action.
 
-### Edit documentation online via GitHub
+## Add a topic in the Percona Community Forum
 
-1. Click the **Edit this page** link next to the page title. The source ``.md`` file of the page opens in GitHub editor in your browser. If you haven’t worked with the repository before, GitHub creates a [fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) of it for you.
+The [Percona Community Forum](https://forums.percona.com/) is a public discussion platform where you can ask questions, share feedback, or suggest improvements to the documentation. Use the forum to start a conversation about documentation issues, request clarifications, or discuss potential changes with the community and documentation team.
 
-2. Edit the page. You can check your changes on the **Preview** tab.
+To add a topic, navigate to the [Percona Product Documentation category](https://forums.percona.com/c/percona-product-documentation/71) in the Percona Community Forum and select **New Topic**. Complete the form and select **Create Topic** to add the topic to the forum.
 
-3. Commit your changes.
+![Create a topic](docs/_static/new-topic.png "Create a topic")
 
-	 - In the *Commit changes* section, describe your changes.
-	 - Select the **Create a new branch for this commit and start a pull request** option
-	 - Click **Propose changes**.
+## Request a change with a Jira issue
 
-4. GitHub creates a branch and a commit for your changes. It loads a new page on which you can open a pull request to Percona. The page shows the base branch - the one you offer your changes for, your commit message and a diff - a visual representation of your changes against the original page.  This allows you to make a last-minute review. When you are ready, click the **Create pull request** button.
-5. Someone from our team reviews the pull request and if everything is correct, merges it into the documentation. Then it gets published on the site.
+Create a Jira ticket to report documentation issues or request changes. This method is useful for formal tracking or when you want the documentation team to handle the changes.
+
+1. Open the [Percona Distribution for MySQL Jira project](https://jira.percona.com/projects/DISTMYSQL/issues) in your browser.
+
+2. Sign in (or create a Percona Jira account if you don't have one).
+
+3. Click the **Create** button.
+
+4. Fill in the required fields:
+
+    * **Summary**: Provide a brief description of the issue.
+
+    * **Description**: Provide more information about the issue. If needed, add a Steps To Reproduce section and information about your environment (version number, your operating system, etc.). Be detailed.
+
+     * **Version**, **Environment**, and other relevant fields as needed.
+
+5. Click **Create** to submit the ticket.
+
+!!! tip "Shortcut to the issue creation screen"
+
+    To go directly to the Create Issue form, use this URL: [https://jira.percona.com/secure/CreateIssue!default.jspa?pid=10000](https://jira.percona.com/secure/CreateIssue!default.jspa?pid=10000)
+
+## Edit the documentation yourself
+
+Use the [Edit documentation online with GitHub](#edit-documentation-online-with-github) method or the [Edit documentation locally](#edit-documentation-locally) method to make changes to the documentation and create a pull request. 
+
+### What you should know
+
+The documentation is primarily in plain text, but you may use [Markdown](https://www.markdownguide.org/) to add syntax elements (notes, tables, and so on) to the documentation. 
+
+### What happens after you create the pull request
+
+Our team reviews your pull request and provides feedback or approval. Once approved, we merge your changes into the appropriate branch. Thank you for taking the time to improve our documentation!
+
+!!! note
+
+    We appreciate your work, but the PR may be revised to meet internal requirements.
+
+### Edit documentation online with GitHub
+
+1. At the top of the documentation page, select **Edit this page on GitHub** (or the pencil icon) to open the source file in the GitHub editor. If you haven't worked with the repository before, GitHub creates a [fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) automatically.
+
+2. Edit the page using the [Markdown](https://www.markdownguide.org/) syntax.
+
+3. Review your changes by clicking the **Preview** tab to see how they will appear.
+
+4. Scroll to the bottom of the page to the **Commit changes** section.
+
+5. Add a commit message (72 characters or less) describing what you changed.
+ 
+6. Select the **Create a new branch for this commit and start a pull request** option. GitHub will suggest a branch name, which you can accept or modify.
+
+7. Click **Commit changes**.
+
+8. GitHub creates a branch and commit for your changes, then displays a page where you can create a pull request. This page shows:
+
+   * The base branch where you're proposing your changes
+
+   * Your commit message
+
+   * A visual diff of your changes
+
+9. Review the information and click **Create pull request**.
+
+For more information, see [Editing files in GitHub](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files).
+
+### Edit documentation using GitHub CLI
+
+This option uses the [GitHub CLI (`gh`)](https://cli.github.com/) tool, which provides a command-line interface for GitHub operations.
+
+!!! note "Prerequisites"
+    
+    You need GitHub CLI installed on your system. If you don't have it installed, see the [GitHub CLI installation guide](https://cli.github.com/manual/installation).
+
+1. Authenticate with GitHub:
+
+    ```shell
+        gh auth login
+    ```
+
+2. Fork the repository (if you haven't already):
+
+    ```shell
+        gh repo fork percona/pdmysql-docs
+    ```
+
+3. Clone your forked repository:
+
+    ```shell
+        gh repo clone <your_github_name>/pdmysql-docs
+        cd pdmysql-docs
+    ```
+
+4. Create a new branch for your changes:
+
+    ```shell
+        git checkout -b <my_changes>
+    ```
+
+5. Edit the files in the `/docs` directory using your preferred editor.
+
+6. Stage and commit your changes:
+
+    ```shell
+        git add docs/example.md
+        git commit -m 'Fixed typo in documentation'
+    ```
+
+7. Push your branch to your fork:
+
+    ```shell
+        git push -u origin <my_changes>
+    ```
+
+8. Create a pull request using GitHub CLI:
+
+    ```shell
+        gh pr create --title "Your PR title" --body "Description of your changes"
+    ```
+
+    Alternatively, you can use the interactive mode:
+
+    ```shell
+        gh pr create
+    ```
+
+For more information, see [GitHub CLI documentation](https://cli.github.com/manual/).
 
 ### Edit documentation locally
 
-This option is for users who prefer to work from their computer and / or have the full control over the documentation process.
+This option is for users who are comfortable with [git](https://git-scm.com/) commands.
 
-The steps are the following:
+1. Fork this repository on GitHub.
 
-1. Fork this repository
-2. Clone the repository on your machine:
+2. Clone your forked repository to your machine:
 
-```sh
-git clone git@github.com:<your_name>/pdmysql-docs.git
-```
-
-3. Change the directory to ``pdmysql-docs`` and add the remote upstream repository:
-
-```sh
-git remote add upstream git@github.com:percona/pdmysql-docs.git
-```
-
-4. Create a separate branch for your changes
-
-```sh
-git checkout -b <my_changes>
-```
-
-5. Make changes
-6. Commit your changes
-7. Open a pull request to Percona
-
-### Building the documentation
-
-To verify how your changes look, generate the static site with the documentation. This process is called *building*. You can do it in these ways:
-- [use Docker](#use-docker)
-- [build locally](#build-locally)
-
-#### Use Docker
-
-1. [Get Docker](https://docs.docker.com/get-docker/)
-2. We use [our Docker image](https://hub.docker.com/repository/docker/perconalab/pmm-doc-md) to build documentation. Run the following command:
-
-```sh
-docker run --rm -v $(pwd):/docs perconalab/pmm-doc-md mkdocs build
-```
-   If Docker can't find the image locally, it first downloads the image, and then runs it to build the documentation.
-
-3. Go to the ``site/`` directory and open the ``index.html`` file to see the documentation.
-
-   If you want to see the changes as you edit the docs, use this command instead:
-
-   ```sh
-   docker run --rm -v $(pwd):/docs -p 8000:8000 perconalab/pmm-doc-md mkdocs serve --dev-addr=0.0.0.0:8000
-   ```
-
-   Wait until you see the message `INFO    -  Start detecting changes`, then enter `0.0.0.0:8000` in the browser's address bar. The documentation automatically reloads after you save the changes in source files.
-
-
-#### Build locally
-
-1. Install [pip](https://pip.pypa.io/en/stable/installing/)
-2. Install [MkDocs].
-3. While in the root directory of the doc project, run the following command to build the documentation:
-
-```sh
-mkdocs build
-```
-4. Go to the ``site`` directory and open the ``index.html`` file in your web browser to see the documentation.
-5. To automatically rebuild the documentation and reload the browser as you make changes, run the following:
-   
-   ```sh
-   mkdocs serve
-   ```
-   Wait until you see the message `INFO    -  Start detecting changes`, then enter `0.0.0.0:8000` in the browser's address bar. 
-
-## PDF
-
-To create the PDF version of the documentation, use the following command:
-
-* With Docker:
-
-    ```sh
-    docker run --rm -v $(pwd):/docs -e ENABLE_PDF_EXPORT=1 perconalab/pmm-doc-md mkdocs build -f mkdocs-pdf.yml
+    ```shell
+        git clone https://github.com/<your_github_name>/pdmysql-docs.git
+        cd pdmysql-docs
     ```
 
-* Without:
-
-    ```sh
-    ENABLE_PDF_EXPORT=1 mkdocs build -f mkdocs-pdf.yml
-    ```
-
-The PDF is in `site/_pdf`.
-
-## Repository structure
-
-The repository includes the following directories and files:
-
-- `mkdocs-base.yml` - the base configuration file. It includes general settings and documentation structure.
-- `mkdocs.yml` - configuration file. Contains the settings for building the docs with Material theme.
-- `mkdocs-pdf.yml` - configuration file. Contains the settings for building the PDF docs.
-- `docs`:
-  - `*.md` - Source markdown files.
-  - `_images` - Images, logos and favicons
-  - `css` - Styles
-  - `js` - Javascript files
-- `_resource`:
-   - `templates`:
-     - ``styles.scss`` - Styling for PDF documents
-   - `theme`:
-      - `main.html` - The layout template for hosting the documentation on Percona website
-   - overrides - The folder with the customized templates
-- `site` - This is where the output HTML files are put after the build
+    !!! note "SSH alternative"
     
-[MkDocs]: https://www.mkdocs.org/
-[Markdown]: https://daringfireball.net/projects/markdown/
-[Git]: https://git-scm.com
-[Python]: https://www.python.org/downloads/
-[Docker]: https://docs.docker.com/get-docker/
+        If you have SSH keys set up with GitHub, you can use `git@github.com:<your_github_name>/pdmysql-docs.git` instead.
+
+3. Add the upstream remote to track the original repository:
+
+    ```shell
+        git remote add upstream https://github.com/percona/pdmysql-docs.git
+    ```
+
+4. Checkout the appropriate branch for the version you're working on (for example, `8.4` for version 8.4 documentation) and pull the latest changes from upstream:
+
+    ```shell
+        git checkout 8.4
+        git pull upstream 8.4
+    ```
+
+    !!! note "Which branch to use"
+    
+        Use the branch that matches the version of the documentation you're editing. For version 8.4 documentation, use the `8.4` branch. If the branch doesn't exist locally, Git will create a tracking branch automatically.
+
+5. Create a separate branch for your changes:
+
+    ```shell
+        git checkout -b <my_changes>
+    ```
+
+6. Edit the files in the `/docs` directory. Add code examples, if necessary. We recommend that you check your changes using a Preview built into your editor (if you have one).
+
+7. Add the changed file (replace `docs/example.md` with your actual file path):
+
+    ```shell
+        git add docs/example.md
+    ```
+
+8. Commit your changes (replace the message with a description of your changes):
+
+    ```shell
+        git commit -m 'Fixed typo in documentation'
+    ```
+
+9. Push your branch to your fork:
+
+    ```shell
+        git push -u origin <my_changes>
+    ```
+
+10. On GitHub, you'll see a notification banner with a **Compare & pull request** button. Click it to open a pull request to the Percona repository. Alternatively, navigate to your fork and click **Create pull request**.
