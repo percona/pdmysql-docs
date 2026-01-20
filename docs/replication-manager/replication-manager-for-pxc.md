@@ -1,7 +1,5 @@
 # Replication manager for Percona XtraDB Cluster
 
-The feature is a [tech preview](../glossary.md#tech-preview). Before using this feature in production, we recommend that you test restoring production from physical backups in your environment, and also use the alternative backup method for redundancy.
-
 The replication manager script helps manage [multi-source replication](../glossary.md#multi-source-replication) between multiple Percona XtraDB Cluster clusters. This tool has a failover mechanism and can automatically perform a failover due to source or replica node failures, service degradation, or maintenance requirements.
 
 The replication manager script monitors the active source-replica replication channel. If the source or replica node fails, the script re-establishes the replication channel using alternative source or replica cluster nodes.
