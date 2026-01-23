@@ -3001,7 +3001,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <p>MySQL Shell is not available as a prebuilt package for Debian 11 (Bullseye) in the Percona APT repository. Recent MySQL Shell releases are built with GNU Compiler Collection (GCC) 11 or later, while Debian 11 ships with GCC 10, making these binaries incompatible.</p>
 </li>
 <li>
-<p>ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur. In an 8.4.x environment, the binlog reader errors out during initialization due to the use of old terminology, such as the SHOW MASTER STATUS command.</p>
+<p>In 8.4.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the <a href="https://dev.mysql.com/doc/refman/8.4/en/replication-options-replica.html#sysvar_terminology_use_previous">terminology_use_previous</a> system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.</p>
 </li>
 </ul>
 <h2 id="release-notes-ps-8.4.7-supplied-components">Supplied components<a class="headerlink" href="#release-notes-ps-8.4.7-supplied-components" title="Permanent link">&para;</a></h2>
@@ -3080,7 +3080,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </ul>
 <h2 id="release-notes-ps-8.4.6-known-issues">Known issues<a class="headerlink" href="#release-notes-ps-8.4.6-known-issues" title="Permanent link">&para;</a></h2>
 <ul>
-<li>ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur. In an 8.4.x environment, the binlog reader errors out during initialization due to the use of old terminology, such as the SHOW MASTER STATUS command.</li>
+<li>In 8.4.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the <a href="https://dev.mysql.com/doc/refman/8.4/en/replication-options-replica.html#sysvar_terminology_use_previous">terminology_use_previous</a> system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.</li>
 </ul>
 <h2 id="release-notes-ps-8.4.6-supplied-components">Supplied components<a class="headerlink" href="#release-notes-ps-8.4.6-supplied-components" title="Permanent link">&para;</a></h2>
 <p>Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona Server for MySQL-based variation of the Percona Distribution for MySQL.</p>
@@ -3206,7 +3206,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <p>Find the complete list of bug fixes and changes in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-5.html">MySQL 8.4.5 release notes</a>.</p>
 <h2 id="release-notes-ps-8.4.5-known-issues">Known issues<a class="headerlink" href="#release-notes-ps-8.4.5-known-issues" title="Permanent link">&para;</a></h2>
 <ul>
-<li>ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur. In an 8.4.x environment, the binlog reader errors out during initialization due to the use of old terminology, such as the SHOW MASTER STATUS command.</li>
+<li>In 8.4.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the <a href="https://dev.mysql.com/doc/refman/8.4/en/replication-options-replica.html#sysvar_terminology_use_previous">terminology_use_previous</a> system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.</li>
 </ul>
 <h2 id="release-notes-ps-8.4.5-supplied-components">Supplied components<a class="headerlink" href="#release-notes-ps-8.4.5-supplied-components" title="Permanent link">&para;</a></h2>
 <p>Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona Server for MySQL-based variation of the Percona Distribution for MySQL.</p>
@@ -3284,7 +3284,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <p>Find the complete list of bug fixes and changes in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-4.html">MySQL 8.4.4 release notes</a>.</p>
 <h2 id="release-notes-ps-8.4.4-known-issues">Known issues<a class="headerlink" href="#release-notes-ps-8.4.4-known-issues" title="Permanent link">&para;</a></h2>
 <ul>
-<li>ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur. In an 8.4.x environment, the binlog reader errors out during initialization due to the use of old terminology, such as the SHOW MASTER STATUS command.</li>
+<li>In 8.4.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the <a href="https://dev.mysql.com/doc/refman/8.4/en/replication-options-replica.html#sysvar_terminology_use_previous">terminology_use_previous</a> system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.</li>
 </ul>
 <h2 id="release-notes-ps-8.4.4-supplied-components">Supplied components<a class="headerlink" href="#release-notes-ps-8.4.4-supplied-components" title="Permanent link">&para;</a></h2>
 <p>Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona Server for MySQL-based variation of the Percona Distribution for MySQL.</p>
@@ -3360,7 +3360,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <p>This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 8.4 becomes available.</p>
 </li>
 <li>
-<p>ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur. In an 8.4.x environment, the binlog reader errors out during initialization due to the use of old terminology, such as the SHOW MASTER STATUS command.</p>
+<p>In 8.4.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the <a href="https://dev.mysql.com/doc/refman/8.4/en/replication-options-replica.html#sysvar_terminology_use_previous">terminology_use_previous</a> system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.</p>
 </li>
 </ul>
 <h2 id="release-notes-ps-8.4.3-supplied-components">Supplied components<a class="headerlink" href="#release-notes-ps-8.4.3-supplied-components" title="Permanent link">&para;</a></h2>
