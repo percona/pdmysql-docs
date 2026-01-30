@@ -170,6 +170,7 @@ extra:
 nav:
   - Home: index.md
   - get-help.md
+  - ps-or-pdps.md
   - Release notes:
     - Release notes index: release-notes.md
     - Percona Distribution for MySQL using Percona Server for MySQL:
@@ -192,6 +193,7 @@ nav:
   - Discover Percona Distribution for MySQL:
     - components.md
     - deployment-variants.md
+
   - Install and update:
     - installing.md
     - install-pdps.md
