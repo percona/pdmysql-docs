@@ -9,19 +9,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Percona Distribution for MySQL is the most stable, scalable, and secure open source MySQL distribution, with two download options: one based on Percona Server for MySQL and one based on Percona XtraDB Cluster. Install Percona Distribution for MySQL.">
+        <meta name="description" content="When setting up Percona repositories, you can choose between two paths: Percona Distribution for MySQL or Percona Server for MySQL alone. Both use the same core database engine but are designed for different operational scopes.">
       
       
         <meta name="author" content="Percona LLC">
       
       
-        <link rel="canonical" href="https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/release-notes-pxc-8.4.2.html">
+        <link rel="canonical" href="https://docs.percona.com/percona-distribution-for-mysql/innovation-release/8.4/ps-or-pdps.html">
       
       
-        <link rel="prev" href="release-notes-pxc-8.4.3.html">
+        <link rel="prev" href="get-help.html">
       
       
-        <link rel="next" href="release-notes-pxc-8.4.0.html">
+        <link rel="next" href="release-notes.html">
       
       
         
@@ -32,7 +32,7 @@
     
     
       
-        <title>Percona Distribution for MySQL 8.4.2 using Percona XtraDB Cluster (2024-12-11) - Percona Distribution for MySQL</title>
+        <title>Choose Between Percona Server for MySQL and Percona Distribution for MySQL - Percona Distribution for MySQL</title>
       
     
     
@@ -100,7 +100,7 @@
                  
                  
                  <meta property="og:type" content="website" />
-                 <meta property="og:title" content="Percona Distribution for MySQL - Percona Distribution for MySQL 8.4.2 using Percona XtraDB Cluster (2024-12-11)" />
+                 <meta property="og:title" content="Percona Distribution for MySQL - Choose Between Percona Server for MySQL and Percona Distribution for MySQL" />
                  <meta property="og:url" content="https://docs.percona.com/percona-distribution-for-mysql/innovation-release/" />
                  <meta property="og:image" content="https://docs.percona.com/percona-distribution-for-mysql/innovation-release/_images/percona-mysql-logo.png" />
                
@@ -123,7 +123,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#percona-distribution-for-mysql-842-using-percona-xtradb-cluster-2024-12-11" class="md-skip">
+        <a href="#choose-between-percona-server-for-mysql-and-percona-distribution-for-mysql" class="md-skip">
           Skip to content
         </a>
       
@@ -220,7 +220,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Percona Distribution for MySQL 8.4.2 using Percona XtraDB Cluster (2024-12-11)
+              Choose Between Percona Server for MySQL and Percona Distribution for MySQL
             
           </span>
         </div>
@@ -444,10 +444,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="ps-or-pdps.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choose Between Percona Server for MySQL and Percona Distribution for MySQL
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ps-or-pdps.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -463,6 +490,72 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#check-platform-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Platform Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#which-one-should-i-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which one should I install?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -471,10 +564,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -488,11 +579,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -513,7 +604,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -853,10 +944,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -878,11 +967,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -903,7 +992,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1058,37 +1147,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Percona Distribution for MySQL 8.4.2 using Percona XtraDB Cluster (2024-12-11)
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="release-notes-pxc-8.4.2.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="release-notes-pxc-8.4.2.html" class="md-nav__link">
         
   
   
@@ -1104,61 +1166,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#release-highlights" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Release highlights
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#known-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Known issues
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#supplied-components" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Supplied components
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2289,7 +2296,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
                       <div data-banner="data-banner" class="edit-contrib-banner">
   <div class="banner-content">
     <!-- Edit link centered -->
-    <a href="https://github.com/percona/pdmysql-docs/edit/8.4/docs/release-notes-pxc-8.4.2.md" title="Edit this page on GitHub" class="edit-page-link">
+    <a href="https://github.com/percona/pdmysql-docs/edit/8.4/docs/ps-or-pdps.md" title="Edit this page on GitHub" class="edit-page-link">
       <span class="edit-page-icon">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
@@ -2341,10 +2348,10 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#release-highlights" class="md-nav__link">
+  <a href="#check-platform-support" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Release highlights
+        Check Platform Support
       
     </span>
   </a>
@@ -2352,10 +2359,10 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </li>
       
         <li class="md-nav__item">
-  <a href="#known-issues" class="md-nav__link">
+  <a href="#comparison-overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Known issues
+        Comparison Overview
       
     </span>
   </a>
@@ -2363,10 +2370,21 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </li>
       
         <li class="md-nav__item">
-  <a href="#supplied-components" class="md-nav__link">
+  <a href="#which-one-should-i-install" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supplied components
+        Which one should I install?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
       
     </span>
   </a>
@@ -2396,55 +2414,88 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
     
       
     
-    <a href="https://github.com/percona/pdmysql-docs/raw/8.4/docs/release-notes-pxc-8.4.2.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/percona/pdmysql-docs/raw/8.4/docs/ps-or-pdps.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="percona-distribution-for-mysql-842-using-percona-xtradb-cluster-2024-12-11">Percona Distribution for MySQL 8.4.2 using Percona XtraDB Cluster (2024-12-11)<a class="headerlink" href="#percona-distribution-for-mysql-842-using-percona-xtradb-cluster-2024-12-11" title="Permanent link">&para;</a></h1>
-<p>Percona Distribution for MySQL is the most stable, scalable, and secure open source MySQL distribution, with two download options: one based on Percona Server for MySQL and one based on Percona XtraDB Cluster. <a href="installing.html">Install Percona Distribution for MySQL</a>.</p>
-<p>This release is based on <a href="https://docs.percona.com/percona-xtradb-cluster/8.4/release-notes/8.4.2-2.html">Percona XtraDB Cluster 8.4.2-2</a>.</p>
-<h2 id="release-highlights">Release highlights<a class="headerlink" href="#release-highlights" title="Permanent link">&para;</a></h2>
-<p>Percona XtraDB Cluster is based on Percona Server for MySQL. Find a complete list of improvements and bug fixes in the <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.2-2.html">Percona Server for MySQL 8.4.2-2 (2024-11-04) release notes</a>.</p>
-<h2 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
-<ul>
-<li>This release does not include the Percona Toolkit. We will add the Percona Toolkit when a version compatible with MySQL 8.4 becomes available.</li>
-</ul>
-<h2 id="supplied-components">Supplied components<a class="headerlink" href="#supplied-components" title="Permanent link">&para;</a></h2>
-<p>Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona XtraDB Cluster-based variation of the Percona Distribution for MySQL:</p>
+<h1 id="choose-between-percona-server-for-mysql-and-percona-distribution-for-mysql">Choose Between Percona Server for MySQL and Percona Distribution for MySQL<a class="headerlink" href="#choose-between-percona-server-for-mysql-and-percona-distribution-for-mysql" title="Permanent link">&para;</a></h1>
+<p>When setting up Percona repositories, you can choose between two paths: Percona Distribution for MySQL or Percona Server for MySQL alone. Both use the same core database engine but are designed for different operational scopes.</p>
+<p>To read about the standalone server product, see the <a href="https://docs.percona.com/percona-server/8.4/">Percona Server for MySQL 8.4 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a> documentation.</p>
+<h2 id="check-platform-support">Check Platform Support<a class="headerlink" href="#check-platform-support" title="Permanent link">&para;</a></h2>
+<p>Before choosing a repository, verify that your operating system version is supported for that specific product.</p>
+<p>Review the <a href="https://www.percona.com/services/policies/percona-software-support-lifecycle#mysql">Percona Software and Platform Lifecycle <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a> page to confirm support for your platform and version.</p>
+<h2 id="comparison-overview">Comparison Overview<a class="headerlink" href="#comparison-overview" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Component</th>
-<th>Version</th>
-<th>Description</th>
+<th>Feature</th>
+<th>Percona Distribution for MySQL (<code>pdps-8.4</code>)</th>
+<th>Percona Server for MySQL (<code>ps-84</code>)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Percona XtraBackup</td>
-<td><a href="https://docs.percona.com/percona-xtrabackup/8.4/release-notes/8.4.0-1.html">8.4.0-1</a></td>
-<td>An open-source hot backup utility for MySQL-based servers that doesn’t lock your database during the backup.</td>
+<td>Primary Goal</td>
+<td>A curated collection of components tested together as a complete enterprise stack.</td>
+<td>A performance-enhanced, drop-in replacement for MySQL Community Edition.</td>
 </tr>
 <tr>
-<td>HAProxy</td>
-<td><a href="https://git.haproxy.org/?p=haproxy-2.8.git;a=commit;h=01c1056a44823c5ffb8f74660b32c099d9b5355b">2.8.11</a></td>
-<td>A high-availability and load-balancing solution for Percona XtraDB Cluster. This is a default proxy.</td>
+<td>Included Components</td>
+<td>Database server, Percona XtraBackup, HAProxy, ProxySQL, and Orchestrator.</td>
+<td>Database server, client, and essential plugins.</td>
 </tr>
 <tr>
-<td>ProxySQL</td>
-<td><a href="https://docs.percona.com/proxysql/2.7.1-1.html">2.7.1-1</a></td>
-<td>A high performance, high-availability, protocol-aware proxy for MySQL.</td>
+<td>Release Cycle</td>
+<td>Follows a coordinated release cycle where all bundled components are validated for inter-compatibility.</td>
+<td>Follows the MySQL Community release cadence.</td>
 </tr>
 <tr>
-<td>replication_manager.sh</td>
-<td><a href="replication-manager-for-pxc.html">1.0</a></td>
-<td>A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.</td>
+<td>Ideal For</td>
+<td>High Availability (HA) clusters and mission-critical enterprise environments.</td>
+<td>Standalone instances or simple primary/replica setups.</td>
 </tr>
 </tbody>
 </table>
+<h2 id="which-one-should-i-install">Which one should I install?<a class="headerlink" href="#which-one-should-i-install" title="Permanent link">&para;</a></h2>
+<h3 id="percona-distribution-for-mysql">Percona Distribution for MySQL<a class="headerlink" href="#percona-distribution-for-mysql" title="Permanent link">&para;</a></h3>
+<p>Choose the Distribution (this product) if any of the following apply:</p>
+<ul>
+<li>
+<p>Deploying a High Availability (HA) environment (e.g., using Percona XtraDB Cluster).</p>
+</li>
+<li>
+<p>Wanting Percona to guarantee that the specific versions of the server, proxy, and backup tools provided are fully compatible and tested as a single unit.</p>
+</li>
+<li>
+<p>Preferring a single repository entry-point that provides all the tools required for a full production lifecycle (Server + Backups + Management).</p>
+</li>
+</ul>
+<h3 id="percona-server-for-mysql">Percona Server for MySQL<a class="headerlink" href="#percona-server-for-mysql" title="Permanent link">&para;</a></h3>
+<p>Choose standalone Percona Server for MySQL if any of the following apply:</p>
+<ul>
+<li>
+<p>Wanting a minimal footprint focused solely on the database engine.</p>
+</li>
+<li>
+<p>Managing your own infrastructure components (backups, proxies, or orchestration) independently.</p>
+</li>
+<li>
+<p>Requiring the latest performance patches and features available in Percona Server but not needing a bundled ecosystem.</p>
+</li>
+</ul>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>For information on installing your choice, review the following:</p>
+<ul>
+<li>
+<p>Percona Distribution for MySQL (this product): <a href="installing.html">Install Percona Distribution for MySQL 8.4</a></p>
+</li>
+<li>
+<p>Percona Server for MySQL (standalone): <a href="https://docs.percona.com/percona-server/8.4/installation.html">Install Percona Server for MySQL 8.4 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a></p>
+</li>
+</ul>
 
 
 
@@ -2467,7 +2518,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 17, 2025 15:46:16 UTC">April 17, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 30, 2026 13:19:12 UTC">January 30, 2026</span>
   </span>
 
     
@@ -2477,7 +2528,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 14, 2024 14:42:26 UTC">November 14, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 30, 2026 13:19:12 UTC">January 30, 2026</span>
   </span>
 
     
