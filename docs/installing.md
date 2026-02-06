@@ -9,7 +9,7 @@ We recommend to install Percona Distribution for MySQL from Percona repositories
 * `APT` - for Debian and Ubuntu Linux
 * `YUM` or `DNF` - for Red Hat Enterprise Linux and compatible Linux derivatives
 
-Find the full list of supported platforms on the [Percona Software and Platform Lifecycle](https://www.percona.com/services/policies/percona-software-support-lifecycle#mysql) page.
+Find the full list of supported platforms on the [Percona Software and Platform Lifecycle :octicons-link-external-16:](https://www.percona.com/services/policies/percona-software-support-lifecycle#mysql) page.
 
 ??? admonition "Repository overview: Major and Minor repositories" 
 

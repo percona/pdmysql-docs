@@ -1,6 +1,6 @@
 # Install Percona XtraDB Cluster-based variant
 
-We gather [Telemetry data on Percona XtraDB Cluster](https://docs.percona.com/percona-xtradb-cluster/8.4/telemetry.html) in the Percona packages and Docker images.
+We gather [Telemetry data on Percona XtraDB Cluster :octicons-link-external-16:](https://docs.percona.com/percona-xtradb-cluster/{{vers}}/telemetry.html) in the Percona packages and Docker images.
 
 ## Prerequisites
 
@@ -8,11 +8,11 @@ To install Percona software, you need to configure the required repository. To s
 
 1. Install GnuPG and curl
 
-    ```{.bash data-prompt="$"}
-    $ sudo apt install gnupg2 curl
+    ```shell
+    sudo apt install gnupg2 curl
     ```
 
-2. [Install percona-release](https://docs.percona.com/percona-software-repositories/installing.html). If you have `percona-release` installed, [update percona-release](https://docs.percona.com/percona-software-repositories/updating.html) to the latest version.
+2. [Install percona-release :octicons-link-external-16:](https://docs.percona.com/percona-software-repositories/installing.html). If you have `percona-release` installed, [update percona-release :octicons-link-external-16:](https://docs.percona.com/percona-software-repositories/updating.html) to the latest version.
 
 ## Procedure
 
@@ -26,31 +26,31 @@ To install Percona software, you need to configure the required repository. To s
 
     To enable the desired repository, we recommend to use the `setup` subcommand of `percona-release`.
 
-    ```{.bash data-prompt="$"}
-    $ sudo percona-release setup {{majorpkgpxc}}
+    ```shell
+    sudo percona-release setup {{majorpkgpxc}}
     ```
 
     !!! tip
 
         To enable either the `pdpxc-8.4.0` or `pdpxc-8.4.2` version repository, use the following command. The example enables the `8.4.2` repository:
 
-        ```{.bash data-prompt="$"}
-        $ sudo percona-release setup {{minorpkgpxc}}
+        ```shell
+        sudo percona-release setup {{minorpkgpxc}}
         ```
 
     ### Install Percona Distribution for MySQL packages
 
     1. Install *Percona XtraDB Cluster*:
 
-        ```{.bash data-prompt="$"}
-        $ sudo apt install percona-xtradb-cluster
+        ```shell
+        sudo apt install percona-xtradb-cluster
         ```
 
 
     2. Install HAProxy:
 
-        ```{.bash data-prompt="$"}
-        $ sudo apt install percona-haproxy
+        ```shell
+        sudo apt install percona-haproxy
         ```
 
 
@@ -58,14 +58,14 @@ To install Percona software, you need to configure the required repository. To s
 
         Install Percona XtraBackup:
 
-        ```{.bash data-prompt="$"}
-        $ sudo apt install percona-xtrabackup-84
+        ```shell
+        sudo apt install percona-xtrabackup-84
         ```
 
         Install Percona Toolkit:
 
-        ```{.bash data-prompt="$"}
-        $ sudo apt install percona-toolkit
+        ```shell
+        sudo apt install percona-toolkit
         ```
 
 === "On Red Hat Enterprise Linux and derivatives"
@@ -78,31 +78,31 @@ To install Percona software, you need to configure the required repository. To s
 
     To enable the desired repository, we recommend to use the `setup` subcommand of `percona-release`.
 
-    ```{.bash data-prompt="$"}
-    $ sudo percona-release setup {{majorpkgpxc}}
+    ```shell
+    sudo percona-release setup {{majorpkgpxc}}
     ```
 
     !!! tip
 
         To enable either the `pdpxc-8.4.0` or `pdpxc-8.4.2` version repository, use the following command. The example enables the `8.4.2` repository:
 
-        ```{.bash data-prompt="$"}
-        $ sudo percona-release setup {{minorpkgpxc}}
+        ```shell
+        sudo percona-release setup {{minorpkgpxc}}
         ```
 
     ### Install Percona Distribution for MySQL packages
 
     1. Install *Percona XtraDB Cluster*:
 
-        ```{.bash data-prompt="$"}
-        $ sudo yum install percona-xtradb-cluster
+        ```shell
+        sudo yum install percona-xtradb-cluster
         ```
 
 
     2. Install HAProxy:
 
-        ```{.bash data-prompt="$"}
-        $ sudo yum install percona-haproxy
+        ```shell
+        sudo yum install percona-haproxy
         ```
 
 
@@ -110,14 +110,14 @@ To install Percona software, you need to configure the required repository. To s
 
         Install Percona XtraBackup:
 
-        ```{.bash data-prompt="$"}
-        $ sudo yum install percona-xtrabackup-84
+        ```shell
+        sudo yum install percona-xtrabackup-84
         ```
 
         Install Percona Toolkit:
 
-        ```{.bash data-prompt="$"}
-        $ sudo yum install percona-toolkit
+        ```shell
+        sudo yum install percona-toolkit
         ```
 
 ### Run Percona Distribution for MySQL
@@ -126,20 +126,20 @@ Percona Distribution for MySQL is not started automatically on Red Hat Enterpris
 
 Start it manually using the following command:
 
-```{.bash data-prompt="$"}
-$ sudo systemctl start mysql
+```shell
+sudo systemctl start mysql
 ```
 
 Confirm that the service is running:
 
-```{.bash data-prompt="$"}
-$ sudo systemctl status mysql
+```shell
+sudo systemctl status mysql
 ```
 
 Stop the service:
 
-```{.bash data-prompt="$"}
-$ sudo systemctl stop mysql
+```shell
+sudo systemctl stop mysql
 ```
 
 ## Useful links
