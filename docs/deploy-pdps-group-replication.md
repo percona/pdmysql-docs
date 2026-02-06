@@ -46,8 +46,8 @@ We will use the following elements:
 
 2. Make sure that all the nodes use the same time-zone and time
 
-    ```{.bash data-prompt="$"}
-    $ date
+    ```shell
+    date
     Tue Aug 18 08:22:12 EDT 2020
     ```
 
@@ -64,8 +64,8 @@ We will use the following elements:
 
 5. After instances are up and running, check *Percona Server for MySQL* version on each node:
 
-    ```{.bash data-prompt="mysql>"}
-    mysql>\s
+    ```sql
+    \s
     --------------
     /opt/mysql_templates/PS-8P/bin/mysql  Ver {{psvers}} for Linux on x86_64 (Percona Server (GPL), Release 11, Revision 159f0eb)
     ```
@@ -88,8 +88,8 @@ We will use the following elements:
 
 2. Make sure to have a good and unique SERVER_ID value:
 
-    ```{.bash data-prompt="mysql>"}
-    mysql> show global variables like 'server_id';
+    ```sql
+    show global variables like 'server_id';
     +---------------+-------+
     | Variable_name | Value |
     +---------------+-------+
@@ -105,8 +105,8 @@ We will use the following elements:
 
 1. Stop all the nodes
 
-    ```{.bash data-prompt="$"}
-    $ service mysql stop
+    ```shell
+    service mysql stop
     ```
 
 
@@ -161,8 +161,8 @@ We will use the following elements:
 
 3. Restart all nodes: 
 
-    ```{.bash data-prompt="$"}
-    $ service mysql start
+    ```shell
+    service mysql start
     ```
 
 
@@ -225,19 +225,19 @@ We will use the following elements:
     At this stage, you should be able to start the first (Primary) cluster node.
 
 
-4. Start the Primary node (Gr1) and enable Group Replication:
+4. Start the Primary node (Gr1), `(dba@node1)[none]>`,  and enable Group Replication:
 
-    ```{.bash data-prompt="(dba@node1)[none]>"}
-    (dba@node1)[none]> SET GLOBAL group_replication_bootstrap_group=ON;
-    (dba@node1)[none]> START GROUP_REPLICATION;
-    (dba@node1)[none]> SET GLOBAL group_replication_bootstrap_group=OFF;
+    ```shell
+    SET GLOBAL group_replication_bootstrap_group=ON;
+    START GROUP_REPLICATION;
+    SET GLOBAL group_replication_bootstrap_group=OFF;
     ```
 
 5. Check if the node registered correctly:
 
 
-    ```{.bash data-prompt="(dba@node1)[none]>"}
-    (dba@node1) [none]>select * from performance_schema.replication_group_members\G
+    ```shell
+    select * from performance_schema.replication_group_members\G
          CHANNEL_NAME: group_replication_applier
          MEMBER_ID: 90a353b8-e6dc-11ea-98fa-08002734ed50
        MEMBER_HOST: gr1
@@ -250,16 +250,16 @@ We will use the following elements:
 
 6. Once the Primary node is running, connect to the secondary node (Gr2 node) and enable Group Replication:
 
-    ```{.bash data-prompt="(dba@node2) [none]>"}
-    (dba@node2) [none]>START GROUP_REPLICATION;
+    ```shell
+    START GROUP_REPLICATION;
     Query OK, 0 rows affected (4.60 sec)
     ```
 
 7. Check if the secondary node registered correctly:
 
 
-    ```{.bash data-prompt="(dba@node2) [performance_schema]>"}
-    (dba@node2) [performance_schema]>select * from replication_group_members\G
+    ```shell
+    select * from replication_group_members\G
     *************************** 1. row ***************************
       CHANNEL_NAME: group_replication_applier
          MEMBER_ID: 58ffd118-e6dc-11ea-8af8-08002734ed50
@@ -299,8 +299,8 @@ We will use the following elements:
 
     * On the secondary node:
 
-       ```{.bash data-prompt="(dba@node2) [performance_schema]>"}
-       (dba@node2) [performance_schema]>use \test
+       ```shell
+        use \test
         Database changed
         (dba@node2) [test]>select * from test1;
         +----+
@@ -324,7 +324,7 @@ We will use the following elements:
 ### Step 1. Installation
 
 
-1. [Install ProxySQL](https://www.percona.com/doc/proxysql/proxysql-v2.html#installing-proxysql-v2). [In our example](#preconditions), we install ProxySQL on Proxy1 192.168.4.191 and Proxy2 192.168.4.192 nodes. 
+1. [Install ProxySQL :octicons-link-external-16:](https://www.percona.com/doc/proxysql/proxysql-v2.html#installing-proxysql-v2). [In our example](#preconditions), we install ProxySQL on Proxy1 192.168.4.191 and Proxy2 192.168.4.192 nodes. 
 
 
 2. Create the monitoring user on MySQL Group Replication nodes:
@@ -404,7 +404,7 @@ We will use the following elements:
 
 ### Step 3. Create a view in SYS schema
 
-Once all the configuration is ready, we need to have a special view in the SYS schema in Percona server nodes. Find the view working for the server version 8 and above [here](https://github.com/Percona-Lab/group_replication_tools/blob/master/GR_sys_view_forProxysql_v1.sql).
+Once all the configuration is ready, we need to have a special view in the SYS schema in Percona server nodes. Find the view working for the server version 8 and above in [group_replication_tools :octicons-link-external-16:](https://github.com/Percona-Lab/group_replication_tools/blob/master/GR_sys_view_forProxysql_v1.sql).
 
 Run that sql on the **Primary** node of the Group Replication cluster.
 
@@ -444,7 +444,7 @@ If instead, you have no issue or strict requirements about some stale read, you 
 
 !!! admonition "See also"
 
-    ProxySQL Documentation: [mysql_group_replication_hostgroups](https://proxysql.com/documentation/main-runtime/#mysql_group_replication_hostgroups)
+    ProxySQL Documentation: [mysql_group_replication_hostgroups :octicons-link-external-16:](https://proxysql.com/documentation/main-runtime/#mysql_group_replication_hostgroups)
 
 ### Step 5. Enable high availability for ProxySQL
 
@@ -455,15 +455,15 @@ If instead, you have no issue or strict requirements about some stale read, you 
 
     === "on Debian/Ubuntu"
 
-         ```{.bash data-prompt="$"}
-         $ sudo apt install -y keepalived
+         ```shell
+         sudo apt install -y keepalived
          ```
 
 
     === "On RHEL/derivatives"
 
-         ```{.bash data-prompt="$"}
-         $ sudo yum install -y keepalived
+         ```shell
+         sudo yum install -y keepalived
          ```
 
 
@@ -520,14 +520,14 @@ The implementation of a DR (Disaster Recovery) site will follow the same directi
 
 * A DR site should be located in a different geographic location than the main site (several hundred kilometers/miles away).
 
-* The connection link between the main site and the DR site can only be established using *asynchronous replication* (standard MySQL [replication setup](https://dev.mysql.com/doc/refman/{{vers}}/en/replication-gtids.html) ).
+* The connection link between the main site and the DR site can only be established using *asynchronous replication* (standard MySQL [replication setup :octicons-link-external-16:](https://dev.mysql.com/doc/refman/{{vers}}/en/replication-gtids.html) ).
 
 ## Monitoring
 
 ### Using Percona Management and Monitoring (PMM)
 
 
-1. Use [this quickstart](https://www.percona.com/software/pmm/quickstart) to install Percona Monitoring and Management (PMM).
+1. Use [this quickstart :octicons-link-external-16:](https://www.percona.com/software/pmm/quickstart) to install Percona Monitoring and Management (PMM).
 
 2. Specify the `replication_set` flag  when registering the *Percona Server for MySQL* node or the MySQL node in PMM:
 
@@ -644,4 +644,4 @@ ORDER BY lag_in_sec, lag_in_sec desc\G
 
 !!! admonition "Based on the material from Percona Database Performance Blog"
 
-    This document is based on the blog post [Percona Distribution for MySQL: High Availability with Group Replication Solution](https://www.percona.com/blog/2021/04/14/percona-distribution-for-mysql-high-availability-with-group-replication-solution/) by *Marco Tusa*
+    This document is based on the blog post [Percona Distribution for MySQL: High Availability with Group Replication Solution :octicons-link-external-16:](https://www.percona.com/blog/2021/04/14/percona-distribution-for-mysql-high-availability-with-group-replication-solution/) by *Marco Tusa*

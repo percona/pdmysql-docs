@@ -47,4 +47,4 @@ For information on installing your choice, review the following:
 
 * Percona Distribution for MySQL (this product): [Install Percona Distribution for MySQL 8.4](installing.md)
 
-* Percona Server for MySQL (standalone): [Install Percona Server for MySQL 8.4 :octicons-link-external-16:](https://docs.percona.com/percona-server/8.4/installation.html)
+* Percona Server for MySQL (standalone): [Install Percona Server for MySQL 8.4 :octicons-link-external-16:](https://docs.percona.com/percona-server/{{vers}}/installation.html)

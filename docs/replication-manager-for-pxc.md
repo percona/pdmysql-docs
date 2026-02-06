@@ -184,7 +184,7 @@ All nodes have the same `server-id` value.
     [root@DC1-1 ~]# mysqldump -u root -p --source-data=2 --single-transaction -R -A -E > dump.sql
     ```  
 
-12. Compress the file if it's too large. You can use [Percona XtraBackup to compress the data](https://docs.percona.com/percona-xtrabackup/8.4/create-compressed-backup.html). Copy the backup file to one node in each remote cluster, for example to DC2-1 and DC3-1. 
+12. Compress the file if it's too large. You can use [Percona XtraBackup to compress the data :octicons-link-external-16:](https://docs.percona.com/percona-xtrabackup/{{vers}}/create-compressed-backup.html). Copy the backup file to one node in each remote cluster, for example to DC2-1 and DC3-1. 
 
     To restore the dump, run the following commands as root or using sudo:
 
@@ -225,32 +225,32 @@ All nodes have the same `server-id` value.
 
     Now, all the clusters are linked in a source to source way. 
 
-14. Install and enable Percona XtraDB Cluster-based variant of Percona Distribution for MySQL as described in [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/8.4/installing.html#procedure).
+14. Install and enable Percona XtraDB Cluster-based variant of Percona Distribution for MySQL as described in [Install Percona Distribution for MySQL :octicons-link-external-16:](https://docs.percona.com/percona-distribution-for-mysql/{{vers}}/installing.html#procedure).
 
 15. Install the packages for `replication_manager.sh` script depending on your operating system. On each node, perform the following steps as root or using sudo:
 
     === "On Debian and Ubuntu Linux"
 
-        ```{.bash data-prompt="$"}
-        $ sudo apt install percona-replication-manager
+        ```shell
+        sudo apt install percona-replication-manager
         ```
     
     === "On Red Hat Enterprise Linux and derivatives"
 
-        ```{.bash data-prompt="$"}
-        $ sudo yum install percona-replication-manager    
+        ```shell
+        sudo yum install percona-replication-manager    
         ```
 
     When executed for the first time, the replication manager detects the current replication links and inserts rows in to the `percona.replication table`. In order to avoid issues, start with the replica nodes. The mysql credentials should be specified in the `/root/.my.cnf` file. On these nodes (DC1-1, DC2-1 and DC3-1), execute the script manually:
     
-    ```{.bash data-prompt="$"}
-    $ /usr/bin/replication_manager.sh
+    ```shell
+    /usr/bin/replication_manager.sh
     ```
 
     The replication state should be unchanged and the `percona.replication` table should contain the following rows:
 
-    ```{.bash data-prompt="mysql>"}
-    mysql> SELECT * FROM percona.replication;
+    ```sql
+    SELECT * FROM percona.replication;
     ```
 
     ??? example "Expected output"
@@ -277,8 +277,8 @@ All nodes have the same `server-id` value.
 
     Wait at least one minute and proceed with the other nodes. Try a manual run first to see if the script adds a line to the replication table for the host, for example, isSlave = No. Then add the cron jobs. 
     
-    ```{.bash data-prompt="mysql>"}
-    mysql> SELECT * FROM percona.replication;
+    ```sql
+    SELECT * FROM percona.replication;
     ```
 
     ??? example "Expected output"
