@@ -9,7 +9,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="We gather Telemetry data on Percona Server for MySQL in the Percona packages and Docker images.">
+        <meta name="description" content="We gather Telemetry data on Percona Server for MySQL  in the Percona packages and Docker images.">
       
       
         <meta name="author" content="Percona LLC">
@@ -2402,17 +2402,17 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 
 
 <h1 id="install-percona-server-based-variant">Install Percona Server-based variant<a class="headerlink" href="#install-percona-server-based-variant" title="Permanent link">&para;</a></h1>
-<p>We gather <a href="https://docs.percona.com/percona-server/8.4/telemetry.html">Telemetry data on Percona Server for MySQL</a> in the Percona packages and Docker images.</p>
+<p>We gather <a href="https://docs.percona.com/percona-server/8.4/telemetry.html">Telemetry data on Percona Server for MySQL <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a> in the Percona packages and Docker images.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>To install Percona software, you need to configure the required repository. To simplify this process, use the <code>percona-release</code> repository management tool. </p>
 <ol>
 <li>
 <p>Install GnuPG and curl</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gnupg2<span class="w"> </span>curl
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gnupg2<span class="w"> </span>curl
 </code></pre></div>
 </li>
 <li>
-<p><a href="https://docs.percona.com/percona-software-repositories/installing.html">Install percona-release</a>. If you have <code>percona-release</code> installed, <a href="https://docs.percona.com/percona-software-repositories/updating.html">update percona-release</a> to the latest version.</p>
+<p><a href="https://docs.percona.com/percona-software-repositories/installing.html">Install percona-release <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a>. If you have <code>percona-release</code> installed, <a href="https://docs.percona.com/percona-software-repositories/updating.html">update percona-release <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a> to the latest version.</p>
 </li>
 </ol>
 <h2 id="procedure">Procedure<a class="headerlink" href="#procedure" title="Permanent link">&para;</a></h2>
@@ -2425,40 +2425,40 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </div>
 <h3 id="enable-percona-repository">Enable Percona repository<a class="headerlink" href="#enable-percona-repository" title="Permanent link">&para;</a></h3>
 <p>To enable the desired repository, we recommend to use the <code>enable</code> subcommand of <code>percona-release</code>.</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>percona-release<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pdps-84-lts
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pdps-84-lts
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>To enable the minor version repository, use the following command:</p>
-<div class="highlight"><pre><span></span><code>$ sudo percona-release enable pdps-8.4.7
+<div class="highlight"><pre><span></span><code>sudo percona-release enable pdps-8.4.7
 </code></pre></div>
 </div>
 <h3 id="install-percona-distribution-for-mysql-packages">Install Percona Distribution for MySQL packages<a class="headerlink" href="#install-percona-distribution-for-mysql-packages" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Install <em>Percona Server for MySQL</em>:</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>percona-server-server
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>percona-server-server
 </code></pre></div>
 </li>
 <li>
 <p>Install the components. Use the commands below to install the required components:</p>
 <p>Install Percona XtraBackup:</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>percona-xtrabackup-84
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>percona-xtrabackup-84
 </code></pre></div>
 <p>Install Percona Toolkit:</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>percona-toolkit
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>percona-toolkit
 </code></pre></div>
 <p>Install Orchestrator:</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>percona-orchestrator<span class="w"> </span>percona-orchestrator-cli<span class="w"> </span>percona-orchestrator-client
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>percona-orchestrator<span class="w"> </span>percona-orchestrator-cli<span class="w"> </span>percona-orchestrator-client
 </code></pre></div>
 <p>Install MySQL Shell:</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>percona-mysql-shell
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>percona-mysql-shell
 </code></pre></div>
 <p>Install ProxySQL:</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>proxysql2
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>proxysql2
 </code></pre></div>
 <p>Install MySQL Router:</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>percona-mysql-router
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>percona-mysql-router
 </code></pre></div>
 </li>
 </ol>
@@ -2467,46 +2467,46 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <div class="admonition admonition">
 <p class="admonition-title">Platform specific notes</p>
 <p>On CentOS 7, install the <code>epel-release</code> package. It includes the dependencies required to install Orchestrator. Use the following command:</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>epel-release
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>epel-release
 </code></pre></div>
 </div>
 <p>Run the following commands as the root user or via <code>sudo</code>.</p>
 <h3 id="enable-percona-repository_1">Enable Percona repository<a class="headerlink" href="#enable-percona-repository_1" title="Permanent link">&para;</a></h3>
 <p>To enable the desired repository, we recommend to use the <code>enable</code> subcommand of <code>percona-release</code>.</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>percona-release<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pdps-84-lts
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pdps-84-lts
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>To enable the minor version repository, use the following command:</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>percona-release<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pdps-8.4.7
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pdps-8.4.7
 </code></pre></div>
 </div>
 <h3 id="install-percona-distribution-for-mysql-packages_1">Install Percona Distribution for MySQL packages<a class="headerlink" href="#install-percona-distribution-for-mysql-packages_1" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Install <em>Percona Server for MySQL</em>:</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>percona-server-server
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>percona-server-server
 </code></pre></div>
 </li>
 <li>
 <p>Install the components. Use the commands below to install the required components:</p>
 <p>Install Percona XtraBackup</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>percona-xtrabackup-84
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>percona-xtrabackup-84
 </code></pre></div>
 <p>Install Orchestrator</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>percona-orchestrator<span class="w"> </span>percona-orchestrator-cli<span class="w"> </span>percona-orchestrator-client
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>percona-orchestrator<span class="w"> </span>percona-orchestrator-cli<span class="w"> </span>percona-orchestrator-client
 </code></pre></div>
 <p>Install Percona Toolkit</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>percona-toolkit
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>percona-toolkit
 </code></pre></div>
 <p>Install MySQL Shell:</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>percona-mysql-shell
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>percona-mysql-shell
 </code></pre></div>
 <p>Install ProxySQL:</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>proxysql2
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>proxysql2
 </code></pre></div>
 <p>Install MySQL Router:</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>percona-mysql-router
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>percona-mysql-router
 </code></pre></div>
 </li>
 </ol>
@@ -2516,13 +2516,13 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <h3 id="run-percona-distribution-for-mysql">Run Percona Distribution for MySQL<a class="headerlink" href="#run-percona-distribution-for-mysql" title="Permanent link">&para;</a></h3>
 <p>Percona Distribution for MySQL is not started automatically on Red Hat Enterprise Linux and CentOS after the installation is complete. </p>
 <p>Start it manually using the following command:</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>mysql
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>mysql
 </code></pre></div>
 <p>Confirm that the service is running:</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>mysql
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>mysql
 </code></pre></div>
 <p>Stop the service:</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>mysql
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>mysql
 </code></pre></div>
 <h2 id="useful-links">Useful links<a class="headerlink" href="#useful-links" title="Permanent link">&para;</a></h2>
 <p><a href="download-instructions.html">Percona Software Download Instructions</a></p>
@@ -2548,7 +2548,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 2, 2025 12:47:29 UTC">September 2, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 6, 2026 16:27:05 UTC">February 6, 2026</span>
   </span>
 
     
@@ -2663,6 +2663,8 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         <script src="js/consent.js"></script>
       
         <script src="js/rating.js"></script>
+      
+        <script src="js/open_in_new_tab.js"></script>
       
     
 

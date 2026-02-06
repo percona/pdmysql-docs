@@ -2499,7 +2499,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </li>
 <li>
 <p>Make sure that all the nodes use the same time-zone and time</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>date
+<div class="highlight"><pre><span></span><code>date
 Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">08</span>:22:12<span class="w"> </span>EDT<span class="w"> </span><span class="m">2020</span>
 </code></pre></div>
 </li>
@@ -2514,9 +2514,9 @@ Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">18</span><
 </li>
 <li>
 <p>After instances are up and running, check <em>Percona Server for MySQL</em> version on each node:</p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="se">\s</span>
---------------
-/opt/mysql_templates/PS-8P/bin/mysql<span class="w">  </span>Ver<span class="w"> </span><span class="m">8</span>.4.7-7<span class="w"> </span><span class="k">for</span><span class="w"> </span>Linux<span class="w"> </span>on<span class="w"> </span>x86_64<span class="w"> </span><span class="o">(</span>Percona<span class="w"> </span>Server<span class="w"> </span><span class="o">(</span>GPL<span class="o">)</span>,<span class="w"> </span>Release<span class="w"> </span><span class="m">11</span>,<span class="w"> </span>Revision<span class="w"> </span>159f0eb<span class="o">)</span>
+<div class="highlight"><pre><span></span><code><span class="err">\</span><span class="n">s</span>
+<span class="c1">--------------</span>
+<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">mysql_templates</span><span class="o">/</span><span class="n">PS</span><span class="o">-</span><span class="mi">8</span><span class="n">P</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">mysql</span><span class="w">  </span><span class="n">Ver</span><span class="w"> </span><span class="mi">8</span><span class="p">.</span><span class="mi">4</span><span class="p">.</span><span class="mi">7</span><span class="o">-</span><span class="mi">7</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">x86_64</span><span class="w"> </span><span class="p">(</span><span class="n">Percona</span><span class="w"> </span><span class="n">Server</span><span class="w"> </span><span class="p">(</span><span class="n">GPL</span><span class="p">),</span><span class="w"> </span><span class="n">Release</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="n">Revision</span><span class="w"> </span><span class="mi">159</span><span class="n">f0eb</span><span class="p">)</span>
 </code></pre></div>
 </li>
 </ol>
@@ -2534,13 +2534,13 @@ Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">18</span><
 </li>
 <li>
 <p>Make sure to have a good and unique SERVER_ID value:</p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>show<span class="w"> </span>global<span class="w"> </span>variables<span class="w"> </span>like<span class="w"> </span><span class="s1">&#39;server_id&#39;</span><span class="p">;</span>
-+---------------+-------+
-<span class="p">|</span><span class="w"> </span>Variable_name<span class="w"> </span><span class="p">|</span><span class="w"> </span>Value<span class="w"> </span><span class="p">|</span>
-+---------------+-------+
-<span class="p">|</span><span class="w"> </span>server_id<span class="w">     </span><span class="p">|</span><span class="w">     </span><span class="m">1</span><span class="w"> </span><span class="p">|</span>
-+---------------+-------+
-<span class="m">1</span><span class="w"> </span>row<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.01<span class="w"> </span>sec<span class="o">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="k">global</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;server_id&#39;</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">---------------+-------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Variable_name</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Value</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">---------------+-------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">server_id</span><span class="w">     </span><span class="o">|</span><span class="w">     </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">---------------+-------+</span>
+<span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
 </code></pre></div>
 <p>The <code>server_id</code> value must be unique on each node</p>
 </li>
@@ -2549,7 +2549,7 @@ Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">18</span><
 <ol>
 <li>
 <p>Stop all the nodes</p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>service<span class="w"> </span>mysql<span class="w"> </span>stop
+<div class="highlight"><pre><span></span><code>service<span class="w"> </span>mysql<span class="w"> </span>stop
 </code></pre></div>
 </li>
 <li>
@@ -2601,7 +2601,7 @@ transaction-write-set-extraction                           = XXHASH64
 </li>
 <li>
 <p>Restart all nodes: </p>
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>service<span class="w"> </span>mysql<span class="w"> </span>start
+<div class="highlight"><pre><span></span><code>service<span class="w"> </span>mysql<span class="w"> </span>start
 </code></pre></div>
 </li>
 <li>
@@ -2657,15 +2657,15 @@ transaction-write-set-extraction                           = XXHASH64
 <p>At this stage, you should be able to start the first (Primary) cluster node.</p>
 </li>
 <li>
-<p>Start the Primary node (Gr1) and enable Group Replication:</p>
-<div class="highlight" data-prompt="(dba@node1)[none]>"><pre><span></span><code><span class="o">(</span>dba@node1<span class="o">)[</span>none<span class="o">]</span>&gt;<span class="w"> </span>SET<span class="w"> </span>GLOBAL<span class="w"> </span><span class="nv">group_replication_bootstrap_group</span><span class="o">=</span>ON<span class="p">;</span>
-<span class="o">(</span>dba@node1<span class="o">)[</span>none<span class="o">]</span>&gt;<span class="w"> </span>START<span class="w"> </span>GROUP_REPLICATION<span class="p">;</span>
-<span class="o">(</span>dba@node1<span class="o">)[</span>none<span class="o">]</span>&gt;<span class="w"> </span>SET<span class="w"> </span>GLOBAL<span class="w"> </span><span class="nv">group_replication_bootstrap_group</span><span class="o">=</span>OFF<span class="p">;</span>
+<p>Start the Primary node (Gr1), <code>(dba@node1)[none]&gt;</code>,  and enable Group Replication:</p>
+<div class="highlight"><pre><span></span><code>SET<span class="w"> </span>GLOBAL<span class="w"> </span><span class="nv">group_replication_bootstrap_group</span><span class="o">=</span>ON<span class="p">;</span>
+START<span class="w"> </span>GROUP_REPLICATION<span class="p">;</span>
+SET<span class="w"> </span>GLOBAL<span class="w"> </span><span class="nv">group_replication_bootstrap_group</span><span class="o">=</span>OFF<span class="p">;</span>
 </code></pre></div>
 </li>
 <li>
 <p>Check if the node registered correctly:</p>
-<div class="highlight" data-prompt="(dba@node1)[none]>"><pre><span></span><code><span class="o">(</span>dba@node1<span class="o">)</span><span class="w"> </span><span class="o">[</span>none<span class="o">]</span>&gt;select<span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>performance_schema.replication_group_members<span class="se">\G</span>
+<div class="highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>performance_schema.replication_group_members<span class="se">\G</span>
 <span class="w">     </span>CHANNEL_NAME:<span class="w"> </span>group_replication_applier
 <span class="w">     </span>MEMBER_ID:<span class="w"> </span>90a353b8-e6dc-11ea-98fa-08002734ed50
 <span class="w">   </span>MEMBER_HOST:<span class="w"> </span>gr1
@@ -2677,13 +2677,13 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.7
 </li>
 <li>
 <p>Once the Primary node is running, connect to the secondary node (Gr2 node) and enable Group Replication:</p>
-<div class="highlight" data-prompt="(dba@node2) [none]>"><pre><span></span><code><span class="o">(</span>dba@node2<span class="o">)</span><span class="w"> </span><span class="o">[</span>none<span class="o">]</span>&gt;START<span class="w"> </span>GROUP_REPLICATION<span class="p">;</span>
+<div class="highlight"><pre><span></span><code>START<span class="w"> </span>GROUP_REPLICATION<span class="p">;</span>
 Query<span class="w"> </span>OK,<span class="w"> </span><span class="m">0</span><span class="w"> </span>rows<span class="w"> </span>affected<span class="w"> </span><span class="o">(</span><span class="m">4</span>.60<span class="w"> </span>sec<span class="o">)</span>
 </code></pre></div>
 </li>
 <li>
 <p>Check if the secondary node registered correctly:</p>
-<div class="highlight" data-prompt="(dba@node2) [performance_schema]>"><pre><span></span><code><span class="o">(</span>dba@node2<span class="o">)</span><span class="w"> </span><span class="o">[</span>performance_schema<span class="o">]</span>&gt;select<span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>replication_group_members<span class="se">\G</span>
+<div class="highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>replication_group_members<span class="se">\G</span>
 ***************************<span class="w"> </span><span class="m">1</span>.<span class="w"> </span>row<span class="w"> </span>***************************
 <span class="w">  </span>CHANNEL_NAME:<span class="w"> </span>group_replication_applier
 <span class="w">     </span>MEMBER_ID:<span class="w"> </span>58ffd118-e6dc-11ea-8af8-08002734ed50
@@ -2722,7 +2722,7 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.7
 <ul>
 <li>On the secondary node:</li>
 </ul>
-<div class="highlight" data-prompt="(dba@node2) [performance_schema]>"><pre><span></span><code><span class="o">(</span>dba@node2<span class="o">)</span><span class="w"> </span><span class="o">[</span>performance_schema<span class="o">]</span>&gt;use<span class="w"> </span><span class="se">\t</span>est
+<div class="highlight"><pre><span></span><code><span class="w"> </span>use<span class="w"> </span><span class="se">\t</span>est
 <span class="w"> </span>Database<span class="w"> </span>changed
 <span class="w"> </span><span class="o">(</span>dba@node2<span class="o">)</span><span class="w"> </span><span class="o">[</span>test<span class="o">]</span>&gt;select<span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>test1<span class="p">;</span>
 <span class="w"> </span>+----+
@@ -2744,7 +2744,7 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.7
 <h3 id="step-1-installation">Step 1. Installation<a class="headerlink" href="#step-1-installation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p><a href="https://www.percona.com/doc/proxysql/proxysql-v2.html#installing-proxysql-v2">Install ProxySQL</a>. <a href="#preconditions">In our example</a>, we install ProxySQL on Proxy1 192.168.4.191 and Proxy2 192.168.4.192 nodes. </p>
+<p><a href="https://www.percona.com/doc/proxysql/proxysql-v2.html#installing-proxysql-v2">Install ProxySQL <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a>. <a href="#preconditions">In our example</a>, we install ProxySQL on Proxy1 192.168.4.191 and Proxy2 192.168.4.192 nodes. </p>
 </li>
 <li>
 <p>Create the monitoring user on MySQL Group Replication nodes:</p>
@@ -2813,7 +2813,7 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.7
 </li>
 </ol>
 <h3 id="step-3-create-a-view-in-sys-schema">Step 3. Create a view in SYS schema<a class="headerlink" href="#step-3-create-a-view-in-sys-schema" title="Permanent link">&para;</a></h3>
-<p>Once all the configuration is ready, we need to have a special view in the SYS schema in Percona server nodes. Find the view working for the server version 8 and above <a href="https://github.com/Percona-Lab/group_replication_tools/blob/master/GR_sys_view_forProxysql_v1.sql">here</a>.</p>
+<p>Once all the configuration is ready, we need to have a special view in the SYS schema in Percona server nodes. Find the view working for the server version 8 and above in <a href="https://github.com/Percona-Lab/group_replication_tools/blob/master/GR_sys_view_forProxysql_v1.sql">group_replication_tools <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a>.</p>
 <p>Run that sql on the <strong>Primary</strong> node of the Group Replication cluster.</p>
 <h3 id="step-4-activate-support-for-group-replication-in-proxysql">Step 4. Activate support for Group Replication in ProxySQL<a class="headerlink" href="#step-4-activate-support-for-group-replication-in-proxysql" title="Permanent link">&para;</a></h3>
 <p>To activate the  native support for Group Replication in ProxySQL, we will use the following group definition:</p>
@@ -2837,7 +2837,7 @@ writer_is_also_reader: 1
 <p>If instead, you have no issue or strict requirements about some stale read, you can relax the parameter and ignore the <code>group_replication_consistency</code> setting. Our recommended setting is <code>group_replication_consistency=AFTER</code> and <code>max_transactions_behind: 100</code>.</p>
 <div class="admonition admonition">
 <p class="admonition-title">See also</p>
-<p>ProxySQL Documentation: <a href="https://proxysql.com/documentation/main-runtime/#mysql_group_replication_hostgroups">mysql_group_replication_hostgroups</a></p>
+<p>ProxySQL Documentation: <a href="https://proxysql.com/documentation/main-runtime/#mysql_group_replication_hostgroups">mysql_group_replication_hostgroups <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a></p>
 </div>
 <h3 id="step-5-enable-high-availability-for-proxysql">Step 5. Enable high availability for ProxySQL<a class="headerlink" href="#step-5-enable-high-availability-for-proxysql" title="Permanent link">&para;</a></h3>
 <p><code>keepalived</code> will be used to enable High Availability for ProxySQL.</p>
@@ -2847,11 +2847,11 @@ writer_is_also_reader: 1
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">on Debian/Ubuntu</label><label for="__tabbed_1_2">On RHEL/derivatives</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>keepalived
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>keepalived
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight" data-prompt="$"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>keepalived
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>keepalived
 </code></pre></div>
 </div>
 </div>
@@ -2911,14 +2911,14 @@ vrrp_instance VI_01 {
 <p>A DR site should be located in a different geographic location than the main site (several hundred kilometers/miles away).</p>
 </li>
 <li>
-<p>The connection link between the main site and the DR site can only be established using <em>asynchronous replication</em> (standard MySQL <a href="https://dev.mysql.com/doc/refman/8.4/en/replication-gtids.html">replication setup</a> ).</p>
+<p>The connection link between the main site and the DR site can only be established using <em>asynchronous replication</em> (standard MySQL <a href="https://dev.mysql.com/doc/refman/8.4/en/replication-gtids.html">replication setup <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a> ).</p>
 </li>
 </ul>
 <h2 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h2>
 <h3 id="using-percona-management-and-monitoring-pmm">Using Percona Management and Monitoring (PMM)<a class="headerlink" href="#using-percona-management-and-monitoring-pmm" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>Use <a href="https://www.percona.com/software/pmm/quickstart">this quickstart</a> to install Percona Monitoring and Management (PMM).</p>
+<p>Use <a href="https://www.percona.com/software/pmm/quickstart">this quickstart <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a> to install Percona Monitoring and Management (PMM).</p>
 </li>
 <li>
 <p>Specify the <code>replication_set</code> flag  when registering the <em>Percona Server for MySQL</em> node or the MySQL node in PMM:</p>
@@ -3023,7 +3023,7 @@ vrrp_instance VI_01 {
 </details>
 <div class="admonition admonition">
 <p class="admonition-title">Based on the material from Percona Database Performance Blog</p>
-<p>This document is based on the blog post <a href="https://www.percona.com/blog/2021/04/14/percona-distribution-for-mysql-high-availability-with-group-replication-solution/">Percona Distribution for MySQL: High Availability with Group Replication Solution</a> by <em>Marco Tusa</em></p>
+<p>This document is based on the blog post <a href="https://www.percona.com/blog/2021/04/14/percona-distribution-for-mysql-high-availability-with-group-replication-solution/">Percona Distribution for MySQL: High Availability with Group Replication Solution <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a> by <em>Marco Tusa</em></p>
 </div>
 
 
@@ -3047,7 +3047,7 @@ vrrp_instance VI_01 {
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 18, 2025 12:38:37 UTC">July 18, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 6, 2026 16:27:05 UTC">February 6, 2026</span>
   </span>
 
     
@@ -3162,6 +3162,8 @@ vrrp_instance VI_01 {
         <script src="js/consent.js"></script>
       
         <script src="js/rating.js"></script>
+      
+        <script src="js/open_in_new_tab.js"></script>
       
     
 

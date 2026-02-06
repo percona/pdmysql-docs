@@ -2426,7 +2426,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <h1 id="high-availability-solution-with-group-replication">High availability solution with Group Replication<a class="headerlink" href="#high-availability-solution-with-group-replication" title="Permanent link">&para;</a></h1>
 <p>Every architecture and deployment depends on customer requirements and application demands for high availability and the estimated level of usage.  For example, using a high read or a high write application, or both with  99.999% availability.</p>
 <p>This guide gives <a href="architecture-components.html">architecture</a> and deployment recommendations along with a technical overview for a solution that provides a high level of high availability and assumes the usage of high read / write applications (20K or more queries per second). It also provides <a href="deploy-pdps-group-replication.html">step-by-step deployment guidelines</a>.</p>
-<p>This solution assumes the use of <em>Percona Server for MySQL</em> based deployment variant of Percona Distribution for MySQL with <a href="https://dev.mysql.com/doc/refman/8.4/en/group-replication.html">Group Replication</a>.</p>
+<p>This solution assumes the use of <em>Percona Server for MySQL</em> based deployment variant of Percona Distribution for MySQL with <a href="https://dev.mysql.com/doc/refman/8.4/en/group-replication.html">Group Replication <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a>.</p>
 <h2 id="high-availability-overview">High availability overview<a class="headerlink" href="#high-availability-overview" title="Permanent link">&para;</a></h2>
 <p>How to measure availability and at what point does it become “high” availability?</p>
 <p>Generally speaking, the measurement of availability is done by establishing a measurement time frame and dividing it by the time that it was available. This ratio will rarely be 1, which is equal to 100% availability. A solution is considered to be highly available if it is at least 99% or “two nines” available.</p>
@@ -2568,7 +2568,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <p>As previously mentioned, disaster recovery is not covered by default by this solution. It will require an additional replication setup and controller.</p>
 <div class="admonition admonition">
 <p class="admonition-title">Based on the material from Percona Database Performance Blog</p>
-<p>This document is based on the blog post <a href="https://www.percona.com/blog/2021/04/14/percona-distribution-for-mysql-high-availability-with-group-replication-solution/">Percona Distribution for MySQL: High Availability with Group Replication Solution</a> by <em>Marco Tusa</em></p>
+<p>This document is based on the blog post <a href="https://www.percona.com/blog/2021/04/14/percona-distribution-for-mysql-high-availability-with-group-replication-solution/">Percona Distribution for MySQL: High Availability with Group Replication Solution <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a> by <em>Marco Tusa</em></p>
 </div>
 
 
@@ -2592,7 +2592,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 18, 2025 12:38:37 UTC">July 18, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 6, 2026 16:27:05 UTC">February 6, 2026</span>
   </span>
 
     
@@ -2707,6 +2707,8 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         <script src="js/consent.js"></script>
       
         <script src="js/rating.js"></script>
+      
+        <script src="js/open_in_new_tab.js"></script>
       
     
 
