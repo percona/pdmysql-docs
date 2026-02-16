@@ -32,7 +32,7 @@ To install Percona software, you need to configure the required repository. To s
 
     !!! tip
 
-        To enable either the `pdpxc-8.4.0` or `pdpxc-8.4.2` version repository, use the following command. The example enables the `8.4.2` repository:
+        To enable either the `pdpxc-8.4.0` or `pdpxc-8.4.2` version repository, use the following command. The example enables the `{{minorpkgpxc}}` repository:
 
         ```shell
         sudo percona-release setup {{minorpkgpxc}}
@@ -84,7 +84,7 @@ To install Percona software, you need to configure the required repository. To s
 
     !!! tip
 
-        To enable either the `pdpxc-8.4.0` or `pdpxc-8.4.2` version repository, use the following command. The example enables the `8.4.2` repository:
+        To enable either the `pdpxc-8.4.0` or `pdpxc-8.4.2` version repository, use the following command. The example enables the `{{minorpkgpxc}}` repository:
 
         ```shell
         sudo percona-release setup {{minorpkgpxc}}
