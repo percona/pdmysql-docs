@@ -30,16 +30,6 @@ You have the following downgrade options:
       
     * Important: Only works for rollback if you haven't used new features
 
-3. From LTS to Innovation Release (Example: 8.4.x to 8.3.0):
-
-    * Methods Available:
-    
-      * Logical dump and restore
-      
-      * Replication-based downgrade
-      
-    * Important: Only works for rollback if you haven't used new features
-
 Key Points:
 
 * You cannot downgrade to version 5.7 or earlier
