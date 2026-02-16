@@ -5,7 +5,7 @@ Do the following steps to select the software, the software version, and downloa
 1. Go to [Percona Software Downloads :octicons-link-external-16:](https://www.percona.com/downloads).
 2. Locate Percona Distribution for MySQL.
 3. Select the required product in `Select Product`, for example, Percona Server for MySQL.
-4. Select your distribution version in the `Select Product Version` dropdown, for example, `percona-distribution-mysql-ps-8.4.4`.
+4. Select your distribution version in the `Select Product Version` dropdown, for example, `percona-distribution-mysql-ps-9.7.1`.
 5. Select your platform in the `Select Platform` dropdown, for example, `Ubuntu 24.04 (Noble Numbat)`.
 
 The `Package Download Options` may include both `AMD64` and `ARM64` packages. Select the correct CPU architecture for your system.
