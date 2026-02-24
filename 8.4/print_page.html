@@ -24,7 +24,7 @@
       
       
       <link rel="icon" href="assets/mysql-fav.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -4127,7 +4127,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 8.4 becomes available.</p>
-<p>ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur. In an 8.4.x environment, the binlog reader errors out during initialization due to the use of old terminology, such as the SHOW MASTER STATUS command.</p>
+<p>In 8.4.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the <a href="https://dev.mysql.com/doc/refman/8.4/en/replication-options-replica.html#sysvar_terminology_use_previous">terminology_use_previous</a> system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.</p>
 </div></section><section class="print-page" id="deployment-variants" heading-number="5.2"><h1 id="deployment-variants-deployment-variants">Deployment variants<a class="headerlink" href="#deployment-variants-deployment-variants" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL provides two deployment variants: one is Percona Server for MySQL-based and another one is Percona XtraDB Cluster-based. Each deployment is available via its own repository and includes the base server (Percona Server for MySQL or Percona XtraDB Cluster) and <a href="#components">components</a>. The table below lists what components are available with each server:</p>
 <table>
