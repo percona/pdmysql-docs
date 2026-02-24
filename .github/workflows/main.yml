@@ -1,4 +1,4 @@
-name: Build Percona Distribution for MySQL 8.3 docs
+name: Build Percona Distribution for MySQL 8.4 docs
 on:
   push:
     branches: 
