@@ -14,7 +14,7 @@ Review each component’s release notes for What’s new, improvements, or bug f
 
 | Component               | Version   | Description                                |
 | ----------------------- | --------- | -------------------------------------------|
-| Percona XtraBackup      | [[8.0.35-35](https://docs.percona.com/percona-xtrabackup/8.0/release-notes/8.0/8.0.35-35.0.html)| An open-source hot backup utility for MySQL-based servers that doesn’t lock your database during the backup.|
+| Percona XtraBackup      | [8.0.35-35](https://docs.percona.com/percona-xtrabackup/8.0/release-notes/8.0/8.0.35-35.0.html)| An open-source hot backup utility for MySQL-based servers that doesn’t lock your database during the backup.|
 | HAProxy                 | [2.8.18](https://git.haproxy.org/?p=haproxy-2.8.git;a=commit;h=b6e928141b16d2a5adbfa331e0639fa02305fc8a) | A high-availability and load-balancing solution for Percona XtraDB Cluster. This is a default proxy.|
 | ProxySQL                | [2.7.3](https://docs.percona.com/proxysql/2.7.3.html)| A high performance, high-availability, protocol-aware proxy for MySQL.          |
 | Percona Toolkit         | [3.7.1](https://docs.percona.com/percona-toolkit/release_notes.html#v3-7-1-released-2025-12-17)     | The set of scripts to simplify and optimize database operation. |
