@@ -2,7 +2,7 @@
 
 When setting up Percona repositories, you can choose between two paths: Percona Distribution for MySQL or Percona Server for MySQL alone. Both use the same core database engine but are designed for different operational scopes.
 
-To read about the standalone server product, see the [Percona Server for MySQL 8.4 :octicons-link-external-16:](https://docs.percona.com/percona-server/8.4/) documentation.
+To read about the standalone server product, see the [Percona Server for MySQL {{vers}} :octicons-link-external-16:](https://docs.percona.com/percona-server/{{vers}}/) documentation.
 
 ## Check Platform Support
 
@@ -12,7 +12,7 @@ Review the [Percona Software and Platform Lifecycle :octicons-link-external-16:]
 
 ## Comparison Overview
 
-| Feature | Percona Distribution for MySQL (`pdps-8.4`) | Percona Server for MySQL (`ps-84`) |
+| Feature | Percona Distribution for MySQL (`pdps-{{vers}}`) | Percona Server for MySQL (`ps-97`) |
 | --- | --- | --- |
 | Primary Goal | A curated collection of components tested together as a complete enterprise stack. | A performance-enhanced, drop-in replacement for MySQL Community Edition. |
 | Included Components | Database server, Percona XtraBackup, HAProxy, ProxySQL, and Orchestrator. | Database server, client, and essential plugins. |
@@ -25,7 +25,7 @@ Review the [Percona Software and Platform Lifecycle :octicons-link-external-16:]
 
 Choose the Distribution (this product) if any of the following apply:
 
-* Deploying a High Availability (HA) environment (e.g., using Percona XtraDB Cluster).
+* Deploying a High Availability (HA) environment (for example, using Percona XtraDB Cluster).
 
 * Wanting Percona to guarantee that the specific versions of the server, proxy, and backup tools provided are fully compatible and tested as a single unit.
 
@@ -45,6 +45,6 @@ Choose standalone Percona Server for MySQL if any of the following apply:
 
 For information on installing your choice, review the following:
 
-* Percona Distribution for MySQL (this product): [Install Percona Distribution for MySQL 8.4](installing.md)
+* Percona Distribution for MySQL (this product): [Install Percona Distribution for MySQL {{vers}}](installing.md)
 
-* Percona Server for MySQL (standalone): [Install Percona Server for MySQL 8.4 :octicons-link-external-16:](https://docs.percona.com/percona-server/{{vers}}/installation.html)
+* Percona Server for MySQL (standalone): [Install Percona Server for MySQL {{vers}} :octicons-link-external-16:](https://docs.percona.com/percona-server/{{vers}}/installation.html)

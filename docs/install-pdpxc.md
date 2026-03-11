@@ -1,6 +1,6 @@
 # Install Percona XtraDB Cluster-based variant
 
-We gather [Telemetry data on Percona XtraDB Cluster :octicons-link-external-16:](https://docs.percona.com/percona-xtradb-cluster/{{vers}}/telemetry.html) in the Percona packages and Docker images.
+We gather [Telemetry data on Percona XtraDB Cluster :octicons-link-external-16:](https://docs.percona.com/percona-xtradb-cluster/8.4/telemetry.html) in the Percona packages and Docker images.
 
 ## Prerequisites
 
@@ -32,7 +32,7 @@ To install Percona software, you need to configure the required repository. To s
 
     !!! tip
 
-        To enable either the `pdpxc-8.4.0` or `pdpxc-8.4.2` version repository, use the following command. The example enables the `8.4.2` repository:
+        To enable either the `pdpxc-9.7.0` or `pdpxc-9.7.2` version repository, use the following command. The example enables the `{{minorpkgpxc}}` repository:
 
         ```shell
         sudo percona-release setup {{minorpkgpxc}}
@@ -59,7 +59,7 @@ To install Percona software, you need to configure the required repository. To s
         Install Percona XtraBackup:
 
         ```shell
-        sudo apt install percona-xtrabackup-84
+        sudo apt install percona-xtrabackup-97
         ```
 
         Install Percona Toolkit:
@@ -84,7 +84,7 @@ To install Percona software, you need to configure the required repository. To s
 
     !!! tip
 
-        To enable either the `pdpxc-8.4.0` or `pdpxc-8.4.2` version repository, use the following command. The example enables the `8.4.2` repository:
+        To enable either the `pdpxc-9.7.0` or `pdpxc-9.7.2` version repository, use the following command. The example enables the `{{minorpkgpxc}}` repository:
 
         ```shell
         sudo percona-release setup {{minorpkgpxc}}
@@ -111,7 +111,7 @@ To install Percona software, you need to configure the required repository. To s
         Install Percona XtraBackup:
 
         ```shell
-        sudo yum install percona-xtrabackup-84
+        sudo yum install percona-xtrabackup-97
         ```
 
         Install Percona Toolkit:

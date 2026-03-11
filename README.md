@@ -21,7 +21,7 @@ Percona Distribution for MySQL provides two deployment variants: one is Percona 
 |MySQL Router       |YES                        |NO                    |
 
  
-This repository contains the source files for [Percona Distribution for MySQL documentation](https://www.percona.com/doc/percona-distribution-mysql/8.0/index.html). The documentation is written in [reStructured text markup language](https://docutils.sourceforge.io/rst.html) and is created using [Sphinx Python Documentation Generator](https://www.sphinx-doc.org/en/master/). 
+This repository contains the source files for [Percona Distribution for MySQL documentation](https://docs.percona.com/percona-distribution-for-mysql/8.0/). The documentation is written in [reStructured text markup language](https://docutils.sourceforge.io/rst.html) and is created using [Sphinx Python Documentation Generator](https://www.sphinx-doc.org/en/master/). 
 
 ## Contributing
 

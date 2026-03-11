@@ -7,7 +7,7 @@ copyright: >-
   <a href="https://www.percona.com/about">Percona LLC</a> and its affiliates &copy; 2026 — <a href="#" onclick="Osano.cm.showDrawer('osano-cm-dom-info-dialog-open')">Cookie Preferences</a>
 repo_name: /percona/pdmysql-docs
 repo_url: https://github.com/percona/pdmysql-docs
-edit_uri: edit/8.4/docs/
+edit_uri: edit/9.7/docs/
 
 use_directory_urls: false
 
@@ -126,8 +126,8 @@ plugins:
     enabled: !ENV [ENABLED_GIT_REVISION_DATE, True]
   git-committers:
     enabled: !ENV [CI, false]
-    repository: percona/pxb-docs
-    branch: "8.4"
+    repository: percona/pdmysql-docs
+    branch: "9.7"
   meta-descriptions:
     export_csv: false
     quiet: false
@@ -174,27 +174,11 @@ nav:
   - ps-or-pdps.md
   - Release notes:
     - Release notes index: release-notes.md
-    - Percona Distribution for MySQL using Percona Server for MySQL:
-      - release-notes-ps-8.4.7.md
-      - release-notes-ps-8.4.6.md
-      - release-notes-ps-8.4.5.md
-      - release-notes-ps-8.4.4.md
-      - release-notes-ps-8.4.3.md
-      - release-notes-ps-8.4.2.md
-      - release-notes-ps-8.4.1.md
-      - release-notes-ps-8.4.md
-    - Percona Distribution for MySQL using Percona XtraDB Cluster:
-      - release-notes-pxc-8.4.7.md
-      - release-notes-pxc-8.4.6.md
-      - release-notes-pxc-8.4.5.md
-      - release-notes-pxc-8.4.4.md
-      - release-notes-pxc-8.4.3.md
-      - release-notes-pxc-8.4.2.md
-      - release-notes-pxc-8.4.0.md
+#    - Percona Distribution for MySQL using Percona Server for MySQL:
+#   - Percona Distribution for MySQL using Percona XtraDB Cluster:
   - Discover Percona Distribution for MySQL:
     - components.md
     - deployment-variants.md
-
   - Install and update:
     - installing.md
     - install-pdps.md
