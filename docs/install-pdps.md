@@ -51,7 +51,7 @@ To install Percona software, you need to configure the required repository. To s
         Install Percona XtraBackup:
 
         ```shell
-        sudo apt install percona-xtrabackup-84
+        sudo apt install percona-xtrabackup-97
         ```
 
         Install Percona Toolkit:
@@ -125,7 +125,7 @@ To install Percona software, you need to configure the required repository. To s
         Install Percona XtraBackup
 
         ```shell
-        sudo yum install percona-xtrabackup-84
+        sudo yum install percona-xtrabackup-97
         ```
 
         Install Orchestrator

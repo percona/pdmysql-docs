@@ -1,14 +1,16 @@
 # Downgrade Percona Distribution for MySQL
 
+<!-- Clarify whether the following note is valid for 9.7-->
+
 !!! important
 
-    This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 8.4 becomes available.
+    This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL {{vers}} becomes available.
     
-    ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur. In an 8.4.x environment, the binlog reader errors out during initialization due to the use of old terminology, such as the SHOW MASTER STATUS command.
+    In {{vers}}.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the [terminology_use_previous](https://dev.mysql.com/doc/refman/{{vers}}/en/replication-options-replica.html#sysvar_terminology_use_previous) system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.
 
 You have the following downgrade options:
 
-1. Within Same LTS Version (Example: 8.4.5 to 8.4.3):
+1. Within Same LTS Version (Example: 9.7.3 to 9.7.1):
 
     * Methods Available:
     
@@ -20,17 +22,7 @@ You have the following downgrade options:
     
     * Replication-based downgrade
 
-2. From LTS to Previous LTS (Example: 8.4.x to 8.0.y):
-
-    * Methods Available:
-    
-      * Logical dump and restore
-      
-      * Replication-based downgrade
-      
-    * Important: Only works for rollback if you haven't used new features
-
-3. From LTS to Innovation Release (Example: 8.4.x to 8.3.0):
+2. From LTS to Previous LTS (Example: 9.7.x to 8.4.y):
 
     * Methods Available:
     
