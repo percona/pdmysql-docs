@@ -175,6 +175,7 @@ nav:
   - Release notes:
     - Release notes index: release-notes.md
     - Percona Distribution for MySQL using Percona Server for MySQL:
+      - release-notes-ps-8.4.8.md
       - release-notes-ps-8.4.7.md
       - release-notes-ps-8.4.6.md
       - release-notes-ps-8.4.5.md
