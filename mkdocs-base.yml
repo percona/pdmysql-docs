@@ -185,6 +185,7 @@ nav:
       - release-notes-ps-8.4.1.md
       - release-notes-ps-8.4.md
     - Percona Distribution for MySQL using Percona XtraDB Cluster:
+      - release-notes-pxc-8.4.8.md
       - release-notes-pxc-8.4.7.md
       - release-notes-pxc-8.4.6.md
       - release-notes-pxc-8.4.5.md
