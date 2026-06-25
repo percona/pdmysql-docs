@@ -1,7 +1,5 @@
 # Downgrade Percona Distribution for MySQL
 
-<!-- Clarify whether the following note is valid for 9.7-->
-
 !!! important
 
     This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL {{vers}} becomes available.

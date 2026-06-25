@@ -1,7 +1,5 @@
 # Upgrade Percona Distribution for MySQL
 
-<!-- Clarify whether the following note is valid for 9.7-->
-
 !!! important
 
     This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL {{vers}} becomes available.
@@ -84,6 +82,6 @@ To upgrade Percona Distribution for MySQL, [install the `percona-release` reposi
     
     !!! admonition "See also"
 
-        [Upgrading Percona XtraDB Cluster :octicons-link-external-16:](https://docs.percona.com/percona-xtradb-cluster/{{vers}}/upgrade-guide.html)
+        [Upgrading Percona XtraDB Cluster :octicons-link-external-16:](https://docs.percona.com/percona-xtradb-cluster/8.4/upgrade-guide.html)
 
 To upgrade the components, refer to [Installing Percona Distribution for MySQL](installing.md) for installation instructions relevant to your operating system.

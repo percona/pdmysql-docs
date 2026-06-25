@@ -32,7 +32,7 @@ To install Percona software, you need to configure the required repository. To s
 
     !!! tip
 
-        To enable either the `pdpxc-9.7.0` or `pdpxc-9.7.2` version repository, use the following command. The example enables the `{{minorpkgpxc}}` repository:
+        To enable either the `pdpxc-8.4.0` or `pdpxc-8.4.2` version repository, use the following command. The example enables the `{{minorpkgpxc}}` repository:
 
         ```shell
         sudo percona-release setup {{minorpkgpxc}}
@@ -59,7 +59,7 @@ To install Percona software, you need to configure the required repository. To s
         Install Percona XtraBackup:
 
         ```shell
-        sudo apt install percona-xtrabackup-97
+        sudo apt install percona-xtrabackup-84
         ```
 
         Install Percona Toolkit:
@@ -84,7 +84,7 @@ To install Percona software, you need to configure the required repository. To s
 
     !!! tip
 
-        To enable either the `pdpxc-9.7.0` or `pdpxc-9.7.2` version repository, use the following command. The example enables the `{{minorpkgpxc}}` repository:
+        To enable either the `pdpxc-8.4.0` or `pdpxc-8.4.2` version repository, use the following command. The example enables the `{{minorpkgpxc}}` repository:
 
         ```shell
         sudo percona-release setup {{minorpkgpxc}}
@@ -111,7 +111,7 @@ To install Percona software, you need to configure the required repository. To s
         Install Percona XtraBackup:
 
         ```shell
-        sudo yum install percona-xtrabackup-97
+        sudo yum install percona-xtrabackup-84
         ```
 
         Install Percona Toolkit:
