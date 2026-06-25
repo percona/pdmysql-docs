@@ -12,8 +12,6 @@ Percona Distribution for MySQL provides two deployment variants: one is Percona 
 | MySQL Shell  | YES                        |
 | MySQL Router | YES                        |
 
-<!-- Clarify whether the following note is valid for 9.7-->
-
 !!! important
 
     This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL {{vers}} becomes available.

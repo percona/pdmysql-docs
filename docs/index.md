@@ -14,8 +14,6 @@ Percona Distribution for MySQL is a single solution with the best and most criti
 
 Percona Distribution for MySQL comes in two [deployment variants](deployment-variants.md): one is based on Percona Server for MySQL and another one - on Percona XtraDB Cluster. They differ in the set of components and how you can use them. 
 
-<!-- Clarify whether the following note is valid for 9.7-->
-
 !!! important
 
     This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL {{vers}} becomes available.
