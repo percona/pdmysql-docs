@@ -176,7 +176,8 @@ nav:
   - ps-or-pdps.md
   - Release notes:
     - Release notes index: release-notes.md
-#    - Percona Distribution for MySQL using Percona Server for MySQL:
+    - Percona Distribution for MySQL using Percona Server for MySQL:
+      - release-notes-ps-9.7.1.md
 #   - Percona Distribution for MySQL using Percona XtraDB Cluster:
   - Discover Percona Distribution for MySQL:
     - components.md
