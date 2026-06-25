@@ -2,8 +2,5 @@
 
 ## Percona Distribution for MySQL using Percona Server for MySQL
 
-* 
+* [Percona Distribution for MySQL using Percona Server for MySQL 9.7.1 (2026-0-)](release-notes-ps-9.7.1.md)
 
-## Percona Distribution for MySQL using Percona XtraDB Cluster
-
-* 
