@@ -38,7 +38,7 @@ Percona Server for MySQL 9.7.1-1 introduces the following features and improveme
 
 This release addresses the list of Common Vulnerabilities and Exposures (CVE). Find the list of CVEs in [Percona Server for MySQL 9.7.1-1](https://docs.percona.com/percona-server/9.7/release-notes/9.7.1-1.html) release notes.
 
-### MySQL 9.7.1
+### MySQL 9.7.0
 
 Improvements and bug fixes provided by Oracle for MySQL 9.7.0 and included in Percona Server for MySQL are the following:
 
