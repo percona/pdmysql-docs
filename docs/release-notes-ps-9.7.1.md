@@ -12,7 +12,7 @@ This release is based on [Percona Server for MySQL 9.7.1-1](https://docs.percona
 
 ### Percona Server for MySQL 9.7.1-1
 
-Percona Server for MySQL 9.7.1-1 introduces the following features:
+Percona Server for MySQL 9.7.1-1 introduces the following features and improvements:
 
 * Integrates the new Key Management Interoperability Protocol (KMIP) library into the key management component.
 
