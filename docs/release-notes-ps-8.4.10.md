@@ -8,7 +8,7 @@ Percona Distribution for MySQL is more than just a version of MySQL; it is a com
 
 This release is based on [Percona Server for MySQL 8.4.10-10](https://docs.percona.com/percona-server/8.4/release-notes/8.4.10-10.html) that includes all the features and bug fixes available in the [MySQL 8.4.10 Community Edition](https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-10.html) and enterprise-grade features developed by Percona.
 
-## Release 
+## Release highlights
 
 ### Percona Server for MySQL 8.4.10-10
 
