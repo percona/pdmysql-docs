@@ -613,6 +613,8 @@
       
         
       
+        
+      
     
     
     
@@ -652,6 +654,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="release-notes-ps-8.4.10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Percona Distribution for MySQL 8.4.10 using Percona Server for MySQL (2026-06-30)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2411,6 +2441,17 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#release-notes-ps-8.4.10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Percona Distribution for MySQL 8.4.10 using Percona Server for MySQL (2026-06-30)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#release-notes-ps-8.4.8" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2948,7 +2989,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 
 <h1>Documentation</h1>
  
-<h2>8.4.8 (April 22, 2026)</h2>
+<h2>8.4.10 (June 30, 2026)</h2>
 <!--<h3>Percona Technical Documentation Team</h3>-->
         </section>
         
@@ -3122,6 +3163,9 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <h2 id="release-notes-percona-distribution-for-mysql-using-percona-server-for-mysql">Percona Distribution for MySQL using Percona Server for MySQL<a class="headerlink" href="#release-notes-percona-distribution-for-mysql-using-percona-server-for-mysql" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
+<p><a href="#release-notes-ps-8.4.10">Percona Distribution for MySQL using Percona Server for MySQL 8.4.10 (2026-06-30)</a></p>
+</li>
+<li>
 <p><a href="#release-notes-ps-8.4.8">Percona Distribution for MySQL using Percona Server for MySQL 8.4.8 (2026-03-12)</a></p>
 </li>
 <li>
@@ -3179,7 +3223,141 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
                     <section class='print-page md-section' id='section-4-2' heading-number='4.2'>
                         <h1>Percona Distribution for MySQL using Percona Server for MySQL<a class='headerlink' href='#section-4-2' title='Permanent link'></a>
                         </h1>
-                    <section class="print-page" id="release-notes-ps-8.4.8" heading-number="4.2.1"><h1 id="release-notes-ps-8.4.8-percona-distribution-for-mysql-848-using-percona-server-for-mysql-2026-03-12">Percona Distribution for MySQL 8.4.8 using Percona Server for MySQL (2026-03-12)<a class="headerlink" href="#release-notes-ps-8.4.8-percona-distribution-for-mysql-848-using-percona-server-for-mysql-2026-03-12" title="Permanent link">&para;</a></h1>
+                    <section class="print-page" id="release-notes-ps-8.4.10" heading-number="4.2.1"><h1 id="release-notes-ps-8.4.10-percona-distribution-for-mysql-8410-using-percona-server-for-mysql-2026-06-30">Percona Distribution for MySQL 8.4.10 using Percona Server for MySQL (2026-06-30)<a class="headerlink" href="#release-notes-ps-8.4.10-percona-distribution-for-mysql-8410-using-percona-server-for-mysql-2026-06-30" title="Permanent link">&para;</a></h1>
+<p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
+<div class="admonition note">
+<p>Percona Distribution for MySQL 8.4.9-9 was not released; 8.4.10-10 is the next build in this series. This release includes enhancements and bug fixes from MySQL 8.4.9 and MySQL 8.4.10.</p>
+</div>
+<p>This release is based on <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.10-10.html">Percona Server for MySQL 8.4.10-10</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-10.html">MySQL 8.4.10 Community Edition</a> and enterprise-grade features developed by Percona.</p>
+<h2 id="release-notes-ps-8.4.10-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-8.4.10-release-highlights" title="Permanent link">&para;</a></h2>
+<h3 id="release-notes-ps-8.4.10-percona-server-for-mysql-8410-10">Percona Server for MySQL 8.4.10-10<a class="headerlink" href="#release-notes-ps-8.4.10-percona-server-for-mysql-8410-10" title="Permanent link">&para;</a></h3>
+<p>Percona Server for MySQL 8.4.10-10 introduces the following new features and improvements:</p>
+<ul>
+<li>
+<p>Integrates the new Key Management Interoperability Protocol (KMIP) library into the key management component.</p>
+</li>
+<li>
+<p>Enhances Thread Pool statistics by adding new status variables for queue monitoring and wait time analysis. Reports the number of requests waiting in normal and high-priority queues, the number of requests not yet entered into a queue, and aggregate queue wait time statistics, including average, minimum, maximum, and standard deviation wait times.</p>
+</li>
+<li>
+<p>Adds JSONL (JSON Lines) output format for Audit Log Filter.</p>
+</li>
+<li>
+<p>Increases the verbosity of the data dictionary upgrade process, making it easier to diagnose issues that occur during upgrade.</p>
+</li>
+<li>
+<p>Logs SQL statements for the Audit Log Filter <code>table_access</code> class and the <code>read</code> and <code>insert</code> subclasses.</p>
+</li>
+<li>
+<p>Flushes the audit log buffer on server shutdown when the <code>ASYNCHRONOUS</code> logging strategy is in use, preventing the loss of buffered events.</p>
+</li>
+<li>
+<p>Reduces memory pressure in the Audit Log Filter component caused by VFS buffering.</p>
+</li>
+<li>
+<p>Aligns the <code>audit_log_filter.format=NEW</code> output between the 8.0 plugin and the 8.4 component.</p>
+</li>
+<li>
+<p>Optimizes performance for <code>mem_root_deque</code>.</p>
+</li>
+</ul>
+<p>This release addresses the following security vulnerabilities:</p>
+<ul>
+<li>
+<p><a href="https://www.cve.org/CVERecord?id=CVE-2026-46850">CVE-2026-46850</a>: A vulnerability in MySQL Shell (Shell for VS Code) allows a low-privileged attacker with network access via HTTP to compromise MySQL Shell, with potential scope change impact on additional products (CVSS 3.1 Base Score 9.9).</p>
+</li>
+<li>
+<p><a href="https://www.cve.org/CVERecord?id=CVE-2026-46860">CVE-2026-46860</a>: A vulnerability in MySQL Router allows an unauthenticated attacker with network access via HTTP to compromise MySQL Router (CVSS 3.1 Base Score 9.8).</p>
+</li>
+<li>
+<p><a href="https://www.cve.org/CVERecord?id=CVE-2026-46861">CVE-2026-46861</a>: A vulnerability in MySQL NDB Cluster (NDB Operator) allows a low-privileged attacker with network access via HTTP to access or modify critical data, with potential scope change impact (CVSS 3.1 Base Score 9.6).</p>
+</li>
+<li>
+<p><a href="https://www.cve.org/CVERecord?id=CVE-2026-46862">CVE-2026-46862</a>: A vulnerability in MySQL Router allows an unauthenticated attacker with network access via TLS to cause a hang or repeatable unexpected exit of MySQL Router (CVSS 3.1 Base Score 7.5).</p>
+</li>
+<li>
+<p><a href="https://www.cve.org/CVERecord?id=CVE-2026-46863">CVE-2026-46863</a>: A vulnerability in MySQL Server connection handling allows an unauthenticated attacker with network access via multiple protocols to cause a hang or repeatable unexpected exit of the server (CVSS 3.1 Base Score 7.5).</p>
+</li>
+<li>
+<p><a href="https://www.cve.org/CVERecord?id=CVE-2026-46869">CVE-2026-46869</a>: A vulnerability in MySQL Shell (Dump and Load) allows an unauthenticated attacker with network access to access critical data when user interaction is required (CVSS 3.1 Base Score 6.5).</p>
+</li>
+<li>
+<p><a href="https://www.cve.org/CVERecord?id=CVE-2026-46870">CVE-2026-46870</a>: A vulnerability in MySQL Shell (Shell for VS Code) allows a low-privileged attacker with network access to compromise MySQL Shell, with potential scope change impact (CVSS 3.1 Base Score 8.5).</p>
+</li>
+<li>
+<p><a href="https://www.cve.org/CVERecord?id=CVE-2026-46871">CVE-2026-46871</a>: A vulnerability in MySQL Shell (Shell for VS Code) allows a low-privileged attacker with network access via multiple protocols to access critical data (CVSS 3.1 Base Score 6.5).</p>
+</li>
+</ul>
+<h3 id="release-notes-ps-8.4.10-mysql-8410">MySQL 8.4.10<a class="headerlink" href="#release-notes-ps-8.4.10-mysql-8410" title="Permanent link">&para;</a></h3>
+<p>Improvements and bug fixes provided by Oracle for MySQL 8.4.10 and included in Percona Server for MySQL are the following:</p>
+<ul>
+<li>
+<p>Connection attribute parsing could read a length-encoded size field before verifying that the complete field was present in the packet, leading to an out-of-bounds read. A size check is now performed before reading the field. (Bug #39116965)</p>
+</li>
+<li>
+<p>A regression in row size estimation for <code>ROW_FORMAT=COMPRESSED</code> tables could cause <code>CREATE TABLE</code> to fail with <code>Row size too large</code> for tables that were accepted in earlier releases. (Bug #39129182, Bug #120323)</p>
+</li>
+<li>
+<p>Under certain circumstances, when calculating the maximum possible index record size, an assertion failure could occur. (Bug #85060, Bug #25579578)</p>
+</li>
+</ul>
+<p>Find the complete list of bug fixes and changes in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-10.html">MySQL 8.4.10 release notes <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a>.</p>
+<h2 id="release-notes-ps-8.4.10-builds-and-packaging">Builds and packaging<a class="headerlink" href="#release-notes-ps-8.4.10-builds-and-packaging" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Percona Server for MySQL releases include a mixture of PGO and non-PGO builds. Where Profile-Guided Optimization (PGO) is enabled, the compiler uses runtime profiling data from representative workloads to guide optimization, which can improve throughput and reduce latency compared with non-PGO builds.</p>
+</li>
+<li>
+<p>See <a href="https://docs.percona.com/percona-server/8.4/pgo.md">Profile-Guided Optimization (PGO) and non-PGO builds</a> for benefits, considerations, and which build you receive for your platform.</p>
+</li>
+</ul>
+<h2 id="release-notes-ps-8.4.10-known-issues-and-limitations">Known issues and limitations<a class="headerlink" href="#release-notes-ps-8.4.10-known-issues-and-limitations" title="Permanent link">&para;</a></h2>
+<ul>
+<li>In 8.4.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the <a href="https://dev.mysql.com/doc/refman/8.4/en/replication-options-replica.html#sysvar_terminology_use_previous">terminology_use_previous</a> system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.</li>
+</ul>
+<h2 id="release-notes-ps-8.4.10-supplied-components">Supplied components<a class="headerlink" href="#release-notes-ps-8.4.10-supplied-components" title="Permanent link">&para;</a></h2>
+<p>Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona Server for MySQL-based variation of the Percona Distribution for MySQL.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Version</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Orchestrator</td>
+<td><a href="https://github.com/percona/orchestrator/releases/tag/v3.2.6-22">3.2.6-22</a></td>
+<td>The replication topology manager for Percona Server for MySQL</td>
+</tr>
+<tr>
+<td>ProxySQL</td>
+<td><a href="https://docs.percona.com/proxysql/2.7.3.html">2.7.3</a></td>
+<td>A high performance, high-availability, protocol-aware proxy for MySQL</td>
+</tr>
+<tr>
+<td>Percona Toolkit</td>
+<td><a href="https://docs.percona.com/percona-toolkit/release_notes.html#v3-7-1-3-released-2026-04-17">3.7.1-3</a></td>
+<td>The set of scripts to simplify and optimize database operation.</td>
+</tr>
+<tr>
+<td>Percona XtraBackup</td>
+<td><a href="https://docs.percona.com/percona-xtrabackup/8.4/release-notes/8.4.0-6.html">8.4.0-6</a></td>
+<td>An open-source hot backup utility for MySQL-based servers</td>
+</tr>
+<tr>
+<td>MySQL Shell</td>
+<td><a href="https://dev.mysql.com/doc/relnotes/mysql-shell/8.4/en/news-8-4-10.html">8.4.10</a></td>
+<td>An advanced client and code editor for MySQL Server</td>
+</tr>
+<tr>
+<td>MySQL Router</td>
+<td><a href="https://dev.mysql.com/doc/relnotes/mysql-router/8.4/en/news-8-4-10.html">8.4.10</a></td>
+<td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
+</tr>
+</tbody>
+</table></section><section class="print-page" id="release-notes-ps-8.4.8" heading-number="4.2.2"><h1 id="release-notes-ps-8.4.8-percona-distribution-for-mysql-848-using-percona-server-for-mysql-2026-03-12">Percona Distribution for MySQL 8.4.8 using Percona Server for MySQL (2026-03-12)<a class="headerlink" href="#release-notes-ps-8.4.8-percona-distribution-for-mysql-848-using-percona-server-for-mysql-2026-03-12" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.8-8.html">Percona Server for MySQL 8.4.8-8</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-8.html">MySQL 8.4.8 Community Edition</a> and enterprise-grade features developed by Percona.</p>
 <h2 id="release-notes-ps-8.4.8-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-8.4.8-release-highlights" title="Permanent link">&para;</a></h2>
@@ -3270,7 +3448,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-ps-8.4.7" heading-number="4.2.2"><h1 id="release-notes-ps-8.4.7-percona-distribution-for-mysql-847-using-percona-server-for-mysql-2025-12-22">Percona Distribution for MySQL 8.4.7 using Percona Server for MySQL (2025-12-22)<a class="headerlink" href="#release-notes-ps-8.4.7-percona-distribution-for-mysql-847-using-percona-server-for-mysql-2025-12-22" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-ps-8.4.7" heading-number="4.2.3"><h1 id="release-notes-ps-8.4.7-percona-distribution-for-mysql-847-using-percona-server-for-mysql-2025-12-22">Percona Distribution for MySQL 8.4.7 using Percona Server for MySQL (2025-12-22)<a class="headerlink" href="#release-notes-ps-8.4.7-percona-distribution-for-mysql-847-using-percona-server-for-mysql-2025-12-22" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.7-7.html">Percona Server for MySQL 8.4.7-7</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-7.html">MySQL 8.4.6 Community Edition</a> and enterprise-grade features developed by Percona.</p>
 <h2 id="release-notes-ps-8.4.7-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-8.4.7-release-highlights" title="Permanent link">&para;</a></h2>
@@ -3365,7 +3543,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-ps-8.4.6" heading-number="4.2.3"><h1 id="release-notes-ps-8.4.6-percona-distribution-for-mysql-846-using-percona-server-for-mysql-2025-09-08">Percona Distribution for MySQL 8.4.6 using Percona Server for MySQL (2025-09-08)<a class="headerlink" href="#release-notes-ps-8.4.6-percona-distribution-for-mysql-846-using-percona-server-for-mysql-2025-09-08" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-ps-8.4.6" heading-number="4.2.4"><h1 id="release-notes-ps-8.4.6-percona-distribution-for-mysql-846-using-percona-server-for-mysql-2025-09-08">Percona Distribution for MySQL 8.4.6 using Percona Server for MySQL (2025-09-08)<a class="headerlink" href="#release-notes-ps-8.4.6-percona-distribution-for-mysql-846-using-percona-server-for-mysql-2025-09-08" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.6-6.html">Percona Server for MySQL 8.4.6-6</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-6.html">MySQL 8.4.6 Community Edition</a> and enterprise-grade features developed by Percona.</p>
 <h2 id="release-notes-ps-8.4.6-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-8.4.6-release-highlights" title="Permanent link">&para;</a></h2>
@@ -3443,7 +3621,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-ps-8.4.5" heading-number="4.2.4"><h1 id="release-notes-ps-8.4.5-percona-distribution-for-mysql-845-using-percona-server-for-mysql-2025-05-29">Percona Distribution for MySQL 8.4.5 using Percona Server for MySQL (2025-05-29)<a class="headerlink" href="#release-notes-ps-8.4.5-percona-distribution-for-mysql-845-using-percona-server-for-mysql-2025-05-29" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-ps-8.4.5" heading-number="4.2.5"><h1 id="release-notes-ps-8.4.5-percona-distribution-for-mysql-845-using-percona-server-for-mysql-2025-05-29">Percona Distribution for MySQL 8.4.5 using Percona Server for MySQL (2025-05-29)<a class="headerlink" href="#release-notes-ps-8.4.5-percona-distribution-for-mysql-845-using-percona-server-for-mysql-2025-05-29" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.5-5.html">Percona Server for MySQL 8.4.5-5</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-5.html">MySQL 8.4.5 Community Edition</a> and enterprise-grade features developed by Percona.</p>
 <h2 id="release-notes-ps-8.4.5-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-8.4.5-release-highlights" title="Permanent link">&para;</a></h2>
@@ -3569,7 +3747,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-ps-8.4.4" heading-number="4.2.5"><h1 id="release-notes-ps-8.4.4-percona-distribution-for-mysql-844-using-percona-server-for-mysql-2025-03-18">Percona Distribution for MySQL 8.4.4 using Percona Server for MySQL (2025-03-18)<a class="headerlink" href="#release-notes-ps-8.4.4-percona-distribution-for-mysql-844-using-percona-server-for-mysql-2025-03-18" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-ps-8.4.4" heading-number="4.2.6"><h1 id="release-notes-ps-8.4.4-percona-distribution-for-mysql-844-using-percona-server-for-mysql-2025-03-18">Percona Distribution for MySQL 8.4.4 using Percona Server for MySQL (2025-03-18)<a class="headerlink" href="#release-notes-ps-8.4.4-percona-distribution-for-mysql-844-using-percona-server-for-mysql-2025-03-18" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.4-4.html">Percona Server for MySQL 8.4.4-4</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-4.html">MySQL 8.4.4 Community Edition</a> and enterprise-grade features developed by Percona.</p>
 <h2 id="release-notes-ps-8.4.4-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-8.4.4-release-highlights" title="Permanent link">&para;</a></h2>
@@ -3647,7 +3825,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-ps-8.4.3" heading-number="4.2.6"><h1 id="release-notes-ps-8.4.3-percona-distribution-for-mysql-843-using-percona-server-for-mysql-2024-12-18">Percona Distribution for MySQL 8.4.3 using Percona Server for MySQL (2024-12-18)<a class="headerlink" href="#release-notes-ps-8.4.3-percona-distribution-for-mysql-843-using-percona-server-for-mysql-2024-12-18" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-ps-8.4.3" heading-number="4.2.7"><h1 id="release-notes-ps-8.4.3-percona-distribution-for-mysql-843-using-percona-server-for-mysql-2024-12-18">Percona Distribution for MySQL 8.4.3 using Percona Server for MySQL (2024-12-18)<a class="headerlink" href="#release-notes-ps-8.4.3-percona-distribution-for-mysql-843-using-percona-server-for-mysql-2024-12-18" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is the most stable, scalable, and secure open source MySQL distribution, with two download options: one based on Percona Server for MySQL and one based on Percona XtraDB Cluster. <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.3-3.html">Percona Server for MySQL 8.4.3-3</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-1.html">MySQL 8.4.3 Community Edition</a> and enterprise-grade features developed by Percona.</p>
 <h2 id="release-notes-ps-8.4.3-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-8.4.3-release-highlights" title="Permanent link">&para;</a></h2>
@@ -3719,7 +3897,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-ps-8.4.2" heading-number="4.2.7"><h1 id="release-notes-ps-8.4.2-percona-distribution-for-mysql-842-using-percona-server-for-mysql-2024-11-07">Percona Distribution for MySQL 8.4.2 using Percona Server for MySQL (2024-11-07)<a class="headerlink" href="#release-notes-ps-8.4.2-percona-distribution-for-mysql-842-using-percona-server-for-mysql-2024-11-07" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-ps-8.4.2" heading-number="4.2.8"><h1 id="release-notes-ps-8.4.2-percona-distribution-for-mysql-842-using-percona-server-for-mysql-2024-11-07">Percona Distribution for MySQL 8.4.2 using Percona Server for MySQL (2024-11-07)<a class="headerlink" href="#release-notes-ps-8.4.2-percona-distribution-for-mysql-842-using-percona-server-for-mysql-2024-11-07" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is the most stable, scalable, and secure open source MySQL distribution, with two download options: one based on Percona Server for MySQL and one based on Percona XtraDB Cluster. <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.2-2.html">Percona Server for MySQL 8.4.2-2</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-1.html">MySQL 8.4.1 Community Edition</a> and <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-2.html">MySQL 8.4.2 Community Edition</a> and enterprise-grade features developed by Percona.</p>
 <h2 id="release-notes-ps-8.4.2-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-8.4.2-release-highlights" title="Permanent link">&para;</a></h2>
@@ -3787,8 +3965,8 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-ps-8.4.1" heading-number="4.2.8"><h1 id="release-notes-ps-8.4.1-percona-distribution-for-mysql-841-using-percona-server-for-mysql">Percona Distribution for MySQL 8.4.1 using Percona Server for MySQL<a class="headerlink" href="#release-notes-ps-8.4.1-percona-distribution-for-mysql-841-using-percona-server-for-mysql" title="Permanent link">&para;</a></h1>
-<p>Due to a critical fix, MySQL Community Server 8.4.2 was released shortly (22 days later) after MySQL Community Server 8.4.1. Percona has skipped the release of Percona Server for MySQL 8.4.1. Percona Server for MySQL 8.4.2-2 contains all bug fixes and contents from MySQL Community Server 8.4.1 and MySQL Community Server 8.4.2.</p></section><section class="print-page" id="release-notes-ps-8.4" heading-number="4.2.9"><h1 id="release-notes-ps-8.4-percona-distribution-for-mysql-840-using-percona-server-for-mysql-2024-10-25">Percona Distribution for MySQL 8.4.0 using Percona Server for MySQL (2024-10-25)<a class="headerlink" href="#release-notes-ps-8.4-percona-distribution-for-mysql-840-using-percona-server-for-mysql-2024-10-25" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-ps-8.4.1" heading-number="4.2.9"><h1 id="release-notes-ps-8.4.1-percona-distribution-for-mysql-841-using-percona-server-for-mysql">Percona Distribution for MySQL 8.4.1 using Percona Server for MySQL<a class="headerlink" href="#release-notes-ps-8.4.1-percona-distribution-for-mysql-841-using-percona-server-for-mysql" title="Permanent link">&para;</a></h1>
+<p>Due to a critical fix, MySQL Community Server 8.4.2 was released shortly (22 days later) after MySQL Community Server 8.4.1. Percona has skipped the release of Percona Server for MySQL 8.4.1. Percona Server for MySQL 8.4.2-2 contains all bug fixes and contents from MySQL Community Server 8.4.1 and MySQL Community Server 8.4.2.</p></section><section class="print-page" id="release-notes-ps-8.4" heading-number="4.2.10"><h1 id="release-notes-ps-8.4-percona-distribution-for-mysql-840-using-percona-server-for-mysql-2024-10-25">Percona Distribution for MySQL 8.4.0 using Percona Server for MySQL (2024-10-25)<a class="headerlink" href="#release-notes-ps-8.4-percona-distribution-for-mysql-840-using-percona-server-for-mysql-2024-10-25" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is the most stable, scalable, and secure open source MySQL distribution, with two download options: one based on Percona Server for MySQL and one based on Percona XtraDB Cluster. <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.0-1.html">Percona Server for MySQL 8.4.0-1</a>.</p>
 <h2 id="release-notes-ps-8.4-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-8.4-release-highlights" title="Permanent link">&para;</a></h2>
@@ -4516,7 +4694,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>To enable the minor version repository, use the following command:</p>
-<div class="highlight"><pre><span></span><code>sudo percona-release enable pdps-8.4.8
+<div class="highlight"><pre><span></span><code>sudo percona-release enable pdps-8.4.10
 </code></pre></div>
 </div>
 <h3 id="install-pdps-install-percona-distribution-for-mysql-packages">Install Percona Distribution for MySQL packages<a class="headerlink" href="#install-pdps-install-percona-distribution-for-mysql-packages" title="Permanent link">&para;</a></h3>
@@ -4564,7 +4742,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>To enable the minor version repository, use the following command:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pdps-8.4.8
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pdps-8.4.10
 </code></pre></div>
 </div>
 <h3 id="install-pdps-install-percona-distribution-for-mysql-packages_1">Install Percona Distribution for MySQL packages<a class="headerlink" href="#install-pdps-install-percona-distribution-for-mysql-packages_1" title="Permanent link">&para;</a></h3>
@@ -5130,7 +5308,7 @@ Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">18</span><
 <p>After instances are up and running, check <em>Percona Server for MySQL</em> version on each node:</p>
 <div class="highlight"><pre><span></span><code><span class="err">\</span><span class="n">s</span>
 <span class="c1">--------------</span>
-<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">mysql_templates</span><span class="o">/</span><span class="n">PS</span><span class="o">-</span><span class="mi">8</span><span class="n">P</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">mysql</span><span class="w">  </span><span class="n">Ver</span><span class="w"> </span><span class="mi">8</span><span class="p">.</span><span class="mi">4</span><span class="p">.</span><span class="mi">8</span><span class="o">-</span><span class="mi">8</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">x86_64</span><span class="w"> </span><span class="p">(</span><span class="n">Percona</span><span class="w"> </span><span class="n">Server</span><span class="w"> </span><span class="p">(</span><span class="n">GPL</span><span class="p">),</span><span class="w"> </span><span class="n">Release</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="n">Revision</span><span class="w"> </span><span class="mi">159</span><span class="n">f0eb</span><span class="p">)</span>
+<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">mysql_templates</span><span class="o">/</span><span class="n">PS</span><span class="o">-</span><span class="mi">8</span><span class="n">P</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">mysql</span><span class="w">  </span><span class="n">Ver</span><span class="w"> </span><span class="mi">8</span><span class="p">.</span><span class="mi">4</span><span class="p">.</span><span class="mi">10</span><span class="o">-</span><span class="mi">10</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">x86_64</span><span class="w"> </span><span class="p">(</span><span class="n">Percona</span><span class="w"> </span><span class="n">Server</span><span class="w"> </span><span class="p">(</span><span class="n">GPL</span><span class="p">),</span><span class="w"> </span><span class="n">Release</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="n">Revision</span><span class="w"> </span><span class="mi">159</span><span class="n">f0eb</span><span class="p">)</span>
 </code></pre></div>
 </li>
 </ol>
@@ -5286,7 +5464,7 @@ SET<span class="w"> </span>GLOBAL<span class="w"> </span><span class="nv">group_
 <span class="w">   </span>MEMBER_PORT:<span class="w"> </span><span class="m">3306</span>
 <span class="w">  </span>MEMBER_STATE:<span class="w"> </span>ONLINE
 <span class="w">   </span>MEMBER_ROLE:<span class="w"> </span>PRIMARY
-MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.8
+MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.10
 </code></pre></div>
 </li>
 <li>
@@ -5305,7 +5483,7 @@ Query<span class="w"> </span>OK,<span class="w"> </span><span class="m">0</span>
 <span class="w">   </span>MEMBER_PORT:<span class="w"> </span><span class="m">3306</span>
 <span class="w">  </span>MEMBER_STATE:<span class="w"> </span>ONLINE
 <span class="w">   </span>MEMBER_ROLE:<span class="w"> </span>SECONDARY
-MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.8
+MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.10
 ***************************<span class="w"> </span><span class="m">2</span>.<span class="w"> </span>row<span class="w"> </span>***************************
 <span class="w">  </span>CHANNEL_NAME:<span class="w"> </span>group_replication_applier
 <span class="w">     </span>MEMBER_ID:<span class="w"> </span>90a353b8-e6dc-11ea-98fa-08002734ed50
@@ -5313,7 +5491,7 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.8
 <span class="w">   </span>MEMBER_PORT:<span class="w"> </span><span class="m">3306</span>
 <span class="w">  </span>MEMBER_STATE:<span class="w"> </span>ONLINE
 <span class="w">   </span>MEMBER_ROLE:<span class="w"> </span>PRIMARY
-MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.8
+MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.10
 </code></pre></div>
 </li>
 <li>
@@ -5374,7 +5552,7 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.8
 <span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">variable_value</span><span class="o">=</span><span class="s1">&#39;clusterpass&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">variable_name</span><span class="o">=</span><span class="s1">&#39;admin-cluster_password&#39;</span><span class="p">;</span>
 <span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="mi">0</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-hostgroup_manager_verbose&#39;</span><span class="p">;</span>
 <span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;true&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-query_digests_normalize_digest_text&#39;</span><span class="p">;</span>
-<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;8.4.8&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-server_version&#39;</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;8.4.10&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-server_version&#39;</span><span class="p">;</span>
 <span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-default_charset&#39;</span><span class="p">;</span>
 <span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="mi">300</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-tcp_keepalive_time&#39;</span><span class="p">;</span>
 <span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;true&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-use_tcp_keepalive&#39;</span><span class="p">;</span>
@@ -6251,23 +6429,25 @@ we will do our very best to be helpful.</p></section><section class="print-page"
 .print-site-enumerate-headings #release-notes > h1:before { content: '4.1 ' }
 
 .print-site-enumerate-headings #section-4-2 > h1:before { content: '4.2 ' }
-.print-site-enumerate-headings #release-notes-ps-8.4.8 > h1:before { content: '4.2.1 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.10 > h1:before { content: '4.2.1 ' }
 
-.print-site-enumerate-headings #release-notes-ps-8.4.7 > h1:before { content: '4.2.2 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.8 > h1:before { content: '4.2.2 ' }
 
-.print-site-enumerate-headings #release-notes-ps-8.4.6 > h1:before { content: '4.2.3 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.7 > h1:before { content: '4.2.3 ' }
 
-.print-site-enumerate-headings #release-notes-ps-8.4.5 > h1:before { content: '4.2.4 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.6 > h1:before { content: '4.2.4 ' }
 
-.print-site-enumerate-headings #release-notes-ps-8.4.4 > h1:before { content: '4.2.5 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.5 > h1:before { content: '4.2.5 ' }
 
-.print-site-enumerate-headings #release-notes-ps-8.4.3 > h1:before { content: '4.2.6 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.4 > h1:before { content: '4.2.6 ' }
 
-.print-site-enumerate-headings #release-notes-ps-8.4.2 > h1:before { content: '4.2.7 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.3 > h1:before { content: '4.2.7 ' }
 
-.print-site-enumerate-headings #release-notes-ps-8.4.1 > h1:before { content: '4.2.8 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.2 > h1:before { content: '4.2.8 ' }
 
-.print-site-enumerate-headings #release-notes-ps-8.4 > h1:before { content: '4.2.9 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.1 > h1:before { content: '4.2.9 ' }
+
+.print-site-enumerate-headings #release-notes-ps-8.4 > h1:before { content: '4.2.10 ' }
 
 .print-site-enumerate-headings #section-4-3 > h1:before { content: '4.3 ' }
 .print-site-enumerate-headings #release-notes-pxc-8.4.8 > h1:before { content: '4.3.1 ' }
