@@ -12,29 +12,25 @@ This release is based on [Percona Server for MySQL 8.4.10-10](https://docs.perco
 
 ### Percona Server for MySQL 8.4.10-10
 
-Percona Server for MySQL 8.4.10-10 introduces the following features and improvements:
+Percona Server for MySQL 8.4.10-10 introduces the following new features and improvements:
 
 * Integrates the new Key Management Interoperability Protocol (KMIP) library into the key management component.
 
-* Expands Thread Pool statistics with status variables for queue monitoring and wait time analysis.
+* Enhances Thread Pool statistics by adding new status variables for queue monitoring and wait time analysis. Reports the number of requests waiting in normal and high-priority queues, the number of requests not yet entered into a queue, and aggregate queue wait time statistics, including average, minimum, maximum, and standard deviation wait times.
 
-* Introduces JSONL (JSON Lines) output format for Audit Log Filter.
+* Adds JSONL (JSON Lines) output format for Audit Log Filter.
 
-* Increases data dictionary upgrade logging verbosity to aid diagnosis of upgrade failures.
+* Increases the verbosity of the data dictionary upgrade process, making it easier to diagnose issues that occur during upgrade.
 
-* Extends Audit Log Filter logging so the `table_access` class records `read` and `insert` statements.
+* Logs SQL statements for the Audit Log Filter `table_access` class and the `read` and `insert` subclasses.
 
-* Changes audit log shutdown behavior to flush the buffer when the `ASYNCHRONOUS` logging strategy is in use.
+* Flushes the audit log buffer on server shutdown when the `ASYNCHRONOUS` logging strategy is in use, preventing the loss of buffered events.
 
-* Reduces memory pressure in the Audit Log Filter component caused by virtual file system (VFS) buffering.
+* Reduces memory pressure in the Audit Log Filter component caused by VFS buffering.
 
-* Aligns `audit_log_filter.format=NEW` behavior between the 8.0 plugin and the 8.4 component.
+* Aligns the `audit_log_filter.format=NEW` output between the 8.0 plugin and the 8.4 component.
 
-* Suppresses nested general/status records in Audit Log Filter output when `audit_log_filter.event_mode=REDUCED` was enabled.
-
-* Removes `format=OLD` and set JSONL as the default Audit Log Filter output format.
-
-* Optimizes performance of `mem_root_deque`.
+* Optimizes performance for `mem_root_deque`.
 
 This release addresses the following security vulnerabilities:
 
@@ -54,9 +50,9 @@ This release addresses the following security vulnerabilities:
 
 * [CVE-2026-46871](https://www.cve.org/CVERecord?id=CVE-2026-46871): A vulnerability in MySQL Shell (Shell for VS Code) allows a low-privileged attacker with network access via multiple protocols to access critical data (CVSS 3.1 Base Score 6.5).
 
-### MySQL 8.4.9
+### MySQL 8.4.10
 
-Improvements and bug fixes provided by Oracle for MySQL 8.4.9 and included in Percona Server for MySQL are the following:
+Improvements and bug fixes provided by Oracle for MySQL 8.4.10 and included in Percona Server for MySQL are the following:
 
 * Connection attribute parsing could read a length-encoded size field before verifying that the complete field was present in the packet, leading to an out-of-bounds read. A size check is now performed before reading the field. (Bug #39116965)
 
@@ -64,7 +60,7 @@ Improvements and bug fixes provided by Oracle for MySQL 8.4.9 and included in Pe
 
 * Under certain circumstances, when calculating the maximum possible index record size, an assertion failure could occur. (Bug #85060, Bug #25579578)
 
-Find the complete list of bug fixes and changes in the [MySQL 8.4.9 release notes :octicons-link-external-16:](https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-9.html).
+Find the complete list of bug fixes and changes in the [MySQL 8.4.10 release notes :octicons-link-external-16:](https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-10.html).
 
 ## Builds and packaging
 
