@@ -36,7 +36,23 @@ Percona Server for MySQL 8.4.10-10 introduces the following features and improve
 
 * Optimizes performance of `mem_root_deque`.
 
-This release addresses the list of Common Vulnerabilities and Exposures (CVE). Find the list of CVEs in [Percona Server for MySQL 8.4.10-10](https://docs.percona.com/percona-server/8.4/release-notes/8.4.10-10.html) release notes.
+This release addresses the following security vulnerabilities:
+
+* [CVE-2026-46850](https://www.cve.org/CVERecord?id=CVE-2026-46850): A vulnerability in MySQL Shell (Shell for VS Code) allows a low-privileged attacker with network access via HTTP to compromise MySQL Shell, with potential scope change impact on additional products (CVSS 3.1 Base Score 9.9).
+
+* [CVE-2026-46860](https://www.cve.org/CVERecord?id=CVE-2026-46860): A vulnerability in MySQL Router allows an unauthenticated attacker with network access via HTTP to compromise MySQL Router (CVSS 3.1 Base Score 9.8).
+
+* [CVE-2026-46861](https://www.cve.org/CVERecord?id=CVE-2026-46861): A vulnerability in MySQL NDB Cluster (NDB Operator) allows a low-privileged attacker with network access via HTTP to access or modify critical data, with potential scope change impact (CVSS 3.1 Base Score 9.6).
+
+* [CVE-2026-46862](https://www.cve.org/CVERecord?id=CVE-2026-46862): A vulnerability in MySQL Router allows an unauthenticated attacker with network access via TLS to cause a hang or repeatable unexpected exit of MySQL Router (CVSS 3.1 Base Score 7.5).
+
+* [CVE-2026-46863](https://www.cve.org/CVERecord?id=CVE-2026-46863): A vulnerability in MySQL Server connection handling allows an unauthenticated attacker with network access via multiple protocols to cause a hang or repeatable unexpected exit of the server (CVSS 3.1 Base Score 7.5).
+
+* [CVE-2026-46869](https://www.cve.org/CVERecord?id=CVE-2026-46869): A vulnerability in MySQL Shell (Dump and Load) allows an unauthenticated attacker with network access to access critical data when user interaction is required (CVSS 3.1 Base Score 6.5).
+
+* [CVE-2026-46870](https://www.cve.org/CVERecord?id=CVE-2026-46870): A vulnerability in MySQL Shell (Shell for VS Code) allows a low-privileged attacker with network access to compromise MySQL Shell, with potential scope change impact (CVSS 3.1 Base Score 8.5).
+
+* [CVE-2026-46871](https://www.cve.org/CVERecord?id=CVE-2026-46871): A vulnerability in MySQL Shell (Shell for VS Code) allows a low-privileged attacker with network access via multiple protocols to access critical data (CVSS 3.1 Base Score 6.5).
 
 ### MySQL 8.4.9
 
@@ -66,9 +82,9 @@ Review each component’s release notes for What’s new, improvements, or bug f
 
 | Component           | Version   | Description                                |
 | ------------------- | --------- | -------------------------------------------|
-| Orchestrator        | [3.2.6-20](https://github.com/percona/orchestrator/releases/tag/v3.2.6-20)     | The replication topology manager for Percona Server for MySQL|
+| Orchestrator        | [3.2.6-22](https://github.com/percona/orchestrator/releases/tag/v3.2.6-22)     | The replication topology manager for Percona Server for MySQL|
 | ProxySQL            | [2.7.3](https://docs.percona.com/proxysql/2.7.3.html)     | A high performance, high-availability, protocol-aware proxy for MySQL|
-| Percona Toolkit     | [3.7.1](https://docs.percona.com/percona-toolkit/release_notes.html#v3-7-1-released-2025-12-17)     | The set of scripts to simplify and optimize database operation. |
-| Percona XtraBackup  | [8.4.0-5](https://docs.percona.com/percona-xtrabackup/8.4/release-notes/8.4.0-5.html)| An open-source hot backup utility for MySQL-based servers|
+| Percona Toolkit     | [3.7.1-3](https://docs.percona.com/percona-toolkit/release_notes.html#v3-7-1-3-released-2026-04-17)     | The set of scripts to simplify and optimize database operation. |
+| Percona XtraBackup  | [8.4.0-6](https://docs.percona.com/percona-xtrabackup/8.4/release-notes/8.4.0-6.html)| An open-source hot backup utility for MySQL-based servers|
 | MySQL Shell         | [8.4.10](https://dev.mysql.com/doc/relnotes/mysql-shell/8.4/en/news-8-4-10.html)    | An advanced client and code editor for MySQL Server|
 | MySQL Router        | [8.4.10](https://dev.mysql.com/doc/relnotes/mysql-router/8.4/en/news-8-4-10.html)    | Lightweight middleware that provides transparent routing between your application and back-end MySQL servers|
