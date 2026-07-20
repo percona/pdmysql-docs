@@ -10,7 +10,7 @@ This update of Percona Distribution for MySQL using Percona Server for MySQL is 
 8.0.28-20](https://docs.percona.com/percona-server/8.0/release-notes/Percona-Server-8.0.28-20.html).
 
 It also includes the updated version of [Percona XtranBackup
-8.0.28-21](https://docs.percona.com/percona-xtrabackup/latest/release-notes/8.0/8.0.28-21.0.html).
+8.0.28-21](https://docs.percona.com/percona-xtrabackup/8.0/release-notes/8.0/8.0.28-21.0.html).
 
 ## Release Highlights
 
