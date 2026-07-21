@@ -1,4 +1,4 @@
-# Percona Distribution for MySQL 8.0.46 using Percona XtraDB Cluster (2026-07-)
+# Percona Distribution for MySQL 8.0.46 using Percona XtraDB Cluster (2026-07-22)
 
 Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](installing.md).
 
@@ -21,6 +21,14 @@ This release is focused on the Percona XtraDB Cluster-based deployment variation
 ## Release highlights
 
 Improvements and bug fixes provided by Oracle for MySQL 8.0.46 and included in Percona Server for MySQL are documented in the [MySQL 8.0.46 Release Notes](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-46.html).
+
+### Security updates
+
+This release addresses the following security vulnerabilities:
+
+* [CVE-2026-48165](https://www.cve.org/CVERecord?id=CVE-2026-48165): A vulnerability in the handling of the `wsrep_sst_donor` and `wsrep_sst_receive_address` system variables allowed a high-privileged user to execute arbitrary shell commands with the privileges of the `mariadbd` process during State Snapshot Transfer (SST) due to improper input sanitization (CVSS 3.1 Base Score 7.2). :contentReference[oaicite:0]{index=0}. (This fix was backported from MariaDB. Thanks to the MariaDB project for identifying and fixing this issue.)
+
+* [CVE-2026-49261](https://www.cve.org/CVERecord?id=CVE-2026-49261): A vulnerability in MariaDB Server with `wsrep_notify_cmd` enabled allowed a remote attacker to execute arbitrary shell commands by embedding commands in the name of a joiner node due to improper input sanitization (CVSS 3.1 Base Score 10.0). :contentReference[oaicite:0]{index=0}. (This fix was backported from MariaDB. Thanks to the MariaDB project for identifying and fixing this issue.)
 
 ## Supplied components
 
