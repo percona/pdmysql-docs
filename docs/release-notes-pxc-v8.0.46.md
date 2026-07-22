@@ -32,7 +32,7 @@ This release addresses the following security vulnerabilities:
 
 ## Packaging and builds
 
-Percona Distribution for MySQL 8.0.46 adds support for Ubuntu 26.04.
+Percona XtraDB Cluster 8.0.46-37 adds support for Ubuntu 26.04.
 
 ## Supplied components
 
