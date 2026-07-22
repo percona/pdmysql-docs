@@ -64,6 +64,8 @@ Find the complete list of bug fixes and changes in the [MySQL 8.4.10 release not
 
 ## Builds and packaging
 
+* Percona Distribution for MySQL 8.4.10 adds support for Ubuntu 26.04.
+
 * Percona Server for MySQL releases include a mixture of PGO and non-PGO builds. Where Profile-Guided Optimization (PGO) is enabled, the compiler uses runtime profiling data from representative workloads to guide optimization, which can improve throughput and reduce latency compared with non-PGO builds.
 
 * See [Profile-Guided Optimization (PGO) and non-PGO builds](https://docs.percona.com/percona-server/8.4/pgo.html) for benefits, considerations, and which build you receive for your platform.
