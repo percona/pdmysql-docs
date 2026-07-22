@@ -30,7 +30,7 @@ This release addresses the following security vulnerabilities:
 
 * [CVE-2026-49261](https://www.cve.org/CVERecord?id=CVE-2026-49261): A vulnerability in MariaDB Server with `wsrep_notify_cmd` enabled allowed a remote attacker to execute arbitrary shell commands by embedding commands in the name of a joiner node due to improper input sanitization (CVSS 3.1 Base Score 10.0). :contentReference[oaicite:0]{index=0}. (This fix was backported from MariaDB. Thanks to the MariaDB project for identifying and fixing this issue.)
 
-#Packaging and builds
+## Packaging and builds
 
 Percona Distribution for MySQL 8.0.46 adds support for Ubuntu 26.04.
 
