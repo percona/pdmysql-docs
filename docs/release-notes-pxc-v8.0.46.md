@@ -2,17 +2,17 @@
 
 Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](installing.md).
 
-This release is focused on the Percona XtraDB Cluster-based deployment variation. It is based on [Percona XtraDB Cluster 8.0.46-37](https://docs.percona.com/percona-xtradb-cluster/8.0/release-notes/8.0.46-37.html).
+This release is focused on the Percona XtraDB Cluster-based deployment variation. It is based on [Percona XtraDB Cluster 8.0.46-38](https://docs.percona.com/percona-xtradb-cluster/8.0/release-notes/8.0.46-38.html).
 
 !!! note "Final 8.0 series release"
 
-    MySQL 8.0 has officially reached End of Life (EOL). Percona Distribution for MySQL 8.0.46 and Percona Server for MySQL 8.0.46-37 are the final standard releases in the 8.0 series.
+    MySQL 8.0 has officially reached End of Life (EOL). Percona Distribution for MySQL 8.0.46 and Percona XtraDB Cluster 8.0.46-38 are the final standard releases in the 8.0 series.
 
     Future support depends on your product:
 
     **Percona Distribution for MySQL 8.0**: Fully retired. No further releases, bug fixes, security updates, or post-EOL support will be provided.
 
-    **Percona Server for MySQL 8.0**: Standard public support has ended, but extended lifecycle options are available:
+    **Percona XtraDB Cluster 8.0**: Standard public support has ended, but extended lifecycle options are available:
       * **Paid subscribers**: Access to critical updates and precompiled binaries through a private repository.
       * **Community users**: Access to source code only, published quarterly with a delay.
 
@@ -32,7 +32,7 @@ This release addresses the following security vulnerabilities:
 
 ## Packaging and builds
 
-Percona XtraDB Cluster 8.0.46-37 adds support for Ubuntu 26.04.
+Percona XtraDB Cluster 8.0.46-38 adds support for Ubuntu 26.04.
 
 ## Supplied components
 
