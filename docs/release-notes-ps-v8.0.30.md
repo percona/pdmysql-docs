@@ -23,9 +23,9 @@ The following features, variables, or options are available only in [tech previe
 
 * [SASL-based LDAP plugin](https://docs.percona.com/percona-server/8.0/ldap-authentication.html)
 
-* [SASL-based LDAP variables](https://docs.percona.com/percona-server/8.0/ldap-system-variables.html)
+* [SASL-based LDAP variables](https://docs.percona.com/percona-server/8.0/ldap-sasl-variables.html)
 
-* [Fallback server variables for simple LDAP and SASL-based LDAP](https://docs.percona.com/percona-server/8.0/ldap-system-variables.html)
+* [Fallback server variables for simple LDAP and SASL-based LDAP](https://docs.percona.com/percona-server/8.0/ldap-simple-variables.html)
 
 * [FIDO authentication plugin](https://docs.percona.com/percona-server/8.0/fido-authentication-plugin.html)
 
