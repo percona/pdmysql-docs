@@ -185,7 +185,7 @@ nav:
   - Install and update:
     - installing.md
     - install-pdps.md
-    - install-pdpxc.md
+#    - install-pdpxc.md
     - minor-upgrade.md
     - downgrade.md
   - Solutions - high availability:
@@ -193,10 +193,10 @@ nav:
     - architecture-components.md
     - monitoring.md
     - Deployment: deploy-pdps-group-replication.md
-  - Replication manager for Percona XtraDB Cluster:
-    - replication-manager-for-pxc.md
-    - replication-manager-troubleshooting.md
-    - single-replica-manager.md
+#  - Replication manager for Percona XtraDB Cluster:
+#    - replication-manager-for-pxc.md
+#    - replication-manager-troubleshooting.md
+#    - single-replica-manager.md
   - Uninstall:
     - uninstalling.md
     - download-instructions.md
