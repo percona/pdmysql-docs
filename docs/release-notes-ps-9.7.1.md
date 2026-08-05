@@ -78,7 +78,7 @@ Review each component’s release notes for What’s new, improvements, or bug f
 
 | Component           | Version   | Description                                |
 | ------------------- | --------- | -------------------------------------------|
-| Orchestrator        | [3.2.6-22](https://github.com/percona/orchestrator/releases/tag/v3.2.6-22)     | The replication topology manager for Percona Server for MySQL|
+| Orchestrator        | [3.2.6-23](https://github.com/percona/orchestrator/releases/tag/v3.2.6-23)     | The replication topology manager for Percona Server for MySQL|
 | ProxySQL            | [3.0.9](https://docs.percona.com/proxysql/3.0.9.html)     | A high performance, high-availability, protocol-aware proxy for MySQL|
 | Percona XtraBackup  | [9.7.1-rc1](https://docs.percona.com/percona-xtrabackup/9.7/release-notes/9.7.1-rc1.html)| An open-source hot backup utility for MySQL-based servers|
 | MySQL Shell         | [9.7.1](https://dev.mysql.com/doc/relnotes/mysql-shell/9.7/en/news-9-7-1.html)    | An advanced client and code editor for MySQL Server|
