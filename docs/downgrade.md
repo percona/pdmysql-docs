@@ -32,7 +32,7 @@ You have the following downgrade options:
 
 Key Points:
 
-* You cannot downgrade to version 5.7 or earlier
+* You cannot downgrade to version 8.0 or earlier
 
 * You cannot downgrade if you've used new version features
 

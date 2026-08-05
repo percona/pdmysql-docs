@@ -4,9 +4,9 @@ Percona Distribution for MySQL consists of the following **components**:
 
 * [Percona Server for MySQL :octicons-link-external-16:](https://docs.percona.com/percona-server/{{vers}}/) is a drop-in replacement for MySQL Community Edition with the enterprise-grade features embedded by Percona.
 
-* [Percona XtraDB Cluster :octicons-link-external-16:](https://docs.percona.com/percona-xtradb-cluster/8.4/index.html) is the high-available clustering solution for MySQL. It is based on [Percona Server for MySQL :octicons-link-external-16:](https://docs.percona.com/percona-server/{{vers}}/index.html) and uses [Percona XtraBackup :octicons-link-external-16:](https://docs.percona.com/percona-xtrabackup/8.4/index.html) for node provisioning.
+* [Percona XtraDB Cluster :octicons-link-external-16:](https://docs.percona.com/percona-xtradb-cluster/8.4/index.html) is the high-available clustering solution for MySQL. It is based on [Percona Server for MySQL :octicons-link-external-16:](https://docs.percona.com/percona-server/{{vers}}/index.html) and uses [Percona XtraBackup :octicons-link-external-16:](https://docs.percona.com/percona-xtrabackup/{{vers}}/index.html) for node provisioning.
 
-* [Percona XtraBackup :octicons-link-external-16:](https://docs.percona.com/percona-xtrabackup/8.4/) is an open-source hot backup utility for MySQL-based servers that doesn’t lock your database during the backup.
+* [Percona XtraBackup :octicons-link-external-16:](https://docs.percona.com/percona-xtrabackup/{{vers}}/) is an open-source hot backup utility for MySQL-based servers that doesn’t lock your database during the backup.
 
 * [Orchestrator :octicons-link-external-16:(https://github.com/openark/orchestrator) is the replication topology manager for Percona Server for MySQL.
 
@@ -20,8 +20,6 @@ Percona Distribution for MySQL consists of the following **components**:
 
 
 * [MySQL Router :octicons-link-external-16:](https://dev.mysql.com/doc/mysql-router/{{vers}}/en/) is lightweight middleware that provides transparent routing between your application and back-end MySQL servers.
-
-<!-- Clarify whether the following note is valid for 9.7-->
 
 !!! important
 
