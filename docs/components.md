@@ -4,7 +4,7 @@ Percona Distribution for MySQL consists of the following **components**:
 
 * [Percona Server for MySQL :octicons-link-external-16:](https://docs.percona.com/percona-server/{{vers}}/) is a drop-in replacement for MySQL Community Edition with the enterprise-grade features embedded by Percona.
 
-* [Percona XtraDB Cluster :octicons-link-external-16:](https://docs.percona.com/percona-xtradb-cluster/8.4/index.html) is the high-available clustering solution for MySQL. It is based on [Percona Server for MySQL :octicons-link-external-16:](https://docs.percona.com/percona-server/{{vers}}/index.html) and uses [Percona XtraBackup :octicons-link-external-16:](https://docs.percona.com/percona-xtrabackup/{{vers}}/index.html) for node provisioning.
+* [Percona XtraDB Cluster :octicons-link-external-16:](https://docs.percona.com/percona-xtradb-cluster/{{vers}}/index.html) is the high-available clustering solution for MySQL. It is based on [Percona Server for MySQL :octicons-link-external-16:](https://docs.percona.com/percona-server/{{vers}}/index.html) and uses [Percona XtraBackup :octicons-link-external-16:](https://docs.percona.com/percona-xtrabackup/{{vers}}/index.html) for node provisioning.
 
 * [Percona XtraBackup :octicons-link-external-16:](https://docs.percona.com/percona-xtrabackup/{{vers}}/) is an open-source hot backup utility for MySQL-based servers that doesn’t lock your database during the backup.
 
