@@ -615,6 +615,8 @@
       
         
       
+        
+      
     
     
     
@@ -654,6 +656,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="release-notes-ps-8.4.11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Percona Distribution for MySQL 8.4.11 using Percona Server for MySQL (2026-08-20)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2471,6 +2501,17 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#release-notes-ps-8.4.11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Percona Distribution for MySQL 8.4.11 using Percona Server for MySQL (2026-08-20)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#release-notes-ps-8.4.10" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3030,7 +3071,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 
 <h1>Documentation</h1>
  
-<h2>8.4.10 (July 27, 2026)</h2>
+<h2>8.4.11 (August 20, 2026)</h2>
 <!--<h3>Percona Technical Documentation Team</h3>-->
         </section>
         
@@ -3204,6 +3245,9 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <h2 id="release-notes-percona-distribution-for-mysql-using-percona-server-for-mysql">Percona Distribution for MySQL using Percona Server for MySQL<a class="headerlink" href="#release-notes-percona-distribution-for-mysql-using-percona-server-for-mysql" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
+<p><a href="#release-notes-ps-8.4.11">Percona Distribution for MySQL using Percona Server for MySQL 8.4.11 (2026-08-20)</a></p>
+</li>
+<li>
 <p><a href="#release-notes-ps-8.4.10">Percona Distribution for MySQL using Percona Server for MySQL 8.4.10 (2026-06-30)</a></p>
 </li>
 <li>
@@ -3267,7 +3311,107 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
                     <section class='print-page md-section' id='section-4-2' heading-number='4.2'>
                         <h1>Percona Distribution for MySQL using Percona Server for MySQL<a class='headerlink' href='#section-4-2' title='Permanent link'></a>
                         </h1>
-                    <section class="print-page" id="release-notes-ps-8.4.10" heading-number="4.2.1"><h1 id="release-notes-ps-8.4.10-percona-distribution-for-mysql-8410-using-percona-server-for-mysql-2026-06-30">Percona Distribution for MySQL 8.4.10 using Percona Server for MySQL (2026-06-30)<a class="headerlink" href="#release-notes-ps-8.4.10-percona-distribution-for-mysql-8410-using-percona-server-for-mysql-2026-06-30" title="Permanent link">&para;</a></h1>
+                    <section class="print-page" id="release-notes-ps-8.4.11" heading-number="4.2.1"><h1 id="release-notes-ps-8.4.11-percona-distribution-for-mysql-8411-using-percona-server-for-mysql-2026-08-20">Percona Distribution for MySQL 8.4.11 using Percona Server for MySQL (2026-08-20)<a class="headerlink" href="#release-notes-ps-8.4.11-percona-distribution-for-mysql-8411-using-percona-server-for-mysql-2026-08-20" title="Permanent link">&para;</a></h1>
+<p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
+<p>This release is based on <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.11-11.html">Percona Server for MySQL 8.4.11-11</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-11.html">MySQL 8.4.11 Community Edition</a> and enterprise-grade features developed by Percona.</p>
+<h2 id="release-notes-ps-8.4.11-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-8.4.11-release-highlights" title="Permanent link">&para;</a></h2>
+<h3 id="release-notes-ps-8.4.11-percona-server-for-mysql-8411-11">Percona Server for MySQL 8.4.11-11<a class="headerlink" href="#release-notes-ps-8.4.11-percona-server-for-mysql-8411-11" title="Permanent link">&para;</a></h3>
+<p>Percona Server for MySQL 8.4.11-11 introduces the following new features and improvements:</p>
+<ul>
+<li>
+<p>Adds OpenID Connect (OIDC) authentication and authorization. Users can authenticate with Identity tokens issued by external Identity Providers (IDPs) instead of MySQL passwords. The OIDC plugin supports multiple IDPs, maps IDP groups to MySQL roles, supports proxy users based on group membership, and refreshes JSON Web Key Set (JWKS) signing keys at runtime. Find more information in <a href="https://docs.percona.com/percona-server/8.4/openid-connect-authentication.html">OpenID Connect authentication</a> and in <a href="https://docs.percona.com/percona-server/8.4/quickstart-openid-connect.html">Get started with OpenID Connect authentication</a>.</p>
+</li>
+<li>
+<p>Improves InnoDB performance for workloads limited by Least Recently Used (LRU) flush speed. The improvements reduce LRU list mutex contention, restore dedicated LRU manager threads, optimize LRU scanning, and allow single-page flushing to proceed while an LRU batch flush is running.</p>
+</li>
+<li>
+<p>Improves InnoDB buffer pool initialization on NUMA-enabled systems by using multi-threaded memory allocation. The improvement reduces initialization time and can shorten server startup for instances with large buffer pools.</p>
+</li>
+<li>
+<p>Improves InnoDB performance for highly concurrent range-select workloads by reducing <code>BUF_BLOCK_MUTEX</code> contention when multiple threads access the same buffer pool page. The improvement increases throughput for read workloads that repeatedly access the same hot pages.</p>
+</li>
+<li>
+<p>Adds timestamps to the Group Communication System (GCS) debug trace file. The timestamps make large trace files easier to analyze and help correlate Group Replication communication events with other server activity.</p>
+</li>
+</ul>
+<h3 id="release-notes-ps-8.4.11-mysql-8411">MySQL 8.4.11<a class="headerlink" href="#release-notes-ps-8.4.11-mysql-8411" title="Permanent link">&para;</a></h3>
+<p>Improvements and bug fixes introduced by Oracle for MySQL 8.4.11 and included in Percona Server for MySQL are the following:</p>
+<ul>
+<li>
+<p>Fixed an issue that could cause an InnoDB deadlock during <code>B-tree</code> page merges while concurrent searches were running. (Bug #39129182)</p>
+</li>
+<li>
+<p>Fixed an issue where stricter InnoDB row-size validation could reject or generate warnings for table definitions accepted by earlier MySQL LTS releases. (Bug #120323, Bug #39249507)</p>
+</li>
+<li>
+<p>Fixed an issue that could produce incorrect values when adding an <code>AUTO_INCREMENT</code> column to an existing InnoDB table. (Bug #115136, Bug #37105825)</p>
+</li>
+<li>
+<p>Fixed an issue that could return incorrect results when a scalar subquery and its outer query referenced the same Common Table Expression (CTE). (Bug #120403, Bug #39321676)</p>
+</li>
+<li>
+<p>Fixed an issue that could cause some <code>LEFT JOIN</code> queries with OR conditions to perform full table scans instead of index range scans. (Bug #113288, Bug #36061036)</p>
+</li>
+<li>
+<p>Fixed an issue that could prevent the server from starting on Oracle Linux 9 or Red Hat Enterprise Linux 9 when <code>innodb_redo_log_encrypt=ON</code> was configured. (Bug #39181231)</p>
+</li>
+<li>
+<p>Fixed an issue that caused memory leaks in the <code>statement_digest()</code> and <code>statement_digest_text()</code> functions. (Bug #104115, Bug #33073320)</p>
+</li>
+</ul>
+<p>Find the complete list of bug fixes and changes in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-11.html">MySQL 8.4.11 release notes <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a>.</p>
+<h2 id="release-notes-ps-8.4.11-known-issues-and-limitations">Known issues and limitations<a class="headerlink" href="#release-notes-ps-8.4.11-known-issues-and-limitations" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Percona Distribution for MySQL 8.4.11 includes MySQL Shell 8.4.10. Starting with MySQL Shell 26.7, Oracle uses a single-version release model and has discontinued the MySQL Shell 8.4 and 9.7 release series. As a result, MySQL Shell 8.4.11 is not available. MySQL Shell 8.4.10 remains the latest release in the 8.4 series.</p>
+</li>
+<li>
+<p>In 8.4.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the <a href="https://dev.mysql.com/doc/refman/8.4/en/replication-options-replica.html#sysvar_terminology_use_previous">terminology_use_previous</a> system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.</p>
+</li>
+</ul>
+<h2 id="release-notes-ps-8.4.11-supplied-components">Supplied components<a class="headerlink" href="#release-notes-ps-8.4.11-supplied-components" title="Permanent link">&para;</a></h2>
+<p>Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona Server for MySQL-based variation of the Percona Distribution for MySQL.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Version</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Orchestrator</td>
+<td><a href="https://github.com/percona/orchestrator/releases/tag/v3.2.6-24">3.2.6-24</a></td>
+<td>The replication topology manager for Percona Server for MySQL</td>
+</tr>
+<tr>
+<td>ProxySQL</td>
+<td><a href="https://docs.percona.com/proxysql/2.7.3.html">2.7.3</a></td>
+<td>A high performance, high-availability, protocol-aware proxy for MySQL</td>
+</tr>
+<tr>
+<td>Percona Toolkit</td>
+<td><a href="https://docs.percona.com/percona-toolkit/release_notes.html#v3-7-1-3-released-2026-04-17">3.7.1-3</a></td>
+<td>The set of scripts to simplify and optimize database operation.</td>
+</tr>
+<tr>
+<td>Percona XtraBackup</td>
+<td><a href="https://docs.percona.com/percona-xtrabackup/8.4/release-notes/8.4.0-6.html">8.4.0-6</a></td>
+<td>An open-source hot backup utility for MySQL-based servers</td>
+</tr>
+<tr>
+<td>MySQL Shell</td>
+<td><a href="https://dev.mysql.com/doc/relnotes/mysql-shell/8.4/en/news-8-4-10.html">8.4.10</a></td>
+<td>An advanced client and code editor for MySQL Server</td>
+</tr>
+<tr>
+<td>MySQL Router</td>
+<td><a href="https://dev.mysql.com/doc/relnotes/mysql-router/26.7/en/news-26-7-0.html">8.4.11</a></td>
+<td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
+</tr>
+</tbody>
+</table></section><section class="print-page" id="release-notes-ps-8.4.10" heading-number="4.2.2"><h1 id="release-notes-ps-8.4.10-percona-distribution-for-mysql-8410-using-percona-server-for-mysql-2026-06-30">Percona Distribution for MySQL 8.4.10 using Percona Server for MySQL (2026-06-30)<a class="headerlink" href="#release-notes-ps-8.4.10-percona-distribution-for-mysql-8410-using-percona-server-for-mysql-2026-06-30" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <div class="admonition note">
 <p>Percona Distribution for MySQL 8.4.9-9 was not released; 8.4.10-10 is the next build in this series. This release includes enhancements and bug fixes from MySQL 8.4.9 and MySQL 8.4.10.</p>
@@ -3401,7 +3545,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-ps-8.4.8" heading-number="4.2.2"><h1 id="release-notes-ps-8.4.8-percona-distribution-for-mysql-848-using-percona-server-for-mysql-2026-03-12">Percona Distribution for MySQL 8.4.8 using Percona Server for MySQL (2026-03-12)<a class="headerlink" href="#release-notes-ps-8.4.8-percona-distribution-for-mysql-848-using-percona-server-for-mysql-2026-03-12" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-ps-8.4.8" heading-number="4.2.3"><h1 id="release-notes-ps-8.4.8-percona-distribution-for-mysql-848-using-percona-server-for-mysql-2026-03-12">Percona Distribution for MySQL 8.4.8 using Percona Server for MySQL (2026-03-12)<a class="headerlink" href="#release-notes-ps-8.4.8-percona-distribution-for-mysql-848-using-percona-server-for-mysql-2026-03-12" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.8-8.html">Percona Server for MySQL 8.4.8-8</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-8.html">MySQL 8.4.8 Community Edition</a> and enterprise-grade features developed by Percona.</p>
 <h2 id="release-notes-ps-8.4.8-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-8.4.8-release-highlights" title="Permanent link">&para;</a></h2>
@@ -3492,7 +3636,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-ps-8.4.7" heading-number="4.2.3"><h1 id="release-notes-ps-8.4.7-percona-distribution-for-mysql-847-using-percona-server-for-mysql-2025-12-22">Percona Distribution for MySQL 8.4.7 using Percona Server for MySQL (2025-12-22)<a class="headerlink" href="#release-notes-ps-8.4.7-percona-distribution-for-mysql-847-using-percona-server-for-mysql-2025-12-22" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-ps-8.4.7" heading-number="4.2.4"><h1 id="release-notes-ps-8.4.7-percona-distribution-for-mysql-847-using-percona-server-for-mysql-2025-12-22">Percona Distribution for MySQL 8.4.7 using Percona Server for MySQL (2025-12-22)<a class="headerlink" href="#release-notes-ps-8.4.7-percona-distribution-for-mysql-847-using-percona-server-for-mysql-2025-12-22" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.7-7.html">Percona Server for MySQL 8.4.7-7</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-7.html">MySQL 8.4.6 Community Edition</a> and enterprise-grade features developed by Percona.</p>
 <h2 id="release-notes-ps-8.4.7-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-8.4.7-release-highlights" title="Permanent link">&para;</a></h2>
@@ -3587,7 +3731,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-ps-8.4.6" heading-number="4.2.4"><h1 id="release-notes-ps-8.4.6-percona-distribution-for-mysql-846-using-percona-server-for-mysql-2025-09-08">Percona Distribution for MySQL 8.4.6 using Percona Server for MySQL (2025-09-08)<a class="headerlink" href="#release-notes-ps-8.4.6-percona-distribution-for-mysql-846-using-percona-server-for-mysql-2025-09-08" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-ps-8.4.6" heading-number="4.2.5"><h1 id="release-notes-ps-8.4.6-percona-distribution-for-mysql-846-using-percona-server-for-mysql-2025-09-08">Percona Distribution for MySQL 8.4.6 using Percona Server for MySQL (2025-09-08)<a class="headerlink" href="#release-notes-ps-8.4.6-percona-distribution-for-mysql-846-using-percona-server-for-mysql-2025-09-08" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.6-6.html">Percona Server for MySQL 8.4.6-6</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-6.html">MySQL 8.4.6 Community Edition</a> and enterprise-grade features developed by Percona.</p>
 <h2 id="release-notes-ps-8.4.6-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-8.4.6-release-highlights" title="Permanent link">&para;</a></h2>
@@ -3665,7 +3809,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-ps-8.4.5" heading-number="4.2.5"><h1 id="release-notes-ps-8.4.5-percona-distribution-for-mysql-845-using-percona-server-for-mysql-2025-05-29">Percona Distribution for MySQL 8.4.5 using Percona Server for MySQL (2025-05-29)<a class="headerlink" href="#release-notes-ps-8.4.5-percona-distribution-for-mysql-845-using-percona-server-for-mysql-2025-05-29" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-ps-8.4.5" heading-number="4.2.6"><h1 id="release-notes-ps-8.4.5-percona-distribution-for-mysql-845-using-percona-server-for-mysql-2025-05-29">Percona Distribution for MySQL 8.4.5 using Percona Server for MySQL (2025-05-29)<a class="headerlink" href="#release-notes-ps-8.4.5-percona-distribution-for-mysql-845-using-percona-server-for-mysql-2025-05-29" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.5-5.html">Percona Server for MySQL 8.4.5-5</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-5.html">MySQL 8.4.5 Community Edition</a> and enterprise-grade features developed by Percona.</p>
 <h2 id="release-notes-ps-8.4.5-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-8.4.5-release-highlights" title="Permanent link">&para;</a></h2>
@@ -3791,7 +3935,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-ps-8.4.4" heading-number="4.2.6"><h1 id="release-notes-ps-8.4.4-percona-distribution-for-mysql-844-using-percona-server-for-mysql-2025-03-18">Percona Distribution for MySQL 8.4.4 using Percona Server for MySQL (2025-03-18)<a class="headerlink" href="#release-notes-ps-8.4.4-percona-distribution-for-mysql-844-using-percona-server-for-mysql-2025-03-18" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-ps-8.4.4" heading-number="4.2.7"><h1 id="release-notes-ps-8.4.4-percona-distribution-for-mysql-844-using-percona-server-for-mysql-2025-03-18">Percona Distribution for MySQL 8.4.4 using Percona Server for MySQL (2025-03-18)<a class="headerlink" href="#release-notes-ps-8.4.4-percona-distribution-for-mysql-844-using-percona-server-for-mysql-2025-03-18" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.4-4.html">Percona Server for MySQL 8.4.4-4</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-4.html">MySQL 8.4.4 Community Edition</a> and enterprise-grade features developed by Percona.</p>
 <h2 id="release-notes-ps-8.4.4-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-8.4.4-release-highlights" title="Permanent link">&para;</a></h2>
@@ -3869,7 +4013,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-ps-8.4.3" heading-number="4.2.7"><h1 id="release-notes-ps-8.4.3-percona-distribution-for-mysql-843-using-percona-server-for-mysql-2024-12-18">Percona Distribution for MySQL 8.4.3 using Percona Server for MySQL (2024-12-18)<a class="headerlink" href="#release-notes-ps-8.4.3-percona-distribution-for-mysql-843-using-percona-server-for-mysql-2024-12-18" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-ps-8.4.3" heading-number="4.2.8"><h1 id="release-notes-ps-8.4.3-percona-distribution-for-mysql-843-using-percona-server-for-mysql-2024-12-18">Percona Distribution for MySQL 8.4.3 using Percona Server for MySQL (2024-12-18)<a class="headerlink" href="#release-notes-ps-8.4.3-percona-distribution-for-mysql-843-using-percona-server-for-mysql-2024-12-18" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is the most stable, scalable, and secure open source MySQL distribution, with two download options: one based on Percona Server for MySQL and one based on Percona XtraDB Cluster. <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.3-3.html">Percona Server for MySQL 8.4.3-3</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-1.html">MySQL 8.4.3 Community Edition</a> and enterprise-grade features developed by Percona.</p>
 <h2 id="release-notes-ps-8.4.3-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-8.4.3-release-highlights" title="Permanent link">&para;</a></h2>
@@ -3941,7 +4085,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-ps-8.4.2" heading-number="4.2.8"><h1 id="release-notes-ps-8.4.2-percona-distribution-for-mysql-842-using-percona-server-for-mysql-2024-11-07">Percona Distribution for MySQL 8.4.2 using Percona Server for MySQL (2024-11-07)<a class="headerlink" href="#release-notes-ps-8.4.2-percona-distribution-for-mysql-842-using-percona-server-for-mysql-2024-11-07" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-ps-8.4.2" heading-number="4.2.9"><h1 id="release-notes-ps-8.4.2-percona-distribution-for-mysql-842-using-percona-server-for-mysql-2024-11-07">Percona Distribution for MySQL 8.4.2 using Percona Server for MySQL (2024-11-07)<a class="headerlink" href="#release-notes-ps-8.4.2-percona-distribution-for-mysql-842-using-percona-server-for-mysql-2024-11-07" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is the most stable, scalable, and secure open source MySQL distribution, with two download options: one based on Percona Server for MySQL and one based on Percona XtraDB Cluster. <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.2-2.html">Percona Server for MySQL 8.4.2-2</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-1.html">MySQL 8.4.1 Community Edition</a> and <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-2.html">MySQL 8.4.2 Community Edition</a> and enterprise-grade features developed by Percona.</p>
 <h2 id="release-notes-ps-8.4.2-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-8.4.2-release-highlights" title="Permanent link">&para;</a></h2>
@@ -4009,8 +4153,8 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-ps-8.4.1" heading-number="4.2.9"><h1 id="release-notes-ps-8.4.1-percona-distribution-for-mysql-841-using-percona-server-for-mysql">Percona Distribution for MySQL 8.4.1 using Percona Server for MySQL<a class="headerlink" href="#release-notes-ps-8.4.1-percona-distribution-for-mysql-841-using-percona-server-for-mysql" title="Permanent link">&para;</a></h1>
-<p>Due to a critical fix, MySQL Community Server 8.4.2 was released shortly (22 days later) after MySQL Community Server 8.4.1. Percona has skipped the release of Percona Server for MySQL 8.4.1. Percona Server for MySQL 8.4.2-2 contains all bug fixes and contents from MySQL Community Server 8.4.1 and MySQL Community Server 8.4.2.</p></section><section class="print-page" id="release-notes-ps-8.4" heading-number="4.2.10"><h1 id="release-notes-ps-8.4-percona-distribution-for-mysql-840-using-percona-server-for-mysql-2024-10-25">Percona Distribution for MySQL 8.4.0 using Percona Server for MySQL (2024-10-25)<a class="headerlink" href="#release-notes-ps-8.4-percona-distribution-for-mysql-840-using-percona-server-for-mysql-2024-10-25" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-ps-8.4.1" heading-number="4.2.10"><h1 id="release-notes-ps-8.4.1-percona-distribution-for-mysql-841-using-percona-server-for-mysql">Percona Distribution for MySQL 8.4.1 using Percona Server for MySQL<a class="headerlink" href="#release-notes-ps-8.4.1-percona-distribution-for-mysql-841-using-percona-server-for-mysql" title="Permanent link">&para;</a></h1>
+<p>Due to a critical fix, MySQL Community Server 8.4.2 was released shortly (22 days later) after MySQL Community Server 8.4.1. Percona has skipped the release of Percona Server for MySQL 8.4.1. Percona Server for MySQL 8.4.2-2 contains all bug fixes and contents from MySQL Community Server 8.4.1 and MySQL Community Server 8.4.2.</p></section><section class="print-page" id="release-notes-ps-8.4" heading-number="4.2.11"><h1 id="release-notes-ps-8.4-percona-distribution-for-mysql-840-using-percona-server-for-mysql-2024-10-25">Percona Distribution for MySQL 8.4.0 using Percona Server for MySQL (2024-10-25)<a class="headerlink" href="#release-notes-ps-8.4-percona-distribution-for-mysql-840-using-percona-server-for-mysql-2024-10-25" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is the most stable, scalable, and secure open source MySQL distribution, with two download options: one based on Percona Server for MySQL and one based on Percona XtraDB Cluster. <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.0-1.html">Percona Server for MySQL 8.4.0-1</a>.</p>
 <h2 id="release-notes-ps-8.4-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-8.4-release-highlights" title="Permanent link">&para;</a></h2>
@@ -4864,7 +5008,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>To enable the minor version repository, use the following command:</p>
-<div class="highlight"><pre><span></span><code>sudo percona-release enable pdps-8.4.10
+<div class="highlight"><pre><span></span><code>sudo percona-release enable pdps-8.4.11
 </code></pre></div>
 </div>
 <h3 id="install-pdps-install-percona-distribution-for-mysql-packages">Install Percona Distribution for MySQL packages<a class="headerlink" href="#install-pdps-install-percona-distribution-for-mysql-packages" title="Permanent link">&para;</a></h3>
@@ -4912,7 +5056,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>To enable the minor version repository, use the following command:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pdps-8.4.10
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pdps-8.4.11
 </code></pre></div>
 </div>
 <h3 id="install-pdps-install-percona-distribution-for-mysql-packages_1">Install Percona Distribution for MySQL packages<a class="headerlink" href="#install-pdps-install-percona-distribution-for-mysql-packages_1" title="Permanent link">&para;</a></h3>
@@ -5476,7 +5620,7 @@ Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">18</span><
 <p>After instances are up and running, check <em>Percona Server for MySQL</em> version on each node:</p>
 <div class="highlight"><pre><span></span><code><span class="err">\</span><span class="n">s</span>
 <span class="c1">--------------</span>
-<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">mysql_templates</span><span class="o">/</span><span class="n">PS</span><span class="o">-</span><span class="mi">8</span><span class="n">P</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">mysql</span><span class="w">  </span><span class="n">Ver</span><span class="w"> </span><span class="mi">8</span><span class="p">.</span><span class="mi">4</span><span class="p">.</span><span class="mi">10</span><span class="o">-</span><span class="mi">10</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">x86_64</span><span class="w"> </span><span class="p">(</span><span class="n">Percona</span><span class="w"> </span><span class="n">Server</span><span class="w"> </span><span class="p">(</span><span class="n">GPL</span><span class="p">),</span><span class="w"> </span><span class="n">Release</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="n">Revision</span><span class="w"> </span><span class="mi">159</span><span class="n">f0eb</span><span class="p">)</span>
+<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">mysql_templates</span><span class="o">/</span><span class="n">PS</span><span class="o">-</span><span class="mi">8</span><span class="n">P</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">mysql</span><span class="w">  </span><span class="n">Ver</span><span class="w"> </span><span class="mi">8</span><span class="p">.</span><span class="mi">4</span><span class="p">.</span><span class="mi">11</span><span class="o">-</span><span class="mi">11</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">x86_64</span><span class="w"> </span><span class="p">(</span><span class="n">Percona</span><span class="w"> </span><span class="n">Server</span><span class="w"> </span><span class="p">(</span><span class="n">GPL</span><span class="p">),</span><span class="w"> </span><span class="n">Release</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="n">Revision</span><span class="w"> </span><span class="mi">159</span><span class="n">f0eb</span><span class="p">)</span>
 </code></pre></div>
 </li>
 </ol>
@@ -5484,17 +5628,17 @@ Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">18</span><
 <ol>
 <li>
 <p>Create a user for administration. We will use the user <code>dba</code> in our setup:</p>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">dba</span><span class="o">@</span><span class="n">localhost</span><span class="w"> </span><span class="n">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">&#39;dbapw&#39;</span><span class="p">;</span>
-<span class="k">CREATE</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">dba</span><span class="o">@</span><span class="s1">&#39;192.168.%&#39;</span><span class="w"> </span><span class="n">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">&#39;dbapw&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">dba</span><span class="o">@</span><span class="n">localhost</span><span class="w"> </span><span class="n">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">'dbapw'</span><span class="p">;</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">dba</span><span class="o">@</span><span class="s1">'192.168.%'</span><span class="w"> </span><span class="n">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">'dbapw'</span><span class="p">;</span>
 
 <span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">dba</span><span class="o">@</span><span class="n">localhost</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">grant</span><span class="w"> </span><span class="k">option</span><span class="p">;</span>
-<span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">dba</span><span class="o">@</span><span class="s1">&#39;192.168.%&#39;</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">grant</span><span class="w"> </span><span class="k">option</span><span class="p">;</span>
+<span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">dba</span><span class="o">@</span><span class="s1">'192.168.%'</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">grant</span><span class="w"> </span><span class="k">option</span><span class="p">;</span>
 </code></pre></div>
 <p>Log out from the client as the root user and log in as the <code>dba</code> user.</p>
 </li>
 <li>
 <p>Make sure to have a good and unique SERVER_ID value:</p>
-<div class="highlight"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="k">global</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;server_id&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="k">global</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">'server_id'</span><span class="p">;</span>
 <span class="o">+</span><span class="c1">---------------+-------+</span>
 <span class="o">|</span><span class="w"> </span><span class="n">Variable_name</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Value</span><span class="w"> </span><span class="o">|</span>
 <span class="o">+</span><span class="c1">---------------+-------+</span>
@@ -5548,13 +5692,13 @@ slave-preserve-commit-order                                 = 1
 ######################################
 #Group Replication
 ######################################
-plugin_load_add                                    =&#39;group_replication.so&#39;
-plugin-load-add                                    =&#39;mysql_clone.so&#39;
-group_replication_group_name       =&quot;aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa&quot;  #&lt;-- Not good. Use something
-                                         that will help you to identify the GR transactions and from where they come from IE &quot;dc1euz1-aaaa-aaaa-aaaa-aaaaaaaaaaaa&quot;
+plugin_load_add                                    ='group_replication.so'
+plugin-load-add                                    ='mysql_clone.so'
+group_replication_group_name       ="aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"  #&lt;-- Not good. Use something
+                                         that will help you to identify the GR transactions and from where they come from IE "dc1euz1-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
 group_replication_start_on_boot                     =off
-group_replication_local_address                     = &quot;192.168.4.81/2/3/4:33061&quot;  &lt;---- CHANGE THIS TO MATCH EACH NODE LOCAL IP
-group_replication_group_seeds                       = &quot;192.168.4.81:33061,192.168.4.82:33061,192.168.4.83:33061,192.168.4.84:33061&quot;
+group_replication_local_address                     = "192.168.4.81/2/3/4:33061"  &lt;---- CHANGE THIS TO MATCH EACH NODE LOCAL IP
+group_replication_group_seeds                       = "192.168.4.81:33061,192.168.4.82:33061,192.168.4.83:33061,192.168.4.84:33061"
 group_replication_bootstrap_group                   = off
 transaction-write-set-extraction                           = XXHASH64
 </code></pre></div>
@@ -5573,22 +5717,22 @@ transaction-write-set-extraction                           = XXHASH64
 <li>
 <p>On every node, create a user for replication</p>
 <div class="highlight"><pre><span></span><code><span class="k">SET</span><span class="w"> </span><span class="n">SQL_LOG_BIN</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-<span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="n">replica</span><span class="o">@</span><span class="s1">&#39;192.168.4.%&#39;</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;replicapw&#39;</span><span class="p">;</span><span class="w">   </span><span class="o">#&lt;</span><span class="c1">--- Please note the filter by IP is more restrictive</span>
-<span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="n">REPLICATION</span><span class="w"> </span><span class="n">SLAVE</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">replica</span><span class="o">@</span><span class="s1">&#39;192.168.4.%&#39;</span><span class="p">;</span>
+<span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="n">replica</span><span class="o">@</span><span class="s1">'192.168.4.%'</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">'replicapw'</span><span class="p">;</span><span class="w">   </span><span class="o">#&lt;</span><span class="c1">--- Please note the filter by IP is more restrictive</span>
+<span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="n">REPLICATION</span><span class="w"> </span><span class="n">SLAVE</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">replica</span><span class="o">@</span><span class="s1">'192.168.4.%'</span><span class="p">;</span>
 <span class="w"> </span><span class="n">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span>
 <span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">SQL_LOG_BIN</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
 </code></pre></div>
 </li>
 <li>
 <p>Link the nodes with the replication channel.</p>
-<div class="highlight"><pre><span></span><code><span class="n">CHANGE</span><span class="w"> </span><span class="n">MASTER</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">MASTER_USER</span><span class="o">=</span><span class="s1">&#39;replica&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">MASTER_PASSWORD</span><span class="o">=</span><span class="s1">&#39;replicapw&#39;</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="n">CHANNEL</span><span class="w"> </span><span class="s1">&#39;group_replication_recovery&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">CHANGE</span><span class="w"> </span><span class="n">MASTER</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">MASTER_USER</span><span class="o">=</span><span class="s1">'replica'</span><span class="p">,</span><span class="w"> </span><span class="n">MASTER_PASSWORD</span><span class="o">=</span><span class="s1">'replicapw'</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="n">CHANNEL</span><span class="w"> </span><span class="s1">'group_replication_recovery'</span><span class="p">;</span>
 </code></pre></div>
 <p>Run this command on all nodes.</p>
 </li>
 <li>
 <p>Check the current status:</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node1</span><span class="p">)</span><span class="w"> </span><span class="p">[(</span><span class="k">none</span><span class="p">)]</span><span class="o">&gt;</span><span class="err">\</span><span class="n">u</span><span class="w"> </span><span class="n">performance_schema</span>
-<span class="w">    </span><span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node1</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="n">performance_schema</span><span class="p">]</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">tables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;%repl%&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node1</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="n">performance_schema</span><span class="p">]</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">tables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">'%repl%'</span><span class="p">;</span>
 <span class="w">    </span><span class="o">+</span><span class="c1">-------------------------------------------+</span>
 <span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">Tables_in_performance_schema</span><span class="w"> </span><span class="p">(</span><span class="o">%</span><span class="n">repl</span><span class="o">%</span><span class="p">)</span><span class="w">     </span><span class="o">|</span>
 <span class="w">    </span><span class="o">+</span><span class="c1">-------------------------------------------+</span>
@@ -5632,7 +5776,7 @@ SET<span class="w"> </span>GLOBAL<span class="w"> </span><span class="nv">group_
 <span class="w">   </span>MEMBER_PORT:<span class="w"> </span><span class="m">3306</span>
 <span class="w">  </span>MEMBER_STATE:<span class="w"> </span>ONLINE
 <span class="w">   </span>MEMBER_ROLE:<span class="w"> </span>PRIMARY
-MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.10
+MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.11
 </code></pre></div>
 </li>
 <li>
@@ -5651,7 +5795,7 @@ Query<span class="w"> </span>OK,<span class="w"> </span><span class="m">0</span>
 <span class="w">   </span>MEMBER_PORT:<span class="w"> </span><span class="m">3306</span>
 <span class="w">  </span>MEMBER_STATE:<span class="w"> </span>ONLINE
 <span class="w">   </span>MEMBER_ROLE:<span class="w"> </span>SECONDARY
-MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.10
+MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.11
 ***************************<span class="w"> </span><span class="m">2</span>.<span class="w"> </span>row<span class="w"> </span>***************************
 <span class="w">  </span>CHANNEL_NAME:<span class="w"> </span>group_replication_applier
 <span class="w">     </span>MEMBER_ID:<span class="w"> </span>90a353b8-e6dc-11ea-98fa-08002734ed50
@@ -5659,7 +5803,7 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.10
 <span class="w">   </span>MEMBER_PORT:<span class="w"> </span><span class="m">3306</span>
 <span class="w">  </span>MEMBER_STATE:<span class="w"> </span>ONLINE
 <span class="w">   </span>MEMBER_ROLE:<span class="w"> </span>PRIMARY
-MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.10
+MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.11
 </code></pre></div>
 </li>
 <li>
@@ -5708,27 +5852,27 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.10
 </li>
 <li>
 <p>Create the monitoring user on MySQL Group Replication nodes:</p>
-<div class="highlight"><pre><span></span><code><span class="k">create</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">monitor</span><span class="o">@</span><span class="s1">&#39;192.168.4.%&#39;</span><span class="w"> </span><span class="n">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">&#39;monitor&#39;</span><span class="p">;</span>
-<span class="k">grant</span><span class="w"> </span><span class="k">usage</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">&#39;monitor&#39;</span><span class="o">@</span><span class="s1">&#39;192.168.4.%&#39;</span><span class="p">;</span>
-<span class="k">grant</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">&#39;monitor&#39;</span><span class="o">@</span><span class="s1">&#39;192.168.4.%&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">create</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">monitor</span><span class="o">@</span><span class="s1">'192.168.4.%'</span><span class="w"> </span><span class="n">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">'monitor'</span><span class="p">;</span>
+<span class="k">grant</span><span class="w"> </span><span class="k">usage</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">'monitor'</span><span class="o">@</span><span class="s1">'192.168.4.%'</span><span class="p">;</span>
+<span class="k">grant</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">'monitor'</span><span class="o">@</span><span class="s1">'192.168.4.%'</span><span class="p">;</span>
 </code></pre></div>
 </li>
 <li>
 <p>Define basic variables:</p>
-<div class="highlight"><pre><span></span><code><span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;admin:admin;cluster1:clusterpass&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;admin-admin_credentials&#39;</span><span class="p">;</span>
-<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">variable_value</span><span class="o">=</span><span class="s1">&#39;cluster1&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">variable_name</span><span class="o">=</span><span class="s1">&#39;admin-cluster_username&#39;</span><span class="p">;</span>
-<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">variable_value</span><span class="o">=</span><span class="s1">&#39;clusterpass&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">variable_name</span><span class="o">=</span><span class="s1">&#39;admin-cluster_password&#39;</span><span class="p">;</span>
-<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="mi">0</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-hostgroup_manager_verbose&#39;</span><span class="p">;</span>
-<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;true&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-query_digests_normalize_digest_text&#39;</span><span class="p">;</span>
-<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;8.4.10&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-server_version&#39;</span><span class="p">;</span>
-<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-default_charset&#39;</span><span class="p">;</span>
-<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="mi">300</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-tcp_keepalive_time&#39;</span><span class="p">;</span>
-<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;true&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-use_tcp_keepalive&#39;</span><span class="p">;</span>
-<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;true&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-verbose_query_error&#39;</span><span class="p">;</span>
-<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;true&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-show_processlist_extended&#39;</span><span class="p">;</span>
-<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="mi">50000</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-max_stmts_cache&#39;</span><span class="p">;</span>
-<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;false&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;admin-web_enabled&#39;</span><span class="p">;</span>
-<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">&#39;mysql-set_query_lock_on_hostgroup&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">'admin:admin;cluster1:clusterpass'</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">'admin-admin_credentials'</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">variable_value</span><span class="o">=</span><span class="s1">'cluster1'</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">variable_name</span><span class="o">=</span><span class="s1">'admin-cluster_username'</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">variable_value</span><span class="o">=</span><span class="s1">'clusterpass'</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">variable_name</span><span class="o">=</span><span class="s1">'admin-cluster_password'</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="mi">0</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">'mysql-hostgroup_manager_verbose'</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">'true'</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">'mysql-query_digests_normalize_digest_text'</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">'8.4.11'</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">'mysql-server_version'</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">'utf8'</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">'mysql-default_charset'</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="mi">300</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">'mysql-tcp_keepalive_time'</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">'true'</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">'mysql-use_tcp_keepalive'</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">'true'</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">'mysql-verbose_query_error'</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">'true'</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">'mysql-show_processlist_extended'</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="mi">50000</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">'mysql-max_stmts_cache'</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">'false'</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">'admin-web_enabled'</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">'0'</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">'mysql-set_query_lock_on_hostgroup'</span><span class="p">;</span>
 
 <span class="k">load</span><span class="w"> </span><span class="k">admin</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">run</span><span class="p">;</span><span class="n">save</span><span class="w"> </span><span class="k">admin</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">disk</span><span class="p">;</span>
 <span class="k">load</span><span class="w"> </span><span class="n">mysql</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">run</span><span class="p">;</span><span class="n">save</span><span class="w"> </span><span class="n">mysql</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">disk</span><span class="p">;</span>
@@ -5740,8 +5884,8 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.10
 </li>
 <li>
 <p>Set up the nodes as a cluster:</p>
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">proxysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="s1">&#39;192.168.4.191&#39;</span><span class="p">,</span><span class="mi">6032</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="s1">&#39;PRIMARY&#39;</span><span class="p">);</span>
-<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">proxysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="s1">&#39;192.168.4.192&#39;</span><span class="p">,</span><span class="mi">6032</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="s1">&#39;SECONDARY&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">proxysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="s1">'192.168.4.191'</span><span class="p">,</span><span class="mi">6032</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="s1">'PRIMARY'</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">proxysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="s1">'192.168.4.192'</span><span class="p">,</span><span class="mi">6032</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="s1">'SECONDARY'</span><span class="p">);</span>
 <span class="k">load</span><span class="w"> </span><span class="n">proxysql</span><span class="w"> </span><span class="n">servers</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">run</span><span class="p">;</span><span class="n">save</span><span class="w"> </span><span class="n">proxysql</span><span class="w"> </span><span class="n">servers</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">disk</span><span class="p">;</span>
 </code></pre></div>
 </li>
@@ -5750,24 +5894,24 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.10
 <ol>
 <li>
 <p>Create one or more valid users. Define these user(s). For example, if you have a user named <code>app_gr</code> with the password <code>test</code>, and that has access to your Group Replication cluster, the command to define the user is the following:</p>
-<div class="highlight"><pre><span></span><code><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">mysql_users</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">password</span><span class="p">,</span><span class="n">active</span><span class="p">,</span><span class="n">default_hostgroup</span><span class="p">,</span><span class="n">default_schema</span><span class="p">,</span><span class="n">transaction_persistent</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;app_gr&#39;</span><span class="p">,</span><span class="s1">&#39;test&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="s1">&#39;mysql&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;application test user GR&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">mysql_users</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">password</span><span class="p">,</span><span class="n">active</span><span class="p">,</span><span class="n">default_hostgroup</span><span class="p">,</span><span class="n">default_schema</span><span class="p">,</span><span class="n">transaction_persistent</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">'app_gr'</span><span class="p">,</span><span class="s1">'test'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="s1">'mysql'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">'application test user GR'</span><span class="p">);</span>
 <span class="k">LOAD</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">USERS</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">RUNTIME</span><span class="p">;</span><span class="n">SAVE</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">USERS</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">DISK</span><span class="p">;</span>
 </code></pre></div>
 </li>
 <li>
 <p>Define servers:</p>
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;192.168.4.81&#39;</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">&#39;GR1&#39;</span><span class="p">);</span>
-<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;192.168.4.81&#39;</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">&#39;GR1&#39;</span><span class="p">);</span>
-<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;192.168.4.82&#39;</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">&#39;GR2&#39;</span><span class="p">);</span>
-<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;192.168.4.83&#39;</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">&#39;GR2&#39;</span><span class="p">);</span>
-<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;192.168.4.84&#39;</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">&#39;GR2&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'192.168.4.81'</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">'GR1'</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'192.168.4.81'</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">'GR1'</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'192.168.4.82'</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">'GR2'</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'192.168.4.83'</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">'GR2'</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'192.168.4.84'</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">'GR2'</span><span class="p">);</span>
 <span class="k">LOAD</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">SERVERS</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">RUNTIME</span><span class="p">;</span><span class="w"> </span><span class="n">SAVE</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">SERVERS</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">DISK</span><span class="p">;</span>
 </code></pre></div>
 </li>
 <li>
 <p>Define query rules to get read / write split:</p>
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_query_rules</span><span class="w"> </span><span class="p">(</span><span class="n">rule_id</span><span class="p">,</span><span class="n">proxy_port</span><span class="p">,</span><span class="n">username</span><span class="p">,</span><span class="n">destination_hostgroup</span><span class="p">,</span><span class="n">active</span><span class="p">,</span><span class="n">retries</span><span class="p">,</span><span class="n">match_digest</span><span class="p">,</span><span class="n">apply</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="mi">4040</span><span class="p">,</span><span class="mi">6033</span><span class="p">,</span><span class="s1">&#39;app_gr&#39;</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;^SELECT.*FOR UPDATE&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_query_rules</span><span class="w"> </span><span class="p">(</span><span class="n">rule_id</span><span class="p">,</span><span class="n">proxy_port</span><span class="p">,</span><span class="n">username</span><span class="p">,</span><span class="n">destination_hostgroup</span><span class="p">,</span><span class="n">active</span><span class="p">,</span><span class="n">retries</span><span class="p">,</span><span class="n">match_digest</span><span class="p">,</span><span class="n">multiplex</span><span class="p">,</span><span class="n">apply</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="mi">4042</span><span class="p">,</span><span class="mi">6033</span><span class="p">,</span><span class="s1">&#39;app_gr&#39;</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;^SELECT.*$&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_query_rules</span><span class="w"> </span><span class="p">(</span><span class="n">rule_id</span><span class="p">,</span><span class="n">proxy_port</span><span class="p">,</span><span class="n">username</span><span class="p">,</span><span class="n">destination_hostgroup</span><span class="p">,</span><span class="n">active</span><span class="p">,</span><span class="n">retries</span><span class="p">,</span><span class="n">match_digest</span><span class="p">,</span><span class="n">apply</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="mi">4040</span><span class="p">,</span><span class="mi">6033</span><span class="p">,</span><span class="s1">'app_gr'</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">'^SELECT.*FOR UPDATE'</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_query_rules</span><span class="w"> </span><span class="p">(</span><span class="n">rule_id</span><span class="p">,</span><span class="n">proxy_port</span><span class="p">,</span><span class="n">username</span><span class="p">,</span><span class="n">destination_hostgroup</span><span class="p">,</span><span class="n">active</span><span class="p">,</span><span class="n">retries</span><span class="p">,</span><span class="n">match_digest</span><span class="p">,</span><span class="n">multiplex</span><span class="p">,</span><span class="n">apply</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="mi">4042</span><span class="p">,</span><span class="mi">6033</span><span class="p">,</span><span class="s1">'app_gr'</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">'^SELECT.*$'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
 <span class="k">LOAD</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">QUERY</span><span class="w"> </span><span class="n">RULES</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">RUN</span><span class="p">;</span><span class="n">SAVE</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">QUERY</span><span class="w"> </span><span class="n">RULES</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">DISK</span><span class="p">;</span>
 </code></pre></div>
 </li>
@@ -5838,7 +5982,7 @@ writer_is_also_reader: 1
 }
 # Script used to check if Proxy is running
 vrrp_script check_proxy {
-  script &quot;killall -0 proxysql&quot;
+  script "killall -0 proxysql"
   interval 2
   weight 2
 }
@@ -5922,7 +6066,7 @@ vrrp_instance VI_01 {
 +----------------------------------------------+
 </code></pre></div>
 <p>For example, use this command  to get the lag in number of transactions on a node:</p>
-<div class="highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span><span class="o">@</span><span class="n">last_exec</span><span class="p">:</span><span class="o">=</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="w"> </span><span class="o">@@</span><span class="k">global</span><span class="p">.</span><span class="n">GTID_EXECUTED</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">last_executed</span><span class="p">;</span><span class="k">select</span><span class="w">  </span><span class="o">@</span><span class="n">last_rec</span><span class="p">:</span><span class="o">=</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="n">Received_transaction_set</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">last_received</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">performance_schema</span><span class="p">.</span><span class="n">replication_connection_status</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Channel_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;group_replication_applier&#39;</span><span class="p">;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="p">(</span><span class="o">@</span><span class="n">last_rec</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">@</span><span class="n">last_exec</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">real_lag</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span><span class="o">@</span><span class="n">last_exec</span><span class="p">:</span><span class="o">=</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="w"> </span><span class="o">@@</span><span class="k">global</span><span class="p">.</span><span class="n">GTID_EXECUTED</span><span class="p">,</span><span class="s1">':'</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="s1">'-'</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">last_executed</span><span class="p">;</span><span class="k">select</span><span class="w">  </span><span class="o">@</span><span class="n">last_rec</span><span class="p">:</span><span class="o">=</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="n">Received_transaction_set</span><span class="p">,</span><span class="s1">':'</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="s1">'-'</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">last_received</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">performance_schema</span><span class="p">.</span><span class="n">replication_connection_status</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Channel_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'group_replication_applier'</span><span class="p">;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="p">(</span><span class="o">@</span><span class="n">last_rec</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">@</span><span class="n">last_exec</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">real_lag</span><span class="p">;</span>
 <span class="o">+</span><span class="c1">---------------+</span>
 <span class="o">|</span><span class="w"> </span><span class="n">last_executed</span><span class="w"> </span><span class="o">|</span>
 <span class="o">+</span><span class="c1">---------------+</span>
@@ -5952,14 +6096,14 @@ vrrp_instance VI_01 {
 <span class="w">  </span><span class="n">conn_status</span><span class="p">.</span><span class="n">LAST_QUEUED_TRANSACTION</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">last_queued_transaction</span><span class="p">,</span>
 <span class="w">  </span><span class="n">applier_status</span><span class="p">.</span><span class="n">LAST_APPLIED_TRANSACTION</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">last_applied_transaction</span><span class="p">,</span>
 <span class="w">  </span><span class="n">LAST_APPLIED_TRANSACTION_END_APPLY_TIMESTAMP</span><span class="w"> </span><span class="o">-</span>
-<span class="w">                            </span><span class="n">LAST_APPLIED_TRANSACTION_ORIGINAL_COMMIT_TIMESTAMP</span><span class="w"> </span><span class="s1">&#39;rep delay (sec)&#39;</span><span class="p">,</span>
+<span class="w">                            </span><span class="n">LAST_APPLIED_TRANSACTION_ORIGINAL_COMMIT_TIMESTAMP</span><span class="w"> </span><span class="s1">'rep delay (sec)'</span><span class="p">,</span>
 <span class="w">  </span><span class="n">LAST_QUEUED_TRANSACTION_START_QUEUE_TIMESTAMP</span><span class="w"> </span><span class="o">-</span>
-<span class="w">                           </span><span class="n">LAST_QUEUED_TRANSACTION_ORIGINAL_COMMIT_TIMESTAMP</span><span class="w"> </span><span class="s1">&#39;transport time&#39;</span><span class="p">,</span>
+<span class="w">                           </span><span class="n">LAST_QUEUED_TRANSACTION_ORIGINAL_COMMIT_TIMESTAMP</span><span class="w"> </span><span class="s1">'transport time'</span><span class="p">,</span>
 <span class="w">  </span><span class="n">LAST_QUEUED_TRANSACTION_END_QUEUE_TIMESTAMP</span><span class="w"> </span><span class="o">-</span>
-<span class="w">                           </span><span class="n">LAST_QUEUED_TRANSACTION_START_QUEUE_TIMESTAMP</span><span class="w"> </span><span class="s1">&#39;time RL&#39;</span><span class="p">,</span>
+<span class="w">                           </span><span class="n">LAST_QUEUED_TRANSACTION_START_QUEUE_TIMESTAMP</span><span class="w"> </span><span class="s1">'time RL'</span><span class="p">,</span>
 <span class="w">  </span><span class="n">LAST_APPLIED_TRANSACTION_END_APPLY_TIMESTAMP</span><span class="w"> </span><span class="o">-</span>
-<span class="w">                           </span><span class="n">LAST_APPLIED_TRANSACTION_START_APPLY_TIMESTAMP</span><span class="w"> </span><span class="s1">&#39;apply time&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">GTID_SUBTRACT</span><span class="p">(</span><span class="n">LAST_QUEUED_TRANSACTION</span><span class="p">,</span><span class="w"> </span><span class="n">LAST_APPLIED_TRANSACTION</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;&quot;</span><span class="p">,</span><span class="ss">&quot;0&quot;</span><span class="w"> </span><span class="p">,</span><span class="w">        </span><span class="k">abs</span><span class="p">(</span><span class="n">time_to_sec</span><span class="p">(</span><span class="k">if</span><span class="p">(</span><span class="n">time_to_sec</span><span class="p">(</span><span class="n">APPLYING_TRANSACTION_ORIGINAL_COMMIT_TIMESTAMP</span><span class="p">)</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">timediff</span><span class="p">(</span><span class="n">APPLYING_TRANSACTION_ORIGINAL_COMMIT_TIMESTAMP</span><span class="p">,</span><span class="n">now</span><span class="p">())))))</span><span class="w"> </span><span class="o">`</span><span class="n">lag_in_sec</span><span class="o">`</span>
+<span class="w">                           </span><span class="n">LAST_APPLIED_TRANSACTION_START_APPLY_TIMESTAMP</span><span class="w"> </span><span class="s1">'apply time'</span><span class="p">,</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">GTID_SUBTRACT</span><span class="p">(</span><span class="n">LAST_QUEUED_TRANSACTION</span><span class="p">,</span><span class="w"> </span><span class="n">LAST_APPLIED_TRANSACTION</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">""</span><span class="p">,</span><span class="ss">"0"</span><span class="w"> </span><span class="p">,</span><span class="w">        </span><span class="k">abs</span><span class="p">(</span><span class="n">time_to_sec</span><span class="p">(</span><span class="k">if</span><span class="p">(</span><span class="n">time_to_sec</span><span class="p">(</span><span class="n">APPLYING_TRANSACTION_ORIGINAL_COMMIT_TIMESTAMP</span><span class="p">)</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">timediff</span><span class="p">(</span><span class="n">APPLYING_TRANSACTION_ORIGINAL_COMMIT_TIMESTAMP</span><span class="p">,</span><span class="n">now</span><span class="p">())))))</span><span class="w"> </span><span class="o">`</span><span class="n">lag_in_sec</span><span class="o">`</span>
 <span class="k">FROM</span>
 <span class="w">  </span><span class="n">performance_schema</span><span class="p">.</span><span class="n">replication_connection_status</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">conn_status</span>
 <span class="k">JOIN</span><span class="w"> </span><span class="n">performance_schema</span><span class="p">.</span><span class="n">replication_applier_status_by_worker</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">applier_status</span>
@@ -6056,7 +6200,7 @@ wsrep_log_conflicts
 wsrep_cluster_name=DC1
 pxc_strict_mode=ENFORCING
 wsrep_sst_method=xtrabackup-v2
-wsrep_sst_auth=&quot;root:root&quot;
+wsrep_sst_auth="root:root"
 </code></pre></div>
 <p>All nodes have the same <code>server-id</code> value.</p>
 <h3 id="replication-manager-for-pxc-configuration-steps">Configuration steps<a class="headerlink" href="#replication-manager-for-pxc-configuration-steps" title="Permanent link">&para;</a></h3>
@@ -6084,7 +6228,7 @@ wsrep_sst_auth=&quot;root:root&quot;
 <li>
 <p>The DC1 cluster uses a single <a href="#glossary-gtid">GTID</a> sequence. To make sure <code>GTID_PURGED</code> is the same, run the following commands on DC1-1, DC1-2, and DC1-3 nodes:</p>
 <div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>flush<span class="w"> </span>logs<span class="p">;</span>
-mysql&gt;<span class="w"> </span>purge<span class="w"> </span>binary<span class="w"> </span>logs<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;mysql-bin.000003&#39;</span><span class="p">;</span>
+mysql&gt;<span class="w"> </span>purge<span class="w"> </span>binary<span class="w"> </span>logs<span class="w"> </span>to<span class="w"> </span><span class="s1">'mysql-bin.000003'</span><span class="p">;</span>
 </code></pre></div>
 <p><code>mysql-bin.000003</code> is the last file returned when you run the following command:</p>
 <div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="sb">`</span>SHOW<span class="w"> </span>BINARY<span class="w"> </span>LOGS<span class="sb">`</span>
@@ -6095,7 +6239,7 @@ mysql&gt;<span class="w"> </span>purge<span class="w"> </span>binary<span class=
 </li>
 <li>
 <p>Add privileges for replication between all nodes only for DC1: </p>
-<div class="highlight"><pre><span></span><code>GRANT<span class="w"> </span>REPLICATION<span class="w"> </span>CLIENT,<span class="w"> </span>REPLICATION<span class="w"> </span>SLAVE<span class="w"> </span>ON<span class="w"> </span>*.*<span class="w"> </span>TO<span class="w"> </span><span class="s1">&#39;repl&#39;</span>@<span class="s1">&#39;%&#39;</span><span class="w"> </span>identified<span class="w"> </span>by<span class="w"> </span><span class="s1">&#39;replpass&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code>GRANT<span class="w"> </span>REPLICATION<span class="w"> </span>CLIENT,<span class="w"> </span>REPLICATION<span class="w"> </span>SLAVE<span class="w"> </span>ON<span class="w"> </span>*.*<span class="w"> </span>TO<span class="w"> </span><span class="s1">'repl'</span>@<span class="s1">'%'</span><span class="w"> </span>identified<span class="w"> </span>by<span class="w"> </span><span class="s1">'replpass'</span><span class="p">;</span>
 </code></pre></div>
 </li>
 <li>
@@ -6106,9 +6250,9 @@ CREATE TABLE `replication` (
   `host` varchar(40) NOT NULL,
   `weight` int(11) NOT NULL DEFAULT 0,
   `localIndex` int(11) DEFAULT NULL,
-  `isSlave` enum(&#39;No&#39;,&#39;Yes&#39;,&#39;Proposed&#39;,&#39;Failed&#39;) DEFAULT &#39;No&#39;,
+  `isSlave` enum('No','Yes','Proposed','Failed') DEFAULT 'No',
   `lastUpdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `lastHeartbeat` timestamp NOT NULL DEFAULT &#39;1971-01-01 00:00:00&#39;,
+  `lastHeartbeat` timestamp NOT NULL DEFAULT '1971-01-01 00:00:00',
   `connectionName` varchar(64) NOT NULL,
   PRIMARY KEY (`connectionName`,`host`),
   KEY `idx_host` (`host`)
@@ -6135,26 +6279,26 @@ CREATE TABLE `weight` (
 </li>
 <li>
 <p>The cluster table contains the details of each cluster. The cluster name is defined in the <code>wsrep_cluster_name</code> variable value:</p>
-<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>cluster<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;10.0.4.160 10.0.4.162 10.0.4.163&#39;</span>,<span class="s1">&#39;source_user=\&#39;</span>repl<span class="se">\&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\&#39;</span>replpass<span class="se">\&#39;</span><span class="s1">&#39;);</span>
-<span class="s1">INSERT INTO `cluster` VALUES (&#39;</span>DC2<span class="s1">&#39;,&#39;</span><span class="m">10</span>.0.4.164<span class="w"> </span><span class="m">10</span>.0.4.165<span class="w"> </span><span class="m">10</span>.0.4.166<span class="s1">&#39;,&#39;</span><span class="nv">source_user</span><span class="o">=</span><span class="se">\&#39;</span>repl<span class="se">\&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\&#39;</span>replpass<span class="se">\&#39;</span><span class="s1">&#39;);</span>
-<span class="s1">INSERT INTO `cluster` VALUES (&#39;</span>DC3<span class="s1">&#39;,&#39;</span><span class="m">10</span>.0.4.167<span class="w"> </span><span class="m">10</span>.0.4.168<span class="w"> </span><span class="m">10</span>.0.4.169<span class="s1">&#39;,&#39;</span><span class="nv">source_user</span><span class="o">=</span><span class="se">\&#39;</span>repl<span class="se">\&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\&#39;</span>replpass<span class="se">\&#39;</span><span class="err">&#39;</span><span class="o">)</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>cluster<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">'DC1'</span>,<span class="s1">'10.0.4.160 10.0.4.162 10.0.4.163'</span>,<span class="s1">'source_user=\'</span>repl<span class="se">\'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\'</span>replpass<span class="se">\'</span><span class="s1">');</span>
+<span class="s1">INSERT INTO `cluster` VALUES ('</span>DC2<span class="s1">','</span><span class="m">10</span>.0.4.164<span class="w"> </span><span class="m">10</span>.0.4.165<span class="w"> </span><span class="m">10</span>.0.4.166<span class="s1">','</span><span class="nv">source_user</span><span class="o">=</span><span class="se">\'</span>repl<span class="se">\'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\'</span>replpass<span class="se">\'</span><span class="s1">');</span>
+<span class="s1">INSERT INTO `cluster` VALUES ('</span>DC3<span class="s1">','</span><span class="m">10</span>.0.4.167<span class="w"> </span><span class="m">10</span>.0.4.168<span class="w"> </span><span class="m">10</span>.0.4.169<span class="s1">','</span><span class="nv">source_user</span><span class="o">=</span><span class="se">\'</span>repl<span class="se">\'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\'</span>replpass<span class="se">\'</span><span class="err">'</span><span class="o">)</span><span class="p">;</span>
 </code></pre></div>
 </li>
 <li>
 <p>Add the required links:</p>
-<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;DC2&#39;</span><span class="o">)</span><span class="p">;</span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;DC3&#39;</span><span class="o">)</span><span class="p">;</span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC2&#39;</span>,<span class="s1">&#39;DC1&#39;</span><span class="o">)</span><span class="p">;</span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC3&#39;</span>,<span class="s1">&#39;DC1&#39;</span><span class="o">)</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">'DC1'</span>,<span class="s1">'DC2'</span><span class="o">)</span><span class="p">;</span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">'DC1'</span>,<span class="s1">'DC3'</span><span class="o">)</span><span class="p">;</span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">'DC2'</span>,<span class="s1">'DC1'</span><span class="o">)</span><span class="p">;</span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">'DC3'</span>,<span class="s1">'DC1'</span><span class="o">)</span><span class="p">;</span>
 </code></pre></div>
 </li>
 <li>
 <p>Add the weight:</p>
-<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;DC1-1&#39;</span>,10<span class="o">)</span><span class="p">;</span><span class="w"> </span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;DC1-2&#39;</span>,11<span class="o">)</span><span class="p">;</span><span class="w"> </span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC2&#39;</span>,<span class="s1">&#39;DC2-1&#39;</span>,9<span class="o">)</span><span class="p">;</span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC2&#39;</span>,<span class="s1">&#39;DC2-2&#39;</span>,12<span class="o">)</span><span class="p">;</span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC3&#39;</span>,<span class="s1">&#39;DC3-1&#39;</span>,11<span class="o">)</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">'DC1'</span>,<span class="s1">'DC1-1'</span>,10<span class="o">)</span><span class="p">;</span><span class="w"> </span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">'DC1'</span>,<span class="s1">'DC1-2'</span>,11<span class="o">)</span><span class="p">;</span><span class="w"> </span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">'DC2'</span>,<span class="s1">'DC2-1'</span>,9<span class="o">)</span><span class="p">;</span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">'DC2'</span>,<span class="s1">'DC2-2'</span>,12<span class="o">)</span><span class="p">;</span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">'DC3'</span>,<span class="s1">'DC3-1'</span>,11<span class="o">)</span><span class="p">;</span>
 </code></pre></div>
 <p>The node in the cluster with the highest value is the first to be selected.</p>
 </li>
@@ -6176,18 +6320,18 @@ INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</sp
 <li>
 <p>Configure the replication. Set up the first replication links manually. </p>
 <p>For example, on DC2-1 run:</p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">&#39;WAN IP of DC1-1&#39;</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">&#39;repl&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">&#39;replpass&#39;</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC2-DC1&#39;</span><span class="p">;</span>
-mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC2-DC1&#39;</span><span class="p">;</span>
+<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">'WAN IP of DC1-1'</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">'repl'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">'replpass'</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC2-DC1'</span><span class="p">;</span>
+mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC2-DC1'</span><span class="p">;</span>
 </code></pre></div>
 <p>on DC3-1 run: </p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">&#39;WAN IP of DC1-1&#39;</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">&#39;repl&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">&#39;replpass&#39;</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC3-DC1&#39;</span><span class="p">;</span>
-mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC3-DC1&#39;</span><span class="p">;</span>
+<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">'WAN IP of DC1-1'</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">'repl'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">'replpass'</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC3-DC1'</span><span class="p">;</span>
+mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC3-DC1'</span><span class="p">;</span>
 </code></pre></div>
 <p>For the other direction, use DC1-1 for both:</p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">&#39;WAN IP of DC2-1&#39;</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">&#39;repl&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">&#39;replpass&#39;</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC1-DC2&#39;</span><span class="p">;</span>
-mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC1-DC2&#39;</span><span class="p">;</span>
-mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">&#39;WAN IP of DC3-1&#39;</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">&#39;repl&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">&#39;replpass&#39;</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC1-DC3&#39;</span><span class="p">;</span>
-mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC1-DC3&#39;</span><span class="p">;</span>
+<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">'WAN IP of DC2-1'</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">'repl'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">'replpass'</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC1-DC2'</span><span class="p">;</span>
+mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC1-DC2'</span><span class="p">;</span>
+mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">'WAN IP of DC3-1'</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">'repl'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">'replpass'</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC1-DC3'</span><span class="p">;</span>
+mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC1-DC3'</span><span class="p">;</span>
 </code></pre></div>
 <p>Now, all the clusters are linked in a source to source way. </p>
 </li>
@@ -6267,8 +6411,8 @@ mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class
 <p>The single replica manager is a simplified version of the <a href="#replication-manager-for-pxc">Replication manager for Percona XtraDB Cluster</a> and is intended to manage a single replica. </p>
 <p>The single replica manager requires using a <a href="#glossary-gtid">global transaction identifier (GTID)</a> (Oracle implementation).</p>
 <p>To use the single replica manager script, edit the script and adjust the &lsquo;sourceCandidates&rsquo; and &lsquo;replCreds&rsquo; variables. If the Percona XtraDB Cluster nodes are &lsquo;10.1.1.10&rsquo;, &lsquo;10.1.1.11&rsquo;, and &lsquo;10.1.1.12&rsquo;, and the replication user is &lsquo;repluser&rsquo; with a password set to &lsquo;replpass&rsquo;, the variables should look like the following:</p>
-<div class="highlight"><pre><span></span><code>sourceCandidates=&quot;10.1.1.10 10.1.1.11 10.1.1.12&quot;
-replCreds=&quot;source_user=&#39;repl&#39;, source_password=&#39;replpass&#39;&quot;
+<div class="highlight"><pre><span></span><code>sourceCandidates="10.1.1.10 10.1.1.11 10.1.1.12"
+replCreds="source_user='repl', source_password='replpass'"
 </code></pre></div>
 <p>The credentials to the local MySQL server should be located in the <code>~/.my.cnf</code> file of the user under which the cron job is defined. The last step is to enable the cron job that runs every minute:</p>
 <div class="highlight"><pre><span></span><code>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>/usr/bin/replication_manager.sh<span class="w"> </span>
@@ -6601,25 +6745,27 @@ we will do our very best to be helpful.</p></section><section class="print-page"
 .print-site-enumerate-headings #release-notes > h1:before { content: '4.1 ' }
 
 .print-site-enumerate-headings #section-4-2 > h1:before { content: '4.2 ' }
-.print-site-enumerate-headings #release-notes-ps-8.4.10 > h1:before { content: '4.2.1 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.11 > h1:before { content: '4.2.1 ' }
 
-.print-site-enumerate-headings #release-notes-ps-8.4.8 > h1:before { content: '4.2.2 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.10 > h1:before { content: '4.2.2 ' }
 
-.print-site-enumerate-headings #release-notes-ps-8.4.7 > h1:before { content: '4.2.3 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.8 > h1:before { content: '4.2.3 ' }
 
-.print-site-enumerate-headings #release-notes-ps-8.4.6 > h1:before { content: '4.2.4 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.7 > h1:before { content: '4.2.4 ' }
 
-.print-site-enumerate-headings #release-notes-ps-8.4.5 > h1:before { content: '4.2.5 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.6 > h1:before { content: '4.2.5 ' }
 
-.print-site-enumerate-headings #release-notes-ps-8.4.4 > h1:before { content: '4.2.6 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.5 > h1:before { content: '4.2.6 ' }
 
-.print-site-enumerate-headings #release-notes-ps-8.4.3 > h1:before { content: '4.2.7 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.4 > h1:before { content: '4.2.7 ' }
 
-.print-site-enumerate-headings #release-notes-ps-8.4.2 > h1:before { content: '4.2.8 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.3 > h1:before { content: '4.2.8 ' }
 
-.print-site-enumerate-headings #release-notes-ps-8.4.1 > h1:before { content: '4.2.9 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.2 > h1:before { content: '4.2.9 ' }
 
-.print-site-enumerate-headings #release-notes-ps-8.4 > h1:before { content: '4.2.10 ' }
+.print-site-enumerate-headings #release-notes-ps-8.4.1 > h1:before { content: '4.2.10 ' }
+
+.print-site-enumerate-headings #release-notes-ps-8.4 > h1:before { content: '4.2.11 ' }
 
 .print-site-enumerate-headings #section-4-3 > h1:before { content: '4.3 ' }
 .print-site-enumerate-headings #release-notes-pxc-8.4.10 > h1:before { content: '4.3.1 ' }

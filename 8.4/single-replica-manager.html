@@ -613,6 +613,8 @@
       
         
       
+        
+      
     
     
     
@@ -652,6 +654,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="release-notes-ps-8.4.11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Percona Distribution for MySQL 8.4.11 using Percona Server for MySQL (2026-08-20)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2443,8 +2473,8 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <p>The single replica manager is a simplified version of the <a href="replication-manager-for-pxc.html">Replication manager for Percona XtraDB Cluster</a> and is intended to manage a single replica. </p>
 <p>The single replica manager requires using a <a href="glossary.html#gtid">global transaction identifier (GTID)</a> (Oracle implementation).</p>
 <p>To use the single replica manager script, edit the script and adjust the &lsquo;sourceCandidates&rsquo; and &lsquo;replCreds&rsquo; variables. If the Percona XtraDB Cluster nodes are &lsquo;10.1.1.10&rsquo;, &lsquo;10.1.1.11&rsquo;, and &lsquo;10.1.1.12&rsquo;, and the replication user is &lsquo;repluser&rsquo; with a password set to &lsquo;replpass&rsquo;, the variables should look like the following:</p>
-<div class="highlight"><pre><span></span><code>sourceCandidates=&quot;10.1.1.10 10.1.1.11 10.1.1.12&quot;
-replCreds=&quot;source_user=&#39;repl&#39;, source_password=&#39;replpass&#39;&quot;
+<div class="highlight"><pre><span></span><code>sourceCandidates="10.1.1.10 10.1.1.11 10.1.1.12"
+replCreds="source_user='repl', source_password='replpass'"
 </code></pre></div>
 <p>The credentials to the local MySQL server should be located in the <code>~/.my.cnf</code> file of the user under which the cron job is defined. The last step is to enable the cron job that runs every minute:</p>
 <div class="highlight"><pre><span></span><code>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>/usr/bin/replication_manager.sh<span class="w"> </span>

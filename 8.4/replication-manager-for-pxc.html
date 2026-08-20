@@ -613,6 +613,8 @@
       
         
       
+        
+      
     
     
     
@@ -652,6 +654,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="release-notes-ps-8.4.11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Percona Distribution for MySQL 8.4.11 using Percona Server for MySQL (2026-08-20)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2573,7 +2603,7 @@ wsrep_log_conflicts
 wsrep_cluster_name=DC1
 pxc_strict_mode=ENFORCING
 wsrep_sst_method=xtrabackup-v2
-wsrep_sst_auth=&quot;root:root&quot;
+wsrep_sst_auth="root:root"
 </code></pre></div>
 <p>All nodes have the same <code>server-id</code> value.</p>
 <h3 id="configuration-steps">Configuration steps<a class="headerlink" href="#configuration-steps" title="Permanent link">&para;</a></h3>
@@ -2601,7 +2631,7 @@ wsrep_sst_auth=&quot;root:root&quot;
 <li>
 <p>The DC1 cluster uses a single <a href="glossary.html#gtid">GTID</a> sequence. To make sure <code>GTID_PURGED</code> is the same, run the following commands on DC1-1, DC1-2, and DC1-3 nodes:</p>
 <div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>flush<span class="w"> </span>logs<span class="p">;</span>
-mysql&gt;<span class="w"> </span>purge<span class="w"> </span>binary<span class="w"> </span>logs<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;mysql-bin.000003&#39;</span><span class="p">;</span>
+mysql&gt;<span class="w"> </span>purge<span class="w"> </span>binary<span class="w"> </span>logs<span class="w"> </span>to<span class="w"> </span><span class="s1">'mysql-bin.000003'</span><span class="p">;</span>
 </code></pre></div>
 <p><code>mysql-bin.000003</code> is the last file returned when you run the following command:</p>
 <div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="sb">`</span>SHOW<span class="w"> </span>BINARY<span class="w"> </span>LOGS<span class="sb">`</span>
@@ -2612,7 +2642,7 @@ mysql&gt;<span class="w"> </span>purge<span class="w"> </span>binary<span class=
 </li>
 <li>
 <p>Add privileges for replication between all nodes only for DC1: </p>
-<div class="highlight"><pre><span></span><code>GRANT<span class="w"> </span>REPLICATION<span class="w"> </span>CLIENT,<span class="w"> </span>REPLICATION<span class="w"> </span>SLAVE<span class="w"> </span>ON<span class="w"> </span>*.*<span class="w"> </span>TO<span class="w"> </span><span class="s1">&#39;repl&#39;</span>@<span class="s1">&#39;%&#39;</span><span class="w"> </span>identified<span class="w"> </span>by<span class="w"> </span><span class="s1">&#39;replpass&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code>GRANT<span class="w"> </span>REPLICATION<span class="w"> </span>CLIENT,<span class="w"> </span>REPLICATION<span class="w"> </span>SLAVE<span class="w"> </span>ON<span class="w"> </span>*.*<span class="w"> </span>TO<span class="w"> </span><span class="s1">'repl'</span>@<span class="s1">'%'</span><span class="w"> </span>identified<span class="w"> </span>by<span class="w"> </span><span class="s1">'replpass'</span><span class="p">;</span>
 </code></pre></div>
 </li>
 <li>
@@ -2623,9 +2653,9 @@ CREATE TABLE `replication` (
   `host` varchar(40) NOT NULL,
   `weight` int(11) NOT NULL DEFAULT 0,
   `localIndex` int(11) DEFAULT NULL,
-  `isSlave` enum(&#39;No&#39;,&#39;Yes&#39;,&#39;Proposed&#39;,&#39;Failed&#39;) DEFAULT &#39;No&#39;,
+  `isSlave` enum('No','Yes','Proposed','Failed') DEFAULT 'No',
   `lastUpdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `lastHeartbeat` timestamp NOT NULL DEFAULT &#39;1971-01-01 00:00:00&#39;,
+  `lastHeartbeat` timestamp NOT NULL DEFAULT '1971-01-01 00:00:00',
   `connectionName` varchar(64) NOT NULL,
   PRIMARY KEY (`connectionName`,`host`),
   KEY `idx_host` (`host`)
@@ -2652,26 +2682,26 @@ CREATE TABLE `weight` (
 </li>
 <li>
 <p>The cluster table contains the details of each cluster. The cluster name is defined in the <code>wsrep_cluster_name</code> variable value:</p>
-<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>cluster<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;10.0.4.160 10.0.4.162 10.0.4.163&#39;</span>,<span class="s1">&#39;source_user=\&#39;</span>repl<span class="se">\&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\&#39;</span>replpass<span class="se">\&#39;</span><span class="s1">&#39;);</span>
-<span class="s1">INSERT INTO `cluster` VALUES (&#39;</span>DC2<span class="s1">&#39;,&#39;</span><span class="m">10</span>.0.4.164<span class="w"> </span><span class="m">10</span>.0.4.165<span class="w"> </span><span class="m">10</span>.0.4.166<span class="s1">&#39;,&#39;</span><span class="nv">source_user</span><span class="o">=</span><span class="se">\&#39;</span>repl<span class="se">\&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\&#39;</span>replpass<span class="se">\&#39;</span><span class="s1">&#39;);</span>
-<span class="s1">INSERT INTO `cluster` VALUES (&#39;</span>DC3<span class="s1">&#39;,&#39;</span><span class="m">10</span>.0.4.167<span class="w"> </span><span class="m">10</span>.0.4.168<span class="w"> </span><span class="m">10</span>.0.4.169<span class="s1">&#39;,&#39;</span><span class="nv">source_user</span><span class="o">=</span><span class="se">\&#39;</span>repl<span class="se">\&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\&#39;</span>replpass<span class="se">\&#39;</span><span class="err">&#39;</span><span class="o">)</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>cluster<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">'DC1'</span>,<span class="s1">'10.0.4.160 10.0.4.162 10.0.4.163'</span>,<span class="s1">'source_user=\'</span>repl<span class="se">\'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\'</span>replpass<span class="se">\'</span><span class="s1">');</span>
+<span class="s1">INSERT INTO `cluster` VALUES ('</span>DC2<span class="s1">','</span><span class="m">10</span>.0.4.164<span class="w"> </span><span class="m">10</span>.0.4.165<span class="w"> </span><span class="m">10</span>.0.4.166<span class="s1">','</span><span class="nv">source_user</span><span class="o">=</span><span class="se">\'</span>repl<span class="se">\'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\'</span>replpass<span class="se">\'</span><span class="s1">');</span>
+<span class="s1">INSERT INTO `cluster` VALUES ('</span>DC3<span class="s1">','</span><span class="m">10</span>.0.4.167<span class="w"> </span><span class="m">10</span>.0.4.168<span class="w"> </span><span class="m">10</span>.0.4.169<span class="s1">','</span><span class="nv">source_user</span><span class="o">=</span><span class="se">\'</span>repl<span class="se">\'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\'</span>replpass<span class="se">\'</span><span class="err">'</span><span class="o">)</span><span class="p">;</span>
 </code></pre></div>
 </li>
 <li>
 <p>Add the required links:</p>
-<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;DC2&#39;</span><span class="o">)</span><span class="p">;</span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;DC3&#39;</span><span class="o">)</span><span class="p">;</span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC2&#39;</span>,<span class="s1">&#39;DC1&#39;</span><span class="o">)</span><span class="p">;</span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">&#39;DC3&#39;</span>,<span class="s1">&#39;DC1&#39;</span><span class="o">)</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">'DC1'</span>,<span class="s1">'DC2'</span><span class="o">)</span><span class="p">;</span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">'DC1'</span>,<span class="s1">'DC3'</span><span class="o">)</span><span class="p">;</span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">'DC2'</span>,<span class="s1">'DC1'</span><span class="o">)</span><span class="p">;</span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">'DC3'</span>,<span class="s1">'DC1'</span><span class="o">)</span><span class="p">;</span>
 </code></pre></div>
 </li>
 <li>
 <p>Add the weight:</p>
-<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;DC1-1&#39;</span>,10<span class="o">)</span><span class="p">;</span><span class="w"> </span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC1&#39;</span>,<span class="s1">&#39;DC1-2&#39;</span>,11<span class="o">)</span><span class="p">;</span><span class="w"> </span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC2&#39;</span>,<span class="s1">&#39;DC2-1&#39;</span>,9<span class="o">)</span><span class="p">;</span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC2&#39;</span>,<span class="s1">&#39;DC2-2&#39;</span>,12<span class="o">)</span><span class="p">;</span>
-INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">&#39;DC3&#39;</span>,<span class="s1">&#39;DC3-1&#39;</span>,11<span class="o">)</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">'DC1'</span>,<span class="s1">'DC1-1'</span>,10<span class="o">)</span><span class="p">;</span><span class="w"> </span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">'DC1'</span>,<span class="s1">'DC1-2'</span>,11<span class="o">)</span><span class="p">;</span><span class="w"> </span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">'DC2'</span>,<span class="s1">'DC2-1'</span>,9<span class="o">)</span><span class="p">;</span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">'DC2'</span>,<span class="s1">'DC2-2'</span>,12<span class="o">)</span><span class="p">;</span>
+INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">'DC3'</span>,<span class="s1">'DC3-1'</span>,11<span class="o">)</span><span class="p">;</span>
 </code></pre></div>
 <p>The node in the cluster with the highest value is the first to be selected.</p>
 </li>
@@ -2693,18 +2723,18 @@ INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</sp
 <li>
 <p>Configure the replication. Set up the first replication links manually. </p>
 <p>For example, on DC2-1 run:</p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">&#39;WAN IP of DC1-1&#39;</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">&#39;repl&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">&#39;replpass&#39;</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC2-DC1&#39;</span><span class="p">;</span>
-mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC2-DC1&#39;</span><span class="p">;</span>
+<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">'WAN IP of DC1-1'</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">'repl'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">'replpass'</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC2-DC1'</span><span class="p">;</span>
+mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC2-DC1'</span><span class="p">;</span>
 </code></pre></div>
 <p>on DC3-1 run: </p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">&#39;WAN IP of DC1-1&#39;</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">&#39;repl&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">&#39;replpass&#39;</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC3-DC1&#39;</span><span class="p">;</span>
-mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC3-DC1&#39;</span><span class="p">;</span>
+<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">'WAN IP of DC1-1'</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">'repl'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">'replpass'</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC3-DC1'</span><span class="p">;</span>
+mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC3-DC1'</span><span class="p">;</span>
 </code></pre></div>
 <p>For the other direction, use DC1-1 for both:</p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">&#39;WAN IP of DC2-1&#39;</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">&#39;repl&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">&#39;replpass&#39;</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC1-DC2&#39;</span><span class="p">;</span>
-mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC1-DC2&#39;</span><span class="p">;</span>
-mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">&#39;WAN IP of DC3-1&#39;</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">&#39;repl&#39;</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">&#39;replpass&#39;</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC1-DC3&#39;</span><span class="p">;</span>
-mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">&#39;DC1-DC3&#39;</span><span class="p">;</span>
+<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">'WAN IP of DC2-1'</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">'repl'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">'replpass'</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC1-DC2'</span><span class="p">;</span>
+mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC1-DC2'</span><span class="p">;</span>
+mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">'WAN IP of DC3-1'</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">'repl'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">'replpass'</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC1-DC3'</span><span class="p">;</span>
+mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC1-DC3'</span><span class="p">;</span>
 </code></pre></div>
 <p>Now, all the clusters are linked in a source to source way. </p>
 </li>
