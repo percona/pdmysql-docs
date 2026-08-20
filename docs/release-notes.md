@@ -2,6 +2,8 @@
 
 ## Percona Distribution for MySQL using Percona Server for MySQL
 
+* [Percona Distribution for MySQL using Percona Server for MySQL 8.4.11 (2026-08-20)](release-notes-ps-8.4.11.md)
+
 * [Percona Distribution for MySQL using Percona Server for MySQL 8.4.10 (2026-06-30)](release-notes-ps-8.4.10.md)
 
 * [Percona Distribution for MySQL using Percona Server for MySQL 8.4.8 (2026-03-12)](release-notes-ps-8.4.8.md)
