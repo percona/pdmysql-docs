@@ -121,7 +121,6 @@ To uninstall Percona Distribution for MySQL, stop the `mysql` service and remove
                 sudo yum remove percona-mysql-router
                 ```
 
-<!-- 
 === "Uninstall Percona XtraDB Cluster-based variant"
 
     !!! important
@@ -149,7 +148,7 @@ To uninstall Percona Distribution for MySQL, stop the `mysql` service and remove
              * Remove Percona XtraBackup
 
                 ```shell
-                sudo apt remove percona-xtrabackup-84
+                sudo apt remove percona-xtrabackup-97
                 ```
 
              * Remove Percona Toolkit
@@ -181,7 +180,7 @@ To uninstall Percona Distribution for MySQL, stop the `mysql` service and remove
             * Remove Percona XtraBackup
 
                ```shell
-               sudo yum remove percona-xtrabackup-84
+               sudo yum remove percona-xtrabackup-97
                ```
 
             * Remove Percona Toolkit
@@ -189,4 +188,3 @@ To uninstall Percona Distribution for MySQL, stop the `mysql` service and remove
               ```shell
               sudo yum remove percona-toolkit
               ```
--->
