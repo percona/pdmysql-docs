@@ -48,6 +48,29 @@ Find the complete list of bug fixes and changes in the [MySQL 9.7.0 Release Note
 
 * See [Profile-Guided Optimization (PGO) and non-PGO builds](https://docs.percona.com/percona-server/9.7/pgo.md) for benefits, considerations, and which build is published for each platform.
 
+* In Percona XtraDB Cluster 9.7, packaging was reorganized to align more closely with upstream MySQL, consistent with the equivalent change in Percona Server for MySQL 9.7. Several packages were split into separate components, which may affect upgrades and dependency resolution compared with earlier Percona XtraDB Cluster releases.
+
+    The APT packages (Debian and Ubuntu) are:
+
+    * percona-xtradb-cluster-client-core
+    * percona-xtradb-cluster-client-plugins
+    * percona-xtradb-cluster-client
+    * percona-xtradb-cluster-common
+    * percona-xtradb-cluster-server-core
+    * percona-xtradb-cluster-server
+    * percona-xtradb-cluster-garbd
+    * percona-telemetry-agent
+
+    The YUM packages (RHEL, CentOS, Oracle Linux) are:
+
+    * percona-xtradb-cluster-client
+    * percona-xtradb-cluster-client-plugins
+    * percona-xtradb-cluster-server
+    * percona-xtradb-cluster-shared
+    * percona-xtradb-cluster-garbd
+    * percona-xtradb-cluster-icu-data-files
+    * percona-telemetry-agent
+
 ## Known issues
 
 * Percona XtraDB Cluster uses Profile-Guided Optimization (PGO) builds to improve runtime performance. PGO uses profiling data from representative workloads to guide compiler optimizations, which can improve throughput and reduce latency. Percona XtraDB Cluster packages are built with PGO enabled.
