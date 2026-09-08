@@ -1,4 +1,4 @@
-# Percona Distribution for MySQL 9.7.1 using Percona XtraDB Cluster (2026-08-05)
+# Percona Distribution for MySQL 9.7.1 using Percona XtraDB Cluster (2026-09-10)
 
 Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](installing.md).
 
@@ -44,9 +44,9 @@ Find the complete list of bug fixes and changes in the [MySQL 9.7.0 Release Note
 
 ## Builds and packaging
 
-* Percona Server for MySQL releases include a mixture of Profile-Guided Optimization (PGO) and non-PGO builds. Where PGO is enabled, the compiler uses runtime profiling data from representative workloads to guide optimization, which can improve throughput and reduce latency compared with non-PGO builds.
+* Percona XtraDB Cluster uses Profile-Guided Optimization (PGO) builds to improve runtime performance. PGO uses profiling data from representative workloads to guide compiler optimizations, which can improve throughput and reduce latency. Percona XtraDB Cluster packages are built with PGO enabled.
 
-* See [Profile-Guided Optimization (PGO) and non-PGO builds](https://docs.percona.com/percona-server/9.7/pgo.md) for benefits, considerations, and which build is published for each platform.
+    See [Profile-Guided Optimization (PGO) and non-PGO builds](https://docs.percona.com/percona-server/9.7/pgo.html) for more information about PGO benefits and considerations.
 
 * In Percona XtraDB Cluster 9.7, packaging was reorganized to align more closely with upstream MySQL, consistent with the equivalent change in Percona Server for MySQL 9.7. Several packages were split into separate components, which may affect upgrades and dependency resolution compared with earlier Percona XtraDB Cluster releases.
 
@@ -73,9 +73,9 @@ Find the complete list of bug fixes and changes in the [MySQL 9.7.0 Release Note
 
 ## Known issues
 
-* Percona XtraDB Cluster uses Profile-Guided Optimization (PGO) builds to improve runtime performance. PGO uses profiling data from representative workloads to guide compiler optimizations, which can improve throughput and reduce latency. Percona XtraDB Cluster packages are built with PGO enabled.
-
-    See [Profile-Guided Optimization (PGO) and non-PGO builds](https://docs.percona.com/percona-server/9.7/pgo.html) for more information about PGO benefits and considerations.
+* This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL {{vers}} becomes available.
+    
+* In 9.7.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the [terminology_use_previous](https://dev.mysql.com/doc/refman/9.7/en/replication-options-replica.html#sysvar_terminology_use_previous) system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.
 
 ## Supplied components
 
@@ -83,8 +83,7 @@ Review each component’s release notes for What’s new, improvements, or bug f
 
 | Component               | Version   | Description                                |
 | ----------------------- | --------- | -------------------------------------------|
-| Percona XtraBackup      | [8.4.0-6](https://docs.percona.com/percona-xtrabackup/8.4/release-notes/8.4.0-6.html)| An open-source hot backup utility for MySQL-based servers that doesn’t lock your database during the backup.|
+| Percona XtraBackup      | [9.7.1-rc1](https://docs.percona.com/percona-xtrabackup/9.7/release-notes/9.7.1-rc1.html)| An open-source hot backup utility for MySQL-based servers that doesn’t lock your database during the backup.|
 | HAProxy                 | [3.4.4](https://git.haproxy.org/?p=haproxy-3.4.git;a=commit;h=7f03ae65c28605152c7a1a9ba7d9d0bcfb50f8b0) | A high-availability and load-balancing solution for Percona XtraDB Cluster. This is a default proxy.|
 | ProxySQL                | [3.0.9](https://docs.percona.com/proxysql/3.0.9.html)| A high performance, high-availability, protocol-aware proxy for MySQL.          |
-| Percona Toolkit         | [3.7.1-4](https://docs.percona.com/percona-toolkit/release_notes.html#v3-7-1-4-released-2026-07-02)     | The set of scripts to simplify and optimize database operation. |
-| replication_manager.sh   | [1.0](https://docs.percona.com/percona-distribution-for-mysql/8.4/replication-manager-for-pxc.html)  | A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters. |
+| replication_manager.sh   | [1.0](https://docs.percona.com/percona-distribution-for-mysql/9.7/replication-manager-for-pxc.html)  | A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters. |
