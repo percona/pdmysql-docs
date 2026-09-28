@@ -66,4 +66,4 @@ Review each component’s release notes for What’s new, improvements, or bug f
 | ProxySQL            | [3.0.9](https://docs.percona.com/proxysql/3.0.9.html)     | A high performance, high-availability, protocol-aware proxy for MySQL|
 | Percona XtraBackup  | [9.7.1-rc1](https://docs.percona.com/percona-xtrabackup/9.7/release-notes/9.7.1-rc1.html)| An open-source hot backup utility for MySQL-based servers|
 | MySQL Shell         | [9.7.1](https://dev.mysql.com/doc/relnotes/mysql-shell/9.7/en/news-9-7-1.html)    | An advanced client and code editor for MySQL Server|
-| MySQL Router        | [9.7.2](https://dev.mysql.com/doc/relnotes/mysql-router/9.7/en/news-9-7-2.html)    | Lightweight middleware that provides transparent routing between your application and back-end MySQL servers|
+| MySQL Router        | [9.7.2](https://dev.mysql.com/doc/relnotes/mysql-router/9.7/en/news-9-7-1.html)    | Lightweight middleware that provides transparent routing between your application and back-end MySQL servers|
