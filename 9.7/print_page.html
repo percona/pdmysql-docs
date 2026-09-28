@@ -614,14 +614,14 @@
   
   
     <li class="md-nav__item">
-      <a href="release-notes-ps-9.7.1.html" class="md-nav__link">
+      <a href="release-notes-ps-9.7.2.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Percona Distribution for MySQL 9.7.1 using Percona Server for MySQL (2026-08-05)
+    Percona Distribution for MySQL 9.7.2 using Percona Server for MySQL (2026-09-28)
   
 
     
@@ -642,14 +642,14 @@
   
   
     <li class="md-nav__item">
-      <a href="release-notes-ps-9.7.2.html" class="md-nav__link">
+      <a href="release-notes-ps-9.7.1.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Percona Distribution for MySQL 9.7.2 using Percona Server for MySQL (2026-09-28)
+    Percona Distribution for MySQL 9.7.1 using Percona Server for MySQL (2026-08-05)
   
 
     
@@ -1959,10 +1959,10 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#release-notes-ps-9.7.1" class="md-nav__link">
+  <a href="#release-notes-ps-9.7.2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Percona Distribution for MySQL 9.7.1 using Percona Server for MySQL (2026-08-05)
+        Percona Distribution for MySQL 9.7.2 using Percona Server for MySQL (2026-09-28)
       
     </span>
   </a>
@@ -1970,10 +1970,10 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </li>
         
           <li class="md-nav__item">
-  <a href="#release-notes-ps-9.7.2" class="md-nav__link">
+  <a href="#release-notes-ps-9.7.1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Percona Distribution for MySQL 9.7.2 using Percona Server for MySQL (2026-09-28)
+        Percona Distribution for MySQL 9.7.1 using Percona Server for MySQL (2026-08-05)
       
     </span>
   </a>
@@ -2529,7 +2529,113 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
                     <section class='print-page md-section' id='section-4-2' heading-number='4.2'>
                         <h1>Percona Distribution for MySQL using Percona Server for MySQL<a class='headerlink' href='#section-4-2' title='Permanent link'></a>
                         </h1>
-                    <section class="print-page" id="release-notes-ps-9.7.1" heading-number="4.2.1"><h1 id="release-notes-ps-9.7.1-percona-distribution-for-mysql-971-using-percona-server-for-mysql-2026-08-05">Percona Distribution for MySQL 9.7.1 using Percona Server for MySQL (2026-08-05)<a class="headerlink" href="#release-notes-ps-9.7.1-percona-distribution-for-mysql-971-using-percona-server-for-mysql-2026-08-05" title="Permanent link">&para;</a></h1>
+                    <section class="print-page" id="release-notes-ps-9.7.2" heading-number="4.2.1"><h1 id="release-notes-ps-9.7.2-percona-distribution-for-mysql-972-using-percona-server-for-mysql-2026-09-28">Percona Distribution for MySQL 9.7.2 using Percona Server for MySQL (2026-09-28)<a class="headerlink" href="#release-notes-ps-9.7.2-percona-distribution-for-mysql-972-using-percona-server-for-mysql-2026-09-28" title="Permanent link">&para;</a></h1>
+<p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">A note on MySQL 9.7.3</p>
+<p>After a thorough review of the updates included in MySQL 9.7.3, Percona has decided not to release a corresponding Percona Server for MySQL 9.7.3. MySQL 9.7.3 is a Critical Security Patch Update (CSPU) — a targeted security release that Oracle can issue between quarterly Critical Patch Updates (CPUs) when needed. The fixes included in this CSPU do not affect Percona Server for MySQL.</p>
+</div>
+<p>This release is based on <a href="https://docs.percona.com/percona-server/9.7/release-notes/9.7.2-2.html">Percona Server for MySQL 9.7.2-2</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-2.html">MySQL 9.7.2 Community Edition</a> and enterprise-grade features developed by Percona.</p>
+<h2 id="release-notes-ps-9.7.2-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-9.7.2-release-highlights" title="Permanent link">&para;</a></h2>
+<h3 id="release-notes-ps-9.7.2-percona-server-for-mysql-972-2">Percona Server for MySQL 9.7.2-2<a class="headerlink" href="#release-notes-ps-9.7.2-percona-server-for-mysql-972-2" title="Permanent link">&para;</a></h3>
+<p>Percona Server for MySQL 9.7.2-2 introduces the following features and improvements:</p>
+<ul>
+<li>
+<p>Adds OpenID Connect (OIDC) authentication and authorization. Users can authenticate with Identity tokens issued by external Identity Providers (IDPs) instead of MySQL passwords. The OIDC plugin supports multiple IDPs, maps IDP groups to MySQL roles, supports proxy users based on group membership, and refreshes JSON Web Key Set (JWKS) signing keys at runtime. Find more information in <a href="https://docs.percona.com/percona-server/9.7/openid-connect-authentication.html">OpenID Connect authentication</a> and in <a href="https://docs.percona.com/percona-server/9.7/quickstart-openid-connect.html">Get started with OpenID Connect authentication</a>.</p>
+</li>
+<li>
+<p>Adds SQL functions for calculating the distance between vector values. Applications can use these functions to measure vector similarity and support search, recommendation, and other vector-based workloads. Find more information in <a href="https://docs.percona.com/percona-server/9.7/distance-function.html">DISTANCE() Function</a>.</p>
+</li>
+<li>
+<p>Improves InnoDB performance for highly concurrent range-select workloads by reducing page-level mutex contention when multiple sessions access the same buffer pool pages.</p>
+</li>
+<li>
+<p>Adds timestamps to Group Replication communication debug traces, making it easier to identify, sequence, and correlate events in large <code>GCS_DEBUG_TRACE</code> files.</p>
+</li>
+<li>
+<p>Improves validation and error logging for JSON-based OIDC configuration files. Invalid configuration sections are no longer silently ignored, and the server log provides clearer information for diagnosing configuration problems.</p>
+</li>
+<li>
+<p>Improves InnoDB performance for I/O-intensive workloads by reducing the time the buffer pool Least Recently Used (LRU) list mutex is held during physical page reads, decreasing serialization and improving scalability.</p>
+</li>
+<li>
+<p>Improves InnoDB Least Recently Used (LRU) flushing performance by restoring a dedicated LRU manager thread for each buffer pool instance and moving LRU flushing work away from page cleaner threads.</p>
+</li>
+<li>
+<p>Improves InnoDB Least Recently Used (LRU) flushing efficiency by correcting the LRU scan behavior so that scans continue through eligible pages instead of restarting unnecessarily.</p>
+</li>
+<li>
+<p>Improves InnoDB flushing performance by allowing a controlled single-page flush while an LRU batch flush is running and preventing repeated waits for an in-progress flush. Adds monitoring counters for single-page flushes and LRU flush waits.</p>
+</li>
+</ul>
+<p>This release addresses the list of Common Vulnerabilities and Exposures (CVE). Find the list of CVEs in <a href="https://docs.percona.com/percona-server/9.7/release-notes/9.7.1-1.html">Percona Server for MySQL 9.7.1-1</a> release notes.</p>
+<h3 id="release-notes-ps-9.7.2-mysql-972">MySQL 9.7.2<a class="headerlink" href="#release-notes-ps-9.7.2-mysql-972" title="Permanent link">&para;</a></h3>
+<p>Improvements and bug fixes provided by Oracle for MySQL 9.7.2 and included in Percona Server for MySQL are the following:</p>
+<ul>
+<li>
+<p>Under certain circumstances, when adding an AUTO_INCREMENT column to an existing table, some records in that table could be skipped, resulting in inaccurate values in the AUTO_INCREMENT column. (Bug #115136, Bug #37105825)</p>
+</li>
+<li>
+<p>During a buffer-pool resize, Adaptive Hash Index could be disabled in mysqld-auto.cnf even though innodb_adaptive_hash_index=ON. (Bug #39157211)</p>
+</li>
+<li>
+<p>Fixed a debug assertion in row_upd_rec_in_place() for non-versioned ROW_FORMAT=REDUNDANT rows. (Bug #39165747)</p>
+</li>
+<li>
+<p>Fixed an issue relating to table maintenance and clean-up. (Bug #39091376)</p>
+</li>
+<li>
+<p>Fixed an issue relating to unique indexes. (Bug #38501299)</p>
+</li>
+</ul>
+<p>Find the complete list of bug fixes and changes in the <a href="https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-2.html">MySQL 9.7.2 release notes</a></p>
+<h2 id="release-notes-ps-9.7.2-known-issues">Known issues<a class="headerlink" href="#release-notes-ps-9.7.2-known-issues" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 9.7 becomes available.</p>
+</li>
+<li>
+<p>In 9.7.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the <a href="https://dev.mysql.com/doc/refman/9.7/en/replication-options-replica.html#sysvar_terminology_use_previous">terminology_use_previous</a> system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.</p>
+</li>
+</ul>
+<h2 id="release-notes-ps-9.7.2-supplied-components">Supplied components<a class="headerlink" href="#release-notes-ps-9.7.2-supplied-components" title="Permanent link">&para;</a></h2>
+<p>Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona Server for MySQL-based variation of the Percona Distribution for MySQL.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Version</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Orchestrator</td>
+<td><a href="https://github.com/percona/orchestrator/releases/tag/v3.2.6-24">3.2.6-24</a></td>
+<td>The replication topology manager for Percona Server for MySQL</td>
+</tr>
+<tr>
+<td>ProxySQL</td>
+<td><a href="https://docs.percona.com/proxysql/3.0.9.html">3.0.9</a></td>
+<td>A high performance, high-availability, protocol-aware proxy for MySQL</td>
+</tr>
+<tr>
+<td>Percona XtraBackup</td>
+<td><a href="https://docs.percona.com/percona-xtrabackup/9.7/release-notes/9.7.1-rc1.html">9.7.1-rc1</a></td>
+<td>An open-source hot backup utility for MySQL-based servers</td>
+</tr>
+<tr>
+<td>MySQL Shell</td>
+<td><a href="https://dev.mysql.com/doc/relnotes/mysql-shell/9.7/en/news-9-7-1.html">9.7.1</a></td>
+<td>An advanced client and code editor for MySQL Server</td>
+</tr>
+<tr>
+<td>MySQL Router</td>
+<td><a href="https://dev.mysql.com/doc/relnotes/mysql-router/9.7/en/news-9-7-1.html">9.7.2</a></td>
+<td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
+</tr>
+</tbody>
+</table></section><section class="print-page" id="release-notes-ps-9.7.1" heading-number="4.2.2"><h1 id="release-notes-ps-9.7.1-percona-distribution-for-mysql-971-using-percona-server-for-mysql-2026-08-05">Percona Distribution for MySQL 9.7.1 using Percona Server for MySQL (2026-08-05)<a class="headerlink" href="#release-notes-ps-9.7.1-percona-distribution-for-mysql-971-using-percona-server-for-mysql-2026-08-05" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <div class="admonition note">
 <p>Percona Distribution for MySQL 9.7.0 using Percona Server for MySQL was not released; 9.7.1 is the next build in this series. This release includes enhancements and bug fixes from MySQL 9.7.0 and MySQL 9.7.1.</p>
@@ -2652,112 +2758,6 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <tr>
 <td>MySQL Router</td>
 <td><a href="https://dev.mysql.com/doc/relnotes/mysql-router/9.7/en/news-9-7-1.html">9.7.1</a></td>
-<td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
-</tr>
-</tbody>
-</table></section><section class="print-page" id="release-notes-ps-9.7.2" heading-number="4.2.2"><h1 id="release-notes-ps-9.7.2-percona-distribution-for-mysql-972-using-percona-server-for-mysql-2026-09-28">Percona Distribution for MySQL 9.7.2 using Percona Server for MySQL (2026-09-28)<a class="headerlink" href="#release-notes-ps-9.7.2-percona-distribution-for-mysql-972-using-percona-server-for-mysql-2026-09-28" title="Permanent link">&para;</a></h1>
-<p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">A note on MySQL 9.7.3</p>
-<p>After a thorough review of the updates included in MySQL 9.7.3, Percona has decided not to release a corresponding Percona Server for MySQL 9.7.3. MySQL 9.7.3 is a Critical Security Patch Update (CSPU) — a targeted security release that Oracle can issue between quarterly Critical Patch Updates (CPUs) when needed. The fixes included in this CSPU do not affect Percona Server for MySQL.</p>
-</div>
-<p>This release is based on <a href="https://docs.percona.com/percona-server/9.7/release-notes/9.7.2-2.html">Percona Server for MySQL 9.7.2-2</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-2.html">MySQL 9.7.2 Community Edition</a> and enterprise-grade features developed by Percona.</p>
-<h2 id="release-notes-ps-9.7.2-release-highlights">Release highlights<a class="headerlink" href="#release-notes-ps-9.7.2-release-highlights" title="Permanent link">&para;</a></h2>
-<h3 id="release-notes-ps-9.7.2-percona-server-for-mysql-972-2">Percona Server for MySQL 9.7.2-2<a class="headerlink" href="#release-notes-ps-9.7.2-percona-server-for-mysql-972-2" title="Permanent link">&para;</a></h3>
-<p>Percona Server for MySQL 9.7.2-2 introduces the following features and improvements:</p>
-<ul>
-<li>
-<p>Adds OpenID Connect (OIDC) authentication and authorization. Users can authenticate with Identity tokens issued by external Identity Providers (IDPs) instead of MySQL passwords. The OIDC plugin supports multiple IDPs, maps IDP groups to MySQL roles, supports proxy users based on group membership, and refreshes JSON Web Key Set (JWKS) signing keys at runtime. Find more information in <a href="https://docs.percona.com/percona-server/9.7/openid-connect-authentication.html">OpenID Connect authentication</a> and in <a href="https://docs.percona.com/percona-server/9.7/quickstart-openid-connect.html">Get started with OpenID Connect authentication</a>.</p>
-</li>
-<li>
-<p>Adds SQL functions for calculating the distance between vector values. Applications can use these functions to measure vector similarity and support search, recommendation, and other vector-based workloads. Find more information in <a href="https://docs.percona.com/percona-server/9.7/distance-function.html">DISTANCE() Function</a>.</p>
-</li>
-<li>
-<p>Improves InnoDB performance for highly concurrent range-select workloads by reducing page-level mutex contention when multiple sessions access the same buffer pool pages.</p>
-</li>
-<li>
-<p>Adds timestamps to Group Replication communication debug traces, making it easier to identify, sequence, and correlate events in large <code>GCS_DEBUG_TRACE</code> files.</p>
-</li>
-<li>
-<p>Improves validation and error logging for JSON-based OIDC configuration files. Invalid configuration sections are no longer silently ignored, and the server log provides clearer information for diagnosing configuration problems.</p>
-</li>
-<li>
-<p>Improves InnoDB performance for I/O-intensive workloads by reducing the time the buffer pool Least Recently Used (LRU) list mutex is held during physical page reads, decreasing serialization and improving scalability.</p>
-</li>
-<li>
-<p>Improves InnoDB Least Recently Used (LRU) flushing performance by restoring a dedicated LRU manager thread for each buffer pool instance and moving LRU flushing work away from page cleaner threads.</p>
-</li>
-<li>
-<p>Improves InnoDB Least Recently Used (LRU) flushing efficiency by correcting the LRU scan behavior so that scans continue through eligible pages instead of restarting unnecessarily.</p>
-</li>
-<li>
-<p>Improves InnoDB flushing performance by allowing a controlled single-page flush while an LRU batch flush is running and preventing repeated waits for an in-progress flush. Adds monitoring counters for single-page flushes and LRU flush waits.</p>
-</li>
-</ul>
-<p>This release addresses the list of Common Vulnerabilities and Exposures (CVE). Find the list of CVEs in <a href="https://docs.percona.com/percona-server/9.7/release-notes/9.7.1-1.html">Percona Server for MySQL 9.7.1-1</a> release notes.</p>
-<h3 id="release-notes-ps-9.7.2-mysql-972">MySQL 9.7.2<a class="headerlink" href="#release-notes-ps-9.7.2-mysql-972" title="Permanent link">&para;</a></h3>
-<p>Improvements and bug fixes provided by Oracle for MySQL 9.7.2 and included in Percona Server for MySQL are the following:</p>
-<ul>
-<li>
-<p>Under certain circumstances, when adding an AUTO_INCREMENT column to an existing table, some records in that table could be skipped, resulting in inaccurate values in the AUTO_INCREMENT column. (Bug #115136, Bug #37105825)</p>
-</li>
-<li>
-<p>During a buffer-pool resize, Adaptive Hash Index could be disabled in mysqld-auto.cnf even though innodb_adaptive_hash_index=ON. (Bug #39157211)</p>
-</li>
-<li>
-<p>Fixed a debug assertion in row_upd_rec_in_place() for non-versioned ROW_FORMAT=REDUNDANT rows. (Bug #39165747)</p>
-</li>
-<li>
-<p>Fixed an issue relating to table maintenance and clean-up. (Bug #39091376)</p>
-</li>
-<li>
-<p>Fixed an issue relating to unique indexes. (Bug #38501299)</p>
-</li>
-</ul>
-<p>Find the complete list of bug fixes and changes in the <a href="https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-2.html">MySQL 9.7.2 release notes</a></p>
-<h2 id="release-notes-ps-9.7.2-known-issues">Known issues<a class="headerlink" href="#release-notes-ps-9.7.2-known-issues" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p>This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 9.7 becomes available.</p>
-</li>
-<li>
-<p>In 9.7.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the <a href="https://dev.mysql.com/doc/refman/9.7/en/replication-options-replica.html#sysvar_terminology_use_previous">terminology_use_previous</a> system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.</p>
-</li>
-</ul>
-<h2 id="release-notes-ps-9.7.2-supplied-components">Supplied components<a class="headerlink" href="#release-notes-ps-9.7.2-supplied-components" title="Permanent link">&para;</a></h2>
-<p>Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona Server for MySQL-based variation of the Percona Distribution for MySQL.</p>
-<table>
-<thead>
-<tr>
-<th>Component</th>
-<th>Version</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Orchestrator</td>
-<td><a href="https://github.com/percona/orchestrator/releases/tag/v3.2.6-24">3.2.6-24</a></td>
-<td>The replication topology manager for Percona Server for MySQL</td>
-</tr>
-<tr>
-<td>ProxySQL</td>
-<td><a href="https://docs.percona.com/proxysql/3.0.9.html">3.0.9</a></td>
-<td>A high performance, high-availability, protocol-aware proxy for MySQL</td>
-</tr>
-<tr>
-<td>Percona XtraBackup</td>
-<td><a href="https://docs.percona.com/percona-xtrabackup/9.7/release-notes/9.7.1-rc1.html">9.7.1-rc1</a></td>
-<td>An open-source hot backup utility for MySQL-based servers</td>
-</tr>
-<tr>
-<td>MySQL Shell</td>
-<td><a href="https://dev.mysql.com/doc/relnotes/mysql-shell/9.7/en/news-9-7-1.html">9.7.1</a></td>
-<td>An advanced client and code editor for MySQL Server</td>
-</tr>
-<tr>
-<td>MySQL Router</td>
-<td><a href="https://dev.mysql.com/doc/relnotes/mysql-router/9.7/en/news-9-7-1.html">9.7.2</a></td>
 <td>Lightweight middleware that provides transparent routing between your application and back-end MySQL servers</td>
 </tr>
 </tbody>
@@ -4765,9 +4765,9 @@ we will do our very best to be helpful.</p></section><section class="print-page"
 .print-site-enumerate-headings #release-notes > h1:before { content: '4.1 ' }
 
 .print-site-enumerate-headings #section-4-2 > h1:before { content: '4.2 ' }
-.print-site-enumerate-headings #release-notes-ps-9.7.1 > h1:before { content: '4.2.1 ' }
+.print-site-enumerate-headings #release-notes-ps-9.7.2 > h1:before { content: '4.2.1 ' }
 
-.print-site-enumerate-headings #release-notes-ps-9.7.2 > h1:before { content: '4.2.2 ' }
+.print-site-enumerate-headings #release-notes-ps-9.7.1 > h1:before { content: '4.2.2 ' }
 
 .print-site-enumerate-headings #section-4-3 > h1:before { content: '4.3 ' }
 .print-site-enumerate-headings #release-notes-pxc-9.7.1 > h1:before { content: '4.3.1 ' }
