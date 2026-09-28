@@ -32,8 +32,6 @@ Percona Server for MySQL 9.7.2-2 introduces the following features and improveme
 
 * Improves InnoDB flushing performance by allowing a controlled single-page flush while an LRU batch flush is running and preventing repeated waits for an in-progress flush. Adds monitoring counters for single-page flushes and LRU flush waits.
 
-This release addresses the list of Common Vulnerabilities and Exposures (CVE). Find the list of CVEs in [Percona Server for MySQL 9.7.1-1](https://docs.percona.com/percona-server/9.7/release-notes/9.7.1-1.html) release notes.
-
 ### MySQL 9.7.2
 
 Improvements and bug fixes provided by Oracle for MySQL 9.7.2 and included in Percona Server for MySQL are the following:
