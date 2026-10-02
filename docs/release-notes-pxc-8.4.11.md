@@ -12,6 +12,10 @@ This release is based on [Percona XtraDB Cluster 8.4.11-11](https://docs.percona
 
 ### Percona XtraDB Cluster 8.4.11-11
 
+!!! note "Upgrade to 9.7"
+
+    To upgrade from Percona XtraDB Cluster 8.4 to 9.7, use 9.7.2 or newer as the target version. Upgrading from 8.4.11 to 9.7.1 is not supported.
+
 Percona XtraDB Cluster 8.4.11-11 introduces the following improvements:
 
 * When `pxc_strict_mode` is set to `ENFORCING` or `MASTER`, Percona XtraDB Cluster now also enables `sql_require_primary_key` globally, so tables without a primary key can no longer be created or altered. Previously, you could create such a table but could not run DML statements on it. While `pxc_strict_mode` is `ENFORCING` or `MASTER`, setting `sql_require_primary_key` to `OFF` returns an error. The server applies the setting at startup and whenever `pxc_strict_mode` changes to one of these modes. Existing connections keep their current session value, and new connections use the updated global value.
