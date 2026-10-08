@@ -6,6 +6,7 @@
 <html lang="en" class="no-js">
   <head>
     
+  
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
@@ -30,6 +31,23 @@
       <link rel="icon" href="../assets/mysql-fav.svg">
       <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
     
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'personalization_storage': 'denied',
+      'functionality_storage': 'granted',
+      'security_storage': 'granted',
+      'wait_for_update': 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+  </script>
+  <script src="https://cmp.osano.com/Azqe5vTyLOSbN3OuT/49ad85b5-0418-4794-ab81-7599dddd534c/osano.js"></script>
+
     
       
         <title>Single replica manager for Percona XtraDB Cluster - Percona Distribution for MySQL</title>
@@ -4962,8 +4980,8 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <p>The single replica manager is a simplified version of the <a href="replication-manager-for-pxc.html">Replication manager for Percona XtraDB Cluster</a> and is intended to manage a single replica. </p>
 <p>The single replica manager requires using a <a href="../glossary.html#gtid">global transaction identifier (GTID)</a> (Oracle implementation).</p>
 <p>To use the single replica manager script, edit the script and adjust the &lsquo;sourceCandidates&rsquo; and &lsquo;replCreds&rsquo; variables. If the Percona XtraDB Cluster nodes are &lsquo;10.1.1.10&rsquo;, &lsquo;10.1.1.11&rsquo;, and &lsquo;10.1.1.12&rsquo;, and the replication user is &lsquo;repluser&rsquo; with a password set to &lsquo;replpass&rsquo;, the variables should look like the following:</p>
-<div class="highlight"><pre><span></span><code>sourceCandidates=&quot;10.1.1.10 10.1.1.11 10.1.1.12&quot;
-replCreds=&quot;source_user=&#39;repl&#39;, source_password=&#39;replpass&#39;&quot;
+<div class="highlight"><pre><span></span><code>sourceCandidates="10.1.1.10 10.1.1.11 10.1.1.12"
+replCreds="source_user='repl', source_password='replpass'"
 </code></pre></div>
 <p>The credentials to the local MySQL server should be located in the <code>~/.my.cnf</code> file of the user under which the cron job is defined. The last step is to enable the cron job that runs every minute:</p>
 <div class="highlight"><pre><span></span><code>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>/usr/bin/replication_manager.sh<span class="w"> </span>
@@ -5097,7 +5115,7 @@ chmod a+w /tmp/replication_manager.log
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["search.highlight", "search.share", "search.suggest", "navigation.top", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "navigation.indexes", "content.tooltips", "content.tabs.link", "content.action.view", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["search.highlight", "search.share", "search.suggest", "navigation.top", "navigation.tracking", "navigation.instant.progress", "navigation.indexes", "content.tooltips", "content.tabs.link", "content.action.view", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
 
@@ -5116,7 +5134,20 @@ chmod a+w /tmp/replication_manager.log
         <script src="../js/kapa.js"></script>
       
     
-<script src="https://cmp.osano.com/Azqe5vTyLOSbN3OuT/49ad85b5-0418-4794-ab81-7599dddd534c/osano.js"></script>
+  <script
+    id="kapa-widget-script"
+    async
+    data-osano="ESSENTIAL"
+    src="https://widget.kapa.ai/kapa-widget.bundle.js"
+    data-website-id="0e0d55cf-6370-4a6d-a987-96670a7fe935"
+    data-button-hide="true"
+    data-project-name="Percona"
+    data-modal-title="Percona AI Assistant"
+    font-size="0.875rem"
+    data-modal-disclaimer="The **Percona AI Assistant** helps you find simple, clear answers to your Percona questions using [official documentation](https://docs.percona.com/), resolved [forum posts](https://forums.percona.com/) and [blog posts](https://www.percona.com/blog/). Note, do not enter personal or confidential information. Before using Percona AI assistant, read the [Legal Notice](https://docs.percona.com/percona-distribution-for-mysql/8.0/legal-notice.html)."
+    data-modal-example-questions="How do I select a deployment variant?, How do I install Percona Distribution for MySQL?, How do I achive high availability?, How do I use the Percona Distribution for MySQL components?"
+    data-project-logo="https://docs.percona.com/percona-distribution-for-mysql/8.0/_images/percona-logomark-one-color-dark.png"
+  ></script>
 
   </body>
 </html>
