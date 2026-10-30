@@ -1,4 +1,4 @@
-# Percona Distribution for MySQL 9.7.2 using Percona XtraDB Cluster (2026-10-)
+# Percona Distribution for MySQL 9.7.2 using Percona XtraDB Cluster (2026-11-02)
 
 !!! note "A note on MySQL 9.7.3"
 
