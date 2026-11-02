@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="assets/mysql-fav.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -50,10 +50,10 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -700,6 +700,8 @@
       
         
       
+        
+      
     
     
     
@@ -739,6 +741,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="release-notes-pxc-9.7.2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Percona Distribution for MySQL 9.7.2 using Percona XtraDB Cluster (2026-11-02)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2016,6 +2046,17 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#release-notes-pxc-9.7.2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Percona Distribution for MySQL 9.7.2 using Percona XtraDB Cluster (2026-11-02)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#release-notes-pxc-9.7.1" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2360,7 +2401,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 
 <h1>Documentation</h1>
  
-<h2>9.7.2 (September 28, 2026)</h2>
+<h2>9.7.2 (November 02, 2026)</h2>
 <!--<h3>Percona Technical Documentation Team</h3>-->
         </section>
         
@@ -2542,7 +2583,12 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </ul>
 <h2 id="release-notes-percona-distribution-for-mysql-using-percona-xtradb-cluster">Percona Distribution for MySQL using Percona XtraDB Cluster<a class="headerlink" href="#release-notes-percona-distribution-for-mysql-using-percona-xtradb-cluster" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="#release-notes-pxc-9.7.1">Percona Distribution for MySQL 9.7.1 using Percona XtraDB Cluster (2026-09-10)</a></li>
+<li>
+<p><a href="#release-notes-pxc-9.7.2">Percona Distribution for MySQL 9.7.2 using Percona XtraDB Cluster (2026-11-02)</a></p>
+</li>
+<li>
+<p><a href="#release-notes-pxc-9.7.1">Percona Distribution for MySQL 9.7.1 using Percona XtraDB Cluster (2026-09-10)</a></p>
+</li>
 </ul></section>
                     <section class='print-page md-section' id='section-4-2' heading-number='4.2'>
                         <h1>Percona Distribution for MySQL using Percona Server for MySQL<a class='headerlink' href='#section-4-2' title='Permanent link'></a>
@@ -2782,7 +2828,86 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
                     <section class='print-page md-section' id='section-4-3' heading-number='4.3'>
                         <h1>Percona Distribution for MySQL using Percona XtraDB Cluster<a class='headerlink' href='#section-4-3' title='Permanent link'></a>
                         </h1>
-                    <section class="print-page" id="release-notes-pxc-9.7.1" heading-number="4.3.1"><h1 id="release-notes-pxc-9.7.1-percona-distribution-for-mysql-971-using-percona-xtradb-cluster-2026-09-10">Percona Distribution for MySQL 9.7.1 using Percona XtraDB Cluster (2026-09-10)<a class="headerlink" href="#release-notes-pxc-9.7.1-percona-distribution-for-mysql-971-using-percona-xtradb-cluster-2026-09-10" title="Permanent link">&para;</a></h1>
+                    <section class="print-page" id="release-notes-pxc-9.7.2" heading-number="4.3.1"><h1 id="release-notes-pxc-9.7.2-percona-distribution-for-mysql-972-using-percona-xtradb-cluster-2026-11-02">Percona Distribution for MySQL 9.7.2 using Percona XtraDB Cluster (2026-11-02)<a class="headerlink" href="#release-notes-pxc-9.7.2-percona-distribution-for-mysql-972-using-percona-xtradb-cluster-2026-11-02" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">A note on MySQL 9.7.3</p>
+<p>After a thorough review of the updates included in MySQL 9.7.3, Percona has decided not to release a corresponding Percona Server for MySQL 9.7.3. MySQL 9.7.3 is a Critical Security Patch Update (CSPU) — a targeted security release that Oracle can issue between quarterly Critical Patch Updates (CPUs) when needed. The fixes included in this CSPU do not affect Percona Server for MySQL.</p>
+</div>
+<p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
+<p>This release is based on <a href="https://docs.percona.com/percona-server/9.7/release-notes/9.7.2-2.html">Percona XtraDB Cluster 9.7.2-2</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-0.html">MySQL 9.7.0 Community Edition</a> and enterprise-grade features developed by Percona.</p>
+<h2 id="release-notes-pxc-9.7.2-release-highlights">Release highlights<a class="headerlink" href="#release-notes-pxc-9.7.2-release-highlights" title="Permanent link">&para;</a></h2>
+<h3 id="release-notes-pxc-9.7.2-percona-server-for-mysql-972-2">Percona Server for MySQL 9.7.2-2<a class="headerlink" href="#release-notes-pxc-9.7.2-percona-server-for-mysql-972-2" title="Permanent link">&para;</a></h3>
+<p>Percona Server for MySQL 9.7.2-2 introduces the following new features and improvements:</p>
+<ul>
+<li>
+<p>Adds OpenID Connect (OIDC) authentication through external identity providers. See <a href="https://docs.percona.com/percona-server/9.7/openid-connect-authentication.html">Connect OIDC</a>.</p>
+</li>
+<li>
+<p>Adds SQL functions that calculate the distance between vector values. See <a href="https://docs.percona.com/percona-server/9.7/distance-function.html"><code>DISTANCE()</code></a>.</p>
+</li>
+</ul>
+<h3 id="release-notes-pxc-9.7.2-mysql-972">MySQL 9.7.2<a class="headerlink" href="#release-notes-pxc-9.7.2-mysql-972" title="Permanent link">&para;</a></h3>
+<p>Improvements and bug fixes provided by Oracle for MySQL 9.7.2 and included in Percona Server for MySQL are the following:</p>
+<ul>
+<li>
+<p>Under certain circumstances, when adding an AUTO_INCREMENT column to an existing table, some records in that table could be skipped, resulting in inaccurate values in the AUTO_INCREMENT column. (Bug #115136, Bug #37105825)</p>
+</li>
+<li>
+<p>During a buffer-pool resize, Adaptive Hash Index could be disabled in <code>mysqld-auto.cnf</code> even though <code>innodb_adaptive_hash_index=ON</code>. (Bug #39157211)</p>
+</li>
+<li>
+<p>Fixed a debug assertion in <code>row_upd_rec_in_place()</code> for non-versioned <code>ROW_FORMAT=REDUNDANT</code> rows. (Bug #39165747)</p>
+</li>
+<li>
+<p>Fixed an issue relating to table maintenance and clean-up. (Bug #39091376)</p>
+</li>
+<li>
+<p>Fixed an issue relating to unique indexes. (Bug #38501299)</p>
+</li>
+</ul>
+<p>Find the complete list of bug fixes and changes in the <a href="https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-2.html">MySQL 9.7.2 release notes</a>.</p>
+<h2 id="release-notes-pxc-9.7.2-known-issues">Known issues<a class="headerlink" href="#release-notes-pxc-9.7.2-known-issues" title="Permanent link">&para;</a></h2>
+<ul>
+<li>In 9.7.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the <a href="https://dev.mysql.com/doc/refman/9.7/en/replication-options-replica.html#sysvar_terminology_use_previous">terminology_use_previous</a> system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.</li>
+</ul>
+<h2 id="release-notes-pxc-9.7.2-supplied-components">Supplied components<a class="headerlink" href="#release-notes-pxc-9.7.2-supplied-components" title="Permanent link">&para;</a></h2>
+<p>Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona Server for MySQL-based variation of the Percona Distribution for MySQL.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Version</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Percona XtraBackup</td>
+<td><a href="https://docs.percona.com/percona-xtrabackup/9.7/release-notes/9.7.1-rc1.html">9.7.1-rc1</a></td>
+<td>An open-source hot backup utility for MySQL-based servers that doesn’t lock your database during the backup.</td>
+</tr>
+<tr>
+<td>HAProxy</td>
+<td><a href="https://git.haproxy.org/?p=haproxy-3.4.git;a=commit;h=8872a2604595140544774c2a6309a41186fc0f44">3.4.7</a></td>
+<td>A high-availability and load-balancing solution for Percona XtraDB Cluster. This is a default proxy.</td>
+</tr>
+<tr>
+<td>ProxySQL</td>
+<td><a href="https://docs.percona.com/proxysql/3.0.9.html">3.0.9</a></td>
+<td>A high performance, high-availability, protocol-aware proxy for MySQL.</td>
+</tr>
+<tr>
+<td>Percona Toolkit</td>
+<td><a href="https://docs.percona.com/percona-toolkit/release_notes.html#v3-7-2-released-2026-10-22">3.7.2</a></td>
+<td>The set of scripts to simplify and optimize database operation.</td>
+</tr>
+<tr>
+<td>replication_manager.sh</td>
+<td><a href="https://docs.percona.com/percona-distribution-for-mysql/9.7/replication-manager-for-pxc.html">1.0</a></td>
+<td>A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.</td>
+</tr>
+</tbody>
+</table></section><section class="print-page" id="release-notes-pxc-9.7.1" heading-number="4.3.2"><h1 id="release-notes-pxc-9.7.1-percona-distribution-for-mysql-971-using-percona-xtradb-cluster-2026-09-10">Percona Distribution for MySQL 9.7.1 using Percona XtraDB Cluster (2026-09-10)<a class="headerlink" href="#release-notes-pxc-9.7.1-percona-distribution-for-mysql-971-using-percona-xtradb-cluster-2026-09-10" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <div class="admonition note">
 <p>Percona Distribution for MySQL 9.7.0 using Percona XtraDB Cluster was not released; 9.7.1 is the next build in this series. This release includes enhancements and bug fixes from MySQL 9.7.0 and MySQL 9.7.1.</p>
@@ -3166,8 +3291,8 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>To enable either the <code>pdpxc-9.7.1</code> or <code>pdpxc-9.7.2</code> version repository, use the following command. The example enables the <code>pdpxc-9.7.1</code> repository:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span>setup<span class="w"> </span>pdpxc-9.7.1
+<p>To enable either the <code>pdpxc-9.7.1</code> or <code>pdpxc-9.7.2</code> version repository, use the following command. The example enables the <code>pdpxc-9.7.2</code> repository:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span>setup<span class="w"> </span>pdpxc-9.7.2
 </code></pre></div>
 </div>
 <h3 id="install-pdpxc-install-percona-distribution-for-mysql-packages">Install Percona Distribution for MySQL packages<a class="headerlink" href="#install-pdpxc-install-percona-distribution-for-mysql-packages" title="Permanent link">&para;</a></h3>
@@ -3204,8 +3329,8 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>To enable either the <code>pdpxc-9.7.1</code> or <code>pdpxc-9.7.2</code> version repository, use the following command. The example enables the <code>pdpxc-9.7.1</code> repository:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span>setup<span class="w"> </span>pdpxc-9.7.1
+<p>To enable either the <code>pdpxc-9.7.1</code> or <code>pdpxc-9.7.2</code> version repository, use the following command. The example enables the <code>pdpxc-9.7.2</code> repository:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span>setup<span class="w"> </span>pdpxc-9.7.2
 </code></pre></div>
 </div>
 <h3 id="install-pdpxc-install-percona-distribution-for-mysql-packages_1">Install Percona Distribution for MySQL packages<a class="headerlink" href="#install-pdpxc-install-percona-distribution-for-mysql-packages_1" title="Permanent link">&para;</a></h3>
@@ -4787,7 +4912,9 @@ we will do our very best to be helpful.</p></section><section class="print-page"
 .print-site-enumerate-headings #release-notes-ps-9.7.1 > h1:before { content: '4.2.2 ' }
 
 .print-site-enumerate-headings #section-4-3 > h1:before { content: '4.3 ' }
-.print-site-enumerate-headings #release-notes-pxc-9.7.1 > h1:before { content: '4.3.1 ' }
+.print-site-enumerate-headings #release-notes-pxc-9.7.2 > h1:before { content: '4.3.1 ' }
+
+.print-site-enumerate-headings #release-notes-pxc-9.7.1 > h1:before { content: '4.3.2 ' }
 
 .print-site-enumerate-headings #section-5 > h1:before { content: '5 ' }
 .print-site-enumerate-headings #components > h1:before { content: '5.1 ' }
@@ -4930,11 +5057,11 @@ we will do our very best to be helpful.</p></section><section class="print-page"
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/percona-distribution-for-mysql/9.7", "features": ["search.highlight", "search.share", "search.suggest", "navigation.top", "navigation.tracking", "navigation.instant.progress", "navigation.indexes", "content.tooltips", "content.tabs.link", "content.action.view", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "/percona-distribution-for-mysql/9.7", "features": ["search.highlight", "search.share", "search.suggest", "navigation.top", "navigation.tracking", "navigation.instant.progress", "navigation.indexes", "content.tooltips", "content.tabs.link", "content.action.view", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
   
-      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="js/print-site.js"></script>
       
