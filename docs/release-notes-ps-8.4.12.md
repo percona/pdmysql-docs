@@ -27,4 +27,4 @@ Review each component’s release notes for What’s new, improvements, or bug f
 | Percona Toolkit     | [3.7.1-3](https://docs.percona.com/percona-toolkit/release_notes.html#v3-7-1-3-released-2026-04-17)     | The set of scripts to simplify and optimize database operation. |
 | Percona XtraBackup  | [8.4.0-6](https://docs.percona.com/percona-xtrabackup/8.4/release-notes/8.4.0-6.html)| An open-source hot backup utility for MySQL-based servers|
 | MySQL Shell         | [8.4.10](https://dev.mysql.com/doc/relnotes/mysql-shell/8.4/en/news-8-4-10.html)    | An advanced client and code editor for MySQL Server|
-| MySQL Router        | [8.4.12](https://dev.mysql.com/doc/relnotes/mysql-router/26.7/en/news-26-7-0.html)    | Lightweight middleware that provides transparent routing between your application and back-end MySQL servers|
+| MySQL Router        | [8.4.11](https://dev.mysql.com/doc/relnotes/mysql-router/26.7/en/news-26-7-0.html)    | Lightweight middleware that provides transparent routing between your application and back-end MySQL servers|
