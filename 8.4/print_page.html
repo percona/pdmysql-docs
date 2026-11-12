@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="assets/mysql-fav.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -50,10 +50,10 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -988,6 +988,8 @@
       
         
       
+        
+      
     
     
     
@@ -1027,6 +1029,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="release-notes-pxc-8.4.11-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Percona Distribution for MySQL 8.4.11-12 using Percona XtraDB Cluster (2026-11-12)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2655,6 +2685,17 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#release-notes-pxc-8.4.11-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Percona Distribution for MySQL 8.4.11-12 using Percona XtraDB Cluster (2026-11-12)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#release-notes-pxc-8.4.11" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3098,7 +3139,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 
 <h1>Documentation</h1>
  
-<h2>8.4.11 (October 05, 2026)</h2>
+<h2>8.4.11-12 (November 12, 2026)</h2>
 <!--<h3>Percona Technical Documentation Team</h3>-->
         </section>
         
@@ -3307,6 +3348,9 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </ul>
 <h2 id="release-notes-percona-distribution-for-mysql-using-percona-xtradb-cluster">Percona Distribution for MySQL using Percona XtraDB Cluster<a class="headerlink" href="#release-notes-percona-distribution-for-mysql-using-percona-xtradb-cluster" title="Permanent link">&para;</a></h2>
 <ul>
+<li>
+<p><a href="#release-notes-pxc-8.4.11-12">Percona Distribution for MySQL 8.4.11-12 using Percona XtraDB Cluster (2026-11-12)</a></p>
+</li>
 <li>
 <p><a href="#release-notes-pxc-8.4.11">Percona Distribution for MySQL 8.4.11 using Percona XtraDB Cluster (2026-10-05)</a></p>
 </li>
@@ -4290,7 +4334,56 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
                     <section class='print-page md-section' id='section-4-3' heading-number='4.3'>
                         <h1>Percona Distribution for MySQL using Percona XtraDB Cluster<a class='headerlink' href='#section-4-3' title='Permanent link'></a>
                         </h1>
-                    <section class="print-page" id="release-notes-pxc-8.4.11" heading-number="4.3.1"><h1 id="release-notes-pxc-8.4.11-percona-distribution-for-mysql-8411-using-percona-xtradb-cluster-2026-10-05">Percona Distribution for MySQL 8.4.11 using Percona XtraDB Cluster (2026-10-05)<a class="headerlink" href="#release-notes-pxc-8.4.11-percona-distribution-for-mysql-8411-using-percona-xtradb-cluster-2026-10-05" title="Permanent link">&para;</a></h1>
+                    <section class="print-page" id="release-notes-pxc-8.4.11-12" heading-number="4.3.1"><h1 id="release-notes-pxc-8.4.11-12-percona-distribution-for-mysql-8411-12-using-percona-xtradb-cluster-2026-11-12">Percona Distribution for MySQL 8.4.11-12 using Percona XtraDB Cluster (2026-11-12)<a class="headerlink" href="#release-notes-pxc-8.4.11-12-percona-distribution-for-mysql-8411-12-using-percona-xtradb-cluster-2026-11-12" title="Permanent link">&para;</a></h1>
+<p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
+<p>This release is based on <a href="https://docs.percona.com/percona-xtradb-cluster/8.4/release-notes/8.4.11-12.html">Percona XtraDB Cluster 8.4.11-12</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">A note on MySQL 8.4.12</p>
+<p>Percona Distribution for MySQL 8.4.11-12 is not based on the MySQL 8.4.12 release. MySQL 8.4.12 is a Critical Security Patch Update (CSPU) — a targeted security release that Oracle can issue between quarterly Critical Patch Updates (CPUs) when needed. The MySQL 8.4.12 CSPU applies to the MySQL Server Docker image only, and its fixes do not affect Percona XtraDB Cluster.</p>
+</div>
+<h2 id="release-notes-pxc-8.4.11-12-release-highlights">Release highlights<a class="headerlink" href="#release-notes-pxc-8.4.11-12-release-highlights" title="Permanent link">&para;</a></h2>
+<p>Percona XtraDB Cluster 8.4.11-12 includes the following fix from <a href="https://docs.percona.com/percona-server/8.4/release-notes/8.4.11-12.html">Percona Server for MySQL 8.4.11-12</a>:</p>
+<ul>
+<li><a href="https://perconadev.atlassian.net/browse/PS-11950">PS-11950</a>: <code>mysqldump</code> did not always dump tables with compressed columns correctly. If a column comment or another quoted string in the table definition contained text that looked like a compressed column attribute, <code>mysqldump</code> changed the table definition in the dump, so it was different from the original table. <code>mysqldump</code> also did not correctly dump or restore some compression dictionaries, such as dictionaries with names containing quotes, spaces, reserved words or non-ASCII characters, or with non-ASCII data.</li>
+</ul>
+<h2 id="release-notes-pxc-8.4.11-12-supplied-components">Supplied components<a class="headerlink" href="#release-notes-pxc-8.4.11-12-supplied-components" title="Permanent link">&para;</a></h2>
+<p>Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona XtraDB Cluster-based variation of the Percona Distribution for MySQL:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Version</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Percona XtraBackup</td>
+<td><a href="https://docs.percona.com/percona-xtrabackup/8.4/release-notes/8.4.0-7.html">8.4.0-7</a></td>
+<td>An open-source hot backup utility for MySQL-based servers that doesn’t lock your database during the backup.</td>
+</tr>
+<tr>
+<td>HAProxy</td>
+<td><a href="https://git.haproxy.org/?p=haproxy-2.8.git;a=commit;h=ee8cc4dcba99a3ddead42f0528c8a50333acfa9d">2.8.29</a></td>
+<td>A high-availability and load-balancing solution for Percona XtraDB Cluster. This is a default proxy.</td>
+</tr>
+<tr>
+<td>ProxySQL</td>
+<td><a href="https://docs.percona.com/proxysql/2.7.3.html">2.7.3</a></td>
+<td>A high performance, high-availability, protocol-aware proxy for MySQL.</td>
+</tr>
+<tr>
+<td>Percona Toolkit</td>
+<td><a href="https://docs.percona.com/percona-toolkit/release_notes.html#v3-7-1-4-released-2026-07-02">3.7.1-4</a></td>
+<td>The set of scripts to simplify and optimize database operation.</td>
+</tr>
+<tr>
+<td>replication_manager.sh</td>
+<td><a href="https://docs.percona.com/percona-distribution-for-mysql/8.4/replication-manager-for-pxc.html">1.0</a></td>
+<td>A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.</td>
+</tr>
+</tbody>
+</table></section><section class="print-page" id="release-notes-pxc-8.4.11" heading-number="4.3.2"><h1 id="release-notes-pxc-8.4.11-percona-distribution-for-mysql-8411-using-percona-xtradb-cluster-2026-10-05">Percona Distribution for MySQL 8.4.11 using Percona XtraDB Cluster (2026-10-05)<a class="headerlink" href="#release-notes-pxc-8.4.11-percona-distribution-for-mysql-8411-using-percona-xtradb-cluster-2026-10-05" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-xtradb-cluster/8.4/release-notes/8.4.11-11.html">Percona XtraDB Cluster 8.4.11-11</a>.</p>
 <div class="admonition note">
@@ -4388,7 +4481,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-pxc-8.4.10" heading-number="4.3.2"><h1 id="release-notes-pxc-8.4.10-percona-distribution-for-mysql-8410-using-percona-xtradb-cluster-2026-07-27">Percona Distribution for MySQL 8.4.10 using Percona XtraDB Cluster (2026-07-27)<a class="headerlink" href="#release-notes-pxc-8.4.10-percona-distribution-for-mysql-8410-using-percona-xtradb-cluster-2026-07-27" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-pxc-8.4.10" heading-number="4.3.3"><h1 id="release-notes-pxc-8.4.10-percona-distribution-for-mysql-8410-using-percona-xtradb-cluster-2026-07-27">Percona Distribution for MySQL 8.4.10 using Percona XtraDB Cluster (2026-07-27)<a class="headerlink" href="#release-notes-pxc-8.4.10-percona-distribution-for-mysql-8410-using-percona-xtradb-cluster-2026-07-27" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <div class="admonition note">
 <p>Percona Distribution for MySQL 8.4.9-9 was not released; 8.4.10-10 is the next build in this series. This release includes enhancements and bug fixes from MySQL 8.4.9 and MySQL 8.4.10.</p>
@@ -4516,7 +4609,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-pxc-8.4.8" heading-number="4.3.3"><h1 id="release-notes-pxc-8.4.8-percona-distribution-for-mysql-848-using-percona-xtradb-cluster-2026-04-22">Percona Distribution for MySQL 8.4.8 using Percona XtraDB Cluster (2026-04-22)<a class="headerlink" href="#release-notes-pxc-8.4.8-percona-distribution-for-mysql-848-using-percona-xtradb-cluster-2026-04-22" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-pxc-8.4.8" heading-number="4.3.4"><h1 id="release-notes-pxc-8.4.8-percona-distribution-for-mysql-848-using-percona-xtradb-cluster-2026-04-22">Percona Distribution for MySQL 8.4.8 using Percona XtraDB Cluster (2026-04-22)<a class="headerlink" href="#release-notes-pxc-8.4.8-percona-distribution-for-mysql-848-using-percona-xtradb-cluster-2026-04-22" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-xtradb-cluster/8.4/release-notes/8.4.8-8.html">Percona XtraDB Cluster 8.4.8-8</a>.</p>
 <h2 id="release-notes-pxc-8.4.8-release-highlights">Release highlights<a class="headerlink" href="#release-notes-pxc-8.4.8-release-highlights" title="Permanent link">&para;</a></h2>
@@ -4595,7 +4688,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-pxc-8.4.7" heading-number="4.3.4"><h1 id="release-notes-pxc-8.4.7-percona-distribution-for-mysql-847-using-percona-xtradb-cluster-2026-01-13">Percona Distribution for MySQL 8.4.7 using Percona XtraDB Cluster (2026-01-13)<a class="headerlink" href="#release-notes-pxc-8.4.7-percona-distribution-for-mysql-847-using-percona-xtradb-cluster-2026-01-13" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-pxc-8.4.7" heading-number="4.3.5"><h1 id="release-notes-pxc-8.4.7-percona-distribution-for-mysql-847-using-percona-xtradb-cluster-2026-01-13">Percona Distribution for MySQL 8.4.7 using Percona XtraDB Cluster (2026-01-13)<a class="headerlink" href="#release-notes-pxc-8.4.7-percona-distribution-for-mysql-847-using-percona-xtradb-cluster-2026-01-13" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-xtradb-cluster/8.4/release-notes/8.4.7-7.html">Percona XtraDB Cluster 8.4.7-7</a>.</p>
 <h2 id="release-notes-pxc-8.4.7-release-highlights">Release highlights<a class="headerlink" href="#release-notes-pxc-8.4.7-release-highlights" title="Permanent link">&para;</a></h2>
@@ -4663,7 +4756,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-pxc-8.4.6" heading-number="4.3.5"><h1 id="release-notes-pxc-8.4.6-percona-distribution-for-mysql-846-using-percona-xtradb-cluster-2025-10-06">Percona Distribution for MySQL 8.4.6 using Percona XtraDB Cluster (2025-10-06)<a class="headerlink" href="#release-notes-pxc-8.4.6-percona-distribution-for-mysql-846-using-percona-xtradb-cluster-2025-10-06" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-pxc-8.4.6" heading-number="4.3.6"><h1 id="release-notes-pxc-8.4.6-percona-distribution-for-mysql-846-using-percona-xtradb-cluster-2025-10-06">Percona Distribution for MySQL 8.4.6 using Percona XtraDB Cluster (2025-10-06)<a class="headerlink" href="#release-notes-pxc-8.4.6-percona-distribution-for-mysql-846-using-percona-xtradb-cluster-2025-10-06" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-xtradb-cluster/8.4/release-notes/8.4.6-6.html">Percona XtraDB Cluster 8.4.6-6</a>.</p>
 <h2 id="release-notes-pxc-8.4.6-release-highlights">Release highlights<a class="headerlink" href="#release-notes-pxc-8.4.6-release-highlights" title="Permanent link">&para;</a></h2>
@@ -4734,7 +4827,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-pxc-8.4.5" heading-number="4.3.6"><h1 id="release-notes-pxc-8.4.5-percona-distribution-for-mysql-845-using-percona-xtradb-cluster-2025-07-14">Percona Distribution for MySQL 8.4.5 using Percona XtraDB Cluster (2025-07-14)<a class="headerlink" href="#release-notes-pxc-8.4.5-percona-distribution-for-mysql-845-using-percona-xtradb-cluster-2025-07-14" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-pxc-8.4.5" heading-number="4.3.7"><h1 id="release-notes-pxc-8.4.5-percona-distribution-for-mysql-845-using-percona-xtradb-cluster-2025-07-14">Percona Distribution for MySQL 8.4.5 using Percona XtraDB Cluster (2025-07-14)<a class="headerlink" href="#release-notes-pxc-8.4.5-percona-distribution-for-mysql-845-using-percona-xtradb-cluster-2025-07-14" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-xtradb-cluster/8.4/release-notes/8.4.5-5.html">Percona XtraDB Cluster 8.4.5-5</a>.</p>
 <h2 id="release-notes-pxc-8.4.5-release-highlights">Release highlights<a class="headerlink" href="#release-notes-pxc-8.4.5-release-highlights" title="Permanent link">&para;</a></h2>
@@ -4809,7 +4902,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-pxc-8.4.4" heading-number="4.3.7"><h1 id="release-notes-pxc-8.4.4-percona-distribution-for-mysql-844-using-percona-xtradb-cluster-2025-04-16">Percona Distribution for MySQL 8.4.4 using Percona XtraDB Cluster (2025-04-16)<a class="headerlink" href="#release-notes-pxc-8.4.4-percona-distribution-for-mysql-844-using-percona-xtradb-cluster-2025-04-16" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-pxc-8.4.4" heading-number="4.3.8"><h1 id="release-notes-pxc-8.4.4-percona-distribution-for-mysql-844-using-percona-xtradb-cluster-2025-04-16">Percona Distribution for MySQL 8.4.4 using Percona XtraDB Cluster (2025-04-16)<a class="headerlink" href="#release-notes-pxc-8.4.4-percona-distribution-for-mysql-844-using-percona-xtradb-cluster-2025-04-16" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-xtradb-cluster/8.4/release-notes/8.4.4-4.html">Percona XtraDB Cluster 8.4.4-4</a>.</p>
 <h2 id="release-notes-pxc-8.4.4-release-highlights">Release highlights<a class="headerlink" href="#release-notes-pxc-8.4.4-release-highlights" title="Permanent link">&para;</a></h2>
@@ -4873,7 +4966,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-pxc-8.4.3" heading-number="4.3.8"><h1 id="release-notes-pxc-8.4.3-percona-distribution-for-mysql-843-using-percona-xtradb-cluster-2025-01-21">Percona Distribution for MySQL 8.4.3 using Percona XtraDB Cluster (2025-01-21)<a class="headerlink" href="#release-notes-pxc-8.4.3-percona-distribution-for-mysql-843-using-percona-xtradb-cluster-2025-01-21" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-pxc-8.4.3" heading-number="4.3.9"><h1 id="release-notes-pxc-8.4.3-percona-distribution-for-mysql-843-using-percona-xtradb-cluster-2025-01-21">Percona Distribution for MySQL 8.4.3 using Percona XtraDB Cluster (2025-01-21)<a class="headerlink" href="#release-notes-pxc-8.4.3-percona-distribution-for-mysql-843-using-percona-xtradb-cluster-2025-01-21" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is the most stable, scalable, and secure open source MySQL distribution, with two download options: one based on Percona Server for MySQL and one based on Percona XtraDB Cluster. <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-xtradb-cluster/8.4/release-notes/8.4.3-3.html">Percona XtraDB Cluster 8.4.3-3</a>.</p>
 <h2 id="release-notes-pxc-8.4.3-release-highlights">Release highlights<a class="headerlink" href="#release-notes-pxc-8.4.3-release-highlights" title="Permanent link">&para;</a></h2>
@@ -4915,7 +5008,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-pxc-8.4.2" heading-number="4.3.9"><h1 id="release-notes-pxc-8.4.2-percona-distribution-for-mysql-842-using-percona-xtradb-cluster-2024-12-11">Percona Distribution for MySQL 8.4.2 using Percona XtraDB Cluster (2024-12-11)<a class="headerlink" href="#release-notes-pxc-8.4.2-percona-distribution-for-mysql-842-using-percona-xtradb-cluster-2024-12-11" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-pxc-8.4.2" heading-number="4.3.10"><h1 id="release-notes-pxc-8.4.2-percona-distribution-for-mysql-842-using-percona-xtradb-cluster-2024-12-11">Percona Distribution for MySQL 8.4.2 using Percona XtraDB Cluster (2024-12-11)<a class="headerlink" href="#release-notes-pxc-8.4.2-percona-distribution-for-mysql-842-using-percona-xtradb-cluster-2024-12-11" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is the most stable, scalable, and secure open source MySQL distribution, with two download options: one based on Percona Server for MySQL and one based on Percona XtraDB Cluster. <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-xtradb-cluster/8.4/release-notes/8.4.2-2.html">Percona XtraDB Cluster 8.4.2-2</a>.</p>
 <h2 id="release-notes-pxc-8.4.2-release-highlights">Release highlights<a class="headerlink" href="#release-notes-pxc-8.4.2-release-highlights" title="Permanent link">&para;</a></h2>
@@ -4956,7 +5049,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <td>A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="release-notes-pxc-8.4.0" heading-number="4.3.10"><h1 id="release-notes-pxc-8.4.0-percona-distribution-for-mysql-840-using-percona-xtradb-cluster-2024-11-14">Percona Distribution for MySQL 8.4.0 using Percona XtraDB Cluster (2024-11-14)<a class="headerlink" href="#release-notes-pxc-8.4.0-percona-distribution-for-mysql-840-using-percona-xtradb-cluster-2024-11-14" title="Permanent link">&para;</a></h1>
+</table></section><section class="print-page" id="release-notes-pxc-8.4.0" heading-number="4.3.11"><h1 id="release-notes-pxc-8.4.0-percona-distribution-for-mysql-840-using-percona-xtradb-cluster-2024-11-14">Percona Distribution for MySQL 8.4.0 using Percona XtraDB Cluster (2024-11-14)<a class="headerlink" href="#release-notes-pxc-8.4.0-percona-distribution-for-mysql-840-using-percona-xtradb-cluster-2024-11-14" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is the most stable, scalable, and secure open source MySQL distribution, with two download options: one based on Percona Server for MySQL and one based on Percona XtraDB Cluster. <a href="#installing">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-xtradb-cluster/8.4/release-notes/8.4.0-1.html">Percona XtraDB Cluster 8.4.0-1</a>.</p>
 <h2 id="release-notes-pxc-8.4.0-release-highlights">Release highlights<a class="headerlink" href="#release-notes-pxc-8.4.0-release-highlights" title="Permanent link">&para;</a></h2>
@@ -5259,8 +5352,8 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>To enable either the <code>pdpxc-8.4.0</code> or <code>pdpxc-8.4.2</code> version repository, use the following command. The example enables the <code>pdpxc-8.4.11</code> repository:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span>setup<span class="w"> </span>pdpxc-8.4.11
+<p>To enable either the <code>pdpxc-8.4.0</code> or <code>pdpxc-8.4.2</code> version repository, use the following command. The example enables the <code>pdpxc-8.4.11-12</code> repository:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span>setup<span class="w"> </span>pdpxc-8.4.11-12
 </code></pre></div>
 </div>
 <h3 id="install-pdpxc-install-percona-distribution-for-mysql-packages">Install Percona Distribution for MySQL packages<a class="headerlink" href="#install-pdpxc-install-percona-distribution-for-mysql-packages" title="Permanent link">&para;</a></h3>
@@ -5297,8 +5390,8 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>To enable either the <code>pdpxc-8.4.0</code> or <code>pdpxc-8.4.2</code> version repository, use the following command. The example enables the <code>pdpxc-8.4.11</code> repository:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span>setup<span class="w"> </span>pdpxc-8.4.11
+<p>To enable either the <code>pdpxc-8.4.0</code> or <code>pdpxc-8.4.2</code> version repository, use the following command. The example enables the <code>pdpxc-8.4.11-12</code> repository:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span>setup<span class="w"> </span>pdpxc-8.4.11-12
 </code></pre></div>
 </div>
 <h3 id="install-pdpxc-install-percona-distribution-for-mysql-packages_1">Install Percona Distribution for MySQL packages<a class="headerlink" href="#install-pdpxc-install-percona-distribution-for-mysql-packages_1" title="Permanent link">&para;</a></h3>
@@ -6896,25 +6989,27 @@ we will do our very best to be helpful.</p></section><section class="print-page"
 .print-site-enumerate-headings #release-notes-ps-8.4 > h1:before { content: '4.2.11 ' }
 
 .print-site-enumerate-headings #section-4-3 > h1:before { content: '4.3 ' }
-.print-site-enumerate-headings #release-notes-pxc-8.4.11 > h1:before { content: '4.3.1 ' }
+.print-site-enumerate-headings #release-notes-pxc-8.4.11-12 > h1:before { content: '4.3.1 ' }
 
-.print-site-enumerate-headings #release-notes-pxc-8.4.10 > h1:before { content: '4.3.2 ' }
+.print-site-enumerate-headings #release-notes-pxc-8.4.11 > h1:before { content: '4.3.2 ' }
 
-.print-site-enumerate-headings #release-notes-pxc-8.4.8 > h1:before { content: '4.3.3 ' }
+.print-site-enumerate-headings #release-notes-pxc-8.4.10 > h1:before { content: '4.3.3 ' }
 
-.print-site-enumerate-headings #release-notes-pxc-8.4.7 > h1:before { content: '4.3.4 ' }
+.print-site-enumerate-headings #release-notes-pxc-8.4.8 > h1:before { content: '4.3.4 ' }
 
-.print-site-enumerate-headings #release-notes-pxc-8.4.6 > h1:before { content: '4.3.5 ' }
+.print-site-enumerate-headings #release-notes-pxc-8.4.7 > h1:before { content: '4.3.5 ' }
 
-.print-site-enumerate-headings #release-notes-pxc-8.4.5 > h1:before { content: '4.3.6 ' }
+.print-site-enumerate-headings #release-notes-pxc-8.4.6 > h1:before { content: '4.3.6 ' }
 
-.print-site-enumerate-headings #release-notes-pxc-8.4.4 > h1:before { content: '4.3.7 ' }
+.print-site-enumerate-headings #release-notes-pxc-8.4.5 > h1:before { content: '4.3.7 ' }
 
-.print-site-enumerate-headings #release-notes-pxc-8.4.3 > h1:before { content: '4.3.8 ' }
+.print-site-enumerate-headings #release-notes-pxc-8.4.4 > h1:before { content: '4.3.8 ' }
 
-.print-site-enumerate-headings #release-notes-pxc-8.4.2 > h1:before { content: '4.3.9 ' }
+.print-site-enumerate-headings #release-notes-pxc-8.4.3 > h1:before { content: '4.3.9 ' }
 
-.print-site-enumerate-headings #release-notes-pxc-8.4.0 > h1:before { content: '4.3.10 ' }
+.print-site-enumerate-headings #release-notes-pxc-8.4.2 > h1:before { content: '4.3.10 ' }
+
+.print-site-enumerate-headings #release-notes-pxc-8.4.0 > h1:before { content: '4.3.11 ' }
 
 .print-site-enumerate-headings #section-5 > h1:before { content: '5 ' }
 .print-site-enumerate-headings #components > h1:before { content: '5.1 ' }
@@ -7057,11 +7152,11 @@ we will do our very best to be helpful.</p></section><section class="print-page"
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/percona-distribution-for-mysql/8.4", "features": ["search.highlight", "search.share", "search.suggest", "navigation.top", "navigation.tracking", "navigation.instant.progress", "navigation.indexes", "content.tooltips", "content.tabs.link", "content.action.view", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "/percona-distribution-for-mysql/8.4", "features": ["search.highlight", "search.share", "search.suggest", "navigation.top", "navigation.tracking", "navigation.instant.progress", "navigation.indexes", "content.tooltips", "content.tabs.link", "content.action.view", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
 
-      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="js/print-site.js"></script>
       
