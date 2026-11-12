@@ -8,7 +8,7 @@
 
 ## Percona Distribution for MySQL using Percona XtraDB Cluster
 
-* [Percona Distribution for MySQL 9.7.3 using Percona XtraDB Cluster (2026-11-10)](release-notes-pxc-9.7.3.md)
+* [Percona Distribution for MySQL 9.7.2-3 using Percona XtraDB Cluster (2026-11-12)](release-notes-pxc-9.7.2-3.md)
 
 * [Percona Distribution for MySQL 9.7.2 using Percona XtraDB Cluster (2026-11-02)](release-notes-pxc-9.7.2.md)
 

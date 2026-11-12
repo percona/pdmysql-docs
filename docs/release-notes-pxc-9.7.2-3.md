@@ -1,4 +1,4 @@
-# Percona Distribution for MySQL 9.7.3 using Percona XtraDB Cluster (2026-11-10)
+# Percona Distribution for MySQL 9.7.2-3 using Percona XtraDB Cluster (2026-11-12)
 
 Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](installing.md).
 
@@ -6,7 +6,7 @@ This release is based on [Percona XtraDB Cluster 9.7.3-3](https://docs.percona.c
 
 !!! note "A note on MySQL 9.7.3"
 
-    Percona Distribution for MySQL 9.7.3 is not based on the MySQL 9.7.3 release. MySQL 9.7.3 is a Critical Security Patch Update (CSPU) — a targeted security release that Oracle can issue between quarterly Critical Patch Updates (CPUs) when needed. The MySQL 9.7.3 CSPU applies to the MySQL Server Docker image only, and its fixes do not affect Percona XtraDB Cluster.
+    Percona Distribution for MySQL 9.7.2-3 is not based on the MySQL 9.7.3 release. MySQL 9.7.3 is a Critical Security Patch Update (CSPU) — a targeted security release that Oracle can issue between quarterly Critical Patch Updates (CPUs) when needed. The MySQL 9.7.3 CSPU applies to the MySQL Server Docker image only, and its fixes do not affect Percona XtraDB Cluster.
 
 ## Release highlights
 
