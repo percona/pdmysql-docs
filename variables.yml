@@ -7,6 +7,8 @@ vers: '8.4'
 majorpkg: 'pdps-84-lts'
 minorpkg: 'pdps-8.4.11-12'
 majorpkgpxc: 'pdpxc-84-lts'
-minorpkgpxc: 'pdpxc-8.4.11'
+
+minorpkgpxc: 'pdpxc-8.4.11-12'
+
 release_date: '2026-11-12'
 title_date: '2026-11-12'
