@@ -7,7 +7,7 @@ Percona Distribution for MySQL consists of the following **components**:
 - [Percona Server for MySQL](https://docs.percona.com/percona-server/9.7/) is a drop-in replacement for MySQL Community Edition with the enterprise-grade features embedded by Percona.
 - [Percona XtraDB Cluster](https://docs.percona.com/percona-xtradb-cluster/9.7/index.html) is the high-available clustering solution for MySQL. It is based on [Percona Server for MySQL](https://docs.percona.com/percona-server/9.7/index.html) and uses [Percona XtraBackup](https://docs.percona.com/percona-xtrabackup/9.7/index.html) for node provisioning.
 - [Percona XtraBackup](https://docs.percona.com/percona-xtrabackup/9.7/) is an open-source hot backup utility for MySQL-based servers that doesn’t lock your database during the backup.
-- \[Orchestrator (https://github.com/openark/orchestrator) is the replication topology manager for Percona Server for MySQL.
+- [Orchestrator](https://github.com/openark/orchestrator) is the replication topology manager for Percona Server for MySQL.
 - [HAProxy](http://www.haproxy.org/) is the default high-availability and load-balancing solution for Percona XtraDB Cluster.
 - [ProxySQL](https://proxysql.com/) is a high performance, high-availability, protocol-aware proxy for MySQL.
 - [Percona Toolkit](https://docs.percona.com/percona-toolkit/index.html) is the set of scripts to simplify and optimize database operation.
