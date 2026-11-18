@@ -134,7 +134,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"><div class="agent-hint" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap">For AI agents: an index of this documentation is at <a href="https://docs.percona.com/percona-distribution-for-mysql/9.7/llms.txt" tabindex="-1">llms.txt</a>.</div>
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -2101,10 +2101,10 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   
 
 
-<h1 id="replication-manager-for-percona-xtradb-cluster">Replication manager for Percona XtraDB Cluster<a class="headerlink" href="#replication-manager-for-percona-xtradb-cluster" title="Permanent link">&para;</a></h1>
+<h1 id="replication-manager-for-percona-xtradb-cluster">Replication manager for Percona XtraDB Cluster<a data-markdown-ignore class="headerlink" href="#replication-manager-for-percona-xtradb-cluster" title="Permanent link">&para;</a></h1>
 <p>The replication manager script helps manage <a href="glossary.html#multi-source-replication">multi-source replication</a> between multiple Percona XtraDB Cluster clusters. This tool has a failover mechanism and can automatically perform a failover due to source or replica node failures, service degradation, or maintenance requirements.</p>
 <p>The replication manager script monitors the active source-replica replication channel. If the source or replica node fails, the script re-establishes the replication channel using alternative source or replica cluster nodes.</p>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<h2 id="example">Example<a data-markdown-ignore class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>For example, we deploy multi-source replication links between three data centers: DC1, DC2, and DC3. In each data center, there are three Percona XtraDB Cluster nodes form distinct Percona XtraDB Cluster clusters. The data centers contain the following nodes:</p>
 <table>
 <thead>
@@ -2172,7 +2172,7 @@ wsrep_sst_method=xtrabackup-v2
 wsrep_sst_auth="root:root"
 </code></pre></div>
 <p>All nodes have the same <code>server-id</code> value.</p>
-<h3 id="configuration-steps">Configuration steps<a class="headerlink" href="#configuration-steps" title="Permanent link">&para;</a></h3>
+<h3 id="configuration-steps">Configuration steps<a data-markdown-ignore class="headerlink" href="#configuration-steps" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Bootstrap the cluster on DC1-1 node by running the following commands as root or using sudo:</p>
@@ -2309,7 +2309,7 @@ mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class
 </li>
 <li>
 <p>Install the packages for <code>replication_manager.sh</code> script depending on your operating system. On each node, perform the following steps as root or using sudo:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">On Debian and Ubuntu Linux</label><label for="__tabbed_1_2">On Red Hat Enterprise Linux and derivatives</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div data-markdown-ignore class="tabbed-labels"><label for="__tabbed_1_1">On Debian and Ubuntu Linux</label><label for="__tabbed_1_2">On Red Hat Enterprise Linux and derivatives</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>percona-replication-manager

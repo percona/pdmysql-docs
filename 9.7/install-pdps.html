@@ -134,7 +134,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"><div class="agent-hint" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap">For AI agents: an index of this documentation is at <a href="https://docs.percona.com/percona-distribution-for-mysql/9.7/llms.txt" tabindex="-1">llms.txt</a>.</div>
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -2145,9 +2145,9 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   
 
 
-<h1 id="install-percona-server-based-variant">Install Percona Server-based variant<a class="headerlink" href="#install-percona-server-based-variant" title="Permanent link">&para;</a></h1>
+<h1 id="install-percona-server-based-variant">Install Percona Server-based variant<a data-markdown-ignore class="headerlink" href="#install-percona-server-based-variant" title="Permanent link">&para;</a></h1>
 <p>We gather <a href="https://docs.percona.com/percona-server/9.7/telemetry.html">Telemetry data on Percona Server for MySQL <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a> in the Percona packages and Docker images.</p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a data-markdown-ignore class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>To install Percona software, you need to configure the required repository. To simplify this process, use the <code>percona-release</code> repository management tool. </p>
 <ol>
 <li>
@@ -2159,15 +2159,15 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <p><a href="https://docs.percona.com/percona-software-repositories/installing.html">Install percona-release <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a>. If you have <code>percona-release</code> installed, <a href="https://docs.percona.com/percona-software-repositories/updating.html">update percona-release <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a> to the latest version.</p>
 </li>
 </ol>
-<h2 id="procedure">Procedure<a class="headerlink" href="#procedure" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">On Debian and Ubuntu Linux</label><label for="__tabbed_1_2">On Red Hat Enterprise Linux and derivatives</label></div>
+<h2 id="procedure">Procedure<a data-markdown-ignore class="headerlink" href="#procedure" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div data-markdown-ignore class="tabbed-labels"><label for="__tabbed_1_1">On Debian and Ubuntu Linux</label><label for="__tabbed_1_2">On Red Hat Enterprise Linux and derivatives</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Run the following commands as the root user or via <code>sudo</code>.</p>
 </div>
-<h3 id="enable-percona-repository">Enable Percona repository<a class="headerlink" href="#enable-percona-repository" title="Permanent link">&para;</a></h3>
+<h3 id="enable-percona-repository">Enable Percona repository<a data-markdown-ignore class="headerlink" href="#enable-percona-repository" title="Permanent link">&para;</a></h3>
 <p>To enable the desired repository, we recommend to use the <code>enable</code> subcommand of <code>percona-release</code>.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pdps-97-lts
 </code></pre></div>
@@ -2177,7 +2177,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <div class="highlight"><pre><span></span><code>sudo percona-release enable pdps-9.7.3
 </code></pre></div>
 </div>
-<h3 id="install-percona-distribution-for-mysql-packages">Install Percona Distribution for MySQL packages<a class="headerlink" href="#install-percona-distribution-for-mysql-packages" title="Permanent link">&para;</a></h3>
+<h3 id="install-percona-distribution-for-mysql-packages">Install Percona Distribution for MySQL packages<a data-markdown-ignore class="headerlink" href="#install-percona-distribution-for-mysql-packages" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Install <em>Percona Server for MySQL</em>:</p>
@@ -2215,7 +2215,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </code></pre></div>
 </div>
 <p>Run the following commands as the root user or via <code>sudo</code>.</p>
-<h3 id="enable-percona-repository_1">Enable Percona repository<a class="headerlink" href="#enable-percona-repository_1" title="Permanent link">&para;</a></h3>
+<h3 id="enable-percona-repository_1">Enable Percona repository<a data-markdown-ignore class="headerlink" href="#enable-percona-repository_1" title="Permanent link">&para;</a></h3>
 <p>To enable the desired repository, we recommend to use the <code>enable</code> subcommand of <code>percona-release</code>.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pdps-97-lts
 </code></pre></div>
@@ -2225,7 +2225,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pdps-9.7.3
 </code></pre></div>
 </div>
-<h3 id="install-percona-distribution-for-mysql-packages_1">Install Percona Distribution for MySQL packages<a class="headerlink" href="#install-percona-distribution-for-mysql-packages_1" title="Permanent link">&para;</a></h3>
+<h3 id="install-percona-distribution-for-mysql-packages_1">Install Percona Distribution for MySQL packages<a data-markdown-ignore class="headerlink" href="#install-percona-distribution-for-mysql-packages_1" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Install <em>Percona Server for MySQL</em>:</p>
@@ -2257,7 +2257,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </div>
 </div>
 </div>
-<h3 id="run-percona-distribution-for-mysql">Run Percona Distribution for MySQL<a class="headerlink" href="#run-percona-distribution-for-mysql" title="Permanent link">&para;</a></h3>
+<h3 id="run-percona-distribution-for-mysql">Run Percona Distribution for MySQL<a data-markdown-ignore class="headerlink" href="#run-percona-distribution-for-mysql" title="Permanent link">&para;</a></h3>
 <p>Percona Distribution for MySQL is not started automatically on Red Hat Enterprise Linux and CentOS after the installation is complete. </p>
 <p>Start it manually using the following command:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>mysql
@@ -2268,7 +2268,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <p>Stop the service:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>mysql
 </code></pre></div>
-<h2 id="useful-links">Useful links<a class="headerlink" href="#useful-links" title="Permanent link">&para;</a></h2>
+<h2 id="useful-links">Useful links<a data-markdown-ignore class="headerlink" href="#useful-links" title="Permanent link">&para;</a></h2>
 <p><a href="download-instructions.html">Percona Software Download Instructions</a></p>
 
 

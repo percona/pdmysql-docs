@@ -132,7 +132,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"><div class="agent-hint" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap">For AI agents: an index of this documentation is at <a href="https://docs.percona.com/percona-distribution-for-mysql/9.7/llms.txt" tabindex="-1">llms.txt</a>.</div>
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -2515,47 +2515,47 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   
 
 
-<h1 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h1>
-<h2 id="acid">ACID<a class="headerlink" href="#acid" title="Permanent link">&para;</a></h2>
+<h1 id="glossary">Glossary<a data-markdown-ignore class="headerlink" href="#glossary" title="Permanent link">&para;</a></h1>
+<h2 id="acid">ACID<a data-markdown-ignore class="headerlink" href="#acid" title="Permanent link">&para;</a></h2>
 <p>Set of properties that guarantee database transactions are processed reliably. Stands for <a href="#atomicity"><code>Atomicity</code></a>, <a href="#consistency"><code>Consistency</code></a>, <a href="#isolation"><code>Isolation</code></a>, <a href="#durability"><code>Durability</code></a>.</p>
-<h2 id="asynchronous-replication">Asynchronous replication<a class="headerlink" href="#asynchronous-replication" title="Permanent link">&para;</a></h2>
+<h2 id="asynchronous-replication">Asynchronous replication<a data-markdown-ignore class="headerlink" href="#asynchronous-replication" title="Permanent link">&para;</a></h2>
 <p>Asynchronous replication is a technique where data is first written to the primary node. After the primary acknowledges the write, the data is written to secondary nodes.</p>
-<h2 id="atomicity">Atomicity<a class="headerlink" href="#atomicity" title="Permanent link">&para;</a></h2>
+<h2 id="atomicity">Atomicity<a data-markdown-ignore class="headerlink" href="#atomicity" title="Permanent link">&para;</a></h2>
 <p>Atomicity means that database operations are applied following an &ldquo;all or nothing&rdquo; rule. A transaction is either fully applied or not at all.</p>
-<h2 id="consistency">Consistency<a class="headerlink" href="#consistency" title="Permanent link">&para;</a></h2>
+<h2 id="consistency">Consistency<a data-markdown-ignore class="headerlink" href="#consistency" title="Permanent link">&para;</a></h2>
 <p>In the context of backup and restore, consistency means that the data restored will be consistent in a given point in time. Partial or incomplete writes to disk of atomic operations (for example, to table and index data structures separately) won&rsquo;t be served to the client after the restore. The same applies to multi-document transactions, that started but didn&rsquo;t complete by the time the backup was finished.</p>
-<h2 id="disaster-recovery">Disaster recovery<a class="headerlink" href="#disaster-recovery" title="Permanent link">&para;</a></h2>
+<h2 id="disaster-recovery">Disaster recovery<a data-markdown-ignore class="headerlink" href="#disaster-recovery" title="Permanent link">&para;</a></h2>
 <p>Disaster recovery are means to regain access and functionality of a database infrastructure after unplanned events that caused its failure.</p>
-<h2 id="downtime">Downtime<a class="headerlink" href="#downtime" title="Permanent link">&para;</a></h2>
+<h2 id="downtime">Downtime<a data-markdown-ignore class="headerlink" href="#downtime" title="Permanent link">&para;</a></h2>
 <p>Downtime is the period when a database infrastructure is unavailable due to expected (maintenance) or unexpected (outage, lost connectivity, hardware failure, etc.) reasons.</p>
-<h2 id="durability">Durability<a class="headerlink" href="#durability" title="Permanent link">&para;</a></h2>
+<h2 id="durability">Durability<a data-markdown-ignore class="headerlink" href="#durability" title="Permanent link">&para;</a></h2>
 <p>Once a transaction is committed, it will remain so.</p>
-<h2 id="failover">Failover<a class="headerlink" href="#failover" title="Permanent link">&para;</a></h2>
+<h2 id="failover">Failover<a data-markdown-ignore class="headerlink" href="#failover" title="Permanent link">&para;</a></h2>
 <p>Failover is switching automatically and seamlessly to a reliable backup system.</p>
-<h2 id="general-availability-ga">General availability (GA)<a class="headerlink" href="#general-availability-ga" title="Permanent link">&para;</a></h2>
+<h2 id="general-availability-ga">General availability (GA)<a data-markdown-ignore class="headerlink" href="#general-availability-ga" title="Permanent link">&para;</a></h2>
 <p>A finalized version of the product which is made available to the general public. It is the final stage in the software release cycle.</p>
-<h2 id="gtid">GTID<a class="headerlink" href="#gtid" title="Permanent link">&para;</a></h2>
+<h2 id="gtid">GTID<a data-markdown-ignore class="headerlink" href="#gtid" title="Permanent link">&para;</a></h2>
 <p>A global transaction identifier (GTID) is a unique identifier created and associated with each transaction committed on the server of the source. This identifier is unique across all servers in a given replication topology.</p>
-<h2 id="high-availability">High availability<a class="headerlink" href="#high-availability" title="Permanent link">&para;</a></h2>
+<h2 id="high-availability">High availability<a data-markdown-ignore class="headerlink" href="#high-availability" title="Permanent link">&para;</a></h2>
 <p>A high availability is the ability of a system to operate continuously without failure for a long time.</p>
-<h2 id="isolation">Isolation<a class="headerlink" href="#isolation" title="Permanent link">&para;</a></h2>
+<h2 id="isolation">Isolation<a data-markdown-ignore class="headerlink" href="#isolation" title="Permanent link">&para;</a></h2>
 <p>The Isolation requirement means that no transaction can interfere with another.</p>
-<h2 id="loosely-coupled-cluster">Loosely-coupled cluster<a class="headerlink" href="#loosely-coupled-cluster" title="Permanent link">&para;</a></h2>
+<h2 id="loosely-coupled-cluster">Loosely-coupled cluster<a data-markdown-ignore class="headerlink" href="#loosely-coupled-cluster" title="Permanent link">&para;</a></h2>
 <p>A loosely-coupled cluster is the deployment where cluster nodes are independent in processing / applying transactions. Data state may not always be consistent in time on all nodes; however, a single node state does not affect the cluster. Loosely-coupled clusters use <a href="#asynchronous-replication">asynchronous replication</a> and can be geographically distributed and/or serve as the <a href="#disaster-recovery">disaster recovery</a> site.</p>
-<h2 id="multi-source-replication">Multi-source replication<a class="headerlink" href="#multi-source-replication" title="Permanent link">&para;</a></h2>
+<h2 id="multi-source-replication">Multi-source replication<a data-markdown-ignore class="headerlink" href="#multi-source-replication" title="Permanent link">&para;</a></h2>
 <p>A multi-source replication topology requires at least one replica synchronized with at least two sources. The transactions can be received in parallel because the replica creates a separate replication channel for each source.</p>
 <p>Multi-source replication allows a single server to back up or consolidate data from multiple servers. This type of replication also lets you merge table shards.</p>
-<h2 id="nines-of-availability">Nines of availability<a class="headerlink" href="#nines-of-availability" title="Permanent link">&para;</a></h2>
+<h2 id="nines-of-availability">Nines of availability<a data-markdown-ignore class="headerlink" href="#nines-of-availability" title="Permanent link">&para;</a></h2>
 <p>Nines of availability refer to system availability as a percentage of total system time.</p>
-<h2 id="semi-synchronous-replication">Semi-synchronous replication<a class="headerlink" href="#semi-synchronous-replication" title="Permanent link">&para;</a></h2>
+<h2 id="semi-synchronous-replication">Semi-synchronous replication<a data-markdown-ignore class="headerlink" href="#semi-synchronous-replication" title="Permanent link">&para;</a></h2>
 <p>A semi-synchronous replication is a technique where the primary node wait for at least one of the secondaries to acknowledge the transaction before processing further transactions.</p>
-<h2 id="synchronous-replication">Synchronous replication<a class="headerlink" href="#synchronous-replication" title="Permanent link">&para;</a></h2>
+<h2 id="synchronous-replication">Synchronous replication<a data-markdown-ignore class="headerlink" href="#synchronous-replication" title="Permanent link">&para;</a></h2>
 <p>A synchronous replication is a technique when data is written to the primary and secondary nodes simultaneously. Thus, both primary and secondaries are in sync and failover from the primary to one of the secondaries is possible any time.</p>
-<h2 id="tech-preview">Tech preview<a class="headerlink" href="#tech-preview" title="Permanent link">&para;</a></h2>
+<h2 id="tech-preview">Tech preview<a data-markdown-ignore class="headerlink" href="#tech-preview" title="Permanent link">&para;</a></h2>
 <p>A tech preview item can be a feature, a variable, or a value within a variable. The term designates that the item is not yet ready for production use and is not included in support by SLA. A tech preview item is included in a release so that users can provide feedback. The item is either updated and released as <a href="#general-availability-ga">general availability(GA)</a> or removed if not useful. The item’s functionality can change from tech preview to GA.</p>
-<h2 id="tightly-coupled-cluster">Tightly-coupled cluster<a class="headerlink" href="#tightly-coupled-cluster" title="Permanent link">&para;</a></h2>
+<h2 id="tightly-coupled-cluster">Tightly-coupled cluster<a data-markdown-ignore class="headerlink" href="#tightly-coupled-cluster" title="Permanent link">&para;</a></h2>
 <p>A tightly-coupled cluster is the deployment in which transactions and information is synchronously distributed, consistent and available on all cluster nodes at any time.</p>
-<h2 id="uptime">Uptime<a class="headerlink" href="#uptime" title="Permanent link">&para;</a></h2>
+<h2 id="uptime">Uptime<a data-markdown-ignore class="headerlink" href="#uptime" title="Permanent link">&para;</a></h2>
 <p>Uptime is the time when the system is continuously available.</p>
 
 

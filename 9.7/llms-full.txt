@@ -1,0 +1,2401 @@
+# Percona Distribution for MySQL
+
+> Documentation
+
+Each page below is also available as markdown. For the documentation of all Percona products, see https://docs.percona.com/llms.txt.
+
+# Overview
+
+# Percona Distribution for MySQL 9.7 Documentation
+
+Percona Distribution for MySQL is a single solution with the best and most critical enterprise components from the MySQL open source community, designed and tested to work together. With [Percona Server for MySQL](https://www.percona.com/mysql/software/percona-server) or [Percona XtraDB Cluster](https://www.percona.com/mysql/software/percona-xtradb-cluster) as the base server, the distribution brings you the enterprise-grade [features](#features) for free. The set of carefully selected [components](https://docs.percona.com/percona-distribution-for-mysql/9.7/components.html) helps you operate your MySQL database to meet your application and business needs.
+
+## Features
+
+- **Increased stability and availability** - a set of high-availability and backup options help you ensure your data is saved and available for your business applications.
+- **Improved performance and efficiency** - integrated tools help DBAs maintain, manage and monitor the database performance and timely respond to changing demands.
+- **Reduced costs** - save on purchasing software licensing by using the distribution - the open-source enterprise-grade solution.
+- **Easy-to-integrate with PMM** - benefit from all the features of [PMM](https://docs.percona.com/percona-monitoring-and-management/3/) for monitoring and managing the health of your database.
+
+Percona Distribution for MySQL comes in two [deployment variants](https://docs.percona.com/percona-distribution-for-mysql/9.7/deployment-variants.html): one is based on Percona Server for MySQL and another one - on Percona XtraDB Cluster. They differ in the set of components and how you can use them.
+
+Important
+
+This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 9.7 becomes available.
+
+In 9.7.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the [terminology_use_previous](https://dev.mysql.com/doc/refman/9.7/en/replication-options-replica.html#sysvar_terminology_use_previous) system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.
+
+### Installation guides
+
+Find the best installation solution with our step-by-step installation instructions.
+
+[Installation instructions](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.html)
+
+## Solutions
+
+Learn about solutions you can deploy with Percona Distribution for MySQL.
+
+[Solutions](https://docs.percona.com/percona-distribution-for-mysql/9.7/pdps-group-replication.html)
+
+### Deployment variants
+
+Learn about the deployment variants.
+
+[Deployment variants](https://docs.percona.com/percona-distribution-for-mysql/9.7/deployment-variants.html)
+
+## Percona Distribution for MySQL components
+
+Learn about the Percona Distribution for MySQL components.
+
+[Components](https://docs.percona.com/percona-distribution-for-mysql/9.7/components.html)
+
+# Get help from Percona
+
+Our documentation guides are packed with information, but they can’t cover everything you need to know about Percona Distribution for MySQL. They also won’t cover every scenario you might come across. Don’t be afraid to try things out and ask questions when you get stuck.
+
+## Percona’s Community Forum
+
+Be a part of a space where you can tap into a wealth of knowledge from other database enthusiasts and experts who work with Percona’s software every day. While our service is entirely free, keep in mind that response times can vary depending on the complexity of the question. You are engaging with people who genuinely love solving database challenges.
+
+We recommend visiting our [Community Forum](https://forums.percona.com/t/welcome-to-perconas-community-forum/7) . It’s an excellent place for discussions, technical insights, and support around Percona database software. If you’re new and feeling a bit unsure, our [FAQ](https://forums.percona.com/faq) and [Guide for New Users](https://forums.percona.com/t/faq-guide-for-new-users/8562) ease you in.
+
+If you have thoughts, feedback, or ideas, the community team would like to hear from you at [Any ideas on how to make the forum better?](https://forums.percona.com/t/any-ideas-on-how-to-make-the-forum-better/11522) . We’re always excited to connect and improve everyone’s experience.
+
+## Percona experts
+
+Percona experts bring years of experience in tackling tough database performance issues and design challenges.
+
+We understand your challenges when managing complex database environments. That’s why we offer various services to help you simplify your operations and achieve your goals.
+
+| Service                      | Description                                                                                                                                                          |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 24/7 Expert Support          | Our dedicated team of database experts is available 24/7 to assist you with any database issues. We provide flexible support plans tailored to your specific needs.  |
+| Hands-On Database Management | Our managed services team can take over the day-to-day management of your database infrastructure, freeing up your time to focus on other priorities.                |
+| Expert Consulting            | Our experienced consultants provide guidance on database topics like architecture design, migration planning, performance optimization, and security best practices. |
+| Comprehensive Training       | Our training programs help your team develop skills to manage databases effectively, offering virtual and in-person courses.                                         |
+
+We’re here to help you every step of the way. Whether you need a quick fix or a long-term partnership, we’re ready to provide your expertise and support.
+
+# Choose Between Percona Server for MySQL and Percona Distribution for MySQL
+
+When setting up Percona repositories, you can choose between two paths: Percona Distribution for MySQL or Percona Server for MySQL alone. Both use the same core database engine but are designed for different operational scopes.
+
+To read about the standalone server product, see the [Percona Server for MySQL 9.7](https://docs.percona.com/percona-server/9.7/) documentation.
+
+## Check Platform Support
+
+Before choosing a repository, verify that your operating system version is supported for that specific product.
+
+Review the [Percona Software and Platform Lifecycle](https://www.percona.com/services/policies/percona-software-support-lifecycle#mysql) page to confirm support for your platform and version.
+
+## Comparison Overview
+
+| Feature             | Percona Distribution for MySQL (`pdps-9.7`)                                                             | Percona Server for MySQL (`ps-97`)                                       |
+| ------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| Primary Goal        | A curated collection of components tested together as a complete enterprise stack.                      | A performance-enhanced, drop-in replacement for MySQL Community Edition. |
+| Included Components | Database server, Percona XtraBackup, HAProxy, ProxySQL, and Orchestrator.                               | Database server, client, and essential plugins.                          |
+| Release Cycle       | Follows a coordinated release cycle where all bundled components are validated for inter-compatibility. | Follows the MySQL Community release cadence.                             |
+| Ideal For           | High Availability (HA) clusters and mission-critical enterprise environments.                           | Standalone instances or simple primary/replica setups.                   |
+
+## Which one should I install?
+
+### Percona Distribution for MySQL
+
+Choose the Distribution (this product) if any of the following apply:
+
+- Deploying a High Availability (HA) environment (for example, using Percona XtraDB Cluster).
+- Wanting Percona to guarantee that the specific versions of the server, proxy, and backup tools provided are fully compatible and tested as a single unit.
+- Preferring a single repository entry-point that provides all the tools required for a full production lifecycle (Server + Backups + Management).
+
+### Percona Server for MySQL
+
+Choose standalone Percona Server for MySQL if any of the following apply:
+
+- Wanting a minimal footprint focused solely on the database engine.
+- Managing your own infrastructure components (backups, proxies, or orchestration) independently.
+- Requiring the latest performance patches and features available in Percona Server but not needing a bundled ecosystem.
+
+## Installation
+
+For information on installing your choice, review the following:
+
+- Percona Distribution for MySQL (this product): [Install Percona Distribution for MySQL 9.7](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.html)
+- Percona Server for MySQL (standalone): [Install Percona Server for MySQL 9.7](https://docs.percona.com/percona-server/9.7/installation.html)
+
+# Copyright and licensing information
+
+## Documentation licensing
+
+Percona Distribution for MySQL documentation is (C)2009-2026 Percona LLC and/or its affiliates and is distributed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) .
+
+# Trademark policy
+
+This [Trademark Policy](https://www.percona.com/trademark-policy) is to ensure that users of Percona-branded products or services know that what they receive has really been developed, approved, tested and maintained by Percona. Trademarks help to prevent confusion in the marketplace, by distinguishing one company’s or person’s products and services from another’s.
+
+Percona owns a number of marks, including but not limited to Percona, XtraDB, Percona XtraDB, XtraBackup, Percona XtraBackup, Percona Server, and Percona Live, plus the distinctive visual icons and logos associated with these marks. Both the unregistered and registered marks of Percona are protected.
+
+Use of any Percona trademark in the name, URL, or other identifying characteristic of any product, service, website, or other use is not permitted without Percona’s written permission with the following three limited exceptions.
+
+*First*, you may use the appropriate Percona mark when making a nominative fair use reference to a bona fide Percona product.
+
+*Second*, when Percona has released a product under a version of the GNU General Public License (“GPL”), you may use the appropriate Percona mark when distributing a verbatim copy of that product in accordance with the terms and conditions of the GPL.
+
+*Third*, you may use the appropriate Percona mark to refer to a distribution of GPL-released Percona software that has been modified with minor changes for the sole purpose of allowing the software to operate on an operating system or hardware platform for which Percona has not yet released the software, provided that those third party changes do not affect the behavior, functionality, features, design or performance of the software. Users who acquire this Percona-branded software receive substantially exact implementations of the Percona software.
+
+Percona reserves the right to revoke this authorization at any time in its sole discretion. For example, if Percona believes that your modification is beyond the scope of the limited license granted in this Policy or that your use of the Percona mark is detrimental to Percona, Percona will revoke this authorization. Upon revocation, you must immediately cease using the applicable Percona mark. If you do not immediately cease using the Percona mark upon revocation, Percona may take action to protect its rights and interests in the Percona mark. Percona does not grant any license to use any Percona mark for any other modified versions of Percona software; such use will require our prior written permission.
+
+Neither trademark law nor any of the exceptions set forth in this Trademark Policy permit you to truncate, modify or otherwise use any Percona mark as part of your own brand. For example, if XYZ creates a modified version of the Percona Server, XYZ may not brand that modification as “XYZ Percona Server” or “Percona XYZ Server”, even if that modification otherwise complies with the third exception noted above.
+
+In all cases, you must comply with applicable law, the underlying license, and this Trademark Policy, as amended from time to time. For instance, any mention of Percona trademarks should include the full trademarked name, with proper spelling and capitalization, along with attribution of ownership to Percona Inc. For example, the full proper name for XtraBackup is Percona XtraBackup. However, it is acceptable to omit the word “Percona” for brevity on the second and subsequent uses, where such omission does not cause confusion.
+
+In the event of doubt as to any of the conditions or exceptions outlined in this Trademark Policy, please contact [trademarks@percona.com](mailto:trademarks@percona.com) for assistance and we will do our very best to be helpful.
+
+# Glossary
+
+## ACID
+
+Set of properties that guarantee database transactions are processed reliably. Stands for [`Atomicity`](#atomicity), [`Consistency`](#consistency), [`Isolation`](#isolation), [`Durability`](#durability).
+
+## Asynchronous replication
+
+Asynchronous replication is a technique where data is first written to the primary node. After the primary acknowledges the write, the data is written to secondary nodes.
+
+## Atomicity
+
+Atomicity means that database operations are applied following an “all or nothing” rule. A transaction is either fully applied or not at all.
+
+## Consistency
+
+In the context of backup and restore, consistency means that the data restored will be consistent in a given point in time. Partial or incomplete writes to disk of atomic operations (for example, to table and index data structures separately) won’t be served to the client after the restore. The same applies to multi-document transactions, that started but didn’t complete by the time the backup was finished.
+
+## Disaster recovery
+
+Disaster recovery are means to regain access and functionality of a database infrastructure after unplanned events that caused its failure.
+
+## Downtime
+
+Downtime is the period when a database infrastructure is unavailable due to expected (maintenance) or unexpected (outage, lost connectivity, hardware failure, etc.) reasons.
+
+## Durability
+
+Once a transaction is committed, it will remain so.
+
+## Failover
+
+Failover is switching automatically and seamlessly to a reliable backup system.
+
+## General availability (GA)
+
+A finalized version of the product which is made available to the general public. It is the final stage in the software release cycle.
+
+## GTID
+
+A global transaction identifier (GTID) is a unique identifier created and associated with each transaction committed on the server of the source. This identifier is unique across all servers in a given replication topology.
+
+## High availability
+
+A high availability is the ability of a system to operate continuously without failure for a long time.
+
+## Isolation
+
+The Isolation requirement means that no transaction can interfere with another.
+
+## Loosely-coupled cluster
+
+A loosely-coupled cluster is the deployment where cluster nodes are independent in processing / applying transactions. Data state may not always be consistent in time on all nodes; however, a single node state does not affect the cluster. Loosely-coupled clusters use [asynchronous replication](#asynchronous-replication) and can be geographically distributed and/or serve as the [disaster recovery](#disaster-recovery) site.
+
+## Multi-source replication
+
+A multi-source replication topology requires at least one replica synchronized with at least two sources. The transactions can be received in parallel because the replica creates a separate replication channel for each source.
+
+Multi-source replication allows a single server to back up or consolidate data from multiple servers. This type of replication also lets you merge table shards.
+
+## Nines of availability
+
+Nines of availability refer to system availability as a percentage of total system time.
+
+## Semi-synchronous replication
+
+A semi-synchronous replication is a technique where the primary node wait for at least one of the secondaries to acknowledge the transaction before processing further transactions.
+
+## Synchronous replication
+
+A synchronous replication is a technique when data is written to the primary and secondary nodes simultaneously. Thus, both primary and secondaries are in sync and failover from the primary to one of the secondaries is possible any time.
+
+## Tech preview
+
+A tech preview item can be a feature, a variable, or a value within a variable. The term designates that the item is not yet ready for production use and is not included in support by SLA. A tech preview item is included in a release so that users can provide feedback. The item is either updated and released as [general availability(GA)](#general-availability-ga) or removed if not useful. The item’s functionality can change from tech preview to GA.
+
+## Tightly-coupled cluster
+
+A tightly-coupled cluster is the deployment in which transactions and information is synchronously distributed, consistent and available on all cluster nodes at any time.
+
+## Uptime
+
+Uptime is the time when the system is continuously available.
+# Release notes
+
+# Percona Distribution for MySQL 9.7 release notes index
+
+## Percona Distribution for MySQL using Percona Server for MySQL
+
+- [Percona Distribution for MySQL using Percona Server for MySQL 9.7.3 (2026-11-12)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-ps-9.7.3.md)
+- [Percona Distribution for MySQL using Percona Server for MySQL 9.7.2 (2026-09-28)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-ps-9.7.2.html)
+- [Percona Distribution for MySQL using Percona Server for MySQL 9.7.1 (2026-08-05)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-ps-9.7.1.html)
+
+## Percona Distribution for MySQL using Percona XtraDB Cluster
+
+- [Percona Distribution for MySQL 9.7.2-3 using Percona XtraDB Cluster (2026-11-12)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-pxc-9.7.2-3.html)
+- [Percona Distribution for MySQL 9.7.2 using Percona XtraDB Cluster (2026-11-02)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-pxc-9.7.2.html)
+- [Percona Distribution for MySQL 9.7.1 using Percona XtraDB Cluster (2026-09-10)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-pxc-9.7.1.html)
+
+# Percona Distribution for MySQL 9.7.2-3 using Percona Server for MySQL (2026-11-12)
+
+Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.html).
+
+This release is based on [Percona Server for MySQL 9.7.2-3](https://docs.percona.com/percona-server/9.7/release-notes/9.7.2-3.html) that includes all the features and bug fixes available in the [MySQL 9.7.2 Community Edition](https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-2.html) and enterprise-grade features developed by Percona.
+
+A note on MySQL 9.7.3
+
+Percona Distribution for MySQL 9.7.2-3 is not based on the MySQL 9.7.3 release. MySQL 9.7.3 is a Critical Security Patch Update (CSPU) — a targeted security release that Oracle can issue between quarterly Critical Patch Updates (CPUs) when needed. The MySQL 9.7.3 CSPU applies to the MySQL Server Docker image only, and its fixes do not affect Percona Server for MySQL.
+
+## Release highlights
+
+### Percona Server for MySQL 9.7.2-3
+
+Percona Server for MySQL 9.7.2-3 includes the following bug fix:
+
+- [PS-11950](https://perconadev.atlassian.net/browse/PS-11950): `mysqldump` did not always dump tables with compressed columns correctly. If a column comment or another quoted string in the table definition contained text that looked like a compressed column attribute, `mysqldump` changed the table definition in the dump, so it was different from the original table. `mysqldump` also did not correctly dump or restore some compression dictionaries, such as dictionaries with names containing quotes, spaces, reserved words or non-ASCII characters, or with non-ASCII data.
+
+## Supplied components
+
+Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona Server for MySQL-based variation of the Percona Distribution for MySQL.
+
+| Component          | Version                                                                                   | Description                                                                                                  |
+| ------------------ | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Orchestrator       | [3.2.6-24](https://github.com/percona/orchestrator/releases/tag/v3.2.6-24)                | The replication topology manager for Percona Server for MySQL                                                |
+| ProxySQL           | [3.0.9](https://docs.percona.com/proxysql/3.0.9.html)                                     | A high performance, high-availability, protocol-aware proxy for MySQL                                        |
+| Percona XtraBackup | [9.7.1-rc1](https://docs.percona.com/percona-xtrabackup/9.7/release-notes/9.7.1-rc1.html) | An open-source hot backup utility for MySQL-based servers                                                    |
+| MySQL Shell        | [9.7.1](https://dev.mysql.com/doc/relnotes/mysql-shell/9.7/en/news-9-7-1.html)            | An advanced client and code editor for MySQL Server                                                          |
+| MySQL Router       | [9.7.1](https://dev.mysql.com/doc/relnotes/mysql-router/9.7/en/news-9-7-1.html)           | Lightweight middleware that provides transparent routing between your application and back-end MySQL servers |
+
+# Percona Distribution for MySQL 9.7.2 using Percona Server for MySQL (2026-09-28)
+
+Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.html).
+
+A note on MySQL 9.7.3
+
+After a thorough review of the updates included in MySQL 9.7.3, Percona has decided not to release a corresponding Percona Server for MySQL 9.7.3. MySQL 9.7.3 is a Critical Security Patch Update (CSPU) — a targeted security release that Oracle can issue between quarterly Critical Patch Updates (CPUs) when needed. The fixes included in this CSPU do not affect Percona Server for MySQL.
+
+This release is based on [Percona Server for MySQL 9.7.2-2](https://docs.percona.com/percona-server/9.7/release-notes/9.7.2-2.html) that includes all the features and bug fixes available in the [MySQL 9.7.2 Community Edition](https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-2.html) and enterprise-grade features developed by Percona.
+
+## Release highlights
+
+### Percona Server for MySQL 9.7.2-2
+
+Percona Server for MySQL 9.7.2-2 introduces the following features and improvements:
+
+- Adds OpenID Connect (OIDC) authentication and authorization. Users can authenticate with Identity tokens issued by external Identity Providers (IDPs) instead of MySQL passwords. The OIDC plugin supports multiple IDPs, maps IDP groups to MySQL roles, supports proxy users based on group membership, and refreshes JSON Web Key Set (JWKS) signing keys at runtime. Find more information in [OpenID Connect authentication](https://docs.percona.com/percona-server/9.7/openid-connect-authentication.html) and in [Get started with OpenID Connect authentication](https://docs.percona.com/percona-server/9.7/quickstart-openid-connect.html).
+- Adds SQL functions for calculating the distance between vector values. Applications can use these functions to measure vector similarity and support search, recommendation, and other vector-based workloads. Find more information in [DISTANCE() Function](https://docs.percona.com/percona-server/9.7/distance-function.html).
+- Improves InnoDB performance for highly concurrent range-select workloads by reducing page-level mutex contention when multiple sessions access the same buffer pool pages.
+- Adds timestamps to Group Replication communication debug traces, making it easier to identify, sequence, and correlate events in large `GCS_DEBUG_TRACE` files.
+- Improves validation and error logging for JSON-based OIDC configuration files. Invalid configuration sections are no longer silently ignored, and the server log provides clearer information for diagnosing configuration problems.
+- Improves InnoDB performance for I/O-intensive workloads by reducing the time the buffer pool Least Recently Used (LRU) list mutex is held during physical page reads, decreasing serialization and improving scalability.
+- Improves InnoDB Least Recently Used (LRU) flushing performance by restoring a dedicated LRU manager thread for each buffer pool instance and moving LRU flushing work away from page cleaner threads.
+- Improves InnoDB Least Recently Used (LRU) flushing efficiency by correcting the LRU scan behavior so that scans continue through eligible pages instead of restarting unnecessarily.
+- Improves InnoDB flushing performance by allowing a controlled single-page flush while an LRU batch flush is running and preventing repeated waits for an in-progress flush. Adds monitoring counters for single-page flushes and LRU flush waits.
+
+### MySQL 9.7.2
+
+Improvements and bug fixes provided by Oracle for MySQL 9.7.2 and included in Percona Server for MySQL are the following:
+
+- Under certain circumstances, when adding an AUTO_INCREMENT column to an existing table, some records in that table could be skipped, resulting in inaccurate values in the AUTO_INCREMENT column. (Bug #115136, Bug #37105825)
+- During a buffer-pool resize, Adaptive Hash Index could be disabled in mysqld-auto.cnf even though innodb_adaptive_hash_index=ON. (Bug #39157211)
+- Fixed a debug assertion in row_upd_rec_in_place() for non-versioned ROW_FORMAT=REDUNDANT rows. (Bug #39165747)
+- Fixed an issue relating to table maintenance and clean-up. (Bug #39091376)
+- Fixed an issue relating to unique indexes. (Bug #38501299)
+
+Find the complete list of bug fixes and changes in the [MySQL 9.7.2 release notes](https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-2.html)
+
+## Known issues
+
+- This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 9.7 becomes available.
+- In 9.7.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the [terminology_use_previous](https://dev.mysql.com/doc/refman/9.7/en/replication-options-replica.html#sysvar_terminology_use_previous) system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.
+
+## Supplied components
+
+Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona Server for MySQL-based variation of the Percona Distribution for MySQL.
+
+| Component          | Version                                                                                   | Description                                                                                                  |
+| ------------------ | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Orchestrator       | [3.2.6-24](https://github.com/percona/orchestrator/releases/tag/v3.2.6-24)                | The replication topology manager for Percona Server for MySQL                                                |
+| ProxySQL           | [3.0.9](https://docs.percona.com/proxysql/3.0.9.html)                                     | A high performance, high-availability, protocol-aware proxy for MySQL                                        |
+| Percona XtraBackup | [9.7.1-rc1](https://docs.percona.com/percona-xtrabackup/9.7/release-notes/9.7.1-rc1.html) | An open-source hot backup utility for MySQL-based servers                                                    |
+| MySQL Shell        | [9.7.1](https://dev.mysql.com/doc/relnotes/mysql-shell/9.7/en/news-9-7-1.html)            | An advanced client and code editor for MySQL Server                                                          |
+| MySQL Router       | [9.7.1](https://dev.mysql.com/doc/relnotes/mysql-router/9.7/en/news-9-7-1.html)           | Lightweight middleware that provides transparent routing between your application and back-end MySQL servers |
+
+# Percona Distribution for MySQL 9.7.1 using Percona Server for MySQL (2026-08-05)
+
+Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.html).
+
+Percona Distribution for MySQL 9.7.0 using Percona Server for MySQL was not released; 9.7.1 is the next build in this series. This release includes enhancements and bug fixes from MySQL 9.7.0 and MySQL 9.7.1.
+
+This release is based on [Percona Server for MySQL 9.7.1-1](https://docs.percona.com/percona-server/9.7/release-notes/9.7.1-1.html) that includes all the features and bug fixes available in the [MySQL 9.7.1 Community Edition](https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-1.html) and enterprise-grade features developed by Percona.
+
+## Release highlights
+
+### Percona Server for MySQL 9.7.1-1
+
+Percona Server for MySQL 9.7.1-1 introduces the following features and improvements:
+
+- Integrates the new Key Management Interoperability Protocol (KMIP) library into the key management component.
+- Expands Thread Pool statistics with status variables for queue monitoring and wait time analysis.
+- Introduces JSONL (JSON Lines) output format for Audit Log Filter.
+- Increases data dictionary upgrade logging verbosity to aid diagnosis of upgrade failures.
+- Extends Audit Log Filter logging so the `table_access` class records `read` and `insert` statements.
+- Changes audit log shutdown behavior to flush the buffer when the `ASYNCHRONOUS` logging strategy is in use.
+- Reduces memory pressure in the Audit Log Filter component caused by virtual file system (VFS) buffering.
+- Aligns `audit_log_filter.format=NEW` behavior between the 8.0 plugin and the 8.4 component.
+- Suppresses nested general/status records in Audit Log Filter output when `audit_log_filter.event_mode=REDUCED` was enabled.
+- Removes `format=OLD` and set JSONL as the default Audit Log Filter output format.
+- Optimizes performance of `mem_root_deque`.
+
+This release addresses the list of Common Vulnerabilities and Exposures (CVE). Find the list of CVEs in [Percona Server for MySQL 9.7.1-1](https://docs.percona.com/percona-server/9.7/release-notes/9.7.1-1.html) release notes.
+
+### MySQL 9.7.0
+
+Improvements and bug fixes provided by Oracle for MySQL 9.7.0 and included in Percona Server for MySQL are the following:
+
+- Connection attribute parsing could read a length-encoded size field before verifying that the complete field was present in the packet, leading to an out-of-bounds read. A size check is now performed before reading the field. (Bug #39116965)
+- A regression in row size estimation for `ROW_FORMAT=COMPRESSED` tables could cause `CREATE TABLE` to fail with `Row size too large` for tables that were accepted in earlier releases. (Bug #39129182, Bug #120323)
+- Under certain circumstances, when calculating the maximum possible index record size, an assertion failure could occur. (Bug #85060, Bug #25579578)
+
+Find the complete list of bug fixes and changes in the [MySQL 9.7.0 Release Notes](https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-0.html).
+
+## Builds and packaging
+
+- Percona Server for MySQL releases include a mixture of Profile-Guided Optimization (PGO) and non-PGO builds. Where PGO is enabled, the compiler uses runtime profiling data from representative workloads to guide optimization, which can improve throughput and reduce latency compared with non-PGO builds.
+
+- See [Profile-Guided Optimization (PGO) and non-PGO builds](https://docs.percona.com/percona-server/9.7/pgo.html) for benefits, considerations, and which build is published for each platform.
+
+- In Percona Server for MySQL 9.7.1-1 only, Debian and Ubuntu (APT) packaging was reorganized to align more closely with upstream MySQL. Several packages were split into separate components, which may affect upgrades and dependency resolution compared with earlier Percona Server releases. The APT packages are:
+
+  - percona-server-client-core
+  - percona-server-client-plugins
+  - percona-server-client
+  - percona-server-common
+  - percona-server-server-core
+  - percona-server-server
+  - percona-telemetry-agent
+
+## Known issues
+
+- This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 9.7 becomes available.
+- In 9.7.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the [terminology_use_previous](https://dev.mysql.com/doc/refman/9.7/en/replication-options-replica.html#sysvar_terminology_use_previous) system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.
+
+## Supplied components
+
+Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona Server for MySQL-based variation of the Percona Distribution for MySQL.
+
+| Component          | Version                                                                                   | Description                                                                                                  |
+| ------------------ | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Orchestrator       | [3.2.6-23](https://github.com/percona/orchestrator/releases/tag/v3.2.6-23)                | The replication topology manager for Percona Server for MySQL                                                |
+| ProxySQL           | [3.0.9](https://docs.percona.com/proxysql/3.0.9.html)                                     | A high performance, high-availability, protocol-aware proxy for MySQL                                        |
+| Percona XtraBackup | [9.7.1-rc1](https://docs.percona.com/percona-xtrabackup/9.7/release-notes/9.7.1-rc1.html) | An open-source hot backup utility for MySQL-based servers                                                    |
+| MySQL Shell        | [9.7.1](https://dev.mysql.com/doc/relnotes/mysql-shell/9.7/en/news-9-7-1.html)            | An advanced client and code editor for MySQL Server                                                          |
+| MySQL Router       | [9.7.1](https://dev.mysql.com/doc/relnotes/mysql-router/9.7/en/news-9-7-1.html)           | Lightweight middleware that provides transparent routing between your application and back-end MySQL servers |
+
+# Percona Distribution for MySQL 9.7.2-3 using Percona XtraDB Cluster (2026-11-12)
+
+Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.html).
+
+This release is based on [Percona XtraDB Cluster 9.7.3-3](https://docs.percona.com/percona-xtradb-cluster/9.7/release-notes/9.7.3-3.html).
+
+A note on MySQL 9.7.3
+
+Percona Distribution for MySQL 9.7.2-3 is not based on the MySQL 9.7.3 release. MySQL 9.7.3 is a Critical Security Patch Update (CSPU) — a targeted security release that Oracle can issue between quarterly Critical Patch Updates (CPUs) when needed. The MySQL 9.7.3 CSPU applies to the MySQL Server Docker image only, and its fixes do not affect Percona XtraDB Cluster.
+
+## Release highlights
+
+Percona XtraDB Cluster 9.7.3-3 includes the following fix from [Percona Server for MySQL 9.7.3-3](https://docs.percona.com/percona-server/9.7/release-notes/9.7.3-3.html):
+
+- [PS-11950](https://perconadev.atlassian.net/browse/PS-11950): `mysqldump` did not always dump tables with compressed columns correctly. If a column comment or another quoted string in the table definition contained text that looked like a compressed column attribute, `mysqldump` changed the table definition in the dump, so it was different from the original table. `mysqldump` also did not correctly dump or restore some compression dictionaries, such as dictionaries with names containing quotes, spaces, reserved words or non-ASCII characters, or with non-ASCII data.
+
+## Supplied components
+
+Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona XtraDB Cluster-based variation of the Percona Distribution for MySQL:
+
+| Component              | Version                                                                                                 | Description                                                                                                  |
+| ---------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Percona XtraBackup     | [9.7.1-rc1](https://docs.percona.com/percona-xtrabackup/9.7/release-notes/9.7.1-rc1.html)               | An open-source hot backup utility for MySQL-based servers that doesn’t lock your database during the backup. |
+| HAProxy                | [3.4.7](https://git.haproxy.org/?p=haproxy-3.4.git;a=commit;h=8872a2604595140544774c2a6309a41186fc0f44) | A high-availability and load-balancing solution for Percona XtraDB Cluster. This is a default proxy.         |
+| ProxySQL               | [3.0.9](https://docs.percona.com/proxysql/3.0.9.html)                                                   | A high performance, high-availability, protocol-aware proxy for MySQL.                                       |
+| Percona Toolkit        | [3.7.2](https://docs.percona.com/percona-toolkit/release_notes.html#v3-7-2-released-2026-10-22)         | The set of scripts to simplify and optimize database operation.                                              |
+| replication_manager.sh | [1.0](https://docs.percona.com/percona-distribution-for-mysql/9.7/replication-manager-for-pxc.html)     | A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.                  |
+
+# Percona Distribution for MySQL 9.7.2 using Percona XtraDB Cluster (2026-11-02)
+
+A note on MySQL 9.7.3
+
+After a thorough review of the updates included in MySQL 9.7.3, Percona has decided not to release a corresponding Percona Server for MySQL 9.7.3. MySQL 9.7.3 is a Critical Security Patch Update (CSPU) — a targeted security release that Oracle can issue between quarterly Critical Patch Updates (CPUs) when needed. The fixes included in this CSPU do not affect Percona Server for MySQL.
+
+Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.html).
+
+This release is based on [Percona XtraDB Cluster 9.7.2-2](https://docs.percona.com/percona-server/9.7/release-notes/9.7.2-2.html) that includes all the features and bug fixes available in the [MySQL 9.7.0 Community Edition](https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-0.html) and enterprise-grade features developed by Percona.
+
+## Release highlights
+
+### Percona Server for MySQL 9.7.2-2
+
+Percona Server for MySQL 9.7.2-2 introduces the following new features and improvements:
+
+- Adds OpenID Connect (OIDC) authentication through external identity providers. See [Connect OIDC](https://docs.percona.com/percona-server/9.7/openid-connect-authentication.html).
+- Adds SQL functions that calculate the distance between vector values. See [`DISTANCE()`](https://docs.percona.com/percona-server/9.7/distance-function.html).
+
+### MySQL 9.7.2
+
+Improvements and bug fixes provided by Oracle for MySQL 9.7.2 and included in Percona Server for MySQL are the following:
+
+- Under certain circumstances, when adding an AUTO_INCREMENT column to an existing table, some records in that table could be skipped, resulting in inaccurate values in the AUTO_INCREMENT column. (Bug #115136, Bug #37105825)
+- During a buffer-pool resize, Adaptive Hash Index could be disabled in `mysqld-auto.cnf` even though `innodb_adaptive_hash_index=ON`. (Bug #39157211)
+- Fixed a debug assertion in `row_upd_rec_in_place()` for non-versioned `ROW_FORMAT=REDUNDANT` rows. (Bug #39165747)
+- Fixed an issue relating to table maintenance and clean-up. (Bug #39091376)
+- Fixed an issue relating to unique indexes. (Bug #38501299)
+
+Find the complete list of bug fixes and changes in the [MySQL 9.7.2 release notes](https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-2.html).
+
+## Known issues
+
+- In 9.7.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the [terminology_use_previous](https://dev.mysql.com/doc/refman/9.7/en/replication-options-replica.html#sysvar_terminology_use_previous) system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.
+
+## Supplied components
+
+Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona Server for MySQL-based variation of the Percona Distribution for MySQL.
+
+| Component              | Version                                                                                                 | Description                                                                                                  |
+| ---------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Percona XtraBackup     | [9.7.1-rc1](https://docs.percona.com/percona-xtrabackup/9.7/release-notes/9.7.1-rc1.html)               | An open-source hot backup utility for MySQL-based servers that doesn’t lock your database during the backup. |
+| HAProxy                | [3.4.7](https://git.haproxy.org/?p=haproxy-3.4.git;a=commit;h=8872a2604595140544774c2a6309a41186fc0f44) | A high-availability and load-balancing solution for Percona XtraDB Cluster. This is a default proxy.         |
+| ProxySQL               | [3.0.9](https://docs.percona.com/proxysql/3.0.9.html)                                                   | A high performance, high-availability, protocol-aware proxy for MySQL.                                       |
+| Percona Toolkit        | [3.7.2](https://docs.percona.com/percona-toolkit/release_notes.html#v3-7-2-released-2026-10-22)         | The set of scripts to simplify and optimize database operation.                                              |
+| replication_manager.sh | [1.0](https://docs.percona.com/percona-distribution-for-mysql/9.7/replication-manager-for-pxc.html)     | A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.                  |
+
+# Percona Distribution for MySQL 9.7.1 using Percona XtraDB Cluster (2026-09-10)
+
+Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.html).
+
+Percona Distribution for MySQL 9.7.0 using Percona XtraDB Cluster was not released; 9.7.1 is the next build in this series. This release includes enhancements and bug fixes from MySQL 9.7.0 and MySQL 9.7.1.
+
+This release is based on [Percona XtraDB Cluster 9.7.1-1](https://docs.percona.com/percona-server/9.7/release-notes/9.7.1-1.html) that includes all the features and bug fixes available in the [MySQL 9.7.0 Community Edition](https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-0.html) and enterprise-grade features developed by Percona.
+
+## Release highlights
+
+### Percona Server for MySQL 9.7.1-1
+
+Percona Server for MySQL 9.7.1-1 introduces the following new features and improvements:
+
+- Integrates the new Key Management Interoperability Protocol (KMIP) library into the key management component.
+- Adds JSONL (JSON Lines) output format for Audit Log Filter.
+- Increases the verbosity of the data dictionary upgrade process, making it easier to diagnose issues that occur during upgrade.
+- Logs SQL statements for the Audit Log Filter `table_access` class and the `read` and `insert` subclasses.
+- Flushes the audit log buffer on server shutdown when the `ASYNCHRONOUS` logging strategy is in use, preventing the loss of buffered events.
+- Reduces memory pressure in the Audit Log Filter component caused by VFS buffering.
+- Aligns the `audit_log_filter.format=NEW` output between the 8.0 plugin and the 8.4 component.
+- Optimizes performance for `mem_root_deque`.
+
+This release addresses the list of Common Vulnerabilities and Exposures (CVE). Find the list of CVEs in [Percona Server for MySQL 9.7.1-1](https://docs.percona.com/percona-server/9.7/release-notes/9.7.1-1.html) release notes.
+
+### MySQL 9.7.0
+
+Improvements and bug fixes provided by Oracle for MySQL 9.7.0 and included in Percona Server for MySQL are the following:
+
+- Connection attribute parsing could read a length-encoded size field before verifying that the complete field was present in the packet, leading to an out-of-bounds read. A size check is now performed before reading the field. (Bug #39116965)
+- A regression in row size estimation for `ROW_FORMAT=COMPRESSED` tables could cause `CREATE TABLE` to fail with `Row size too large` for tables that were accepted in earlier releases. (Bug #39129182, Bug #120323)
+
+Find the complete list of bug fixes and changes in the [MySQL 9.7.0 Release Notes](https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-0.html).
+
+## Builds and packaging
+
+- Percona XtraDB Cluster uses Profile-Guided Optimization (PGO) builds to improve runtime performance. PGO uses profiling data from representative workloads to guide compiler optimizations, which can improve throughput and reduce latency. Percona XtraDB Cluster packages are built with PGO enabled.
+
+  See [Profile-Guided Optimization (PGO) and non-PGO builds](https://docs.percona.com/percona-server/9.7/pgo.html) for more information about PGO benefits and considerations.
+
+- In Percona XtraDB Cluster 9.7, packaging was reorganized to align more closely with upstream MySQL, consistent with the equivalent change in Percona Server for MySQL 9.7. Several packages were split into separate components, which may affect upgrades and dependency resolution compared with earlier Percona XtraDB Cluster releases.
+
+  The APT packages (Debian and Ubuntu) are:
+
+  - percona-xtradb-cluster-client-core
+  - percona-xtradb-cluster-client-plugins
+  - percona-xtradb-cluster-client
+  - percona-xtradb-cluster-common
+  - percona-xtradb-cluster-server-core
+  - percona-xtradb-cluster-server
+  - percona-xtradb-cluster-garbd
+  - percona-telemetry-agent
+
+  The YUM packages (RHEL, CentOS, Oracle Linux) are:
+
+  - percona-xtradb-cluster-client
+  - percona-xtradb-cluster-client-plugins
+  - percona-xtradb-cluster-server
+  - percona-xtradb-cluster-shared
+  - percona-xtradb-cluster-garbd
+  - percona-xtradb-cluster-icu-data-files
+  - percona-telemetry-agent
+
+## Known issues
+
+- This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 9.7 becomes available.
+- In 9.7.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the [terminology_use_previous](https://dev.mysql.com/doc/refman/9.7/en/replication-options-replica.html#sysvar_terminology_use_previous) system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.
+
+## Supplied components
+
+Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona Server for MySQL-based variation of the Percona Distribution for MySQL.
+
+| Component              | Version                                                                                                 | Description                                                                                                  |
+| ---------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Percona XtraBackup     | [9.7.1-rc1](https://docs.percona.com/percona-xtrabackup/9.7/release-notes/9.7.1-rc1.html)               | An open-source hot backup utility for MySQL-based servers that doesn’t lock your database during the backup. |
+| HAProxy                | [3.4.4](https://git.haproxy.org/?p=haproxy-3.4.git;a=commit;h=7f03ae65c28605152c7a1a9ba7d9d0bcfb50f8b0) | A high-availability and load-balancing solution for Percona XtraDB Cluster. This is a default proxy.         |
+| ProxySQL               | [3.0.9](https://docs.percona.com/proxysql/3.0.9.html)                                                   | A high performance, high-availability, protocol-aware proxy for MySQL.                                       |
+| replication_manager.sh | [1.0](https://docs.percona.com/percona-distribution-for-mysql/9.7/replication-manager-for-pxc.html)     | A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.                  |
+# Discover Percona Distribution for MySQL
+
+# Components
+
+Percona Distribution for MySQL consists of the following **components**:
+
+- [Percona Server for MySQL](https://docs.percona.com/percona-server/9.7/) is a drop-in replacement for MySQL Community Edition with the enterprise-grade features embedded by Percona.
+- [Percona XtraDB Cluster](https://docs.percona.com/percona-xtradb-cluster/9.7/index.html) is the high-available clustering solution for MySQL. It is based on [Percona Server for MySQL](https://docs.percona.com/percona-server/9.7/index.html) and uses [Percona XtraBackup](https://docs.percona.com/percona-xtrabackup/9.7/index.html) for node provisioning.
+- [Percona XtraBackup](https://docs.percona.com/percona-xtrabackup/9.7/) is an open-source hot backup utility for MySQL-based servers that doesn’t lock your database during the backup.
+- \[Orchestrator (https://github.com/openark/orchestrator) is the replication topology manager for Percona Server for MySQL.
+- [HAProxy](http://www.haproxy.org/) is the default high-availability and load-balancing solution for Percona XtraDB Cluster.
+- [ProxySQL](https://proxysql.com/) is a high performance, high-availability, protocol-aware proxy for MySQL.
+- [Percona Toolkit](https://docs.percona.com/percona-toolkit/index.html) is the set of scripts to simplify and optimize database operation.
+- [MySQL Shell](https://dev.mysql.com/doc/mysql-shell/9.7/en/) is an advanced client and code editor for MySQL Server.
+- [MySQL Router](https://dev.mysql.com/doc/mysql-router/9.7/en/) is lightweight middleware that provides transparent routing between your application and back-end MySQL servers.
+
+Important
+
+This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 9.7 becomes available.
+
+In 9.7.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the [terminology_use_previous](https://dev.mysql.com/doc/refman/9.7/en/replication-options-replica.html#sysvar_terminology_use_previous) system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.
+
+# Deployment variants
+
+Percona Distribution for MySQL provides two deployment variants: one is Percona Server for MySQL-based and another one is Percona XtraDB Cluster-based. Each deployment is available via its own repository and includes the base server (Percona Server for MySQL or Percona XtraDB Cluster) and [components](https://docs.percona.com/percona-distribution-for-mysql/9.7/components.html). The table below lists what components are available with each server:
+
+| Components         | Percona Server for MySQL |
+| ------------------ | ------------------------ |
+| Orchestrator       | YES                      |
+| HAProxy            | NO                       |
+| ProxySQL           | YES                      |
+| Percona XtraBackup | YES                      |
+| Percona Toolkit    | YES                      |
+| MySQL Shell        | YES                      |
+| MySQL Router       | YES                      |
+
+Important
+
+This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 9.7 becomes available.
+
+In 9.7.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the [terminology_use_previous](https://dev.mysql.com/doc/refman/9.7/en/replication-options-replica.html#sysvar_terminology_use_previous) system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.
+
+## What deployment variant to choose?
+
+The **Percona Server-based deployment variant** with [asynchronous replication](https://dev.mysql.com/doc/refman/9.7/en/replication.html) utilizes the primary / secondary replication model. It enables you to create geographically distributed infrastructures with the support for disaster recovery. However, this deployment variant does not guarantee data consistency on all nodes at the given moment and provides high availability of up to 4 nines.
+
+The **Percona Server-based deployment variant** with [Group Replication](https://dev.mysql.com/doc/refman/9.7/en/group-replication.html) enables you to create fault-tolerant systems with redundancy by replicating the system state to a set of servers. *Percona Server for MySQL*-based deployment with Group Replication offers a high grade of high availability (4-5 nines) and almost instant fail over when associated with a proxy.
+
+The **Percona XtraDB Cluster-based deployment variant** guarantees data consistency on all nodes and zero data loss. The Percona XtraDB Cluster-based deployment provides a high grade of high availability (4-5 nines) and almost instant failover.
+# Install and update
+
+# Install Percona Distribution for MySQL
+
+Important
+
+This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 9.7 becomes available.
+
+In 9.7.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the [terminology_use_previous](https://dev.mysql.com/doc/refman/9.7/en/replication-options-replica.html#sysvar_terminology_use_previous) system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.
+
+We recommend to install Percona Distribution for MySQL from Percona repositories using the package manager of your operating system:
+
+- `APT` - for Debian and Ubuntu Linux
+- `YUM` or `DNF` - for Red Hat Enterprise Linux and compatible Linux derivatives
+
+Find the full list of supported platforms on the [Percona Software and Platform Lifecycle](https://www.percona.com/release-lifecycle-overview/#mysql) page.
+
+Repository overview: Major and Minor repositories
+
+*Percona* provides two repositories for every deployment variant of Percona Distribution for MySQL.
+
+The *Major Release repository* includes the latest version packages (for example, `pdps-97`). Whenever a package is updated, the package manager of your operating system detects that and prompts you to update. As long as you update all Distribution packages at the same time, you can ensure that the packages you’re using have been tested and verified by *Percona*. Installing Percona Distribution for MySQL from the Major Release Repository is the recommended method.
+
+The *Minor Release repository* includes a particular minor release of the database and all of the packages that were tested and verified to work with that minor release (for example, `pdps-9.7.0`). You may choose to install Percona Distribution for MySQL from the Minor Release repository if you have decided to standardize on a particular release which has passed rigorous testing procedures and which has been verified to work with your applications. This allows you to deploy to a new host and ensure that you’ll be using the same version of all the Distribution packages, even if newer releases exist in other repositories.
+
+The disadvantage of using a Minor Release repository is that you are locked in this particular release. When potentially critical fixes are released in a later minor version of the database, you will not be prompted for an upgrade by the package manager of your operating system. You would need to change the configured repository in order to install the upgrade.
+
+## Next steps
+
+Select the download option to proceed with the installation.
+
+[Install Percona Server-based variant](https://docs.percona.com/percona-distribution-for-mysql/9.7/install-pdps.html)
+
+[Install Percona XtraDB Cluster-based variant](https://docs.percona.com/percona-distribution-for-mysql/9.7/install-pdpxc.html)
+
+# Install Percona Server-based variant
+
+We gather [Telemetry data on Percona Server for MySQL](https://docs.percona.com/percona-server/9.7/telemetry.html) in the Percona packages and Docker images.
+
+## Prerequisites
+
+To install Percona software, you need to configure the required repository. To simplify this process, use the `percona-release` repository management tool.
+
+1. Install GnuPG and curl
+
+   ```
+   sudo apt install gnupg2 curl
+   ```
+
+1. [Install percona-release](https://docs.percona.com/percona-software-repositories/installing.html) . If you have `percona-release` installed, [update percona-release](https://docs.percona.com/percona-software-repositories/updating.html) to the latest version.
+
+## Procedure
+
+**On Debian and Ubuntu Linux**
+
+Important
+
+Run the following commands as the root user or via `sudo`.
+
+### Enable Percona repository
+
+To enable the desired repository, we recommend to use the `enable` subcommand of `percona-release`.
+
+```
+sudo percona-release enable pdps-97-lts
+```
+
+Tip
+
+To enable the minor version repository, use the following command:
+
+```
+sudo percona-release enable pdps-9.7.3
+```
+
+### Install Percona Distribution for MySQL packages
+
+1. Install *Percona Server for MySQL*:
+
+   ```
+   sudo apt install percona-server-server
+   ```
+
+1. Install the components. Use the commands below to install the required components:
+
+   Install Percona XtraBackup:
+
+   ```
+   sudo apt install percona-xtrabackup-97
+   ```
+
+   Install Percona Toolkit:
+
+   ```
+   sudo apt install percona-toolkit
+   ```
+
+   Install Orchestrator:
+
+   ```
+   sudo apt install percona-orchestrator percona-orchestrator-cli percona-orchestrator-client
+   ```
+
+   Install MySQL Shell:
+
+   ```
+   sudo apt install percona-mysql-shell
+   ```
+
+   Install ProxySQL:
+
+   ```
+   sudo apt install proxysql2
+   ```
+
+   Install MySQL Router:
+
+   ```
+   sudo apt install percona-mysql-router
+   ```
+
+**On Red Hat Enterprise Linux and derivatives**
+
+Platform specific notes
+
+On CentOS 7, install the `epel-release` package. It includes the dependencies required to install Orchestrator. Use the following command:
+
+```
+sudo yum -y install epel-release
+```
+
+Run the following commands as the root user or via `sudo`.
+
+### Enable Percona repository
+
+To enable the desired repository, we recommend to use the `enable` subcommand of `percona-release`.
+
+```
+sudo percona-release enable pdps-97-lts
+```
+
+Tip
+
+To enable the minor version repository, use the following command:
+
+```
+sudo percona-release enable pdps-9.7.3
+```
+
+### Install Percona Distribution for MySQL packages
+
+1. Install *Percona Server for MySQL*:
+
+   ```
+   sudo yum install percona-server-server
+   ```
+
+1. Install the components. Use the commands below to install the required components:
+
+   Install Percona XtraBackup
+
+   ```
+   sudo yum install percona-xtrabackup-97
+   ```
+
+   Install Orchestrator
+
+   ```
+   sudo yum install percona-orchestrator percona-orchestrator-cli percona-orchestrator-client
+   ```
+
+   Install Percona Toolkit
+
+   ```
+   sudo yum install percona-toolkit
+   ```
+
+   Install MySQL Shell:
+
+   ```
+   sudo yum install percona-mysql-shell
+   ```
+
+   Install ProxySQL:
+
+   ```
+   sudo yum install proxysql2
+   ```
+
+   Install MySQL Router:
+
+   ```
+   sudo yum install percona-mysql-router
+   ```
+
+### Run Percona Distribution for MySQL
+
+Percona Distribution for MySQL is not started automatically on Red Hat Enterprise Linux and CentOS after the installation is complete.
+
+Start it manually using the following command:
+
+```
+sudo systemctl start mysql
+```
+
+Confirm that the service is running:
+
+```
+sudo systemctl status mysql
+```
+
+Stop the service:
+
+```
+sudo systemctl stop mysql
+```
+
+## Useful links
+
+[Percona Software Download Instructions](https://docs.percona.com/percona-distribution-for-mysql/9.7/download-instructions.html)
+
+# Install Percona XtraDB Cluster-based variant
+
+We gather [Telemetry data on Percona XtraDB Cluster](https://docs.percona.com/percona-xtradb-cluster/9.7/telemetry.html) in the Percona packages and Docker images.
+
+## Prerequisites
+
+To install Percona software, you need to configure the required repository. To simplify this process, use the `percona-release` repository management tool.
+
+1. Install GnuPG and curl
+
+   ```
+   sudo apt install gnupg2 curl
+   ```
+
+1. [Install percona-release](https://docs.percona.com/percona-software-repositories/installing.html) . If you have `percona-release` installed, [update percona-release](https://docs.percona.com/percona-software-repositories/updating.html) to the latest version.
+
+## Procedure
+
+**On Debian and Ubuntu Linux**
+
+Important
+
+Run the following commands as the root user or via `sudo`.
+
+### Enable Percona repository
+
+To enable the desired repository, we recommend to use the `setup` subcommand of `percona-release`.
+
+```
+sudo percona-release setup pdpxc-97-lts
+```
+
+Tip
+
+To enable either the `pdpxc-9.7.1` or `pdpxc-9.7.2` version repository, use the following command. The example enables the `pdpxc-9.7.2-3` repository:
+
+```
+sudo percona-release setup pdpxc-9.7.2-3
+```
+
+### Install Percona Distribution for MySQL packages
+
+1. Install *Percona XtraDB Cluster*:
+
+   ```
+   sudo apt install percona-xtradb-cluster
+   ```
+
+1. Install HAProxy:
+
+   ```
+   sudo apt install percona-haproxy
+   ```
+
+1. Install the components. Use the commands below to install the required components:
+
+   Install Percona XtraBackup:
+
+   ```
+   sudo apt install percona-xtrabackup-97
+   ```
+
+   Install Percona Toolkit:
+
+   ```
+   sudo apt install percona-toolkit
+   ```
+
+**On Red Hat Enterprise Linux and derivatives**
+
+Important
+
+Run the following commands as the root user or via `sudo`.
+
+### Enable Percona repository
+
+To enable the desired repository, we recommend to use the `setup` subcommand of `percona-release`.
+
+```
+sudo percona-release setup pdpxc-97-lts
+```
+
+Tip
+
+To enable either the `pdpxc-9.7.1` or `pdpxc-9.7.2` version repository, use the following command. The example enables the `pdpxc-9.7.2-3` repository:
+
+```
+sudo percona-release setup pdpxc-9.7.2-3
+```
+
+### Install Percona Distribution for MySQL packages
+
+1. Install *Percona XtraDB Cluster*:
+
+   ```
+   sudo yum install percona-xtradb-cluster
+   ```
+
+1. Install HAProxy:
+
+   ```
+   sudo yum install percona-haproxy
+   ```
+
+1. Install the components. Use the commands below to install the required components:
+
+   Install Percona XtraBackup:
+
+   ```
+   sudo yum install percona-xtrabackup-97
+   ```
+
+   Install Percona Toolkit:
+
+   ```
+   sudo yum install percona-toolkit
+   ```
+
+### Run Percona Distribution for MySQL
+
+Percona Distribution for MySQL is not started automatically on Red Hat Enterprise Linux and CentOS after the installation is complete.
+
+Start it manually using the following command:
+
+```
+sudo systemctl start mysql
+```
+
+Confirm that the service is running:
+
+```
+sudo systemctl status mysql
+```
+
+Stop the service:
+
+```
+sudo systemctl stop mysql
+```
+
+## Useful links
+
+[Percona Software Download Instructions](https://docs.percona.com/percona-distribution-for-mysql/9.7/download-instructions.html)
+
+# Upgrade Percona Distribution for MySQL
+
+Important
+
+This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 9.7 becomes available.
+
+In 9.7.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the [terminology_use_previous](https://dev.mysql.com/doc/refman/9.7/en/replication-options-replica.html#sysvar_terminology_use_previous) system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.
+
+Minor releases include bug fixes and feature enhancements. We recommend to have Percona Distribution for MySQL updated to the latest version.
+
+Though minor releases don’t change the behavior, even a minor upgrade is a risky process. We recommend to back up your data before upgrading.
+
+## Preconditions
+
+To upgrade Percona Distribution for MySQL, [install the `percona-release` repository management tool](https://docs.percona.com/percona-software-repositories/installing.html) or [update the `percona-release` tool](https://docs.percona.com/percona-software-repositories/updating.html) to the latest version.
+
+## Procedure
+
+Important
+
+Run the following commands as the root user or via `sudo`.
+
+**Upgrade Percona Server-based variant**
+
+1. Enable Percona repository
+
+   The Major Release repository automatically includes new version packages of Percona Distribution for MySQL. If you installed Percona Distribution for MySQL from a Minor Release repository, enable the new version repository:
+
+   ```
+   sudo percona-release setup pdps-XXX
+   ```
+
+   where `XXX` is the required version.
+
+   Read more about major and Minor release repositories in [Repository overview](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.html).
+
+1. Stop `mysql` service
+
+   ```
+   sudo systemctl mysql stop
+   ```
+
+1. [Install new version packages](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.html#install-percona-distribution-for-mysql) using the package manager of your operating system.
+
+1. Restart `mysql` service:
+
+   ```
+   sudo systemctl mysql start
+   ```
+
+**Upgrade Percona XtraDBCluster-based variant**
+
+Complete these steps sequentially on all nodes:
+
+1. Enable Percona repository
+
+   The Major Release repository automatically includes new version packages of Percona Distribution for MySQL. If you installed Percona Distribution for MySQL from a Minor Release repository, enable the new version repository:
+
+   ```
+   sudo percona-release setup pdpxc-XXX
+   ```
+
+   where `XXX` is the required version.
+
+   Read more about major and Minor release repositories in [Repository overview](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.html).
+
+1. Stop `mysql` service
+
+   ```
+   sudo systemctl mysql stop
+   ```
+
+1. [Install new version packages](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.html#install-percona-distribution-for-mysql) using the package manager of your operating system.
+
+1. Back up the `grastate.dat` file
+
+1. Restart `mysql` service
+
+   ```
+   sudo systemctl mysql start
+   ```
+
+See also
+
+[Upgrading Percona XtraDB Cluster](https://docs.percona.com/percona-xtradb-cluster/8.4/upgrade-guide.html)
+
+To upgrade the components, refer to [Installing Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.html) for installation instructions relevant to your operating system.
+
+# Downgrade Percona Distribution for MySQL
+
+Important
+
+This release does not include the Percona Toolkit component. We will add it once a Percona Toolkit version compatible with MySQL 9.7 becomes available.
+
+In 9.7.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the [terminology_use_previous](https://dev.mysql.com/doc/refman/9.7/en/replication-options-replica.html#sysvar_terminology_use_previous) system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.
+
+You have the following downgrade options:
+
+1. Within Same LTS Version (Example: 9.7.3 to 9.7.1):
+
+   - Methods Available:
+   - In-place downgrade
+   - Logical dump and restore
+   - MySQL Clone
+   - Replication-based downgrade
+
+1. From LTS to Previous LTS (Example: 9.7.x to 8.4.y):
+
+   - Methods Available:
+   - Logical dump and restore
+   - Replication-based downgrade
+   - Important: Only works for rollback if you haven’t used new features
+
+Key Points:
+
+- You cannot downgrade to version 8.0 or earlier
+- You cannot downgrade if you’ve used new version features
+- Logical dump and restore works for most downgrade paths
+- In-place downgrade only works within same LTS series
+# Solutions - high availability
+
+# High availability solution with Group Replication
+
+Every architecture and deployment depends on customer requirements and application demands for high availability and the estimated level of usage. For example, using a high read or a high write application, or both with 99.999% availability.
+
+This guide gives [architecture](https://docs.percona.com/percona-distribution-for-mysql/9.7/architecture-components.html) and deployment recommendations along with a technical overview for a solution that provides a high level of high availability and assumes the usage of high read / write applications (20K or more queries per second). It also provides [step-by-step deployment guidelines](https://docs.percona.com/percona-distribution-for-mysql/9.7/deploy-pdps-group-replication.html).
+
+This solution assumes the use of *Percona Server for MySQL* based deployment variant of Percona Distribution for MySQL with [Group Replication](https://dev.mysql.com/doc/refman/9.7/en/group-replication.html) .
+
+## High availability overview
+
+How to measure availability and at what point does it become “high” availability?
+
+Generally speaking, the measurement of availability is done by establishing a measurement time frame and dividing it by the time that it was available. This ratio will rarely be 1, which is equal to 100% availability. A solution is considered to be highly available if it is at least 99% or “two nines” available.
+
+The following table provides downtime calculations per high availability level:
+
+| Availability, %             | Downtime per year | Downtime per month | Downtime per week | Downtime per day    |
+| --------------------------- | ----------------- | ------------------ | ----------------- | ------------------- |
+| 99% (“two nines”)           | 3.65 days         | 7.31 hours         | 1.68 hours        | 14.40 minutes       |
+| 99.5% (“two nines five”)    | 1.83 days         | 3.65 hours         | 50.40 minutes     | 7.20 minutes        |
+| 99.9% (“three nines”)       | 8.77 hours        | 43.83 minutes      | 10.08 minutes     | 1.44 minutes        |
+| 99.95% (“three nines five”) | 4.38 hours        | 21.92 minutes      | 5.04 minutes      | 43.20 seconds       |
+| 99.99% (“four nines”)       | 52.60 minutes     | 4.38 minutes       | 1.01 minutes      | 8.64 seconds        |
+| 99.995% (“four nines five”) | 26.30 minutes     | 2.19 minutes       | 30.24 seconds     | 4.32 seconds        |
+| 99.999% (“five nines”)      | 5.26 minutes      | 26.30 seconds      | 6.05 seconds      | 864.00 milliseconds |
+
+### How is high availability achieved?
+
+There are three key components to achieve high availability:
+
+- **Infrastructure** - this is the physical or virtual hardware that database systems rely on to run. Without enough infrastructure (VM’s, networking, etc.), there cannot be high availability. The easiest example is: `there is no way to make a single server highly available`.
+- **Topology management** - this is the software management related specifically to the database and managing its ability to stay consistent in the event of a failure. Many clustering or synchronous replication solutions offer this capability out of the box. However, asynchronous replication is handled by additional software.
+- **Connection management** - this is the software management related specifically to the networking and connectivity aspect of the database. Clustering solutions typically bundle with a connection manager. However, in asynchronous clusters, deploying a connection manager is mandatory for high availability.
+
+This solution is based on a tightly coupled database cluster. It offers a high availability level of 99.995% when coupled with the Group Replication setting `group_replication_consistency=AFTER`.
+
+## Failovers
+
+A database failure or configuration change that requires a restart should not affect the stability of the database infrastructure, if it is properly planned and architected. Failovers are an integral part of a stability strategy and aligning the business requirements for availability and uptime with failover methodologies is critical.
+
+The following are the three main types of failovers that can occur in database environments:
+
+- **Planned failover**. This is a failover that has been scheduled in advance or occurs at a regular interval. There can be many reasons for planned failovers including patching, large data operations, retiring existing infrastructure, or simply to test the failover strategy.
+- **Unplanned failover**. This is what occurs when a database has unexpectedly become unresponsive or experiences instability. An unplanned failover could also include emergency changes that do not fall under the planned failover cadence or scheduling parameters. Unplanned failovers are generally considered higher risk operations due to the high stress and high potential for data corruption or data fragmentation.
+- **Regional or disaster recovery (DR) failover**. Unplanned failovers still work with the assumption that additional database infrastructure is immediately available and in a usable state. However, in a regional or DR failover, it is assumed that there is a large scale infrastructure outage which requires the business to move its operations away from its current availability zone.
+
+## Maintenance windows
+
+### Major vs Minor maintenance
+
+Although it may not be obvious at first, not all maintenance activities are created equal and do not have the same dependencies. It is good to separate maintenance that demands downtime or failover from maintenance that can be done without impacting those important stability metrics. When defining these maintenance dependencies, there can be a change in the actual maintenance process that allows for a different cadence.
+
+### Maintenance without service interruption
+
+It is possible to cover both major and minor maintenance without service interruption with rolling restart and using proper version upgrade.
+
+## Uptime
+
+When referring to database stability, uptime is likely the largest indicator of stability and often is the most obvious symptom of an unstable database environment. Uptime is composed of three key components and, contrary to common perception, is based on what happens when the database software cannot take incoming requests rather than maintain the ability to take requests with errors.
+
+The uptime components are:
+
+- **Recovery Time Objective (RTO)**
+
+RTO can be characterized by a simple question “How long can the business sustain a database outage?” Once the business is aligned with a minimum viable recovery time objective, it is much more straightforward to plan and invest in the infrastructure required to meet that requirement. It is important to acknowledge that while everyone desires 100% uptime, there need to be realistic expectations that align with the business needs and not a technical desire.
+
+- **Recovery Point Objective (RPO)**
+
+There is a big distinction between the Recovery Point and the Recovery Time for a database infrastructure. The database can be available, but not to the exact state that it was when it became unavailable. That is where Recovery Point comes in. The question to ask here is “How much data can the business lose during a database outage?” All businesses have their own requirements here yet it is always the goal to never sustain any data loss. But this is framed in the worst case scenario, how much data could be lost and the business maintains the ability to continue.
+
+- **Disaster recovery**
+
+RTO and RPO are great for unplanned outages or small scale hiccups to the infrastructure. Disaster recovery is a major large scale outage not strictly for the database infrastructure. How capable is the business of restarting operations with the assumption that all resources are completely unavailable in the main availability zone? The assumption here is that there is no viable restoration point or time that aligns with the business requirements. While each disaster recovery scenario is unique based on available infrastructure, backup strategy and technology stack, there are some common threads for any scenario.
+
+The described solution **helps improve uptime**. It will help you to significantly reduce both RPO and RTO. Given the tightly coupled cluster solution approach, the failure of a single node will not result in service interruption.
+
+Increasing the number of nodes will also improve the cluster resilience by the formula:
+
+```
+F = (N -1) / 2
+```
+
+where:
+
+- `F` is the number of admissible failures
+- `N` is the number of nodes in the cluster.
+
+### Example
+
+- In a cluster of 5 nodes, F = (5 - 1)/2 = 2. The cluster can support up to 2 failures.
+- In a cluster of 4 nodes, F = (4 - 1)/2 = 1. The cluster can support up to 1 failure.
+
+This solution also allows for a more restrictive backup policy, dedicating a node to the backup cycle, which will help in keeping RPO low.
+
+As previously mentioned, disaster recovery is not covered by default by this solution. It will require an additional replication setup and controller.
+
+Based on the material from Percona Database Performance Blog
+
+This document is based on the blog post [Percona Distribution for MySQL: High Availability with Group Replication Solution](https://www.percona.com/blog/2021/04/14/percona-distribution-for-mysql-high-availability-with-group-replication-solution/) by *Marco Tusa*
+
+# Architecture and components
+
+The following is the architecture layout for *Percona Server for MySQL* based deployment variant of Percona Distribution for MySQL with [Group Replication](https://dev.mysql.com/doc/refman/9.7/en/group-replication.html) .
+
+## Architecture layout
+
+### Components
+
+The architecture is composed of two main layers:
+
+- [Connection and distribution layer](#connection-and-distribution-layer)
+- [Relational Database Management System (RDBMS) layer](#rdbms-layer)
+
+#### Connection and distribution layer
+
+The connection and distribution layer consists of the following:
+
+- **Application to proxy redirection mechanism.** This mechanism can be anything from a Virtual IP managed by Keepalived local service to a DNS resolution service like Amazon Route 53. The mechanism’s function is to redirect the traffic to the active Proxy node.
+- **Proxy connection distribution.** The distribution consists of two or more nodes and its role is to redirect the traffic to the active nodes of the Group Replication cluster. In cases like ProxySQL where the proxy is a level 7 proxy and can perform a read / write split, this layer is also in charge of redirecting writes to the Primary node and reads to the replicas, and of high availability to prevent a single point of failure.
+
+#### RDBMS layer
+
+The data layer consists of the following:
+
+- **Primary (or source) node** serving write requests. This is the node that accepts writes and DDL modifications. Data will be processed following the ACID (atomicity, consistency, isolation, durability) model and replicated to all other nodes.
+- **Replica nodes** serving read requests. Some replica nodes can be elected Primary in case of the Primary node’s failure. A replica node should be able to leave and join back to a healthy cluster without impacting the service.
+- **Replication mechanism** distributing changes across nodes. In this solution, it is done with Group Replication. Group Replication is a tightly coupled solution, which means that the database cluster is based on a Datacentric approach (single state of the data, distributed commit). In this case, the data is consistent in time across nodes though this type of replication requires a high performant link. Given that, the main Group Replication mechanism does not implicitly support Disaster Recovery (DR) and geographic distribution is not permitted.
+
+The node characteristics such as CPU/RAM/Storage are not relevant to the solution design. They must reflect the estimated workload that the solution will have to cover, and this is a case by case identification.
+
+However, it is important that all nodes that are part of the cluster must have the same characteristics. Otherwise, the cluster is imbalanced and services will be affected.
+
+As a generic indication we recommend using nodes with at least 8 cores and 16GB RAM when in production.
+
+# Measurement and monitoring
+
+To ensure that database infrastructure is performing as intended or at its best, specific metrics need to be measured and alerts are to be raised when some of these metrics are not in line with expectations. A periodic review of these measurements is also encouraged to promote stability and understand potential risks associated with the database infrastructure.
+
+The following are the 3 aspects of database performance measurement and monitoring:
+
+- **Measurement** - to understand how a database infrastructure is performing, multiple aspects of the infrastructure need to be measured. With measurement it’s important to understand the impact of the sample sizes, sample timing, and sample types.
+- **Metrics** - metrics refer to the actual parts of the database infrastructure being measured. When we discuss metrics, more isn’t always better as it could introduce unintentional noise or make troubleshooting overly burdensome.
+- **Alerting** - when one or many metrics of the database infrastructure is not within a normal or acceptable range, an alert should be generated so that the team responsible for the appropriate portion of the database infrastructure can investigate and remedy it.
+
+Monitoring and measurement for this solution are covered by [Percona Monitoring and Management](https://www.percona.com/software/database-tools/percona-monitoring-and-management) . It has a specific dashboard to monitor the Group Replication state and cluster status as a whole. For more information, read [Percona Monitoring and Management Documentation](https://docs.percona.com/percona-monitoring-and-management/3/) .
+
+# Deploying high availability solution with Group Replication
+
+This document provides step-by-step instructions on how to deploy high availability solution with Group Replication.
+
+## Preconditions
+
+We will use the following elements:
+
+- 1 Virtual IP for ProxySQL failover - 192.168.4.194
+
+- 2 ProxySQL nodes
+
+  - Proxy1 192.168.4.191
+  - Proxy2 192.168.4.192
+
+- 4 MySQL nodes in Single Primary mode
+
+  - Gr1 192.168.4.81 - Initial Primary
+  - Gr2 192.168.4.82 - Replica / failover
+  - Gr3 192.168.4.83 - Replica / failover
+  - Gr4 192.168.4.84 - Replica / Backup
+
+- All of the following ports must be open if a firewall is in place or any other restriction like AppArmor or SELinux.
+
+  - ProxySQL:
+
+    - 6033
+    - 6032
+    - 3306
+
+  - MySQL - Group Replication:
+
+    - 3306
+    - 33060
+    - 33061
+
+## Nodes configuration
+
+### Preparation
+
+1. Install Percona Server-based variant of Percona Distribution for MySQL on each MySQL node (Gr1-Gr4).
+
+1. Make sure that all the nodes use the same time-zone and time
+
+   ```
+   date
+   Tue Aug 18 08:22:12 EDT 2020
+   ```
+
+1. Also check that `ntpd` service is present and enabled
+
+1. Make sure that each node resolves the other nodes by name
+
+   ```
+   for i in 1 2 3 4 ; do ping -c 1 gr$i > /dev/null;echo $?; done
+   ```
+
+   If nodes aren’t able to resolve, add the entries in the `/etc/hosts` file.
+
+1. After instances are up and running, check *Percona Server for MySQL* version on each node:
+
+   ```
+   \s
+   --------------
+   /opt/mysql_templates/PS-8P/bin/mysql  Ver 9.7.3-3 for Linux on x86_64 (Percona Server (GPL), Release 11, Revision 159f0eb)
+   ```
+
+### Step 1 Create an administration user
+
+1. Create a user for administration. We will use the user `dba` in our setup:
+
+   ```
+   CREATE user dba@localhost identified by 'dbapw';
+   CREATE user dba@'192.168.%' identified by 'dbapw';
+
+   GRANT ALL on *.* to dba@localhost with grant option;
+   GRANT ALL on *.* to dba@'192.168.%' with grant option;
+   ```
+
+   Log out from the client as the root user and log in as the `dba` user.
+
+1. Make sure to have a good and unique SERVER_ID value:
+
+   ```
+   show global variables like 'server_id';
+   +---------------+-------+
+   | Variable_name | Value |
+   +---------------+-------+
+   | server_id     |     1 |
+   +---------------+-------+
+   1 row in set (0.01 sec)
+   ```
+
+   The `server_id` value must be unique on each node
+
+### Step 2. Add Group Replication settings
+
+1. Stop all the nodes
+
+   ```
+   service mysql stop
+   ```
+
+1. In the `my.cnf` configuration file, add the following:
+
+   ```
+   #####################
+   #Replication + binlog settings
+   #####################
+   auto-increment-increment                                    =1
+   auto-increment-offset                                       =1
+
+   log-bin                                             =<path_to_logs>/binlog
+   log-bin-index                                       =binlog.index
+   binlog-checksum                                             =NONE
+   binlog-format                                               =ROW
+   binlog-row-image                                            =FULL
+   log-slave-updates                                                             =1
+   binlog-transaction-dependency-tracking                   =WRITESET_SESSION
+
+   enforce-gtid-consistency                                    =TRUE
+   gtid-mode                                                   =ON
+
+   master-info-file                                            =master.info
+   master-info-repository                                      =TABLE
+   relay_log_info_repository                                   =TABLE
+   relay-log                                            =<path_to_logs>/relay
+
+   sync-binlog                                                 =1
+
+   ### SLAVE SECTION
+   skip-slave-start
+   slave-parallel-type                                        = LOGICAL_CLOCK
+   slave-parallel-workers                                      = 4
+   slave-preserve-commit-order                                 = 1
+
+
+   ######################################
+   #Group Replication
+   ######################################
+   plugin_load_add                                    ='group_replication.so'
+   plugin-load-add                                    ='mysql_clone.so'
+   group_replication_group_name       ="aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"  #<-- Not good. Use something
+                                            that will help you to identify the GR transactions and from where they come from IE "dc1euz1-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
+   group_replication_start_on_boot                     =off
+   group_replication_local_address                     = "192.168.4.81/2/3/4:33061"  <---- CHANGE THIS TO MATCH EACH NODE LOCAL IP
+   group_replication_group_seeds                       = "192.168.4.81:33061,192.168.4.82:33061,192.168.4.83:33061,192.168.4.84:33061"
+   group_replication_bootstrap_group                   = off
+   transaction-write-set-extraction                           = XXHASH64
+   ```
+
+1. Restart all nodes:
+
+   ```
+   service mysql start
+   ```
+
+1. Connect to the nodes
+
+### Step 3. Create a replication user
+
+1. On every node, create a user for replication
+
+   ```
+   SET SQL_LOG_BIN=0;
+    CREATE USER replica@'192.168.4.%' IDENTIFIED BY 'replicapw';   #<--- Please note the filter by IP is more restrictive
+    GRANT REPLICATION SLAVE ON *.* TO replica@'192.168.4.%';
+    FLUSH PRIVILEGES;
+    SET SQL_LOG_BIN=1;
+   ```
+
+1. Link the nodes with the replication channel.
+
+   ```
+   CHANGE MASTER TO MASTER_USER='replica', MASTER_PASSWORD='replicapw' FOR CHANNEL 'group_replication_recovery';
+   ```
+
+   Run this command on all nodes.
+
+1. Check the current status:
+
+   ```
+   (dba@node1) [(none)]>\u performance_schema
+       (dba@node1) [performance_schema]>show tables like '%repl%';
+       +-------------------------------------------+
+       | Tables_in_performance_schema (%repl%)     |
+       +-------------------------------------------+
+       | replication_applier_configuration         |
+       | replication_applier_filters               |
+       | replication_applier_global_filters        |
+       | replication_applier_status                |
+       | replication_applier_status_by_coordinator |
+       | replication_applier_status_by_worker      |
+       | replication_connection_configuration      |
+       | replication_connection_status             |
+       | replication_group_member_stats            |
+       | replication_group_members                 | <------------------------
+       +-------------------------------------------+
+
+      (dba@node1) [performance_schema]>select * from replication_group_members\G
+   CHANNEL_NAME: group_replication_applier
+        MEMBER_ID:
+      MEMBER_HOST:
+      MEMBER_PORT:
+     MEMBER_STATE:
+      MEMBER_ROLE: OFFLINE
+   MEMBER_VERSION:
+   1 row in set (0.00 sec)
+   ```
+
+   At this stage, you should be able to start the first (Primary) cluster node.
+
+1. Start the Primary node (Gr1), `(dba@node1)[none]>`, and enable Group Replication:
+
+   ```
+   SET GLOBAL group_replication_bootstrap_group=ON;
+   START GROUP_REPLICATION;
+   SET GLOBAL group_replication_bootstrap_group=OFF;
+   ```
+
+1. Check if the node registered correctly:
+
+   ```
+   select * from performance_schema.replication_group_members\G
+        CHANNEL_NAME: group_replication_applier
+        MEMBER_ID: 90a353b8-e6dc-11ea-98fa-08002734ed50
+      MEMBER_HOST: gr1
+      MEMBER_PORT: 3306
+     MEMBER_STATE: ONLINE
+      MEMBER_ROLE: PRIMARY
+   MEMBER_VERSION: 9.7.3
+   ```
+
+1. Once the Primary node is running, connect to the secondary node (Gr2 node) and enable Group Replication:
+
+   ```
+   START GROUP_REPLICATION;
+   Query OK, 0 rows affected (4.60 sec)
+   ```
+
+1. Check if the secondary node registered correctly:
+
+   ```
+   select * from replication_group_members\G
+   *************************** 1. row ***************************
+     CHANNEL_NAME: group_replication_applier
+        MEMBER_ID: 58ffd118-e6dc-11ea-8af8-08002734ed50
+      MEMBER_HOST: gr2
+      MEMBER_PORT: 3306
+     MEMBER_STATE: ONLINE
+      MEMBER_ROLE: SECONDARY
+   MEMBER_VERSION: 9.7.3
+   *************************** 2. row ***************************
+     CHANNEL_NAME: group_replication_applier
+        MEMBER_ID: 90a353b8-e6dc-11ea-98fa-08002734ed50
+      MEMBER_HOST: gr1
+      MEMBER_PORT: 3306
+     MEMBER_STATE: ONLINE
+      MEMBER_ROLE: PRIMARY
+   MEMBER_VERSION: 9.7.3
+   ```
+
+1. Test the replication:
+
+   - On the Primary node, run the following command:
+
+   ```
+   (dba@node1) [performance_schema]>create schema test;
+   Query OK, 1 row affected (0.76 sec)
+
+   (dba@node1) [performance_schema]>\u test
+   Database changed
+
+   (dba@node1) [test]>create table test1 (`id` int auto_increment primary key);
+   Query OK, 0 rows affected (0.32 sec)
+
+   (dba@node1) [test]>insert into test1 values(null);
+   Query OK, 1 row affected (0.34 sec)
+   ```
+
+   - On the secondary node:
+
+   ```
+    use \test
+    Database changed
+    (dba@node2) [test]>select * from test1;
+    +----+
+    | id |
+    +----+
+    |  1 |
+    +----+
+    1 row in set (0.00 sec)
+   ```
+
+1. Start Group Replication on the remaining nodes
+
+   ```
+   (dba@node3) [performance_schema]>START GROUP_REPLICATION;
+   (dba@node4) [performance_schema]>START GROUP_REPLICATION;
+   ```
+
+## Proxy setup
+
+### Step 1. Installation
+
+1. [Install ProxySQL](https://www.percona.com/doc/proxysql/proxysql-v2.html#installing-proxysql-v2) . [In our example](#preconditions), we install ProxySQL on Proxy1 192.168.4.191 and Proxy2 192.168.4.192 nodes.
+
+1. Create the monitoring user on MySQL Group Replication nodes:
+
+   ```
+   create user monitor@'192.168.4.%' identified by 'monitor';
+   grant usage on *.* to 'monitor'@'192.168.4.%';
+   grant select on sys.* to 'monitor'@'192.168.4.%';
+   ```
+
+1. Define basic variables:
+
+   ```
+   update global_variables set Variable_Value='admin:admin;cluster1:clusterpass'  where Variable_name='admin-admin_credentials';
+   update global_variables set variable_value='cluster1' where variable_name='admin-cluster_username';
+   update global_variables set variable_value='clusterpass' where variable_name='admin-cluster_password';
+   update global_variables set Variable_Value=0  where Variable_name='mysql-hostgroup_manager_verbose';
+   update global_variables set Variable_Value='true'  where Variable_name='mysql-query_digests_normalize_digest_text';
+   update global_variables set Variable_Value='9.7.3'  where Variable_name='mysql-server_version';
+   update global_variables set Variable_Value='utf8'  where Variable_name='mysql-default_charset';
+   update global_variables set Variable_Value=300  where Variable_name='mysql-tcp_keepalive_time';
+   update global_variables set Variable_Value='true'  where Variable_name='mysql-use_tcp_keepalive';
+   update global_variables set Variable_Value='true'  where Variable_name='mysql-verbose_query_error';
+   update global_variables set Variable_Value='true'  where Variable_name='mysql-show_processlist_extended';
+   update global_variables set Variable_Value=50000  where Variable_name='mysql-max_stmts_cache';
+   update global_variables set Variable_Value='false'  where Variable_name='admin-web_enabled';
+   update global_variables set Variable_Value='0'  where Variable_name='mysql-set_query_lock_on_hostgroup';
+
+   load admin variables to run;save admin variables to disk;
+   load mysql variables to run;save mysql variables to disk;
+   ```
+
+   Note
+
+   The user name and password need to reflect your standards. The ones used above are just an example.
+
+1. Set up the nodes as a cluster:
+
+   ```
+   INSERT INTO proxysql_servers (hostname,port,weight,comment) VALUES('192.168.4.191',6032,100,'PRIMARY');
+   INSERT INTO proxysql_servers (hostname,port,weight,comment) VALUES('192.168.4.192',6032,100,'SECONDARY');
+   load proxysql servers to run;save proxysql servers to disk;
+   ```
+
+### Step 2. Define users, servers and query rules for read / write split
+
+1. Create one or more valid users. Define these user(s). For example, if you have a user named `app_gr` with the password `test`, and that has access to your Group Replication cluster, the command to define the user is the following:
+
+   ```
+   insert into mysql_users (username,password,active,default_hostgroup,default_schema,transaction_persistent,comment) values ('app_gr','test',1,400,'mysql',1,'application test user GR');
+   LOAD MYSQL USERS TO RUNTIME;SAVE MYSQL USERS TO DISK;
+   ```
+
+1. Define servers:
+
+   ```
+   INSERT INTO mysql_servers (hostname,hostgroup_id,port,weight,max_connections,comment) VALUES ('192.168.4.81',400,3306,10000,2000,'GR1');
+   INSERT INTO mysql_servers (hostname,hostgroup_id,port,weight,max_connections,comment) VALUES ('192.168.4.81',401,3306,100,2000,'GR1');
+   INSERT INTO mysql_servers (hostname,hostgroup_id,port,weight,max_connections,comment) VALUES ('192.168.4.82',401,3306,10000,2000,'GR2');
+   INSERT INTO mysql_servers (hostname,hostgroup_id,port,weight,max_connections,comment) VALUES ('192.168.4.83',401,3306,10000,2000,'GR2');
+   INSERT INTO mysql_servers (hostname,hostgroup_id,port,weight,max_connections,comment) VALUES ('192.168.4.84',401,3306,1,2000,'GR2');
+   LOAD MYSQL SERVERS TO RUNTIME; SAVE MYSQL SERVERS TO DISK;
+   ```
+
+1. Define query rules to get read / write split:
+
+   ```
+   INSERT INTO mysql_query_rules (rule_id,proxy_port,username,destination_hostgroup,active,retries,match_digest,apply) values(4040,6033,'app_gr',400,1,3,'^SELECT.*FOR UPDATE',1);
+   INSERT INTO mysql_query_rules (rule_id,proxy_port,username,destination_hostgroup,active,retries,match_digest,multiplex,apply) values(4042,6033,'app_gr',401,1,3,'^SELECT.*$',1,1);
+   LOAD MYSQL QUERY RULES TO RUN;SAVE MYSQL QUERY RULES TO DISK;
+   ```
+
+### Step 3. Create a view in SYS schema
+
+Once all the configuration is ready, we need to have a special view in the SYS schema in Percona server nodes. Find the view working for the server version 8 and above in [group_replication_tools](https://github.com/Percona-Lab/group_replication_tools/blob/master/GR_sys_view_forProxysql_v1.sql) .
+
+Run that sql on the **Primary** node of the Group Replication cluster.
+
+### Step 4. Activate support for Group Replication in ProxySQL
+
+To activate the native support for Group Replication in ProxySQL, we will use the following group definition:
+
+```
+Writer HG-> 400
+Reader HG-> 401
+BackupW HG-> 402
+Offline HG-> 9401
+```
+
+```
+INSERT INTO mysql_group_replication_hostgroups (writer_hostgroup,backup_writer_hostgroup,reader_hostgroup, offline_hostgroup,active,max_writers,writer_is_also_reader,max_transactions_behind)
+values (400,402,401,9401,1,1,1,100);
+LOAD MYSQL SERVERS TO RUNTIME; SAVE MYSQL SERVERS TO DISK;
+```
+
+#### Comments about parameters
+
+To obtain the most reliable results, we recommend setting the number of writers always to 1, and `writer_is_also_reader` to 1 as well.
+
+```
+max_writers: 1
+writer_is_also_reader: 1
+```
+
+The `max_transactions_behind` is a subjective parameter that you should calculate on the basis of your needs. If, for instance, you cannot have a stale read, it will be safe to set this value to a low number (i.e. 50) and to set in all Group Replication nodes:
+
+```
+set global group_replication_consistency=AFTER;
+```
+
+If instead, you have no issue or strict requirements about some stale read, you can relax the parameter and ignore the `group_replication_consistency` setting. Our recommended setting is `group_replication_consistency=AFTER` and `max_transactions_behind: 100`.
+
+See also
+
+ProxySQL Documentation: [mysql_group_replication_hostgroups](https://proxysql.com/documentation/main-runtime/#mysql_group_replication_hostgroups)
+
+### Step 5. Enable high availability for ProxySQL
+
+`keepalived` will be used to enable High Availability for ProxySQL.
+
+1. Install `keepalived` on each ProxySQL node using the package manager of your operating system:
+
+   **on Debian/Ubuntu**
+
+   ```
+   sudo apt install -y keepalived
+   ```
+
+   **On RHEL/derivatives**
+
+   ```
+   sudo yum install -y keepalived
+   ```
+
+1. Modify the `/etc/keepalived/keepalived.conf` file accordingly to your setup. In our case:
+
+   - Proxy1 192.168.4.0/24 dev enp0s9 proto kernel scope link src 192.168.4.191
+   - Proxy2 192.168.4.0/24 dev enp0s9 proto kernel scope link src 192.168.4.192
+   - VIP 192.168.4.194
+
+   Let’s say Proxy1 is the primary node while Proxy2 is the secondary node.
+
+   Given that, the config file looks as follows:
+
+   ```
+   global_defs {
+     # Keepalived process identifier
+     router_id  proxy_HA
+   }
+   # Script used to check if Proxy is running
+   vrrp_script check_proxy {
+     script "killall -0 proxysql"
+     interval 2
+     weight 2
+   }
+   # Virtual interface
+   # The priority specifies the order in which the assigned interface to take over in a failover
+   vrrp_instance VI_01 {
+     state MASTER
+     interface enp0s9
+     virtual_router_id 51
+     priority 100  <----- This needs to be different for each ProxySQL node, like 100/99
+
+     # The virtual ip address shared between the two load balancers
+     virtual_ipaddress {
+      192.168.4.194  dev enp0s9
+     }
+     track_script {
+       check_proxy
+     }
+   }
+   ```
+
+1. Start the `keepalived` service. From now on, the VIP will be associated with the Proxy1 unless the service is down.
+
+## Disaster recovery implementation
+
+The implementation of a DR (Disaster Recovery) site will follow the same direction provided for the main site. There are only some generic rules to follow:
+
+- A DR site should be located in a different geographic location than the main site (several hundred kilometers/miles away).
+- The connection link between the main site and the DR site can only be established using *asynchronous replication* (standard MySQL [replication setup](https://dev.mysql.com/doc/refman/9.7/en/replication-gtids.html) ).
+
+## Monitoring
+
+### Using Percona Management and Monitoring (PMM)
+
+1. Use [this quickstart](https://www.percona.com/software/pmm/quickstart) to install Percona Monitoring and Management (PMM).
+
+1. Specify the `replication_set` flag when registering the *Percona Server for MySQL* node or the MySQL node in PMM:
+
+   ```
+   pmm-admin add mysql --username=pmm --password=pmm --query-source=perfschema --replication-set=gr_test_lab  group_rep4 127.0.0.1:3306
+   ```
+
+Then you can use the Group Replication Dashboard and monitor your cluster with a lot of details.
+
+The dashboard sections are the following:
+
+1. Overview:
+1. Replication delay details
+1. Transactions
+1. Conflicts
+
+### Using command line
+
+From the command line, you need to manually query the tables in Performance schema:
+
+```
++----------------------------------------------+
+| replication_applier_configuration            |
+| replication_applier_filters                  |
+| replication_applier_global_filters           |
+| replication_applier_status                   |
+| replication_applier_status_by_coordinator    |
+| replication_applier_status_by_worker         |
+| replication_connection_configuration         |
+| replication_connection_status                |
+| replication_group_member_stats               |
+| replication_group_members                    |
++----------------------------------------------+
+```
+
+For example, use this command to get the lag in number of transactions on a node:
+
+```
+select @last_exec:=SUBSTRING_INDEX(SUBSTRING_INDEX( @@global.GTID_EXECUTED,':',-1),'-',-1) last_executed;select  @last_rec:=SUBSTRING_INDEX(SUBSTRING_INDEX(Received_transaction_set,':',-1),'-',-1) last_received FROM performance_schema.replication_connection_status WHERE Channel_name = 'group_replication_applier'; select (@last_rec - @last_exec) as real_lag;
++---------------+
+| last_executed |
++---------------+
+| 125624        |
++---------------+
+1 row in set, 1 warning (0.03 sec)
+
++---------------+
+| last_received |
++---------------+
+| 125624        |
++---------------+
+1 row in set, 1 warning (0.00 sec)
+
++----------+
+| real_lag |
++----------+
+|        0 |
++----------+
+1 row in set (0.00 sec)
+```
+
+You can use a more composite query to get information about each applier:
+
+```
+SELECT
+  conn_status.channel_name as channel_name,
+  conn_status.service_state as IO_thread,
+  applier_status.service_state as SQL_thread,
+  conn_status.LAST_QUEUED_TRANSACTION as last_queued_transaction,
+  applier_status.LAST_APPLIED_TRANSACTION as last_applied_transaction,
+  LAST_APPLIED_TRANSACTION_END_APPLY_TIMESTAMP -
+                            LAST_APPLIED_TRANSACTION_ORIGINAL_COMMIT_TIMESTAMP 'rep delay (sec)',
+  LAST_QUEUED_TRANSACTION_START_QUEUE_TIMESTAMP -
+                           LAST_QUEUED_TRANSACTION_ORIGINAL_COMMIT_TIMESTAMP 'transport time',
+  LAST_QUEUED_TRANSACTION_END_QUEUE_TIMESTAMP -
+                           LAST_QUEUED_TRANSACTION_START_QUEUE_TIMESTAMP 'time RL',
+  LAST_APPLIED_TRANSACTION_END_APPLY_TIMESTAMP -
+                           LAST_APPLIED_TRANSACTION_START_APPLY_TIMESTAMP 'apply time',
+  if(GTID_SUBTRACT(LAST_QUEUED_TRANSACTION, LAST_APPLIED_TRANSACTION) = "","0" ,        abs(time_to_sec(if(time_to_sec(APPLYING_TRANSACTION_ORIGINAL_COMMIT_TIMESTAMP)=0,0,timediff(APPLYING_TRANSACTION_ORIGINAL_COMMIT_TIMESTAMP,now()))))) `lag_in_sec`
+FROM
+  performance_schema.replication_connection_status AS conn_status
+JOIN performance_schema.replication_applier_status_by_worker AS applier_status
+  ON applier_status.channel_name = conn_status.channel_name
+ORDER BY lag_in_sec, lag_in_sec desc\G
+```
+
+Expected output
+
+```
+*************************** 1. row ***************************
+channel_name: group_replication_applier
+IO_thread: ON
+SQL_thread: ON
+last_queued_transaction: aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa:125624
+last_applied_transaction: aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa:125621
+rep delay (sec): 3.153038
+transport time: 0.061327
+time RL: 0.001005
+apply time: 0.388680
+lag_in_sec: 0
+```
+
+Based on the material from Percona Database Performance Blog
+
+This document is based on the blog post [Percona Distribution for MySQL: High Availability with Group Replication Solution](https://www.percona.com/blog/2021/04/14/percona-distribution-for-mysql-high-availability-with-group-replication-solution/) by *Marco Tusa*
+# Replication manager for Percona XtraDB Cluster
+
+# Replication manager for Percona XtraDB Cluster
+
+The replication manager script helps manage [multi-source replication](https://docs.percona.com/percona-distribution-for-mysql/9.7/glossary.html#multi-source-replication) between multiple Percona XtraDB Cluster clusters. This tool has a failover mechanism and can automatically perform a failover due to source or replica node failures, service degradation, or maintenance requirements.
+
+The replication manager script monitors the active source-replica replication channel. If the source or replica node fails, the script re-establishes the replication channel using alternative source or replica cluster nodes.
+
+## Example
+
+For example, we deploy multi-source replication links between three data centers: DC1, DC2, and DC3. In each data center, there are three Percona XtraDB Cluster nodes form distinct Percona XtraDB Cluster clusters. The data centers contain the following nodes:
+
+| DC1   | DC2   | DC3   |
+| ----- | ----- | ----- |
+| DC1-1 | DC2-1 | DC3-1 |
+| DC1-2 | DC2-2 | DC3-2 |
+| DC1-3 | DC2-3 | DC3-3 |
+
+The topology is the following:
+
+```
+DC2 <=> DC1 <=> DC3
+```
+
+All of the nodes are sources and replicas. DC1 is a replica of DC2 and DC3. DC2 and DC3 are replicas of DC1.
+
+```
++----------------+---------------+
+| clusterSlave   | clusterMaster |
++----------------+---------------+
+| DC1            | DC2           |
+| DC1            | DC3           |
+| DC2            | DC1           |
+| DC3            | DC1           |
++----------------+---------------+
+```
+
+The example of the minimal MySQL configuration file for DC1 that is common for all three DC1 nodes:
+
+```
+[mysqld]
+# General galera reqs
+default_storage_engine=InnoDB
+innodb_autoinc_lock_mode=2
+
+# Replication settings
+binlog_format=ROW
+server-id=1
+log-bin=mysql-bin
+log_replica_updates
+expire_logs_days=7
+gtid_mode = ON
+enforce_gtid_consistency=ON
+skip-replica-start
+
+# Galera configuration
+wsrep_provider=/usr/lib/galera3/libgalera_smm.so
+wsrep_cluster_address=gcomm://10.0.4.160,10.0.4.162,10.0.4.163
+wsrep_replica_threads= 2
+wsrep_log_conflicts
+wsrep_cluster_name=DC1
+pxc_strict_mode=ENFORCING
+wsrep_sst_method=xtrabackup-v2
+wsrep_sst_auth="root:root"
+```
+
+All nodes have the same `server-id` value.
+
+### Configuration steps
+
+1. Bootstrap the cluster on DC1-1 node by running the following commands as root or using sudo:
+
+   ```
+   [root@DC1-1 ~]# /etc/init.d/mysql stop 
+   [root@DC1-1 ~]# /etc/init.d/mysql bootstrap-pxc
+   ```
+
+1. On DC1-2 node, stop MySQL, delete the content of the datadir to force the SST, and start MySQL. Run the following commands as root or using sudo:
+
+   ```
+   [root@DC1-2 ~]# /etc/init.d/mysql stop
+   [root@DC1-2 ~]# rm -rf /var/lib/mysql/*
+   [root@DC1-2 ~]# /etc/init.d/mysql start
+   ```
+
+1. Once the SST of DC1-2 node is completed, proceed on DC1-3. Run the following commands as root or using sudo:
+
+   ```
+   [root@DC1-3 ~]# /etc/init.d/mysql stop
+   [root@DC1-3 ~]# rm -rf /var/lib/mysql/*
+   [root@DC1-3 ~]# /etc/init.d/mysql start
+   ```
+
+1. The DC1 cluster uses a single [GTID](https://docs.percona.com/percona-distribution-for-mysql/9.7/glossary.html#gtid) sequence. To make sure `GTID_PURGED` is the same, run the following commands on DC1-1, DC1-2, and DC1-3 nodes:
+
+   ```
+   mysql> flush logs;
+   mysql> purge binary logs to 'mysql-bin.000003';
+   ```
+
+   `mysql-bin.000003` is the last file returned when you run the following command:
+
+   ```
+   mysql>`SHOW BINARY LOGS`
+   ```
+
+1. Adjust the aformentioned steps to set up the DC2 and DC3 clusters accordingly.
+
+1. Add privileges for replication between all nodes only for DC1:
+
+   ```
+   GRANT REPLICATION CLIENT, REPLICATION SLAVE ON *.* TO 'repl'@'%' identified by 'replpass';
+   ```
+
+1. Add the replication tables. For example, we add the tables to DC1:
+
+   ```
+   create database if not exists percona;
+   use percona;
+   CREATE TABLE `replication` (
+     `host` varchar(40) NOT NULL,
+     `weight` int(11) NOT NULL DEFAULT 0,
+     `localIndex` int(11) DEFAULT NULL,
+     `isSlave` enum('No','Yes','Proposed','Failed') DEFAULT 'No',
+     `lastUpdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+     `lastHeartbeat` timestamp NOT NULL DEFAULT '1971-01-01 00:00:00',
+     `connectionName` varchar(64) NOT NULL,
+     PRIMARY KEY (`connectionName`,`host`),
+     KEY `idx_host` (`host`)
+   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+   CREATE TABLE `cluster` (
+     `cluster` varchar(31) NOT NULL,
+     `masterCandidates` varchar(255) NOT NULL,
+     `replCreds` varchar(255) NOT NULL,
+     PRIMARY KEY (`cluster`)
+   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+   CREATE TABLE `link` (
+     `clusterSlave` varchar(31) NOT NULL,
+     `clusterMaster` varchar(31) NOT NULL,
+     PRIMARY KEY (`clusterSlave`,`clusterMaster`)
+   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+   CREATE TABLE `weight` (
+    `cluster` varchar(31) NOT NULL,
+    `nodename` varchar(255) NOT NULL,
+    `weight` int NOT NULL DEFAULT 0, 
+    PRIMARY KEY (`cluster`,`nodename`)
+   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+   ```
+
+   The replication manager writes to the tables. You do not need to adjust the tables.
+
+1. The cluster table contains the details of each cluster. The cluster name is defined in the `wsrep_cluster_name` variable value:
+
+   ```
+   INSERT INTO `cluster` VALUES ('DC1','10.0.4.160 10.0.4.162 10.0.4.163','source_user=\'repl\', source_password=\'replpass\'');
+   INSERT INTO `cluster` VALUES ('DC2','10.0.4.164 10.0.4.165 10.0.4.166','source_user=\'repl\', source_password=\'replpass\'');
+   INSERT INTO `cluster` VALUES ('DC3','10.0.4.167 10.0.4.168 10.0.4.169','source_user=\'repl\', source_password=\'replpass\'');
+   ```
+
+1. Add the required links:
+
+   ```
+   INSERT INTO `link` VALUES ('DC1','DC2');
+   INSERT INTO `link` VALUES ('DC1','DC3');
+   INSERT INTO `link` VALUES ('DC2','DC1');
+   INSERT INTO `link` VALUES ('DC3','DC1');
+   ```
+
+1. Add the weight:
+
+   ```
+   INSERT INTO `weight` VALUES('DC1','DC1-1',10); 
+   INSERT INTO `weight` VALUES('DC1','DC1-2',11); 
+   INSERT INTO `weight` VALUES('DC2','DC2-1',9);
+   INSERT INTO `weight` VALUES('DC2','DC2-2',12);
+   INSERT INTO `weight` VALUES('DC3','DC3-1',11);
+   ```
+
+   The node in the cluster with the highest value is the first to be selected.
+
+1. Provision the remote clusters and start replication.
+
+   On one of the DC1 nodes, for example DC1-1, perform a `mysqldump` as root or using sudo:
+
+   ```
+   [root@DC1-1 ~]# mysqldump -u root -p --source-data=2 --single-transaction -R -A -E > dump.sql
+   ```
+
+1. Compress the file if it’s too large. You can use [Percona XtraBackup to compress the data](https://docs.percona.com/percona-xtrabackup/9.7/create-compressed-backup.html) . Copy the backup file to one node in each remote cluster, for example to DC2-1 and DC3-1.
+
+   To restore the dump, run the following commands as root or using sudo:
+
+   ```
+   [root@DC2-1 ~]# mysql -u root -p < dump.sql
+   ```
+
+   and
+
+   ```
+   [root@DC3-1 ~]# mysql -u root -p < dump.sql
+   ```
+
+1. Configure the replication. Set up the first replication links manually.
+
+   For example, on DC2-1 run:
+
+   ```
+   mysql> change replication source to source_host='WAN IP of DC1-1', source_user='repl', source_password='replpass', SOURCE_AUTO_POSITION = 1 FOR CHANNEL 'DC2-DC1';
+   mysql> start replica FOR CHANNEL 'DC2-DC1';
+   ```
+
+   on DC3-1 run:
+
+   ```
+   mysql> change replication source to source_host='WAN IP of DC1-1', source_user='repl', source_password='replpass', SOURCE_AUTO_POSITION = 1 FOR CHANNEL 'DC3-DC1';
+   mysql> start replica FOR CHANNEL 'DC3-DC1';
+   ```
+
+   For the other direction, use DC1-1 for both:
+
+   ```
+   mysql> change replication source to source_host='WAN IP of DC2-1', source_user='repl', source_password='replpass', SOURCE_AUTO_POSITION = 1 FOR CHANNEL 'DC1-DC2';
+   mysql> start replica FOR CHANNEL 'DC1-DC2';
+   mysql> change replication source to source_host='WAN IP of DC3-1', source_user='repl', source_password='replpass', SOURCE_AUTO_POSITION = 1 FOR CHANNEL 'DC1-DC3';
+   mysql> start replica FOR CHANNEL 'DC1-DC3';
+   ```
+
+   Now, all the clusters are linked in a source to source way.
+
+1. Install and enable Percona XtraDB Cluster-based variant of Percona Distribution for MySQL as described in [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.html#procedure) .
+
+1. Install the packages for `replication_manager.sh` script depending on your operating system. On each node, perform the following steps as root or using sudo:
+
+   **On Debian and Ubuntu Linux**
+
+   ```
+   sudo apt install percona-replication-manager
+   ```
+
+   **On Red Hat Enterprise Linux and derivatives**
+
+   ```
+   sudo yum install percona-replication-manager
+   ```
+
+   When executed for the first time, the replication manager detects the current replication links and inserts rows in to the `percona.replication table`. In order to avoid issues, start with the replica nodes. The mysql credentials should be specified in the `/root/.my.cnf` file. On these nodes (DC1-1, DC2-1 and DC3-1), execute the script manually:
+
+   ```
+   /usr/bin/replication_manager.sh
+   ```
+
+   The replication state should be unchanged and the `percona.replication` table should contain the following rows:
+
+   ```
+   SELECT * FROM percona.replication;
+   ```
+
+   Expected output
+
+   ```
+   +-------+--------+------------+-----------+---------------------+---------------------+----------------+
+   | host  | weight | localIndex | isSlave   | lastUpdate          | lastHeartbeat       | connectionName |
+   +-------+------- +------------+-----------+---------------------+---------------------+----------------+
+   | DC1-1 |      10|          1 | Yes       | 2017-06-30 13:03:01 | 2017-06-30 13:03:01 | DC1-DC2        |
+   | DC1-1 |      11|          1 | Yes       | 2017-06-30 13:03:01 | 2017-06-30 13:03:01 | DC1-DC3        |
+   | DC2-1 |       9|          1 | Yes       | 2017-06-30 13:03:01 | 2017-06-30 13:03:01 | DC2-DC1        |
+   | DC3-1 |      11|          1 | Yes       | 2017-06-30 13:03:01 | 2017-06-30 13:03:01 | DC3-DC1        |
+   +-------+--------+------------+-----------+---------------------+---------------------+----------------+
+   12 rows in set (0.00 sec)
+   ```
+
+   If you have issues on these step, see the [Replication manager troubleshooting](https://docs.percona.com/percona-distribution-for-mysql/9.7/replication-manager-troubleshooting.html) document.
+
+   On these same nodes, enable the cron job:
+
+   ```
+   * * * * * /usr/bin/replication_manager.sh
+   ```
+
+   Wait at least one minute and proceed with the other nodes. Try a manual run first to see if the script adds a line to the replication table for the host, for example, isSlave = No. Then add the cron jobs.
+
+   ```
+   SELECT * FROM percona.replication;
+   ```
+
+   Expected output
+
+   ```
+   +-------+--------+------------+-----------+---------------------+---------------------+----------------+
+   | host  | weight | localIndex | isSlave   | lastUpdate          | lastHeartbeat       | connectionName |
+   +-------+------- +------------+-----------+---------------------+---------------------+----------------+
+   | DC1-1 |      10|          1 | Yes       | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC2        |
+   | DC1-2 |      11|          2 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC2        |
+   | DC1-3 |       9|          0 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC2        |
+   | DC1-1 |      11|          1 | Yes       | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC3        |
+   | DC1-2 |      12|          2 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC3        |
+   | DC1-3 |       0|          0 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC3        |
+   | DC2-1 |       0|          1 | Yes       | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC2-DC1        |
+   | DC2-2 |       0|          0 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC2-DC1        |
+   | DC2-3 |       0|          2 | No        | 2017-06-19 15:58:01 | 2017-06-19 15:58:01 | DC2-DC1        |
+   | DC3-1 |       0|          1 | Yes       | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC3-DC1        |
+   | DC3-2 |       0|          2 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC3-DC1        |
+   | DC3-3 |       0|          0 | No        | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC3-DC1        |
+   +-------+--------+------------+-----------+---------------------+---------------------+----------------+
+   ```
+
+See also
+
+To manage a single replica, see [Single replica manager for Percona XtraDB Cluster](https://docs.percona.com/percona-distribution-for-mysql/9.7/single-replica-manager.html).
+
+# Replication manager troubleshooting
+
+The [replication manager](https://docs.percona.com/percona-distribution-for-mysql/9.7/replication-manager-for-pxc.html#configuration-steps) script outputs its trace (bash -x) to the file `/tmp/replication_manager.log` if present. If there is an error during the manual invocation or something unexpected happens, touch the file, run the script manually and look at the file content for hints. If you think there is a bug, create an issue on [GitHub](https://github.com/percona/replication-manager/issues/new) .
+
+# Single replica manager for Percona XtraDB Cluster
+
+This feature is a tech preview. Before using this feature in a production environment, follow these steps:
+
+• Test restoring production from physical backups in your environment.
+
+• Use an alternative backup method to ensure redundancy.
+
+The single replica manager is a simplified version of the [Replication manager for Percona XtraDB Cluster](https://docs.percona.com/percona-distribution-for-mysql/9.7/replication-manager-for-pxc.html) and is intended to manage a single replica.
+
+The single replica manager requires using a [global transaction identifier (GTID)](https://docs.percona.com/percona-distribution-for-mysql/9.7/glossary.html#gtid) (Oracle implementation).
+
+To use the single replica manager script, edit the script and adjust the ‘sourceCandidates’ and ‘replCreds’ variables. If the Percona XtraDB Cluster nodes are ‘10.1.1.10’, ‘10.1.1.11’, and ‘10.1.1.12’, and the replication user is ‘repluser’ with a password set to ‘replpass’, the variables should look like the following:
+
+```
+sourceCandidates="10.1.1.10 10.1.1.11 10.1.1.12"
+replCreds="source_user='repl', source_password='replpass'"
+```
+
+The credentials to the local MySQL server should be located in the `~/.my.cnf` file of the user under which the cron job is defined. The last step is to enable the cron job that runs every minute:
+
+```
+* * * * * /usr/bin/replication_manager.sh
+```
+
+If you face any issues, do the following:
+
+```
+touch /tmp/replication_manager.log 
+chmod a+w /tmp/replication_manager.log
+```
+
+Check the `bash trace` file for any issues. During the maintenance on the replica, do the following:
+
+```
+touch /tmp/replication_manager.off
+```
+
+Once the maintenance is over, remove the file.
+# Uninstall
+
+# Uninstalling Percona Distribution for MySQL
+
+To uninstall Percona Distribution for MySQL, stop the `mysql` service and remove all the installed packages using the package manager of your operating system. Optionally, disable Percona repository.
+
+Note
+
+Should you need the data files later, back up your data before uninstalling Percona Distribution for MySQL.
+
+**Uninstall Percona Server-based variant**
+
+Important
+
+Run all commands as the root user or via `sudo`
+
+**On Debian / Ubuntu**
+
+1. Stop the `mysql` service.
+
+   ```
+   sudo systemctl stop mysql
+   ```
+
+1. Remove *Percona Server for MySQL*.
+
+   ```
+   sudo apt remove percona-server*
+   ```
+
+1. Remove the components. Use the following commands to remove the required components.
+
+   - Remove Percona XtraBackup
+
+     ```
+     sudo apt remove percona-xtrabackup-97
+     ```
+
+   - Remove Percona Toolkit
+
+     ```
+     sudo apt remove percona-toolkit
+     ```
+
+   - Remove Orchestrator
+
+     ```
+     sudo apt remove percona-orchestrator*
+     ```
+
+   - Remove MySQL Shell
+
+     ```
+     sudo apt remove percona-mysql-shell
+     ```
+
+   - Remove ProxySQL
+
+     ```
+     sudo apt remove proxysql2
+     ```
+
+   - Remove MySQL Router
+
+     ```
+     sudo apt remove percona-mysql-router
+     ```
+
+**On Red Hat Enterprise Linux / derivatives**
+
+1. Stop the `mysql` service.
+
+   ```
+   sudo systemctl stop mysql
+   ```
+
+1. Remove *Percona Server for MySQL*.
+
+   ```
+   sudo yum remove percona-server*
+   ```
+
+1. Remove the components. Use the commands below to remove the required components.
+
+   - Remove Percona XtraBackup
+
+     ```
+     sudo yum remove percona-xtrabackup-97
+     ```
+
+   - Remove Percona Toolkit
+
+     ```
+     sudo yum remove percona-toolkit
+     ```
+
+   - Remove Orchestrator
+
+     ```
+     sudo yum remove percona-orchestrator*
+     ```
+
+   - Remove MySQL Shell
+
+     ```
+     sudo yum remove percona-mysql-shell
+     ```
+
+   - Remove ProxySQL
+
+     ```
+     sudo yum remove proxysql2
+     ```
+
+   - Remove MySQL Router
+
+     ```
+     sudo yum remove percona-mysql-router
+     ```
+
+**Uninstall Percona XtraDB Cluster-based variant**
+
+Important
+
+Run all commands as the root user or via `sudo`
+
+**On Debian / Ubuntu**
+
+1. Stop the `mysql` service.
+
+   ```
+   sudo systemctl stop mysql
+   ```
+
+1. Remove *Percona XtraDB Cluster*.
+
+   ```
+   sudo apt remove percona-xtradb-cluster
+   ```
+
+1. Remove the components. Use the commands below to remove the required components.
+
+   - Remove Percona XtraBackup
+
+     ```
+     sudo apt remove percona-xtrabackup-97
+     ```
+
+   - Remove Percona Toolkit
+
+     ```
+     sudo apt remove percona-toolkit
+     ```
+
+**On Red Hat Enterprise Linux / derivatives**
+
+1. Stop the `mysql` service.
+
+   ```
+   sudo systemctl stop mysql
+   ```
+
+1. Remove *Percona Server for MySQL*.
+
+   ```
+   sudo yum remove percona-xtradb-cluster
+   ```
+
+1. Remove the components. Use the commands below to remove the required components.
+
+   - Remove Percona XtraBackup
+
+   ```
+   sudo yum remove percona-xtrabackup-97
+   ```
+
+   - Remove Percona Toolkit
+
+   ```
+   sudo yum remove percona-toolkit
+   ```
+
+# Percona Software Download instructions
+
+## Select the software
+
+Do the following steps to select the software:
+
+1. Open [Percona Software Downloads](https://www.percona.com/downloads) .
+1. Select a product, for example, Percona Distribution for MySQL.
+1. In `Product Group`, select which product, for example, Percona Server for MySQL.
+1. In `Version`, select your distribution version, for example, `percona-distribution-mysql-ps-9.7`.
+1. In `Platform`, select the operating system, for example, `Ubuntu 24.04 (Noble Numbat)`.
+
+The `Package Download Options` may mix `amd64` and `arm64` packages. Select the correct CPU architecture for your system.
+
+## Download to a local computer
+
+In `Package Download Options`, select a specific package and click `Download`. This action downloads the selected packages to the local computer.
+
+## Download to another computer
+
+In `Package Download Options`, select a specific package and right-click on the `DOWNLOAD`, and in the drop-down menu, choose `Copy Link Address`
+
+Paste the link in your terminal to download the selected package.
+# Optional
+
+# Legal Notice
+
+You are interacting with an AI-powered chatbot that provides automated responses for general information about our IT services and software. Responses may be inaccurate or incomplete and do not constitute professional or contractual advice. Do not submit personal data, confidential information, credentials, or other sensitive information through this chat. Conversations may be logged and processed to improve our services in accordance with our [Privacy Policy](https://www.percona.com/privacy-policy#h.c033wws8ytgb) and applicable laws, including the GDPR. If you require assistance, please contact a [human representative](https://www.percona.com/about/contact).

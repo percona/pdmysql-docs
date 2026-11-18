@@ -134,7 +134,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"><div class="agent-hint" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap">For AI agents: an index of this documentation is at <a href="https://docs.percona.com/percona-distribution-for-mysql/9.7/llms.txt" tabindex="-1">llms.txt</a>.</div>
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -2147,15 +2147,15 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   
 
 
-<h1 id="percona-distribution-for-mysql-972-using-percona-xtradb-cluster-2026-11-02">Percona Distribution for MySQL 9.7.2 using Percona XtraDB Cluster (2026-11-02)<a class="headerlink" href="#percona-distribution-for-mysql-972-using-percona-xtradb-cluster-2026-11-02" title="Permanent link">&para;</a></h1>
+<h1 id="percona-distribution-for-mysql-972-using-percona-xtradb-cluster-2026-11-02">Percona Distribution for MySQL 9.7.2 using Percona XtraDB Cluster (2026-11-02)<a data-markdown-ignore class="headerlink" href="#percona-distribution-for-mysql-972-using-percona-xtradb-cluster-2026-11-02" title="Permanent link">&para;</a></h1>
 <div class="admonition note">
 <p class="admonition-title">A note on MySQL 9.7.3</p>
 <p>After a thorough review of the updates included in MySQL 9.7.3, Percona has decided not to release a corresponding Percona Server for MySQL 9.7.3. MySQL 9.7.3 is a Critical Security Patch Update (CSPU) — a targeted security release that Oracle can issue between quarterly Critical Patch Updates (CPUs) when needed. The fixes included in this CSPU do not affect Percona Server for MySQL.</p>
 </div>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="installing.html">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-server/9.7/release-notes/9.7.2-2.html">Percona XtraDB Cluster 9.7.2-2</a> that includes all the features and bug fixes available in the <a href="https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-0.html">MySQL 9.7.0 Community Edition</a> and enterprise-grade features developed by Percona.</p>
-<h2 id="release-highlights">Release highlights<a class="headerlink" href="#release-highlights" title="Permanent link">&para;</a></h2>
-<h3 id="percona-server-for-mysql-972-2">Percona Server for MySQL 9.7.2-2<a class="headerlink" href="#percona-server-for-mysql-972-2" title="Permanent link">&para;</a></h3>
+<h2 id="release-highlights">Release highlights<a data-markdown-ignore class="headerlink" href="#release-highlights" title="Permanent link">&para;</a></h2>
+<h3 id="percona-server-for-mysql-972-2">Percona Server for MySQL 9.7.2-2<a data-markdown-ignore class="headerlink" href="#percona-server-for-mysql-972-2" title="Permanent link">&para;</a></h3>
 <p>Percona Server for MySQL 9.7.2-2 introduces the following new features and improvements:</p>
 <ul>
 <li>
@@ -2165,7 +2165,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <p>Adds SQL functions that calculate the distance between vector values. See <a href="https://docs.percona.com/percona-server/9.7/distance-function.html"><code>DISTANCE()</code></a>.</p>
 </li>
 </ul>
-<h3 id="mysql-972">MySQL 9.7.2<a class="headerlink" href="#mysql-972" title="Permanent link">&para;</a></h3>
+<h3 id="mysql-972">MySQL 9.7.2<a data-markdown-ignore class="headerlink" href="#mysql-972" title="Permanent link">&para;</a></h3>
 <p>Improvements and bug fixes provided by Oracle for MySQL 9.7.2 and included in Percona Server for MySQL are the following:</p>
 <ul>
 <li>
@@ -2185,11 +2185,11 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </li>
 </ul>
 <p>Find the complete list of bug fixes and changes in the <a href="https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-2.html">MySQL 9.7.2 release notes</a>.</p>
-<h2 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
+<h2 id="known-issues">Known issues<a data-markdown-ignore class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
 <ul>
 <li>In 9.7.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as SHOW MASTER STATUS. Some internal counters also use outdated terminology. To address most terminology issues, enable the <a href="https://dev.mysql.com/doc/refman/9.7/en/replication-options-replica.html#sysvar_terminology_use_previous">terminology_use_previous</a> system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.</li>
 </ul>
-<h2 id="supplied-components">Supplied components<a class="headerlink" href="#supplied-components" title="Permanent link">&para;</a></h2>
+<h2 id="supplied-components">Supplied components<a data-markdown-ignore class="headerlink" href="#supplied-components" title="Permanent link">&para;</a></h2>
 <p>Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona Server for MySQL-based variation of the Percona Distribution for MySQL.</p>
 <table>
 <thead>

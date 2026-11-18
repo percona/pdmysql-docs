@@ -134,7 +134,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"><div class="agent-hint" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap">For AI agents: an index of this documentation is at <a href="https://docs.percona.com/percona-distribution-for-mysql/9.7/llms.txt" tabindex="-1">llms.txt</a>.</div>
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -2167,11 +2167,11 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   
 
 
-<h1 id="high-availability-solution-with-group-replication">High availability solution with Group Replication<a class="headerlink" href="#high-availability-solution-with-group-replication" title="Permanent link">&para;</a></h1>
+<h1 id="high-availability-solution-with-group-replication">High availability solution with Group Replication<a data-markdown-ignore class="headerlink" href="#high-availability-solution-with-group-replication" title="Permanent link">&para;</a></h1>
 <p>Every architecture and deployment depends on customer requirements and application demands for high availability and the estimated level of usage.  For example, using a high read or a high write application, or both with 99.999% availability.</p>
 <p>This guide gives <a href="architecture-components.html">architecture</a> and deployment recommendations along with a technical overview for a solution that provides a high level of high availability and assumes the usage of high read / write applications (20K or more queries per second). It also provides <a href="deploy-pdps-group-replication.html">step-by-step deployment guidelines</a>.</p>
 <p>This solution assumes the use of <em>Percona Server for MySQL</em> based deployment variant of Percona Distribution for MySQL with <a href="https://dev.mysql.com/doc/refman/9.7/en/group-replication.html">Group Replication <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a>.</p>
-<h2 id="high-availability-overview">High availability overview<a class="headerlink" href="#high-availability-overview" title="Permanent link">&para;</a></h2>
+<h2 id="high-availability-overview">High availability overview<a data-markdown-ignore class="headerlink" href="#high-availability-overview" title="Permanent link">&para;</a></h2>
 <p>How to measure availability and at what point does it become “high” availability?</p>
 <p>Generally speaking, the measurement of availability is done by establishing a measurement time frame and dividing it by the time that it was available. This ratio will rarely be 1, which is equal to 100% availability. A solution is considered to be highly available if it is at least 99% or “two nines” available.</p>
 <p>The following table provides downtime calculations per high availability level:</p>
@@ -2237,7 +2237,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </tr>
 </tbody>
 </table>
-<h3 id="how-is-high-availability-achieved">How is high availability achieved?<a class="headerlink" href="#how-is-high-availability-achieved" title="Permanent link">&para;</a></h3>
+<h3 id="how-is-high-availability-achieved">How is high availability achieved?<a data-markdown-ignore class="headerlink" href="#how-is-high-availability-achieved" title="Permanent link">&para;</a></h3>
 <p>There are three key components to achieve high availability:</p>
 <ul>
 <li>
@@ -2252,7 +2252,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </ul>
 <p>This solution is based on a tightly coupled database cluster. It offers a high availability level of 99.995% when coupled with the Group Replication setting <code>group_replication_consistency=AFTER</code>.</p>
 <p><img alt="image" src="_images/group-replication-1.png" /></p>
-<h2 id="failovers">Failovers<a class="headerlink" href="#failovers" title="Permanent link">&para;</a></h2>
+<h2 id="failovers">Failovers<a data-markdown-ignore class="headerlink" href="#failovers" title="Permanent link">&para;</a></h2>
 <p>A database failure or configuration change that requires a restart should not affect the stability of the database infrastructure, if it is properly planned and architected. Failovers are an integral part of a stability strategy and aligning the business requirements for availability and uptime with failover methodologies is critical.</p>
 <p>The following are the three main types of failovers that can occur in database environments:</p>
 <ul>
@@ -2266,12 +2266,12 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <p><strong>Regional or disaster recovery (DR) failover</strong>. Unplanned failovers still work with the assumption that additional database infrastructure is immediately available and in a usable state. However, in a regional or DR failover, it is assumed that there is a large scale infrastructure outage which requires the business to move its operations away from its current availability zone.</p>
 </li>
 </ul>
-<h2 id="maintenance-windows">Maintenance windows<a class="headerlink" href="#maintenance-windows" title="Permanent link">&para;</a></h2>
-<h3 id="major-vs-minor-maintenance">Major vs Minor maintenance<a class="headerlink" href="#major-vs-minor-maintenance" title="Permanent link">&para;</a></h3>
+<h2 id="maintenance-windows">Maintenance windows<a data-markdown-ignore class="headerlink" href="#maintenance-windows" title="Permanent link">&para;</a></h2>
+<h3 id="major-vs-minor-maintenance">Major vs Minor maintenance<a data-markdown-ignore class="headerlink" href="#major-vs-minor-maintenance" title="Permanent link">&para;</a></h3>
 <p>Although it may not be obvious at first, not all maintenance activities are created equal and do not have the same dependencies. It is good to separate maintenance that demands downtime or failover from maintenance that can be done without impacting those important stability metrics. When defining these maintenance dependencies, there can be a change in the actual maintenance process that allows for a different cadence.</p>
-<h3 id="maintenance-without-service-interruption">Maintenance without service interruption<a class="headerlink" href="#maintenance-without-service-interruption" title="Permanent link">&para;</a></h3>
+<h3 id="maintenance-without-service-interruption">Maintenance without service interruption<a data-markdown-ignore class="headerlink" href="#maintenance-without-service-interruption" title="Permanent link">&para;</a></h3>
 <p>It is possible to cover both major and minor maintenance without service interruption with rolling restart and using proper version upgrade.</p>
-<h2 id="uptime">Uptime<a class="headerlink" href="#uptime" title="Permanent link">&para;</a></h2>
+<h2 id="uptime">Uptime<a data-markdown-ignore class="headerlink" href="#uptime" title="Permanent link">&para;</a></h2>
 <p>When referring to database stability, uptime is likely the largest indicator of stability and often is the most obvious symptom of an unstable database environment. Uptime is composed of three key components and, contrary to common perception, is based on what happens when the database software cannot take incoming requests rather than maintain the ability to take requests with errors.</p>
 <p>The uptime components are:</p>
 <ul>
@@ -2299,7 +2299,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <p><code>N</code> is the number of nodes in the cluster.</p>
 </li>
 </ul>
-<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<h3 id="example">Example<a data-markdown-ignore class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>In a cluster of 5 nodes, F = (5 - 1)/2 = 2. The cluster can support up to 2 failures.</p>

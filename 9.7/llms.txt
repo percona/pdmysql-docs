@@ -1,0 +1,60 @@
+# Percona Distribution for MySQL
+
+> Documentation
+
+Each page below is also available as markdown. For the documentation of all Percona products, see https://docs.percona.com/llms.txt.
+
+## Overview
+
+- [Home](https://docs.percona.com/percona-distribution-for-mysql/9.7/index.md)
+- [Get help from Percona](https://docs.percona.com/percona-distribution-for-mysql/9.7/get-help.md)
+- [Choose Between Percona Server for MySQL and Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/ps-or-pdps.md)
+- [Copyright and licensing](https://docs.percona.com/percona-distribution-for-mysql/9.7/copyright.md)
+- [Trademark policy](https://docs.percona.com/percona-distribution-for-mysql/9.7/trademark-policy.md)
+- [Glossary](https://docs.percona.com/percona-distribution-for-mysql/9.7/glossary.md)
+
+## Release notes
+
+- [Release notes index](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes.md)
+- [Percona Distribution for MySQL 9.7.2-3 using Percona Server for MySQL (2026-11-12)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-ps-9.7.2-3.md)
+- [Percona Distribution for MySQL 9.7.2 using Percona Server for MySQL (2026-09-28)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-ps-9.7.2.md)
+- [Percona Distribution for MySQL 9.7.1 using Percona Server for MySQL (2026-08-05)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-ps-9.7.1.md)
+- [Percona Distribution for MySQL 9.7.2-3 using Percona XtraDB Cluster (2026-11-12)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-pxc-9.7.2-3.md)
+- [Percona Distribution for MySQL 9.7.2 using Percona XtraDB Cluster (2026-11-02)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-pxc-9.7.2.md)
+- [Percona Distribution for MySQL 9.7.1 using Percona XtraDB Cluster (2026-09-10)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-pxc-9.7.1.md)
+
+## Discover Percona Distribution for MySQL
+
+- [Components](https://docs.percona.com/percona-distribution-for-mysql/9.7/components.md)
+- [Deployment variants](https://docs.percona.com/percona-distribution-for-mysql/9.7/deployment-variants.md)
+
+## Install and update
+
+- [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.md)
+- [Install Percona Server-based variant](https://docs.percona.com/percona-distribution-for-mysql/9.7/install-pdps.md)
+- [Install Percona XtraDB Cluster-based variant](https://docs.percona.com/percona-distribution-for-mysql/9.7/install-pdpxc.md)
+- [Upgrade Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/minor-upgrade.md)
+- [Downgrade Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/downgrade.md)
+
+## Solutions - high availability
+
+- [Technical overview](https://docs.percona.com/percona-distribution-for-mysql/9.7/pdps-group-replication.md)
+- [Architecture and components](https://docs.percona.com/percona-distribution-for-mysql/9.7/architecture-components.md)
+- [Measurement and monitoring](https://docs.percona.com/percona-distribution-for-mysql/9.7/monitoring.md)
+- [Deployment](https://docs.percona.com/percona-distribution-for-mysql/9.7/deploy-pdps-group-replication.md)
+
+## Replication manager for Percona XtraDB Cluster
+
+- [Replication manager for Percona XtraDB Cluster](https://docs.percona.com/percona-distribution-for-mysql/9.7/replication-manager-for-pxc.md)
+- [Replication manager troubleshooting](https://docs.percona.com/percona-distribution-for-mysql/9.7/replication-manager-troubleshooting.md)
+- [Single replica manager for Percona XtraDB Cluster](https://docs.percona.com/percona-distribution-for-mysql/9.7/single-replica-manager.md)
+
+## Uninstall
+
+- [Uninstalling Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/uninstalling.md)
+- [Percona Software Download instructions](https://docs.percona.com/percona-distribution-for-mysql/9.7/download-instructions.md)
+
+## Optional
+
+- [Legal Notice](https://docs.percona.com/percona-distribution-for-mysql/9.7/legal-notice.md)
+
