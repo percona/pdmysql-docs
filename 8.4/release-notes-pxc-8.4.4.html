@@ -134,7 +134,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"><div class="agent-hint" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap">For AI agents: an index of this documentation is at <a href="https://docs.percona.com/percona-distribution-for-mysql/8.4/llms.txt" tabindex="-1">llms.txt</a>.</div>
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -2635,17 +2635,17 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   
 
 
-<h1 id="percona-distribution-for-mysql-844-using-percona-xtradb-cluster-2025-04-16">Percona Distribution for MySQL 8.4.4 using Percona XtraDB Cluster (2025-04-16)<a class="headerlink" href="#percona-distribution-for-mysql-844-using-percona-xtradb-cluster-2025-04-16" title="Permanent link">&para;</a></h1>
+<h1 id="percona-distribution-for-mysql-844-using-percona-xtradb-cluster-2025-04-16">Percona Distribution for MySQL 8.4.4 using Percona XtraDB Cluster (2025-04-16)<a data-markdown-ignore class="headerlink" href="#percona-distribution-for-mysql-844-using-percona-xtradb-cluster-2025-04-16" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="installing.html">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-xtradb-cluster/8.4/release-notes/8.4.4-4.html">Percona XtraDB Cluster 8.4.4-4</a>.</p>
-<h2 id="release-highlights">Release highlights<a class="headerlink" href="#release-highlights" title="Permanent link">&para;</a></h2>
-<h3 id="percona-xtradb-cluster-844-4">Percona XtraDB Cluster 8.4.4-4<a class="headerlink" href="#percona-xtradb-cluster-844-4" title="Permanent link">&para;</a></h3>
+<h2 id="release-highlights">Release highlights<a data-markdown-ignore class="headerlink" href="#release-highlights" title="Permanent link">&para;</a></h2>
+<h3 id="percona-xtradb-cluster-844-4">Percona XtraDB Cluster 8.4.4-4<a data-markdown-ignore class="headerlink" href="#percona-xtradb-cluster-844-4" title="Permanent link">&para;</a></h3>
 <p>Implements the Clone plugin for <a href="https://docs.percona.com/percona-xtradb-cluster/8.4/clone-sst.html">State Snapshot Transfer (SST) Method</a>. The Clone SST is a modern and efficient method that leverages MySQL&rsquo;s native cloning capabilities to transfer data from a donor node to a Joiner node. It is faster and more resource-efficient compared to traditional methods like xtrabackup or rsync.</p>
-<h3 id="percona-server-for-mysql-844-4">Percona Server for MySQL 8.4.4-4<a class="headerlink" href="#percona-server-for-mysql-844-4" title="Permanent link">&para;</a></h3>
+<h3 id="percona-server-for-mysql-844-4">Percona Server for MySQL 8.4.4-4<a data-markdown-ignore class="headerlink" href="#percona-server-for-mysql-844-4" title="Permanent link">&para;</a></h3>
 <p>Improves the <a href="https://docs.percona.com/percona-server/8.4/data-masking-overview.html">Data masking</a> performance by introducing an internal term cache. The new cache speeds up lookups for <code>gen_blocklist()</code> and <code>gen_dictionary()</code> functions by storing dictionary data in memory. However, if the dictionary table is modified directly (outside of the proper functions), the cache may become out of sync. To fix this, use the <code>new masking_dictionaries_flush()</code> function.</p>
 <p>Changes also affect row-based replication: dictionary changes on the source server are replicated, but the term cache on the replica doesn’t update immediately. To address this, a new system setting, <code>component_masking_functions.dictionaries_flush_interval_seconds()</code>, can be set to automatically refresh the cache at specified intervals, helping replicas stay in sync.</p>
 <p>Find more detailed information in the <a href="https://docs.percona.com/percona-server/8.4/data-masking-overview.html">Data masking overview</a> and in the <a href="https://docs.percona.com/percona-server/8.4/data-masking-function-list.html">Data masking component functions</a>.</p>
-<h3 id="mysql-844">MySQL 8.4.4<a class="headerlink" href="#mysql-844" title="Permanent link">&para;</a></h3>
+<h3 id="mysql-844">MySQL 8.4.4<a data-markdown-ignore class="headerlink" href="#mysql-844" title="Permanent link">&para;</a></h3>
 <p>Improvements and bug fixes introduced by Oracle for MySQL 8.4.4 and included in Percona Server for MySQL are the following:</p>
 <ul>
 <li>
@@ -2662,7 +2662,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </li>
 </ul>
 <p>Find the complete list of bug fixes and changes in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-4.html">MySQL 8.4.4 release notes</a>.</p>
-<h2 id="supplied-components">Supplied components<a class="headerlink" href="#supplied-components" title="Permanent link">&para;</a></h2>
+<h2 id="supplied-components">Supplied components<a data-markdown-ignore class="headerlink" href="#supplied-components" title="Permanent link">&para;</a></h2>
 <p>Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona XtraDB Cluster-based variation of the Percona Distribution for MySQL:</p>
 <table>
 <thead>

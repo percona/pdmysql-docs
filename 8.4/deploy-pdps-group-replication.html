@@ -134,7 +134,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"><div class="agent-hint" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap">For AI agents: an index of this documentation is at <a href="https://docs.percona.com/percona-distribution-for-mysql/8.4/llms.txt" tabindex="-1">llms.txt</a>.</div>
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -2699,9 +2699,9 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   
 
 
-<h1 id="deploying-high-availability-solution-with-group-replication">Deploying high availability solution with Group Replication<a class="headerlink" href="#deploying-high-availability-solution-with-group-replication" title="Permanent link">&para;</a></h1>
+<h1 id="deploying-high-availability-solution-with-group-replication">Deploying high availability solution with Group Replication<a data-markdown-ignore class="headerlink" href="#deploying-high-availability-solution-with-group-replication" title="Permanent link">&para;</a></h1>
 <p>This document provides step-by-step instructions on how to deploy high availability solution with Group Replication. </p>
-<h2 id="preconditions">Preconditions<a class="headerlink" href="#preconditions" title="Permanent link">&para;</a></h2>
+<h2 id="preconditions">Preconditions<a data-markdown-ignore class="headerlink" href="#preconditions" title="Permanent link">&para;</a></h2>
 <p>We will use the following elements:</p>
 <ul>
 <li>
@@ -2745,8 +2745,8 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </ul>
 </li>
 </ul>
-<h2 id="nodes-configuration">Nodes configuration<a class="headerlink" href="#nodes-configuration" title="Permanent link">&para;</a></h2>
-<h3 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h3>
+<h2 id="nodes-configuration">Nodes configuration<a data-markdown-ignore class="headerlink" href="#nodes-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="preparation">Preparation<a data-markdown-ignore class="headerlink" href="#preparation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Install Percona Server-based variant of Percona Distribution for MySQL on each MySQL node (Gr1-Gr4).</p>
@@ -2774,7 +2774,7 @@ Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">18</span><
 </code></pre></div>
 </li>
 </ol>
-<h3 id="step-1-create-an-administration-user">Step 1 Create an administration user<a class="headerlink" href="#step-1-create-an-administration-user" title="Permanent link">&para;</a></h3>
+<h3 id="step-1-create-an-administration-user">Step 1 Create an administration user<a data-markdown-ignore class="headerlink" href="#step-1-create-an-administration-user" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Create a user for administration. We will use the user <code>dba</code> in our setup:</p>
@@ -2799,7 +2799,7 @@ Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">18</span><
 <p>The <code>server_id</code> value must be unique on each node</p>
 </li>
 </ol>
-<h3 id="step-2-add-group-replication-settings">Step 2. Add Group Replication settings<a class="headerlink" href="#step-2-add-group-replication-settings" title="Permanent link">&para;</a></h3>
+<h3 id="step-2-add-group-replication-settings">Step 2. Add Group Replication settings<a data-markdown-ignore class="headerlink" href="#step-2-add-group-replication-settings" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Stop all the nodes</p>
@@ -2862,7 +2862,7 @@ transaction-write-set-extraction                           = XXHASH64
 <p>Connect to the nodes</p>
 </li>
 </ol>
-<h3 id="step-3-create-a-replication-user">Step 3. Create a replication user<a class="headerlink" href="#step-3-create-a-replication-user" title="Permanent link">&para;</a></h3>
+<h3 id="step-3-create-a-replication-user">Step 3. Create a replication user<a data-markdown-ignore class="headerlink" href="#step-3-create-a-replication-user" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>On every node, create a user for replication</p>
@@ -2994,8 +2994,8 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.11-12
 </code></pre></div>
 </li>
 </ol>
-<h2 id="proxy-setup">Proxy setup<a class="headerlink" href="#proxy-setup" title="Permanent link">&para;</a></h2>
-<h3 id="step-1-installation">Step 1. Installation<a class="headerlink" href="#step-1-installation" title="Permanent link">&para;</a></h3>
+<h2 id="proxy-setup">Proxy setup<a data-markdown-ignore class="headerlink" href="#proxy-setup" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-installation">Step 1. Installation<a data-markdown-ignore class="headerlink" href="#step-1-installation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p><a href="https://www.percona.com/doc/proxysql/proxysql-v2.html#installing-proxysql-v2">Install ProxySQL <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a>. <a href="#preconditions">In our example</a>, we install ProxySQL on Proxy1 192.168.4.191 and Proxy2 192.168.4.192 nodes. </p>
@@ -3040,7 +3040,7 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.11-12
 </code></pre></div>
 </li>
 </ol>
-<h3 id="step-2-define-users-servers-and-query-rules-for-read-write-split">Step 2. Define users, servers and query rules for read / write split<a class="headerlink" href="#step-2-define-users-servers-and-query-rules-for-read-write-split" title="Permanent link">&para;</a></h3>
+<h3 id="step-2-define-users-servers-and-query-rules-for-read-write-split">Step 2. Define users, servers and query rules for read / write split<a data-markdown-ignore class="headerlink" href="#step-2-define-users-servers-and-query-rules-for-read-write-split" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Create one or more valid users. Define these user(s). For example, if you have a user named <code>app_gr</code> with the password <code>test</code>, and that has access to your Group Replication cluster, the command to define the user is the following:</p>
@@ -3066,10 +3066,10 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">8</span>.4.11-12
 </code></pre></div>
 </li>
 </ol>
-<h3 id="step-3-create-a-view-in-sys-schema">Step 3. Create a view in SYS schema<a class="headerlink" href="#step-3-create-a-view-in-sys-schema" title="Permanent link">&para;</a></h3>
+<h3 id="step-3-create-a-view-in-sys-schema">Step 3. Create a view in SYS schema<a data-markdown-ignore class="headerlink" href="#step-3-create-a-view-in-sys-schema" title="Permanent link">&para;</a></h3>
 <p>Once all the configuration is ready, we need to have a special view in the SYS schema in Percona server nodes. Find the view working for the server version 8 and above in <a href="https://github.com/Percona-Lab/group_replication_tools/blob/master/GR_sys_view_forProxysql_v1.sql">group_replication_tools <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a>.</p>
 <p>Run that sql on the <strong>Primary</strong> node of the Group Replication cluster.</p>
-<h3 id="step-4-activate-support-for-group-replication-in-proxysql">Step 4. Activate support for Group Replication in ProxySQL<a class="headerlink" href="#step-4-activate-support-for-group-replication-in-proxysql" title="Permanent link">&para;</a></h3>
+<h3 id="step-4-activate-support-for-group-replication-in-proxysql">Step 4. Activate support for Group Replication in ProxySQL<a data-markdown-ignore class="headerlink" href="#step-4-activate-support-for-group-replication-in-proxysql" title="Permanent link">&para;</a></h3>
 <p>To activate the  native support for Group Replication in ProxySQL, we will use the following group definition:</p>
 <div class="highlight"><pre><span></span><code>Writer HG-&gt; 400
 Reader HG-&gt; 401
@@ -3080,7 +3080,7 @@ Offline HG-&gt; 9401
 <span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="mi">402</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">9401</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">);</span>
 <span class="k">LOAD</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">SERVERS</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">RUNTIME</span><span class="p">;</span><span class="w"> </span><span class="n">SAVE</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">SERVERS</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">DISK</span><span class="p">;</span>
 </code></pre></div>
-<h4 id="comments-about-parameters">Comments about parameters<a class="headerlink" href="#comments-about-parameters" title="Permanent link">&para;</a></h4>
+<h4 id="comments-about-parameters">Comments about parameters<a data-markdown-ignore class="headerlink" href="#comments-about-parameters" title="Permanent link">&para;</a></h4>
 <p>To obtain the most reliable results, we recommend setting the number of writers always to 1, and <code>writer_is_also_reader</code> to 1 as well.</p>
 <div class="highlight"><pre><span></span><code>max_writers: 1
 writer_is_also_reader: 1
@@ -3093,12 +3093,12 @@ writer_is_also_reader: 1
 <p class="admonition-title">See also</p>
 <p>ProxySQL Documentation: <a href="https://proxysql.com/documentation/main-runtime/#mysql_group_replication_hostgroups">mysql_group_replication_hostgroups <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a></p>
 </div>
-<h3 id="step-5-enable-high-availability-for-proxysql">Step 5. Enable high availability for ProxySQL<a class="headerlink" href="#step-5-enable-high-availability-for-proxysql" title="Permanent link">&para;</a></h3>
+<h3 id="step-5-enable-high-availability-for-proxysql">Step 5. Enable high availability for ProxySQL<a data-markdown-ignore class="headerlink" href="#step-5-enable-high-availability-for-proxysql" title="Permanent link">&para;</a></h3>
 <p><code>keepalived</code> will be used to enable High Availability for ProxySQL.</p>
 <ol>
 <li>
 <p>Install <code>keepalived</code> on each ProxySQL node using the package manager of your operating system:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">on Debian/Ubuntu</label><label for="__tabbed_1_2">On RHEL/derivatives</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div data-markdown-ignore class="tabbed-labels"><label for="__tabbed_1_1">on Debian/Ubuntu</label><label for="__tabbed_1_2">On RHEL/derivatives</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>keepalived
@@ -3158,7 +3158,7 @@ vrrp_instance VI_01 {
 <p>Start the <code>keepalived</code> service. From now on, the VIP will be associated with the Proxy1 unless the service is down.</p>
 </li>
 </ol>
-<h2 id="disaster-recovery-implementation">Disaster recovery implementation<a class="headerlink" href="#disaster-recovery-implementation" title="Permanent link">&para;</a></h2>
+<h2 id="disaster-recovery-implementation">Disaster recovery implementation<a data-markdown-ignore class="headerlink" href="#disaster-recovery-implementation" title="Permanent link">&para;</a></h2>
 <p>The implementation of a DR (Disaster Recovery) site will follow the same direction provided for the main site. There are only some generic rules to follow:</p>
 <ul>
 <li>
@@ -3168,8 +3168,8 @@ vrrp_instance VI_01 {
 <p>The connection link between the main site and the DR site can only be established using <em>asynchronous replication</em> (standard MySQL <a href="https://dev.mysql.com/doc/refman/8.4/en/replication-gtids.html">replication setup <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a> ).</p>
 </li>
 </ul>
-<h2 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h2>
-<h3 id="using-percona-management-and-monitoring-pmm">Using Percona Management and Monitoring (PMM)<a class="headerlink" href="#using-percona-management-and-monitoring-pmm" title="Permanent link">&para;</a></h3>
+<h2 id="monitoring">Monitoring<a data-markdown-ignore class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h2>
+<h3 id="using-percona-management-and-monitoring-pmm">Using Percona Management and Monitoring (PMM)<a data-markdown-ignore class="headerlink" href="#using-percona-management-and-monitoring-pmm" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Use <a href="https://www.percona.com/software/pmm/quickstart">this quickstart <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a> to install Percona Monitoring and Management (PMM).</p>
@@ -3200,7 +3200,7 @@ vrrp_instance VI_01 {
 <p><img alt="image" src="_images/pmm_for_gr_conflicts.png" /></p>
 </li>
 </ol>
-<h3 id="using-command-line">Using command line<a class="headerlink" href="#using-command-line" title="Permanent link">&para;</a></h3>
+<h3 id="using-command-line">Using command line<a data-markdown-ignore class="headerlink" href="#using-command-line" title="Permanent link">&para;</a></h3>
 <p>From the command line, you need to manually query the tables in Performance schema:</p>
 <div class="highlight"><pre><span></span><code>+----------------------------------------------+
 | replication_applier_configuration            |

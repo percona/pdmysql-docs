@@ -1,0 +1,77 @@
+# Percona Distribution for MySQL
+
+> Documentation
+
+Each page below is also available as markdown. For the documentation of all Percona products, see https://docs.percona.com/llms.txt.
+
+## Overview
+
+- [Home](https://docs.percona.com/percona-distribution-for-mysql/8.4/index.md)
+- [Get help from Percona](https://docs.percona.com/percona-distribution-for-mysql/8.4/get-help.md)
+- [Choose Between Percona Server for MySQL and Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/8.4/ps-or-pdps.md)
+- [Copyright and licensing](https://docs.percona.com/percona-distribution-for-mysql/8.4/copyright.md)
+- [Trademark policy](https://docs.percona.com/percona-distribution-for-mysql/8.4/trademark-policy.md)
+- [Glossary](https://docs.percona.com/percona-distribution-for-mysql/8.4/glossary.md)
+
+## Release notes
+
+- [Release notes index](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes.md)
+- [Percona Distribution for MySQL 8.4.11-12 using Percona Server for MySQL (2026-11-12)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-ps-8.4.11-12.md)
+- [Percona Distribution for MySQL 8.4.11 using Percona Server for MySQL (2026-08-20)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-ps-8.4.11.md)
+- [Percona Distribution for MySQL 8.4.10 using Percona Server for MySQL (2026-06-30)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-ps-8.4.10.md)
+- [Percona Distribution for MySQL 8.4.8 using Percona Server for MySQL (2026-03-12)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-ps-8.4.8.md)
+- [Percona Distribution for MySQL 8.4.7 using Percona Server for MySQL (2025-12-22)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-ps-8.4.7.md)
+- [Percona Distribution for MySQL 8.4.6 using Percona Server for MySQL (2025-09-08)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-ps-8.4.6.md)
+- [Percona Distribution for MySQL 8.4.5 using Percona Server for MySQL (2025-05-29)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-ps-8.4.5.md)
+- [Percona Distribution for MySQL 8.4.4 using Percona Server for MySQL (2025-03-18)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-ps-8.4.4.md)
+- [Percona Distribution for MySQL 8.4.3 using Percona Server for MySQL (2024-12-18)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-ps-8.4.3.md)
+- [Percona Distribution for MySQL 8.4.2 using Percona Server for MySQL (2024-11-07)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-ps-8.4.2.md)
+- [Percona Distribution for MySQL 8.4.1 using Percona Server for MySQL](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-ps-8.4.1.md)
+- [Percona Distribution for MySQL 8.4.0 using Percona Server for MySQL (2024-10-25)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-ps-8.4.md)
+- [Percona Distribution for MySQL 8.4.11-12 using Percona XtraDB Cluster (2026-11-12)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-pxc-8.4.11-12.md)
+- [Percona Distribution for MySQL 8.4.11 using Percona XtraDB Cluster (2026-10-05)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-pxc-8.4.11.md)
+- [Percona Distribution for MySQL 8.4.10 using Percona XtraDB Cluster (2026-07-27)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-pxc-8.4.10.md)
+- [Percona Distribution for MySQL 8.4.8 using Percona XtraDB Cluster (2026-04-22)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-pxc-8.4.8.md)
+- [Percona Distribution for MySQL 8.4.7 using Percona XtraDB Cluster (2026-01-13)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-pxc-8.4.7.md)
+- [Percona Distribution for MySQL 8.4.6 using Percona XtraDB Cluster (2025-10-06)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-pxc-8.4.6.md)
+- [Percona Distribution for MySQL 8.4.5 using Percona XtraDB Cluster (2025-07-14)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-pxc-8.4.5.md)
+- [Percona Distribution for MySQL 8.4.4 using Percona XtraDB Cluster (2025-04-16)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-pxc-8.4.4.md)
+- [Percona Distribution for MySQL 8.4.3 using Percona XtraDB Cluster (2025-01-21)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-pxc-8.4.3.md)
+- [Percona Distribution for MySQL 8.4.2 using Percona XtraDB Cluster (2024-12-11)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-pxc-8.4.2.md)
+- [Percona Distribution for MySQL 8.4.0 using Percona XtraDB Cluster (2024-11-14)](https://docs.percona.com/percona-distribution-for-mysql/8.4/release-notes-pxc-8.4.0.md)
+
+## Discover Percona Distribution for MySQL
+
+- [Components](https://docs.percona.com/percona-distribution-for-mysql/8.4/components.md)
+- [Deployment variants](https://docs.percona.com/percona-distribution-for-mysql/8.4/deployment-variants.md)
+
+## Install and update
+
+- [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/8.4/installing.md)
+- [Install Percona Server-based variant](https://docs.percona.com/percona-distribution-for-mysql/8.4/install-pdps.md)
+- [Install Percona XtraDB Cluster-based variant](https://docs.percona.com/percona-distribution-for-mysql/8.4/install-pdpxc.md)
+- [Upgrade Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/8.4/minor-upgrade.md)
+- [Downgrade Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/8.4/downgrade.md)
+
+## Solutions - high availability
+
+- [Technical overview](https://docs.percona.com/percona-distribution-for-mysql/8.4/pdps-group-replication.md)
+- [Architecture and components](https://docs.percona.com/percona-distribution-for-mysql/8.4/architecture-components.md)
+- [Measurement and monitoring](https://docs.percona.com/percona-distribution-for-mysql/8.4/monitoring.md)
+- [Deployment](https://docs.percona.com/percona-distribution-for-mysql/8.4/deploy-pdps-group-replication.md)
+
+## Replication manager for Percona XtraDB Cluster
+
+- [Replication manager for Percona XtraDB Cluster](https://docs.percona.com/percona-distribution-for-mysql/8.4/replication-manager-for-pxc.md)
+- [Replication manager troubleshooting](https://docs.percona.com/percona-distribution-for-mysql/8.4/replication-manager-troubleshooting.md)
+- [Single replica manager for Percona XtraDB Cluster](https://docs.percona.com/percona-distribution-for-mysql/8.4/single-replica-manager.md)
+
+## Uninstall
+
+- [Uninstalling Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/8.4/uninstalling.md)
+- [Percona Software Download instructions](https://docs.percona.com/percona-distribution-for-mysql/8.4/download-instructions.md)
+
+## Optional
+
+- [Legal Notice](https://docs.percona.com/percona-distribution-for-mysql/8.4/legal-notice.md)
+

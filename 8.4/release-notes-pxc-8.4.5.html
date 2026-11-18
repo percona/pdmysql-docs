@@ -134,7 +134,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"><div class="agent-hint" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap">For AI agents: an index of this documentation is at <a href="https://docs.percona.com/percona-distribution-for-mysql/8.4/llms.txt" tabindex="-1">llms.txt</a>.</div>
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -2635,13 +2635,13 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   
 
 
-<h1 id="percona-distribution-for-mysql-845-using-percona-xtradb-cluster-2025-07-14">Percona Distribution for MySQL 8.4.5 using Percona XtraDB Cluster (2025-07-14)<a class="headerlink" href="#percona-distribution-for-mysql-845-using-percona-xtradb-cluster-2025-07-14" title="Permanent link">&para;</a></h1>
+<h1 id="percona-distribution-for-mysql-845-using-percona-xtradb-cluster-2025-07-14">Percona Distribution for MySQL 8.4.5 using Percona XtraDB Cluster (2025-07-14)<a data-markdown-ignore class="headerlink" href="#percona-distribution-for-mysql-845-using-percona-xtradb-cluster-2025-07-14" title="Permanent link">&para;</a></h1>
 <p>Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to <a href="installing.html">Install Percona Distribution for MySQL</a>.</p>
 <p>This release is based on <a href="https://docs.percona.com/percona-xtradb-cluster/8.4/release-notes/8.4.5-5.html">Percona XtraDB Cluster 8.4.5-5</a>.</p>
-<h2 id="release-highlights">Release highlights<a class="headerlink" href="#release-highlights" title="Permanent link">&para;</a></h2>
-<h3 id="percona-xtradb-cluster-845-5">Percona XtraDB Cluster 8.4.5-5<a class="headerlink" href="#percona-xtradb-cluster-845-5" title="Permanent link">&para;</a></h3>
+<h2 id="release-highlights">Release highlights<a data-markdown-ignore class="headerlink" href="#release-highlights" title="Permanent link">&para;</a></h2>
+<h3 id="percona-xtradb-cluster-845-5">Percona XtraDB Cluster 8.4.5-5<a data-markdown-ignore class="headerlink" href="#percona-xtradb-cluster-845-5" title="Permanent link">&para;</a></h3>
 <p>Improves State Snapshot Transfer (SST) failure diagnostics. <code>garbd</code> now uses distinct exit codes to differentiate between donor exit, SST script failure, and garbd-initiated termination, making SST issues easier to identify and debug.</p>
-<h3 id="percona-server-for-mysql-845-5">Percona Server for MySQL 8.4.5-5<a class="headerlink" href="#percona-server-for-mysql-845-5" title="Permanent link">&para;</a></h3>
+<h3 id="percona-server-for-mysql-845-5">Percona Server for MySQL 8.4.5-5<a data-markdown-ignore class="headerlink" href="#percona-server-for-mysql-845-5" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>Updates the C++ level of the KMPI library to enhance error handling capabilities.</p>
@@ -2650,7 +2650,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <p>Improves optimizer behavior by restoring correct handling of const tables in <code>test_quick_select()</code>. A MySQL Upstream refactor (commit <a href="https://github.com/percona/percona-server/commit/9a13c1c6971f4bd56d143179ecfb34cca8ecc018">9a13c1c</a>) removed the <code>QEP_TAB</code> dependency, causing <code>get_quick_record_count()</code> to no longer pass const table information. This could lead to suboptimal range scan boundaries. The applied patch resolves the issue by explicitly passing <code>const_tables</code> to <code>test_quick_select()</code>, ensuring consistent behavior with the pre-refactor logic.</p>
 </li>
 </ul>
-<h3 id="mysql-845">MySQL 8.4.5<a class="headerlink" href="#mysql-845" title="Permanent link">&para;</a></h3>
+<h3 id="mysql-845">MySQL 8.4.5<a data-markdown-ignore class="headerlink" href="#mysql-845" title="Permanent link">&para;</a></h3>
 <p>Improvements and bug fixes introduced by Oracle for MySQL 8.4.5 and included in Percona Server for MySQL are the following:</p>
 <ul>
 <li>
@@ -2673,7 +2673,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </li>
 </ul>
 <p>Find the complete list of bug fixes and changes in the <a href="https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-5.html">MySQL 8.4.5 release notes</a>.</p>
-<h2 id="supplied-components">Supplied components<a class="headerlink" href="#supplied-components" title="Permanent link">&para;</a></h2>
+<h2 id="supplied-components">Supplied components<a data-markdown-ignore class="headerlink" href="#supplied-components" title="Permanent link">&para;</a></h2>
 <p>Review each component’s release notes for What’s new, improvements, or bug fixes. The following is a list of the components supplied with the Percona XtraDB Cluster-based variation of the Percona Distribution for MySQL:</p>
 <table>
 <thead>
