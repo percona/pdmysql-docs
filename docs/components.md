@@ -8,7 +8,7 @@ Percona Distribution for MySQL consists of the following **components**:
 
 * [Percona XtraBackup :octicons-link-external-16:](https://docs.percona.com/percona-xtrabackup/{{vers}}/) is an open-source hot backup utility for MySQL-based servers that doesn’t lock your database during the backup.
 
-* [Orchestrator :octicons-link-external-16:(https://github.com/openark/orchestrator) is the replication topology manager for Percona Server for MySQL.
+* [Orchestrator :octicons-link-external-16:](https://github.com/openark/orchestrator) is the replication topology manager for Percona Server for MySQL.
 
 * [HAProxy :octicons-link-external-16:](http://www.haproxy.org/) is the default high-availability and load-balancing solution for Percona XtraDB Cluster.
 
