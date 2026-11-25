@@ -1,15 +1,15 @@
 # variables for HTML output
 
-release: '9.7.3'
+release: '9.7.2-3'
 version: '9.7'
-psvers: '9.7.3-3'
+psvers: '9.7.2-3'
 vers: '9.7'
 majorpkg: 'pdps-97-lts'
-minorpkg: 'pdps-9.7.3'
+minorpkg: 'pdps-9.7.2'
 majorpkgpxc: 'pdpxc-97-lts'
 
 
-minorpkgpxc: 'pdpxc-9.7.2-3'
+minorpkgpxc: 'pdpxc-9.7.2'
 
 release_date: '2026-11-12'
 title_date: '2026-11-12'
