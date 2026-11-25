@@ -1,7 +1,7 @@
 # MkDocs configuration for builds with material theme
 
 site_name: Percona Distribution for MySQL
-site_description: Documentation
+site_description: "Percona Distribution for MySQL 8.4, a tested bundle of Percona Server for MySQL or XtraDB Cluster with HAProxy, ProxySQL, XtraBackup and other tools, with installation, upgrade and operations guides"
 site_author: Percona LLC
 copyright: >-
   <a href="https://www.percona.com/about">Percona LLC</a> and its affiliates &copy; 2026 — <a href="#" onclick="Osano.cm.showDrawer('osano-cm-dom-info-dialog-open')">Cookie Preferences</a>
