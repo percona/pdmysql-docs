@@ -2,7 +2,7 @@
 
 # Percona Distribution for MySQL 9.7 Documentation
 
-Percona Distribution for MySQL is a single solution with the best and most critical enterprise components from the MySQL open source community, designed and tested to work together. With [Percona Server for MySQL](https://www.percona.com/mysql/software/percona-server) or [Percona XtraDB Cluster](https://www.percona.com/mysql/software/percona-xtradb-cluster) as the base server, the distribution brings you the enterprise-grade [features](#features) for free. The set of carefully selected [components](https://docs.percona.com/percona-distribution-for-mysql/9.7/components.md) helps you operate your MySQL database to meet your application and business needs.
+Percona Distribution for MySQL is a single solution with the best and most critical enterprise components from the MySQL open source community, designed and tested to work together. With [Percona Server for MySQL](https://www.percona.com/mysql/software/percona-server) or [Percona XtraDB Cluster](https://www.percona.com/mysql/software/percona-xtradb-cluster) as the base server, the distribution brings you the enterprise-grade [features](#features) for free. The set of carefully selected [components](https://docs.percona.com/percona-distribution-for-mysql/9.7/components.html) helps you operate your MySQL database to meet your application and business needs.
 
 ## Features
 
@@ -11,7 +11,7 @@ Percona Distribution for MySQL is a single solution with the best and most criti
 - **Reduced costs** - save on purchasing software licensing by using the distribution - the open-source enterprise-grade solution.
 - **Easy-to-integrate with PMM** - benefit from all the features of [PMM](https://docs.percona.com/percona-monitoring-and-management/3/) for monitoring and managing the health of your database.
 
-Percona Distribution for MySQL comes in two [deployment variants](https://docs.percona.com/percona-distribution-for-mysql/9.7/deployment-variants.md): one is based on Percona Server for MySQL and another one - on Percona XtraDB Cluster. They differ in the set of components and how you can use them.
+Percona Distribution for MySQL comes in two [deployment variants](https://docs.percona.com/percona-distribution-for-mysql/9.7/deployment-variants.html): one is based on Percona Server for MySQL and another one - on Percona XtraDB Cluster. They differ in the set of components and how you can use them.
 
 Important
 
@@ -23,22 +23,22 @@ In 9.7.x environments, the ProxySQL binlog reader can fail to initialize because
 
 Find the best installation solution with our step-by-step installation instructions.
 
-[Installation instructions](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.md)
+[Installation instructions](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.html)
 
 ## Solutions
 
 Learn about solutions you can deploy with Percona Distribution for MySQL.
 
-[Solutions](https://docs.percona.com/percona-distribution-for-mysql/9.7/pdps-group-replication.md)
+[Solutions](https://docs.percona.com/percona-distribution-for-mysql/9.7/pdps-group-replication.html)
 
 ### Deployment variants
 
 Learn about the deployment variants.
 
-[Deployment variants](https://docs.percona.com/percona-distribution-for-mysql/9.7/deployment-variants.md)
+[Deployment variants](https://docs.percona.com/percona-distribution-for-mysql/9.7/deployment-variants.html)
 
 ## Percona Distribution for MySQL components
 
 Learn about the Percona Distribution for MySQL components.
 
-[Components](https://docs.percona.com/percona-distribution-for-mysql/9.7/components.md)
+[Components](https://docs.percona.com/percona-distribution-for-mysql/9.7/components.html)

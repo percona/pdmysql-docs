@@ -124,7 +124,7 @@
                  <meta property="og:url" content="https://docs.percona.com/percona-distribution-for-mysql/9.7/" />
                  <meta property="og:image" content="https://docs.percona.com/percona-distribution-for-mysql/9.7/_images/percona-mysql-logo.png" />
                
-  <link rel="alternate" type="text/markdown" href="https://docs.percona.com/percona-distribution-for-mysql/9.7/deploy-pdps-group-replication.md"></head>
+  </head>
   
   
     
@@ -134,7 +134,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"><div class="agent-hint" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap">For AI agents: an index of this documentation is at <a href="https://docs.percona.com/percona-distribution-for-mysql/9.7/llms.txt" tabindex="-1">llms.txt</a>. This page as markdown: <a href="https://docs.percona.com/percona-distribution-for-mysql/9.7/deploy-pdps-group-replication.md" tabindex="-1">https://docs.percona.com/percona-distribution-for-mysql/9.7/deploy-pdps-group-replication.md</a>.</div>
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"><div class="agent-hint" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap">For AI agents: an index of this documentation is at <a href="https://docs.percona.com/percona-distribution-for-mysql/9.7/llms.txt" tabindex="-1">llms.txt</a>.</div>
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -2243,7 +2243,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </li>
 <li>
 <p>Make sure that all the nodes use the same time-zone and time</p>
-<div class="language-shell highlight"><pre><span></span><code>date
+<div class="highlight"><pre><span></span><code>date
 Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">08</span>:22:12<span class="w"> </span>EDT<span class="w"> </span><span class="m">2020</span>
 </code></pre></div>
 </li>
@@ -2252,13 +2252,13 @@ Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">18</span><
 </li>
 <li>
 <p>Make sure that each node resolves the other nodes by name</p>
-<div class="language-sh highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>gr<span class="nv">$i</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="p">;</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>gr<span class="nv">$i</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="p">;</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
 </code></pre></div>
 <p>If nodes aren’t able to resolve, add the entries in the <code>/etc/hosts</code> file.</p>
 </li>
 <li>
 <p>After instances are up and running, check <em>Percona Server for MySQL</em> version on each node:</p>
-<div class="language-sql highlight"><pre><span></span><code><span class="err">\</span><span class="n">s</span>
+<div class="highlight"><pre><span></span><code><span class="err">\</span><span class="n">s</span>
 <span class="c1">--------------</span>
 <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">mysql_templates</span><span class="o">/</span><span class="n">PS</span><span class="o">-</span><span class="mi">8</span><span class="n">P</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">mysql</span><span class="w">  </span><span class="n">Ver</span><span class="w"> </span><span class="mi">9</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">3</span><span class="o">-</span><span class="mi">3</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">x86_64</span><span class="w"> </span><span class="p">(</span><span class="n">Percona</span><span class="w"> </span><span class="n">Server</span><span class="w"> </span><span class="p">(</span><span class="n">GPL</span><span class="p">),</span><span class="w"> </span><span class="n">Release</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="n">Revision</span><span class="w"> </span><span class="mi">159</span><span class="n">f0eb</span><span class="p">)</span>
 </code></pre></div>
@@ -2268,7 +2268,7 @@ Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">18</span><
 <ol>
 <li>
 <p>Create a user for administration. We will use the user <code>dba</code> in our setup:</p>
-<div class="language-sql highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">dba</span><span class="o">@</span><span class="n">localhost</span><span class="w"> </span><span class="n">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">'dbapw'</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">dba</span><span class="o">@</span><span class="n">localhost</span><span class="w"> </span><span class="n">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">'dbapw'</span><span class="p">;</span>
 <span class="k">CREATE</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">dba</span><span class="o">@</span><span class="s1">'192.168.%'</span><span class="w"> </span><span class="n">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">'dbapw'</span><span class="p">;</span>
 
 <span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">dba</span><span class="o">@</span><span class="n">localhost</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">grant</span><span class="w"> </span><span class="k">option</span><span class="p">;</span>
@@ -2278,7 +2278,7 @@ Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">18</span><
 </li>
 <li>
 <p>Make sure to have a good and unique SERVER_ID value:</p>
-<div class="language-sql highlight"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="k">global</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">'server_id'</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="k">global</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">'server_id'</span><span class="p">;</span>
 <span class="o">+</span><span class="c1">---------------+-------+</span>
 <span class="o">|</span><span class="w"> </span><span class="n">Variable_name</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Value</span><span class="w"> </span><span class="o">|</span>
 <span class="o">+</span><span class="c1">---------------+-------+</span>
@@ -2293,12 +2293,12 @@ Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">18</span><
 <ol>
 <li>
 <p>Stop all the nodes</p>
-<div class="language-shell highlight"><pre><span></span><code>service<span class="w"> </span>mysql<span class="w"> </span>stop
+<div class="highlight"><pre><span></span><code>service<span class="w"> </span>mysql<span class="w"> </span>stop
 </code></pre></div>
 </li>
 <li>
 <p>In the <code>my.cnf</code> configuration file, add the following:</p>
-<div class="language-text highlight"><pre><span></span><code>#####################
+<div class="highlight"><pre><span></span><code>#####################
 #Replication + binlog settings
 #####################
 auto-increment-increment                                    =1
@@ -2345,7 +2345,7 @@ transaction-write-set-extraction                           = XXHASH64
 </li>
 <li>
 <p>Restart all nodes: </p>
-<div class="language-shell highlight"><pre><span></span><code>service<span class="w"> </span>mysql<span class="w"> </span>start
+<div class="highlight"><pre><span></span><code>service<span class="w"> </span>mysql<span class="w"> </span>start
 </code></pre></div>
 </li>
 <li>
@@ -2356,7 +2356,7 @@ transaction-write-set-extraction                           = XXHASH64
 <ol>
 <li>
 <p>On every node, create a user for replication</p>
-<div class="language-sql highlight"><pre><span></span><code><span class="k">SET</span><span class="w"> </span><span class="n">SQL_LOG_BIN</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SET</span><span class="w"> </span><span class="n">SQL_LOG_BIN</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
 <span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="n">replica</span><span class="o">@</span><span class="s1">'192.168.4.%'</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">'replicapw'</span><span class="p">;</span><span class="w">   </span><span class="o">#&lt;</span><span class="c1">--- Please note the filter by IP is more restrictive</span>
 <span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="n">REPLICATION</span><span class="w"> </span><span class="n">SLAVE</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">replica</span><span class="o">@</span><span class="s1">'192.168.4.%'</span><span class="p">;</span>
 <span class="w"> </span><span class="n">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span>
@@ -2365,13 +2365,13 @@ transaction-write-set-extraction                           = XXHASH64
 </li>
 <li>
 <p>Link the nodes with the replication channel.</p>
-<div class="language-sql highlight"><pre><span></span><code><span class="n">CHANGE</span><span class="w"> </span><span class="n">MASTER</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">MASTER_USER</span><span class="o">=</span><span class="s1">'replica'</span><span class="p">,</span><span class="w"> </span><span class="n">MASTER_PASSWORD</span><span class="o">=</span><span class="s1">'replicapw'</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="n">CHANNEL</span><span class="w"> </span><span class="s1">'group_replication_recovery'</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">CHANGE</span><span class="w"> </span><span class="n">MASTER</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">MASTER_USER</span><span class="o">=</span><span class="s1">'replica'</span><span class="p">,</span><span class="w"> </span><span class="n">MASTER_PASSWORD</span><span class="o">=</span><span class="s1">'replicapw'</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="n">CHANNEL</span><span class="w"> </span><span class="s1">'group_replication_recovery'</span><span class="p">;</span>
 </code></pre></div>
 <p>Run this command on all nodes.</p>
 </li>
 <li>
 <p>Check the current status:</p>
-<div class="language-sql highlight"><pre><span></span><code><span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node1</span><span class="p">)</span><span class="w"> </span><span class="p">[(</span><span class="k">none</span><span class="p">)]</span><span class="o">&gt;</span><span class="err">\</span><span class="n">u</span><span class="w"> </span><span class="n">performance_schema</span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node1</span><span class="p">)</span><span class="w"> </span><span class="p">[(</span><span class="k">none</span><span class="p">)]</span><span class="o">&gt;</span><span class="err">\</span><span class="n">u</span><span class="w"> </span><span class="n">performance_schema</span>
 <span class="w">    </span><span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node1</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="n">performance_schema</span><span class="p">]</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">tables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">'%repl%'</span><span class="p">;</span>
 <span class="w">    </span><span class="o">+</span><span class="c1">-------------------------------------------+</span>
 <span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">Tables_in_performance_schema</span><span class="w"> </span><span class="p">(</span><span class="o">%</span><span class="n">repl</span><span class="o">%</span><span class="p">)</span><span class="w">     </span><span class="o">|</span>
@@ -2402,14 +2402,14 @@ transaction-write-set-extraction                           = XXHASH64
 </li>
 <li>
 <p>Start the Primary node (Gr1), <code>(dba@node1)[none]&gt;</code>,  and enable Group Replication:</p>
-<div class="language-shell highlight"><pre><span></span><code>SET<span class="w"> </span>GLOBAL<span class="w"> </span><span class="nv">group_replication_bootstrap_group</span><span class="o">=</span>ON<span class="p">;</span>
+<div class="highlight"><pre><span></span><code>SET<span class="w"> </span>GLOBAL<span class="w"> </span><span class="nv">group_replication_bootstrap_group</span><span class="o">=</span>ON<span class="p">;</span>
 START<span class="w"> </span>GROUP_REPLICATION<span class="p">;</span>
 SET<span class="w"> </span>GLOBAL<span class="w"> </span><span class="nv">group_replication_bootstrap_group</span><span class="o">=</span>OFF<span class="p">;</span>
 </code></pre></div>
 </li>
 <li>
 <p>Check if the node registered correctly:</p>
-<div class="language-shell highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>performance_schema.replication_group_members<span class="se">\G</span>
+<div class="highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>performance_schema.replication_group_members<span class="se">\G</span>
 <span class="w">     </span>CHANNEL_NAME:<span class="w"> </span>group_replication_applier
 <span class="w">     </span>MEMBER_ID:<span class="w"> </span>90a353b8-e6dc-11ea-98fa-08002734ed50
 <span class="w">   </span>MEMBER_HOST:<span class="w"> </span>gr1
@@ -2421,13 +2421,13 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">9</span>.7.3
 </li>
 <li>
 <p>Once the Primary node is running, connect to the secondary node (Gr2 node) and enable Group Replication:</p>
-<div class="language-shell highlight"><pre><span></span><code>START<span class="w"> </span>GROUP_REPLICATION<span class="p">;</span>
+<div class="highlight"><pre><span></span><code>START<span class="w"> </span>GROUP_REPLICATION<span class="p">;</span>
 Query<span class="w"> </span>OK,<span class="w"> </span><span class="m">0</span><span class="w"> </span>rows<span class="w"> </span>affected<span class="w"> </span><span class="o">(</span><span class="m">4</span>.60<span class="w"> </span>sec<span class="o">)</span>
 </code></pre></div>
 </li>
 <li>
 <p>Check if the secondary node registered correctly:</p>
-<div class="language-shell highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>replication_group_members<span class="se">\G</span>
+<div class="highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>replication_group_members<span class="se">\G</span>
 ***************************<span class="w"> </span><span class="m">1</span>.<span class="w"> </span>row<span class="w"> </span>***************************
 <span class="w">  </span>CHANNEL_NAME:<span class="w"> </span>group_replication_applier
 <span class="w">     </span>MEMBER_ID:<span class="w"> </span>58ffd118-e6dc-11ea-8af8-08002734ed50
@@ -2451,7 +2451,7 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">9</span>.7.3
 <ul>
 <li>On the Primary node, run the following command:</li>
 </ul>
-<div class="language-sql highlight"><pre><span></span><code><span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node1</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="n">performance_schema</span><span class="p">]</span><span class="o">&gt;</span><span class="k">create</span><span class="w"> </span><span class="k">schema</span><span class="w"> </span><span class="n">test</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node1</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="n">performance_schema</span><span class="p">]</span><span class="o">&gt;</span><span class="k">create</span><span class="w"> </span><span class="k">schema</span><span class="w"> </span><span class="n">test</span><span class="p">;</span>
 <span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">76</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
 
 <span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node1</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="n">performance_schema</span><span class="p">]</span><span class="o">&gt;</span><span class="err">\</span><span class="n">u</span><span class="w"> </span><span class="n">test</span>
@@ -2466,7 +2466,7 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">9</span>.7.3
 <ul>
 <li>On the secondary node:</li>
 </ul>
-<div class="language-shell highlight"><pre><span></span><code><span class="w"> </span>use<span class="w"> </span><span class="se">\t</span>est
+<div class="highlight"><pre><span></span><code><span class="w"> </span>use<span class="w"> </span><span class="se">\t</span>est
 <span class="w"> </span>Database<span class="w"> </span>changed
 <span class="w"> </span><span class="o">(</span>dba@node2<span class="o">)</span><span class="w"> </span><span class="o">[</span>test<span class="o">]</span>&gt;select<span class="w"> </span>*<span class="w"> </span>from<span class="w"> </span>test1<span class="p">;</span>
 <span class="w"> </span>+----+
@@ -2479,7 +2479,7 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">9</span>.7.3
 </li>
 <li>
 <p>Start Group Replication on the remaining nodes</p>
-<div class="language-sql highlight"><pre><span></span><code><span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node3</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="n">performance_schema</span><span class="p">]</span><span class="o">&gt;</span><span class="k">START</span><span class="w"> </span><span class="n">GROUP_REPLICATION</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node3</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="n">performance_schema</span><span class="p">]</span><span class="o">&gt;</span><span class="k">START</span><span class="w"> </span><span class="n">GROUP_REPLICATION</span><span class="p">;</span>
 <span class="p">(</span><span class="n">dba</span><span class="o">@</span><span class="n">node4</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="n">performance_schema</span><span class="p">]</span><span class="o">&gt;</span><span class="k">START</span><span class="w"> </span><span class="n">GROUP_REPLICATION</span><span class="p">;</span>
 </code></pre></div>
 </li>
@@ -2492,14 +2492,14 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">9</span>.7.3
 </li>
 <li>
 <p>Create the monitoring user on MySQL Group Replication nodes:</p>
-<div class="language-sql highlight"><pre><span></span><code><span class="k">create</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">monitor</span><span class="o">@</span><span class="s1">'192.168.4.%'</span><span class="w"> </span><span class="n">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">'monitor'</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">create</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">monitor</span><span class="o">@</span><span class="s1">'192.168.4.%'</span><span class="w"> </span><span class="n">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">'monitor'</span><span class="p">;</span>
 <span class="k">grant</span><span class="w"> </span><span class="k">usage</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">'monitor'</span><span class="o">@</span><span class="s1">'192.168.4.%'</span><span class="p">;</span>
 <span class="k">grant</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">'monitor'</span><span class="o">@</span><span class="s1">'192.168.4.%'</span><span class="p">;</span>
 </code></pre></div>
 </li>
 <li>
 <p>Define basic variables:</p>
-<div class="language-sql highlight"><pre><span></span><code><span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">'admin:admin;cluster1:clusterpass'</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">'admin-admin_credentials'</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="s1">'admin:admin;cluster1:clusterpass'</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">'admin-admin_credentials'</span><span class="p">;</span>
 <span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">variable_value</span><span class="o">=</span><span class="s1">'cluster1'</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">variable_name</span><span class="o">=</span><span class="s1">'admin-cluster_username'</span><span class="p">;</span>
 <span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">variable_value</span><span class="o">=</span><span class="s1">'clusterpass'</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">variable_name</span><span class="o">=</span><span class="s1">'admin-cluster_password'</span><span class="p">;</span>
 <span class="k">update</span><span class="w"> </span><span class="n">global_variables</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">Variable_Value</span><span class="o">=</span><span class="mi">0</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">Variable_name</span><span class="o">=</span><span class="s1">'mysql-hostgroup_manager_verbose'</span><span class="p">;</span>
@@ -2524,7 +2524,7 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">9</span>.7.3
 </li>
 <li>
 <p>Set up the nodes as a cluster:</p>
-<div class="language-sql highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">proxysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="s1">'192.168.4.191'</span><span class="p">,</span><span class="mi">6032</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="s1">'PRIMARY'</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">proxysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="s1">'192.168.4.191'</span><span class="p">,</span><span class="mi">6032</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="s1">'PRIMARY'</span><span class="p">);</span>
 <span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">proxysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="s1">'192.168.4.192'</span><span class="p">,</span><span class="mi">6032</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="s1">'SECONDARY'</span><span class="p">);</span>
 <span class="k">load</span><span class="w"> </span><span class="n">proxysql</span><span class="w"> </span><span class="n">servers</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">run</span><span class="p">;</span><span class="n">save</span><span class="w"> </span><span class="n">proxysql</span><span class="w"> </span><span class="n">servers</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">disk</span><span class="p">;</span>
 </code></pre></div>
@@ -2534,13 +2534,13 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">9</span>.7.3
 <ol>
 <li>
 <p>Create one or more valid users. Define these user(s). For example, if you have a user named <code>app_gr</code> with the password <code>test</code>, and that has access to your Group Replication cluster, the command to define the user is the following:</p>
-<div class="language-sql highlight"><pre><span></span><code><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">mysql_users</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">password</span><span class="p">,</span><span class="n">active</span><span class="p">,</span><span class="n">default_hostgroup</span><span class="p">,</span><span class="n">default_schema</span><span class="p">,</span><span class="n">transaction_persistent</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">'app_gr'</span><span class="p">,</span><span class="s1">'test'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="s1">'mysql'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">'application test user GR'</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">mysql_users</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">password</span><span class="p">,</span><span class="n">active</span><span class="p">,</span><span class="n">default_hostgroup</span><span class="p">,</span><span class="n">default_schema</span><span class="p">,</span><span class="n">transaction_persistent</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">'app_gr'</span><span class="p">,</span><span class="s1">'test'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="s1">'mysql'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">'application test user GR'</span><span class="p">);</span>
 <span class="k">LOAD</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">USERS</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">RUNTIME</span><span class="p">;</span><span class="n">SAVE</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">USERS</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">DISK</span><span class="p">;</span>
 </code></pre></div>
 </li>
 <li>
 <p>Define servers:</p>
-<div class="language-sql highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'192.168.4.81'</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">'GR1'</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'192.168.4.81'</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">'GR1'</span><span class="p">);</span>
 <span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'192.168.4.81'</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">'GR1'</span><span class="p">);</span>
 <span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'192.168.4.82'</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">'GR2'</span><span class="p">);</span>
 <span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_servers</span><span class="w"> </span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">hostgroup_id</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">max_connections</span><span class="p">,</span><span class="k">comment</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'192.168.4.83'</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">'GR2'</span><span class="p">);</span>
@@ -2550,7 +2550,7 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">9</span>.7.3
 </li>
 <li>
 <p>Define query rules to get read / write split:</p>
-<div class="language-sql highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_query_rules</span><span class="w"> </span><span class="p">(</span><span class="n">rule_id</span><span class="p">,</span><span class="n">proxy_port</span><span class="p">,</span><span class="n">username</span><span class="p">,</span><span class="n">destination_hostgroup</span><span class="p">,</span><span class="n">active</span><span class="p">,</span><span class="n">retries</span><span class="p">,</span><span class="n">match_digest</span><span class="p">,</span><span class="n">apply</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="mi">4040</span><span class="p">,</span><span class="mi">6033</span><span class="p">,</span><span class="s1">'app_gr'</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">'^SELECT.*FOR UPDATE'</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_query_rules</span><span class="w"> </span><span class="p">(</span><span class="n">rule_id</span><span class="p">,</span><span class="n">proxy_port</span><span class="p">,</span><span class="n">username</span><span class="p">,</span><span class="n">destination_hostgroup</span><span class="p">,</span><span class="n">active</span><span class="p">,</span><span class="n">retries</span><span class="p">,</span><span class="n">match_digest</span><span class="p">,</span><span class="n">apply</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="mi">4040</span><span class="p">,</span><span class="mi">6033</span><span class="p">,</span><span class="s1">'app_gr'</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">'^SELECT.*FOR UPDATE'</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
 <span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_query_rules</span><span class="w"> </span><span class="p">(</span><span class="n">rule_id</span><span class="p">,</span><span class="n">proxy_port</span><span class="p">,</span><span class="n">username</span><span class="p">,</span><span class="n">destination_hostgroup</span><span class="p">,</span><span class="n">active</span><span class="p">,</span><span class="n">retries</span><span class="p">,</span><span class="n">match_digest</span><span class="p">,</span><span class="n">multiplex</span><span class="p">,</span><span class="n">apply</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="mi">4042</span><span class="p">,</span><span class="mi">6033</span><span class="p">,</span><span class="s1">'app_gr'</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">'^SELECT.*$'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
 <span class="k">LOAD</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">QUERY</span><span class="w"> </span><span class="n">RULES</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">RUN</span><span class="p">;</span><span class="n">SAVE</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">QUERY</span><span class="w"> </span><span class="n">RULES</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">DISK</span><span class="p">;</span>
 </code></pre></div>
@@ -2561,22 +2561,22 @@ MEMBER_VERSION:<span class="w"> </span><span class="m">9</span>.7.3
 <p>Run that sql on the <strong>Primary</strong> node of the Group Replication cluster.</p>
 <h3 id="step-4-activate-support-for-group-replication-in-proxysql">Step 4. Activate support for Group Replication in ProxySQL<a data-markdown-ignore class="headerlink" href="#step-4-activate-support-for-group-replication-in-proxysql" title="Permanent link">&para;</a></h3>
 <p>To activate the  native support for Group Replication in ProxySQL, we will use the following group definition:</p>
-<div class="language-text highlight"><pre><span></span><code>Writer HG-&gt; 400
+<div class="highlight"><pre><span></span><code>Writer HG-&gt; 400
 Reader HG-&gt; 401
 BackupW HG-&gt; 402
 Offline HG-&gt; 9401
 </code></pre></div>
-<div class="language-sql highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_group_replication_hostgroups</span><span class="w"> </span><span class="p">(</span><span class="n">writer_hostgroup</span><span class="p">,</span><span class="n">backup_writer_hostgroup</span><span class="p">,</span><span class="n">reader_hostgroup</span><span class="p">,</span><span class="w"> </span><span class="n">offline_hostgroup</span><span class="p">,</span><span class="n">active</span><span class="p">,</span><span class="n">max_writers</span><span class="p">,</span><span class="n">writer_is_also_reader</span><span class="p">,</span><span class="n">max_transactions_behind</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">mysql_group_replication_hostgroups</span><span class="w"> </span><span class="p">(</span><span class="n">writer_hostgroup</span><span class="p">,</span><span class="n">backup_writer_hostgroup</span><span class="p">,</span><span class="n">reader_hostgroup</span><span class="p">,</span><span class="w"> </span><span class="n">offline_hostgroup</span><span class="p">,</span><span class="n">active</span><span class="p">,</span><span class="n">max_writers</span><span class="p">,</span><span class="n">writer_is_also_reader</span><span class="p">,</span><span class="n">max_transactions_behind</span><span class="p">)</span>
 <span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="mi">402</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">9401</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">);</span>
 <span class="k">LOAD</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">SERVERS</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">RUNTIME</span><span class="p">;</span><span class="w"> </span><span class="n">SAVE</span><span class="w"> </span><span class="n">MYSQL</span><span class="w"> </span><span class="n">SERVERS</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">DISK</span><span class="p">;</span>
 </code></pre></div>
 <h4 id="comments-about-parameters">Comments about parameters<a data-markdown-ignore class="headerlink" href="#comments-about-parameters" title="Permanent link">&para;</a></h4>
 <p>To obtain the most reliable results, we recommend setting the number of writers always to 1, and <code>writer_is_also_reader</code> to 1 as well.</p>
-<div class="language-text highlight"><pre><span></span><code>max_writers: 1
+<div class="highlight"><pre><span></span><code>max_writers: 1
 writer_is_also_reader: 1
 </code></pre></div>
 <p>The <code>max_transactions_behind</code> is a subjective parameter that you should calculate on the basis of your needs. If, for instance, you cannot have a stale read, it will be safe to set this value to a low number (i.e. 50) and to set in all Group Replication nodes:</p>
-<div class="language-sql highlight"><pre><span></span><code><span class="k">set</span><span class="w"> </span><span class="k">global</span><span class="w"> </span><span class="n">group_replication_consistency</span><span class="o">=</span><span class="k">AFTER</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">set</span><span class="w"> </span><span class="k">global</span><span class="w"> </span><span class="n">group_replication_consistency</span><span class="o">=</span><span class="k">AFTER</span><span class="p">;</span>
 </code></pre></div>
 <p>If instead, you have no issue or strict requirements about some stale read, you can relax the parameter and ignore the <code>group_replication_consistency</code> setting. Our recommended setting is <code>group_replication_consistency=AFTER</code> and <code>max_transactions_behind: 100</code>.</p>
 <div class="admonition admonition">
@@ -2591,11 +2591,11 @@ writer_is_also_reader: 1
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div data-markdown-ignore class="tabbed-labels"><label for="__tabbed_1_1">on Debian/Ubuntu</label><label for="__tabbed_1_2">On RHEL/derivatives</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-shell highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>keepalived
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>keepalived
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-shell highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>keepalived
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>keepalived
 </code></pre></div>
 </div>
 </div>
@@ -2616,7 +2616,7 @@ writer_is_also_reader: 1
 </ul>
 <p>Let’s say Proxy1 is the primary node while Proxy2 is the secondary node.</p>
 <p>Given that, the config file looks as follows:</p>
-<div class="language-text highlight"><pre><span></span><code>global_defs {
+<div class="highlight"><pre><span></span><code>global_defs {
   # Keepalived process identifier
   router_id  proxy_HA
 }
@@ -2666,7 +2666,7 @@ vrrp_instance VI_01 {
 </li>
 <li>
 <p>Specify the <code>replication_set</code> flag  when registering the <em>Percona Server for MySQL</em> node or the MySQL node in PMM:</p>
-<div class="language-sh highlight"><pre><span></span><code>pmm-admin<span class="w"> </span>add<span class="w"> </span>mysql<span class="w"> </span>--username<span class="o">=</span>pmm<span class="w"> </span>--password<span class="o">=</span>pmm<span class="w"> </span>--query-source<span class="o">=</span>perfschema<span class="w"> </span>--replication-set<span class="o">=</span>gr_test_lab<span class="w">  </span>group_rep4<span class="w"> </span><span class="m">127</span>.0.0.1:3306
+<div class="highlight"><pre><span></span><code>pmm-admin<span class="w"> </span>add<span class="w"> </span>mysql<span class="w"> </span>--username<span class="o">=</span>pmm<span class="w"> </span>--password<span class="o">=</span>pmm<span class="w"> </span>--query-source<span class="o">=</span>perfschema<span class="w"> </span>--replication-set<span class="o">=</span>gr_test_lab<span class="w">  </span>group_rep4<span class="w"> </span><span class="m">127</span>.0.0.1:3306
 </code></pre></div>
 </li>
 </ol>
@@ -2692,7 +2692,7 @@ vrrp_instance VI_01 {
 </ol>
 <h3 id="using-command-line">Using command line<a data-markdown-ignore class="headerlink" href="#using-command-line" title="Permanent link">&para;</a></h3>
 <p>From the command line, you need to manually query the tables in Performance schema:</p>
-<div class="language-text highlight"><pre><span></span><code>+----------------------------------------------+
+<div class="highlight"><pre><span></span><code>+----------------------------------------------+
 | replication_applier_configuration            |
 | replication_applier_filters                  |
 | replication_applier_global_filters           |
@@ -2706,7 +2706,7 @@ vrrp_instance VI_01 {
 +----------------------------------------------+
 </code></pre></div>
 <p>For example, use this command  to get the lag in number of transactions on a node:</p>
-<div class="language-sql highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span><span class="o">@</span><span class="n">last_exec</span><span class="p">:</span><span class="o">=</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="w"> </span><span class="o">@@</span><span class="k">global</span><span class="p">.</span><span class="n">GTID_EXECUTED</span><span class="p">,</span><span class="s1">':'</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="s1">'-'</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">last_executed</span><span class="p">;</span><span class="k">select</span><span class="w">  </span><span class="o">@</span><span class="n">last_rec</span><span class="p">:</span><span class="o">=</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="n">Received_transaction_set</span><span class="p">,</span><span class="s1">':'</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="s1">'-'</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">last_received</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">performance_schema</span><span class="p">.</span><span class="n">replication_connection_status</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Channel_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'group_replication_applier'</span><span class="p">;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="p">(</span><span class="o">@</span><span class="n">last_rec</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">@</span><span class="n">last_exec</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">real_lag</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span><span class="o">@</span><span class="n">last_exec</span><span class="p">:</span><span class="o">=</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="w"> </span><span class="o">@@</span><span class="k">global</span><span class="p">.</span><span class="n">GTID_EXECUTED</span><span class="p">,</span><span class="s1">':'</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="s1">'-'</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">last_executed</span><span class="p">;</span><span class="k">select</span><span class="w">  </span><span class="o">@</span><span class="n">last_rec</span><span class="p">:</span><span class="o">=</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="n">Received_transaction_set</span><span class="p">,</span><span class="s1">':'</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="s1">'-'</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">last_received</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">performance_schema</span><span class="p">.</span><span class="n">replication_connection_status</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Channel_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'group_replication_applier'</span><span class="p">;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="p">(</span><span class="o">@</span><span class="n">last_rec</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">@</span><span class="n">last_exec</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">real_lag</span><span class="p">;</span>
 <span class="o">+</span><span class="c1">---------------+</span>
 <span class="o">|</span><span class="w"> </span><span class="n">last_executed</span><span class="w"> </span><span class="o">|</span>
 <span class="o">+</span><span class="c1">---------------+</span>
@@ -2729,7 +2729,7 @@ vrrp_instance VI_01 {
 <span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
 </code></pre></div>
 <p>You can use a more composite query to get information about each applier:</p>
-<div class="language-sql highlight"><pre><span></span><code><span class="k">SELECT</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
 <span class="w">  </span><span class="n">conn_status</span><span class="p">.</span><span class="n">channel_name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">channel_name</span><span class="p">,</span>
 <span class="w">  </span><span class="n">conn_status</span><span class="p">.</span><span class="n">service_state</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">IO_thread</span><span class="p">,</span>
 <span class="w">  </span><span class="n">applier_status</span><span class="p">.</span><span class="n">service_state</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">SQL_thread</span><span class="p">,</span>
@@ -2752,7 +2752,7 @@ vrrp_instance VI_01 {
 </code></pre></div>
 <details class="example">
 <summary>Expected output</summary>
-<div class="language-sql highlight"><pre><span></span><code><span class="o">***************************</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="o">***************************</span>
+<div class="highlight"><pre><span></span><code><span class="o">***************************</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="o">***************************</span>
 <span class="n">channel_name</span><span class="p">:</span><span class="w"> </span><span class="n">group_replication_applier</span>
 <span class="n">IO_thread</span><span class="p">:</span><span class="w"> </span><span class="k">ON</span>
 <span class="n">SQL_thread</span><span class="p">:</span><span class="w"> </span><span class="k">ON</span>

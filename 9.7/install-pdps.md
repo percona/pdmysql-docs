@@ -10,7 +10,7 @@ To install Percona software, you need to configure the required repository. To s
 
 1. Install GnuPG and curl
 
-   ```shell
+   ```
    sudo apt install gnupg2 curl
    ```
 
@@ -28,7 +28,7 @@ Run the following commands as the root user or via `sudo`.
 
 To enable the desired repository, we recommend to use the `enable` subcommand of `percona-release`.
 
-```shell
+```
 sudo percona-release enable pdps-97-lts
 ```
 
@@ -36,7 +36,7 @@ Tip
 
 To enable the minor version repository, use the following command:
 
-```text
+```
 sudo percona-release enable pdps-9.7.3
 ```
 
@@ -44,7 +44,7 @@ sudo percona-release enable pdps-9.7.3
 
 1. Install *Percona Server for MySQL*:
 
-   ```shell
+   ```
    sudo apt install percona-server-server
    ```
 
@@ -52,37 +52,37 @@ sudo percona-release enable pdps-9.7.3
 
    Install Percona XtraBackup:
 
-   ```shell
+   ```
    sudo apt install percona-xtrabackup-97
    ```
 
    Install Percona Toolkit:
 
-   ```shell
+   ```
    sudo apt install percona-toolkit
    ```
 
    Install Orchestrator:
 
-   ```shell
+   ```
    sudo apt install percona-orchestrator percona-orchestrator-cli percona-orchestrator-client
    ```
 
    Install MySQL Shell:
 
-   ```shell
+   ```
    sudo apt install percona-mysql-shell
    ```
 
    Install ProxySQL:
 
-   ```shell
+   ```
    sudo apt install proxysql2
    ```
 
    Install MySQL Router:
 
-   ```shell
+   ```
    sudo apt install percona-mysql-router
    ```
 
@@ -92,7 +92,7 @@ Platform specific notes
 
 On CentOS 7, install the `epel-release` package. It includes the dependencies required to install Orchestrator. Use the following command:
 
-```shell
+```
 sudo yum -y install epel-release
 ```
 
@@ -102,7 +102,7 @@ Run the following commands as the root user or via `sudo`.
 
 To enable the desired repository, we recommend to use the `enable` subcommand of `percona-release`.
 
-```shell
+```
 sudo percona-release enable pdps-97-lts
 ```
 
@@ -110,7 +110,7 @@ Tip
 
 To enable the minor version repository, use the following command:
 
-```shell
+```
 sudo percona-release enable pdps-9.7.3
 ```
 
@@ -118,7 +118,7 @@ sudo percona-release enable pdps-9.7.3
 
 1. Install *Percona Server for MySQL*:
 
-   ```shell
+   ```
    sudo yum install percona-server-server
    ```
 
@@ -126,37 +126,37 @@ sudo percona-release enable pdps-9.7.3
 
    Install Percona XtraBackup
 
-   ```shell
+   ```
    sudo yum install percona-xtrabackup-97
    ```
 
    Install Orchestrator
 
-   ```shell
+   ```
    sudo yum install percona-orchestrator percona-orchestrator-cli percona-orchestrator-client
    ```
 
    Install Percona Toolkit
 
-   ```shell
+   ```
    sudo yum install percona-toolkit
    ```
 
    Install MySQL Shell:
 
-   ```shell
+   ```
    sudo yum install percona-mysql-shell
    ```
 
    Install ProxySQL:
 
-   ```shell
+   ```
    sudo yum install proxysql2
    ```
 
    Install MySQL Router:
 
-   ```shell
+   ```
    sudo yum install percona-mysql-router
    ```
 
@@ -166,22 +166,22 @@ Percona Distribution for MySQL is not started automatically on Red Hat Enterpris
 
 Start it manually using the following command:
 
-```shell
+```
 sudo systemctl start mysql
 ```
 
 Confirm that the service is running:
 
-```shell
+```
 sudo systemctl status mysql
 ```
 
 Stop the service:
 
-```shell
+```
 sudo systemctl stop mysql
 ```
 
 ## Useful links
 
-[Percona Software Download Instructions](https://docs.percona.com/percona-distribution-for-mysql/9.7/download-instructions.md)
+[Percona Software Download Instructions](https://docs.percona.com/percona-distribution-for-mysql/9.7/download-instructions.html)

@@ -124,7 +124,7 @@
                  <meta property="og:url" content="https://docs.percona.com/percona-distribution-for-mysql/9.7/" />
                  <meta property="og:image" content="https://docs.percona.com/percona-distribution-for-mysql/9.7/_images/percona-mysql-logo.png" />
                
-  <link rel="alternate" type="text/markdown" href="https://docs.percona.com/percona-distribution-for-mysql/9.7/minor-upgrade.md"></head>
+  </head>
   
   
     
@@ -134,7 +134,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"><div class="agent-hint" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap">For AI agents: an index of this documentation is at <a href="https://docs.percona.com/percona-distribution-for-mysql/9.7/llms.txt" tabindex="-1">llms.txt</a>. This page as markdown: <a href="https://docs.percona.com/percona-distribution-for-mysql/9.7/minor-upgrade.md" tabindex="-1">https://docs.percona.com/percona-distribution-for-mysql/9.7/minor-upgrade.md</a>.</div>
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"><div class="agent-hint" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap">For AI agents: an index of this documentation is at <a href="https://docs.percona.com/percona-distribution-for-mysql/9.7/llms.txt" tabindex="-1">llms.txt</a>.</div>
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -2145,14 +2145,14 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <li>
 <p>Enable Percona repository</p>
 <p>The Major Release repository automatically includes new version packages of Percona Distribution for MySQL. If you installed Percona Distribution for MySQL from a Minor Release repository, enable the new version repository:</p>
-<div class="language-shell highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span>setup<span class="w"> </span>pdps-XXX<span class="w"> </span>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span>setup<span class="w"> </span>pdps-XXX<span class="w"> </span>
 </code></pre></div>
 <p>where <code>XXX</code> is the required version.</p>
 <p>Read more about major and Minor release repositories in <a href="installing.html">Repository overview</a>.</p>
 </li>
 <li>
 <p>Stop <code>mysql</code> service </p>
-<div class="language-shell highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>mysql<span class="w"> </span>stop
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>mysql<span class="w"> </span>stop
 </code></pre></div>
 </li>
 <li>
@@ -2160,7 +2160,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </li>
 <li>
 <p>Restart <code>mysql</code> service: </p>
-<div class="language-shell highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>mysql<span class="w"> </span>start
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>mysql<span class="w"> </span>start
 </code></pre></div>
 </li>
 </ol>
@@ -2171,14 +2171,14 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <li>
 <p>Enable Percona repository</p>
 <p>The Major Release repository automatically includes new version packages of Percona Distribution for MySQL. If you installed Percona Distribution for MySQL from a Minor Release repository, enable the new version repository:</p>
-<div class="language-shell highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span>setup<span class="w"> </span>pdpxc-XXX<span class="w"> </span>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>percona-release<span class="w"> </span>setup<span class="w"> </span>pdpxc-XXX<span class="w"> </span>
 </code></pre></div>
 <p>where <code>XXX</code> is the required version.</p>
 <p>Read more about major and Minor release repositories in <a href="installing.html">Repository overview</a>.</p>
 </li>
 <li>
 <p>Stop <code>mysql</code> service</p>
-<div class="language-shell highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>mysql<span class="w"> </span>stop
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>mysql<span class="w"> </span>stop
 </code></pre></div>
 </li>
 <li>
@@ -2189,7 +2189,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </li>
 <li>
 <p>Restart <code>mysql</code> service </p>
-<div class="language-shell highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>mysql<span class="w"> </span>start
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>mysql<span class="w"> </span>start
 </code></pre></div>
 </li>
 </ol>

@@ -10,7 +10,7 @@ To install Percona software, you need to configure the required repository. To s
 
 1. Install GnuPG and curl
 
-   ```shell
+   ```
    sudo apt install gnupg2 curl
    ```
 
@@ -28,7 +28,7 @@ Run the following commands as the root user or via `sudo`.
 
 To enable the desired repository, we recommend to use the `setup` subcommand of `percona-release`.
 
-```shell
+```
 sudo percona-release setup pdpxc-97-lts
 ```
 
@@ -36,7 +36,7 @@ Tip
 
 To enable either the `pdpxc-9.7.1` or `pdpxc-9.7.2` version repository, use the following command. The example enables the `pdpxc-9.7.2-3` repository:
 
-```shell
+```
 sudo percona-release setup pdpxc-9.7.2-3
 ```
 
@@ -44,13 +44,13 @@ sudo percona-release setup pdpxc-9.7.2-3
 
 1. Install *Percona XtraDB Cluster*:
 
-   ```shell
+   ```
    sudo apt install percona-xtradb-cluster
    ```
 
 1. Install HAProxy:
 
-   ```shell
+   ```
    sudo apt install percona-haproxy
    ```
 
@@ -58,13 +58,13 @@ sudo percona-release setup pdpxc-9.7.2-3
 
    Install Percona XtraBackup:
 
-   ```shell
+   ```
    sudo apt install percona-xtrabackup-97
    ```
 
    Install Percona Toolkit:
 
-   ```shell
+   ```
    sudo apt install percona-toolkit
    ```
 
@@ -78,7 +78,7 @@ Run the following commands as the root user or via `sudo`.
 
 To enable the desired repository, we recommend to use the `setup` subcommand of `percona-release`.
 
-```shell
+```
 sudo percona-release setup pdpxc-97-lts
 ```
 
@@ -86,7 +86,7 @@ Tip
 
 To enable either the `pdpxc-9.7.1` or `pdpxc-9.7.2` version repository, use the following command. The example enables the `pdpxc-9.7.2-3` repository:
 
-```shell
+```
 sudo percona-release setup pdpxc-9.7.2-3
 ```
 
@@ -94,13 +94,13 @@ sudo percona-release setup pdpxc-9.7.2-3
 
 1. Install *Percona XtraDB Cluster*:
 
-   ```shell
+   ```
    sudo yum install percona-xtradb-cluster
    ```
 
 1. Install HAProxy:
 
-   ```shell
+   ```
    sudo yum install percona-haproxy
    ```
 
@@ -108,13 +108,13 @@ sudo percona-release setup pdpxc-9.7.2-3
 
    Install Percona XtraBackup:
 
-   ```shell
+   ```
    sudo yum install percona-xtrabackup-97
    ```
 
    Install Percona Toolkit:
 
-   ```shell
+   ```
    sudo yum install percona-toolkit
    ```
 
@@ -124,22 +124,22 @@ Percona Distribution for MySQL is not started automatically on Red Hat Enterpris
 
 Start it manually using the following command:
 
-```shell
+```
 sudo systemctl start mysql
 ```
 
 Confirm that the service is running:
 
-```shell
+```
 sudo systemctl status mysql
 ```
 
 Stop the service:
 
-```shell
+```
 sudo systemctl stop mysql
 ```
 
 ## Useful links
 
-[Percona Software Download Instructions](https://docs.percona.com/percona-distribution-for-mysql/9.7/download-instructions.md)
+[Percona Software Download Instructions](https://docs.percona.com/percona-distribution-for-mysql/9.7/download-instructions.html)

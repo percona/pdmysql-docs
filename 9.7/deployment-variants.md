@@ -2,7 +2,7 @@
 
 # Deployment variants
 
-Percona Distribution for MySQL provides two deployment variants: one is Percona Server for MySQL-based and another one is Percona XtraDB Cluster-based. Each deployment is available via its own repository and includes the base server (Percona Server for MySQL or Percona XtraDB Cluster) and [components](https://docs.percona.com/percona-distribution-for-mysql/9.7/components.md). The table below lists what components are available with each server:
+Percona Distribution for MySQL provides two deployment variants: one is Percona Server for MySQL-based and another one is Percona XtraDB Cluster-based. Each deployment is available via its own repository and includes the base server (Percona Server for MySQL or Percona XtraDB Cluster) and [components](https://docs.percona.com/percona-distribution-for-mysql/9.7/components.html). The table below lists what components are available with each server:
 
 | Components         | Percona Server for MySQL |
 | ------------------ | ------------------------ |
