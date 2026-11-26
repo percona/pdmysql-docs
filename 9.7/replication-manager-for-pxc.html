@@ -124,7 +124,7 @@
                  <meta property="og:url" content="https://docs.percona.com/percona-distribution-for-mysql/9.7/" />
                  <meta property="og:image" content="https://docs.percona.com/percona-distribution-for-mysql/9.7/_images/percona-mysql-logo.png" />
                
-  </head>
+  <link rel="alternate" type="text/markdown" href="https://docs.percona.com/percona-distribution-for-mysql/9.7/replication-manager-for-pxc.md"></head>
   
   
     
@@ -134,7 +134,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"><div class="agent-hint" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap">For AI agents: an index of this documentation is at <a href="https://docs.percona.com/percona-distribution-for-mysql/9.7/llms.txt" tabindex="-1">llms.txt</a>.</div>
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"><div class="agent-hint" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap">For AI agents: an index of this documentation is at <a href="https://docs.percona.com/percona-distribution-for-mysql/9.7/llms.txt" tabindex="-1">llms.txt</a>. This page as markdown: <a href="https://docs.percona.com/percona-distribution-for-mysql/9.7/replication-manager-for-pxc.md" tabindex="-1">https://docs.percona.com/percona-distribution-for-mysql/9.7/replication-manager-for-pxc.md</a>.</div>
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -2133,10 +2133,10 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 </tbody>
 </table>
 <p>The topology is the following:</p>
-<div class="highlight"><pre><span></span><code>DC2 &lt;=&gt; DC1 &lt;=&gt; DC3
+<div class="language-text highlight"><pre><span></span><code>DC2 &lt;=&gt; DC1 &lt;=&gt; DC3
 </code></pre></div>
 <p>All of the nodes are sources and replicas. DC1 is a replica of DC2 and DC3. DC2 and DC3 are replicas of DC1.</p>
-<div class="highlight"><pre><span></span><code>+----------------+---------------+
+<div class="language-text highlight"><pre><span></span><code>+----------------+---------------+
 | clusterSlave   | clusterMaster |
 +----------------+---------------+
 | DC1            | DC2           |
@@ -2146,7 +2146,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 +----------------+---------------+
 </code></pre></div>
 <p>The example of the minimal MySQL configuration file for DC1 that is common for all three DC1 nodes:</p>
-<div class="highlight"><pre><span></span><code>[mysqld]
+<div class="language-text highlight"><pre><span></span><code>[mysqld]
 # General galera reqs
 default_storage_engine=InnoDB
 innodb_autoinc_lock_mode=2
@@ -2176,31 +2176,31 @@ wsrep_sst_auth="root:root"
 <ol>
 <li>
 <p>Bootstrap the cluster on DC1-1 node by running the following commands as root or using sudo:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>root@DC1-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql stop </span>
+<div class="language-bash highlight"><pre><span></span><code><span class="o">[</span>root@DC1-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql stop </span>
 <span class="o">[</span>root@DC1-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql bootstrap-pxc</span>
 </code></pre></div>
 </li>
 <li>
 <p>On DC1-2 node, stop MySQL, delete the content of the datadir to force the SST, and start MySQL. Run the following commands as root or using sudo:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>root@DC1-2<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql stop</span>
+<div class="language-bash highlight"><pre><span></span><code><span class="o">[</span>root@DC1-2<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql stop</span>
 <span class="o">[</span>root@DC1-2<span class="w"> </span>~<span class="o">]</span><span class="c1"># rm -rf /var/lib/mysql/*</span>
 <span class="o">[</span>root@DC1-2<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql start</span>
 </code></pre></div>
 </li>
 <li>
 <p>Once the SST of DC1-2 node is completed, proceed on DC1-3. Run the following commands as root or using sudo:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>root@DC1-3<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql stop</span>
+<div class="language-bash highlight"><pre><span></span><code><span class="o">[</span>root@DC1-3<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql stop</span>
 <span class="o">[</span>root@DC1-3<span class="w"> </span>~<span class="o">]</span><span class="c1"># rm -rf /var/lib/mysql/*</span>
 <span class="o">[</span>root@DC1-3<span class="w"> </span>~<span class="o">]</span><span class="c1"># /etc/init.d/mysql start</span>
 </code></pre></div>
 </li>
 <li>
 <p>The DC1 cluster uses a single <a href="glossary.html#gtid">GTID</a> sequence. To make sure <code>GTID_PURGED</code> is the same, run the following commands on DC1-1, DC1-2, and DC1-3 nodes:</p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>flush<span class="w"> </span>logs<span class="p">;</span>
+<div class="language-bash highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>flush<span class="w"> </span>logs<span class="p">;</span>
 mysql&gt;<span class="w"> </span>purge<span class="w"> </span>binary<span class="w"> </span>logs<span class="w"> </span>to<span class="w"> </span><span class="s1">'mysql-bin.000003'</span><span class="p">;</span>
 </code></pre></div>
 <p><code>mysql-bin.000003</code> is the last file returned when you run the following command:</p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="sb">`</span>SHOW<span class="w"> </span>BINARY<span class="w"> </span>LOGS<span class="sb">`</span>
+<div class="language-bash highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="sb">`</span>SHOW<span class="w"> </span>BINARY<span class="w"> </span>LOGS<span class="sb">`</span>
 </code></pre></div>
 </li>
 <li>
@@ -2208,12 +2208,12 @@ mysql&gt;<span class="w"> </span>purge<span class="w"> </span>binary<span class=
 </li>
 <li>
 <p>Add privileges for replication between all nodes only for DC1: </p>
-<div class="highlight"><pre><span></span><code>GRANT<span class="w"> </span>REPLICATION<span class="w"> </span>CLIENT,<span class="w"> </span>REPLICATION<span class="w"> </span>SLAVE<span class="w"> </span>ON<span class="w"> </span>*.*<span class="w"> </span>TO<span class="w"> </span><span class="s1">'repl'</span>@<span class="s1">'%'</span><span class="w"> </span>identified<span class="w"> </span>by<span class="w"> </span><span class="s1">'replpass'</span><span class="p">;</span>
+<div class="language-bash highlight"><pre><span></span><code>GRANT<span class="w"> </span>REPLICATION<span class="w"> </span>CLIENT,<span class="w"> </span>REPLICATION<span class="w"> </span>SLAVE<span class="w"> </span>ON<span class="w"> </span>*.*<span class="w"> </span>TO<span class="w"> </span><span class="s1">'repl'</span>@<span class="s1">'%'</span><span class="w"> </span>identified<span class="w"> </span>by<span class="w"> </span><span class="s1">'replpass'</span><span class="p">;</span>
 </code></pre></div>
 </li>
 <li>
 <p>Add the replication tables. For example, we add the tables to DC1: </p>
-<div class="highlight"><pre><span></span><code>create database if not exists percona;
+<div class="language-text highlight"><pre><span></span><code>create database if not exists percona;
 use percona;
 CREATE TABLE `replication` (
   `host` varchar(40) NOT NULL,
@@ -2248,14 +2248,14 @@ CREATE TABLE `weight` (
 </li>
 <li>
 <p>The cluster table contains the details of each cluster. The cluster name is defined in the <code>wsrep_cluster_name</code> variable value:</p>
-<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>cluster<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">'DC1'</span>,<span class="s1">'10.0.4.160 10.0.4.162 10.0.4.163'</span>,<span class="s1">'source_user=\'</span>repl<span class="se">\'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\'</span>replpass<span class="se">\'</span><span class="s1">');</span>
+<div class="language-bash highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>cluster<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">'DC1'</span>,<span class="s1">'10.0.4.160 10.0.4.162 10.0.4.163'</span>,<span class="s1">'source_user=\'</span>repl<span class="se">\'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\'</span>replpass<span class="se">\'</span><span class="s1">');</span>
 <span class="s1">INSERT INTO `cluster` VALUES ('</span>DC2<span class="s1">','</span><span class="m">10</span>.0.4.164<span class="w"> </span><span class="m">10</span>.0.4.165<span class="w"> </span><span class="m">10</span>.0.4.166<span class="s1">','</span><span class="nv">source_user</span><span class="o">=</span><span class="se">\'</span>repl<span class="se">\'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\'</span>replpass<span class="se">\'</span><span class="s1">');</span>
 <span class="s1">INSERT INTO `cluster` VALUES ('</span>DC3<span class="s1">','</span><span class="m">10</span>.0.4.167<span class="w"> </span><span class="m">10</span>.0.4.168<span class="w"> </span><span class="m">10</span>.0.4.169<span class="s1">','</span><span class="nv">source_user</span><span class="o">=</span><span class="se">\'</span>repl<span class="se">\'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="se">\'</span>replpass<span class="se">\'</span><span class="err">'</span><span class="o">)</span><span class="p">;</span>
 </code></pre></div>
 </li>
 <li>
 <p>Add the required links:</p>
-<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">'DC1'</span>,<span class="s1">'DC2'</span><span class="o">)</span><span class="p">;</span>
+<div class="language-bash highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">'DC1'</span>,<span class="s1">'DC2'</span><span class="o">)</span><span class="p">;</span>
 INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">'DC1'</span>,<span class="s1">'DC3'</span><span class="o">)</span><span class="p">;</span>
 INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">'DC2'</span>,<span class="s1">'DC1'</span><span class="o">)</span><span class="p">;</span>
 INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>link<span class="sb">`</span><span class="w"> </span>VALUES<span class="w"> </span><span class="o">(</span><span class="s1">'DC3'</span>,<span class="s1">'DC1'</span><span class="o">)</span><span class="p">;</span>
@@ -2263,7 +2263,7 @@ INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</sp
 </li>
 <li>
 <p>Add the weight:</p>
-<div class="highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">'DC1'</span>,<span class="s1">'DC1-1'</span>,10<span class="o">)</span><span class="p">;</span><span class="w"> </span>
+<div class="language-bash highlight"><pre><span></span><code>INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">'DC1'</span>,<span class="s1">'DC1-1'</span>,10<span class="o">)</span><span class="p">;</span><span class="w"> </span>
 INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">'DC1'</span>,<span class="s1">'DC1-2'</span>,11<span class="o">)</span><span class="p">;</span><span class="w"> </span>
 INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">'DC2'</span>,<span class="s1">'DC2-1'</span>,9<span class="o">)</span><span class="p">;</span>
 INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</span>weight<span class="sb">`</span><span class="w"> </span>VALUES<span class="o">(</span><span class="s1">'DC2'</span>,<span class="s1">'DC2-2'</span>,12<span class="o">)</span><span class="p">;</span>
@@ -2274,30 +2274,30 @@ INSERT<span class="w"> </span>INTO<span class="w"> </span><span class="sb">`</sp
 <li>
 <p>Provision the remote clusters and start replication. </p>
 <p>On one of the DC1 nodes, for example DC1-1, perform a <code>mysqldump</code> as root or using sudo:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>root@DC1-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># mysqldump -u root -p --source-data=2 --single-transaction -R -A -E &gt; dump.sql</span>
+<div class="language-bash highlight"><pre><span></span><code><span class="o">[</span>root@DC1-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># mysqldump -u root -p --source-data=2 --single-transaction -R -A -E &gt; dump.sql</span>
 </code></pre></div>
 </li>
 <li>
 <p>Compress the file if it&rsquo;s too large. You can use <a href="https://docs.percona.com/percona-xtrabackup/9.7/create-compressed-backup.html">Percona XtraBackup to compress the data <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span></a>. Copy the backup file to one node in each remote cluster, for example to DC2-1 and DC3-1. </p>
 <p>To restore the dump, run the following commands as root or using sudo:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>root@DC2-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># mysql -u root -p &lt; dump.sql</span>
+<div class="language-bash highlight"><pre><span></span><code><span class="o">[</span>root@DC2-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># mysql -u root -p &lt; dump.sql</span>
 </code></pre></div>
 <p>and</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>root@DC3-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># mysql -u root -p &lt; dump.sql</span>
+<div class="language-bash highlight"><pre><span></span><code><span class="o">[</span>root@DC3-1<span class="w"> </span>~<span class="o">]</span><span class="c1"># mysql -u root -p &lt; dump.sql</span>
 </code></pre></div>
 </li>
 <li>
 <p>Configure the replication. Set up the first replication links manually. </p>
 <p>For example, on DC2-1 run:</p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">'WAN IP of DC1-1'</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">'repl'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">'replpass'</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC2-DC1'</span><span class="p">;</span>
+<div class="language-bash highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">'WAN IP of DC1-1'</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">'repl'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">'replpass'</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC2-DC1'</span><span class="p">;</span>
 mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC2-DC1'</span><span class="p">;</span>
 </code></pre></div>
 <p>on DC3-1 run: </p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">'WAN IP of DC1-1'</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">'repl'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">'replpass'</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC3-DC1'</span><span class="p">;</span>
+<div class="language-bash highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">'WAN IP of DC1-1'</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">'repl'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">'replpass'</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC3-DC1'</span><span class="p">;</span>
 mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC3-DC1'</span><span class="p">;</span>
 </code></pre></div>
 <p>For the other direction, use DC1-1 for both:</p>
-<div class="highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">'WAN IP of DC2-1'</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">'repl'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">'replpass'</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC1-DC2'</span><span class="p">;</span>
+<div class="language-bash highlight" data-prompt="mysql>"><pre><span></span><code>mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">'WAN IP of DC2-1'</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">'repl'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">'replpass'</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC1-DC2'</span><span class="p">;</span>
 mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC1-DC2'</span><span class="p">;</span>
 mysql&gt;<span class="w"> </span>change<span class="w"> </span>replication<span class="w"> </span><span class="nb">source</span><span class="w"> </span>to<span class="w"> </span><span class="nv">source_host</span><span class="o">=</span><span class="s1">'WAN IP of DC3-1'</span>,<span class="w"> </span><span class="nv">source_user</span><span class="o">=</span><span class="s1">'repl'</span>,<span class="w"> </span><span class="nv">source_password</span><span class="o">=</span><span class="s1">'replpass'</span>,<span class="w"> </span><span class="nv">SOURCE_AUTO_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC1-DC3'</span><span class="p">;</span>
 mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class="w"> </span>FOR<span class="w"> </span>CHANNEL<span class="w"> </span><span class="s1">'DC1-DC3'</span><span class="p">;</span>
@@ -2312,24 +2312,24 @@ mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div data-markdown-ignore class="tabbed-labels"><label for="__tabbed_1_1">On Debian and Ubuntu Linux</label><label for="__tabbed_1_2">On Red Hat Enterprise Linux and derivatives</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>percona-replication-manager
+<div class="language-shell highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>percona-replication-manager
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>percona-replication-manager<span class="w">    </span>
+<div class="language-shell highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>percona-replication-manager<span class="w">    </span>
 </code></pre></div>
 </div>
 </div>
 </div>
 <p>When executed for the first time, the replication manager detects the current replication links and inserts rows in to the <code>percona.replication table</code>. In order to avoid issues, start with the replica nodes. The mysql credentials should be specified in the <code>/root/.my.cnf</code> file. On these nodes (DC1-1, DC2-1 and DC3-1), execute the script manually:</p>
-<div class="highlight"><pre><span></span><code>/usr/bin/replication_manager.sh
+<div class="language-shell highlight"><pre><span></span><code>/usr/bin/replication_manager.sh
 </code></pre></div>
 <p>The replication state should be unchanged and the <code>percona.replication</code> table should contain the following rows:</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">percona</span><span class="p">.</span><span class="n">replication</span><span class="p">;</span>
+<div class="language-sql highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">percona</span><span class="p">.</span><span class="n">replication</span><span class="p">;</span>
 </code></pre></div>
 <details class="example">
 <summary>Expected output</summary>
-<div class="highlight"><pre><span></span><code>+-------+--------+------------+-----------+---------------------+---------------------+----------------+
+<div class="language-text highlight"><pre><span></span><code>+-------+--------+------------+-----------+---------------------+---------------------+----------------+
 | host  | weight | localIndex | isSlave   | lastUpdate          | lastHeartbeat       | connectionName |
 +-------+------- +------------+-----------+---------------------+---------------------+----------------+
 | DC1-1 |      10|          1 | Yes       | 2017-06-30 13:03:01 | 2017-06-30 13:03:01 | DC1-DC2        |
@@ -2342,14 +2342,14 @@ mysql&gt;<span class="w"> </span>start<span class="w"> </span>replica<span class
 </details>
 <p>If you have issues on these step, see the <a href="replication-manager-troubleshooting.html">Replication manager troubleshooting</a> document.</p>
 <p>On these same nodes, enable the cron job:</p>
-<div class="highlight"><pre><span></span><code>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>/usr/bin/replication_manager.sh<span class="w"> </span>
+<div class="language-bash highlight"><pre><span></span><code>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>/usr/bin/replication_manager.sh<span class="w"> </span>
 </code></pre></div>
 <p>Wait at least one minute and proceed with the other nodes. Try a manual run first to see if the script adds a line to the replication table for the host, for example, isSlave = No. Then add the cron jobs. </p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">percona</span><span class="p">.</span><span class="n">replication</span><span class="p">;</span>
+<div class="language-sql highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">percona</span><span class="p">.</span><span class="n">replication</span><span class="p">;</span>
 </code></pre></div>
 <details class="example">
 <summary>Expected output</summary>
-<div class="highlight"><pre><span></span><code>+-------+--------+------------+-----------+---------------------+---------------------+----------------+
+<div class="language-text highlight"><pre><span></span><code>+-------+--------+------------+-----------+---------------------+---------------------+----------------+
 | host  | weight | localIndex | isSlave   | lastUpdate          | lastHeartbeat       | connectionName |
 +-------+------- +------------+-----------+---------------------+---------------------+----------------+
 | DC1-1 |      10|          1 | Yes       | 2017-06-30 13:13:01 | 2017-06-30 13:13:01 | DC1-DC2        |

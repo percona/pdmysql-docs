@@ -1,0 +1,15 @@
+> For the complete documentation index, see [llms.txt](https://docs.percona.com/percona-distribution-for-mysql/9.7/llms.txt).
+
+# Percona Distribution for MySQL 9.7 release notes index
+
+## Percona Distribution for MySQL using Percona Server for MySQL
+
+- [Percona Distribution for MySQL 9.7.2-3 using Percona Server for MySQL (2026-11-12)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-ps-9.7.2-3.md)
+- [Percona Distribution for MySQL using Percona Server for MySQL 9.7.2 (2026-09-28)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-ps-9.7.2.md)
+- [Percona Distribution for MySQL using Percona Server for MySQL 9.7.1 (2026-08-05)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-ps-9.7.1.md)
+
+## Percona Distribution for MySQL using Percona XtraDB Cluster
+
+- [Percona Distribution for MySQL 9.7.2-3 using Percona XtraDB Cluster (2026-11-12)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-pxc-9.7.2-3.md)
+- [Percona Distribution for MySQL 9.7.2 using Percona XtraDB Cluster (2026-11-02)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-pxc-9.7.2.md)
+- [Percona Distribution for MySQL 9.7.1 using Percona XtraDB Cluster (2026-09-10)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-pxc-9.7.1.md)

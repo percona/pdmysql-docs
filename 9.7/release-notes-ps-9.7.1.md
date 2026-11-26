@@ -2,7 +2,7 @@
 
 # Percona Distribution for MySQL 9.7.1 using Percona Server for MySQL (2026-08-05)
 
-Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.html).
+Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.md).
 
 Percona Distribution for MySQL 9.7.0 using Percona Server for MySQL was not released; 9.7.1 is the next build in this series. This release includes enhancements and bug fixes from MySQL 9.7.0 and MySQL 9.7.1.
 

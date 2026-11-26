@@ -2,9 +2,9 @@
 
 # Percona Distribution for MySQL 9.7.2-3 using Percona XtraDB Cluster (2026-11-12)
 
-Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.html).
+Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.md).
 
-This release is based on [Percona XtraDB Cluster 9.7.3-3](https://docs.percona.com/percona-xtradb-cluster/9.7/release-notes/9.7.3-3.html).
+This release is based on [Percona XtraDB Cluster 9.7.2-3](https://docs.percona.com/percona-xtradb-cluster/9.7/release-notes/9.7.2-3.html).
 
 A note on MySQL 9.7.3
 
@@ -12,7 +12,7 @@ Percona Distribution for MySQL 9.7.2-3 is not based on the MySQL 9.7.3 release. 
 
 ## Release highlights
 
-Percona XtraDB Cluster 9.7.3-3 includes the following fix from [Percona Server for MySQL 9.7.3-3](https://docs.percona.com/percona-server/9.7/release-notes/9.7.3-3.html):
+Percona XtraDB Cluster 9.7.2-3 includes the following fix from [Percona Server for MySQL 9.7.2-3](https://docs.percona.com/percona-server/9.7/release-notes/9.7.2-3.html):
 
 - [PS-11950](https://perconadev.atlassian.net/browse/PS-11950): `mysqldump` did not always dump tables with compressed columns correctly. If a column comment or another quoted string in the table definition contained text that looked like a compressed column attribute, `mysqldump` changed the table definition in the dump, so it was different from the original table. `mysqldump` also did not correctly dump or restore some compression dictionaries, such as dictionaries with names containing quotes, spaces, reserved words or non-ASCII characters, or with non-ASCII data.
 

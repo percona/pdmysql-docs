@@ -124,7 +124,7 @@
                  <meta property="og:url" content="https://docs.percona.com/percona-distribution-for-mysql/9.7/" />
                  <meta property="og:image" content="https://docs.percona.com/percona-distribution-for-mysql/9.7/_images/percona-mysql-logo.png" />
                
-  </head>
+  <link rel="alternate" type="text/markdown" href="https://docs.percona.com/percona-distribution-for-mysql/9.7/pdps-group-replication.md"></head>
   
   
     
@@ -134,7 +134,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"><div class="agent-hint" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap">For AI agents: an index of this documentation is at <a href="https://docs.percona.com/percona-distribution-for-mysql/9.7/llms.txt" tabindex="-1">llms.txt</a>.</div>
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"><div class="agent-hint" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap">For AI agents: an index of this documentation is at <a href="https://docs.percona.com/percona-distribution-for-mysql/9.7/llms.txt" tabindex="-1">llms.txt</a>. This page as markdown: <a href="https://docs.percona.com/percona-distribution-for-mysql/9.7/pdps-group-replication.md" tabindex="-1">https://docs.percona.com/percona-distribution-for-mysql/9.7/pdps-group-replication.md</a>.</div>
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -2288,7 +2288,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 <p>RTO and RPO are great for unplanned outages or small scale hiccups to the infrastructure. Disaster recovery is a major large scale outage not strictly for the database infrastructure. How capable is the business of restarting operations with the assumption that all resources are completely unavailable in the main availability zone? The assumption here is that there is no viable restoration point or time that aligns with the business requirements. While each disaster recovery scenario is unique based on available infrastructure, backup strategy and technology stack, there are some common threads for any scenario.</p>
 <p>The described solution <strong>helps improve uptime</strong>. It will help you to significantly reduce both RPO and RTO. Given the tightly coupled cluster solution approach, the failure of a single node will not result in service interruption.</p>
 <p>Increasing the number of nodes will also improve the cluster resilience by the formula:</p>
-<div class="highlight"><pre><span></span><code>F = (N -1) / 2
+<div class="language-text highlight"><pre><span></span><code>F = (N -1) / 2
 </code></pre></div>
 <p>where:</p>
 <ul>

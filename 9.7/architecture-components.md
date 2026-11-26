@@ -6,6 +6,8 @@ The following is the architecture layout for *Percona Server for MySQL* based de
 
 ## Architecture layout
 
+*Image: image*
+
 ### Components
 
 The architecture is composed of two main layers:
