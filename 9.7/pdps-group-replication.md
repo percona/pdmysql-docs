@@ -4,7 +4,7 @@
 
 Every architecture and deployment depends on customer requirements and application demands for high availability and the estimated level of usage. For example, using a high read or a high write application, or both with 99.999% availability.
 
-This guide gives [architecture](https://docs.percona.com/percona-distribution-for-mysql/9.7/architecture-components.html) and deployment recommendations along with a technical overview for a solution that provides a high level of high availability and assumes the usage of high read / write applications (20K or more queries per second). It also provides [step-by-step deployment guidelines](https://docs.percona.com/percona-distribution-for-mysql/9.7/deploy-pdps-group-replication.html).
+This guide gives [architecture](https://docs.percona.com/percona-distribution-for-mysql/9.7/architecture-components.md) and deployment recommendations along with a technical overview for a solution that provides a high level of high availability and assumes the usage of high read / write applications (20K or more queries per second). It also provides [step-by-step deployment guidelines](https://docs.percona.com/percona-distribution-for-mysql/9.7/deploy-pdps-group-replication.md).
 
 This solution assumes the use of *Percona Server for MySQL* based deployment variant of Percona Distribution for MySQL with [Group Replication](https://dev.mysql.com/doc/refman/9.7/en/group-replication.html) .
 
@@ -35,6 +35,8 @@ There are three key components to achieve high availability:
 - **Connection management** - this is the software management related specifically to the networking and connectivity aspect of the database. Clustering solutions typically bundle with a connection manager. However, in asynchronous clusters, deploying a connection manager is mandatory for high availability.
 
 This solution is based on a tightly coupled database cluster. It offers a high availability level of 99.995% when coupled with the Group Replication setting `group_replication_consistency=AFTER`.
+
+*Image: image*
 
 ## Failovers
 
@@ -78,7 +80,7 @@ The described solution **helps improve uptime**. It will help you to significant
 
 Increasing the number of nodes will also improve the cluster resilience by the formula:
 
-```
+```text
 F = (N -1) / 2
 ```
 

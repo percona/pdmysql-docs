@@ -43,5 +43,5 @@ Choose standalone Percona Server for MySQL if any of the following apply:
 
 For information on installing your choice, review the following:
 
-- Percona Distribution for MySQL (this product): [Install Percona Distribution for MySQL 9.7](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.html)
+- Percona Distribution for MySQL (this product): [Install Percona Distribution for MySQL 9.7](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.md)
 - Percona Server for MySQL (standalone): [Install Percona Server for MySQL 9.7](https://docs.percona.com/percona-server/9.7/installation.html)

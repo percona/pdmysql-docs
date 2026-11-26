@@ -1,60 +1,57 @@
-# Percona Distribution for MySQL
+# Percona Distribution for MySQL 9.7
 
-> Documentation
+> Percona Distribution for MySQL 9.7, a tested bundle of Percona Server for MySQL or XtraDB Cluster with HAProxy, ProxySQL, XtraBackup and other tools, with installation, upgrade and operations guides
 
 Each page below is also available as markdown. For the documentation of all Percona products, see https://docs.percona.com/llms.txt.
 
 ## Overview
 
-- [Home](https://docs.percona.com/percona-distribution-for-mysql/9.7/index.md)
-- [Get help from Percona](https://docs.percona.com/percona-distribution-for-mysql/9.7/get-help.md)
-- [Choose Between Percona Server for MySQL and Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/ps-or-pdps.md)
-- [Copyright and licensing](https://docs.percona.com/percona-distribution-for-mysql/9.7/copyright.md)
-- [Trademark policy](https://docs.percona.com/percona-distribution-for-mysql/9.7/trademark-policy.md)
-- [Glossary](https://docs.percona.com/percona-distribution-for-mysql/9.7/glossary.md)
+- [Home](https://docs.percona.com/percona-distribution-for-mysql/9.7/index.md): Percona Distribution for MySQL is a single solution with the best and most critical enterprise components from the MySQL open source community, designed and tested to work together. With Percona…
+- [Get help from Percona](https://docs.percona.com/percona-distribution-for-mysql/9.7/get-help.md): Our documentation guides are packed with information, but they can’t cover everything you need to know about Percona Distribution for MySQL. They also won’t cover every scenario you might come…
+- [Choose Between Percona Server for MySQL and Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/ps-or-pdps.md): When setting up Percona repositories, you can choose between two paths: Percona Distribution for MySQL or Percona Server for MySQL alone. Both use the same core database engine but are designed for…
+- [Copyright and licensing](https://docs.percona.com/percona-distribution-for-mysql/9.7/copyright.md): Percona Distribution for MySQL documentation is (C)2009-2026 Percona LLC and/or its affiliates and is distributed under the Creative Commons Attribution 4.0 International License.
+- [Trademark policy](https://docs.percona.com/percona-distribution-for-mysql/9.7/trademark-policy.md): This Trademark Policy is to ensure that users of Percona-branded products or services know that what they receive has really been developed, approved, tested and maintained by Percona. Trademarks…
+- [Glossary](https://docs.percona.com/percona-distribution-for-mysql/9.7/glossary.md): Set of properties that guarantee database transactions are processed reliably.
 
-## Release notes
+## Discover Percona Distribution for MySQL
 
-- [Release notes index](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes.md)
+- [Components](https://docs.percona.com/percona-distribution-for-mysql/9.7/components.md): Percona Distribution for MySQL consists of the following components:
+- [Deployment variants](https://docs.percona.com/percona-distribution-for-mysql/9.7/deployment-variants.md): Percona Distribution for MySQL provides two deployment variants: one is Percona Server for MySQL-based and another one is Percona XtraDB Cluster-based. Each deployment is available via its own…
+
+## Install and update
+
+- [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.md): We recommend to install Percona Distribution for MySQL from Percona repositories using the package manager of your operating system:
+- [Install Percona Server-based variant](https://docs.percona.com/percona-distribution-for-mysql/9.7/install-pdps.md): We gather Telemetry data on Percona Server for MySQL in the Percona packages and Docker images.
+- [Install Percona XtraDB Cluster-based variant](https://docs.percona.com/percona-distribution-for-mysql/9.7/install-pdpxc.md): We gather Telemetry data on Percona XtraDB Cluster in the Percona packages and Docker images.
+- [Upgrade Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/minor-upgrade.md): Minor releases include bug fixes and feature enhancements. We recommend to have Percona Distribution for MySQL updated to the latest version.
+- [Downgrade Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/downgrade.md): You have the following downgrade options:
+
+## Solutions - high availability
+
+- [Technical overview](https://docs.percona.com/percona-distribution-for-mysql/9.7/pdps-group-replication.md): Every architecture and deployment depends on customer requirements and application demands for high availability and the estimated level of usage. For example, using a high read or a high write…
+- [Architecture and components](https://docs.percona.com/percona-distribution-for-mysql/9.7/architecture-components.md): The following is the architecture layout for Percona Server for MySQL based deployment variant of Percona Distribution for MySQL with Group Replication.
+- [Measurement and monitoring](https://docs.percona.com/percona-distribution-for-mysql/9.7/monitoring.md): To ensure that database infrastructure is performing as intended or at its best, specific metrics need to be measured and alerts are to be raised when some of these metrics are not in line with…
+- [Deployment](https://docs.percona.com/percona-distribution-for-mysql/9.7/deploy-pdps-group-replication.md): This document provides step-by-step instructions on how to deploy high availability solution with Group Replication.
+
+## Replication manager for Percona XtraDB Cluster
+
+- [Replication manager for Percona XtraDB Cluster](https://docs.percona.com/percona-distribution-for-mysql/9.7/replication-manager-for-pxc.md): The replication manager script helps manage multi-source replication between multiple Percona XtraDB Cluster clusters. This tool has a failover mechanism and can automatically perform a failover due…
+- [Replication manager troubleshooting](https://docs.percona.com/percona-distribution-for-mysql/9.7/replication-manager-troubleshooting.md): The replication manager script outputs its trace (bash -x) to the file /tmp/replication_manager.log if present. If there is an error during the manual invocation or something unexpected happens…
+- [Single replica manager for Percona XtraDB Cluster](https://docs.percona.com/percona-distribution-for-mysql/9.7/single-replica-manager.md): This feature is a tech preview. Before using this feature in a production environment, follow these steps:
+
+## Uninstall
+
+- [Uninstalling Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/uninstalling.md): To uninstall Percona Distribution for MySQL, stop the mysql service and remove all the installed packages using the package manager of your operating system. Optionally, disable Percona repository.
+- [Percona Software Download instructions](https://docs.percona.com/percona-distribution-for-mysql/9.7/download-instructions.md): Do the following steps to select the software:
+
+## Optional
+
+- [Release notes: Release notes index](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes.md)
 - [Percona Distribution for MySQL 9.7.2-3 using Percona Server for MySQL (2026-11-12)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-ps-9.7.2-3.md)
 - [Percona Distribution for MySQL 9.7.2 using Percona Server for MySQL (2026-09-28)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-ps-9.7.2.md)
 - [Percona Distribution for MySQL 9.7.1 using Percona Server for MySQL (2026-08-05)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-ps-9.7.1.md)
 - [Percona Distribution for MySQL 9.7.2-3 using Percona XtraDB Cluster (2026-11-12)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-pxc-9.7.2-3.md)
 - [Percona Distribution for MySQL 9.7.2 using Percona XtraDB Cluster (2026-11-02)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-pxc-9.7.2.md)
 - [Percona Distribution for MySQL 9.7.1 using Percona XtraDB Cluster (2026-09-10)](https://docs.percona.com/percona-distribution-for-mysql/9.7/release-notes-pxc-9.7.1.md)
-
-## Discover Percona Distribution for MySQL
-
-- [Components](https://docs.percona.com/percona-distribution-for-mysql/9.7/components.md)
-- [Deployment variants](https://docs.percona.com/percona-distribution-for-mysql/9.7/deployment-variants.md)
-
-## Install and update
-
-- [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/installing.md)
-- [Install Percona Server-based variant](https://docs.percona.com/percona-distribution-for-mysql/9.7/install-pdps.md)
-- [Install Percona XtraDB Cluster-based variant](https://docs.percona.com/percona-distribution-for-mysql/9.7/install-pdpxc.md)
-- [Upgrade Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/minor-upgrade.md)
-- [Downgrade Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/downgrade.md)
-
-## Solutions - high availability
-
-- [Technical overview](https://docs.percona.com/percona-distribution-for-mysql/9.7/pdps-group-replication.md)
-- [Architecture and components](https://docs.percona.com/percona-distribution-for-mysql/9.7/architecture-components.md)
-- [Measurement and monitoring](https://docs.percona.com/percona-distribution-for-mysql/9.7/monitoring.md)
-- [Deployment](https://docs.percona.com/percona-distribution-for-mysql/9.7/deploy-pdps-group-replication.md)
-
-## Replication manager for Percona XtraDB Cluster
-
-- [Replication manager for Percona XtraDB Cluster](https://docs.percona.com/percona-distribution-for-mysql/9.7/replication-manager-for-pxc.md)
-- [Replication manager troubleshooting](https://docs.percona.com/percona-distribution-for-mysql/9.7/replication-manager-troubleshooting.md)
-- [Single replica manager for Percona XtraDB Cluster](https://docs.percona.com/percona-distribution-for-mysql/9.7/single-replica-manager.md)
-
-## Uninstall
-
-- [Uninstalling Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/9.7/uninstalling.md)
-- [Percona Software Download instructions](https://docs.percona.com/percona-distribution-for-mysql/9.7/download-instructions.md)
-
-## Optional
-
-- [Legal Notice](https://docs.percona.com/percona-distribution-for-mysql/9.7/legal-notice.md)
+- [Legal Notice](https://docs.percona.com/percona-distribution-for-mysql/9.7/legal-notice.md): You are interacting with an AI-powered chatbot that provides automated responses for general information about our IT services and software. Responses may be inaccurate or incomplete and do not…
 
