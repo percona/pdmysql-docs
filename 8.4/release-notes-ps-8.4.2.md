@@ -2,7 +2,7 @@
 
 # Percona Distribution for MySQL 8.4.2 using Percona Server for MySQL (2024-11-07)
 
-Percona Distribution for MySQL is the most stable, scalable, and secure open source MySQL distribution, with two download options: one based on Percona Server for MySQL and one based on Percona XtraDB Cluster. [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/8.4/installing.html).
+Percona Distribution for MySQL is the most stable, scalable, and secure open source MySQL distribution, with two download options: one based on Percona Server for MySQL and one based on Percona XtraDB Cluster. [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/8.4/installing.md).
 
 This release is based on [Percona Server for MySQL 8.4.2-2](https://docs.percona.com/percona-server/8.4/release-notes/8.4.2-2.html) that includes all the features and bug fixes available in the [MySQL 8.4.1 Community Edition](https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-1.html) and [MySQL 8.4.2 Community Edition](https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-2.html) and enterprise-grade features developed by Percona.
 

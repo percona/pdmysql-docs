@@ -2,7 +2,7 @@
 
 # Replication manager for Percona XtraDB Cluster
 
-The replication manager script helps manage [multi-source replication](https://docs.percona.com/percona-distribution-for-mysql/8.4/glossary.html#multi-source-replication) between multiple Percona XtraDB Cluster clusters. This tool has a failover mechanism and can automatically perform a failover due to source or replica node failures, service degradation, or maintenance requirements.
+The replication manager script helps manage [multi-source replication](https://docs.percona.com/percona-distribution-for-mysql/8.4/glossary.md#multi-source-replication) between multiple Percona XtraDB Cluster clusters. This tool has a failover mechanism and can automatically perform a failover due to source or replica node failures, service degradation, or maintenance requirements.
 
 The replication manager script monitors the active source-replica replication channel. If the source or replica node fails, the script re-establishes the replication channel using alternative source or replica cluster nodes.
 
@@ -18,13 +18,13 @@ For example, we deploy multi-source replication links between three data centers
 
 The topology is the following:
 
-```
+```text
 DC2 <=> DC1 <=> DC3
 ```
 
 All of the nodes are sources and replicas. DC1 is a replica of DC2 and DC3. DC2 and DC3 are replicas of DC1.
 
-```
+```text
 +----------------+---------------+
 | clusterSlave   | clusterMaster |
 +----------------+---------------+
@@ -37,7 +37,7 @@ All of the nodes are sources and replicas. DC1 is a replica of DC2 and DC3. DC2 
 
 The example of the minimal MySQL configuration file for DC1 that is common for all three DC1 nodes:
 
-```
+```text
 [mysqld]
 # General galera reqs
 default_storage_engine=InnoDB
@@ -70,14 +70,14 @@ All nodes have the same `server-id` value.
 
 1. Bootstrap the cluster on DC1-1 node by running the following commands as root or using sudo:
 
-   ```
+   ```bash
    [root@DC1-1 ~]# /etc/init.d/mysql stop 
    [root@DC1-1 ~]# /etc/init.d/mysql bootstrap-pxc
    ```
 
 1. On DC1-2 node, stop MySQL, delete the content of the datadir to force the SST, and start MySQL. Run the following commands as root or using sudo:
 
-   ```
+   ```bash
    [root@DC1-2 ~]# /etc/init.d/mysql stop
    [root@DC1-2 ~]# rm -rf /var/lib/mysql/*
    [root@DC1-2 ~]# /etc/init.d/mysql start
@@ -85,22 +85,22 @@ All nodes have the same `server-id` value.
 
 1. Once the SST of DC1-2 node is completed, proceed on DC1-3. Run the following commands as root or using sudo:
 
-   ```
+   ```bash
    [root@DC1-3 ~]# /etc/init.d/mysql stop
    [root@DC1-3 ~]# rm -rf /var/lib/mysql/*
    [root@DC1-3 ~]# /etc/init.d/mysql start
    ```
 
-1. The DC1 cluster uses a single [GTID](https://docs.percona.com/percona-distribution-for-mysql/8.4/glossary.html#gtid) sequence. To make sure `GTID_PURGED` is the same, run the following commands on DC1-1, DC1-2, and DC1-3 nodes:
+1. The DC1 cluster uses a single [GTID](https://docs.percona.com/percona-distribution-for-mysql/8.4/glossary.md#gtid) sequence. To make sure `GTID_PURGED` is the same, run the following commands on DC1-1, DC1-2, and DC1-3 nodes:
 
-   ```
+   ```bash
    mysql> flush logs;
    mysql> purge binary logs to 'mysql-bin.000003';
    ```
 
    `mysql-bin.000003` is the last file returned when you run the following command:
 
-   ```
+   ```bash
    mysql>`SHOW BINARY LOGS`
    ```
 
@@ -108,13 +108,13 @@ All nodes have the same `server-id` value.
 
 1. Add privileges for replication between all nodes only for DC1:
 
-   ```
+   ```bash
    GRANT REPLICATION CLIENT, REPLICATION SLAVE ON *.* TO 'repl'@'%' identified by 'replpass';
    ```
 
 1. Add the replication tables. For example, we add the tables to DC1:
 
-   ```
+   ```text
    create database if not exists percona;
    use percona;
    CREATE TABLE `replication` (
@@ -151,7 +151,7 @@ All nodes have the same `server-id` value.
 
 1. The cluster table contains the details of each cluster. The cluster name is defined in the `wsrep_cluster_name` variable value:
 
-   ```
+   ```bash
    INSERT INTO `cluster` VALUES ('DC1','10.0.4.160 10.0.4.162 10.0.4.163','source_user=\'repl\', source_password=\'replpass\'');
    INSERT INTO `cluster` VALUES ('DC2','10.0.4.164 10.0.4.165 10.0.4.166','source_user=\'repl\', source_password=\'replpass\'');
    INSERT INTO `cluster` VALUES ('DC3','10.0.4.167 10.0.4.168 10.0.4.169','source_user=\'repl\', source_password=\'replpass\'');
@@ -159,7 +159,7 @@ All nodes have the same `server-id` value.
 
 1. Add the required links:
 
-   ```
+   ```bash
    INSERT INTO `link` VALUES ('DC1','DC2');
    INSERT INTO `link` VALUES ('DC1','DC3');
    INSERT INTO `link` VALUES ('DC2','DC1');
@@ -168,7 +168,7 @@ All nodes have the same `server-id` value.
 
 1. Add the weight:
 
-   ```
+   ```bash
    INSERT INTO `weight` VALUES('DC1','DC1-1',10); 
    INSERT INTO `weight` VALUES('DC1','DC1-2',11); 
    INSERT INTO `weight` VALUES('DC2','DC2-1',9);
@@ -182,7 +182,7 @@ All nodes have the same `server-id` value.
 
    On one of the DC1 nodes, for example DC1-1, perform a `mysqldump` as root or using sudo:
 
-   ```
+   ```bash
    [root@DC1-1 ~]# mysqldump -u root -p --source-data=2 --single-transaction -R -A -E > dump.sql
    ```
 
@@ -190,13 +190,13 @@ All nodes have the same `server-id` value.
 
    To restore the dump, run the following commands as root or using sudo:
 
-   ```
+   ```bash
    [root@DC2-1 ~]# mysql -u root -p < dump.sql
    ```
 
    and
 
-   ```
+   ```bash
    [root@DC3-1 ~]# mysql -u root -p < dump.sql
    ```
 
@@ -204,21 +204,21 @@ All nodes have the same `server-id` value.
 
    For example, on DC2-1 run:
 
-   ```
+   ```bash
    mysql> change replication source to source_host='WAN IP of DC1-1', source_user='repl', source_password='replpass', SOURCE_AUTO_POSITION = 1 FOR CHANNEL 'DC2-DC1';
    mysql> start replica FOR CHANNEL 'DC2-DC1';
    ```
 
    on DC3-1 run:
 
-   ```
+   ```bash
    mysql> change replication source to source_host='WAN IP of DC1-1', source_user='repl', source_password='replpass', SOURCE_AUTO_POSITION = 1 FOR CHANNEL 'DC3-DC1';
    mysql> start replica FOR CHANNEL 'DC3-DC1';
    ```
 
    For the other direction, use DC1-1 for both:
 
-   ```
+   ```bash
    mysql> change replication source to source_host='WAN IP of DC2-1', source_user='repl', source_password='replpass', SOURCE_AUTO_POSITION = 1 FOR CHANNEL 'DC1-DC2';
    mysql> start replica FOR CHANNEL 'DC1-DC2';
    mysql> change replication source to source_host='WAN IP of DC3-1', source_user='repl', source_password='replpass', SOURCE_AUTO_POSITION = 1 FOR CHANNEL 'DC1-DC3';
@@ -233,31 +233,31 @@ All nodes have the same `server-id` value.
 
    **On Debian and Ubuntu Linux**
 
-   ```
+   ```shell
    sudo apt install percona-replication-manager
    ```
 
    **On Red Hat Enterprise Linux and derivatives**
 
-   ```
+   ```shell
    sudo yum install percona-replication-manager
    ```
 
    When executed for the first time, the replication manager detects the current replication links and inserts rows in to the `percona.replication table`. In order to avoid issues, start with the replica nodes. The mysql credentials should be specified in the `/root/.my.cnf` file. On these nodes (DC1-1, DC2-1 and DC3-1), execute the script manually:
 
-   ```
+   ```shell
    /usr/bin/replication_manager.sh
    ```
 
    The replication state should be unchanged and the `percona.replication` table should contain the following rows:
 
-   ```
+   ```sql
    SELECT * FROM percona.replication;
    ```
 
    Expected output
 
-   ```
+   ```text
    +-------+--------+------------+-----------+---------------------+---------------------+----------------+
    | host  | weight | localIndex | isSlave   | lastUpdate          | lastHeartbeat       | connectionName |
    +-------+------- +------------+-----------+---------------------+---------------------+----------------+
@@ -269,23 +269,23 @@ All nodes have the same `server-id` value.
    12 rows in set (0.00 sec)
    ```
 
-   If you have issues on these step, see the [Replication manager troubleshooting](https://docs.percona.com/percona-distribution-for-mysql/8.4/replication-manager-troubleshooting.html) document.
+   If you have issues on these step, see the [Replication manager troubleshooting](https://docs.percona.com/percona-distribution-for-mysql/8.4/replication-manager-troubleshooting.md) document.
 
    On these same nodes, enable the cron job:
 
-   ```
+   ```bash
    * * * * * /usr/bin/replication_manager.sh
    ```
 
    Wait at least one minute and proceed with the other nodes. Try a manual run first to see if the script adds a line to the replication table for the host, for example, isSlave = No. Then add the cron jobs.
 
-   ```
+   ```sql
    SELECT * FROM percona.replication;
    ```
 
    Expected output
 
-   ```
+   ```text
    +-------+--------+------------+-----------+---------------------+---------------------+----------------+
    | host  | weight | localIndex | isSlave   | lastUpdate          | lastHeartbeat       | connectionName |
    +-------+------- +------------+-----------+---------------------+---------------------+----------------+
@@ -306,4 +306,4 @@ All nodes have the same `server-id` value.
 
 See also
 
-To manage a single replica, see [Single replica manager for Percona XtraDB Cluster](https://docs.percona.com/percona-distribution-for-mysql/8.4/single-replica-manager.html).
+To manage a single replica, see [Single replica manager for Percona XtraDB Cluster](https://docs.percona.com/percona-distribution-for-mysql/8.4/single-replica-manager.md).

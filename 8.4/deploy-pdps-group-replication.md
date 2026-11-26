@@ -44,7 +44,7 @@ We will use the following elements:
 
 1. Make sure that all the nodes use the same time-zone and time
 
-   ```
+   ```shell
    date
    Tue Aug 18 08:22:12 EDT 2020
    ```
@@ -53,7 +53,7 @@ We will use the following elements:
 
 1. Make sure that each node resolves the other nodes by name
 
-   ```
+   ```sh
    for i in 1 2 3 4 ; do ping -c 1 gr$i > /dev/null;echo $?; done
    ```
 
@@ -61,7 +61,7 @@ We will use the following elements:
 
 1. After instances are up and running, check *Percona Server for MySQL* version on each node:
 
-   ```
+   ```sql
    \s
    --------------
    /opt/mysql_templates/PS-8P/bin/mysql  Ver 8.4.11-12 for Linux on x86_64 (Percona Server (GPL), Release 11, Revision 159f0eb)
@@ -71,7 +71,7 @@ We will use the following elements:
 
 1. Create a user for administration. We will use the user `dba` in our setup:
 
-   ```
+   ```sql
    CREATE user dba@localhost identified by 'dbapw';
    CREATE user dba@'192.168.%' identified by 'dbapw';
 
@@ -83,7 +83,7 @@ We will use the following elements:
 
 1. Make sure to have a good and unique SERVER_ID value:
 
-   ```
+   ```sql
    show global variables like 'server_id';
    +---------------+-------+
    | Variable_name | Value |
@@ -99,13 +99,13 @@ We will use the following elements:
 
 1. Stop all the nodes
 
-   ```
+   ```shell
    service mysql stop
    ```
 
 1. In the `my.cnf` configuration file, add the following:
 
-   ```
+   ```text
    #####################
    #Replication + binlog settings
    #####################
@@ -153,7 +153,7 @@ We will use the following elements:
 
 1. Restart all nodes:
 
-   ```
+   ```shell
    service mysql start
    ```
 
@@ -163,7 +163,7 @@ We will use the following elements:
 
 1. On every node, create a user for replication
 
-   ```
+   ```sql
    SET SQL_LOG_BIN=0;
     CREATE USER replica@'192.168.4.%' IDENTIFIED BY 'replicapw';   #<--- Please note the filter by IP is more restrictive
     GRANT REPLICATION SLAVE ON *.* TO replica@'192.168.4.%';
@@ -173,7 +173,7 @@ We will use the following elements:
 
 1. Link the nodes with the replication channel.
 
-   ```
+   ```sql
    CHANGE MASTER TO MASTER_USER='replica', MASTER_PASSWORD='replicapw' FOR CHANNEL 'group_replication_recovery';
    ```
 
@@ -181,7 +181,7 @@ We will use the following elements:
 
 1. Check the current status:
 
-   ```
+   ```sql
    (dba@node1) [(none)]>\u performance_schema
        (dba@node1) [performance_schema]>show tables like '%repl%';
        +-------------------------------------------+
@@ -214,7 +214,7 @@ We will use the following elements:
 
 1. Start the Primary node (Gr1), `(dba@node1)[none]>`, and enable Group Replication:
 
-   ```
+   ```shell
    SET GLOBAL group_replication_bootstrap_group=ON;
    START GROUP_REPLICATION;
    SET GLOBAL group_replication_bootstrap_group=OFF;
@@ -222,7 +222,7 @@ We will use the following elements:
 
 1. Check if the node registered correctly:
 
-   ```
+   ```shell
    select * from performance_schema.replication_group_members\G
         CHANNEL_NAME: group_replication_applier
         MEMBER_ID: 90a353b8-e6dc-11ea-98fa-08002734ed50
@@ -235,14 +235,14 @@ We will use the following elements:
 
 1. Once the Primary node is running, connect to the secondary node (Gr2 node) and enable Group Replication:
 
-   ```
+   ```shell
    START GROUP_REPLICATION;
    Query OK, 0 rows affected (4.60 sec)
    ```
 
 1. Check if the secondary node registered correctly:
 
-   ```
+   ```shell
    select * from replication_group_members\G
    *************************** 1. row ***************************
      CHANNEL_NAME: group_replication_applier
@@ -266,7 +266,7 @@ We will use the following elements:
 
    - On the Primary node, run the following command:
 
-   ```
+   ```sql
    (dba@node1) [performance_schema]>create schema test;
    Query OK, 1 row affected (0.76 sec)
 
@@ -282,7 +282,7 @@ We will use the following elements:
 
    - On the secondary node:
 
-   ```
+   ```shell
     use \test
     Database changed
     (dba@node2) [test]>select * from test1;
@@ -296,7 +296,7 @@ We will use the following elements:
 
 1. Start Group Replication on the remaining nodes
 
-   ```
+   ```sql
    (dba@node3) [performance_schema]>START GROUP_REPLICATION;
    (dba@node4) [performance_schema]>START GROUP_REPLICATION;
    ```
@@ -309,7 +309,7 @@ We will use the following elements:
 
 1. Create the monitoring user on MySQL Group Replication nodes:
 
-   ```
+   ```sql
    create user monitor@'192.168.4.%' identified by 'monitor';
    grant usage on *.* to 'monitor'@'192.168.4.%';
    grant select on sys.* to 'monitor'@'192.168.4.%';
@@ -317,7 +317,7 @@ We will use the following elements:
 
 1. Define basic variables:
 
-   ```
+   ```sql
    update global_variables set Variable_Value='admin:admin;cluster1:clusterpass'  where Variable_name='admin-admin_credentials';
    update global_variables set variable_value='cluster1' where variable_name='admin-cluster_username';
    update global_variables set variable_value='clusterpass' where variable_name='admin-cluster_password';
@@ -343,7 +343,7 @@ We will use the following elements:
 
 1. Set up the nodes as a cluster:
 
-   ```
+   ```sql
    INSERT INTO proxysql_servers (hostname,port,weight,comment) VALUES('192.168.4.191',6032,100,'PRIMARY');
    INSERT INTO proxysql_servers (hostname,port,weight,comment) VALUES('192.168.4.192',6032,100,'SECONDARY');
    load proxysql servers to run;save proxysql servers to disk;
@@ -353,14 +353,14 @@ We will use the following elements:
 
 1. Create one or more valid users. Define these user(s). For example, if you have a user named `app_gr` with the password `test`, and that has access to your Group Replication cluster, the command to define the user is the following:
 
-   ```
+   ```sql
    insert into mysql_users (username,password,active,default_hostgroup,default_schema,transaction_persistent,comment) values ('app_gr','test',1,400,'mysql',1,'application test user GR');
    LOAD MYSQL USERS TO RUNTIME;SAVE MYSQL USERS TO DISK;
    ```
 
 1. Define servers:
 
-   ```
+   ```sql
    INSERT INTO mysql_servers (hostname,hostgroup_id,port,weight,max_connections,comment) VALUES ('192.168.4.81',400,3306,10000,2000,'GR1');
    INSERT INTO mysql_servers (hostname,hostgroup_id,port,weight,max_connections,comment) VALUES ('192.168.4.81',401,3306,100,2000,'GR1');
    INSERT INTO mysql_servers (hostname,hostgroup_id,port,weight,max_connections,comment) VALUES ('192.168.4.82',401,3306,10000,2000,'GR2');
@@ -371,7 +371,7 @@ We will use the following elements:
 
 1. Define query rules to get read / write split:
 
-   ```
+   ```sql
    INSERT INTO mysql_query_rules (rule_id,proxy_port,username,destination_hostgroup,active,retries,match_digest,apply) values(4040,6033,'app_gr',400,1,3,'^SELECT.*FOR UPDATE',1);
    INSERT INTO mysql_query_rules (rule_id,proxy_port,username,destination_hostgroup,active,retries,match_digest,multiplex,apply) values(4042,6033,'app_gr',401,1,3,'^SELECT.*$',1,1);
    LOAD MYSQL QUERY RULES TO RUN;SAVE MYSQL QUERY RULES TO DISK;
@@ -387,14 +387,14 @@ Run that sql on the **Primary** node of the Group Replication cluster.
 
 To activate the native support for Group Replication in ProxySQL, we will use the following group definition:
 
-```
+```text
 Writer HG-> 400
 Reader HG-> 401
 BackupW HG-> 402
 Offline HG-> 9401
 ```
 
-```
+```sql
 INSERT INTO mysql_group_replication_hostgroups (writer_hostgroup,backup_writer_hostgroup,reader_hostgroup, offline_hostgroup,active,max_writers,writer_is_also_reader,max_transactions_behind)
 values (400,402,401,9401,1,1,1,100);
 LOAD MYSQL SERVERS TO RUNTIME; SAVE MYSQL SERVERS TO DISK;
@@ -404,14 +404,14 @@ LOAD MYSQL SERVERS TO RUNTIME; SAVE MYSQL SERVERS TO DISK;
 
 To obtain the most reliable results, we recommend setting the number of writers always to 1, and `writer_is_also_reader` to 1 as well.
 
-```
+```text
 max_writers: 1
 writer_is_also_reader: 1
 ```
 
 The `max_transactions_behind` is a subjective parameter that you should calculate on the basis of your needs. If, for instance, you cannot have a stale read, it will be safe to set this value to a low number (i.e. 50) and to set in all Group Replication nodes:
 
-```
+```sql
 set global group_replication_consistency=AFTER;
 ```
 
@@ -429,13 +429,13 @@ ProxySQL Documentation: [mysql_group_replication_hostgroups](https://proxysql.co
 
    **on Debian/Ubuntu**
 
-   ```
+   ```shell
    sudo apt install -y keepalived
    ```
 
    **On RHEL/derivatives**
 
-   ```
+   ```shell
    sudo yum install -y keepalived
    ```
 
@@ -449,7 +449,7 @@ ProxySQL Documentation: [mysql_group_replication_hostgroups](https://proxysql.co
 
    Given that, the config file looks as follows:
 
-   ```
+   ```text
    global_defs {
      # Keepalived process identifier
      router_id  proxy_HA
@@ -495,7 +495,7 @@ The implementation of a DR (Disaster Recovery) site will follow the same directi
 
 1. Specify the `replication_set` flag when registering the *Percona Server for MySQL* node or the MySQL node in PMM:
 
-   ```
+   ```sh
    pmm-admin add mysql --username=pmm --password=pmm --query-source=perfschema --replication-set=gr_test_lab  group_rep4 127.0.0.1:3306
    ```
 
@@ -504,15 +504,26 @@ Then you can use the Group Replication Dashboard and monitor your cluster with a
 The dashboard sections are the following:
 
 1. Overview:
+
+   *Image: image*
+
 1. Replication delay details
+
+   *Image: image*
+
 1. Transactions
+
+   *Image: image*
+
 1. Conflicts
+
+   *Image: image*
 
 ### Using command line
 
 From the command line, you need to manually query the tables in Performance schema:
 
-```
+```text
 +----------------------------------------------+
 | replication_applier_configuration            |
 | replication_applier_filters                  |
@@ -529,7 +540,7 @@ From the command line, you need to manually query the tables in Performance sche
 
 For example, use this command to get the lag in number of transactions on a node:
 
-```
+```sql
 select @last_exec:=SUBSTRING_INDEX(SUBSTRING_INDEX( @@global.GTID_EXECUTED,':',-1),'-',-1) last_executed;select  @last_rec:=SUBSTRING_INDEX(SUBSTRING_INDEX(Received_transaction_set,':',-1),'-',-1) last_received FROM performance_schema.replication_connection_status WHERE Channel_name = 'group_replication_applier'; select (@last_rec - @last_exec) as real_lag;
 +---------------+
 | last_executed |
@@ -555,7 +566,7 @@ select @last_exec:=SUBSTRING_INDEX(SUBSTRING_INDEX( @@global.GTID_EXECUTED,':',-
 
 You can use a more composite query to get information about each applier:
 
-```
+```sql
 SELECT
   conn_status.channel_name as channel_name,
   conn_status.service_state as IO_thread,
@@ -580,7 +591,7 @@ ORDER BY lag_in_sec, lag_in_sec desc\G
 
 Expected output
 
-```
+```sql
 *************************** 1. row ***************************
 channel_name: group_replication_applier
 IO_thread: ON

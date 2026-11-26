@@ -18,13 +18,13 @@ Run all commands as the root user or via `sudo`
 
 1. Stop the `mysql` service.
 
-   ```
+   ```shell
    sudo systemctl stop mysql
    ```
 
 1. Remove *Percona Server for MySQL*.
 
-   ```
+   ```shell
    sudo apt remove percona-server*
    ```
 
@@ -32,37 +32,37 @@ Run all commands as the root user or via `sudo`
 
    - Remove Percona XtraBackup
 
-     ```
+     ```shell
      sudo apt remove percona-xtrabackup-84
      ```
 
    - Remove Percona Toolkit
 
-     ```
+     ```shell
      sudo apt remove percona-toolkit
      ```
 
    - Remove Orchestrator
 
-     ```
+     ```shell
      sudo apt remove percona-orchestrator*
      ```
 
    - Remove MySQL Shell
 
-     ```
+     ```shell
      sudo apt remove percona-mysql-shell
      ```
 
    - Remove ProxySQL
 
-     ```
+     ```shell
      sudo apt remove proxysql2
      ```
 
    - Remove MySQL Router
 
-     ```
+     ```shell
      sudo apt remove percona-mysql-router
      ```
 
@@ -70,13 +70,13 @@ Run all commands as the root user or via `sudo`
 
 1. Stop the `mysql` service.
 
-   ```
+   ```shell
    sudo systemctl stop mysql
    ```
 
 1. Remove *Percona Server for MySQL*.
 
-   ```
+   ```shell
    sudo yum remove percona-server*
    ```
 
@@ -84,37 +84,37 @@ Run all commands as the root user or via `sudo`
 
    - Remove Percona XtraBackup
 
-     ```
+     ```shell
      sudo yum remove percona-xtrabackup-84
      ```
 
    - Remove Percona Toolkit
 
-     ```
+     ```shell
      sudo yum remove percona-toolkit
      ```
 
    - Remove Orchestrator
 
-     ```
+     ```shell
      sudo yum remove percona-orchestrator*
      ```
 
    - Remove MySQL Shell
 
-     ```
+     ```shell
      sudo yum remove percona-mysql-shell
      ```
 
    - Remove ProxySQL
 
-     ```
+     ```shell
      sudo yum remove proxysql2
      ```
 
    - Remove MySQL Router
 
-     ```
+     ```shell
      sudo yum remove percona-mysql-router
      ```
 
@@ -128,13 +128,13 @@ Run all commands as the root user or via `sudo`
 
 1. Stop the `mysql` service.
 
-   ```
+   ```shell
    sudo systemctl stop mysql
    ```
 
 1. Remove *Percona XtraDB Cluster*.
 
-   ```
+   ```shell
    sudo apt remove percona-xtradb-cluster
    ```
 
@@ -142,13 +142,13 @@ Run all commands as the root user or via `sudo`
 
    - Remove Percona XtraBackup
 
-     ```
+     ```shell
      sudo apt remove percona-xtrabackup-84
      ```
 
    - Remove Percona Toolkit
 
-     ```
+     ```shell
      sudo apt remove percona-toolkit
      ```
 
@@ -156,13 +156,13 @@ Run all commands as the root user or via `sudo`
 
 1. Stop the `mysql` service.
 
-   ```
+   ```shell
    sudo systemctl stop mysql
    ```
 
 1. Remove *Percona Server for MySQL*.
 
-   ```
+   ```shell
    sudo yum remove percona-xtradb-cluster
    ```
 
@@ -170,12 +170,12 @@ Run all commands as the root user or via `sudo`
 
    - Remove Percona XtraBackup
 
-   ```
+   ```shell
    sudo yum remove percona-xtrabackup-84
    ```
 
    - Remove Percona Toolkit
 
-   ```
+   ```shell
    sudo yum remove percona-toolkit
    ```

@@ -27,6 +27,6 @@ The disadvantage of using a Minor Release repository is that you are locked in t
 
 Select the download option to proceed with the installation.
 
-[Install Percona Server-based variant](https://docs.percona.com/percona-distribution-for-mysql/8.4/install-pdps.html)
+[Install Percona Server-based variant](https://docs.percona.com/percona-distribution-for-mysql/8.4/install-pdps.md)
 
-[Install Percona XtraDB Cluster-based variant](https://docs.percona.com/percona-distribution-for-mysql/8.4/install-pdpxc.html)
+[Install Percona XtraDB Cluster-based variant](https://docs.percona.com/percona-distribution-for-mysql/8.4/install-pdpxc.md)

@@ -26,25 +26,25 @@ Run the following commands as the root user or via `sudo`.
 
    The Major Release repository automatically includes new version packages of Percona Distribution for MySQL. If you installed Percona Distribution for MySQL from a Minor Release repository, enable the new version repository:
 
-   ```
+   ```shell
    sudo percona-release setup pdps-XXX
    ```
 
    where `XXX` is the required version.
 
-   Read more about major and Minor release repositories in [Repository overview](https://docs.percona.com/percona-distribution-for-mysql/8.4/installing.html).
+   Read more about major and Minor release repositories in [Repository overview](https://docs.percona.com/percona-distribution-for-mysql/8.4/installing.md).
 
 1. Stop `mysql` service
 
-   ```
+   ```shell
    sudo systemctl mysql stop
    ```
 
-1. [Install new version packages](https://docs.percona.com/percona-distribution-for-mysql/8.4/installing.html#install-percona-distribution-for-mysql) using the package manager of your operating system.
+1. [Install new version packages](https://docs.percona.com/percona-distribution-for-mysql/8.4/installing.md#install-percona-distribution-for-mysql) using the package manager of your operating system.
 
 1. Restart `mysql` service:
 
-   ```
+   ```shell
    sudo systemctl mysql start
    ```
 
@@ -56,27 +56,27 @@ Complete these steps sequentially on all nodes:
 
    The Major Release repository automatically includes new version packages of Percona Distribution for MySQL. If you installed Percona Distribution for MySQL from a Minor Release repository, enable the new version repository:
 
-   ```
+   ```shell
    sudo percona-release setup pdpxc-XXX
    ```
 
    where `XXX` is the required version.
 
-   Read more about major and Minor release repositories in [Repository overview](https://docs.percona.com/percona-distribution-for-mysql/8.4/installing.html).
+   Read more about major and Minor release repositories in [Repository overview](https://docs.percona.com/percona-distribution-for-mysql/8.4/installing.md).
 
 1. Stop `mysql` service
 
-   ```
+   ```shell
    sudo systemctl mysql stop
    ```
 
-1. [Install new version packages](https://docs.percona.com/percona-distribution-for-mysql/8.4/installing.html#install-percona-distribution-for-mysql) using the package manager of your operating system.
+1. [Install new version packages](https://docs.percona.com/percona-distribution-for-mysql/8.4/installing.md#install-percona-distribution-for-mysql) using the package manager of your operating system.
 
 1. Back up the `grastate.dat` file
 
 1. Restart `mysql` service
 
-   ```
+   ```shell
    sudo systemctl mysql start
    ```
 
@@ -84,4 +84,4 @@ See also
 
 [Upgrading Percona XtraDB Cluster](https://docs.percona.com/percona-xtradb-cluster/8.4/upgrade-guide.html)
 
-To upgrade the components, refer to [Installing Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/8.4/installing.html) for installation instructions relevant to your operating system.
+To upgrade the components, refer to [Installing Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/8.4/installing.md) for installation instructions relevant to your operating system.

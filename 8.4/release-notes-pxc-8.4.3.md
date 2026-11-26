@@ -2,7 +2,7 @@
 
 # Percona Distribution for MySQL 8.4.3 using Percona XtraDB Cluster (2025-01-21)
 
-Percona Distribution for MySQL is the most stable, scalable, and secure open source MySQL distribution, with two download options: one based on Percona Server for MySQL and one based on Percona XtraDB Cluster. [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/8.4/installing.html).
+Percona Distribution for MySQL is the most stable, scalable, and secure open source MySQL distribution, with two download options: one based on Percona Server for MySQL and one based on Percona XtraDB Cluster. [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/8.4/installing.md).
 
 This release is based on [Percona XtraDB Cluster 8.4.3-3](https://docs.percona.com/percona-xtradb-cluster/8.4/release-notes/8.4.3-3.html).
 
@@ -20,4 +20,4 @@ Review each component’s release notes for What’s new, improvements, or bug f
 | HAProxy                | [2.8.11](https://git.haproxy.org/?p=haproxy-2.8.git;a=commit;h=01c1056a44823c5ffb8f74660b32c099d9b5355b) | A high-availability and load-balancing solution for Percona XtraDB Cluster. This is a default proxy.         |
 | ProxySQL               | [2.7.1-1](https://docs.percona.com/proxysql/2.7.1-1.html)                                                | A high performance, high-availability, protocol-aware proxy for MySQL.                                       |
 | Percona Toolkit        | [3.7.0](https://docs.percona.com/percona-toolkit/release_notes.html#v3-7-0-released-2024-12-23)          | The set of scripts to simplify and optimize database operation.                                              |
-| replication_manager.sh | [1.0](https://docs.percona.com/percona-distribution-for-mysql/8.4/replication-manager-for-pxc.html)      | A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.                  |
+| replication_manager.sh | [1.0](https://docs.percona.com/percona-distribution-for-mysql/8.4/replication-manager-for-pxc.md)        | A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.                  |

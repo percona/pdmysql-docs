@@ -2,7 +2,7 @@
 
 # Percona Distribution for MySQL 8.4.4 using Percona XtraDB Cluster (2025-04-16)
 
-Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/8.4/installing.html).
+Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](https://docs.percona.com/percona-distribution-for-mysql/8.4/installing.md).
 
 This release is based on [Percona XtraDB Cluster 8.4.4-4](https://docs.percona.com/percona-xtradb-cluster/8.4/release-notes/8.4.4-4.html).
 
@@ -41,4 +41,4 @@ Review each component’s release notes for What’s new, improvements, or bug f
 | HAProxy                | [2.8.14](https://git.haproxy.org/?p=haproxy-2.8.git;a=commit;h=c23fe91db3ae6b3b80b5f08774e41730cbba13fb) | A high-availability and load-balancing solution for Percona XtraDB Cluster. This is a default proxy.         |
 | ProxySQL               | [2.7.1-1](https://docs.percona.com/proxysql/2.7.1-1.html)                                                | A high performance, high-availability, protocol-aware proxy for MySQL.                                       |
 | Percona Toolkit        | [3.7.0](https://docs.percona.com/percona-toolkit/release_notes.html#v3-7-0-released-2024-12-23)          | The set of scripts to simplify and optimize database operation.                                              |
-| replication_manager.sh | [1.0](https://docs.percona.com/percona-distribution-for-mysql/8.4/replication-manager-for-pxc.html)      | A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.                  |
+| replication_manager.sh | [1.0](https://docs.percona.com/percona-distribution-for-mysql/8.4/replication-manager-for-pxc.md)        | A tool to manage multi-source replication between multiple Percona XtraDB Cluster clusters.                  |
