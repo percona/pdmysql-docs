@@ -1,4 +1,4 @@
-# Percona Distribution for MySQL 8.4.13 using Percona Server for MySQL (2026-11-23)
+# Percona Distribution for MySQL 8.4.13 using Percona Server for MySQL (2026-11-30)
 
 Percona Distribution for MySQL is more than just a version of MySQL; it is a comprehensive solution that combines Percona Server for MySQL with additional tools to create a cohesive environment. This distribution is reliable, scalable, and secure, ensuring that all components have been tested to work seamlessly together. You can choose from two download options: one that uses Percona Server for MySQL and another that utilizes Percona XtraDB Cluster. Refer to [Install Percona Distribution for MySQL](installing.md).
 
@@ -28,13 +28,13 @@ Percona Server for MySQL 8.4.13-13 introduces the following new features and imp
 
 Improvements and bug fixes introduced by Oracle for MySQL 8.4.13 and included in Percona Server for MySQL are the following:
 
-* Fixed an issue where point lookups could return outdated data after a modified table's tablespace was discarded and replaced with an older imported tablespace. Stale Adaptive Hash Index (AHI) entries are now treated as cache misses, and the server performs a standard B-tree lookup.
+* Resolved an issue where point lookups returned outdated data after a modified table's tablespace was discarded and replaced with an older imported image. Outdated AHI entries are now safely bypassed as cache misses, forcing the system to perform a standard B-tree traversal.
 
-* Fixed an assertion error that could occur during page eviction after an `ALTER TABLE ... IMPORT TABLESPACE` statement failed. The cleanup now keeps the index space identifier, so leftover AHI entries are correctly removed.
+*Prevented an assertion error that could occur during page eviction if an `ALTER TABLE ... IMPORT TABLESPACE` command failed. The cleanup process now correctly preserves the index space identifier so that leftover AHI entries can be properly purged.
 
-* Fixed an issue where InnoDB ignored size mismatches during page reorganization without writing the required redo log data. A later insert followed by a server crash could cause recovery failure or page corruption. InnoDB now treats the mismatch as a fatal error. (Bug #116574, Bug #37258813)
+* Addressed a severe vulnerability where InnoDB would ignore size discrepancies during page reorganization without logging the necessary redo data, risking database corruption or recovery failures after a crash. These mismatches are now appropriately classified as fatal errors to prevent inconsistent states from persisting.
 
-* Fixed an issue with renaming columns that are used in self-referencing foreign key constraints.
+* Patched a bug that previously caused problems when attempting to rename columns bound by self-referencing foreign key constraints.
 
 Find the complete list of bug fixes and changes in the [MySQL 8.4.13 release notes :octicons-link-external-16:](https://dev.mysql.com/doc/relnotes/mysql/8.4/en/news-8-4-13.html).
 
